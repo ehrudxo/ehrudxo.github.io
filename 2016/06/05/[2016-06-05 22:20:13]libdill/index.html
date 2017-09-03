@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>libdill | keen blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="github, github-trend, tech-trend" />
+  
+  
+  
+  
+  <meta name="description" content="libdillfoo bar tree 언어적인 관점에서 봤을때 web의 태동과 함께 Java가 대세가 된 데에는 thread 기반의 servlet request가 한 몫을 담당했고, web2.0 에 들어서서는 AJAX 으로 대변되는 비동기 javascript가 큰 역할을 하고 있습니다. concurrency 라는 관점에서 코드가 대세가 되었습니다. 2016/">
+<meta name="keywords" content="github, github-trend, tech-trend">
+<meta property="og:type" content="article">
+<meta property="og:title" content="libdill">
+<meta property="og:url" content="http://keen.devpools.kr/2016/06/05/[2016-06-05 22:20:13]libdill/index.html">
+<meta property="og:site_name" content="keen blog">
+<meta property="og:description" content="libdillfoo bar tree 언어적인 관점에서 봤을때 web의 태동과 함께 Java가 대세가 된 데에는 thread 기반의 servlet request가 한 몫을 담당했고, web2.0 에 들어서서는 AJAX 으로 대변되는 비동기 javascript가 큰 역할을 하고 있습니다. concurrency 라는 관점에서 코드가 대세가 되었습니다. 2016/">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*xCJCLm_iCaGJ-T2UXqeirA.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*7nDqaZfDUzGjCH_8p7f7hA.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*XWoyuljuHB0LbgO7pJS8hg.png">
+<meta property="og:updated_time" content="2017-09-03T14:05:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="libdill">
+<meta name="twitter:description" content="libdillfoo bar tree 언어적인 관점에서 봤을때 web의 태동과 함께 Java가 대세가 된 데에는 thread 기반의 servlet request가 한 몫을 담당했고, web2.0 에 들어서서는 AJAX 으로 대변되는 비동기 javascript가 큰 역할을 하고 있습니다. concurrency 라는 관점에서 코드가 대세가 되었습니다. 2016/">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*xCJCLm_iCaGJ-T2UXqeirA.png">
+  
+    <link rel="alternate" href="/atom.xml" title="keen blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/fashion.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  
+  <div class="site-header-image">
+    <img id="originBg" width="100%" alt="Hike News" src="">
+  </div>
+
+  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
+    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
+  </div>
+
+  <script>
+        var imgUrls = "images/storm.png".split(",");
+        var random = Math.floor((Math.random() * imgUrls.length ));
+        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+          document.getElementById("originBg").src=imgUrls[random];
+          document.getElementById("blurBg").src=imgUrls[random];
+        } else {
+          document.getElementById("originBg").src='/' + imgUrls[random];
+          document.getElementById("blurBg").src='/' + imgUrls[random];
+        }
+    </script>
+
+
+
+
+<header id="allheader" class="site-header" role="banner" 
+   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="keen blog" rel="home"> keen blog </a>
+            
+          </h1>
+          
+          
+            <div class="site-description">techblog</div>
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-[2016-06-05 22:20:13]libdill" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      libdill
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/06/05/[2016-06-05 22:20:13]libdill/" class="article-date">
+	  <time datetime="2016-06-05T13:20:13.000Z" itemprop="datePublished">6월 5, 2016</time>
+	</a>
+
+       
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="libdill"><a href="#libdill" class="headerlink" title="libdill"></a>libdill</h3><p><img src="https://cdn-images-1.medium.com/max/1600/1*xCJCLm_iCaGJ-T2UXqeirA.png" alt="">foo bar tree</p>
+<p>언어적인 관점에서 봤을때 web의 태동과 함께 Java가 대세가 된 데에는 thread 기반의 servlet request가 한 몫을 담당했고, web2.0 에 들어서서는 AJAX 으로 대변되는 비동기 javascript가 큰 역할을 하고 있습니다.</p>
+<p>concurrency 라는 관점에서 코드가 대세가 되었습니다.</p>
+<p>2016/06/05 Editor’s choice</p>
+<p><a href="https://github.com/sustrik/libdill" title="https://github.com/sustrik/libdill" target="_blank" rel="external"><strong>sustrik/libdill</strong><br>_libdill - Structured concurrency in C_github.com</a><a href="https://github.com/sustrik/libdill" target="_blank" rel="external"></a></p>
+<p>케이블 방송을 며칠 봤더니 프로필 사진의 담배를 모자이크해야 하나 1초 고민했네요.</p>
+<hr>
+<p>이 프로젝트는 C(C++아닙니다) 에서 이 concurrency를 구현할 수 있게 해주는 프로젝트 입니다.</p>
+<p><a href="http://libdill.org/structured-concurrency.html" title="http://libdill.org/structured-concurrency.html" target="_blank" rel="external"><strong>libdill</strong><br>_Concurrency means that multiple functions can run independently of each another. It can mean that they are running in…_libdill.org</a><a href="http://libdill.org/structured-concurrency.html" target="_blank" rel="external"></a></p>
+<p>관련된 자세한 내용은 링크에서 찾아볼 수 있습니다.</p>
+<hr>
+<h4 id="요약하자면"><a href="#요약하자면" class="headerlink" title="요약하자면"></a>요약하자면</h4><p>go 의 구현처럼 c의 coroutine을 만들었다.</p>
+<p>이전에도 libmill이라는 프로젝트를 만들었지만, 그것은 go를 따라 한 것 뿐이고 이번에는 구조적인 concurrency를 가능하도록 만들고 있다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*7nDqaZfDUzGjCH_8p7f7hA.png" alt="">concurrency</p>
+<p>함수로 go()와 proc를 제공하는데 이런 정도의 차이가 있다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*XWoyuljuHB0LbgO7pJS8hg.png" alt=""></p>
+<p>정도가 될 거 같습니다.</p>
+<p>http 관련 메쏘드는 포함하지 않았는데, 다른 프로젝트로 조만간 만들 거라고 합니다.</p>
+<hr>
+<h4 id="어떤-데-활용할-수가-있을까요"><a href="#어떤-데-활용할-수가-있을까요" class="headerlink" title="어떤 데 활용할 수가 있을까요?"></a>어떤 데 활용할 수가 있을까요?</h4><p>아마도 여러군데서 활용이 될 수 있을 거 같은데 C 기본 라이브러리로 활용할 수 있다면 모들 플랫폼에서 사용되면서 리턴값만 다른 언어에서 사용하는 형태로도 많이 사용될 수 있을 듯합니다.(MS 계열및 Objective-C 계열 모두 가능?)</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/3f379297a326" target="_blank" rel="external">June 5, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/06/[2016-06-06 17:14:32]Inferno/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Inferno
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/06/04/[2016-06-04 23:42:35]anypixel/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">anypixel</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#libdill"><span class="nav-number">1.</span> <span class="nav-text">libdill</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#요약하자면"><span class="nav-number">1.1.</span> <span class="nav-text">요약하자면</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#어떤-데-활용할-수가-있을까요"><span class="nav-number">1.2.</span> <span class="nav-text">어떤 데 활용할 수가 있을까요?</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2017 keen blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+      var headerblur = document.getElementById("header-blur");
+      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

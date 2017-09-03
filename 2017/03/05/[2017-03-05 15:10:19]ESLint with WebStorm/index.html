@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ESLint with WebStorm | keen blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="github, github-trend, tech-trend" />
+  
+  
+  
+  
+  <meta name="description" content="ESLint with WebStorm원본 투고 글 : http://devpools.kr/2017/02/16/javascript-eslint-webstorm/ IntelliJ 의 웹 버전인 WebStorm을 사용할 때 ESLint를 사용하는 방법을 알아보겠습니다. 프로젝트에도 적용할 수 있겠지만 에디터에서 자동으로 문제가 있는 (혹은 버그를 생산하는) 코드를">
+<meta name="keywords" content="github, github-trend, tech-trend">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ESLint with WebStorm">
+<meta property="og:url" content="http://keen.devpools.kr/2017/03/05/[2017-03-05 15:10:19]ESLint with WebStorm/index.html">
+<meta property="og:site_name" content="keen blog">
+<meta property="og:description" content="ESLint with WebStorm원본 투고 글 : http://devpools.kr/2017/02/16/javascript-eslint-webstorm/ IntelliJ 의 웹 버전인 WebStorm을 사용할 때 ESLint를 사용하는 방법을 알아보겠습니다. 프로젝트에도 적용할 수 있겠지만 에디터에서 자동으로 문제가 있는 (혹은 버그를 생산하는) 코드를">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/0*qBlmLC3cTz8oJ-Jf.">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/0*IJ_x1kEFxnkgv5PQ.">
+<meta property="og:updated_time" content="2017-09-03T14:05:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ESLint with WebStorm">
+<meta name="twitter:description" content="ESLint with WebStorm원본 투고 글 : http://devpools.kr/2017/02/16/javascript-eslint-webstorm/ IntelliJ 의 웹 버전인 WebStorm을 사용할 때 ESLint를 사용하는 방법을 알아보겠습니다. 프로젝트에도 적용할 수 있겠지만 에디터에서 자동으로 문제가 있는 (혹은 버그를 생산하는) 코드를">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/0*qBlmLC3cTz8oJ-Jf.">
+  
+    <link rel="alternate" href="/atom.xml" title="keen blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/fashion.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  
+  <div class="site-header-image">
+    <img id="originBg" width="100%" alt="Hike News" src="">
+  </div>
+
+  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
+    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
+  </div>
+
+  <script>
+        var imgUrls = "images/storm.png".split(",");
+        var random = Math.floor((Math.random() * imgUrls.length ));
+        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+          document.getElementById("originBg").src=imgUrls[random];
+          document.getElementById("blurBg").src=imgUrls[random];
+        } else {
+          document.getElementById("originBg").src='/' + imgUrls[random];
+          document.getElementById("blurBg").src='/' + imgUrls[random];
+        }
+    </script>
+
+
+
+
+<header id="allheader" class="site-header" role="banner" 
+   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="keen blog" rel="home"> keen blog </a>
+            
+          </h1>
+          
+          
+            <div class="site-description">techblog</div>
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-[2017-03-05 15:10:19]ESLint with WebStorm" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      ESLint with WebStorm
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2017/03/05/[2017-03-05 15:10:19]ESLint with WebStorm/" class="article-date">
+	  <time datetime="2017-03-05T06:10:19.000Z" itemprop="datePublished">3월 5, 2017</time>
+	</a>
+
+       
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="ESLint-with-WebStorm"><a href="#ESLint-with-WebStorm" class="headerlink" title="ESLint with WebStorm"></a>ESLint with WebStorm</h3><p>원본 투고 글 : <a href="http://devpools.kr/2017/02/16/javascript-eslint-webstorm/" target="_blank" rel="external">http://devpools.kr/2017/02/16/javascript-eslint-webstorm/</a></p>
+<p>IntelliJ 의 웹 버전인 WebStorm을 사용할 때 ESLint를 사용하는 방법을 알아보겠습니다. 프로젝트에도 적용할 수 있겠지만 에디터에서 자동으로 문제가 있는 (혹은 버그를 생산하는) 코드를 미리 찾아 볼 수 있습니다.</p>
+<h3 id="ESLint"><a href="#ESLint" class="headerlink" title="ESLint"></a>ESLint</h3><p>“Linting”이라는 행위는 버그가 날 수 있을 만한 코드를 찾아서 체크를 해 주는일을 의미합니다.</p>
+<blockquote>
+<p>In <a href="https://en.wikipedia.org/wiki/Computer_programming" title="Computer programming" target="_blank" rel="external">computer programming</a>, <strong>lint</strong> is a Unix utility that flags some <a href="https://en.wikipedia.org/wiki/C_%28programming_language%29#Language_tools" title="C (programming language)" target="_blank" rel="external">suspicious and non-portable constructs</a> (likely to be bugs) in <a href="https://en.wikipedia.org/wiki/C_%28programming_language%29" title="C (programming language)" target="_blank" rel="external">C language</a><a href="https://en.wikipedia.org/wiki/Source_code" title="Source code" target="_blank" rel="external">source code</a>; generically, lint or a <strong>linter</strong> is any tool that flags suspicious usage in software written in any <a href="https://en.wikipedia.org/wiki/Computer_language" title="Computer language" target="_blank" rel="external">computer language</a>. The term <strong>lint-like behavior</strong> is sometimes applied to the process of flagging suspicious language usage. Lint-like tools generally perform <a href="https://en.wikipedia.org/wiki/Static_code_analysis" title="Static code analysis" target="_blank" rel="external">static analysis</a> of source code. — 위키피디아 <a href="https://en.wikipedia.org/wiki/Lint_%28software%29" target="_blank" rel="external">Lint</a></p>
+</blockquote>
+<p>JavaScript 에서 이 Lint라는 의미를 처음 얘기한 사람은 Douglas crockford 였고 그는 JsLint라는 툴을 만들어 냅니다. JavaScript Definite Guide 같은 책에서도 내용을 언급하고 있습니다.</p>
+<p><a href="http://www.jslint.com/" title="http://www.jslint.com/" target="_blank" rel="external"><strong>JSLint: The JavaScript Code Quality Tool</strong><br>_JSLint, The JavaScript Code Quality Tool. This file allows JSLint to be run from a web browser. It can accept a source…_www.jslint.com</a><a href="http://www.jslint.com/" target="_blank" rel="external"></a></p>
+<p>하지만 최근의 대부분의 JavaScript 커뮤니티에서 사용하는 Lint 툴은 ESLint 툴입니다.</p>
+<p>Nicholas Jakas에 의해 2013년에 나온 이 툴은 현재 여러 툴들에서 플러그인으로 사용되고 있습니다.</p>
+<p><a href="http://eslint.org/" title="http://eslint.org/" target="_blank" rel="external"><strong>ESLint - Pluggable JavaScript linter</strong><br>_A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code…_eslint.org</a><a href="http://eslint.org/" target="_blank" rel="external"></a></p>
+<p>“JSX” 지원하는 것에 대해서 언급이 첫페이지에 있습니다. React 와 JSX는 다르다고 하는군요. 아무래도 Pluggable한 아키텍처로 이루어져 있기에 오리지날인 JSLint에 비해 많이 쓰이는 거라고 보여집니다.</p>
+<h3 id="webstorm"><a href="#webstorm" class="headerlink" title="webstorm"></a>webstorm</h3><p>웹스톰은 IntelliJ를 만든 Jetbrains에서 만든 웹 개발자용 IDE 입니다. 이클립스가 약간은 범용에 가깝다고 하면 이 웹 스톰은 JavaScript 최근 트렌드 및 개발 환경에 대한 이해가 큰 IDE 입니다. Node 모듈에 대한 이해도 가지고 있고 npm 을 기본적으로 작동시킬 수 있습니다. 유료 IDE기는 하지만 IntelliJ에 적응된 개발자들은 이webstorm의 여러가지 기능에 대해서 많이 만족하고 쓰고 있습니다. 최근 팝잇에 올라온 IntelliJ에 관한 글을 읽어보면 많은 인사이트들을 얻을 수 있습니다.</p>
+<p><a href="http://www.popit.kr/%EC%9D%B8%ED%85%94%EB%A6%ACj-%ED%99%9C%EC%9A%A9-%EA%BF%80%ED%8C%81-42%EA%B0%80%EC%A7%80-%EC%A0%95%EB%A6%AC/" title="http://www.popit.kr/%EC%9D%B8%ED%85%94%EB%A6%ACj-%ED%99%9C%EC%9A%A9-%EA%BF%80%ED%8C%81-42%EA%B0%80%EC%A7%80-%EC%A0%95%EB%A6%AC/" target="_blank" rel="external"><strong>인텔리J 활용 꿀팁 42가지 정리 | Popit</strong><br>_인텔리J가 유료 IDE이다 보니 사용하면서 기능들을 최대한 활용하지 않는다면 손해라는 생각이 들었습니다. 그래서 인터넷을 찾아보다 발견한 인텔리J 42가지 팁 소개 동영상를 보고 정리한 글입니다. 해당 동영상은 …_www.popit.kr</a><a href="http://www.popit.kr/%EC%9D%B8%ED%85%94%EB%A6%ACj-%ED%99%9C%EC%9A%A9-%EA%BF%80%ED%8C%81-42%EA%B0%80%EC%A7%80-%EC%A0%95%EB%A6%AC/" target="_blank" rel="external"></a></p>
+<h3 id="WebStrom-ESLint"><a href="#WebStrom-ESLint" class="headerlink" title="WebStrom + ESLint"></a>WebStrom + ESLint</h3><p>이 WebStorm에서 ESLint를 설정하는 방법은 다음과 같습니다.</p>
+<p>preference -> Languges &amp; Framework -> ESLint</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*qBlmLC3cTz8oJ-Jf." alt=""></p>
+<p>두가지를 셋팅해 주셔야 하는데 하나는 Node 를 지정하는 것이고 또 다른 하나는 ESLint 폴더를 지정해 주는 것입니다. Node 는 각자의 환경을 정하면 될 것입니다.</p>
+<p>ESLint 폴더를 지정할 때는</p>
+<pre><code>$ npm list -g|more
+</code></pre><p>옵션을 통해서 어디에 설치를 했는지 확인해 주시면 됩니다.</p>
+<p>확인이 되셨으면</p>
+<pre><code>`$ npm install -g eslint`
+</code></pre><p><a href="https://github.com/eslint/eslint" title="https://github.com/eslint/eslint" target="_blank" rel="external"><strong>eslint/eslint</strong><br>_eslint - A fully pluggable tool for identifying and reporting on patterns in JavaScript._github.com</a><a href="https://github.com/eslint/eslint" target="_blank" rel="external"></a></p>
+<p>이후 몇가지 모듈을 더 설치해야 합니다.</p>
+<pre><code>$npm install eslint-plugin-react eslint-plugin-jsx-a11y eslint-plugin-import -g
+</code></pre><p>실행해 주고 나서 WebStorm을 다시 작동시키면 아래와 같은 좋은 예를 볼 수 있습니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*IJ_x1kEFxnkgv5PQ." alt=""></p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/bf9d418993b2" target="_blank" rel="external">March 5, 2017</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/06/[2017-03-06 08:33:39]개발자들의 인문학 이야기/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          개발자들의 인문학 이야기
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/02/08/[2017-02-08 17:57:12] -팁-  wordpress 에 https 적용하기/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">-팁-  wordpress 에 https 적용하기</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ESLint-with-WebStorm"><span class="nav-number">1.</span> <span class="nav-text">ESLint with WebStorm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ESLint"><span class="nav-number">2.</span> <span class="nav-text">ESLint</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webstorm"><span class="nav-number">3.</span> <span class="nav-text">webstorm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WebStrom-ESLint"><span class="nav-number">4.</span> <span class="nav-text">WebStrom + ESLint</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2017 keen blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+      var headerblur = document.getElementById("header-blur");
+      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>PokemonGo-Map | keen blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="github, github-trend, tech-trend" />
+  
+  
+  
+  
+  <meta name="description" content="PokemonGo-Map하루종일 본 짤. 이 그림 한 짤로 대변 되는 슬픔은 어떻게 표현할까요? 포켓몬 GO를 하면서 주위에 두두 밖에 없어서 육두문자를 날리고 있네요. 이런 사람들을 위한 프로젝트입니다. 2016/07/18 Editor’s choice AHAAAAAAA/PokemonGo-Map_PokemonGo-Map - Live visualization">
+<meta name="keywords" content="github, github-trend, tech-trend">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PokemonGo-Map">
+<meta property="og:url" content="http://keen.devpools.kr/2016/07/19/[2016-07-19 00:09:34]PokemonGo-Map/index.html">
+<meta property="og:site_name" content="keen blog">
+<meta property="og:description" content="PokemonGo-Map하루종일 본 짤. 이 그림 한 짤로 대변 되는 슬픔은 어떻게 표현할까요? 포켓몬 GO를 하면서 주위에 두두 밖에 없어서 육두문자를 날리고 있네요. 이런 사람들을 위한 프로젝트입니다. 2016/07/18 Editor’s choice AHAAAAAAA/PokemonGo-Map_PokemonGo-Map - Live visualization">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*Rx7T6wE-TcZQwtPzxN8N0A.jpeg">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*Pd916NsS63ruAHDzFDcMBQ.png">
+<meta property="og:updated_time" content="2017-09-03T14:05:15.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PokemonGo-Map">
+<meta name="twitter:description" content="PokemonGo-Map하루종일 본 짤. 이 그림 한 짤로 대변 되는 슬픔은 어떻게 표현할까요? 포켓몬 GO를 하면서 주위에 두두 밖에 없어서 육두문자를 날리고 있네요. 이런 사람들을 위한 프로젝트입니다. 2016/07/18 Editor’s choice AHAAAAAAA/PokemonGo-Map_PokemonGo-Map - Live visualization">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*Rx7T6wE-TcZQwtPzxN8N0A.jpeg">
+  
+    <link rel="alternate" href="/atom.xml" title="keen blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/fashion.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  
+  <div class="site-header-image">
+    <img id="originBg" width="100%" alt="Hike News" src="">
+  </div>
+
+  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
+    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
+  </div>
+
+  <script>
+        var imgUrls = "images/storm.png".split(",");
+        var random = Math.floor((Math.random() * imgUrls.length ));
+        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+          document.getElementById("originBg").src=imgUrls[random];
+          document.getElementById("blurBg").src=imgUrls[random];
+        } else {
+          document.getElementById("originBg").src='/' + imgUrls[random];
+          document.getElementById("blurBg").src='/' + imgUrls[random];
+        }
+    </script>
+
+
+
+
+<header id="allheader" class="site-header" role="banner" 
+   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="keen blog" rel="home"> keen blog </a>
+            
+          </h1>
+          
+          
+            <div class="site-description">techblog</div>
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-[2016-07-19 00:09:34]PokemonGo-Map" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      PokemonGo-Map
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/07/19/[2016-07-19 00:09:34]PokemonGo-Map/" class="article-date">
+	  <time datetime="2016-07-18T15:09:34.000Z" itemprop="datePublished">7월 19, 2016</time>
+	</a>
+
+       
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="PokemonGo-Map"><a href="#PokemonGo-Map" class="headerlink" title="PokemonGo-Map"></a>PokemonGo-Map</h3><p><img src="https://cdn-images-1.medium.com/max/1600/1*Rx7T6wE-TcZQwtPzxN8N0A.jpeg" alt="">하루종일 본 짤.</p>
+<p>이 그림 한 짤로 대변 되는 슬픔은 어떻게 표현할까요? 포켓몬 GO를 하면서 주위에 두두 밖에 없어서 육두문자를 날리고 있네요. 이런 사람들을 위한 프로젝트입니다.</p>
+<p>2016/07/18 Editor’s choice</p>
+<p><a href="https://github.com/AHAAAAAAA/PokemonGo-Map" title="https://github.com/AHAAAAAAA/PokemonGo-Map" target="_blank" rel="external"><strong>AHAAAAAAA/PokemonGo-Map</strong><br>_PokemonGo-Map - Live visualization of all the pokemon in your area… and more!_github.com</a><a href="https://github.com/AHAAAAAAA/PokemonGo-Map" target="_blank" rel="external"></a></p>
+<p>지도에서 이렇게 주위의 포켓몬을 보여주는 군요.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*Pd916NsS63ruAHDzFDcMBQ.png" alt=""></p>
+<hr>
+<h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><pre><code>$git clone [https://github.com/AHAAAAAAA/PokemonGo-Map.git][anchor2]
+</code></pre><p>프로젝트를 클론 받고 나서 pip를 이용해서</p>
+<p>pip install -r requirements.txt</p>
+<p>실행시키고 나면 명령어를 통해 실행시킬 수 있습니다.</p>
+<p>python example.py -u myUsername -p myPassword -l “Boulder, CO” -st 5</p>
+<p>ID 와 비밀번호는</p>
+<p><a href="http://www.pokemon.com/us/" title="http://www.pokemon.com/us/" target="_blank" rel="external"><strong>The Official Pokémon Website | Pokemon.com | Explore the World of Pokémon</strong><br>_Explore Pokemon.com for news and information on Pokémon, the Pokédex, Pokémon games, the Trading Card Game, Pokémon…_www.pokemon.com</a><a href="http://www.pokemon.com/us/" target="_blank" rel="external"></a></p>
+<p>에서 발급 받은 것을 사용하면 됩니다.(지금은 정지</p>
+<hr>
+<h4 id="Pokemon-API"><a href="#Pokemon-API" class="headerlink" title="Pokemon API"></a>Pokemon API</h4><p>포켓몬고 API 를 파이썬으로 정리해 놓은 프로젝트도 있습니다. 깃헙트렌드에 같이 올라왔네요.</p>
+<p><a href="https://github.com/Mila432/Pokemon_Go_API" title="https://github.com/Mila432/Pokemon_Go_API" target="_blank" rel="external"><strong>Mila432/Pokemon_Go_API</strong><br>_Pokemon_Go_API - Pokémon GO API in Python_github.com</a><a href="https://github.com/Mila432/Pokemon_Go_API" target="_blank" rel="external"></a></p>
+<p>youtube 에 동영상을 확인하세요.</p>
+<p>열풍이 대단하긴 하네요.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/3d28a998ee3d" target="_blank" rel="external">July 18, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/20/[2016-07-20 21:14:00]api-guidelines/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          api-guidelines
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/17/[2016-07-17 00:21:35]HyperTerm/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">HyperTerm</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#PokemonGo-Map"><span class="nav-number">1.</span> <span class="nav-text">PokemonGo-Map</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#실행"><span class="nav-number">1.1.</span> <span class="nav-text">실행</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Pokemon-API"><span class="nav-number">1.2.</span> <span class="nav-text">Pokemon API</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2017 keen blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+      var headerblur = document.getElementById("header-blur");
+      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

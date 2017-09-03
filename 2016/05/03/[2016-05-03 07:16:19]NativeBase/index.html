@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>NativeBase | keen blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="github, github-trend, tech-trend" />
+  
+  
+  
+  
+  <meta name="description" content="NativeBase오랜만에 상관없는 이미지 React Native 다들 개발은 하고 계시죠? 개발자라면 한 번 도전은 해 봤을 텐데요.(응?) 죄송합니다. Native 컴포넌트를 Javascript로 그리고, Style을 직접 주다 보니 본의아니게 개자이너 혹은 디발자의 영역을 넘나드셨을 거라고 봅니다. 그러다 보면 당연하게 생기는 생각이 “아 부트스트랩">
+<meta name="keywords" content="github, github-trend, tech-trend">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NativeBase">
+<meta property="og:url" content="http://keen.devpools.kr/2016/05/03/[2016-05-03 07:16:19]NativeBase/index.html">
+<meta property="og:site_name" content="keen blog">
+<meta property="og:description" content="NativeBase오랜만에 상관없는 이미지 React Native 다들 개발은 하고 계시죠? 개발자라면 한 번 도전은 해 봤을 텐데요.(응?) 죄송합니다. Native 컴포넌트를 Javascript로 그리고, Style을 직접 주다 보니 본의아니게 개자이너 혹은 디발자의 영역을 넘나드셨을 거라고 봅니다. 그러다 보면 당연하게 생기는 생각이 “아 부트스트랩">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*WN4-6QMrWgH8o8oEuBlZaA.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*BoKp35W_FR6O4wqlMUlKhQ.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*YZAKSPNHgDxCx9hxNJOACA.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*00BX8NWzdAzy-fPXzUwczQ.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*CU_TNA9hvVu5S-lSsiiIFg.png">
+<meta property="og:updated_time" content="2017-09-03T14:05:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NativeBase">
+<meta name="twitter:description" content="NativeBase오랜만에 상관없는 이미지 React Native 다들 개발은 하고 계시죠? 개발자라면 한 번 도전은 해 봤을 텐데요.(응?) 죄송합니다. Native 컴포넌트를 Javascript로 그리고, Style을 직접 주다 보니 본의아니게 개자이너 혹은 디발자의 영역을 넘나드셨을 거라고 봅니다. 그러다 보면 당연하게 생기는 생각이 “아 부트스트랩">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*WN4-6QMrWgH8o8oEuBlZaA.png">
+  
+    <link rel="alternate" href="/atom.xml" title="keen blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/fashion.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  
+  <div class="site-header-image">
+    <img id="originBg" width="100%" alt="Hike News" src="">
+  </div>
+
+  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
+    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
+  </div>
+
+  <script>
+        var imgUrls = "images/storm.png".split(",");
+        var random = Math.floor((Math.random() * imgUrls.length ));
+        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+          document.getElementById("originBg").src=imgUrls[random];
+          document.getElementById("blurBg").src=imgUrls[random];
+        } else {
+          document.getElementById("originBg").src='/' + imgUrls[random];
+          document.getElementById("blurBg").src='/' + imgUrls[random];
+        }
+    </script>
+
+
+
+
+<header id="allheader" class="site-header" role="banner" 
+   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="keen blog" rel="home"> keen blog </a>
+            
+          </h1>
+          
+          
+            <div class="site-description">techblog</div>
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-[2016-05-03 07:16:19]NativeBase" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      NativeBase
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/05/03/[2016-05-03 07:16:19]NativeBase/" class="article-date">
+	  <time datetime="2016-05-02T22:16:19.000Z" itemprop="datePublished">5월 3, 2016</time>
+	</a>
+
+       
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="NativeBase"><a href="#NativeBase" class="headerlink" title="NativeBase"></a>NativeBase</h3><p><img src="https://cdn-images-1.medium.com/max/1600/1*WN4-6QMrWgH8o8oEuBlZaA.png" alt="">오랜만에 상관없는 이미지</p>
+<p>React Native 다들 개발은 하고 계시죠? 개발자라면 한 번 도전은 해 봤을 텐데요.(응?) 죄송합니다. Native 컴포넌트를 Javascript로 그리고, Style을 직접 주다 보니 본의아니게 개자이너 혹은 디발자의 영역을 넘나드셨을 거라고 봅니다.</p>
+<p>그러다 보면 당연하게 생기는 생각이 “아 부트스트랩 같은 녀석 없을까” 인데 여기 그런 프로젝트가 있습니다.</p>
+<p>2016/05/03 Editor’s choice</p>
+<p><a href="https://github.com/GeekyAnts/NativeBase" title="https://github.com/GeekyAnts/NativeBase" target="_blank" rel="external"><strong>GeekyAnts/NativeBase</strong><br>_NativeBase - The missing piece of React Native_github.com</a><a href="https://github.com/GeekyAnts/NativeBase" target="_blank" rel="external"></a></p>
+<hr>
+<h4 id="설치를-합시다"><a href="#설치를-합시다" class="headerlink" title="설치를 합시다."></a>설치를 합시다.</h4><p>설치는 간단합니다. (물론 react-native를 해 보셨다면 말이죠.)</p>
+<p>프로젝트에서는 일단 react-native init 부터 시작하던데 다음의 명령어면 기존 프로젝트도 충분합니다.</p>
+<pre><code>npm install native-base --save
+</code></pre><p>만약에 처음부터 만들 요랑이시라면</p>
+<pre><code>react-native init AwesomeNativeBase  
+cd AwesomeNativeBase  
+npm install
+</code></pre><p>명령어가 먼저 필요합니다.</p>
+<h4 id="rnpm"><a href="#rnpm" class="headerlink" title="rnpm"></a>rnpm</h4><p>rnpm이라는 명령어는 react-native 를 사용하는데 요즘은 필수가 되었습니다. native 컴포넌트를 가진 프로젝트를 추가하면 (npm install) 이후 관례적으로 해 주게 되는데요</p>
+<ul>
+<li>$rnpm link</li>
+</ul>
+<p>명령어로 가능합니다. 기본적으로 설치되어 있는 모듈 전부에 대한 링크를 점검해 줍니다.</p>
+<hr>
+<h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><p>이런 일들이 갖추어 지고 나면 xcode를 켜서 run 을 통해 실행을 해 봅니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*BoKp35W_FR6O4wqlMUlKhQ.png" alt=""></p>
+<p>엇 달라진게 없습니다.</p>
+<p>index.ios.js 소스를 고쳐보겠습니다.</p>
+<p>그리고 다시 실행을 하면</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*YZAKSPNHgDxCx9hxNJOACA.png" alt="">어익후 깜짝이야</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*00BX8NWzdAzy-fPXzUwczQ.png" alt=""></p>
+<p>이런 그림이 나타납니다.</p>
+<p>분명히 개자이너, 디발자 어쩌구 저쩌구 했는데, 아무리 좋은 툴을 가져다 줘도 저같은 디알못은 소용없나 봅니다.</p>
+<hr>
+<h4 id="아-글쎄-이쁘다니깐요"><a href="#아-글쎄-이쁘다니깐요" class="headerlink" title="아 글쎄 이쁘다니깐요"></a>아 글쎄 이쁘다니깐요</h4><p><a href="http://nativebase.io/docs/v0.2.1/assets/img/magic-with-nativebase-020.mp4" target="_blank" rel="external">http://nativebase.io/docs/v0.2.1/assets/img/magic-with-nativebase-020.mp4</a></p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*CU_TNA9hvVu5S-lSsiiIFg.png" alt="">클릭은 위의 링크. 미디엄은 이미지 링크를 지원하라!</p>
+<p>동영상을 감상해 보시면 글쎄 이쁜… 프로젝트가 나옵니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/7a1635cd0a55" target="_blank" rel="external">May 2, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/04/[2016-05-04 07:09:18]json-server/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          json-server
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/02/[2016-05-02 06:35:07]Programming Language Theory/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Programming Language Theory</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#NativeBase"><span class="nav-number">1.</span> <span class="nav-text">NativeBase</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#설치를-합시다"><span class="nav-number">1.1.</span> <span class="nav-text">설치를 합시다.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rnpm"><span class="nav-number">1.2.</span> <span class="nav-text">rnpm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#실행"><span class="nav-number">1.3.</span> <span class="nav-text">실행</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#아-글쎄-이쁘다니깐요"><span class="nav-number">1.4.</span> <span class="nav-text">아 글쎄 이쁘다니깐요</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2017 keen blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+      var headerblur = document.getElementById("header-blur");
+      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

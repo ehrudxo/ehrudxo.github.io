@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>react-howto | keen blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="github, github-trend, tech-trend" />
+  
+  
+  
+  
+  <meta name="description" content="react-howto React 공부를 위한 지침서를 잘 정리한 프로젝트가 있습니다. React 생태계에서 내용을 배우다가 보면 상당한 어려움에 봉착할 때가 많습니다. 몇 가지 이유가 있는데요. 오픈 소스 프로젝트 예제들을 찾아보면 Flux,ES2015라던지 혹은 번들러 같은 것들을 공부해야만 하는지 어떻게 해야 하는지 등등의 고민들이 생깁니다. 이런 것들">
+<meta name="keywords" content="github, github-trend, tech-trend">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react-howto">
+<meta property="og:url" content="http://keen.devpools.kr/2016/03/07/[2016-03-07 07:08:31]react-howto/index.html">
+<meta property="og:site_name" content="keen blog">
+<meta property="og:description" content="react-howto React 공부를 위한 지침서를 잘 정리한 프로젝트가 있습니다. React 생태계에서 내용을 배우다가 보면 상당한 어려움에 봉착할 때가 많습니다. 몇 가지 이유가 있는데요. 오픈 소스 프로젝트 예제들을 찾아보면 Flux,ES2015라던지 혹은 번들러 같은 것들을 공부해야만 하는지 어떻게 해야 하는지 등등의 고민들이 생깁니다. 이런 것들">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*xMLDI6hv_9T5PTxncNsvjg.png">
+<meta property="og:updated_time" content="2017-09-03T14:05:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react-howto">
+<meta name="twitter:description" content="react-howto React 공부를 위한 지침서를 잘 정리한 프로젝트가 있습니다. React 생태계에서 내용을 배우다가 보면 상당한 어려움에 봉착할 때가 많습니다. 몇 가지 이유가 있는데요. 오픈 소스 프로젝트 예제들을 찾아보면 Flux,ES2015라던지 혹은 번들러 같은 것들을 공부해야만 하는지 어떻게 해야 하는지 등등의 고민들이 생깁니다. 이런 것들">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*xMLDI6hv_9T5PTxncNsvjg.png">
+  
+    <link rel="alternate" href="/atom.xml" title="keen blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/fashion.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  
+  <div class="site-header-image">
+    <img id="originBg" width="100%" alt="Hike News" src="">
+  </div>
+
+  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
+    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
+  </div>
+
+  <script>
+        var imgUrls = "images/storm.png".split(",");
+        var random = Math.floor((Math.random() * imgUrls.length ));
+        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+          document.getElementById("originBg").src=imgUrls[random];
+          document.getElementById("blurBg").src=imgUrls[random];
+        } else {
+          document.getElementById("originBg").src='/' + imgUrls[random];
+          document.getElementById("blurBg").src='/' + imgUrls[random];
+        }
+    </script>
+
+
+
+
+<header id="allheader" class="site-header" role="banner" 
+   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="keen blog" rel="home"> keen blog </a>
+            
+          </h1>
+          
+          
+            <div class="site-description">techblog</div>
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-[2016-03-07 07:08:31]react-howto" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      react-howto
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/03/07/[2016-03-07 07:08:31]react-howto/" class="article-date">
+	  <time datetime="2016-03-06T22:08:31.000Z" itemprop="datePublished">3월 7, 2016</time>
+	</a>
+
+       
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="react-howto"><a href="#react-howto" class="headerlink" title="react-howto"></a>react-howto</h3><p><img src="https://cdn-images-1.medium.com/max/1600/1*xMLDI6hv_9T5PTxncNsvjg.png" alt=""></p>
+<p>React 공부를 위한 지침서를 잘 정리한 프로젝트가 있습니다. React 생태계에서 내용을 배우다가 보면 상당한 어려움에 봉착할 때가 많습니다. 몇 가지 이유가 있는데요. 오픈 소스 프로젝트 예제들을 찾아보면 Flux,ES2015라던지 혹은 번들러 같은 것들을 공부해야만 하는지 어떻게 해야 하는지 등등의 고민들이 생깁니다. 이런 것들이 잘 정리가 되어 있습니다.</p>
+<p>Editor’s choice</p>
+<p><a href="https://github.com/petehunt/react-howto" title="https://github.com/petehunt/react-howto" target="_blank" rel="external"><strong>petehunt/react-howto</strong><br>_If you’re new to React (or frontend in general) you may find the ecosystem confusing. There are a few reasons for this…_github.com</a><a href="https://github.com/petehunt/react-howto" target="_blank" rel="external"></a></p>
+<p>저자인 petehunt는 아래와 같은 방법으로 공부 해야 한다고 정리하고 있습니다.</p>
+<ul>
+<li><a href="https://github.com/ehrudxo/react-howto/blob/master/README-kr.md#learning-react-itself" target="_blank" rel="external">React 자체를 배우기</a></li>
+<li><a href="https://github.com/ehrudxo/react-howto/blob/master/README-kr.md#learning-npm" target="_blank" rel="external">npm</a></li>
+<li><a href="https://github.com/ehrudxo/react-howto/blob/master/README-kr.md#learning-javascript-bundlers" target="_blank" rel="external">JavaScript “번들러”</a></li>
+<li><a href="https://github.com/ehrudxo/react-howto/blob/master/README-kr.md#learning-es6" target="_blank" rel="external">ES6</a></li>
+<li><a href="https://github.com/ehrudxo/react-howto/blob/master/README-kr.md#learning-routing" target="_blank" rel="external">Routing</a></li>
+<li><a href="https://github.com/ehrudxo/react-howto/blob/master/README-kr.md#learning-flux" target="_blank" rel="external">Flux</a></li>
+</ul>
+<hr>
+<h3 id="React-자체를-배우기"><a href="#React-자체를-배우기" class="headerlink" title="React 자체를 배우기"></a>React 자체를 배우기</h3><blockquote>
+<p>일반적으로 잘못 알려진 이야기가 React를 배우기 시작하기 위한 세팅시간이 많이 걸린다는 것입니다. 공식문서에서 (<a href="https://facebook.github.io/react/docs/getting-started.html#quick-start-without-npm" target="_blank" rel="external">복사-붙여넣기 용 HTML template</a>) 을 이용해서 .html 파일로 저장해서 바로 시작할 수 있습니다. <strong>이 단계에서는 어떤 툴 및 세팅이 필요없고 기본 React에 익숙해 질때까지는 다른 툴 및 세팅을 시작하지 마십시오</strong></p>
+<p>저는 아직도 React를 배우는 가장 쉬운 방법은 <a href="https://facebook.github.io/react/docs/tutorial.html" target="_blank" rel="external">공식문서</a> 라고 생각합니다</p>
+</blockquote>
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><p>React 생태계가 Javascript 언어인 이상 npm 생태계를 포함하는 것은 어찌보면 요즘은 당연할 지도 모르겠네요.</p>
+<h3 id="Javascript-번들러"><a href="#Javascript-번들러" class="headerlink" title="Javascript 번들러"></a>Javascript 번들러</h3><blockquote>
+<p>Javascript 번들러의 예를 들자면 webpack 과 browserify가 있습니다. 모두 좋은 선택입니다. 하지만 저는 큰 애플리케이션의 개발을 쉽게 도와주는 기능이 많은 webpack 을 선호합니다. 문서화가 좀 헷갈린다면 <a href="https://github.com/petehunt/react-webpack-template" target="_blank" rel="external">개발 시작을 위한 플러그앤 플레이 템플릿</a>이 있고, 조금 더 복잡한 경우에는 제가 작성한 <a href="https://github.com/petehunt/webpack-howto" target="_blank" rel="external">webpack 사용기</a>도 있습니다</p>
+</blockquote>
+<p>제 경우는 webpack 을 제일 선호하지만, gulp와 섞인 스크립트세팅이 가장 훌륭한 거 같더군요</p>
+<hr>
+<h3 id="더-자세히-보기"><a href="#더-자세히-보기" class="headerlink" title="더 자세히 보기"></a>더 자세히 보기</h3><p><a href="https://github.com/ehrudxo/react-howto/blob/master/README-ko.md" title="https://github.com/ehrudxo/react-howto/blob/master/README-ko.md" target="_blank" rel="external"><strong>ehrudxo/react-howto</strong><br>_당신이 React(혹은 프론트엔드개발) 초심자라면 생태계가 혼란스럽다는 사실을 발견할 것입니다. 거기에는 몇 가지 이유가 있습니다. React는 역사적으로 얼리어답터와 전문가 집단을 겨냥해서 만들어졌습니다…_github.com</a><a href="https://github.com/ehrudxo/react-howto/blob/master/README-ko.md" target="_blank" rel="external"></a></p>
+<p>관련된 내용은 번역해</p>
+<p>서 fork를 딴 후에 pull request를 날려 놓은 상태고, 조만간 정리가 되리라고 봅니다.</p>
+<p>혹시 변경할 사항이 있다고 생각되시면 제게 알려주세요!</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/ebb85c297b78" target="_blank" rel="external">March 6, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/07/[2016-03-07 07:28:37]Google-Play-Music-Desktop-Player-Unofficial/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Google-Play-Music-Desktop-Player-Unofficial
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/05/[2016-03-05 15:14:19]Intro.js/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Intro.js</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#react-howto"><span class="nav-number">1.</span> <span class="nav-text">react-howto</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React-자체를-배우기"><span class="nav-number">2.</span> <span class="nav-text">React 자체를 배우기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm"><span class="nav-number">3.</span> <span class="nav-text">npm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Javascript-번들러"><span class="nav-number">4.</span> <span class="nav-text">Javascript 번들러</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#더-자세히-보기"><span class="nav-number">5.</span> <span class="nav-text">더 자세히 보기</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2017 keen blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+      var headerblur = document.getElementById("header-blur");
+      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

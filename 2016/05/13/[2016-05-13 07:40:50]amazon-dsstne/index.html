@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>amazon-dsstne | keen blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="github, github-trend, tech-trend" />
+  
+  
+  
+  
+  <meta name="description" content="amazon-dsstne아마존에서 이번에는 딥러닝 관련된 모델을 오픈소스로 공개했습니다. 2016/05/13 Editor’s choice amznlabs/amazon-dsstne_amazon-dsstne - Deep Scalable Sparse Tensor Network Engine (DSSTNE) is an Amazon developed library f">
+<meta name="keywords" content="github, github-trend, tech-trend">
+<meta property="og:type" content="article">
+<meta property="og:title" content="amazon-dsstne">
+<meta property="og:url" content="http://keen.devpools.kr/2016/05/13/[2016-05-13 07:40:50]amazon-dsstne/index.html">
+<meta property="og:site_name" content="keen blog">
+<meta property="og:description" content="amazon-dsstne아마존에서 이번에는 딥러닝 관련된 모델을 오픈소스로 공개했습니다. 2016/05/13 Editor’s choice amznlabs/amazon-dsstne_amazon-dsstne - Deep Scalable Sparse Tensor Network Engine (DSSTNE) is an Amazon developed library f">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2017-09-03T14:05:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="amazon-dsstne">
+<meta name="twitter:description" content="amazon-dsstne아마존에서 이번에는 딥러닝 관련된 모델을 오픈소스로 공개했습니다. 2016/05/13 Editor’s choice amznlabs/amazon-dsstne_amazon-dsstne - Deep Scalable Sparse Tensor Network Engine (DSSTNE) is an Amazon developed library f">
+  
+    <link rel="alternate" href="/atom.xml" title="keen blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/fashion.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  
+  <div class="site-header-image">
+    <img id="originBg" width="100%" alt="Hike News" src="">
+  </div>
+
+  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
+    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
+  </div>
+
+  <script>
+        var imgUrls = "images/storm.png".split(",");
+        var random = Math.floor((Math.random() * imgUrls.length ));
+        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+          document.getElementById("originBg").src=imgUrls[random];
+          document.getElementById("blurBg").src=imgUrls[random];
+        } else {
+          document.getElementById("originBg").src='/' + imgUrls[random];
+          document.getElementById("blurBg").src='/' + imgUrls[random];
+        }
+    </script>
+
+
+
+
+<header id="allheader" class="site-header" role="banner" 
+   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="keen blog" rel="home"> keen blog </a>
+            
+          </h1>
+          
+          
+            <div class="site-description">techblog</div>
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-[2016-05-13 07:40:50]amazon-dsstne" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      amazon-dsstne
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/05/13/[2016-05-13 07:40:50]amazon-dsstne/" class="article-date">
+	  <time datetime="2016-05-12T22:40:50.000Z" itemprop="datePublished">5월 13, 2016</time>
+	</a>
+
+       
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="amazon-dsstne"><a href="#amazon-dsstne" class="headerlink" title="amazon-dsstne"></a>amazon-dsstne</h3><p>아마존에서 이번에는 딥러닝 관련된 모델을 오픈소스로 공개했습니다.</p>
+<p>2016/05/13 Editor’s choice</p>
+<p><a href="https://github.com/amznlabs/amazon-dsstne" title="https://github.com/amznlabs/amazon-dsstne" target="_blank" rel="external"><strong>amznlabs/amazon-dsstne</strong><br>_amazon-dsstne - Deep Scalable Sparse Tensor Network Engine (DSSTNE) is an Amazon developed library for building Deep…_github.com</a><a href="https://github.com/amznlabs/amazon-dsstne" target="_blank" rel="external"></a></p>
+<p>tensor network engine이 이름에 들어가는군요.</p>
+<h4 id="설치해-보기"><a href="#설치해-보기" class="headerlink" title="설치해 보기"></a>설치해 보기</h4><p>3가지의 기본 설치 방법을 제공하고 있습니다.</p>
+<ul>
+<li>docker</li>
+<li>AWS</li>
+<li>dev install</li>
+</ul>
+<p>보통은 빌드 툴과 docker 를 제공하고 마는데 역시 AWS를 이용한 방법을 쓰고 있습니다.</p>
+<p>docker runtime으로는 10G 가 필요하다고 하는군요. 전철 안에서는 docker를 받아서는 안될거 같네요.</p>
+<h4 id="사용자-가이드"><a href="#사용자-가이드" class="headerlink" title="사용자 가이드"></a>사용자 가이드</h4><p>사용자 가이드는 Data Format으로 부터 시작합니다. NetCDF 포맷만 지원한다고 하며 그 형태는 다음과 같습니다.</p>
+<pre><code>Example1 Feature1:Feature2:Feature3  
+Example2 Feature5:Feature2:Feature4  
+Example3 Feature6:Feature7:Feature8
+</code></pre><p><a href="https://en.wikipedia.org/wiki/NetCDF" title="https://en.wikipedia.org/wiki/NetCDF" target="_blank" rel="external"><strong>NetCDF</strong><br>_NetCDF ( Network Common Data Form) is a set of software libraries and self-describing, machine-independent data formats…_en.wikipedia.org</a><a href="https://en.wikipedia.org/wiki/NetCDF" target="_blank" rel="external"></a></p>
+<p>데이타 포맷과 달리 레이어 포맷은 JSON을 통해 인풋 아웃풋이 결정됩니다</p>
+<pre><code>{  
+&quot;Version&quot; : 0.8,  
+&quot;Name&quot; : &quot;2 Hidden Layer&quot;,  
+&quot;Kind&quot; : &quot;FeedForward&quot;,   
+
+&quot;ShuffleIndices&quot; : false,  
+
+
+&quot;ScaledMarginalCrossEntropy&quot; : {  
+&quot;oneTarget&quot; : 1.0,  
+&quot;zeroTarget&quot; : 0.0,  
+&quot;oneScale&quot; : 1.0,  
+&quot;zeroScale&quot; : 1.0  
+},  
+&quot;Layers&quot; : \[  
+{ &quot;Name&quot; : &quot;Input&quot;, &quot;Kind&quot; : &quot;Input&quot;, &quot;N&quot; : &quot;auto&quot;, &quot;DataSet&quot; : &quot;input&quot;, &quot;Sparse&quot; : true },  
+{ &quot;Name&quot; : &quot;Hidden1&quot;, &quot;Kind&quot; : &quot;Hidden&quot;, &quot;Type&quot; : &quot;FullyConnected&quot;, &quot;Source&quot; : &quot;Input&quot;, &quot;N&quot; : 1024, &quot;Activation&quot; : &quot;Relu&quot;, &quot;Sparse&quot; : false, &quot;pDropout&quot; : 0.5, &quot;WeightInit&quot; : { &quot;Scheme&quot; : &quot;Gaussian&quot;, &quot;Scale&quot; : 0.01 } },  
+{ &quot;Name&quot; : &quot;Hidden2&quot;, &quot;Kind&quot; : &quot;Hidden&quot;, &quot;Type&quot; : &quot;FullyConnected&quot;, &quot;Source&quot; : \[&quot;Hidden1&quot;\], &quot;N&quot; : 1024, &quot;Activation&quot; : &quot;Relu&quot;, &quot;Sparse&quot; : false, &quot;pDropout&quot; : 0.5, &quot;WeightInit&quot; : { &quot;Scheme&quot; : &quot;Gaussian&quot;, &quot;Scale&quot; : 0.01 } },   
+{ &quot;Name&quot; : &quot;Output&quot;, &quot;Kind&quot; : &quot;Output&quot;, &quot;Type&quot; : &quot;FullyConnected&quot;, &quot;DataSet&quot; : &quot;output&quot;, &quot;N&quot; : &quot;auto&quot;, &quot;Activation&quot; : &quot;Sigmoid&quot;, &quot;Sparse&quot; : true , &quot;WeightInit&quot; : { &quot;Scheme&quot; : &quot;Gaussian&quot;, &quot;Scale&quot; : 0.01, &quot;Bias&quot; : -10.2 }}  
+\],  
+
+&quot;ErrorFunction&quot; : &quot;ScaledMarginalCrossEntropy&quot;  
+}
+</code></pre><p>필드를 보시면 아시겠지만 다른 여타 딥러닝 레이어 처럼</p>
+<p>input, hidden layer, output 이렇게 세가지 중요한 factor들을 가지고 있습니다.</p>
+<p>관련된 예제들도 같은 레파지토리들을 통해 확인해 볼 수 있습니다.</p>
+<p><a href="https://github.com/amznlabs/amazon-dsstne/blob/master/docs/getting_started/examples.md" title="https://github.com/amznlabs/amazon-dsstne/blob/master/docs/getting_started/examples.md" target="_blank" rel="external"><strong>amznlabs/amazon-dsstne</strong><br>_After you have followed setup we should be able to start neural network modeling using DSSTNE. As with any modeling we…_github.com</a><a href="https://github.com/amznlabs/amazon-dsstne/blob/master/docs/getting_started/examples.md" target="_blank" rel="external"></a></p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/72fcd6334a25" target="_blank" rel="external">May 12, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/14/[2016-05-14 22:16:57]why-did-you-update/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          why-did-you-update
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/12/[2016-05-12 23:15:00]Scala-native/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Scala-native</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#amazon-dsstne"><span class="nav-number">1.</span> <span class="nav-text">amazon-dsstne</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#설치해-보기"><span class="nav-number">1.1.</span> <span class="nav-text">설치해 보기</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#사용자-가이드"><span class="nav-number">1.2.</span> <span class="nav-text">사용자 가이드</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2017 keen blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+      var headerblur = document.getElementById("header-blur");
+      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

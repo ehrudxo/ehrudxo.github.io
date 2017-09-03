@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>TeachCraft | keen blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="github, github-trend, tech-trend" />
+  
+  
+  
+  
+  <meta name="description" content="TeachCraftimage from minecraft 어린이날 기념으로 포스팅하는 깃헙프로젝트입니다. 초등생들의 영원한 친구 마인크래프트를 다들 아실텐데요. 관련된 프로젝트도 깃헙에는 넘치고 넘치는데요. 오늘은 python 스크립트를 배우는 방법으로 마인크래프트를 사용하는 프로젝트를 소개해 드립니다. 2016/05/05 Editor’s choice tea">
+<meta name="keywords" content="github, github-trend, tech-trend">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TeachCraft">
+<meta property="og:url" content="http://keen.devpools.kr/2016/05/05/[2016-05-05 14:37:43]TeachCraft/index.html">
+<meta property="og:site_name" content="keen blog">
+<meta property="og:description" content="TeachCraftimage from minecraft 어린이날 기념으로 포스팅하는 깃헙프로젝트입니다. 초등생들의 영원한 친구 마인크래프트를 다들 아실텐데요. 관련된 프로젝트도 깃헙에는 넘치고 넘치는데요. 오늘은 python 스크립트를 배우는 방법으로 마인크래프트를 사용하는 프로젝트를 소개해 드립니다. 2016/05/05 Editor’s choice tea">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*TXPxFdhlQ0Gzpmna_W6XKQ.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*azkO9TWf1zYucGSAi0Kv5g.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*sW2IntLV_89qtkXzyDIc6A.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*LvLwdDB64PLVSHEqOoFkmA.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*fu_PYxeoAYBVbBtrCZpIDg.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*swDbenc4XWVHILjyAt0hnw.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*4b95oZth3F-tTC1ARvaq6Q.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*ckjzS8ljY4PBAUpNKQK4wg.png">
+<meta property="og:updated_time" content="2017-09-03T14:05:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TeachCraft">
+<meta name="twitter:description" content="TeachCraftimage from minecraft 어린이날 기념으로 포스팅하는 깃헙프로젝트입니다. 초등생들의 영원한 친구 마인크래프트를 다들 아실텐데요. 관련된 프로젝트도 깃헙에는 넘치고 넘치는데요. 오늘은 python 스크립트를 배우는 방법으로 마인크래프트를 사용하는 프로젝트를 소개해 드립니다. 2016/05/05 Editor’s choice tea">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*TXPxFdhlQ0Gzpmna_W6XKQ.png">
+  
+    <link rel="alternate" href="/atom.xml" title="keen blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/fashion.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  
+  <div class="site-header-image">
+    <img id="originBg" width="100%" alt="Hike News" src="">
+  </div>
+
+  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
+    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
+  </div>
+
+  <script>
+        var imgUrls = "images/storm.png".split(",");
+        var random = Math.floor((Math.random() * imgUrls.length ));
+        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+          document.getElementById("originBg").src=imgUrls[random];
+          document.getElementById("blurBg").src=imgUrls[random];
+        } else {
+          document.getElementById("originBg").src='/' + imgUrls[random];
+          document.getElementById("blurBg").src='/' + imgUrls[random];
+        }
+    </script>
+
+
+
+
+<header id="allheader" class="site-header" role="banner" 
+   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="keen blog" rel="home"> keen blog </a>
+            
+          </h1>
+          
+          
+            <div class="site-description">techblog</div>
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-[2016-05-05 14:37:43]TeachCraft" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      TeachCraft
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/05/05/[2016-05-05 14:37:43]TeachCraft/" class="article-date">
+	  <time datetime="2016-05-05T05:37:43.000Z" itemprop="datePublished">5월 5, 2016</time>
+	</a>
+
+       
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="TeachCraft"><a href="#TeachCraft" class="headerlink" title="TeachCraft"></a>TeachCraft</h3><p><img src="https://cdn-images-1.medium.com/max/1600/1*TXPxFdhlQ0Gzpmna_W6XKQ.png" alt="">image from minecraft</p>
+<p>어린이날 기념으로 포스팅하는 깃헙프로젝트입니다. 초등생들의 영원한 친구 마인크래프트를 다들 아실텐데요. 관련된 프로젝트도 깃헙에는 넘치고 넘치는데요. 오늘은 python 스크립트를 배우는 방법으로 마인크래프트를 사용하는 프로젝트를 소개해 드립니다.</p>
+<p>2016/05/05 Editor’s choice</p>
+<p><a href="https://github.com/teachthenet/TeachCraft-Challenges" title="https://github.com/teachthenet/TeachCraft-Challenges" target="_blank" rel="external"><strong>teachthenet/TeachCraft-Challenges</strong><br>_A series of lessons used to teach middle school and high school kids the fundamentals of programming! Using Python…_github.com</a><a href="https://github.com/teachthenet/TeachCraft-Challenges" target="_blank" rel="external"></a></p>
+<hr>
+<h4 id="설치를-해보자"><a href="#설치를-해보자" class="headerlink" title="설치를 해보자"></a>설치를 해보자</h4><p>일단 서버 사이드 마인크래프트를 설치해야 합니다. minecraft공식 사이트에 들어가면 서버를 얻을 수 있습니다.</p>
+<p><a href="http://minecraft-ko.gamepedia.com/튜토리얼/서버_설치" title="http://minecraft-ko.gamepedia.com/튜토리얼/서버_설치" target="_blank" rel="external"><strong>튜토리얼/서버 설치</strong><br>_A common problem for server administrators is the inability to connect to your own server via another machine on your…_minecraft-ko.gamepedia.com</a><a href="http://minecraft-ko.gamepedia.com/튜토리얼/서버_설치" target="_blank" rel="external"></a></p>
+<p>마인크래프트 위키에 가면 설치에 대한 튜토리얼이 있습니다.</p>
+<p>하지만! 끝까지 읽으셔야 한다는것~</p>
+<p>이것도 간단하게 해주는 프로젝트가 있습니다.(게다가 이제 server jar를 공식 사이트에서 막아 놓은거 같네요. )</p>
+<p><a href="https://github.com/teachthenet/TeachCraft-Server" title="https://github.com/teachthenet/TeachCraft-Server" target="_blank" rel="external"><strong>teachthenet/TeachCraft-Server</strong><br>_TeachCraft-Server - Run your own server for the TeachCraft-Challenges_github.com</a><a href="https://github.com/teachthenet/TeachCraft-Server" target="_blank" rel="external"></a></p>
+<p>TeachCraft용 서버 프로젝트입니다.</p>
+<p>git clone 으로 프로젝트를 받으시고</p>
+<pre><code>$git clone [https://github.com/teachthenet/TeachCraft-Server.git][anchor6]
+
+$cd TeachCreaft-Server
+
+$java -Xms3036M -Xmx3036M -jar CanaryMod-1.2.0.jar
+</code></pre><p>실행해 주시면 서버가 구동 됩니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*azkO9TWf1zYucGSAi0Kv5g.png" alt="">서버기동 두둥.</p>
+<p>이제 클라이언트를 받아야죠.</p>
+<pre><code>$git clone [https://github.com/teachthenet/TeachCraft-Challenges][anchor1]
+</code></pre><p>그리고 나서는 아래의 튜토리얼을 그대로 따르면 됩니다.</p>
+<p><a href="https://github.com/teachthenet/TeachCraft-Challenges/blob/master/setup.md" title="https://github.com/teachthenet/TeachCraft-Challenges/blob/master/setup.md" target="_blank" rel="external"><strong>teachthenet/TeachCraft-Challenges</strong><br>_TeachCraft-Challenges - Learn programming in python by giving yourself superpowers in a minecraft world!_github.com</a><a href="https://github.com/teachthenet/TeachCraft-Challenges/blob/master/setup.md" target="_blank" rel="external"></a></p>
+<p>요약하면 jar파일 클릭 -> 1.8.8 선택 ->user id 입력 -> start</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*sW2IntLV_89qtkXzyDIc6A.png" alt="">TeachCraft가 요기잉네. 더블 클리꾸~</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*LvLwdDB64PLVSHEqOoFkmA.png" alt="">자동화는 좋아요. 엔터게임~</p>
+<h4 id="실행을-해-보자"><a href="#실행을-해-보자" class="headerlink" title="실행을 해 보자"></a>실행을 해 보자</h4><p>더 높은 버전도 실행은 가능해 보입니다. 하지만 착한 저는 튜토리얼을 따라해 봅니다.(응?)</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*fu_PYxeoAYBVbBtrCZpIDg.png" alt="">우와…반가운 화면. Realm도 보이네요</p>
+<p>Muliplayer를 선택하고 127.0.0.1로 나의 Mac 서버에 접속~</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*swDbenc4XWVHILjyAt0hnw.png" alt="">밤이다. 나는 나이트 와치!</p>
+<p>밤 시간대에 접속이 되었군요. 이런. 침대를 만들고 접속을 해야 되는데,</p>
+<h4 id="게임을-하려고-들어온거는-아니잖아요"><a href="#게임을-하려고-들어온거는-아니잖아요" class="headerlink" title="게임을 하려고 들어온거는 아니잖아요"></a>게임을 하려고 들어온거는 아니잖아요</h4><p>네, 그렇습니다. 1번을 실습해 볼까요.</p>
+<p>무려, 텔레포트! 법사가 된 기분이군요</p>
+<p>일단 다행히 script.py 를 열어봅니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*4b95oZth3F-tTC1ARvaq6Q.png" alt="">우와 스크립트가 있네용</p>
+<p>스크립트를 보고 당연히 z는 높이일거라 생각을 해서 12인 값을 120으로 바꿔 보겠습니다.</p>
+<p>그리고는</p>
+<pre><code>$python script.py
+</code></pre><p>실행을 해 봅니다. 응 실시간일까? 해서 화면 전환을 해 보니</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*ckjzS8ljY4PBAUpNKQK4wg.png" alt="">다음 생은 개발자로 태어나지 말자</p>
+<p>헐 하늘에서 떨어져 죽었습니다. 바로 반영되는군요!</p>
+<p>소스는 참으로 간단하쥬?</p>
+<hr>
+<p>저는 아들이 집에서 접속할 수 있는 사설 서버를 만들 요랑으로 이 프로젝트를 받아서 보기 시작했는데 생각보다 훨씬 재밌군요. 관심있는 아버지들이 시작하기에는 좋은 핑계거리가 생겼습니다!</p>
+<p>개발을 가르친다고!</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/78169118178a" target="_blank" rel="external">May 5, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/06/[2016-05-06 08:57:32]GithubWidget/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          GithubWidget
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/04/[2016-05-04 07:09:18]json-server/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">json-server</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#TeachCraft"><span class="nav-number">1.</span> <span class="nav-text">TeachCraft</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#설치를-해보자"><span class="nav-number">1.1.</span> <span class="nav-text">설치를 해보자</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#실행을-해-보자"><span class="nav-number">1.2.</span> <span class="nav-text">실행을 해 보자</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#게임을-하려고-들어온거는-아니잖아요"><span class="nav-number">1.3.</span> <span class="nav-text">게임을 하려고 들어온거는 아니잖아요</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2017 keen blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+      var headerblur = document.getElementById("header-blur");
+      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

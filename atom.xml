@@ -375,6 +375,77 @@
   
   <entry>
     <title>챗봇 프로젝트를 진행하면서 알게 된 사실들</title>
+    <link href="http://keen.devpools.kr/2017/05/30/%5B2017-05-30%2023:19:43%5D%E1%84%8E%E1%85%A2%E1%86%BA%E1%84%87%E1%85%A9%E1%86%BA%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%92%E1%85%A2%E1%86%BC%E1%84%92%E1%85%A1%E1%84%86%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A5%20%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A6%20%E1%84%83%E1%85%AC%E1%86%AB%20%E1%84%89%E1%85%A1%E1%84%89%E1%85%B5%E1%86%AF%E1%84%83%E1%85%B3%E1%86%AF/"/>
+    <id>http://keen.devpools.kr/2017/05/30/[2017-05-30 23:19:43]챗봇 프로젝트를 진행하면서 알게 된 사실들/</id>
+    <published>2017-05-30T14:19:43.000Z</published>
+    <updated>2017-09-03T14:05:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="챗봇-프로젝트를-진행하면서-알게-된-사실들"><a href="#챗봇-프로젝트를-진행하면서-알게-된-사실들" class="headerlink" title="챗봇 프로젝트를 진행하면서 알게 된 사실들"></a>챗봇 프로젝트를 진행하면서 알게 된 사실들</h3><p><img src="https://cdn-images-1.medium.com/max/1600/0*cUkbr04Um53uekAF.jpg" alt="AI vs Human Brain"></p>
+<p>AI vs Human Brain<br>최근 급하게 프로젝트에 두달간 투입이 되면서 블로그 포스팅을 할 여유가 전혀 없었다.<br>좀 반성하는 차에 진행한 프로젝트에서 얻은 인사이트를 공유하고자 한다.</p>
+<h4 id="챗봇을-위한-디자인-원칙들이-속속-나오고-있다"><a href="#챗봇을-위한-디자인-원칙들이-속속-나오고-있다" class="headerlink" title="챗봇을 위한 디자인 원칙들이 속속 나오고 있다."></a>챗봇을 위한 디자인 원칙들이 속속 나오고 있다.</h4><p>어떤 절대적인 가이드라인은 사실 없기 때문에 마음대로 만들 수는 있고 마음대로 기획할 수는 있지만 많은 경우에 지금 활용할 수 있는 가이드라인들은 존재한다. 이른바 먼저 가본 사람들이 적어 놓은 가이드 라인들이 있다.</p>
+<p>여기 가장 유명한 두개의 가이드라인만 소개를 할까 한다.</p>
+<ol>
+<li><a href="https://medium.muz.li/the-ultimate-guide-to-chatbots-why-theyre-disrupting-ux-and-best-practices-for-building-345e2150b682" target="_blank" rel="external">궁극가이드 — 9가지 원칙이라고 국내에는 알려져 있는…</a></li>
+</ol>
+<ul>
+<li>사용자에게 거짓말하지 않는다 (봇이라고 알려라!)</li>
+<li>대화를 유도하라</li>
+<li>사용자의 감성을 고려해 디자인한다</li>
+<li>대화에 제한을 두지 않는다(지속적으로 개선하라!)</li>
+<li>경계를 만든다 (사람들이 몰입할 수 있는 경계를 쳐 주라)</li>
+<li>사람들을 실망시킬 때는 조심하라</li>
+<li>모든 인터랙션은 의미가 있다.(사용자가 이탈하는 부분을 정확히 트래킹하라)</li>
+<li>사용자를 잘 도와줘야 시스템이 도움을 받는다.</li>
+<li>사용자의 감정을 확인하고 감정을 목표점으로 한다.</li>
+</ul>
+<ol>
+<li><a href="http://refreshstudio.tistory.com/entry/%EB%B4%87-%EB%94%94%EC%9E%90%EC%9D%B8bot-design%EC%9D%98-8%EA%B0%80%EC%A7%80-%EC%9B%90%EC%B9%99" target="_blank" rel="external">디자인 8원칙</a></li>
+</ol>
+<ul>
+<li><strong>인간인 척 하지 말기</strong></li>
+<li>단순함을 극도로 유지하기</li>
+<li>채팅이라는 표현수단 이해하기</li>
+<li>최종 사용자에게 맞추기</li>
+<li>간단하게 응답하기</li>
+<li>봇으로 안될 경우를 대비할 것</li>
+<li>가능하면 구조적인 입력을 만들것</li>
+<li>모두가 같은 것을 볼 것 (응답이 제각각이지 않을 것)</li>
+</ul>
+<p>이 중에서 가장 첫번째 원칙인 인간인척 하지 않는 것. 즉 사용자에게 사람인척 하지 않는 것이 중요한데 사람은 챗봇이라고 생각할 때와 사람이라고 생각할 때에 다르게 행동(입력)하고 기대하는 바도 매우 다르기 때문이다. 그래서 사람이 아닌 챗봇이라 버튼을 활용한다던지 다른 인터페이스에 대한 디자인을 하는 것은 무척이나 중요하다.</p>
+<h4 id="인공지능에-대한-이해-보다-중요한-게-있다"><a href="#인공지능에-대한-이해-보다-중요한-게-있다" class="headerlink" title="인공지능에 대한 이해 보다 중요한 게 있다."></a>인공지능에 대한 이해 보다 중요한 게 있다.</h4><p><img src="https://cdn-images-1.medium.com/max/1600/0*rYIrAKa51Aw1PBte.jpg" alt="사람"></p>
+<p>사람<br>디자인 원칙에서 보았듯이 가장 중요한 원칙은 사람에 대한 이해다.<br>사용자가 어떻게 챗봇을 활용할 지를 이해하지 못하면 서비스가 제대로 쓸모 없는 서비스를 하게 마련이다. 그런 의미에서 아직은 인공지능과 사람의 인터페이스는 투박하다.<br>사용자가 어떻게 챗봇을 쓸 것인지를 정의하려면 내가 하려는 서비스가 어떤 것인지를 명확하게 정의해야 하고 어떤 기능을 대체를 하려는지를 기획자 혹은 개발자 스스로가 알고 있어야 한다.</p>
+<h4 id="챗봇에-대한-기대는-굉장히-천차-만별이다"><a href="#챗봇에-대한-기대는-굉장히-천차-만별이다" class="headerlink" title="챗봇에 대한 기대는 굉장히 천차 만별이다."></a>챗봇에 대한 기대는 굉장히 천차 만별이다.</h4><p>사용자들과 인터뷰를 하다보면 정작 사용할 사용자들은 챗봇에게 큰 기대를 하지 않는다. 마치 우리가 시리와 빅스비에게 심드렁한 것 처럼. 하지만 기획단계에서의 기획자와 발안자들은 굉장히 많은 기대를 가지고 프로젝트에 접근한다.</p>
+<p><strong>심지어 챗봇을 위한 디자인 원칙들을 읽어 보지도 않고 말이다.</strong> 챗봇들이 무엇인가 세상을 바꿀 것 처럼 굉장히 멋진 장표들과 아키텍처들을 보고 있지만 정작 이것이 어떤 문제를 해결할 지 알고 있는 사람은 없다.</p>
+<p>개발을 진행하면서 이 프로젝트들이 꽤나 많은 분야의 인력에 대한 감축을 전제로 하고 그런 미래가 바로 닥쳐 있다는 사실을 부정할 수는 없지만 굉장한 청사진 또한 동의할 수 없다. 그래서 현실적이지 않은 요구사항들을 사용자 인터뷰와 가이드라인을 기준으로 다 잘라내고 있지만 의사 결정자들 마저도 굉장한 기대감을 가지고 있다는 사실은 어떻게 보면 슬픈 일이다.</p>
+<p>하지만 심지어 페이스북과 같이 작업을 했던 항공 티케팅 분야의 챗봇 담당자는 이렇게 이야기 한다<br>“아무도 챗봇으로 티켓을 사려고 하지는 않아요.”</p>
+<h4 id="개발의-대부분은-인공지능과-관련이-없다"><a href="#개발의-대부분은-인공지능과-관련이-없다" class="headerlink" title="개발의 대부분은 인공지능과 관련이 없다."></a>개발의 대부분은 인공지능과 관련이 없다.</h4><p>우리는 구글이 아니다. 이걸 인정하면 마음은 굉장히 편해지지만 대부분의 어른들(?)은 그걸 인정하기가 아들 딸 성적표보다 어려운 모양이다. 하지만 우리에게도 희망은 있다. 챗봇의 아키텍처에서 인공지능이 차지하는 부분은 우리가 기대하는 부분보다 굉장히 작다. 오히려 룰을 어떻게 만들고 어떻게 처리할 것인가 하는 부분이 훨씬 중요한 문제로 다가오게 된다.</p>
+<h4 id="개발자는-그래서-또-너무나-중요하다"><a href="#개발자는-그래서-또-너무나-중요하다" class="headerlink" title="개발자는 그래서 또 너무나 중요하다."></a>개발자는 그래서 또 너무나 중요하다.</h4><p>위의 주제의 연속이다. 챗봇의 대부분은 소프트웨어 엔지니어의 영역이다. 그래서 챗봇 엔진을 잘 만들기 위해서는 좋은 엔지니어와 좋은 아키텍트가 당연히 필요하다. 물론 NLU라던지 딥러닝을 잘 하면 할 수록 더욱 좋다. 하지만 좋은 개발만큼 중요한 부분은 없다.</p>
+<p>좋은 개발자는 여러가지 복잡하게 얽혀있는 챗봇의 어려움들을 풀어줄 시작과 마지막이다. 점점 인공지능의 세상이 오면 올 수록 사용자의 입장에서 이해하는 개발자가 더 중요해 질 것이다.</p>
+<h4 id="우리는-기존의-레거시를-대체해야-한다"><a href="#우리는-기존의-레거시를-대체해야-한다" class="headerlink" title="우리는 기존의 레거시를 대체해야 한다."></a>우리는 기존의 레거시를 대체해야 한다.</h4><p><img src="https://cdn-images-1.medium.com/max/1600/0*5vgnyq-ln8SBEbYO.jpg" alt="이렇게 죽어있는 레거시는 곤란하다"></p>
+<p>이렇게 죽어있는 레거시는 곤란하다</p>
+<p>상담이라던지, 견적이라던지 모든 챗봇이 풀고자 하는 문제들은 기존의 시스템이 자리잡고 있다. 그럼 이 레거시들을 어떻게 유기적으로 풀고 어떻게 서비스를 대체할 수 있을까? 마이크로 서비스 아키텍처는 그 중의 좋은 대답이 될 수 있다. 하지만 이것은 만병통치약은 아니다. 가장 중요한 것은 기존 레거시 함수를 묶어주는 표준을 만들어 주는 것이고 그 레거시를 어떻게 접근할지에 대한 해답은 챗봇이 가지고 있어야 한다.</p>
+<p>그렇다면 사용자의 자연어와 레거시간의 연계는 어떻게 이루어 질 것인가. 여기에는 기존에 없던 인공지능 분야의 기술이 필요하다.</p>
+<h4 id="과소-평가해서도-곤란하다"><a href="#과소-평가해서도-곤란하다" class="headerlink" title="과소 평가해서도 곤란하다."></a>과소 평가해서도 곤란하다.</h4><p><img src="https://cdn-images-1.medium.com/max/1600/0*EHAkE0QhpD2tOPTZ.jpg" alt="stay tuned"></p>
+<p>stay tuned<br>이 쪽은 지속적으로 계속 발전할 것이다. 그렇다는 것은 지금 발을 들이기에 무척이나 좋은 시기라는 것이다.<br>아무래도 발전에 대한 틀은 대부분이 갖춰지는 것 같다.<br>누군가가 기가막힌 사용자 인터페이스를 제시할 것이고 그 때 쯤이면 아직까지는 기대할 것 없는 챗봇 분야의 인공지능도 수준이 많이 올라갈 것이다.<br>언제나 관심을 기울이고 있어야 한다는 이야기다.</p>
+<hr>
+<p><em>Originally published at </em><a href="http://devpools.kr/2017/05/30/%ec%b1%97%eb%b4%87-%ed%94%84%eb%a1%9c%ec%a0%9d%ed%8a%b8%eb%a5%bc-%ec%a7%84%ed%96%89%ed%95%98%eb%a9%b4%ec%84%9c-%ec%95%8c%ea%b2%8c-%eb%90%9c-%ec%82%ac%ec%8b%a4%eb%93%a4/" target="_blank" rel="external"><em>개발바보들</em></a><em>.</em></p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/179d67a9e2af" target="_blank" rel="external">May 30, 2017</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;챗봇-프로젝트를-진행하면서-알게-된-사실들&quot;&gt;&lt;a href=&quot;#챗봇-프로젝트를-진행하면서-알게-된-사실들&quot; class=&quot;headerlink&quot; title=&quot;챗봇 프로젝트를 진행하면서 알게 된 사실들&quot;&gt;&lt;/a&gt;챗봇 프로젝트를 진행하면서 알게
+    
+    </summary>
+    
+    
+      <category term="github, github-trend, tech-trend" scheme="http://keen.devpools.kr/tags/github-github-trend-tech-trend/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>챗봇 프로젝트를 진행하면서 알게 된 사실들</title>
     <link href="http://keen.devpools.kr/2017/05/30/20170530/"/>
     <id>http://keen.devpools.kr/2017/05/30/20170530/</id>
     <published>2017-05-30T07:04:04.000Z</published>
@@ -459,6 +530,246 @@
   </entry>
   
   <entry>
+    <title>패턴인식 개요</title>
+    <link href="http://keen.devpools.kr/2017/03/18/%5B2017-03-18%2014:56:34%5D%E1%84%91%E1%85%A2%E1%84%90%E1%85%A5%E1%86%AB%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%89%E1%85%B5%E1%86%A8%20%E1%84%80%E1%85%A2%E1%84%8B%E1%85%AD/"/>
+    <id>http://keen.devpools.kr/2017/03/18/[2017-03-18 14:56:34]패턴인식 개요/</id>
+    <published>2017-03-18T05:56:34.000Z</published>
+    <updated>2017-09-03T14:05:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="패턴인식-개요"><a href="#패턴인식-개요" class="headerlink" title="패턴인식 개요"></a>패턴인식 개요</h3><h3 id="패턴-인식"><a href="#패턴-인식" class="headerlink" title="패턴 인식"></a>패턴 인식</h3><p>주어진 데이터의 집합에 대해 입력값을 바탕으로 하는 Classification. MNIST 처럼 이미지에서 숫자를 도출하는 것도 좋은 예</p>
+<ul>
+<li>구조적 방법 : 1은 하나의 직선에 가깝고 8은 원 두개.</li>
+<li>템플릿 매칭 : 패턴의 원형을 저장해 두고 데이타간의 거리를 계산</li>
+<li>기계학습</li>
+</ul>
+<h4 id="패턴-인식과-관련된-개념"><a href="#패턴-인식과-관련된-개념" class="headerlink" title="패턴 인식과 관련된 개념"></a>패턴 인식과 관련된 개념</h4><h4 id="1-분류와-군집화"><a href="#1-분류와-군집화" class="headerlink" title="1. 분류와 군집화"></a>1. 분류와 군집화</h4><p><strong>분류( Classification ) : MNIST로 숫자를 맞추는 형태</strong></p>
+<ul>
+<li>베이지안 분류기, K 근접 이웃, 다층 퍼셉트(MLP), 서포트 벡터 머신</li>
+<li>지도학습</li>
+</ul>
+<p><strong>군집화( Clustering ) : 특성 고객층을 하나의 기준으로 분류하기 보다는 여러가지 기준이지만 뭉뚱그리는 것</strong></p>
+<ul>
+<li>K 편균 클러스터링, 계층적 군집화, 자기조직화 특징맵(SOM)</li>
+<li>비지도 학습</li>
+</ul>
+<h4 id="2-데이터와-데이터-분포"><a href="#2-데이터와-데이터-분포" class="headerlink" title="2. 데이터와 데이터 분포"></a>2. 데이터와 데이터 분포</h4><blockquote>
+<p>여러가지 데이터들은 결국 컴퓨터에서 다루어질 수 있게 수치로 표현 되어야 한다. 이 숫자들을 1차원으로 나열하면 벡터, 차원이 높아지면 행렬이 되는데 이런 모임을 Tensorflow에서는 tensor 라고 지칭하고 딥러닝의 과정이 이 tensor가 움직이면서 나타나서 Tensorflow 를 이루게 된다.</p>
+</blockquote>
+<ul>
+<li>표본집합 추출</li>
+<li>특징추출</li>
+<li>분류와 결정경계</li>
+</ul>
+<h4 id="분류율과-오차"><a href="#분류율과-오차" class="headerlink" title="분류율과 오차"></a>분류율과 오차</h4><p>학습 오차 : 학습데이타에 대하여 분류 오차를 계산한 것</p>
+<p>테스트 오차 : 실제 데이타의 오차</p>
+<p>일반화 오차 : 확률분포함수를 이용한 분포에 따른 평균 오차값. 테스트 오차가 절대값 수치 미적용에 따른 왜곡을 가질 수 있으므로 사용한다</p>
+<p>교차검증법을 통해 오차값을 얻어내기도 한다</p>
+<h4 id="3-과다-적합-overfitting"><a href="#3-과다-적합-overfitting" class="headerlink" title="3. 과다 적합(overfitting)"></a>3. 과다 적합(overfitting)</h4><ul>
+<li>Classifier가 학습데이타에 대해서만 지나치게 적합한 형태로 결정경계를 형성하는 경우. train데이타의 범주를 벗어나는 경우는 제대로 분류하지 못하는 경우.</li>
+<li><a href="http://sanghyukchun.github.io/59/" target="_blank" rel="external">Machine Learning 스터디 (3) Overfitting</a></li>
+</ul>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*G9gNynok0IWGFWsX." alt=""></p>
+<h4 id="4-활용분야"><a href="#4-활용분야" class="headerlink" title="4. 활용분야"></a>4. 활용분야</h4><ul>
+<li>문자 인식</li>
+<li>생체인식</li>
+<li>금융데이터</li>
+<li>생물정보</li>
+<li>뇌 신호 처리</li>
+<li>영상처리</li>
+<li>뇌 신호 처리</li>
+</ul>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/81a1fd6ca86a" target="_blank" rel="external">March 18, 2017</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;패턴인식-개요&quot;&gt;&lt;a href=&quot;#패턴인식-개요&quot; class=&quot;headerlink&quot; title=&quot;패턴인식 개요&quot;&gt;&lt;/a&gt;패턴인식 개요&lt;/h3&gt;&lt;h3 id=&quot;패턴-인식&quot;&gt;&lt;a href=&quot;#패턴-인식&quot; class=&quot;headerlink&quot; ti
+    
+    </summary>
+    
+    
+      <category term="github, github-trend, tech-trend" scheme="http://keen.devpools.kr/tags/github-github-trend-tech-trend/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>딥러닝을 위한 수학 1</title>
+    <link href="http://keen.devpools.kr/2017/03/13/%5B2017-03-13%2018:26:57%5D%E1%84%83%E1%85%B5%E1%86%B8%E1%84%85%E1%85%A5%E1%84%82%E1%85%B5%E1%86%BC%E1%84%8B%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%AE%E1%84%92%E1%85%A1%E1%86%A8%201/"/>
+    <id>http://keen.devpools.kr/2017/03/13/[2017-03-13 18:26:57]딥러닝을 위한 수학 1/</id>
+    <published>2017-03-13T09:26:57.000Z</published>
+    <updated>2017-09-03T14:05:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="딥러닝을-위한-수학-1"><a href="#딥러닝을-위한-수학-1" class="headerlink" title="딥러닝을 위한 수학 1"></a>딥러닝을 위한 수학 1</h3><p>원문은 아래에 지속적으로 업데이트</p>
+<p><a href="https://github.com/ehrudxo/til" title="https://github.com/ehrudxo/til" target="_blank" rel="external"><strong>ehrudxo/til</strong><br>_til - today I learned. 오늘 공부한것을 위키 형식으로 적기시작 해봄._github.com</a><a href="https://github.com/ehrudxo/til" target="_blank" rel="external"></a></p>
+<p>수학은 워낙 넓으니까 선형대수를 다 다시 공부할 수도 없고… 주로 나오는 것만 위주로 나열하기로 함.</p>
+<p>딥러닝에 왜 이런 여러가지가 나오는지를 먼저 이해하는 것이 중요함. 다른 대부분의 강의나 튜토리얼은 그런 설명없이 바로 수식을 전개함. 너무 간단해서 언급을 안하는 거 같은데, 나 같은 더미를 위해서 이야기 하면 딥러닝을 통해 머신이 내리는 결정은 대부분이 통계와 수학식을 통해 전개됨.</p>
+<p>통계를 위해서는 확률을 알아야 하고 이 결정을 위한 확률의 기본이 베이즈 이론이라고 보면 됨. 이후 여러가지 알고리즘과 방법들이 나오는 것도 결국 이 확률이론이 토대가 된다.</p>
+<p>뉴럴 네트워크가 들어가는 경우는 부분에 쓰이는 수학은 변수와 모델의 통제라는 측면에서 미분 그 중에서도 편미분이 중요하고 레이어의 계산이 한꺼번에 이루어지는 관점에서는 행렬식이 너무나 중요하다. 정도로만 개념을 잡고 (일단은) 넘어가면 된다.</p>
+<p>결국은 문제를 어떻게 정의하는가가 핵심이고 그 문제를 푸는 방법으로써의 딥러닝이 각광을 받고 있다고 보면 내가 가지고 있는 해결해야 하는 문제들을 수학적으로 어떻게 정의하는지를 알아야 하는 것이 첫번째, 그리고 그것을 해결하는 다양한 방법들을 배우는 것을 두번째라고 생각하면 된다.</p>
+<p>일단 확률에 대해서 알아보자.</p>
+<h3 id="조건부-확률"><a href="#조건부-확률" class="headerlink" title="조건부 확률"></a>조건부 확률</h3><ul>
+<li>P(Y=y|X=x) : 구름(X)이 꼈을때(true) 비(Y)가 올 확률을 의미함. — 출처 <a href="https://ko.wikipedia.org/wiki/%EC%A1%B0%EA%B1%B4%EB%B6%80_%ED%99%95%EB%A5%A0" target="_blank" rel="external">위키피디아 : 조건부 확률</a></li>
+<li>P(E|F) = P(E and F)/P(F)</li>
+<li>곱셈 정리 : P(E and F) = P(E|F) * P(F)</li>
+<li>치환 정리 : P(E|F) * P(F) = P(F|E) * P(E)</li>
+</ul>
+<h4 id="한-개의-주사위를-두-번-던질-때-합이-3이-나올-확률-vs-두-개의-주사위를-던져서-합이-3이-나올-확률"><a href="#한-개의-주사위를-두-번-던질-때-합이-3이-나올-확률-vs-두-개의-주사위를-던져서-합이-3이-나올-확률" class="headerlink" title="한 개의 주사위를 두 번 던질 때 합이 3이 나올 확률 vs 두 개의 주사위를 던져서 합이 3이 나올 확률 :"></a>한 개의 주사위를 두 번 던질 때 합이 3이 나올 확률 vs 두 개의 주사위를 던져서 합이 3이 나올 확률 :</h4><ul>
+<li>(1/6*1/6)/1/6 = 1/6 vs 2/36 = 1/18</li>
+<li>표본 공간이 바뀌었다(축소 표본 공간)</li>
+</ul>
+<h4 id="1개의-주사위를-네번-굴려서-6이-한번-나오는-경우-vs-2개의-주사위를-24번-굴려서-동시에-6이-한번-나오는-경우-드-메레-문제"><a href="#1개의-주사위를-네번-굴려서-6이-한번-나오는-경우-vs-2개의-주사위를-24번-굴려서-동시에-6이-한번-나오는-경우-드-메레-문제" class="headerlink" title="1개의 주사위를 네번 굴려서 6이 한번 나오는 경우 vs 2개의 주사위를 24번 굴려서 동시에 6이 한번 나오는 경우 ( 드 메레 문제 )"></a>1개의 주사위를 네번 굴려서 6이 한번 나오는 경우 vs 2개의 주사위를 24번 굴려서 동시에 6이 한번 나오는 경우 ( 드 메레 문제 )</h4><ul>
+<li>여사건 정의(1-P(E))를 통해서 풀어야 하는데 그 이유는 처음에 6이 나오면 표본공간 자체가 필요없어지기 때문에 절대 안나오는 확률을 기준으로 계산을 한 다음에 여사건 정의로 푼다 1-(5/6)⁴ = 0.518 : 같은 방법.</li>
+<li>표본공간을 확보하는 것이 관건</li>
+<li>2개의 주사위를 굴려서 동시에 안 나오는 경우는 1 -(35/36)²⁴ = 0.491 — “세상에서 가장 재미있는 통계학”</li>
+</ul>
+<h3 id="베이즈-정리"><a href="#베이즈-정리" class="headerlink" title="베이즈 정리"></a>베이즈 정리</h3><ul>
+<li>개요 : 베이즈 정리는 1740년대의 영국의 목사인 토머스 베이즈(Thomas Bayes)가 정립한, 조건부 확률에 대한 수학적 정리이다. 사건 A가 있고 사건 B가 있을 때 사건 B가 일어난 것을 전제로 한 사건 A의 조건부 확률을 구하고 싶다. 그런데 지금 알고 있는 것은 사건 A가 일어난 것을 전제로 한 사건 B의 조건부 확률, A의 확률, B의 확률뿐이다. 그럴 때 다음과 같이 구할 수가 있다. 출처 : <a href="https://namu.wiki/w/%EB%B2%A0%EC%9D%B4%EC%A6%88%20%EC%A0%95%EB%A6%AC" target="_blank" rel="external">나무위키</a> .</li>
+<li>조금 더 수식으로 풀어 쓰면</li>
+</ul>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*s9FyujgqEUU8HAKf.jpg" alt="">출처 <a href="https://namu.wiki/w/%EB%B2%A0%EC%9D%B4%EC%A6%88%20%EC%A0%95%EB%A6%AC" target="_blank" rel="external">나무 위키 베이즈 정리</a></p>
+<ul>
+<li>인구 1000명당 한 명꼴로 걸리는 희귀병. 병에 걸린 사람의 경우는 90% 양성, 건강한 사람의 2% 가 양성 -> 양성반응을 보인 사람의 병에 걸릴 확률은?</li>
+<li>즉, 인간의 사고는 처음에는 아무 정보가 없던 상태에서 <strong>새로운 정보를 받아들이고, 이를 통해 자신이 가지고 있던 일종의 사전 확률 체계를 업데이트시켜 세상을 해석하거나 판단을 내리고 의사결정을 하는 방향으로 발전되어 왔다는 것이다</strong>. 그리고 이렇게 발전된 사후 확률 체계는 새로운 사전 확률이 되어, 새로운 정보가 유입될 때마다 업데이트를 반복해간다. — 나무위키 인지과학 및 인공지능에서의 베이즈 정리</li>
+</ul>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/c5e1cb31a7ca" target="_blank" rel="external">March 13, 2017</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;딥러닝을-위한-수학-1&quot;&gt;&lt;a href=&quot;#딥러닝을-위한-수학-1&quot; class=&quot;headerlink&quot; title=&quot;딥러닝을 위한 수학 1&quot;&gt;&lt;/a&gt;딥러닝을 위한 수학 1&lt;/h3&gt;&lt;p&gt;원문은 아래에 지속적으로 업데이트&lt;/p&gt;
+&lt;p&gt;&lt;a h
+    
+    </summary>
+    
+    
+      <category term="github, github-trend, tech-trend" scheme="http://keen.devpools.kr/tags/github-github-trend-tech-trend/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>딥러닝 생초짜를 위한 로드맵을 짜주마</title>
+    <link href="http://keen.devpools.kr/2017/03/11/%5B2017-03-11%2018:22:15%5D%E1%84%83%E1%85%B5%E1%86%B8%E1%84%85%E1%85%A5%E1%84%82%E1%85%B5%E1%86%BC%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8E%E1%85%A9%E1%84%8D%E1%85%A1%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%E1%84%86%E1%85%A2%E1%86%B8%E1%84%8B%E1%85%B3%E1%86%AF%20%E1%84%8D%E1%85%A1%E1%84%8C%E1%85%AE%E1%84%86%E1%85%A1/"/>
+    <id>http://keen.devpools.kr/2017/03/11/[2017-03-11 18:22:15]딥러닝 생초짜를 위한 로드맵을 짜주마/</id>
+    <published>2017-03-11T09:22:15.000Z</published>
+    <updated>2017-09-03T14:05:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="딥러닝-생초짜를-위한-로드맵을-짜주마"><a href="#딥러닝-생초짜를-위한-로드맵을-짜주마" class="headerlink" title="딥러닝 생초짜를 위한 로드맵을 짜주마"></a>딥러닝 생초짜를 위한 로드맵을 짜주마</h3><p>Today I Summarized라는 프로젝트를 깃헙에 만들었다.</p>
+<p><a href="https://github.com/ehrudxo/tis" title="https://github.com/ehrudxo/tis" target="_blank" rel="external"><strong>ehrudxo/tis</strong><br>_tis - Today I Summarized. 오늘 요약한 것을 위키 형식으로 적기. 시작 해봄._github.com</a><a href="https://github.com/ehrudxo/tis" target="_blank" rel="external"></a></p>
+<p>매일 발표나 스터디 요약을 위해 정리하는 자리인데 아무래도 나야말로 딥러닝 생초짜이기 때문에 꼭 정확한 방법이라고 할 수는 없지만 이 프로젝트에는 지속적으로 전체 큰그림을 구조화 하고 상세화 해서 누구나 읽을 수 있도록 업로드 하도록 하겠다. 그러면서 매일 매일의 내용은 같이 스터디 하는 팀에 공유 하도록 하겠다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/c295bf9e565c" target="_blank" rel="external">March 11, 2017</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;딥러닝-생초짜를-위한-로드맵을-짜주마&quot;&gt;&lt;a href=&quot;#딥러닝-생초짜를-위한-로드맵을-짜주마&quot; class=&quot;headerlink&quot; title=&quot;딥러닝 생초짜를 위한 로드맵을 짜주마&quot;&gt;&lt;/a&gt;딥러닝 생초짜를 위한 로드맵을 짜주마&lt;/h3&gt;&lt;
+    
+    </summary>
+    
+    
+      <category term="github, github-trend, tech-trend" scheme="http://keen.devpools.kr/tags/github-github-trend-tech-trend/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>안옥윤에게서 오이디푸스를 찾다</title>
+    <link href="http://keen.devpools.kr/2017/03/07/%5B2017-03-07%2009:57:53%5D%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%8B%E1%85%A9%E1%86%A8%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%8B%E1%85%A6%E1%84%80%E1%85%A6%E1%84%89%E1%85%A5%20%E1%84%8B%E1%85%A9%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B5%E1%84%91%E1%85%AE%E1%84%89%E1%85%B3%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8E%E1%85%A1%E1%86%BD%E1%84%83%E1%85%A1/"/>
+    <id>http://keen.devpools.kr/2017/03/07/[2017-03-07 09:57:53]안옥윤에게서 오이디푸스를 찾다/</id>
+    <published>2017-03-07T00:57:53.000Z</published>
+    <updated>2017-09-03T14:05:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="안옥윤에게서-오이디푸스를-찾다"><a href="#안옥윤에게서-오이디푸스를-찾다" class="headerlink" title="안옥윤에게서 오이디푸스를 찾다"></a>안옥윤에게서 오이디푸스를 찾다</h3><p><a href="https://namu.wiki/w/%EC%95%94%EC%82%B4%282015%29" title="https://namu.wiki/w/%EC%95%94%EC%82%B4(2015)" target="_blank" rel="external"><strong>암살(2015) - 나무위키</strong><br>_안옥윤, 속사포, 그리고 황덕삼은 상하이 임시정부 사무실에서 김원봉이 제안하고 상하이 대한민국 임시정부 경무국 대장인 염석진의 주도로 나라를 팔아먹은 매국노 강인국과 조선 주둔군 사령관인 일본 육군소장 카와구치 …_namu.wiki</a><a href="https://namu.wiki/w/%EC%95%94%EC%82%B4%282015%29" target="_blank" rel="external"></a></p>
+<h4 id="이것은-지나친-망상일까"><a href="#이것은-지나친-망상일까" class="headerlink" title="이것은 지나친 망상일까."></a>이것은 지나친 망상일까.</h4><p>미치코와 안옥윤이 마주치는 순간 오이디푸스 컴플렉스의 변주를 생각한 것은. 그래 인정하자. 너무 나갔다. 아버지를 죽이는 동기도 그렇고 오이디푸스는 예언을 이루게 하지 않기 위하여 돌아 돌았지만 예언에 따라 움직인 것이라고 생각을 하면 이것은 너무나도 의지에 대한 이야기니까.</p>
+<p>하지만 내내 이 작품에서 운명론적인 장치가 들어 있었다면 더욱 마음 졸이며 봤을까. 안옥윤이 고민하는 모습이 있었다면 더 안타까웠을까.</p>
+<p>영화 전반부 안옥윤의 생모가 강인국에게 “딸에게 죽을 것” 이라는 저주를 퍼붓고 도망치다 죽었다면, 미치꼬 마저도 다른 집에 입양되었다가 강인국을 죽이고 난 뒤에 생부라는 것을 알았다면</p>
+<p>……</p>
+<p>여성이 더 강인하게 부각되는 현대사회에 오이디푸스의 이야기를 변주했어도 좋았을 거 같다.</p>
+<p><a href="https://namu.wiki/w/%EC%98%A4%EC%9D%B4%EB%94%94%ED%91%B8%EC%8A%A4" title="https://namu.wiki/w/%EC%98%A4%EC%9D%B4%EB%94%94%ED%91%B8%EC%8A%A4" target="_blank" rel="external"><strong>오이디푸스 - 나무위키</strong><br>_오이디푸스는 테바이의 라이오스 왕과 이오카스테 왕비 사이에서 아들로 태어났다. 그러나 델포이의 신전에서 오이디푸스에 대하여 ‘아버지를 죽이고 어머니와 동침할 것이다’라는 신탁을 내놓자 이에 기겁한 라이오스 왕은 …_namu.wiki</a><a href="https://namu.wiki/w/%EC%98%A4%EC%9D%B4%EB%94%94%ED%91%B8%EC%8A%A4" target="_blank" rel="external"></a></p>
+<h4 id="하지만-재미없었겠지-ㅎㅎ"><a href="#하지만-재미없었겠지-ㅎㅎ" class="headerlink" title="하지만 재미없었겠지..ㅎㅎ"></a>하지만 재미없었겠지..ㅎㅎ</h4><p><img src="https://cdn-images-1.medium.com/max/1600/1*OtVM62TH8z6RGOnpUIAovA.png" alt="">막짤은 프로이트.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/d18a1c8584df" target="_blank" rel="external">March 7, 2017</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;안옥윤에게서-오이디푸스를-찾다&quot;&gt;&lt;a href=&quot;#안옥윤에게서-오이디푸스를-찾다&quot; class=&quot;headerlink&quot; title=&quot;안옥윤에게서 오이디푸스를 찾다&quot;&gt;&lt;/a&gt;안옥윤에게서 오이디푸스를 찾다&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https
+    
+    </summary>
+    
+    
+      <category term="github, github-trend, tech-trend" scheme="http://keen.devpools.kr/tags/github-github-trend-tech-trend/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES2015 리팩토링 — 1. 몸풀기</title>
+    <link href="http://keen.devpools.kr/2017/03/06/%5B2017-03-06%2017:19:24%5DES2015%20%E1%84%85%E1%85%B5%E1%84%91%E1%85%A2%E1%86%A8%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%86%BC%20%E2%80%94%201.%20%E1%84%86%E1%85%A9%E1%86%B7%E1%84%91%E1%85%AE%E1%86%AF%E1%84%80%E1%85%B5/"/>
+    <id>http://keen.devpools.kr/2017/03/06/[2017-03-06 17:19:24]ES2015 리팩토링 — 1. 몸풀기/</id>
+    <published>2017-03-06T08:19:24.000Z</published>
+    <updated>2017-09-03T14:05:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="ES2015-리팩토링-—-1-몸풀기"><a href="#ES2015-리팩토링-—-1-몸풀기" class="headerlink" title="ES2015 리팩토링 — 1. 몸풀기"></a>ES2015 리팩토링 — 1. 몸풀기</h3><p>ES2015는 프론트엔드 개발자들에게 많은 화두를 던졌고 아주 진지하게 자바스크립트(JavaScript)가 세상을 집어삼킬 거라는 포부를 던지고 있다. 가지고 있던 언어적인 난해함을 벗어던지고 더 많은 개발자들이 좀 더 손쉽게 Java와 C 처럼 개발할 수 있도록 많은 개념들을 제시했다. 여타 다른 객체언어처럼 클래스(class)를 도입하고 화살(arrow)함수를 도입한게 그 좋은 예라고 볼 수 있을 것이다.</p>
+<p>지금부터 시작하는 시리즈는 ES2015가 가고자 하는 방향에 맞춰 예전에 만들었던 많은 프로젝트들을 리팩토링 해 볼 것이다. 순서는 아마도 다음과 같이 진행이 될 것이다. (중간에 순서와 목차는 바뀔 수 있다)</p>
+<ol>
+<li>몸풀기</li>
+<li>빠레꽁(var let const)</li>
+<li>함수와 모듈화가 JavaScript에 당췌 왜 필요할까</li>
+<li>Promise 혹은 Async. 그래도 콜백지옥은 피할 수 없어</li>
+<li>JavaScript로 바라보는 함수형 프로그래밍의 미래</li>
+<li>이터레이터를 어떻게 쓸까</li>
+<li>타입스크립트 도입은 바람직할까</li>
+</ol>
+<h3 id="몸풀기"><a href="#몸풀기" class="headerlink" title="몸풀기"></a>몸풀기</h3><p>시작하기 전에ES2015를 지금 당장 시작할 수 있을까 하는 생각을 하고 있는 사람이 있을텐데 지금은 어느덧 2017년. 이미 스펙은 오래전부터 안정화 되어 있다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*dAMrpjCihyvWaPHG.jpg" alt=""></p>
+<p>링크 : <a href="https://kangax.github.io/compat-table/es6/" target="_blank" rel="external">https://kangax.github.io/compat-table/es6/</a></p>
+<h4 id="트랜스파일러를-선택하자-꼬오오오오옥이요"><a href="#트랜스파일러를-선택하자-꼬오오오오옥이요" class="headerlink" title="트랜스파일러를 선택하자. 꼬오오오오옥이요."></a>트랜스파일러를 선택하자. 꼬오오오오옥이요.</h4><p>위의 사이트 통계에 따르면 사파리는 100%, Edge14는 93%, chrome은 97%, FireFox는 94% 정도의 compatibility를 보장하고 있으니 최신 브라우저를 사용한다고 하면 대부분은 그냥 쓸 수 있다고 보면 될 것으로 보인다. 그럼에도 불구하고 ES2015를 쓰려고 하면 필자가 세가지 정도 이유에서 아직은 babel 같은 transpiler를 써야하는데 첫번째는 가장 중요한 것으로 보이는 모듈화에 대한 스펙이 ES2015에는 올라왔지만 번들링이슈를 포함한 개발환경과 브라우저에 동작하는 것이 다른 부분에 대한 어려움 때문이고 두번째는 아직 Internet Explorer를 많이 쓰고 있는 한국 환경이 걸림돌이고 마지막으로는 성능이슈이다.</p>
+<p>첫번째 이야기 모듈에 대한 이야기는 좀 복잡한데 간단하게 설명하자면 ES2015 개발 환경이라면 아래 처럼 코드는 사용될 것이다</p>
+<p>import somemodule from ‘ModuleFile’</p>
+<p>이런 식이라면 아래 그림처럼 상대 경로를 통해 해당 함수에 대한 로딩이 이루어져하는데 현재 번들링하는 관점에서는 비효율적으로 동작할 것이다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*Vkmolk-_a4uhpikC.png" alt=""></p>
+<p>Button 액션을 담당하는 파일을 로딩해서 그 함수를 사용하게 되는 것이지만 일반적으로 작성하는 HTML을 생각해 보면 보통 JavaScript를 저렇게 로딩하고 있지 않고 아래처럼 script 태그를 이용해서 로딩을 시도하게 된다.</p>
+<script src="someScript.js" \="">
+
+<p>이렇게 소스코드를 만들 때에는 보통 번들링이라는 형태로 여러파일들을 하나로 묶거나 (unify) 줄이는 ( uglify)를 하게 되는데 이런 과정을 거치는 이유는 js 파일을 다운로드 받는 속도의 문제와 보안문제 때문이다.</p>
+<p>또 한꺼번에 js 파일들을 모두 로딩하는 것이 비효율적이라는 생각을 가지고 AMD 스펙같은데에서는 다이나믹 로딩을 사용하고 있다. 마침 dynamic import 에 대한 spec 또한 tc39의 3단계까지 올라가 있다</p>
+<p><a href="https://github.com/tc39/proposal-dynamic-import" title="https://github.com/tc39/proposal-dynamic-import"><strong>tc39/proposal-dynamic-import</strong><br>_proposal-dynamic-import - import() proposal for JavaScript_github.com</a><a href="https://github.com/tc39/proposal-dynamic-import"></a></p>
+<p>아무래도 이게 정해지고 나면 import 에 대한 브라우저들의 지원이 확실해 질 듯하고 아마 모듈 로딩에 대해서도 코드 표준들이 바뀔 수 있을 것으로 보인다.</p>
+<p>두번째 이유는 더이상 자세한 설명은 생략한다</p>
+<p>세번째는 ES2015의 Iterator라던지 변수 scope등은 이전까지 JavaScript에 대해 잘 알지 못하던 사람들이 실수하던 코드를 다른 언어처럼 짤 수 있게 한 부분이 많아서 왠만한 개발자들이 짜던 것보다 코드 품질이 좋게 변환을 해 준다.</p>
+<p><a href="http://sculove.github.io/blog/2016/07/26/Babel-%EB%84%88-%EB%AF%BF%EC%9D%84%EC%88%98-%EC%9E%88%EB%8B%88/" title="http://sculove.github.io/blog/2016/07/26/Babel-%EB%84%88-%EB%AF%BF%EC%9D%84%EC%88%98-%EC%9E%88%EB%8B%88/"><strong>Babel 너 믿을수 있니?</strong><br>_누군가나 내 코드를 임의로 바꾼다는 것은 개발자에게는 결코 유쾌한 일이 아닙니다. 더군다나, 사람이 아닌, 기계가 자동적으로 바꾼다는 것은 더욱더 신뢰할 수 없는 일이죠. 하지만, 요즘은 많이 바뀐 것 같습니다…._sculove.github.io</a><a href="http://sculove.github.io/blog/2016/07/26/Babel-%EB%84%88-%EB%AF%BF%EC%9D%84%EC%88%98-%EC%9E%88%EB%8B%88/"></a></p>
+<p>관련 블로그를 링크를 걸었는데 중요한 문단은 다음과 같다.</p>
+<blockquote>
+<p>“한마디로 정리한다면… 안타깝지만, Babel 은 저 보다 코드를 더 잘짰습니다. ㅠㅠ”</p>
+</blockquote>
+<h4 id="그럼-어떤-트랜스파일러를-사용할-것인가"><a href="#그럼-어떤-트랜스파일러를-사용할-것인가" class="headerlink" title="그럼 어떤 트랜스파일러를 사용할 것인가"></a>그럼 어떤 트랜스파일러를 사용할 것인가</h4><p>어떤 프레임워크를 사용하는가에 따라서 트랜스파일러도 보통은 선택되는 상황이지만 크게 babel과 traceur 로 양분이 되는데 작년 기준이기는 하지만 거의 babel의 압승으로 끝나는 듯한 모습이다.</p>
+<p>타입스크립트의 경우는 약간 다른 경우니까 나중에 다뤄보도록 하겠다.</p>
+<h4 id="Linter를-사용할-것"><a href="#Linter를-사용할-것" class="headerlink" title="Linter를 사용할 것"></a>Linter를 사용할 것</h4><p>Linting이라고 하는 것은 기본적으로 버그가 날 수 있는 코드를 표시를 해주는 툴로써 이바닥의 요다인 Douglas 옹이 JSLint를 만들고 가장 많이 사용되는 툴은 ESLint 툴이다. 많은 에디터가 ESLint 플러그인을 제공하고 있으므로 꼭 설치하고 시작하는 것이 좋다.</p>
+<p>Webstrom 관련된 내용은 기존의 아티클을 읽어보기를 추천한다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*5KuYlcm5RjfeXUji.jpg" alt=""></p>
+<h4 id="스타일-가이드를-활용하자"><a href="#스타일-가이드를-활용하자" class="headerlink" title="스타일 가이드를 활용하자"></a>스타일 가이드를 활용하자</h4><p>JavaScript 관련해서 좋은 회사의 스타일 가이드들을 활용하는 것은 매우 추천할 만한 일이다. JavaScript관련해서 가장 핫한 스타일 가이드 중 하나는 airbnb의 스타일 가이드이고 이후 이어지는 글들은 상당히 많이 참조할 것이다.</p>
+<p><a href="https://github.com/airbnb/javascript" title="https://github.com/airbnb/javascript"><strong>airbnb/javascript</strong><br>_javascript - JavaScript Style Guide_github.com</a><a href="https://github.com/airbnb/javascript"></a></p>
+<h4 id="기존-프로젝트를-재활용"><a href="#기존-프로젝트를-재활용" class="headerlink" title="기존 프로젝트를 재활용"></a>기존 프로젝트를 재활용</h4><p>아무래도 이런 리팩토링은 legacy 프로젝트가 있어야 한다. 기존에 만들었던 서버리스 아키텍처 관련 프로젝트를 legacy로 리팩토링 해 보도록 하겠다.</p>
+<p><a href="https://github.com/ehrudxo/standup" title="https://github.com/ehrudxo/standup"><strong>ehrudxo/standup</strong><br>_standup project for newbi_github.com</a><a href="https://github.com/ehrudxo/standup"></a></p>
+<hr>
+<p><em>Originally published at </em><a href="http://devpools.kr/2017/03/06/es2015%eb%a6%ac%ed%8c%a9%ed%86%a0%eb%a7%811%eb%aa%b8%ed%92%80%ea%b8%b0/"><em>개발바보들</em></a><em>.</em></p>
+<p>By <a href="https://medium.com/@keendev">Keen Dev</a> on <a href="https://medium.com/p/39fb2c66b023">March 6, 2017</a>.</p>
+<p>Exported from <a href="https://medium.com">Medium</a> on May 31, 2017.</p>
+</script>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;ES2015-리팩토링-—-1-몸풀기&quot;&gt;&lt;a href=&quot;#ES2015-리팩토링-—-1-몸풀기&quot; class=&quot;headerlink&quot; title=&quot;ES2015 리팩토링 — 1. 몸풀기&quot;&gt;&lt;/a&gt;ES2015 리팩토링 — 1. 몸풀기&lt;/h3&gt;&lt;p&gt;
+    
+    </summary>
+    
+    
+      <category term="github, github-trend, tech-trend" scheme="http://keen.devpools.kr/tags/github-github-trend-tech-trend/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ES2015 리팩토링 – 1. 몸풀기</title>
     <link href="http://keen.devpools.kr/2017/03/06/refactoring01/"/>
     <id>http://keen.devpools.kr/2017/03/06/refactoring01/</id>
@@ -517,6 +828,473 @@
     
     
       <category term="JavaScript, Refactoring" scheme="http://keen.devpools.kr/tags/JavaScript-Refactoring/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>개발자들의 인문학 이야기</title>
+    <link href="http://keen.devpools.kr/2017/03/06/%5B2017-03-06%2008:33:39%5D%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%8C%E1%85%A1%E1%84%83%E1%85%B3%E1%86%AF%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%E1%84%92%E1%85%A1%E1%86%A8%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5/"/>
+    <id>http://keen.devpools.kr/2017/03/06/[2017-03-06 08:33:39]개발자들의 인문학 이야기/</id>
+    <published>2017-03-05T23:33:39.000Z</published>
+    <updated>2017-09-03T14:05:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="개발자들의-인문학-이야기"><a href="#개발자들의-인문학-이야기" class="headerlink" title="개발자들의 인문학 이야기"></a>개발자들의 인문학 이야기</h3><p>사람들이랑 시작해 보려고 한번 장소를 마련해 봤습니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*hELtmVbDlk5hPE_O7QjN8A.jpeg" alt=""></p>
+<p>인문의 바다에서 한번 우리 헤엄쳐 봅시다.</p>
+<p>일단은 지대넓얕 요약으로 시작하지만 점점 시야를 확장해 보면 언젠가는 거인이 되어 있으리라 서로 믿어봅시다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/6ca84ccc5ebb" target="_blank" rel="external">March 5, 2017</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;개발자들의-인문학-이야기&quot;&gt;&lt;a href=&quot;#개발자들의-인문학-이야기&quot; class=&quot;headerlink&quot; title=&quot;개발자들의 인문학 이야기&quot;&gt;&lt;/a&gt;개발자들의 인문학 이야기&lt;/h3&gt;&lt;p&gt;사람들이랑 시작해 보려고 한번 장소를 마련해 봤
+    
+    </summary>
+    
+    
+      <category term="github, github-trend, tech-trend" scheme="http://keen.devpools.kr/tags/github-github-trend-tech-trend/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ESLint with WebStorm</title>
+    <link href="http://keen.devpools.kr/2017/03/05/%5B2017-03-05%2015:10:19%5DESLint%20with%20WebStorm/"/>
+    <id>http://keen.devpools.kr/2017/03/05/[2017-03-05 15:10:19]ESLint with WebStorm/</id>
+    <published>2017-03-05T06:10:19.000Z</published>
+    <updated>2017-09-03T14:05:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="ESLint-with-WebStorm"><a href="#ESLint-with-WebStorm" class="headerlink" title="ESLint with WebStorm"></a>ESLint with WebStorm</h3><p>원본 투고 글 : <a href="http://devpools.kr/2017/02/16/javascript-eslint-webstorm/" target="_blank" rel="external">http://devpools.kr/2017/02/16/javascript-eslint-webstorm/</a></p>
+<p>IntelliJ 의 웹 버전인 WebStorm을 사용할 때 ESLint를 사용하는 방법을 알아보겠습니다. 프로젝트에도 적용할 수 있겠지만 에디터에서 자동으로 문제가 있는 (혹은 버그를 생산하는) 코드를 미리 찾아 볼 수 있습니다.</p>
+<h3 id="ESLint"><a href="#ESLint" class="headerlink" title="ESLint"></a>ESLint</h3><p>“Linting”이라는 행위는 버그가 날 수 있을 만한 코드를 찾아서 체크를 해 주는일을 의미합니다.</p>
+<blockquote>
+<p>In <a href="https://en.wikipedia.org/wiki/Computer_programming" title="Computer programming" target="_blank" rel="external">computer programming</a>, <strong>lint</strong> is a Unix utility that flags some <a href="https://en.wikipedia.org/wiki/C_%28programming_language%29#Language_tools" title="C (programming language)" target="_blank" rel="external">suspicious and non-portable constructs</a> (likely to be bugs) in <a href="https://en.wikipedia.org/wiki/C_%28programming_language%29" title="C (programming language)" target="_blank" rel="external">C language</a><a href="https://en.wikipedia.org/wiki/Source_code" title="Source code" target="_blank" rel="external">source code</a>; generically, lint or a <strong>linter</strong> is any tool that flags suspicious usage in software written in any <a href="https://en.wikipedia.org/wiki/Computer_language" title="Computer language" target="_blank" rel="external">computer language</a>. The term <strong>lint-like behavior</strong> is sometimes applied to the process of flagging suspicious language usage. Lint-like tools generally perform <a href="https://en.wikipedia.org/wiki/Static_code_analysis" title="Static code analysis" target="_blank" rel="external">static analysis</a> of source code. — 위키피디아 <a href="https://en.wikipedia.org/wiki/Lint_%28software%29" target="_blank" rel="external">Lint</a></p>
+</blockquote>
+<p>JavaScript 에서 이 Lint라는 의미를 처음 얘기한 사람은 Douglas crockford 였고 그는 JsLint라는 툴을 만들어 냅니다. JavaScript Definite Guide 같은 책에서도 내용을 언급하고 있습니다.</p>
+<p><a href="http://www.jslint.com/" title="http://www.jslint.com/" target="_blank" rel="external"><strong>JSLint: The JavaScript Code Quality Tool</strong><br>_JSLint, The JavaScript Code Quality Tool. This file allows JSLint to be run from a web browser. It can accept a source…_www.jslint.com</a><a href="http://www.jslint.com/" target="_blank" rel="external"></a></p>
+<p>하지만 최근의 대부분의 JavaScript 커뮤니티에서 사용하는 Lint 툴은 ESLint 툴입니다.</p>
+<p>Nicholas Jakas에 의해 2013년에 나온 이 툴은 현재 여러 툴들에서 플러그인으로 사용되고 있습니다.</p>
+<p><a href="http://eslint.org/" title="http://eslint.org/" target="_blank" rel="external"><strong>ESLint - Pluggable JavaScript linter</strong><br>_A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code…_eslint.org</a><a href="http://eslint.org/" target="_blank" rel="external"></a></p>
+<p>“JSX” 지원하는 것에 대해서 언급이 첫페이지에 있습니다. React 와 JSX는 다르다고 하는군요. 아무래도 Pluggable한 아키텍처로 이루어져 있기에 오리지날인 JSLint에 비해 많이 쓰이는 거라고 보여집니다.</p>
+<h3 id="webstorm"><a href="#webstorm" class="headerlink" title="webstorm"></a>webstorm</h3><p>웹스톰은 IntelliJ를 만든 Jetbrains에서 만든 웹 개발자용 IDE 입니다. 이클립스가 약간은 범용에 가깝다고 하면 이 웹 스톰은 JavaScript 최근 트렌드 및 개발 환경에 대한 이해가 큰 IDE 입니다. Node 모듈에 대한 이해도 가지고 있고 npm 을 기본적으로 작동시킬 수 있습니다. 유료 IDE기는 하지만 IntelliJ에 적응된 개발자들은 이webstorm의 여러가지 기능에 대해서 많이 만족하고 쓰고 있습니다. 최근 팝잇에 올라온 IntelliJ에 관한 글을 읽어보면 많은 인사이트들을 얻을 수 있습니다.</p>
+<p><a href="http://www.popit.kr/%EC%9D%B8%ED%85%94%EB%A6%ACj-%ED%99%9C%EC%9A%A9-%EA%BF%80%ED%8C%81-42%EA%B0%80%EC%A7%80-%EC%A0%95%EB%A6%AC/" title="http://www.popit.kr/%EC%9D%B8%ED%85%94%EB%A6%ACj-%ED%99%9C%EC%9A%A9-%EA%BF%80%ED%8C%81-42%EA%B0%80%EC%A7%80-%EC%A0%95%EB%A6%AC/" target="_blank" rel="external"><strong>인텔리J 활용 꿀팁 42가지 정리 | Popit</strong><br>_인텔리J가 유료 IDE이다 보니 사용하면서 기능들을 최대한 활용하지 않는다면 손해라는 생각이 들었습니다. 그래서 인터넷을 찾아보다 발견한 인텔리J 42가지 팁 소개 동영상를 보고 정리한 글입니다. 해당 동영상은 …_www.popit.kr</a><a href="http://www.popit.kr/%EC%9D%B8%ED%85%94%EB%A6%ACj-%ED%99%9C%EC%9A%A9-%EA%BF%80%ED%8C%81-42%EA%B0%80%EC%A7%80-%EC%A0%95%EB%A6%AC/" target="_blank" rel="external"></a></p>
+<h3 id="WebStrom-ESLint"><a href="#WebStrom-ESLint" class="headerlink" title="WebStrom + ESLint"></a>WebStrom + ESLint</h3><p>이 WebStorm에서 ESLint를 설정하는 방법은 다음과 같습니다.</p>
+<p>preference -> Languges &amp; Framework -> ESLint</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*qBlmLC3cTz8oJ-Jf." alt=""></p>
+<p>두가지를 셋팅해 주셔야 하는데 하나는 Node 를 지정하는 것이고 또 다른 하나는 ESLint 폴더를 지정해 주는 것입니다. Node 는 각자의 환경을 정하면 될 것입니다.</p>
+<p>ESLint 폴더를 지정할 때는</p>
+<pre><code>$ npm list -g|more
+</code></pre><p>옵션을 통해서 어디에 설치를 했는지 확인해 주시면 됩니다.</p>
+<p>확인이 되셨으면</p>
+<pre><code>`$ npm install -g eslint`
+</code></pre><p><a href="https://github.com/eslint/eslint" title="https://github.com/eslint/eslint" target="_blank" rel="external"><strong>eslint/eslint</strong><br>_eslint - A fully pluggable tool for identifying and reporting on patterns in JavaScript._github.com</a><a href="https://github.com/eslint/eslint" target="_blank" rel="external"></a></p>
+<p>이후 몇가지 모듈을 더 설치해야 합니다.</p>
+<pre><code>$npm install eslint-plugin-react eslint-plugin-jsx-a11y eslint-plugin-import -g
+</code></pre><p>실행해 주고 나서 WebStorm을 다시 작동시키면 아래와 같은 좋은 예를 볼 수 있습니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*IJ_x1kEFxnkgv5PQ." alt=""></p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/bf9d418993b2" target="_blank" rel="external">March 5, 2017</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;ESLint-with-WebStorm&quot;&gt;&lt;a href=&quot;#ESLint-with-WebStorm&quot; class=&quot;headerlink&quot; title=&quot;ESLint with WebStorm&quot;&gt;&lt;/a&gt;ESLint with WebStorm&lt;/h3&gt;&lt;
+    
+    </summary>
+    
+    
+      <category term="github, github-trend, tech-trend" scheme="http://keen.devpools.kr/tags/github-github-trend-tech-trend/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>-팁-  wordpress 에 https 적용하기</title>
+    <link href="http://keen.devpools.kr/2017/02/08/%5B2017-02-08%2017:57:12%5D%20-%E1%84%90%E1%85%B5%E1%86%B8-%20%20wordpress%20%E1%84%8B%E1%85%A6%20https%20%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5/"/>
+    <id>http://keen.devpools.kr/2017/02/08/[2017-02-08 17:57:12] -팁-  wordpress 에 https 적용하기/</id>
+    <published>2017-02-08T08:57:12.000Z</published>
+    <updated>2017-09-03T14:05:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="팁-wordpress-에-https-적용하기"><a href="#팁-wordpress-에-https-적용하기" class="headerlink" title="[팁] wordpress 에 https 적용하기"></a>[팁] wordpress 에 https 적용하기</h3><p>크롬이 https 사이트가 아니면 warning을 띄우게 되었다는 사실이 알려지면서 많은 설치형 블로거들이 난감해 하시는 분들이 있어서 포스팅 합니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*ACiAYqim05SWvx4b.jpg" alt="">크롬 도금의 자물쇠…</p>
+<p>세 단계 정도로 나뉘어서 해야할 일들이 있을 것입니다. (세 단계 모두 지정된 플랫폼들이 있어서 해당사항이 아니신 분들도 있을 거 같습니다. )</p>
+<ol>
+<li>호스팅 서비스 port 설정( Amazon 기준)</li>
+<li>웹서버 설정( Ubuntu &amp; Apache2 설정 )</li>
+<li>인증서 설치( Let’s Encrypt 설정)</li>
+</ol>
+<h4 id="1-호스팅-서비스"><a href="#1-호스팅-서비스" class="headerlink" title="1. 호스팅 서비스"></a>1. 호스팅 서비스</h4><p>아마존의 경우는 아마존 콘솔로 들어가셔서</p>
+<p>Network &amp; Security -> Security Groups 에 들어가셔서 서비스가 가지고 있는 정책에 맞는 그룹을 선택하신 후에 Inbound Edit을 선택하시고 https 포트로 들어올 수 있도록 작업을 해 주셔야 합니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*ykXSSjjeVhrGmC0a.jpg" alt="">어디서든 들어 올 수 있게</p>
+<p>∴이후 아래 설명될 3번 항목만 진행해도 적용이 될 거 같지만 혹시 다른 방법이나 self signed 된 인증서를 통한 설정을 알고 싶은 사람들을 위해서 2번을 설명합니다.</p>
+<h4 id="2-Let’s-Encrypt"><a href="#2-Let’s-Encrypt" class="headerlink" title="2. Let’s Encrypt"></a>2. Let’s Encrypt</h4><p>Let’s Encrypt는 무료라서 3개월에 한번씩 갱신해야 되지만 사용할 수 있는 인증서를 만들어 줍니다. 사이트에 들어가서 무언가를 다운로드 받아야 되나 살펴보면 Let’s Encrypt 에서 바로 제공하는 것은 없고 자동화해 주는 툴이 있는 링크를 제공해 줍니다.</p>
+<p>2.1. certbot</p>
+<p>제가 찾아간 사이트는 바로 certbot이였습니다.</p>
+<p><a href="https://certbot.eff.org/" title="https://certbot.eff.org/" target="_blank" rel="external"><strong>Certbot</strong><br>_Automatically enable HTTPS on your website with EFF’s Certbot, deploying Let’s Encrypt certificates._certbot.eff.org</a><a href="https://certbot.eff.org/" target="_blank" rel="external"></a></p>
+<p>여기서 작업을 하려면 ubuntu 버전 명령어를 통해 버전을 알아야 합니다.</p>
+<pre><code>$cat /etc/\*releaseDISTRIB\_ID=Ubuntu  
+DISTRIB\_RELEASE=14.04  
+DISTRIB\_CODENAME=trusty  
+DISTRIB\_DESCRIPTION=&quot;Ubuntu 14.04.3 LTS&quot;  
+NAME=&quot;Ubuntu&quot;  
+VERSION=&quot;14.04.3 LTS, Trusty Tahr&quot;  
+ID=ubuntu  
+ID\_LIKE=debian  
+PRETTY\_NAME=&quot;Ubuntu 14.04.3 LTS&quot;  
+VERSION\_ID=&quot;14.04&quot;  
+HOME\_URL=&quot;http://www.ubuntu.com/&quot;  
+SUPPORT\_URL=&quot;http://help.ubuntu.com/&quot;  
+BUG\_REPORT\_URL=&quot;http://bugs.launchpad.net/ubuntu/&quot;
+</code></pre><p><img src="https://cdn-images-1.medium.com/max/1600/0*N-2R0VXN9-2fdXgX.jpg" alt="">certbot 좋아용</p>
+<p>이렇게 선택하고 나면 해당 installation 페이지로 안내해 줍니다.</p>
+<p>저의 경우는 다음 페이지가 되겠죠.</p>
+<p><a href="https://certbot.eff.org/#ubuntutrusty-apache" title="https://certbot.eff.org/#ubuntutrusty-apache" target="_blank" rel="external"><strong>Certbot</strong><br>_Automatically enable HTTPS on your website with EFF’s Certbot, deploying Let’s Encrypt certificates._certbot.eff.org</a><a href="https://certbot.eff.org/#ubuntutrusty-apache" target="_blank" rel="external"></a></p>
+<p>2.2. 인스톨</p>
+<p>2.3. 실행인스톨 하고 chmod로 실행할 수 있도록 만들어 줍니다.</p>
+<pre><code>$ ./certbot-auto
+</code></pre><p>그리고 저 명령어를 한번 실행해 주면 자동적으로 아파치를 찾아서 바꿔줘야 할 옵션들을 자동으로 찾아서 바꿔줍니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*QlcHGPYZuTB9ib8Q.jpg" alt="">이런 형태의 아웃풋들이 출력됩니다. 설정들을 지속적으로 물어봅니다.</p>
+<p>그러고 나면 warning 이 더 이상 뜨지 않습니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*3To5wdPO7eUwQLyM.jpg" alt=""></p>
+<p>2.4. 갱신</p>
+<p>3개월에 한번씩 갱신하기 위해서는 아래의 명령어를 cron 잡에 등록해서 작업하시면 됩니다.</p>
+<pre><code>$./path/to/certbot-auto renew --quiet --no-self-upgrade
+</code></pre><p>아래 내용은 2번까지 하신 분들은 크게 필요하지 않을지도 모르지만 혹시라도 https 만 적용하기 위해서 필요하신 분들을 위해서 남겨둡니다. Self-signed 인증서를 쓰는 경우인데 크롬 버전이 올라가면 이 경우는 에러는 여전히 뜰 것으로 예상됩니다.</p>
+<h4 id="3-웹서버-설정-Manually"><a href="#3-웹서버-설정-Manually" class="headerlink" title="3. 웹서버 설정(Manually)"></a>3. 웹서버 설정(Manually)</h4><p>우분투의 경우는 아파치, a2enmod등을 가지고 생각보다 손쉽게 작업을 진행할 수 있습니다.</p>
+<p>아래의 명령어들은 혹시 권한이 필요한 경우가 생기면 sudo를 사용해서 진행하시면 됩니다.</p>
+<p>3.1. SSL 모듈 설치</p>
+<pre><code>$sudo a2enmod ssl  
+
+$sudo service apache2 restart
+</code></pre><p>3.2. Self-signed 인증서 만들기</p>
+<p>a2enmod는 apache2 모듈설정을 자동화해주는 스크립트입니다. SSL을 설치하고 재시작해 줍니다.(<a href="http://man.he.net/man8/a2enmod" target="_blank" rel="external">http://man.he.net/man8/a2enmod</a>)</p>
+<pre><code>`$sudo mkdir /etc/apache2/ssl`
+
+`$sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout   
+/etc/apache2/ssl/self_signed.key   
+-out /etc/apache2/ssl/self_signed.crt`
+</code></pre><p>3.3. 버추얼 호스트 설정파일 만들기</p>
+<pre><code>`$sudo vi /etc/apache2/sites-available/default-ssl.conf`
+</code></pre><p>로 파일을 열어서 아래와 같이 편집해 줍니다.</p>
+<pre><code>&lt;IfModule mod\_ssl.c\&gt;  
+&lt;VirtualHost \_default\_:443\&gt;  
+ServerAdmin ehrudxo@gmail.com  
+ServerName devpools.kr  
+ServerAlias [www.devpools.kr][anchor4]  
+DocumentRoot /somewhere/  
+ErrorLog ${APACHE\_LOG\_DIR}/error.log  
+CustomLog ${APACHE\_LOG\_DIR}/access.log combined  
+SSLEngine on  
+SSLCertificateFile /etc/apache2/ssl/self\_signed.crt  
+SSLCertificateKeyFile /etc/apache2/ssl/self\_signed.key  
+&lt;FilesMatch &quot;\\.(cgi|shtml|phtml|php)$&quot;\&gt;  
+SSLOptions +StdEnvVars  
+&lt;/FilesMatch\&gt;  
+&lt;Directory /usr/lib/cgi-bin\&gt;  
+SSLOptions +StdEnvVars  
+&lt;/Directory\&gt;  
+BrowserMatch &quot;MSIE \[2-6\]&quot; \\  
+nokeepalive ssl-unclean-shutdown \\  
+downgrade-1.0 force-response-1.0  
+BrowserMatch &quot;MSIE \[17-9\]&quot; ssl-unclean-shutdown  
+&lt;/VirtualHost\&gt;  
+&lt;/IfModule\&gt;
+</code></pre><p>3.4. 활성화 하기</p>
+<p>이제 다음 명령어로 활성화 하고 재 시작해 줍니다.</p>
+<pre><code>`$sudo a2ensite default-ssl.conf  
+$`sudo service apache2 restart
+</code></pre><p>이제 접속해 보시면 잘 돌아가시는 걸 확인할 수 있습니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*QwF0PVgY4gUT-UDL.jpg" alt="">앗싸~</p>
+<hr>
+<p><em>Originally published at </em><a href="http://devpools.kr/2017/02/08/%ed%8c%81-wordpress-%ec%97%90-https-%ec%a0%81%ec%9a%a9%ed%95%98%ea%b8%b0/" target="_blank" rel="external"><em>개발바보들</em></a><em>.</em></p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/8a82a9fc3b99" target="_blank" rel="external">February 8, 2017</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;팁-wordpress-에-https-적용하기&quot;&gt;&lt;a href=&quot;#팁-wordpress-에-https-적용하기&quot; class=&quot;headerlink&quot; title=&quot;[팁] wordpress 에 https 적용하기&quot;&gt;&lt;/a&gt;[팁] wordpres
+    
+    </summary>
+    
+    
+      <category term="github, github-trend, tech-trend" scheme="http://keen.devpools.kr/tags/github-github-trend-tech-trend/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>서버리스 아키텍처 소셜미디어 개발기 7편</title>
+    <link href="http://keen.devpools.kr/2017/02/01/%5B2017-02-01%2010:29:09%5D%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5%E1%84%85%E1%85%B5%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8F%E1%85%B5%E1%84%90%E1%85%A6%E1%86%A8%E1%84%8E%E1%85%A5%20%E1%84%89%E1%85%A9%E1%84%89%E1%85%A7%E1%86%AF%E1%84%86%E1%85%B5%E1%84%83%E1%85%B5%E1%84%8B%E1%85%A5%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%80%E1%85%B5%207%E1%84%91%E1%85%A7%E1%86%AB/"/>
+    <id>http://keen.devpools.kr/2017/02/01/[2017-02-01 10:29:09]서버리스 아키텍처 소셜미디어 개발기 7편/</id>
+    <published>2017-02-01T01:29:09.000Z</published>
+    <updated>2017-09-03T14:05:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="서버리스-아키텍처-소셜미디어-개발기-7편"><a href="#서버리스-아키텍처-소셜미디어-개발기-7편" class="headerlink" title="서버리스 아키텍처 소셜미디어 개발기 7편"></a>서버리스 아키텍처 소셜미디어 개발기 7편</h3><p>대망의 마지막 편입니다.</p>
+<p><a href="https://techstory.shma.so/%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%86%8C%EC%85%9C%EB%AF%B8%EB%94%94%EC%96%B4-%EA%B0%9C%EB%B0%9C%EA%B8%B0-6%ED%8E%B8-b30a7d6ad854#.2kqclsfo7" title="https://techstory.shma.so/%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%86%8C%EC%85%9C%EB%AF%B8%EB%94%94%EC%96%B4-%EA%B0%9C%EB%B0%9C%EA%B8%B0-6%ED%8E%B8-b30a7d6ad854#.2kqclsfo7" target="_blank" rel="external"><strong>서버리스 아키텍처 소셜미디어 개발기 6편</strong><br>_나프다 발표 이후 한참 글이 뜸했네요. 이제 점점 끝이 보입니다. 속도를 내야겠네요 사용자 스토리4 1. 김개발은 아침 스탠드업 시간에 같이 이야기를 나눌 수 있는 주제를 위해 스탠드업이라는 웹 앱을 찾아간다. …_techstory.shma.so</a><a href="https://techstory.shma.so/%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%86%8C%EC%85%9C%EB%AF%B8%EB%94%94%EC%96%B4-%EA%B0%9C%EB%B0%9C%EA%B8%B0-6%ED%8E%B8-b30a7d6ad854#.2kqclsfo7" target="_blank" rel="external"></a></p>
+<p>지난 편에 이어 계속 하겠습니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*ylD3EMpOg_303zM3jOxHTA.jpeg" alt="">우린 모두 한 그룹이니까요~</p>
+<pre><code>1\. 김개발은 아침 스탠드업 시간에 같이 이야기를 나눌 수 있는 주제를 위해 스탠드업이라는 웹 앱을 찾아간다. 이렇게 함으로써 사람들과 IT에 대한 주제로 커뮤니케이션을 할 수 있다.  
+2\. 김개발이 사이트를 방문해서 자신이 어제 유심하게 읽은 글을 올릴 수 있다. 이렇게 하면 다른 사람들이 볼 수 있다.  
+\* 에디터 창에 인터넷 링크를 입력하면 자동적으로 페이지 카드가 만들어 진다. 이 때 페이지 링크는 oEmbed를 써서 동작하는데 웹 표준을 준수하고 자연스러워야 한다.  
+\* 에디터 창은 하나만 있고 거기서 글을 작성하고 업로드 하면 글이 외부 클라우드 공간에 저장이 된다.
+
+3\. 김개발이 작성한 글이 목록으로 보여진다. 이렇게 함으로써 다른 사람들이 목록을 확인할 수 있다.  
+4\. 김개발은 google ID를 가지고 로그인을 할 수 있다. 이렇게 함으로써 내가 쓴 글만 따로 모아서 볼 수 있다.**  
+5\. 김개발은 그룹 별로 스탠드업을 만들 수 있고 각 그룹별고 글을 올릴 수 있다**
+</code></pre><p>그룹 기능을 넣고 나서는 내가 이럴려고 계속한다 했나 자괴감 들어.라는 순간이 몇번이나 왔는지 모르겠습니다. 이유는 몇가지가 있는데 첫번째는 처음 설계를 몇번이나 바꿔야 하는 것이며 , 두 번째는 테스트 코드가 어느 순간 동작하지 않는 것이었습니다. 설계를 바꾸는 것은 개발의 숙명이라 받아들일 수 있었는데 테스트 코드는 어느 순간 놓치고 나니 TDD를 진행하지 못한 부분이 있어 많이 부끄러워 지더군요.</p>
+<p>본론으로 들어가서 이번 글에는 유저스토리를 하나 더 추가해 보았습니다. “<strong>김개발은 그룹을 만들 수 있고 각 그룹별고 글을 올릴 수 있다.” </strong>이 내용을 토대로 어떻게 들어갔는지 한번 살펴 보도록 하겠습니다.</p>
+<h4 id="0-고칩니다"><a href="#0-고칩니다" class="headerlink" title="0. 고칩니다"></a>0. 고칩니다</h4><p>이전에 firebase-ui 때문에 외부에 소스를 뺀 적이 있죠? 시간은 어느덧 두달이 지났으니 당연히 npm으로 등록이 되었습니다. 나프다 발표하는 당일에 추가가 되기는 했었습니다.</p>
+<pre><code>$npm install firebase firebaseui --save
+</code></pre><h4 id="1-시작하기-전에"><a href="#1-시작하기-전에" class="headerlink" title="1. 시작하기 전에"></a>1. 시작하기 전에</h4><p><img src="https://cdn-images-1.medium.com/max/1600/1*OlvH8Q0PNeY0IZpiFELC8g.jpeg" alt="">그림1</p>
+<p>그림 1과 같은 역할을 하는 UI를 먼저 만들어 보려고 합니다. 기본 UI 기능은 그룹을 선택해야 할 수 있어야 하고 그룹을 만들 수 있어야 합니다. 그래서 선택을 할 수 있는 회전목마(Carousel) UI가 필요하고 그룹을 만들 수 있는 UI도 필요해서 새 그룹이라는 버튼을 달아 두었습니다.</p>
+<h4 id="2-그룹-만들기"><a href="#2-그룹-만들기" class="headerlink" title="2. 그룹 만들기"></a>2. 그룹 만들기</h4><p>그룹을 만들기 위해서는 당연히 기존의 firebase 에 저장된 스키마에 대한 조정이 필요하겠죠?</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*sSrIpCI61RQLXqUo1oReFg.jpeg" alt="">posts 생긴 형태</p>
+<p>기존의 posts라는 스키마에는 모든 글이 저장되고 이 내용을 읽어와서 작업을 했었는데, 이제는 group 별로 조정할 일들이 생겼습니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*p3_WoYtd7UWa4l3E1wrgMQ.jpeg" alt="">기존의 posts는 더 이상 필요가 없다.</p>
+<p>groups는 그룹을 만들면 생성될 수 있는 엔트리가 될 것이고 group-posts에 각 그룹 별로 아티클이 들어갈 수 있도록 작업을 할 것입니다. 먼저 그룹을 생성하고 리스트 하는 작업을 해 보겠습니다. 생성을 하려면 다음과 같은 UI를 통해 그룹간 이동을 할 수 있습니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*sVIaS0JmBfItOazHLlQURQ.jpeg" alt=""></p>
+<p>일단 이 일련의 작업들을 하는 세가지 버튼을 만들어 보겠습니다. 먼저 그룹 페이지에 처음 들어오게 되면 그룹에 해당하는 이미지가 보여지고 그룹 작업을 선택하면(1) 새 그룹을 만들 수 있어야 하며(3), 다른 그룹을 선택할 수도(4) 있어야 합니다. 글 쓰기 버튼을 선택하면(2) 글 쓰기를 할 수 있는 에디터가 나와서 글이 작성되어야 하며 여러가지 모든 상황에서 원래 그룹으로 원상복귀(5)할 수 도 있어야 합니다.</p>
+<p>어떤 작업을 먼저 하면 좋을까요? <strong>React 개발에 있어서는 state를 어떻게 관리할 것인가</strong> 를 첫번째 질문으로 가져가야 할 것입니다. 외부에서 URL 기반으로 타이핑해서 들어올 때 처음 형태를 어떻게 가져야 할지를기준으로 설계를 해 보겠습니다.</p>
+<ol>
+<li>기존의 edit를 하던 부분을 URL로 처리했던 부분은 그렇게 중요하지 않을 것입니다.</li>
+<li>내부에서 “선택” 버튼을 누를 경우는 URL이 변경되어야 합니다.</li>
+<li>“글쓰기” 를 작성하면 URL은 변경되지 않지만 버튼의 state는 변경되어야 합니다.</li>
+</ol>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*W6HXkcZHcGVkR9-5GLaelQ.jpeg" alt=""></p>
+<p>먼저 세가지 버튼에 대해서 상태를 유지하고 그 값에 따라 아래 Action Bar를 선택하도록 해 보겠습니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*X5npSzmjYIiumCvSHl-wzA.jpeg" alt="">상태에 따라 색도 변하도록 설계하자버튼 선택에 따라 state 가 바뀌고, 변수 선택에 따른 컴포넌트 렌더링이 달라지게 설계!</p>
+<p>버튼을 클릭하면 selectedButton 즉 선택한 버튼을 확인하게 되고 그에 따라서 CSS 값을 변경해 주는 작업을 하는 컴포넌트입니다. 이걸 가능하게 하기 위해서 actions, reducers 폴더 밑에 각각 Button.js파일을 만들었습니다.</p>
+<pre><code>//ActionBar를 그려준다. 안드로이드의 액션바와는 다르다. 액션바와는...  
+{**this**.renderActionBar(selectedButton)}
+
+//그룹이 존재하고 버튼선택이 된 경우  
+{groupName &amp;&amp; !selectedButton&amp;&amp;  
+&lt;div style={{width:'100%',height:150,position:'relative'}}\&gt;  
+&lt;img src={logoUrl} alt={groupName} style={{width:'100%',height:150}}/\&gt;  
+&lt;div className=&quot;style\_title&quot; style={{width:"100%"}}\&gt;{groupName}&lt;/div\&gt;  
+&lt;/div\&gt;  
+}
+</code></pre><p>renderActionBar는 ActionBar 가 선택된 버튼에 따라서 다르게 그려지도록 했고 어떤 버튼도 선택되지 않을 경우에는 그룹의 로고 URL을 보여주도록합니다.</p>
+<p><strong>2.1. 그룹 만들기</strong></p>
+<p>자, 그럼 그룹은 어떻게 만들까요?</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*AaIZeG2Tpgf58IMmPG_H5A.jpeg" alt="">파일 업로드가 시급하다.</p>
+<p>그룹명이 존재하는지 (1)중복 확인을 한 후에 (2)드래그앤 드롭을 통한 파일 업로드, (3)그룹생성 의 순서대로 이루어집니다.</p>
+<p>이중 1,3번의 Group의 Real Time DB에 대한 DAO는 여기서 다루지 않겠습니다. (소스에서 확인하세요.) 드래그앤 드롭해서 파일 업로드 하는 부분만 확인을 하면 Firebase의 FileUpload에 대한 인터페이스와 Dropzone UI 에 대한 이야기로 나눠서 볼 수 있을 거 같습니다.</p>
+<p><strong>Firebase FileUpload</strong></p>
+<p>src 폴더 아래 FileUtil.js를 만들었습니다.</p>
+<p>주목 하셔야 할 부분은 다음의 storageRef 입니다.</p>
+<pre><code>//storageRef 정의  
+var storageRef = firebase.storage().ref();
+
+**// 업로드  
+var **uploadTask = storageRef.child(&apos;images/&apos; + file.name).put(file, metadata);
+
+// 이벤트 정의
+
+uploadTask.on(firebase.storage._TaskEvent_.STATE\_CHANGED,....(중략)
+</code></pre><p>그럼 이 부분을 호출한 부분을 살펴 볼까요?</p>
+<p><strong>Dropzone</strong></p>
+<p>src 파일 밑에 GroupAdd.js 라는 파일을 만들었습니다. 이 파일에서 중요하게 눈여겨 보실 부분은 react-dropzone이라는 라이브러리를 이용했다는 점이고 그 부분은 소스의 처음 import 부분에 포함이 되어 있습니다.</p>
+<pre><code>&lt;Dropzone onDrop={(acceptedFiles, rejectedFiles)=\&gt;**this**.onDrop} accept=&quot;image/\*&quot; className=&quot;drop-file padding-top&quot;\&gt;  
+&lt;div\&gt;파일을 드래그앤 드롭 하거나 클릭해서 선택하세요&lt;/div\&gt;  
+&lt;/Dropzone\&gt;
+</code></pre><p>Dropzone 에서 onDrop이라는 이벤트를 만들었고 이 이벤트는 기본적으로 허용된 파일과 거절된 파일을 인자로 받아서 처리해 줍니다.</p>
+<pre><code>onDrop (acceptedFiles, rejectedFiles) {
+
+...  
+**if**(acceptedFiles &amp;&amp; acceptedFiles.length\&gt;0){  
+**...**  
+imageUpload(acceptedFiles, 1, (downloadUrl)=\&gt;{  
+**this**.setState({  
+groupImage:downloadUrl,  
+isSpin: **false  
+**});  
+});  
+}**else**{  
+...  
+}  
+}
+</code></pre><h4 id="3-조회하기"><a href="#3-조회하기" class="headerlink" title="3. 조회하기"></a>3. 조회하기</h4><p>이렇게 그룹을 만들고 났으면 URL 별로 그룹이 조회가 되도록 내용을 추가해 줍니다. 스키마에 대해서는 서두에 밝혔으니 소스코드 레벨로만 간단하게 설명하겠습니다. (FirebaseDAO에 대해서는 이미 수차례 설명했으니 소스코드도 최대한 짧게 가겠습니다.)</p>
+<p>reducer는 생략하고 action만 살펴보고 넘어가겠습니다.</p>
+<pre><code>**export function **groupSelect(groupName){  
+**return **(dispatch) =\&gt; {  
+dao.getGroup(groupName).once(&apos;value&apos;, (snapshot) =\&gt; {  
+**if**(snapshot.val()) {  
+**let **logoUrl = snapshot.val().logoUrl;  
+dispatch(getGroup(groupName, logoUrl));  
+dispatch(selectButton());  
+}  
+})  
+}  
+}  
+**export function **getGroup(groupName, logoUrl){  
+**return **(dispatch) =\&gt; {  
+dao.listGroupArticle(groupName).then((articles)=\&gt;dispatch(getArticle(articles,groupName,logoUrl)));  
+}  
+}
+</code></pre><p>소스코드 처럼 group을 가지고 와서 로고 및 데이타를 가져온 뒤에 버튼을 선택하는 액션을 다시한번 연결하고는 끝이 납니다.</p>
+<p>라우터 소스는 그에 따라 아래와 같이 간단해 졌습니다.</p>
+<pre><code>&lt;Provider store={store}\&gt;  
+&lt;Router history={history}\&gt;  
+&lt;Route path=&quot;/&quot; component={App}\&gt;  
+&lt;Route path=&quot;login&quot; component={Login}/\&gt;  
+&lt;Route path=&quot;groups/:groupName&quot; /\&gt;  
+&lt;Route path=&quot;\*&quot; component={NotFound}/\&gt;  
+&lt;/Route\&gt;  
+&lt;/Router\&gt;  
+&lt;/Provider\&gt;
+</code></pre><p>이렇게 그룹의 개념을 집어 넣어서 전체 내용을 다시한번 리마인드 하면서 전체에 대한 시리즈는 끝을 낼까 합니다.</p>
+<p>지금까지는 실행에 대한 내용이었고 이후는 서버리스 아키텍처에 대한 고찰에 관한 이야기 + 리팩토링에 대한 이야기를 해 볼까 합니다.</p>
+<p>그 동안 어려운 내용 같이 따라오신다고 고생하셨습니다.</p>
+<p>소스코드는 아래 링크를 참고하시면 됩니다.</p>
+<p><a href="https://github.com/ehrudxo/standup/tree/day7" title="https://github.com/ehrudxo/standup/tree/day7" target="_blank" rel="external"><strong>ehrudxo/standup</strong><br>_standup project for newbi_github.com</a><a href="https://github.com/ehrudxo/standup/tree/day7" target="_blank" rel="external"></a></p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/c835a41ae9d0" target="_blank" rel="external">February 1, 2017</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;서버리스-아키텍처-소셜미디어-개발기-7편&quot;&gt;&lt;a href=&quot;#서버리스-아키텍처-소셜미디어-개발기-7편&quot; class=&quot;headerlink&quot; title=&quot;서버리스 아키텍처 소셜미디어 개발기 7편&quot;&gt;&lt;/a&gt;서버리스 아키텍처 소셜미디어 개발기 
+    
+    </summary>
+    
+    
+      <category term="github, github-trend, tech-trend" scheme="http://keen.devpools.kr/tags/github-github-trend-tech-trend/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>WebAssembly — hello world 어셈블리를 브라우저에 올려보자</title>
+    <link href="http://keen.devpools.kr/2017/01/21/%5B2017-01-21%2022:07:01%5DWebAssembly%20%E2%80%94%20hello%20world%20%E1%84%8B%E1%85%A5%E1%84%89%E1%85%A6%E1%86%B7%E1%84%87%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%87%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%84%8C%E1%85%A5%E1%84%8B%E1%85%A6%20%E1%84%8B%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A7%E1%84%87%E1%85%A9%E1%84%8C%E1%85%A1/"/>
+    <id>http://keen.devpools.kr/2017/01/21/[2017-01-21 22:07:01]WebAssembly — hello world 어셈블리를 브라우저에 올려보자/</id>
+    <published>2017-01-21T13:07:01.000Z</published>
+    <updated>2017-09-03T14:05:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="WebAssembly-—-hello-world-어셈블리를-브라우저에-올려보자"><a href="#WebAssembly-—-hello-world-어셈블리를-브라우저에-올려보자" class="headerlink" title="WebAssembly — hello world 어셈블리를 브라우저에 올려보자"></a>WebAssembly — hello world 어셈블리를 브라우저에 올려보자</h3><p>WebAssembly 이름만 들어도 긴장되는 이 프로젝트는 지금 읽으시면서 생각하시는 그대로 web + Assmbly의 조합입니다.</p>
+<p>링크 : <a href="http://webassembly.org/" target="_blank" rel="external">http://webassembly.org/</a></p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*by1GvhRfgZVsxMem.jpg" alt="스크린샷 2017-01-21 오후 10.11.16"></p>
+<blockquote>
+<p><strong>어셈블리어(assembly)</strong>는 기계어와 일대일 대응이 되는 컴퓨터 프로그래밍의 저급 언어이다.</p>
+<p>출처: <a href="http://blog.opid.kr/162" target="_blank" rel="external">http://blog.opid.kr/162</a> [opid’s document]</p>
+</blockquote>
+<p>브라우저 상에서 돌아가는 기계어라니 생각만 해도 즐거운 이 상상은 사실 비슷한 일들을 시도 했었던 몇 군데의 의기투합으로 완성됩니다.</p>
+<p>결론부터 얘기하자면 오늘 소개하고 싶은 최종 프로젝트는 Web Assmebly의 binaryen 입니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*6ykKmeIlKWb_cjYM." alt="WebAssembly/binaryen"></p>
+<p><a href="https://github.com/WebAssembly/binaryen" target="_blank" rel="external">WebAssembly/binaryen</a></p>
+<p><a href="https://github.com/WebAssembly/binaryen" target="_blank" rel="external">binaryen — Compiler infrastructure and toolchain library for WebAssembly, in C++</a></p>
+<p>GitHub</p>
+<p>이 프로젝트를 설명을 하기 위해서는 먼길을 가야 할 거 같습니다. 하지만 매우 흥미로운 주제라고 생각되니까 시작해 보겠습니다.</p>
+<h3 id="1-asm-js-와-emscripten"><a href="#1-asm-js-와-emscripten" class="headerlink" title="1. asm.js 와 emscripten"></a><strong>1. asm.js 와 emscripten</strong></h3><p>최근 몇년동안 브라우저에서 mame게임이라던지 둠이라던지 등의 오픈소스로 풀려있는 게임들에 대해서 브라우저에서 돌아가는 프로젝트를 많이들 보셨을 겁니다. 어제 저는 Quake3 를 웹에서 돌려 보았습니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*L1iUaPf28281K9Xv.png" alt="크롬에서 퀘이크 하는 모습">[그림1]크롬 퀘이크 출처 — <a href="https://twitter.com/search?q=%23quakejs" target="_blank" rel="external">https://twitter.com/search?q=%23quakejs</a> 오오오 다 부시고 싶다!!!!</p>
+<p>먼저 브라우저 상에서 저런 게임 개발 + 연산을 하기 위해서는 어떤 일이 있어야 하는지를 생각해 봅시다.</p>
+<ol>
+<li>엄청나게 빠른 자바스크립트를 개발하는거야!</li>
+<li>네이티브 코드를 브라우저에서 돌리는 거야</li>
+<li>WebGL로 짜면 안되나요?</li>
+</ol>
+<p>이렇게 접근한 눈에 띄는 큰 세력이 있었습니다. 하나는 asm.js라는 커뮤니티고 또 하나는 Emscripten 입니다.</p>
+<h4 id="1-1-asm-js"><a href="#1-1-asm-js" class="headerlink" title="1.1. asm.js."></a>1.1. asm.js.</h4><p>링크 : <a href="http://asmjs.org/" target="_blank" rel="external">http://asmjs.org/</a></p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*iMCz0tjs7MMao1Uo.jpg" alt="스크린샷 2017-01-21 오후 10.16.19"></p>
+<p>asm.js는 다들 오해하시고 있는 부분이 있는데 어떤 새로운 컴파일 된 형태의 언어를 뜻하는 것은 아닙니다. JavaScript 스펙 중에 C나, C++ 처럼 좀더 low level로 건드릴 수 있는 형태로 나와 있는 API들을 사용해서 조금 덜 human readable한 코드지만 성능이 빠른 형태의 코드를 뜻합니다.</p>
+<p>좀더 깊은 이해를 위해서는 아웃사이더 님의 다음글을 추천합니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*pBD-wDzgoXG6GKCl.gif" alt="asm.js에 대해서 :: Outsider&#39;s Dev Story"></p>
+<p><a href="https://blog.outsider.ne.kr/927" target="_blank" rel="external">asm.js에 대해서 :: Outsider’s Dev Story</a></p>
+<p><a href="https://blog.outsider.ne.kr/927" target="_blank" rel="external">asm.js을 처음 듣게 된 것은 존 레식이 올린 다음 트윗을 보고나서였다. Asm.js is seriously one of the most exciting things to happen in JavaScript-land in a long time. Congrats Firefox team!? John Re…</a></p>
+<p>Outsider’s Dev Story</p>
+<p>어쨌든 결론만 놓고 보면 asm.js를 사용하면 native 코드에 비해 1.5배밖에 안느린 코드를 짤 수 있다. 라는 놀라운 일이 벌어집니다. GUI 쪽은 Java보다 대 놓고 빨라질 가능성을 가지게 되는 점입니다.</p>
+<h4 id="1-2-Emscripten"><a href="#1-2-Emscripten" class="headerlink" title="1.2.Emscripten"></a>1.2.Emscripten</h4><p>이번엔 그렇다면 다른 방법으로 native 코드를 JavaScript로 바꿔야지 하고 접근한 프로젝트를 소개합니다.</p>
+<p>​</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*Ohlu_01KzRBMbfhs.jpg" alt="스크린샷 2017-01-21 오후 10.19.21"></p>
+<p>사이트에가서 보면 아시겠지만 이 프로젝트는 LLVM(Low Level Virtual Machine) 기반으로 C,C++로 짜여진 것을 JavaScript로 바꿔주는 프로젝트라는 것을 알 수 있습니다.</p>
+<h4 id="1-3-도원결의"><a href="#1-3-도원결의" class="headerlink" title="1.3. 도원결의"></a>1.3. 도원결의</h4><p><img src="https://cdn-images-1.medium.com/max/1600/0*zbCOVWXY411KNapH.jpg" alt="">출처 : 나무위키 진삼국무쌍7</p>
+<p>뭐 여러분 모두 짐작하셨다시피 asm.js의 엄청난 속도를 보고 emscripten은 LLVM을 asm.js로 컴파일 하기에 이릅니다.</p>
+<p>1.4. 한방 그림</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*0j3K5GJnzvKTPKe0.png" alt="">출처 : <a href="http://ejohn.org/blog/asmjs-javascript-compile-target/" target="_blank" rel="external">http://ejohn.org/blog/asmjs-javascript-compile-target/</a></p>
+<p>그림은 jquery의 구루 john resig의 <a href="http://ejohn.org/blog/asmjs-javascript-compile-target/" target="_blank" rel="external">사이트에</a> 올라와 있는 그림인데, C/C++ 코드를 짜면 Clang이 LLVM의 바이트 코드로 뱉어 냅니다. 그 결과는 spec 이 있으므로 컴파일러가 이해하는 수준의 순서로 Asm.js 스펙에 넣고 OpenGL을 쓰는 경우는 WebGL 스펙까지도 내려가서 변환해 줍니다. 그림 하나면 이해가 될 거를 많이도 내려 왔습니다.</p>
+<h3 id="2-WebAssembly"><a href="#2-WebAssembly" class="headerlink" title="2. WebAssembly"></a>2. WebAssembly</h3><p>드디어 오늘 이야기 할 WebAssembly 입니다. 자 이쯤 오면 이런 생각할 사람이 있을 거 같습니다.</p>
+<blockquote>
+<p><strong><em>흠… 그럴게 아니라 진짜 Assembly Spec을 만드는게 어때?</em></strong></p>
+</blockquote>
+<p>그런데 그것이 실제로 일어났습니다.</p>
+<p>어느 순간에 깃헙에 WebAssembly라는 그룹이 생기더니 design이라는 프로젝트를 통해 스펙을 주고 받고 있었습니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*y25032RUtLIORxka." alt="WebAssembly/design"></p>
+<p><a href="https://github.com/WebAssembly/design" target="_blank" rel="external">WebAssembly/design</a></p>
+<p><a href="https://github.com/WebAssembly/design" target="_blank" rel="external">design — WebAssembly Design Documents</a></p>
+<p>GitHub</p>
+<p>한 1년 정도 watch를 하고 두고 보고 있었습니다. 최근에 생긴변화 마일 스톤이 생겨서 한번 확인해 보면 좋겠다 싶어서 들여다 보았더니 생각보다 이야기 할 것들이 있습니다.</p>
+<h4 id="Past-Milestones"><a href="#Past-Milestones" class="headerlink" title="Past Milestones"></a>Past Milestones</h4><ul>
+<li>April 2015 — <a href="https://www.w3.org/community/webassembly" target="_blank" rel="external">WebAssembly Community Group</a> started</li>
+<li>June 2015 — The first <a href="https://github.com/WebAssembly/design/issues/150" target="_blank" rel="external">public announcement</a> [<a href="https://blogs.msdn.microsoft.com/mikeholman/2015/06/17/working-on-the-future-of-compile-to-web-applications/" target="_blank" rel="external">1</a>][<a href="https://blog.mozilla.org/luke/2015/06/17/webassembly/" target="_blank" rel="external">2</a>]</li>
+<li>March 2016 — Definition of core feature with multiple interoperable implementations [<a href="https://blogs.windows.com/msedgedev/2016/03/15/previewing-webassembly-experiments" target="_blank" rel="external">1</a>] [<a href="https://v8project.blogspot.com/2016/03/experimental-support-for-webassembly.html" target="_blank" rel="external">2</a>] [<a href="https://hacks.mozilla.org/2016/03/a-webassembly-milestone/" target="_blank" rel="external">3</a>]</li>
+<li>October 2016 — Browser Preview announced with multiple interoperable implementations [<a href="https://blogs.windows.com/msedgedev/2016/10/31/webassembly-browser-preview/" target="_blank" rel="external">1</a>] [<a href="http://v8project.blogspot.com/2016/10/webassembly-browser-preview.html" target="_blank" rel="external">2</a>] [<a href="https://hacks.mozilla.org/2016/10/webassembly-browser-preview" target="_blank" rel="external">3</a>]</li>
+</ul>
+<p>16년 12월에 브라우저 프리뷰로 올라온 버전 위주로 이야기를 할까 합니다.</p>
+<h4 id="2-1-binaryen"><a href="#2-1-binaryen" class="headerlink" title="2.1. binaryen"></a>2.1. binaryen</h4><p><img src="https://cdn-images-1.medium.com/max/1600/0*woRWYul7YcorCH2p.jpg" alt="">실제로 targaryen 네이밍 컨벤션을 따랐다고 합니다. 헐. 덕.</p>
+<p>뭔가 왕좌의 게임에 나올 거 같은 프로젝트 이름인데 실제로 emscripten 과 라임을 맞추기 위해서 노력했고 네이밍 컨벤션은 그걸 따랐다고 깃헙 공식페이지에 announce하고 있습니다. 개발의 시작은 덕질</p>
+<p>먼저 시작하기 전에 이 어셈블리 (바이너리) 파일 포맷을 wasm 라고 정의했고 파일 확장자는 .wasm이라는 것만 알아두시면 됩니다. 저는 이걸 아는데 시간이 많이 걸렸어요. 이후 binayen은 굉장히 간단합니다. 브라우저에서 이제 wasm 파일을 인식하니 두가지 옵션이 남았죠.</p>
+<ol>
+<li>emscripten으로 컴파일 할때 wasm 파일을 만들어 준다.</li>
+<li>asm.js 파일을 wasm 파일로 바꿔준다.</li>
+</ol>
+<h4 id="2-2-hello-world를-찍어보자"><a href="#2-2-hello-world를-찍어보자" class="headerlink" title="2.2. hello world를 찍어보자."></a>2.2. hello world를 찍어보자.</h4><p>백문이 불여일타! 개발자라면 응당 한번 찍어봐야 합니다.</p>
+<p>2.2.1. 선행 설치</p>
+<p>아 가슴뛰는 순간이네요. 일단 emscripten 과 binaryen을 인스톨 해야죠. 여기서 상당히 헤메었엇는데 저만 믿고 따라오시면 됩니다.</p>
+<p>먼저 EMSDK라는 Emscripten SDK를 설치 하셔야 됩니다. 아래 걸어둔 링크에 따라 다운로드 받고 순서대로 실행하시면 됩니다.</p>
+<p>링크 : <a href="http://kripken.github.io/emscripten-site/docs/getting_started/downloads.html" target="_blank" rel="external">http://kripken.github.io/emscripten-site/docs/getting_started/downloads.html</a></p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*FHw6LCYpS09cn02b.jpg" alt="스크린샷 2017-01-22 오후 1.46.23"></p>
+<p>그런데 문제가 있습니다. EMSKD의 명령어 중에 옵션에 latest 를 하면 1.35 버전을 가지고 오게 되서 binaryen을 지원하지 않습니다. 바꿔야 되는 부분은 제가 빨간색으로 표시해 두겠습니다.</p>
+<pre><code>\# Fetch the latest registry of available tools.  
+./emsdk update  
+
+\# Download and install the latest SDK tools.  
+./emsdk install incoming  
+
+\# Make the &quot;latest&quot; SDK &quot;active&quot;  
+./emsdk activate sdk-incoming-64bit
+</code></pre><p>으로 변경을 해 주셔야만 제대로 컴파일이 됩니다.</p>
+<p>먼저 helloworld.c 소스를 작성해 보겠습니다.</p>
+<pre><code>\#include &lt;stdio.h\&gt;  
+
+int main() {  
+printf(&quot;hello, world!\\n&quot;);  
+return 0;  
+}
+</code></pre><p>이제 다음과 같은 명령어를 통해 컴파일을 실행하면</p>
+<pre><code>$emcc hello\_world.c -o hello.js -s &apos;BINARYEN=&quot;~/dev/native-osx/binaryen&quot;&apos;
+</code></pre><p>hello.wasm 파일이 떨어집니다.</p>
+<p>hex 에디터로 열어서 hello, world를 찾아 보는것이 도리겠죠?</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*W-PeZRqrQ4Uu1XW4.jpg" alt="">오…. 소름</p>
+<p>그런데… 이걸 어떻게 브라우저에 띄울까요? 걱정 안해도 됩니다. 브라우저에서 볼 수 있도록 명령어를 제공합니다.</p>
+<pre><code>emcc hello\_world.c -s WASM=1 -o hello.html
+</code></pre><p>타겟을 html로 주고 WASM=1로 주게 되면 우리가 필요한 모든 파일들을 볼 수 있으며textarea 에 뜨는 것을 확인할 수 있습니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*nuL7btbxqKJp1te9.jpg" alt=""></p>
+<p>물론 실행은 크롬 canary 버전에서 실행했습니다. 아직 프리뷰 버전이라 정식 버전에는 들어가지 않았습니다.</p>
+<h4 id="2-3-한방-그림"><a href="#2-3-한방-그림" class="headerlink" title="2.3. 한방 그림"></a>2.3. 한방 그림</h4><p><strong>C,C++ -> Clang -> LLVM -> WASM</strong> 로 바로 되는 그림이면 좋겠지만 아직은 <strong>C,C++ -> (Clang -> LLVM -> asm.js )-> WASM</strong> 과정으로 이루어지는 형태입니다. 물론 이런 것들은 시간이 더 지나면서 바뀌게 될 것으로 보입니다. 괄호 안의 것들을 지우는 작업이 미래의 일이리라 보여집니다.</p>
+<h3 id="3-여담들"><a href="#3-여담들" class="headerlink" title="3. 여담들"></a><strong>3. 여담들</strong></h3><ol>
+<li>마지막으로 Angry bots 가 브라우저상에 돌아가는 동영상이고 저는 직접 플레이 해 보았는데 그냥.. 3D게임을 그대로 돌리는데 전혀 이상없는 수준이고 로딩 속도도 훨씬 빠르더군요.</li>
+</ol>
+<p>이 프로젝트는 지속적으로 주목해 봐야 합니다. 단연코!</p>
+<ol>
+<li>참고로 WASM 파일을 어떻게 다룰 것인지는 아래 링크를 참조하시기 바랍니다.</li>
+</ol>
+<p>링크 : <a href="http://webassembly.org/docs/js/" target="_blank" rel="external">http://webassembly.org/docs/js/</a></p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*PRvvr7IQ5fFwLVQR.jpg" alt="스크린샷 2017-01-22 오후 1.49.16"></p>
+<ol>
+<li>이전에 emscripten같은 프로젝트가 없었냐 하면 그것도 아닙니다. GWT는 java를 JavaScript로 바꾸는 작업을 했었고 이런 일련의 과정들이 현재의 밑거름이 되겠죠.</li>
+</ol>
+<hr>
+<p><em>Originally published at </em><a href="http://devpools.kr/2017/01/21/webassembly-binaryen-emscripten/" target="_blank" rel="external"><em>개발바보들</em></a><em>.</em></p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/f35130448c71" target="_blank" rel="external">January 21, 2017</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;WebAssembly-—-hello-world-어셈블리를-브라우저에-올려보자&quot;&gt;&lt;a href=&quot;#WebAssembly-—-hello-world-어셈블리를-브라우저에-올려보자&quot; class=&quot;headerlink&quot; title=&quot;WebAssem
+    
+    </summary>
+    
+    
+      <category term="github, github-trend, tech-trend" scheme="http://keen.devpools.kr/tags/github-github-trend-tech-trend/"/>
     
   </entry>
   

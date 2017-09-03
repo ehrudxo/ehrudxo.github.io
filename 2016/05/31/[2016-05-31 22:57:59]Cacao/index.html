@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Cacao | keen blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="github, github-trend, tech-trend" />
+  
+  
+  
+  
+  <meta name="description" content="Cacao애플이 Swift를 오픈 소스로 공개하고 나서 많은 발전이 있었습니다. 오늘 소개해 드릴 프로젝트는 swift를 이용해서 Mac과Linux용 데스크탑 애플리케이션을 만들 수 있는 프로젝트 입니다. 아마, 이것만 말씀 드려서는 감이 안 오실 테니 차차 말씀드리겠습니다. 2016/05/31 Editor’s choice PureSwift/Cacao_Ca">
+<meta name="keywords" content="github, github-trend, tech-trend">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cacao">
+<meta property="og:url" content="http://keen.devpools.kr/2016/05/31/[2016-05-31 22:57:59]Cacao/index.html">
+<meta property="og:site_name" content="keen blog">
+<meta property="og:description" content="Cacao애플이 Swift를 오픈 소스로 공개하고 나서 많은 발전이 있었습니다. 오늘 소개해 드릴 프로젝트는 swift를 이용해서 Mac과Linux용 데스크탑 애플리케이션을 만들 수 있는 프로젝트 입니다. 아마, 이것만 말씀 드려서는 감이 안 오실 테니 차차 말씀드리겠습니다. 2016/05/31 Editor’s choice PureSwift/Cacao_Ca">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*r1imG1eMLQQRe4BT6IfdXA.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*DuYeYheo5JPpX5avhTrSKw.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*n1dxeTXI84OJ7FOlO6CMeA.png">
+<meta property="og:updated_time" content="2017-09-03T14:05:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cacao">
+<meta name="twitter:description" content="Cacao애플이 Swift를 오픈 소스로 공개하고 나서 많은 발전이 있었습니다. 오늘 소개해 드릴 프로젝트는 swift를 이용해서 Mac과Linux용 데스크탑 애플리케이션을 만들 수 있는 프로젝트 입니다. 아마, 이것만 말씀 드려서는 감이 안 오실 테니 차차 말씀드리겠습니다. 2016/05/31 Editor’s choice PureSwift/Cacao_Ca">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*r1imG1eMLQQRe4BT6IfdXA.png">
+  
+    <link rel="alternate" href="/atom.xml" title="keen blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/fashion.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  
+  <div class="site-header-image">
+    <img id="originBg" width="100%" alt="Hike News" src="">
+  </div>
+
+  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
+    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
+  </div>
+
+  <script>
+        var imgUrls = "images/storm.png".split(",");
+        var random = Math.floor((Math.random() * imgUrls.length ));
+        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+          document.getElementById("originBg").src=imgUrls[random];
+          document.getElementById("blurBg").src=imgUrls[random];
+        } else {
+          document.getElementById("originBg").src='/' + imgUrls[random];
+          document.getElementById("blurBg").src='/' + imgUrls[random];
+        }
+    </script>
+
+
+
+
+<header id="allheader" class="site-header" role="banner" 
+   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="keen blog" rel="home"> keen blog </a>
+            
+          </h1>
+          
+          
+            <div class="site-description">techblog</div>
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-[2016-05-31 22:57:59]Cacao" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Cacao
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/05/31/[2016-05-31 22:57:59]Cacao/" class="article-date">
+	  <time datetime="2016-05-31T13:57:59.000Z" itemprop="datePublished">5월 31, 2016</time>
+	</a>
+
+       
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Cacao"><a href="#Cacao" class="headerlink" title="Cacao"></a>Cacao</h3><p>애플이 Swift를 오픈 소스로 공개하고 나서 많은 발전이 있었습니다. 오늘 소개해 드릴 프로젝트는 swift를 이용해서 Mac과Linux용 데스크탑 애플리케이션을 만들 수 있는 프로젝트 입니다.</p>
+<p>아마, 이것만 말씀 드려서는 감이 안 오실 테니 차차 말씀드리겠습니다.</p>
+<p>2016/05/31 Editor’s choice</p>
+<p><a href="https://github.com/PureSwift/Cacao" title="https://github.com/PureSwift/Cacao" target="_blank" rel="external"><strong>PureSwift/Cacao</strong><br>_Cacao - Pure Swift Cross-platform UIKit (Cocoa Touch) implementation (Supports Linux)_github.com</a><a href="https://github.com/PureSwift/Cacao" target="_blank" rel="external"></a></p>
+<hr>
+<h4 id="시작점"><a href="#시작점" class="headerlink" title="시작점"></a>시작점</h4><p>애플은 2015년 3월 개발자 블로그에 스위프트가 오픈소스가 되었음을 발표합니다.</p>
+<p><a href="https://developer.apple.com/swift/blog/?id=34" title="https://developer.apple.com/swift/blog/?id=34" target="_blank" rel="external"><strong>Swift is Open Source - Swift Blog</strong><br>_Get the latest news and helpful tips on the Swift programming language from the engineers who created it._developer.apple.com</a><a href="https://developer.apple.com/swift/blog/?id=34" target="_blank" rel="external"></a></p>
+<p>그리고는 깃헙 디렉토리에 오픈하기에 이릅니다.</p>
+<p><a href="https://github.com/apple" title="https://github.com/apple" target="_blank" rel="external"><strong>Apple</strong><br>_GitHub is where people build software. More than 15 million people use GitHub to discover, fork, and contribute to over…_github.com</a><a href="https://github.com/apple" target="_blank" rel="external"></a></p>
+<p>재미있는 것은 깃헙 apple 디렉토리에 있는 소스는 몽땅 swift 소스입니다.</p>
+<h4 id="리눅스"><a href="#리눅스" class="headerlink" title="리눅스"></a>리눅스</h4><p>오픈 소스가 된 지 얼마 있지 않아서 리눅스용 배포판도 발표를 하자, 개발진영은 난리가 되고 아주 많은 프로젝트들이 만들어지기 시작합니다.</p>
+<p><a href="https://github.com/matteocrippa/awesome-swift#webserver" title="https://github.com/matteocrippa/awesome-swift#webserver" target="_blank" rel="external"><strong>matteocrippa/awesome-swift</strong><br>_iOS App Awesome Linux Projects Updated 🐧 May 30, 2016 Please take a quick look at the contribution guidelines first…_github.com</a><a href="https://github.com/matteocrippa/awesome-swift#webserver" target="_blank" rel="external"></a></p>
+<p>awesome-swift에서 이후 얼마나 많은 프로젝트들이 swift로 확인해 볼 수 있습니다. 링크는 그 중에 web-server 만 모아 봤는데,</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*r1imG1eMLQQRe4BT6IfdXA.png" alt=""></p>
+<p>그림에 보시는바 와 같습니다.</p>
+<hr>
+<h4 id="다시-돌아가서"><a href="#다시-돌아가서" class="headerlink" title="다시 돌아가서"></a>다시 돌아가서</h4><p>프로젝트는 간단합니다.</p>
+<p>리눅스와 Mac 그리고 윈도우즈 모두에서 자유롭게 사용할 수 있는 그래픽 라이브러리가 당연히 필요할 테고, 윈도우즈를 제외한다면 cairo가 가장 합리적인 대안입니다.</p>
+<p>이 프로젝트는 Silica와 SDL 두 축으로 이루어져 있습니다. cairo를 이용해 Quartz2D — Core Graphic을 구현한 Silica 를 이용해 Linux와 Mac GUI를 구현합니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*DuYeYheo5JPpX5avhTrSKw.png" alt=""></p>
+<p>이런 그림이 그려지는 거죠.</p>
+<hr>
+<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><p>설치는 생각보다 까다롭습니다.</p>
+<p>$brew install cairo sdl2 &amp;&amp; carthage bootstrap</p>
+<p>명령어를 통해 pre-requsite을 설치하고 나면</p>
+<p>git clone 보다는 release 버전을 이용하셔야 합니다.</p>
+<p>git 소스는 에러를 뱉습니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*n1dxeTXI84OJ7FOlO6CMeA.png" alt=""></p>
+<p>Demo를 실행하면 위와 같은 화면을 볼 수 있습니다.</p>
+<hr>
+<p><a href="https://github.com/PureSwift?page=2" title="https://github.com/PureSwift?page=2" target="_blank" rel="external"><strong>PureSwift</strong><br>_GitHub is where people build software. More than 15 million people use GitHub to discover, fork, and contribute to over…_github.com</a><a href="https://github.com/PureSwift?page=2" target="_blank" rel="external"></a></p>
+<p>PureSwift 디렉토리는 위와 같은 일들을 실행하기 위해 작업을 하고 있습니다. 아직은 완성도가 높지는 않지만, 상당히 많은 분양에서 네이티브 어플리케이션으로 포팅되고 있습니다.</p>
+<hr>
+<h4 id="Swift-어디까지-갈까요"><a href="#Swift-어디까지-갈까요" class="headerlink" title="Swift 어디까지 갈까요?"></a>Swift 어디까지 갈까요?</h4><p>Scala가 Java와의 상황정리, Go 및 Rust등은 서버사이드에 집중하는 사이 크게 웹 기반의 React와 생각지도 못한 Swift가 불쑥 들어와 개발자 군을 크게 형성하고 있습니다.</p>
+<p>폴리글랏이 대세라고는 하지만 isomorphic 또한 큰 이슈인 만큼 관심을 가지고 두고볼 만한 일입니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/76a2536ef6ff" target="_blank" rel="external">May 31, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/01/[2016-06-01 23:45:18]DeepOSM/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          DeepOSM
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/30/[2016-05-30 23:35:07]PrivacyChecker/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">PrivacyChecker</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cacao"><span class="nav-number">1.</span> <span class="nav-text">Cacao</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#시작점"><span class="nav-number">1.1.</span> <span class="nav-text">시작점</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#리눅스"><span class="nav-number">1.2.</span> <span class="nav-text">리눅스</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#다시-돌아가서"><span class="nav-number">1.3.</span> <span class="nav-text">다시 돌아가서</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#설치"><span class="nav-number">1.4.</span> <span class="nav-text">설치</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Swift-어디까지-갈까요"><span class="nav-number">1.5.</span> <span class="nav-text">Swift 어디까지 갈까요?</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2017 keen blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+      var headerblur = document.getElementById("header-blur");
+      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

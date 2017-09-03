@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>security-guide-for-developers | keen blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="github, github-trend, tech-trend" />
+  
+  
+  
+  
+  <meta name="description" content="security-guide-for-developers프론트엔드 개발자를 위한 보안 가이드가 오늘 소개해 드릴 프로젝트입니다. 몇번씩이나 깃헙 수위권을 차지 했었는데요. 상당히 읽어 볼만한 내용들을 포함하고 있습니다. 2016/08/10 best Practice FallibleInc/security-guide-for-developers_security-gui">
+<meta name="keywords" content="github, github-trend, tech-trend">
+<meta property="og:type" content="article">
+<meta property="og:title" content="security-guide-for-developers">
+<meta property="og:url" content="http://keen.devpools.kr/2016/08/10/[2016-08-10 23:01:55]security-guide-for-developers/index.html">
+<meta property="og:site_name" content="keen blog">
+<meta property="og:description" content="security-guide-for-developers프론트엔드 개발자를 위한 보안 가이드가 오늘 소개해 드릴 프로젝트입니다. 몇번씩이나 깃헙 수위권을 차지 했었는데요. 상당히 읽어 볼만한 내용들을 포함하고 있습니다. 2016/08/10 best Practice FallibleInc/security-guide-for-developers_security-gui">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*xYBVRvNvwE3LKISwLYSLFQ.png">
+<meta property="og:updated_time" content="2017-09-03T14:05:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="security-guide-for-developers">
+<meta name="twitter:description" content="security-guide-for-developers프론트엔드 개발자를 위한 보안 가이드가 오늘 소개해 드릴 프로젝트입니다. 몇번씩이나 깃헙 수위권을 차지 했었는데요. 상당히 읽어 볼만한 내용들을 포함하고 있습니다. 2016/08/10 best Practice FallibleInc/security-guide-for-developers_security-gui">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*xYBVRvNvwE3LKISwLYSLFQ.png">
+  
+    <link rel="alternate" href="/atom.xml" title="keen blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/fashion.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  
+  <div class="site-header-image">
+    <img id="originBg" width="100%" alt="Hike News" src="">
+  </div>
+
+  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
+    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
+  </div>
+
+  <script>
+        var imgUrls = "images/storm.png".split(",");
+        var random = Math.floor((Math.random() * imgUrls.length ));
+        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+          document.getElementById("originBg").src=imgUrls[random];
+          document.getElementById("blurBg").src=imgUrls[random];
+        } else {
+          document.getElementById("originBg").src='/' + imgUrls[random];
+          document.getElementById("blurBg").src='/' + imgUrls[random];
+        }
+    </script>
+
+
+
+
+<header id="allheader" class="site-header" role="banner" 
+   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="keen blog" rel="home"> keen blog </a>
+            
+          </h1>
+          
+          
+            <div class="site-description">techblog</div>
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-[2016-08-10 23:01:55]security-guide-for-developers" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      security-guide-for-developers
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/08/10/[2016-08-10 23:01:55]security-guide-for-developers/" class="article-date">
+	  <time datetime="2016-08-10T14:01:55.000Z" itemprop="datePublished">8월 10, 2016</time>
+	</a>
+
+       
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="security-guide-for-developers"><a href="#security-guide-for-developers" class="headerlink" title="security-guide-for-developers"></a>security-guide-for-developers</h3><p>프론트엔드 개발자를 위한 보안 가이드가 오늘 소개해 드릴 프로젝트입니다. 몇번씩이나 깃헙 수위권을 차지 했었는데요. 상당히 읽어 볼만한 내용들을 포함하고 있습니다.</p>
+<p>2016/08/10 best Practice</p>
+<p><a href="https://github.com/FallibleInc/security-guide-for-developers" title="https://github.com/FallibleInc/security-guide-for-developers" target="_blank" rel="external"><strong>FallibleInc/security-guide-for-developers</strong><br>_security-guide-for-developers - Security Guide for Developers (实用性开发人员安全须知)_github.com</a><a href="https://github.com/FallibleInc/security-guide-for-developers" target="_blank" rel="external"></a></p>
+<hr>
+<h4 id="배경설명"><a href="#배경설명" class="headerlink" title="배경설명"></a>배경설명</h4><p><a href="https://fallible.co/" title="https://fallible.co/" target="_blank" rel="external"><strong>Fallible - Secure your startup</strong><br>_About us We are a group of hackers passionate about improving the security posture of companies, tech startups in…_fallible.co</a><a href="https://fallible.co/" target="_blank" rel="external"></a></p>
+<p>해커 그룹이 만든 fallible 라는 회사는</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*xYBVRvNvwE3LKISwLYSLFQ.png" alt=""></p>
+<p>의 가격에 취약점에서 서비스를 지켜준다고 하는군요.</p>
+<p>아무튼 이 회사에서 깃헙에 security가이드를 내 주고 공개해서 많은 사람들의 호응을 얻고 있는데, 문서가 다 완성되어 있지 않는데에도 스타가 1만개가 넘는군요</p>
+<hr>
+<h4 id="체크리스트"><a href="#체크리스트" class="headerlink" title="체크리스트"></a>체크리스트</h4><p><a href="https://github.com/FallibleInc/security-guide-for-developers/blob/master/security-checklist.md" title="https://github.com/FallibleInc/security-guide-for-developers/blob/master/security-checklist.md" target="_blank" rel="external"><strong>FallibleInc/security-guide-for-developers</strong><br>_security-guide-for-developers - Security Guide for Developers (实用性开发人员安全须知)_github.com</a><a href="https://github.com/FallibleInc/security-guide-for-developers/blob/master/security-checklist.md" target="_blank" rel="external"></a></p>
+<p>체크리스트 하나를 만들어 나가고 있는데 꽤나 볼만 합니다. 한번 이 문서를 번역해서 PU 날려주는 것도 많을 거 같습니다.</p>
+<p><strong>일단 인증을 살펴볼까요?</strong></p>
+<ul>
+<li>HTTPS 를 꼭 쓸것</li>
+<li>비밀번호 해쉬를 저장할 때는 Bcrypt를 사용할것. (salt는 Bcrypt가 알아서 해 주니 필요없음</li>
+<li>로그아웃 후에는 session ID 값을 지울 것</li>
+<li>패스워드 변경때는 살아있는 모든 session 을 지울 것</li>
+<li>OAuth2 는 state 매개변수를 무조건 가질 것</li>
+<li>성공적으로 로그인하고 나서는 열려 있는 리다이렉트는 없앨 것</li>
+<li>회원등록/로그인 입력값을 해석할 때 javascript와 data, CRLF 값등을 깨끗하게 유지할 것</li>
+<li>쿠키는 암호화한 http 내용만 허용</li>
+<li>모바일 에서 사용되는 OTP 검증 시, OTP를 생성하거나 리셋한 결과 값을 리턴하는 response에 패스워드를 보내지 말것</li>
+<li>로그인 혹은 OTP검증 혹은 관련된 API사용의 횟수를 제한할 것. captcha 기반의 챌린지를 가질 것</li>
+<li>이메일 링크와 SMS 로 보내진 리셋 패스워드의 난수값을 확인할 것</li>
+<li>리셋 패스워드의 만기일을 설정할 것(납득할만한 기간)</li>
+<li>토큰 값이 성공적으로 사용되고 나서는 삭제할 것</li>
+</ul>
+<p>이것 이외도 많은 내용이 있으니 살펴볼만 한 듯합니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/5bdef1d0feb4" target="_blank" rel="external">August 10, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/08/16/[2016-08-16 06:28:21]webpack-dashboard/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          webpack-dashboard
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/09/[2016-08-09 07:14:40]demystifying-js-engine/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">demystifying-js-engine</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#security-guide-for-developers"><span class="nav-number">1.</span> <span class="nav-text">security-guide-for-developers</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#배경설명"><span class="nav-number">1.1.</span> <span class="nav-text">배경설명</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#체크리스트"><span class="nav-number">1.2.</span> <span class="nav-text">체크리스트</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2017 keen blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+      var headerblur = document.getElementById("header-blur");
+      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

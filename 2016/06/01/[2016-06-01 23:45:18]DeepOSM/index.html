@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>DeepOSM | keen blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="github, github-trend, tech-trend" />
+  
+  
+  
+  
+  <meta name="description" content="DeepOSM지도는 언제나 가슴 설레입니다. 오늘은 오랜만에 “너로 정했어” 라고 할 만큼 눈에 띄는 프로젝트를 찾았습니다. DeepOSM 이름만 들어도 GIS 개발자들은 감이 올 거 같습니다. Tensorflow로 여러가지를 할 수 있지만, 저는 이렇게 가슴뛰는 프로젝트는 처음 본거 같습니다. 2016/06/01 Editor’s choice trailbe">
+<meta name="keywords" content="github, github-trend, tech-trend">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DeepOSM">
+<meta property="og:url" content="http://keen.devpools.kr/2016/06/01/[2016-06-01 23:45:18]DeepOSM/index.html">
+<meta property="og:site_name" content="keen blog">
+<meta property="og:description" content="DeepOSM지도는 언제나 가슴 설레입니다. 오늘은 오랜만에 “너로 정했어” 라고 할 만큼 눈에 띄는 프로젝트를 찾았습니다. DeepOSM 이름만 들어도 GIS 개발자들은 감이 올 거 같습니다. Tensorflow로 여러가지를 할 수 있지만, 저는 이렇게 가슴뛰는 프로젝트는 처음 본거 같습니다. 2016/06/01 Editor’s choice trailbe">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*ikJJ657HV622oizlQQv6lg.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*wlqwfq2hr4LsnkGf8nbzmw.png">
+<meta property="og:updated_time" content="2017-09-03T14:05:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DeepOSM">
+<meta name="twitter:description" content="DeepOSM지도는 언제나 가슴 설레입니다. 오늘은 오랜만에 “너로 정했어” 라고 할 만큼 눈에 띄는 프로젝트를 찾았습니다. DeepOSM 이름만 들어도 GIS 개발자들은 감이 올 거 같습니다. Tensorflow로 여러가지를 할 수 있지만, 저는 이렇게 가슴뛰는 프로젝트는 처음 본거 같습니다. 2016/06/01 Editor’s choice trailbe">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*ikJJ657HV622oizlQQv6lg.png">
+  
+    <link rel="alternate" href="/atom.xml" title="keen blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/fashion.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  
+  <div class="site-header-image">
+    <img id="originBg" width="100%" alt="Hike News" src="">
+  </div>
+
+  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
+    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
+  </div>
+
+  <script>
+        var imgUrls = "images/storm.png".split(",");
+        var random = Math.floor((Math.random() * imgUrls.length ));
+        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+          document.getElementById("originBg").src=imgUrls[random];
+          document.getElementById("blurBg").src=imgUrls[random];
+        } else {
+          document.getElementById("originBg").src='/' + imgUrls[random];
+          document.getElementById("blurBg").src='/' + imgUrls[random];
+        }
+    </script>
+
+
+
+
+<header id="allheader" class="site-header" role="banner" 
+   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="keen blog" rel="home"> keen blog </a>
+            
+          </h1>
+          
+          
+            <div class="site-description">techblog</div>
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-[2016-06-01 23:45:18]DeepOSM" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      DeepOSM
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/06/01/[2016-06-01 23:45:18]DeepOSM/" class="article-date">
+	  <time datetime="2016-06-01T14:45:18.000Z" itemprop="datePublished">6월 1, 2016</time>
+	</a>
+
+       
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="DeepOSM"><a href="#DeepOSM" class="headerlink" title="DeepOSM"></a>DeepOSM</h3><p><img src="https://cdn-images-1.medium.com/max/1600/1*ikJJ657HV622oizlQQv6lg.png" alt="">지도는 언제나 가슴 설레입니다.</p>
+<p>오늘은 오랜만에 “너로 정했어” 라고 할 만큼 눈에 띄는 프로젝트를 찾았습니다.</p>
+<p>DeepOSM 이름만 들어도 GIS 개발자들은 감이 올 거 같습니다. Tensorflow로 여러가지를 할 수 있지만, 저는 이렇게 가슴뛰는 프로젝트는 처음 본거 같습니다.</p>
+<p>2016/06/01 Editor’s choice</p>
+<p><a href="https://github.com/trailbehind/DeepOSM" title="https://github.com/trailbehind/DeepOSM" target="_blank" rel="external"><strong>trailbehind/DeepOSM</strong><br>_DeepOSM - Train a deep learning net with OpenStreetMap features and satellite imagery._github.com</a><a href="https://github.com/trailbehind/DeepOSM" target="_blank" rel="external"></a></p>
+<hr>
+<p>오늘은 설치를 해 보지 못했습니다.</p>
+<h4 id="하지만-간단하게-설명만-하자면"><a href="#하지만-간단하게-설명만-하자면" class="headerlink" title="하지만 간단하게 설명만 하자면,"></a>하지만 간단하게 설명만 하자면,</h4><p>위성사진으로 찍은 사진에서 도로데이타를 추출해 내고, 위성사진에서 건물데이타를 추출해 내는 작업들을 deep learning을 통해 기계가 작업을 하게 해 주는 프로젝트 입니다.</p>
+<p>이게 무슨 소리냐 하면, 현재 여러분들이 보는 구글 맵이라던지 네이버 맵, 다음 맵들은 기본적으로 Raster data와 벡터데이타의 적절한 조합인데</p>
+<p>벡터데이타라고 하는것은 이른바 점선면이고 위치값들은 보통 측량을 통해서 이루어집니다.</p>
+<p>항공사진은 벌크로 다니면서 하늘에서 찍어대면서 좌표를 찍지만 도로의 생김새들이라던지 좌표들은 여러가지 제약들과 정확도 때문에 보통 DB 업체라고 하는 쪽에서 지형 지물 좌표값을 넣기 위해 측량을 하러 전국, 전 세계를 누비고 다닙니다.</p>
+<p>정확한 벡터데이타를 집어 넣어서 여러분이 길찾기를 할 때에, Navigation을 할 때에 활용할 수 있게 합니다.</p>
+<hr>
+<p>하지만 이제는 그 측량 마저도 인공지능이 대체할 수 있을지도 모르는 세상이 오고 있습니다.</p>
+<h4 id="인공위성-사진을-보는-AI라니요"><a href="#인공위성-사진을-보는-AI라니요" class="headerlink" title="인공위성 사진을 보는 AI라니요"></a>인공위성 사진을 보는 AI라니요</h4><p>tensorflow 얘기를 처음듣고 생각한 아이디어가 크게 두가지 인데 하나는 인공위성 사진에 딥러닝 적용시키면 벡터를 거꾸로 잡아 낼 수 있겠다. 라는 것과 아재개그 봇인데, 역시 생각하면 바로 만들지 않으면 누군가는 해 버리는군요.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*wlqwfq2hr4LsnkGf8nbzmw.png" alt=""></p>
+<p>75~80%의 정확도라고 하니 조만간…</p>
+<p>이라고 생각해 보면 거꾸로 구글은 이 생각을 하지 않았을 리가 없는데라는 생각도 드네요. 결국 tensorflow 의 핵심은 빅데이터와 hidden layer 라고 봤을 때 데이타가 많은 쪽이 결국은 이쪽도 장악을 하겠네요.</p>
+<p>잡설이 길었네요.</p>
+<p>하지만 반드시 참고해봐야할 프로젝트임에는 틀림없네요.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/e50338b94029" target="_blank" rel="external">June 1, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/02/[2016-06-02 23:56:01]One Click to Be Pro/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          One Click to Be Pro
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/31/[2016-05-31 22:57:59]Cacao/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Cacao</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#DeepOSM"><span class="nav-number">1.</span> <span class="nav-text">DeepOSM</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#하지만-간단하게-설명만-하자면"><span class="nav-number">1.1.</span> <span class="nav-text">하지만 간단하게 설명만 하자면,</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#인공위성-사진을-보는-AI라니요"><span class="nav-number">1.2.</span> <span class="nav-text">인공위성 사진을 보는 AI라니요</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2017 keen blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+      var headerblur = document.getElementById("header-blur");
+      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

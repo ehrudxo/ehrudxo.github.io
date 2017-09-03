@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>flexbox-layout | keen blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="github, github-trend, tech-trend" />
+  
+  
+  
+  
+  <meta name="description" content="flexbox-layoutlayout 이쁘쥬? flexbox 는 CSS의 새로운 Spec이 될 확률이 상당히 높은 레이아웃을 정의하는 방법입니다. 현재는 Draft를 지나 Candidate Recommendation 상태에 있습니다. react native 의 경우는 이 flexbox 로 컴포넌트들이 배치되게 되어 있습니다. 구글이 Android에서도 fl">
+<meta name="keywords" content="github, github-trend, tech-trend">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flexbox-layout">
+<meta property="og:url" content="http://keen.devpools.kr/2016/05/10/[2016-05-10 07:04:14]flexbox-layout/index.html">
+<meta property="og:site_name" content="keen blog">
+<meta property="og:description" content="flexbox-layoutlayout 이쁘쥬? flexbox 는 CSS의 새로운 Spec이 될 확률이 상당히 높은 레이아웃을 정의하는 방법입니다. 현재는 Draft를 지나 Candidate Recommendation 상태에 있습니다. react native 의 경우는 이 flexbox 로 컴포넌트들이 배치되게 되어 있습니다. 구글이 Android에서도 fl">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/2000/1*DF0o_mcPdk5xkwudVaeVXg.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*mh_quvYLfJn5DRrktv0W5g.png">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*wIJ5Bd86TdZuQLT-6whb-g.gif">
+<meta property="og:updated_time" content="2017-09-03T14:05:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="flexbox-layout">
+<meta name="twitter:description" content="flexbox-layoutlayout 이쁘쥬? flexbox 는 CSS의 새로운 Spec이 될 확률이 상당히 높은 레이아웃을 정의하는 방법입니다. 현재는 Draft를 지나 Candidate Recommendation 상태에 있습니다. react native 의 경우는 이 flexbox 로 컴포넌트들이 배치되게 되어 있습니다. 구글이 Android에서도 fl">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/2000/1*DF0o_mcPdk5xkwudVaeVXg.png">
+  
+    <link rel="alternate" href="/atom.xml" title="keen blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/fashion.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  
+  <div class="site-header-image">
+    <img id="originBg" width="100%" alt="Hike News" src="">
+  </div>
+
+  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
+    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
+  </div>
+
+  <script>
+        var imgUrls = "images/storm.png".split(",");
+        var random = Math.floor((Math.random() * imgUrls.length ));
+        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+          document.getElementById("originBg").src=imgUrls[random];
+          document.getElementById("blurBg").src=imgUrls[random];
+        } else {
+          document.getElementById("originBg").src='/' + imgUrls[random];
+          document.getElementById("blurBg").src='/' + imgUrls[random];
+        }
+    </script>
+
+
+
+
+<header id="allheader" class="site-header" role="banner" 
+   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="keen blog" rel="home"> keen blog </a>
+            
+          </h1>
+          
+          
+            <div class="site-description">techblog</div>
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-[2016-05-10 07:04:14]flexbox-layout" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      flexbox-layout
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/05/10/[2016-05-10 07:04:14]flexbox-layout/" class="article-date">
+	  <time datetime="2016-05-09T22:04:14.000Z" itemprop="datePublished">5월 10, 2016</time>
+	</a>
+
+       
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="flexbox-layout"><a href="#flexbox-layout" class="headerlink" title="flexbox-layout"></a>flexbox-layout</h3><p><img src="https://cdn-images-1.medium.com/max/2000/1*DF0o_mcPdk5xkwudVaeVXg.png" alt="">layout 이쁘쥬?</p>
+<p>flexbox 는 CSS의 새로운 Spec이 될 확률이 상당히 높은 레이아웃을 정의하는 방법입니다. 현재는 Draft를 지나 Candidate Recommendation 상태에 있습니다. react native 의 경우는 이 flexbox 로 컴포넌트들이 배치되게 되어 있습니다. 구글이 Android에서도 flexbox를 통해서 컴포넌트를 배치할 수 있도록 했습니다.</p>
+<p>2016/05/10 Best Project(650✰)</p>
+<p><a href="https://github.com/google/flexbox-layout" title="https://github.com/google/flexbox-layout" target="_blank" rel="external"><strong>google/flexbox-layout</strong><br>_flexbox-layout - Flexbox for Android_github.com</a><a href="https://github.com/google/flexbox-layout" target="_blank" rel="external"></a></p>
+<hr>
+<h4 id="설치하기"><a href="#설치하기" class="headerlink" title="설치하기"></a>설치하기</h4><p>build.gradle 파일에 dependency를 아래와 같이 정의하고 layout.xml에서 사용하면 됩니다.</p>
+<pre><code>dependencies {  
+compile &apos;com.google.android:flexbox:0.1.1&apos;  
+}
+</code></pre><p>layout xml파일은 다음과 같은 형태를 띕니다.</p>
+<pre><code>&lt;com.google.android.flexbox.FlexboxLayout  
+xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;  
+xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;  
+android:layout\_width=&quot;match\_parent&quot;  
+android:layout\_height=&quot;match\_parent&quot;  
+app:flexWrap=&quot;wrap&quot;  
+app:alignItems=&quot;stretch&quot;  
+app:alignContent=&quot;stretch&quot; \&gt;  
+
+&lt;TextView  
+android:id=&quot;@+id/textview1&quot;  
+android:layout\_width=&quot;120dp&quot;  
+android:layout\_height=&quot;80dp&quot;  
+app:layout\_flexBasisPercent=&quot;50%&quot;  
+/\&gt;  
+
+&lt;TextView  
+android:id=&quot;@+id/textview2&quot;  
+android:layout\_width=&quot;80dp&quot;  
+android:layout\_height=&quot;80dp&quot;  
+app:layout\_alignSelf=&quot;center&quot;  
+/\&gt;  
+
+&lt;TextView  
+android:id=&quot;@+id/textview3&quot;  
+android:layout\_width=&quot;160dp&quot;  
+android:layout\_height=&quot;80dp&quot;  
+app:layout\_alignSelf=&quot;flex\_end&quot;  
+/\&gt;  
+&lt;/com.google.android.flexbox.FlexboxLayout\&gt;
+</code></pre><hr>
+<h4 id="실행해보기"><a href="#실행해보기" class="headerlink" title="실행해보기"></a>실행해보기</h4><p>IDE를 켜고 activity_main.xml을 켜면 다음과 같은 화면이 나옵니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*mh_quvYLfJn5DRrktv0W5g.png" alt=""></p>
+<p>새로운 에뮬레이터 qemu 로 실행을 해 보겠습니다.</p>
+<p>일단 flex direction에 대해서 확인해 볼 수 있는 예제입니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*wIJ5Bd86TdZuQLT-6whb-g.gif" alt="">qemu 개좋아염</p>
+<p>flexbox 자체에 대해서도 손쉽게 이해할 수 있는 예제들이군요.</p>
+<hr>
+<h4 id="Flexbox-에-대해서"><a href="#Flexbox-에-대해서" class="headerlink" title="Flexbox 에 대해서"></a>Flexbox 에 대해서</h4><p>flexbox 개요에 대해서는 서문에 약간 언급을 했구요. spec 은 아래에서 찾아 볼 수 있습니다.</p>
+<p><a href="https://www.w3.org/TR/css-flexbox-1/" title="https://www.w3.org/TR/css-flexbox-1/" target="_blank" rel="external"><strong>CSS Flexible Box Layout Module Level 1</strong><br>_This section is not normative. CSS 2.1 defined four layout modes - algorithms which determine the size and position of…_www.w3.org</a><a href="https://www.w3.org/TR/css-flexbox-1/" target="_blank" rel="external"></a></p>
+<p>정말 간단한 한글 블로깅은 아래에서 찾아볼 수 있습니다.</p>
+<p><a href="http://ko.learnlayout.com/flexbox.html" title="http://ko.learnlayout.com/flexbox.html" target="_blank" rel="external"><strong>CSS - flexbox</strong><br>_새로운 flexbox 레이아웃 모드는 우리가 CSS로 레이아웃을 잡는 방법을 재정의할 기세입니다. 아쉽게도 flexbox 규격이 최근에 상당히 많이 바뀌었기 때문에 각 브라우저마다 다른 식으로 구현돼 있습니다. …_ko.learnlayout.com</a><a href="http://ko.learnlayout.com/flexbox.html" target="_blank" rel="external"></a></p>
+<p>하지만 웹 관점에서 보자면 가장 이해하기 좋은 문서는 이 포스트 입니다.</p>
+<p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" title="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="external"><strong>A Complete Guide to Flexbox | CSS-Tricks</strong><br>_The Flexbox Layout (Flexible Box) module (currently a W3C Last Call Working Draft) aims at providing a more efficient…_css-tricks.com</a><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="external"></a></p>
+<h4 id="사용법이-다-달라요"><a href="#사용법이-다-달라요" class="headerlink" title="사용법이 다 달라요!"></a>사용법이 다 달라요!</h4><p>네, 아직은 javascript, react-native, android 에서 약간씩은 다르게 사용되고 있습니다. 하지만 기본적인 컨셉(flex-direction,wrap) 등은 같기 때문에 빨리 적응하면 할수록 더 좋을 듯 싶습니다.</p>
+<h4 id="이거-꼭-배워야-하나요"><a href="#이거-꼭-배워야-하나요" class="headerlink" title="이거 꼭 배워야 하나요?"></a>이거 꼭 배워야 하나요?</h4><p>지금 당장은 아닐 수 있습니다. 하지만 web component들이 일반화 되는 시점이 되면 대부분의 layout들은 웹과 native 모두 저렇게 바뀌지 않을까요?</p>
+<p>swift의 경우도 github에 개인 프로젝트이기는 하지만 flexbox관련 프로젝트가 올라와 있네요</p>
+<p><a href="https://github.com/joshaber/SwiftBox" title="https://github.com/joshaber/SwiftBox" target="_blank" rel="external"><strong>joshaber/SwiftBox</strong><br>_SwiftBox - Flexbox in Swift, using Facebook’s css-layout._github.com</a><a href="https://github.com/joshaber/SwiftBox" target="_blank" rel="external"></a></p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/816c012a3a48" target="_blank" rel="external">May 9, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/11/[2016-05-11 07:31:34]gitsome/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          gitsome
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/09/[2016-05-09 08:58:36]Mac에 무작정 tensorflow 깔아보기/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Mac에 무작정 tensorflow 깔아보기</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#flexbox-layout"><span class="nav-number">1.</span> <span class="nav-text">flexbox-layout</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#설치하기"><span class="nav-number">1.1.</span> <span class="nav-text">설치하기</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#실행해보기"><span class="nav-number">1.2.</span> <span class="nav-text">실행해보기</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Flexbox-에-대해서"><span class="nav-number">1.3.</span> <span class="nav-text">Flexbox 에 대해서</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#사용법이-다-달라요"><span class="nav-number">1.4.</span> <span class="nav-text">사용법이 다 달라요!</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#이거-꼭-배워야-하나요"><span class="nav-number">1.5.</span> <span class="nav-text">이거 꼭 배워야 하나요?</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2017 keen blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+      var headerblur = document.getElementById("header-blur");
+      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>
