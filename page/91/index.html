@@ -123,7 +123,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-03-10 07:34:16]leaf"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-03-02 18:01:01]React Makes You Sad"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +131,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/03/10/[2016-03-10 07:34:16]leaf/">leaf</a>
+      <a class="article-title" href="/2016/03/02/[2016-03-02 18:01:01]React Makes You Sad/">React Makes You Sad</a>
     </h1>
   
 
@@ -139,8 +139,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/03/10/[2016-03-10 07:34:16]leaf/" class="article-date">
-	  <time datetime="2016-03-09T22:34:16.000Z" itemprop="datePublished">3월 10, 2016</time>
+	<a href="/2016/03/02/[2016-03-02 18:01:01]React Makes You Sad/" class="article-date">
+	  <time datetime="2016-03-02T09:01:01.000Z" itemprop="datePublished">3월 2, 2016</time>
 	</a>
 
        
@@ -148,42 +148,21 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/1*81o4RHt67Hscnh61zkzAoA.png" alt=""></p>
-<p>알파고와 이세돌의 대결 때문이었을까요? 오늘 Github 베스트는 machine learning 오픈소스 leaf가 차지했습니다. 구글의 Tensorflow 보다 빠르다고 합니다.</p>
-<p>2016/03/10 Today’s best ( 552 ★)</p>
-<p><a href="https://github.com/autumnai/leaf" title="https://github.com/autumnai/leaf" target="_blank" rel="external"><strong>autumnai/leaf</strong><br>_leaf - The Hacker’s Machine Learning Engine_github.com</a><a href="https://github.com/autumnai/leaf" target="_blank" rel="external"></a></p>
-<h3 id="구글의-Tensorflow-보다-빠르다"><a href="#구글의-Tensorflow-보다-빠르다" class="headerlink" title="구글의 Tensorflow 보다 빠르다!"></a>구글의 Tensorflow 보다 빠르다!</h3><p>어떤 방식으로 benchmark 가 머신 러닝에서 이뤄지는지 모르겠지만, Nvidia Titan X GPU 에서 돌린 결과는 구글의 Tensorflow보다 빠른 결과를 보여줍니다.</p>
-<p><img src="/images/1*AZjjAjdpJ8oydb9Mv54caA.png" alt=""></p>
-<p>Autumnai라는 그룹은 AI platform을 표방하고 있습니다. leaf만 있는 것은 아니고 Autumn, Leaf, Collenchyma 세가지로 이루어져 있습니다.</p>
-<p><img src="/images/1*cpn7ohXQOWv-IFnGMYhCOw.png" alt=""></p>
-<p>Rust로 개발 되었습니다.</p>
-<p><a href="https://www.rust-lang.org/downloads.html" title="https://www.rust-lang.org/downloads.html" target="_blank" rel="external"><strong>Downloads * The Rust Programming Language</strong><br>_A systems programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety._www.rust-lang.org</a><a href="https://www.rust-lang.org/downloads.html" target="_blank" rel="external"></a></p>
-<p>Example 프로젝트도 있습니다.</p>
-<p><a href="https://github.com/autumnai/leaf-examples" title="https://github.com/autumnai/leaf-examples" target="_blank" rel="external"><strong>autumnai/leaf-examples</strong><br>_leaf-examples - Examples for the Hacker’s Machine Learning Framework Leaf_github.com</a><a href="https://github.com/autumnai/leaf-examples" target="_blank" rel="external"></a></p>
-<h3 id="설치-및-실행"><a href="#설치-및-실행" class="headerlink" title="설치 및 실행"></a>설치 및 실행</h3><pre><code>\# rust 설치  
-curl -sSf https://static.rust-lang.org/rustup.sh | sh  
-\# leaf example 클론  
-git clone git@github.com:autumnai/leaf-examples.git &amp;&amp; cd leaf-examples  
-\# 빌드  
-cargo build --release  
-\# 실행  
-target/release/leaf-examples --help
-</code></pre><p>Mac OS X El capitan에서 설치할 때는 에러가 납니다. openssl 문제인데,</p>
-<blockquote>
-<p><em>brew link — force openssl</em></p>
-</blockquote>
-<p>명령어를 통해 해결할 수 있다고 되어 있는데, 저 명령어도 에러를 뱉습니다.</p>
-<pre><code>$ cd /usr/local  
-$ sudo chown -R &lt;your-username\&gt;:&lt;your-group-name\&gt; \*
-</code></pre><p>이렇게 man 파일 권한을 풀어주면 해결이 됩니다.</p>
-<p>groug name 은 id -g 명령어를 통해 풀 수 있습니다.</p>
-<ul>
-<li>혹시 빌드중에 cudnn 관련된 라이브러리 에러가 난다면, carge add cudnn을 해 주셔야 합니다. cargo add 명령어를 실행하기 위해서는 cargo-edit 이라는 프로젝트도 설치해야 합니다.</li>
-<li>cargo는 rust 를 위한 패키지 인스톨러 입니다.</li>
-</ul>
-<h3 id="맺으며"><a href="#맺으며" class="headerlink" title="맺으며"></a>맺으며</h3><p><img src="/images/1*XYtf5AIorG6obtXie2CoYg.pn" alt="">출처 : <a href="http://ppss.kr/archives/75915" target="_blank" rel="external">http://ppss.kr/archives/75915</a></p>
-<p>어제 알파고 관련 개드립 모음을 우연히 봤습니다. 재미있더군요. 오픈소스 AI를 통해 빅브라더 AI를 견제하는 미래가 그려질 지도 모르겠네요</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/f1be6cc386d0" target="_blank" rel="external">March 9, 2016</a>.</p>
+        <p><img src="/images/1*3h-e_HM32qX-1iPZKk9uKA.png" alt=""></p>
+<p>React에 대한 불만은 ‘어렵다’ 일지도 모르겠습니다. 사실 React 자체는 무척이나 간단한데, React를 사용한 프로젝트를 받아보면 대부분 난감해 합니다. 이에 대한 해결책을 workflow 로 만든 프로젝트가 있습니다.</p>
+<p>2016/03/02 editor’s choice(369★)</p>
+<p>일단 Gaeron 이 보는 가장 큰 문제점은 boilerpate의 남용이라고 보고 있네요. boilerplate 를 쓰지말고 혼자만의 React 프로그램을 ES2015 없이 먼저 작성해 보고 점차 적용하라는 관점을 견지하고 있습니다.</p>
+<hr>
+<p>오늘 새벽에 이 프로젝트를 보자마자 무척이나 용감하게, 번역해서 PR(Pull Request)를 날렸는데 다행히 Gaeron 이 merge 해 주었습니다.</p>
+<p><a href="https://github.com/gaearon/react-makes-you-sad" title="https://github.com/gaearon/react-makes-you-sad" target="_blank" rel="external"><strong>gaearon/react-makes-you-sad</strong><br>_react-makes-you-sad - Here’s a flowchart to make you happy again!_github.com</a><a href="https://github.com/gaearon/react-makes-you-sad" target="_blank" rel="external"></a></p>
+<p><img src="/images/1*rxbwD7t5tDc93rGtg-nEMw.png" alt=""><a href="https://cdn.rawgit.com/ehrudxo/react-makes-you-sad/korean/fatigue.svg" target="_blank" rel="external">https://cdn.rawgit.com/ehrudxo/react-makes-you-sad/korean/fatigue.svg</a></p>
+<p><img src="/images/1*fWmt1wD-AOPMSGVuRS1-DQ.pn" alt=""></p>
+<p>한국어 번역이 추가된 모습입니다.</p>
+<p>아직 작은 화면에서는 깨지는 부분이 있는데 그것은 원본도 마찬가지군요. 약간 큰 화면에서 보기 좋아 보입니다.</p>
+<p>한국어 번역된 프로젝트 링크는 다음과 같습니다.</p>
+<p><a href="https://github.com/ehrudxo/react-makes-you-sad" title="https://github.com/ehrudxo/react-makes-you-sad" target="_blank" rel="external"><strong>ehrudxo/react-makes-you-sad</strong><br>_react-makes-you-sad - Here’s a flowchart to make you happy again!_github.com</a><a href="https://github.com/ehrudxo/react-makes-you-sad" target="_blank" rel="external"></a></p>
+<p>번역체나 오타 혹은 더 좋은 제안을 PR로 날려 주시면 반영하겠습니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/728f7343ca9a" target="_blank" rel="external">March 2, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -204,7 +183,7 @@ $ sudo chown -R &lt;your-username\&gt;:&lt;your-group-name\&gt; \*
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-03-09 04:26:31]Status Page"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-03-01 13:16:22]gifi"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -212,7 +191,7 @@ $ sudo chown -R &lt;your-username\&gt;:&lt;your-group-name\&gt; \*
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/03/09/[2016-03-09 04:26:31]Status Page/">Status Page</a>
+      <a class="article-title" href="/2016/03/01/[2016-03-01 13:16:22]gifi/">gifi</a>
     </h1>
   
 
@@ -220,8 +199,8 @@ $ sudo chown -R &lt;your-username\&gt;:&lt;your-group-name\&gt; \*
     
     <div class="article-meta">
       
-	<a href="/2016/03/09/[2016-03-09 04:26:31]Status Page/" class="article-date">
-	  <time datetime="2016-03-08T19:26:31.000Z" itemprop="datePublished">3월 9, 2016</time>
+	<a href="/2016/03/01/[2016-03-01 13:16:22]gifi/" class="article-date">
+	  <time datetime="2016-03-01T04:16:22.000Z" itemprop="datePublished">3월 1, 2016</time>
 	</a>
 
        
@@ -229,38 +208,20 @@ $ sudo chown -R &lt;your-username\&gt;:&lt;your-group-name\&gt; \*
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/1*Akj36Yxn3kmnoL6utXkiUw.gi" alt=""></p>
-<p>Github에서 개발 상태를 표시하고 싶은 때에 유용한 프로젝트 입니다. 보여드리는 이미지가 사실 많은 이야기를 내포하고 있습니다.</p>
-<p>2016/03/09 Today’s Best( 1022 ★)</p>
-<hr>
-<h3 id="gh-pages"><a href="#gh-pages" class="headerlink" title="gh-pages"></a>gh-pages</h3><p>Github 프로젝트는 기본적으로 호스팅 페이지를 각각의 프로젝트마다 세팅할 수 있습니다. 좋은 예제가 microsoft.github.io 인데요</p>
-<p><a href="http://microsoft.github.io/" title="http://microsoft.github.io/" target="_blank" rel="external"><strong>Microsoft on GitHub</strong><br>_This open sourced site is hosted on GitHub. Patches, suggestions and comments are welcome. Built with love… and…_microsoft.github.io</a><a href="http://microsoft.github.io/" target="_blank" rel="external"></a></p>
-<p>이 페이지는 <a href="https://github.com/microsoft/microsoft.github.io" target="_blank" rel="external">github.com/microsoft/microsoft.github.io</a> 프로젝트의 gh-pages 브랜치를 웹페이지로 호스팅 합니다.</p>
-<p><a href="https://github.com/microsoft/microsoft.github.io" title="https://github.com/microsoft/microsoft.github.io" target="_blank" rel="external"><strong>Microsoft/microsoft.github.io</strong><br>_microsoft.github.io - The code behind the Microsoft.github.io website_github.com</a><a href="https://github.com/microsoft/microsoft.github.io" target="_blank" rel="external"></a></p>
-<p>Jekyll 같이 마크다운 기반의 블로깅 툴을 사용하면 페이지 자체를 개발 블로그로 사용할 수 있어서 많은 사람들이 사용하고 있습니다.</p>
-<h3 id="Status-Page"><a href="#Status-Page" class="headerlink" title="Status Page"></a>Status Page</h3><p>이런 좋은 기능을 활용하는 차원에서 이 프로젝트는 Github의 이슈와 라벨을 이용해서 프로젝트용 상태 페이지를 호스팅하는 프로젝트를 자동적으로 만들어 주는 것입니다.</p>
-<hr>
-<h3 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h3><h4 id="Mac-OS-X"><a href="#Mac-OS-X" class="headerlink" title="Mac OS X"></a>Mac OS X</h4><pre><code>curl -L https://github.com/pyupio/statuspage/raw/master/dist/statuspage\_osx \&gt; /usr/local/bin/statuspage  
-chmod +x /usr/local/bin/statuspage
-</code></pre><h4 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h4><pre><code>curl -L https://github.com/pyupio/statuspage/raw/master/dist/statuspage\_linux \&gt; /usr/local/bin/statuspage  
-chmod +x /usr/local/bin/statuspage
-</code></pre><ul>
-<li>그냥 github에 커밋된 statuspage 바이너리를 받아서 usr/local/bin 공간에 밀어 넣어주는게 다입니다.</li>
-</ul>
-<h3 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h3><pre><code>statuspage create --token=&lt;yourtoken\&gt;  
-Name: mystatuspage  
-Systems, eg (Website,API): Website, CDN, API
-</code></pre><ul>
-<li>yourtoken은 Github의 Settings > Personal access tokens 항목에 들어가셔서 Generate 를 클릭해서 생성할 수 있습니다</li>
-<li>실행시키면 Name 을 묻습니다. 실행 옵션에 create를 줬다면 Name에 기재된 대로 프로젝트가 하나 생성이 됩니다.</li>
-<li>Systems 는 라벨을 두고 이슈에서 그 라벨을 기준으로 Status관리를 해 준다는 이야기 입니다.</li>
-</ul>
-<p>제 경우에는 status-page 로 이름을 두고 생성을 했더니</p>
-<p><a href="https://github.com/ehrudxo/status-page" title="https://github.com/ehrudxo/status-page" target="_blank" rel="external"><strong>ehrudxo/status-page</strong><br>_Contribute to status-page development by creating an account on GitHub._github.com</a><a href="https://github.com/ehrudxo/status-page" target="_blank" rel="external"></a></p>
-<p>와 같은 프로젝트가 생성이 되고,</p>
-<p><a href="https://ehrudxo.github.io/status-page/" title="https://ehrudxo.github.io/status-page/" target="_blank" rel="external"><strong>Status</strong><br>_Status page hosted by GitHub, generated with pyupio/statuspage_ehrudxo.github.io</a><a href="https://ehrudxo.github.io/status-page/" target="_blank" rel="external"></a></p>
-<p>처럼 페이지 상태를 관리할 수 있게 나옵니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/cef72c39e4ea" target="_blank" rel="external">March 8, 2016</a>.</p>
+        <p>지루한 npm은가라! npm을 wrapping 해서 만든 명령어 gifi입니다. iterm2 버전 2.9 이상에서만 제대로 나오는데요. 생각보다 재밌네요.</p>
+<p><img src="/images/1*5LRIisX0O6b97ppy5uoWpA.gif" alt=""></p>
+<p>링크 : <a href="https://github.com/vdemedes/gifi" target="_blank" rel="external">https://github.com/vdemedes/gifi</a></p>
+<p>크게 더 설명할 필요는 없을 것 같구요.</p>
+<p>iTerm의 경우는 stable 버전은 2.1.4 버전이 최신인데 비해 Test Release 버전은 2.9.20~ 대입니다. Test Release 버전을 받는 다는 불안함 정도(?) 만 감수하면 npm 명령어를 치면 5초 마다 짤구경을 할 수 있습니다. 유머는 미국식 유머라, 재미 없을 수도 있습니다.</p>
+<ol>
+<li>설치 : $ npm install gifi — global</li>
+<li><p>실행</p>
+<p> $ gifi install koa –save</p>
+</li>
+</ol>
+<p>인터럽트를 한번 걸어보니 다음과 같이 png string을 뱉는 에러를 보여주기는 하네요</p>
+<p><img src="/images/1*wD2qGwMsV30mURiC6EJbRA.pn" alt=""></p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/eb3f1e7e3929" target="_blank" rel="external">March 1, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -285,7 +246,7 @@ Systems, eg (Website,API): Website, CDN, API
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/90/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/89/">89</a><a class="page-number" href="/page/90/">90</a><span class="page-number current">91</span><a class="page-number" href="/page/92/">92</a><a class="page-number" href="/page/93/">93</a><span class="space">&hellip;</span><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/92/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/90/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/89/">89</a><a class="page-number" href="/page/90/">90</a><span class="page-number current">91</span><a class="page-number" href="/page/92/">92</a><a class="page-number" href="/page/93/">93</a><span class="space">&hellip;</span><a class="page-number" href="/page/96/">96</a><a class="extend next" rel="next" href="/page/92/">Next</a>
   </nav>
 
 </section>
@@ -417,7 +378,7 @@ Systems, eg (Website,API): Website, CDN, API
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">191</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -437,7 +398,7 @@ Systems, eg (Website,API): Website, CDN, API
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">9월 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">35</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

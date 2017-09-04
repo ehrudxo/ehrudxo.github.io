@@ -123,7 +123,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-06-09 19:00:21]megaboilerplate"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-06-04 23:42:35]anypixel"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +131,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/06/09/[2016-06-09 19:00:21]megaboilerplate/">megaboilerplate</a>
+      <a class="article-title" href="/2016/06/04/[2016-06-04 23:42:35]anypixel/">anypixel</a>
     </h1>
   
 
@@ -139,8 +139,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/06/09/[2016-06-09 19:00:21]megaboilerplate/" class="article-date">
-	  <time datetime="2016-06-09T10:00:21.000Z" itemprop="datePublished">6월 9, 2016</time>
+	<a href="/2016/06/04/[2016-06-04 23:42:35]anypixel/" class="article-date">
+	  <time datetime="2016-06-04T14:42:35.000Z" itemprop="datePublished">6월 4, 2016</time>
 	</a>
 
        
@@ -148,59 +148,36 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/1*9hd2zEsMImq0JR263UgPEA.png" alt="">끝판왕</p>
-<p>끝판왕이라는 말은 매우 진부하죠. 이젠?</p>
-<p>넘치고 넘치는 웹 개발 boilerplate 뭘 써야 될지 궁금하셨을 텐데요. 이런 고민을 한방에 종결시켜 줄 가능성이 보이는 프로젝트가 나타났습니다.</p>
-<p><a href="https://github.com/sahat/megaboilerplate" title="https://github.com/sahat/megaboilerplate" target="_blank" rel="external"><strong>sahat/megaboilerplate</strong><br>_megaboilerplate - Handcrafted starter projects, optimized for simplicity and ease of use._github.com</a><a href="https://github.com/sahat/megaboilerplate" target="_blank" rel="external"></a></p>
-<h4 id="왜-일케-호들갑이셩"><a href="#왜-일케-호들갑이셩" class="headerlink" title="왜 일케 호들갑이셩"></a>왜 일케 호들갑이셩</h4><p>그죠. 좀 호들갑이 심했습니다. 한번 보고 생각해 보자고 일단 움짤을 만들어 봤습니다.</p>
-<p><img src="/images/1*JoTk4L5vzKYAmEbFqiANWQ.gif" alt=""></p>
-<p>네, 저렇게 내가 쓰고 싶은 레이어별 프레임워크들을 선택하고 나니 megaboilerplate-app이라는 이름의 압축파일이 땋하고 떨어지고, 압축을 풀고 atom으로 열어보니</p>
-<p><img src="/images/1*jcu4CVJF9mz3-Np4nb_W2g.png" alt=""></p>
-<p>어머, 친절하게 웹 팩 설정도 왠걸 완벽하게 나오네요.</p>
-<p>며칠전에 나온 reactpack을 리뷰할까 하다가 이걸 먼저 리뷰하게 됩니다.</p>
-<p><a href="https://github.com/olahol/reactpack" title="https://github.com/olahol/reactpack" target="_blank" rel="external"><strong>olahol/reactpack</strong><br>_reactpack - :package: build your react apps with one command and one `npm i`._github.com</a><a href="https://github.com/olahol/reactpack" target="_blank" rel="external"></a></p>
+        <p><img src="/images/1*8LLNmc5IFJHY_e1cU6-Q6w.png" alt="">뭐… 뭘까요 이게</p>
+<p>이름은 삼성에서 만든거 같지만 구글 creative lab에서 만든 오픈소스 프로젝트입니다. 삼성도 C-lab 이라는 훌륭한 부서가 있던데 구글 C랩은 무얼할까요?</p>
+<p>2016/06/04 Editor’s choice</p>
+<p><a href="https://github.com/googlecreativelab/anypixel" title="https://github.com/googlecreativelab/anypixel" target="_blank" rel="external"><strong>googlecreativelab/anypixel</strong><br>_anypixel - A web-friendly way for anyone to build unusual displays_github.com</a><a href="https://github.com/googlecreativelab/anypixel" target="_blank" rel="external"></a></p>
 <hr>
-<h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><pre><code>$npm install
-</code></pre><p>을 통해 dependency 가 걸려있는 라이브러리들을 내려받고는</p>
-<pre><code>$node server
-</code></pre><p>를 실행시키면 에러가 납니다. lodash는 공통적으로 package.json파일에 누락되어 있네요.</p>
-<p>.env파일의 database만 설정해 주고 다시</p>
-<pre><code>$node server
-</code></pre><p><img src="/images/1*FLuS2KGtdgcB6uOILeq3PA.png" alt="">기대보다 좋아요!</p>
-<p>만들어진 소스 진입점은</p>
-<pre><code>import &apos;whatwg-fetch&apos;;  
-import React from &apos;react&apos;;  
-import ReactDOM from &apos;react-dom&apos;;  
-import { Provider } from &apos;react-redux&apos;  
-import { Router, browserHistory } from &apos;react-router&apos;;  
-import configureStore from &apos;./store/configureStore&apos;;  
-import getRoutes from &apos;./routes&apos;;
-
-const store = configureStore(window.INITIAL\_STATE);
-
-ReactDOM.render(  
-&lt;Provider store={store}\&gt;  
-&lt;Router history={browserHistory} routes={getRoutes(store)}/\&gt;  
-&lt;/Provider\&gt;,  
-document.getElementById(&apos;app&apos;)  
-);
-</code></pre><p>redux, router,fetch등 React 가 minimal로 가져야 할 것들을 훌륭하게 갖고 있습니다.</p>
-<p>서버쪽 라우팅은 아래와 같이 express 가 지원.</p>
-<p><img src="/images/1*_kAzHMkVfSZdT9ZCZEumBg.pn" alt=""></p>
-<p>node DB모듈은 knex를 쓰고 있습니다.</p>
-<pre><code>var config = require(&apos;../knexfile&apos;);  
-var knex = require(&apos;knex&apos;)(config);  
-var bookshelf = require(&apos;bookshelf&apos;)(knex);
-
-bookshelf.plugin(&apos;virtuals&apos;);
-
-knex.migrate.latest();
-
-module.exports = bookshelf;
-</code></pre><hr>
-<p>mega라는 말을 쓰길래 덕후거나 허풍이 심한 프로젝트 아닐까 하고 의심의 눈을 가지고 프로젝트를 들여다 보니 이거 정말 볼매였습니다.</p>
-<p>lodash 관련해서는 PU 날리기 좋은 타이밍인데요!</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/135f6bd1fd28" target="_blank" rel="external">June 9, 2016</a>.</p>
+<h4 id="뭔가-창의적인걸-만들고-싶어"><a href="#뭔가-창의적인걸-만들고-싶어" class="headerlink" title="뭔가 창의적인걸 만들고 싶어"></a>뭔가 창의적인걸 만들고 싶어</h4><p>세상은 넓고 이런 일을 하면서도 돈 벌 수 있는 조직에서 일하는 사람은 참 행복하겠다는 생각이 듭니다.</p>
+<p><a href="http://venturebeat.com/2016/06/02/google-open-sources-anypixel-which-lets-anyone-program-interactive-displays/" title="http://venturebeat.com/2016/06/02/google-open-sources-anypixel-which-lets-anyone-program-interactive-displays/" target="_blank" rel="external"><strong>Google open-sources AnyPixel, which lets anyone program interactive displays</strong><br>_Google today is open-sourcing its AnyPixel software for programming interactive displays like the one in the lobby of…_venturebeat.com</a><a href="http://venturebeat.com/2016/06/02/google-open-sources-anypixel-which-lets-anyone-program-interactive-displays/" target="_blank" rel="external"></a></p>
+<p>어제 일자의 기사(미국 시간 고려하면)에 이 프로젝트에 대해서 나왔습니다.</p>
+<blockquote>
+<p>We wanted to build something cool for the new lobby in our New York City office, something that was big, could display a lot of interesting stuff, and (most importantly) was really fun to play and interact with</p>
+</blockquote>
+<p>디씨 식으로 번역해 보자면 뉴욕 오피스 포비에 조낸 멋진 뭔가를 만들고 싶어졌어. 좀 큰놈인데 조낸 흥미로운 녀석인데 핵심은 재미있게 반응해야되.</p>
+<p>정도 입니다.</p>
+<hr>
+<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><p>설치는 크게 두가지를 할 수가 있습니다. 하나는 웹으로 체험해 볼 수 있는 녀석이고 하나는 그냥 진짜 PCB 기판을 사면 됩니다.</p>
+<p>네? 무슨 말이냐구요?</p>
+<p>구글에서 두가지로 오픈을 했는데요. 하나는 크롬이랑 크롬 앱스토어에서 돌려볼 수 있는 브라우저용이고, 하나는 하드웨어 스펙과 조립에 관한 PDF를 배포를 했습니다. 그것도 상당히 친절합니다.</p>
+<h4 id="웹버전"><a href="#웹버전" class="headerlink" title="웹버전"></a>웹버전</h4><p>웹 버전은 간단합니다.</p>
+<p><img src="/images/1*b_Jq9F92Egbb737cI_hY3w.gi" alt="">용량 9M 이미지 폭탄 죄송해요.</p>
+<p>마우스에다 대면 반응하는 형태로 되어 있고, canvas 기반으로 짜여져 있습니다. 터치 이벤트에 반응하는 형태인거 같습니다.</p>
+<pre><code>$npm install  
+$npm run build  
+$preview
+</code></pre><p>명령어면 만들어 집니다.</p>
+<h4 id="설치형-버전"><a href="#설치형-버전" class="headerlink" title="설치형 버전"></a>설치형 버전</h4><p>차마 만들어 볼 시간은 없었네요</p>
+<p>하지만 유튜브에 공개했네요.</p>
+<hr>
+<h4 id="그래서-뭐"><a href="#그래서-뭐" class="headerlink" title="그래서 뭐"></a>그래서 뭐</h4><p>이걸 가지고 무엇을 할 지는 잘 모르겠지만, 흥미로운 프로젝트입니다. 뭔가 오픈 소스 하드웨어 시장까지 이제는 들어올려면 들어갈 수 있다. 정도쯤 되려나요?</p>
+<p>더 인사이트가 있으신 분들은 답변을 주셔도 좋을 듯 싶네요.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/dbefa10574cd" target="_blank" rel="external">June 4, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -221,7 +198,7 @@ module.exports = bookshelf;
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-06-08 22:00:46]swift-algorithm-club"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-06-04 00:54:26]react-infinite-calendar"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -229,7 +206,7 @@ module.exports = bookshelf;
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/06/08/[2016-06-08 22:00:46]swift-algorithm-club/">swift-algorithm-club</a>
+      <a class="article-title" href="/2016/06/04/[2016-06-04 00:54:26]react-infinite-calendar/">react-infinite-calendar</a>
     </h1>
   
 
@@ -237,8 +214,8 @@ module.exports = bookshelf;
     
     <div class="article-meta">
       
-	<a href="/2016/06/08/[2016-06-08 22:00:46]swift-algorithm-club/" class="article-date">
-	  <time datetime="2016-06-08T13:00:46.000Z" itemprop="datePublished">6월 8, 2016</time>
+	<a href="/2016/06/04/[2016-06-04 00:54:26]react-infinite-calendar/" class="article-date">
+	  <time datetime="2016-06-03T15:54:26.000Z" itemprop="datePublished">6월 4, 2016</time>
 	</a>
 
        
@@ -246,27 +223,40 @@ module.exports = bookshelf;
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/1*VZGhC_okm961AceOdIdsPw.png" alt=""></p>
-<p>swift로 구현하는 알고리즘!</p>
-<blockquote>
-<p>여기에 누구나 좋아하는 새로운 언어인 swift로 구현해 본 알고리즘 세트가 있습니다!</p>
-</blockquote>
-<p>라고 시작하고 있는 따끈 따끈한 프로젝트입니다.</p>
-<p>기본적으로 알고리즘 코드는 playground로 되어 있습니다.</p>
-<pre><code>$git clone [https://github.com/raywenderlich/swift-algorithm-club][anchor0]
-</code></pre><p>을 해서 내려 받고 나면</p>
-<p><img src="/images/1*VhmVFN8NTQVLFGVhTxa7Zg.png" alt=""></p>
-<p>와 같이 많은 양의 알고리즘 프로젝트가 나옵니다.</p>
-<h4 id="Tree를-한번-살펴보겠습니다"><a href="#Tree를-한번-살펴보겠습니다" class="headerlink" title="Tree를 한번 살펴보겠습니다."></a>Tree를 한번 살펴보겠습니다.</h4><pre><code>$cd Tree &amp; open Tree.swift
-</code></pre><p><img src="/images/1*LeYFzul50Magf5uE-wjZbw.png" alt=""></p>
-<p>playground가 있어서 너무 좋은 거 같네요.</p>
-<p>근데 소스 코드만 있다면 상당히 썰렁할 수 있겠죠?</p>
-<p><a href="https://github.com/raywenderlich/swift-algorithm-club/tree/master/Tree" title="https://github.com/raywenderlich/swift-algorithm-club/tree/master/Tree" target="_blank" rel="external"><strong>raywenderlich/swift-algorithm-club</strong><br>_A tree represents hierarchical relationships between objects. This is a tree: A tree consists of nodes, and these nodes…_github.com</a><a href="https://github.com/raywenderlich/swift-algorithm-club/tree/master/Tree" target="_blank" rel="external"></a></p>
-<h4 id="진짜는-Readme-md-파일"><a href="#진짜는-Readme-md-파일" class="headerlink" title="진짜는 Readme.md 파일"></a>진짜는 Readme.md 파일</h4><p>각각의 알고리즘 별로 설명이 잘 되어 있습니다. 알고리즘을 공부 하시는데 많은 도움이 될것으로 보입니다.</p>
-<p><img src="/images/1*z6iPuOsEwm58JuqXcGdKJw.png" alt=""></p>
-<p>말이 더 필요할까요?</p>
-<p><img src="/images/1*KHv1bezdpBBGRIquevFePQ.pn" alt=""></p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/59e742b2c29b" target="_blank" rel="external">June 8, 2016</a>.</p>
+        <p><img src="/images/1*R9O5awF-PH8OBHcM6ZDYmg.jpeg" alt="">calendar</p>
+<p>언제나 이쁜 calendar 앱은 개발자들에게 인기가 좋습니다. 게다가 코드짜기가 더 쉽다고 하면 더할 나위 없을 거 같습니다.</p>
+<p>React 컴포넌트로 만든 무한하게 스크롤 되는 Calendar 앱입니다.</p>
+<p>2016/06/03 Editor’s choice</p>
+<p><a href="https://github.com/clauderic/react-infinite-calendar" title="https://github.com/clauderic/react-infinite-calendar" target="_blank" rel="external"><strong>clauderic/react-infinite-calendar</strong><br>_react-infinite-calendar - ✨ Infinite scrolling date-picker built with React, with localization, themes, keyboard…_github.com</a><a href="https://github.com/clauderic/react-infinite-calendar" target="_blank" rel="external"></a></p>
+<p>이런 디자인마저 잘하는 개발자 정말 부럽습니다.</p>
+<hr>
+<h4 id="설치하기"><a href="#설치하기" class="headerlink" title="설치하기"></a>설치하기</h4><pre><code>$ npm install react-infinite-calendar --save
+</code></pre><p>React는 일반적으로는 npm install을 할 일이 많죠?</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;react-infinite-calendar/styles.css&quot;\&gt;  
+&lt;script src=&quot;react-infinite-calendar/dist/umd/react-infinite-calendar.js&quot;\&gt;&lt;/script\&gt;
+</code></pre><p>umd 스타일의 링크도 가능합니다.</p>
+<h4 id="사용해-보기"><a href="#사용해-보기" class="headerlink" title="사용해 보기"></a>사용해 보기</h4><pre><code>import InfiniteCalendar from &apos;react-infinite-calendar&apos;;  
+import &apos;react-infinite-calendar/styles.css&apos;;  
+.... 중략  
+var today = new Date();  
+var minDate = Number(new Date()) - (24\*60\*60\*1000) \* 7;  
+
+render(  
+&lt;InfiniteCalendar  
+width={400}  
+height={600}  
+selectedDate={today}  
+disabledDays={\[0,6\]}  
+minDate={minDate}  
+keyboardSupport={true}  
+/\&gt;,  
+document.getElementById(&apos;root&apos;)  
+);
+</code></pre><p>와 같이 하면</p>
+<p><img src="/images/1*i1eK6Q-DT4h9AAIanSRwkw.pn" alt="">이쁘죵?</p>
+<p>와 같은 이쁜 화면이 나타납니다.소스는 위와 같습니다.</p>
+<p>jsFiddle 쪽은 약간 지금 설정 문제가 있는 듯 합니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/c52aa37f005c" target="_blank" rel="external">June 3, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -291,7 +281,7 @@ module.exports = bookshelf;
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/45/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="page-number" href="/page/45/">45</a><span class="page-number current">46</span><a class="page-number" href="/page/47/">47</a><a class="page-number" href="/page/48/">48</a><span class="space">&hellip;</span><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/47/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/45/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="page-number" href="/page/45/">45</a><span class="page-number current">46</span><a class="page-number" href="/page/47/">47</a><a class="page-number" href="/page/48/">48</a><span class="space">&hellip;</span><a class="page-number" href="/page/96/">96</a><a class="extend next" rel="next" href="/page/47/">Next</a>
   </nav>
 
 </section>
@@ -423,7 +413,7 @@ module.exports = bookshelf;
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">191</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -443,7 +433,7 @@ module.exports = bookshelf;
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">9월 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">35</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

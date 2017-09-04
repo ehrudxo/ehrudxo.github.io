@@ -123,7 +123,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-05-10 07:04:14]flexbox-layout"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-05-03 07:16:19]NativeBase"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +131,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/05/10/[2016-05-10 07:04:14]flexbox-layout/">flexbox-layout</a>
+      <a class="article-title" href="/2016/05/03/[2016-05-03 07:16:19]NativeBase/">NativeBase</a>
     </h1>
   
 
@@ -139,8 +139,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/05/10/[2016-05-10 07:04:14]flexbox-layout/" class="article-date">
-	  <time datetime="2016-05-09T22:04:14.000Z" itemprop="datePublished">5월 10, 2016</time>
+	<a href="/2016/05/03/[2016-05-03 07:16:19]NativeBase/" class="article-date">
+	  <time datetime="2016-05-02T22:16:19.000Z" itemprop="datePublished">5월 3, 2016</time>
 	</a>
 
        
@@ -148,65 +148,40 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/1*DF0o_mcPdk5xkwudVaeVXg.png" alt="">layout 이쁘쥬?</p>
-<p>flexbox 는 CSS의 새로운 Spec이 될 확률이 상당히 높은 레이아웃을 정의하는 방법입니다. 현재는 Draft를 지나 Candidate Recommendation 상태에 있습니다. react native 의 경우는 이 flexbox 로 컴포넌트들이 배치되게 되어 있습니다. 구글이 Android에서도 flexbox를 통해서 컴포넌트를 배치할 수 있도록 했습니다.</p>
-<p>2016/05/10 Best Project(650✰)</p>
-<p><a href="https://github.com/google/flexbox-layout" title="https://github.com/google/flexbox-layout" target="_blank" rel="external"><strong>google/flexbox-layout</strong><br>_flexbox-layout - Flexbox for Android_github.com</a><a href="https://github.com/google/flexbox-layout" target="_blank" rel="external"></a></p>
+        <p><img src="/images/1*WN4-6QMrWgH8o8oEuBlZaA.png" alt="">오랜만에 상관없는 이미지</p>
+<p>React Native 다들 개발은 하고 계시죠? 개발자라면 한 번 도전은 해 봤을 텐데요.(응?) 죄송합니다. Native 컴포넌트를 Javascript로 그리고, Style을 직접 주다 보니 본의아니게 개자이너 혹은 디발자의 영역을 넘나드셨을 거라고 봅니다.</p>
+<p>그러다 보면 당연하게 생기는 생각이 “아 부트스트랩 같은 녀석 없을까” 인데 여기 그런 프로젝트가 있습니다.</p>
+<p>2016/05/03 Editor’s choice</p>
+<p><a href="https://github.com/GeekyAnts/NativeBase" title="https://github.com/GeekyAnts/NativeBase" target="_blank" rel="external"><strong>GeekyAnts/NativeBase</strong><br>_NativeBase - The missing piece of React Native_github.com</a><a href="https://github.com/GeekyAnts/NativeBase" target="_blank" rel="external"></a></p>
 <hr>
-<h4 id="설치하기"><a href="#설치하기" class="headerlink" title="설치하기"></a>설치하기</h4><p>build.gradle 파일에 dependency를 아래와 같이 정의하고 layout.xml에서 사용하면 됩니다.</p>
-<pre><code>dependencies {  
-compile &apos;com.google.android:flexbox:0.1.1&apos;  
-}
-</code></pre><p>layout xml파일은 다음과 같은 형태를 띕니다.</p>
-<pre><code>&lt;com.google.android.flexbox.FlexboxLayout  
-xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;  
-xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;  
-android:layout\_width=&quot;match\_parent&quot;  
-android:layout\_height=&quot;match\_parent&quot;  
-app:flexWrap=&quot;wrap&quot;  
-app:alignItems=&quot;stretch&quot;  
-app:alignContent=&quot;stretch&quot; \&gt;  
-
-&lt;TextView  
-android:id=&quot;@+id/textview1&quot;  
-android:layout\_width=&quot;120dp&quot;  
-android:layout\_height=&quot;80dp&quot;  
-app:layout\_flexBasisPercent=&quot;50%&quot;  
-/\&gt;  
-
-&lt;TextView  
-android:id=&quot;@+id/textview2&quot;  
-android:layout\_width=&quot;80dp&quot;  
-android:layout\_height=&quot;80dp&quot;  
-app:layout\_alignSelf=&quot;center&quot;  
-/\&gt;  
-
-&lt;TextView  
-android:id=&quot;@+id/textview3&quot;  
-android:layout\_width=&quot;160dp&quot;  
-android:layout\_height=&quot;80dp&quot;  
-app:layout\_alignSelf=&quot;flex\_end&quot;  
-/\&gt;  
-&lt;/com.google.android.flexbox.FlexboxLayout\&gt;
-</code></pre><hr>
-<h4 id="실행해보기"><a href="#실행해보기" class="headerlink" title="실행해보기"></a>실행해보기</h4><p>IDE를 켜고 activity_main.xml을 켜면 다음과 같은 화면이 나옵니다.</p>
-<p><img src="/images/1*mh_quvYLfJn5DRrktv0W5g.png" alt=""></p>
-<p>새로운 에뮬레이터 qemu 로 실행을 해 보겠습니다.</p>
-<p>일단 flex direction에 대해서 확인해 볼 수 있는 예제입니다.</p>
-<p><img src="/images/1*wIJ5Bd86TdZuQLT-6whb-g.gi" alt="">qemu 개좋아염</p>
-<p>flexbox 자체에 대해서도 손쉽게 이해할 수 있는 예제들이군요.</p>
+<h4 id="설치를-합시다"><a href="#설치를-합시다" class="headerlink" title="설치를 합시다."></a>설치를 합시다.</h4><p>설치는 간단합니다. (물론 react-native를 해 보셨다면 말이죠.)</p>
+<p>프로젝트에서는 일단 react-native init 부터 시작하던데 다음의 명령어면 기존 프로젝트도 충분합니다.</p>
+<pre><code>npm install native-base --save
+</code></pre><p>만약에 처음부터 만들 요랑이시라면</p>
+<pre><code>react-native init AwesomeNativeBase  
+cd AwesomeNativeBase  
+npm install
+</code></pre><p>명령어가 먼저 필요합니다.</p>
+<h4 id="rnpm"><a href="#rnpm" class="headerlink" title="rnpm"></a>rnpm</h4><p>rnpm이라는 명령어는 react-native 를 사용하는데 요즘은 필수가 되었습니다. native 컴포넌트를 가진 프로젝트를 추가하면 (npm install) 이후 관례적으로 해 주게 되는데요</p>
+<ul>
+<li>$rnpm link</li>
+</ul>
+<p>명령어로 가능합니다. 기본적으로 설치되어 있는 모듈 전부에 대한 링크를 점검해 줍니다.</p>
 <hr>
-<h4 id="Flexbox-에-대해서"><a href="#Flexbox-에-대해서" class="headerlink" title="Flexbox 에 대해서"></a>Flexbox 에 대해서</h4><p>flexbox 개요에 대해서는 서문에 약간 언급을 했구요. spec 은 아래에서 찾아 볼 수 있습니다.</p>
-<p><a href="https://www.w3.org/TR/css-flexbox-1/" title="https://www.w3.org/TR/css-flexbox-1/" target="_blank" rel="external"><strong>CSS Flexible Box Layout Module Level 1</strong><br>_This section is not normative. CSS 2.1 defined four layout modes - algorithms which determine the size and position of…_www.w3.org</a><a href="https://www.w3.org/TR/css-flexbox-1/" target="_blank" rel="external"></a></p>
-<p>정말 간단한 한글 블로깅은 아래에서 찾아볼 수 있습니다.</p>
-<p><a href="http://ko.learnlayout.com/flexbox.html" title="http://ko.learnlayout.com/flexbox.html" target="_blank" rel="external"><strong>CSS - flexbox</strong><br>_새로운 flexbox 레이아웃 모드는 우리가 CSS로 레이아웃을 잡는 방법을 재정의할 기세입니다. 아쉽게도 flexbox 규격이 최근에 상당히 많이 바뀌었기 때문에 각 브라우저마다 다른 식으로 구현돼 있습니다. …_ko.learnlayout.com</a><a href="http://ko.learnlayout.com/flexbox.html" target="_blank" rel="external"></a></p>
-<p>하지만 웹 관점에서 보자면 가장 이해하기 좋은 문서는 이 포스트 입니다.</p>
-<p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" title="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="external"><strong>A Complete Guide to Flexbox | CSS-Tricks</strong><br>_The Flexbox Layout (Flexible Box) module (currently a W3C Last Call Working Draft) aims at providing a more efficient…_css-tricks.com</a><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="external"></a></p>
-<h4 id="사용법이-다-달라요"><a href="#사용법이-다-달라요" class="headerlink" title="사용법이 다 달라요!"></a>사용법이 다 달라요!</h4><p>네, 아직은 javascript, react-native, android 에서 약간씩은 다르게 사용되고 있습니다. 하지만 기본적인 컨셉(flex-direction,wrap) 등은 같기 때문에 빨리 적응하면 할수록 더 좋을 듯 싶습니다.</p>
-<h4 id="이거-꼭-배워야-하나요"><a href="#이거-꼭-배워야-하나요" class="headerlink" title="이거 꼭 배워야 하나요?"></a>이거 꼭 배워야 하나요?</h4><p>지금 당장은 아닐 수 있습니다. 하지만 web component들이 일반화 되는 시점이 되면 대부분의 layout들은 웹과 native 모두 저렇게 바뀌지 않을까요?</p>
-<p>swift의 경우도 github에 개인 프로젝트이기는 하지만 flexbox관련 프로젝트가 올라와 있네요</p>
-<p><a href="https://github.com/joshaber/SwiftBox" title="https://github.com/joshaber/SwiftBox" target="_blank" rel="external"><strong>joshaber/SwiftBox</strong><br>_SwiftBox - Flexbox in Swift, using Facebook’s css-layout._github.com</a><a href="https://github.com/joshaber/SwiftBox" target="_blank" rel="external"></a></p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/816c012a3a48" target="_blank" rel="external">May 9, 2016</a>.</p>
+<h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><p>이런 일들이 갖추어 지고 나면 xcode를 켜서 run 을 통해 실행을 해 봅니다.</p>
+<p><img src="/images/1*BoKp35W_FR6O4wqlMUlKhQ.png" alt=""></p>
+<p>엇 달라진게 없습니다.</p>
+<p>index.ios.js 소스를 고쳐보겠습니다.</p>
+<p>그리고 다시 실행을 하면</p>
+<p><img src="/images/1*YZAKSPNHgDxCx9hxNJOACA.png" alt="">어익후 깜짝이야</p>
+<p><img src="/images/1*00BX8NWzdAzy-fPXzUwczQ.png" alt=""></p>
+<p>이런 그림이 나타납니다.</p>
+<p>분명히 개자이너, 디발자 어쩌구 저쩌구 했는데, 아무리 좋은 툴을 가져다 줘도 저같은 디알못은 소용없나 봅니다.</p>
+<hr>
+<h4 id="아-글쎄-이쁘다니깐요"><a href="#아-글쎄-이쁘다니깐요" class="headerlink" title="아 글쎄 이쁘다니깐요"></a>아 글쎄 이쁘다니깐요</h4><p><a href="http://nativebase.io/docs/v0.2.1/assets/img/magic-with-nativebase-020.mp4" target="_blank" rel="external">http://nativebase.io/docs/v0.2.1/assets/img/magic-with-nativebase-020.mp4</a></p>
+<p><img src="/images/1*CU_TNA9hvVu5S-lSsiiIFg.pn" alt="">클릭은 위의 링크. 미디엄은 이미지 링크를 지원하라!</p>
+<p>동영상을 감상해 보시면 글쎄 이쁜… 프로젝트가 나옵니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/7a1635cd0a55" target="_blank" rel="external">May 2, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -227,7 +202,7 @@ app:layout\_alignSelf=&quot;flex\_end&quot;
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-05-09 08:58:36]Mac에 무작정 tensorflow 깔아보기"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-05-02 06:35:07]Programming Language Theory"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -235,7 +210,7 @@ app:layout\_alignSelf=&quot;flex\_end&quot;
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/05/09/[2016-05-09 08:58:36]Mac에 무작정 tensorflow 깔아보기/">Mac에 무작정 tensorflow 깔아보기</a>
+      <a class="article-title" href="/2016/05/02/[2016-05-02 06:35:07]Programming Language Theory/">Programming Language Theory</a>
     </h1>
   
 
@@ -243,8 +218,8 @@ app:layout\_alignSelf=&quot;flex\_end&quot;
     
     <div class="article-meta">
       
-	<a href="/2016/05/09/[2016-05-09 08:58:36]Mac에 무작정 tensorflow 깔아보기/" class="article-date">
-	  <time datetime="2016-05-08T23:58:36.000Z" itemprop="datePublished">5월 9, 2016</time>
+	<a href="/2016/05/02/[2016-05-02 06:35:07]Programming Language Theory/" class="article-date">
+	  <time datetime="2016-05-01T21:35:07.000Z" itemprop="datePublished">5월 2, 2016</time>
 	</a>
 
        
@@ -252,32 +227,19 @@ app:layout\_alignSelf=&quot;flex\_end&quot;
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/1*ryC9OICjD2yPsapmmj9fVA.png" alt="">묘한그림</p>
-<p>네, 일단 무작정 TensorFlow를 깔아보는 것으로 시작합니다.</p>
-<p>instruction은 github의 tensorflow 페이지를 참조했습니다.</p>
-<p><a href="https://github.com/tensorflow/tensorflow" title="https://github.com/tensorflow/tensorflow" target="_blank" rel="external"><strong>tensorflow/tensorflow</strong><br>_tensorflow - Computation using data flow graphs for scalable machine learning_github.com</a><a href="https://github.com/tensorflow/tensorflow" target="_blank" rel="external"></a></p>
-<p>일단 Mac을 설치하고 나면 pip가 그냥 있는 것은 아닙니다. python을 설치하고 나면, pip를 설치할 수 있습니다.</p>
-<pre><code>$ sudo easy\_install pip 
-</code></pre><p>을 통해 pip 를 설치하고, 제 경우는 pip3을 이용합니다.(python 버전에 따라)</p>
-<p><img src="/images/1*FlXNm3NoHqN-ohqBce4mmw.png" alt="">흠.. 잘 설치 되네요.</p>
-<p>네 일단 이걸로 끝인거 같은데, 이제 무엇을 해봐야(설치확인) 겠죠?</p>
-<p>먼저 콘솔로 들어갑니다.</p>
-<pre><code>$python3
-</code></pre><p>그러면 >>>라는 파이썬 콘솔이 나옵니다.</p>
-<pre><code>\&gt;\&gt;\&gt; import tensorflow as tf  
-\&gt;\&gt;\&gt; hello = tf.constant(&apos;Hello, TensorFlow!&apos;)  
-\&gt;\&gt;\&gt; sess = tf.Session()  
-\&gt;\&gt;\&gt; sess.run(hello)
-</code></pre><p>잘못 설치했으면 import 에서 먼저 에러를 뱉었을 텐데요.</p>
-<p>결과 값도 훌륭하게 뱉는 걸로 봐서는 설치가 잘 된듯 합니다.</p>
-<p>변수 두개를 설정하고 곱셈도 해보니 훌륭하네요.</p>
-<p><img src="/images/1*22Wdnn24qjgbx5cQ5RKfPQ.png" alt="">이야. 연산이다.</p>
-<p>일단 설치는 훌륭하게 된 듯 합니다.</p>
-<p><a href="https://github.com/jtoy/awesome-tensorflow" title="https://github.com/jtoy/awesome-tensorflow" target="_blank" rel="external"><strong>jtoy/awesome-tensorflow</strong><br>_awesome-tensorflow - TensorFlow - A curated list of dedicated resources http://tensorflow.org_github.com</a><a href="https://github.com/jtoy/awesome-tensorflow" target="_blank" rel="external"></a></p>
-<p>시간이 닿는 데로 awesome-tensorflow의 튜토리얼을 따라면서 업로드 하도록 하겠습니다.</p>
-<p>어쨌든 설치부터 막히지 않아서 기분은 좋군요!</p>
-<p><img src="/images/1*ganqaGKmmkSHVfqHtA9Bjg.pn" alt="">짤 대로</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/6fef09aa9229" target="_blank" rel="external">May 8, 2016</a>.</p>
+        <p><img src="/images/1*5jT5aN6kzmkH3Ae5Q2sHuA.png" alt="">여… 열공</p>
+<p>공부를 하고자 하면 뭐든 할 수 있는 세상입니다. 배우고자 하는 뭐든 맘만 먹는다면 할 수 있도록 정보가 널린 세상인데요, 거기에 깃헙도 한 몫 하고 있다고 생각합니다. 오늘은 제목 그대로 Programming Language 이론을 공부하기 위한 프로젝트 입니다.</p>
+<p>2016/05/01 Best Project(720★)</p>
+<p><a href="https://github.com/steshaw/plt" title="https://github.com/steshaw/plt" target="_blank" rel="external"><strong>steshaw/plt</strong><br>_plt - A path to Programming Language Theory enlightenment_github.com</a><a href="https://github.com/steshaw/plt" target="_blank" rel="external"></a></p>
+<hr>
+<h4 id="시작은-수학부터"><a href="#시작은-수학부터" class="headerlink" title="시작은 수학부터"></a>시작은 수학부터</h4><p>으억… Mathmaticl Literacy부터 시작합니다. 수학적으로 읽고 생각하는 능력이라고나 할까요? 그리고 무려 How to prove it… 입니다.</p>
+<p>이후로도 Algebra(대수학) 관련해서는 기초와 어느 정도의 수준을 갖추고 시작해야 한다는 입장입니다.</p>
+<p><img src="/images/1*omG0ti_0WocSUT2st9Q-sA.pn" alt=""></p>
+<p>타입이론</p>
+<p>타입에 대한 이론을 다루고 있는데 비디오, 논문, pdf들을 다양하게 묶어 놓았습니다.</p>
+<p>디자인 이론, 컴파일러, 런타임, 함수형 프로그래밍 등을 죽 다루고 있습니다.</p>
+<p>내용도 방대하고 어렵지만, Programming Language 에 대해서 깊이 이해하려면 꽤나 많은 노력을 들여야 한다는 사실을 확인할 수 있네요.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/54ed96db2bd9" target="_blank" rel="external">May 1, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -302,7 +264,7 @@ app:layout\_alignSelf=&quot;flex\_end&quot;
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/62/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/61/">61</a><a class="page-number" href="/page/62/">62</a><span class="page-number current">63</span><a class="page-number" href="/page/64/">64</a><a class="page-number" href="/page/65/">65</a><span class="space">&hellip;</span><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/64/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/62/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/61/">61</a><a class="page-number" href="/page/62/">62</a><span class="page-number current">63</span><a class="page-number" href="/page/64/">64</a><a class="page-number" href="/page/65/">65</a><span class="space">&hellip;</span><a class="page-number" href="/page/96/">96</a><a class="extend next" rel="next" href="/page/64/">Next</a>
   </nav>
 
 </section>
@@ -434,7 +396,7 @@ app:layout\_alignSelf=&quot;flex\_end&quot;
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">191</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -454,7 +416,7 @@ app:layout\_alignSelf=&quot;flex\_end&quot;
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">9월 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">35</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

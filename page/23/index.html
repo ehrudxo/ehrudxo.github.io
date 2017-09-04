@@ -123,7 +123,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-08-17 08:50:04]httpie"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-08-09 07:14:40]demystifying-js-engine"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +131,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/08/17/[2016-08-17 08:50:04]httpie/">httpie</a>
+      <a class="article-title" href="/2016/08/09/[2016-08-09 07:14:40]demystifying-js-engine/">demystifying-js-engine</a>
     </h1>
   
 
@@ -139,8 +139,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/08/17/[2016-08-17 08:50:04]httpie/" class="article-date">
-	  <time datetime="2016-08-16T23:50:04.000Z" itemprop="datePublished">8월 17, 2016</time>
+	<a href="/2016/08/09/[2016-08-09 07:14:40]demystifying-js-engine/" class="article-date">
+	  <time datetime="2016-08-08T22:14:40.000Z" itemprop="datePublished">8월 9, 2016</time>
 	</a>
 
        
@@ -148,35 +148,24 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>http request 를 CLI 환경에서 보낼 때 주로 많이 사용하시는 것은 curl 일 겁니다. 혹은 wget을 사용할 수도 있습니다.</p>
-<p>하지만 오늘 나온 이 httpie는 세가지 정도의 강점을 가진 CLI http툴이라고 보시면 됩니다.</p>
-<p>2016/08/17 Editor’s choice</p>
-<p><a href="https://github.com/jkbrzt/httpie" title="https://github.com/jkbrzt/httpie" target="_blank" rel="external"><strong>jkbrzt/httpie</strong><br>_httpie - CLI HTTP client, user-friendly curl replacement with intuitive UI, JSON support, syntax highlighting, wget…_github.com</a><a href="https://github.com/jkbrzt/httpie" target="_blank" rel="external"></a></p>
+        <p>de*mys*ti*fy [dēˈmistəˌfī/] <em>verb</em></p>
+<p>make (a difficult or esoteric subject) clearer and easier to understand.</p>
+<p>무언가를 명확하게 하고 이해하기 쉽게 만든다는 뜻의 demystifying 을 달고 있는 demystifying-js-engine입니다.</p>
+<p>2016/08/09 Editor’s choice</p>
+<p><a href="https://github.com/a0viedo/demystifying-js-engines" title="https://github.com/a0viedo/demystifying-js-engines" target="_blank" rel="external"><strong>a0viedo/demystifying-js-engines</strong><br>_Contribute to demystifying-js-engines development by creating an account on GitHub._github.com</a><a href="https://github.com/a0viedo/demystifying-js-engines" target="_blank" rel="external"></a></p>
 <hr>
-<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><pre><code>$brew install httpie
-</code></pre><h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><pre><code>$http www.daum.net
-</code></pre><p><img src="/images/1*DpMtrsEgCSVj03AD_nr1BQ.gif" alt=""></p>
-<p>보시다시피 content highlighting 기능을 가지고 있는게 우선적으로 다른 툴과는 다른 모습을 보여줍니다.</p>
-<p>게다가</p>
-<pre><code>http PUT example.org name=John email=john@example.org
-</code></pre><p>형태의 key=value 쌍이 들어갈 경우에 JSON으로 자동으로 치환해서 업로드 해주는 기능을 갖고 있습니다.</p>
-<pre><code>PUT / HTTP/1.1  
-Accept: application/json, \*/\*  
-Accept-Encoding: gzip, deflate  
-Content-Type: application/json  
-Host: example.org  
-
-{  
-&quot;name&quot;: &quot;John&quot;,  
-&quot;email&quot;: &quot;john@example.org&quot;  
-}
-</code></pre><p>게다가</p>
-<pre><code>$ http --download example.org/file
-</code></pre><p><img src="/images/1*kh4KHdJrBPqIfECkI-BSmQ.gi" alt=""></p>
-<p>— download 옵션을 쓰면 wget처럼 파일을 다운 받을 수 있습니다.</p>
-<p>상당히 유용하게 사용할 수 있는 툴이겠네요.</p>
-<p>하지만 curl과 wget 사용층이 많은 만큼 대체할 수 있을지는 의문입니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/46d570969716" target="_blank" rel="external">August 16, 2016</a>.</p>
+<p>일단 슬라이드 하나 먼저 보고 가시죠.</p>
+<p><a href="http://slides.com/a0viedo/demystifying-js-engines#/" title="http://slides.com/a0viedo/demystifying-js-engines#/" target="_blank" rel="external"><strong>Demystifying (JavaScript) Engines by Alejandro Oviedo García</strong><br>_How JavaScript engines work? What are their elemental components? What is JIT compilation?_slides.com</a><a href="http://slides.com/a0viedo/demystifying-js-engines#/" target="_blank" rel="external"></a></p>
+<p><img src="/images/1*CxwUpGk3t17KbPNFSAgldw.png" alt=""></p>
+<p>결론은 위의 한장이긴 합니다만 각 엔진의 내용들을 설명하기 위해 쉬운 그림으로 만들어져 있습니다.</p>
+<p><img src="/images/1*n4UNXFlRzMZD1Gd7VRt0OA.pn" alt=""></p>
+<p>자세한 내용은 슬라이드를 보시죠.</p>
+<p>이런 대단한 슬라이드를 만들기 위해 뒤져 본 아티클들의 집합들이 다음에 나와 있습니다.</p>
+<p>특히 V8엔진에 관련해서 아티클을 모아 놓은</p>
+<p><a href="http://mrale.ph/v8/resources.html" title="http://mrale.ph/v8/resources.html" target="_blank" rel="external"><strong>V8 Resources</strong><br>_V8 Performance Tuning Tricks (+Daniel Clifford, GDD2011 Berlin) [slides]_mrale.ph</a><a href="http://mrale.ph/v8/resources.html" target="_blank" rel="external"></a></p>
+<p>은 한번 따라 읽어 봅니다. 2011년부터 2013년까지의 자료가 잘 정리되어 있습니다.</p>
+<p>자바스크립트 엔진을 이해하기 위해서는 읽어볼만한 아주 흥미로운 프로젝트 입니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/74d4ff845ec7" target="_blank" rel="external">August 8, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -197,7 +186,7 @@ Host: example.org
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-08-16 06:28:21]webpack-dashboard"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-08-05 00:12:47]Canonical(Ubuntu) React-native"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -205,7 +194,7 @@ Host: example.org
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/08/16/[2016-08-16 06:28:21]webpack-dashboard/">webpack-dashboard</a>
+      <a class="article-title" href="/2016/08/05/[2016-08-05 00:12:47]Canonical(Ubuntu) React-native/">Canonical(Ubuntu) React-native</a>
     </h1>
   
 
@@ -213,8 +202,8 @@ Host: example.org
     
     <div class="article-meta">
       
-	<a href="/2016/08/16/[2016-08-16 06:28:21]webpack-dashboard/" class="article-date">
-	  <time datetime="2016-08-15T21:28:21.000Z" itemprop="datePublished">8월 16, 2016</time>
+	<a href="/2016/08/05/[2016-08-05 00:12:47]Canonical(Ubuntu) React-native/" class="article-date">
+	  <time datetime="2016-08-04T15:12:47.000Z" itemprop="datePublished">8월 5, 2016</time>
 	</a>
 
        
@@ -222,27 +211,25 @@ Host: example.org
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>webpack 을 쓰면서 콘솔창이 시끄럽다고 생각했던 것은 저만이 아니었나 봅니다.</p>
-<p><img src="/images/1*8xix5ooHs0F38maUj4XmNQ.png" alt=""></p>
-<p>위에 보는 형태 처럼 깔끔하게 cli 대시보드로 만들어 줄 수 있는 프로젝트가 등장했네요.</p>
-<p>2016/08/16 Editor’s choice</p>
-<p><a href="https://github.com/FormidableLabs/webpack-dashboard" title="https://github.com/FormidableLabs/webpack-dashboard" target="_blank" rel="external"><strong>FormidableLabs/webpack-dashboard</strong><br>_webpack-dashboard - A CLI dashboard for webpack dev server_github.com</a><a href="https://github.com/FormidableLabs/webpack-dashboard" target="_blank" rel="external"></a></p>
+        <p>요 며칠 상당히 놀랄 만한 프로젝트들이 올라 오고 있어서 눈독을 들이고 있었는데, 하루만에 제 맘을 바꾼 프로젝트가 올라 왔네요.</p>
+<p><a href="https://github.com/CanonicalLtd/react-native" title="https://github.com/CanonicalLtd/react-native" target="_blank" rel="external"><strong>CanonicalLtd/react-native</strong><br>_react-native - A framework for building native apps with React._github.com</a><a href="https://github.com/CanonicalLtd/react-native" target="_blank" rel="external"></a></p>
+<p>2016/08/04 Editor’s choice</p>
+<h4 id="Canonical은-뭐하는-회사"><a href="#Canonical은-뭐하는-회사" class="headerlink" title="Canonical은 뭐하는 회사?"></a>Canonical은 뭐하는 회사?</h4><p>Ubuntu를 만들고 배포하는 회사구요, 깃헙에서 CanonicalLtd라는 그룹으로 활동중에 있습니다.</p>
+<p><a href="http://www.canonical.com/" title="http://www.canonical.com/" target="_blank" rel="external"><strong>Canonical | The company behind Ubuntu</strong><br>_Canonical produces Ubuntu, provides commercial services for Ubuntu’s users, and works with hardware manufacturers…_www.canonical.com</a><a href="http://www.canonical.com/" target="_blank" rel="external"></a></p>
+<h4 id="React-Native는-뭐"><a href="#React-Native는-뭐" class="headerlink" title="React-Native는 뭐?"></a>React-Native는 뭐?</h4><p>Facebook에서 React라는 UI프레임워크를 만들었습니다. 여기서 유명한 컨셉이 Virtual DOM과 state 관리 및 flux같은 개념이 있는데 이런 컨셉을 그대로 사용하면서 iOS와 안드로이드 앱을 네이티브로 만들 수 있는 혁신적인 툴을 개발 했는데 그것이 React-Native 입니다.</p>
+<p><a href="http://facebook.github.io/react-native/" title="http://facebook.github.io/react-native/" target="_blank" rel="external"><strong>React Native | <em>A framework for building native apps using React</em></strong><br>A framework for building native apps using Reactfacebook.github.io</a><a href="http://facebook.github.io/react-native/" target="_blank" rel="external"></a></p>
 <hr>
-<h4 id="설치하기"><a href="#설치하기" class="headerlink" title="설치하기"></a>설치하기</h4><p>간단하게 npm을 이용하면 됩니다.</p>
-<pre><code>$npm install webpack-dashboard --- save-dev
-</code></pre><h4 id="사용하기"><a href="#사용하기" class="headerlink" title="사용하기"></a>사용하기</h4><p>webpack을 사용할 때에 보통 config 파일과 실행파일(dev-server 쪽)을 나눠서 진행할 경우가 많은데, config 쪽에 적용해 줘야 할 부분과 실행 파일쪽에 적용해 줘야 하는 부분으로 나눠서 설명하겠습니다.</p>
-<p>첫번째 server.js 쪽 소스 예제가 실행에 관련된 부분, 부번째가 config.js 관련된 샘플이라고 보시면 됩니다.</p>
-<p>저렇게 실행시키고</p>
-<pre><code>$node server
-</code></pre><p>명령어로 실행을 시켜주고 나면</p>
-<p><img src="/images/1*O4_HxR8l8W272aQF9NhFIQ.png" alt=""></p>
-<p>와 같은 그림이 뜹니다.</p>
-<p>심심하니 에러를 의도적으로 만들어 보겠습니다.</p>
-<p><img src="/images/1*1WlVCuqJt5abKCa3qwxPnw.gi" alt=""></p>
-<p>프로그레스 바가 뜨더니 에러를 로그에 뱉어 주는 군요.</p>
-<p>모듈과 Asset에 대한 내용도 자세히 표시 되어 있습니다.</p>
-<p>깔끔하게 webpack상태를 모니터링 하기에는 좋은 방법으로 보여집니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/cb3fa0038c15" target="_blank" rel="external">August 15, 2016</a>.</p>
+<h4 id="그래서-뭘-한다구요"><a href="#그래서-뭘-한다구요" class="headerlink" title="그래서 뭘 한다구요?"></a>그래서 뭘 한다구요?</h4><p>이후 똑같은 컨셉으로 React-Native-Desktop 같은 프로젝트들이 많이 만들어 지고 있었습니다. 즉 React-Native 를 사용해서 윈도우즈, Mac에서 돌아가게 할 수 있도록 하자. 뭐 이런 녀석들입니다.</p>
+<p><a href="https://github.com/ptmt/react-native-desktop" title="https://github.com/ptmt/react-native-desktop" target="_blank" rel="external"><strong>ptmt/react-native-desktop</strong><br>_react-native-desktop - React Native for macOS_github.com</a><a href="https://github.com/ptmt/react-native-desktop" target="_blank" rel="external"></a></p>
+<p>그리고 MS 블로그에 이런 글이 올라 왔습니다.</p>
+<p><a href="https://blogs.windows.com/buildingapps/2016/04/13/react-native-on-the-universal-windows-platform/" title="https://blogs.windows.com/buildingapps/2016/04/13/react-native-on-the-universal-windows-platform/" target="_blank" rel="external"><strong>React Native on the Universal Windows Platform</strong><br>_Today, Microsoft and Facebook announced at Facebook’s developer conference, F8 2016, that we’re adding Universal…_blogs.windows.com</a><a href="https://blogs.windows.com/buildingapps/2016/04/13/react-native-on-the-universal-windows-platform/" target="_blank" rel="external"></a></p>
+<p>이제 Linux만 남았네. 하는 시점에 지금 리뷰하는 시각 하루전에 folk가 따진게 해커 뉴스에서 이슈가 되었고 7시간 전에 대망의 Readme 파일 커밋이 이루어집니다.</p>
+<p><a href="https://github.com/CanonicalLtd/react-native/commit/f84120a1669cd3a6c8db5e830a96565fa07d3ba8" title="https://github.com/CanonicalLtd/react-native/commit/f84120a1669cd3a6c8db5e830a96565fa07d3ba8" target="_blank" rel="external"><strong>Update README * CanonicalLtd/react-native@f84120a</strong><br>_Correct URL of git repo. - Mention supported Ubuntu variants._github.com</a><a href="https://github.com/CanonicalLtd/react-native/commit/f84120a1669cd3a6c8db5e830a96565fa07d3ba8" target="_blank" rel="external"></a></p>
+<p><img src="/images/1*j_1h7sdE_31nN8Rgmf0MIw.pn" alt=""></p>
+<p>해커 뉴스에서는 한참 말이 오고 가고 있네요.</p>
+<p><a href="https://news.ycombinator.com/item?id=12216594" title="https://news.ycombinator.com/item?id=12216594" target="_blank" rel="external"><strong>React Native for Ubuntu | Hacker News</strong><br>_With React-Native, there was no reason to implement a component called Div. Instead, the authors created one called…_news.ycombinator.com</a><a href="https://news.ycombinator.com/item?id=12216594" target="_blank" rel="external"></a></p>
+<p>Readme 파일 5줄로 깃헙 커뮤니티를 이렇게 흔든 프로젝트가 많았나 싶네요.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/806ea34f7864" target="_blank" rel="external">August 4, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -267,7 +254,7 @@ Host: example.org
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/22/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><span class="page-number current">23</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="space">&hellip;</span><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/24/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/22/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><span class="page-number current">23</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="space">&hellip;</span><a class="page-number" href="/page/96/">96</a><a class="extend next" rel="next" href="/page/24/">Next</a>
   </nav>
 
 </section>
@@ -399,7 +386,7 @@ Host: example.org
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">191</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -419,7 +406,7 @@ Host: example.org
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">9월 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">35</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

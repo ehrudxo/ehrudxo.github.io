@@ -123,7 +123,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-06-16 08:34:59]AnimatedSVGView"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-06-10 08:14:51]git-tips-tips"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +131,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/06/16/[2016-06-16 08:34:59]AnimatedSVGView/">AnimatedSVGView</a>
+      <a class="article-title" href="/2016/06/10/[2016-06-10 08:14:51]git-tips-tips/">git-tips/tips</a>
     </h1>
   
 
@@ -139,8 +139,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/06/16/[2016-06-16 08:34:59]AnimatedSVGView/" class="article-date">
-	  <time datetime="2016-06-15T23:34:59.000Z" itemprop="datePublished">6월 16, 2016</time>
+	<a href="/2016/06/10/[2016-06-10 08:14:51]git-tips-tips/" class="article-date">
+	  <time datetime="2016-06-09T23:14:51.000Z" itemprop="datePublished">6월 10, 2016</time>
 	</a>
 
        
@@ -148,39 +148,23 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>SVG라는 포맷은 여러모로 많이 쓰이는 벡터포맷입니다. Canvas가 나오기 전까지는 DOM위에 그릴 수 있는 Vecotr 포맷으로 가장 유용한 역할을 하고 있었고, HTML5 Canvas가 나온 이후에도 브라우저 지원등의 이유로 여전히 사랑을 받고 있습니다.</p>
-<p>이미지를 SVG로 바꿔주는 여러가지 시도들도 있었죠.</p>
-<p>2016/06/16 Editor’s choice</p>
-<p>오늘은 Android에서 SVG를 보여주는 프로젝트입니다.</p>
-<p><a href="https://github.com/jaredrummler/AnimatedSvgView" title="https://github.com/jaredrummler/AnimatedSvgView" target="_blank" rel="external"><strong>jaredrummler/AnimatedSvgView</strong><br>_AnimatedSvgView - Animated SVG Drawing for Android_github.com</a><a href="https://github.com/jaredrummler/AnimatedSvgView" target="_blank" rel="external"></a></p>
+        <p>마스터에 이미 머지된 브랜치 목록을 모두 볼 수 있는 방법이 있을까요? 원격 레파지토리의 변경사항을 볼수 있을까요? 원격레파지토리 브랜치를 삭제할 수 있는 방법은 무엇이 있을까요?</p>
+<p>등등의 질문이 날라올 때 빠르게 답변 할 수 있으면 좋겠지만 언제나 그럴 수 없다는 것은 누구나 잘 압니다.</p>
+<p>오늘은 이런 git-tip들을 모아 놓은 프로젝트들이 있어서 공유합니다.</p>
+<p><a href="https://github.com/git-tips/tips" title="https://github.com/git-tips/tips" target="_blank" rel="external"><strong>git-tips/tips</strong><br>_Most commonly used git tips and tricks._github.com</a><a href="https://github.com/git-tips/tips" target="_blank" rel="external"></a></p>
 <hr>
-<p>그런데, 그냥 보여 주는 것은 아닙니다.</p>
-<p>SVG는 기본적으로 drawing하는 점,선, 면들의 xml집합체로 되어 있는데, 그 집합체들을 약간의 시간을 두고 이쁘게 그릴 수 있도록 해 주고 있습니다.</p>
-<p><img src="/images/1*OeABEdHx0BYxfkgvX0PENg.gif" alt=""></p>
-<p>보시면 아시겠지만, 그려지는 순서대로 파티클이 뿌려지는 효과 처럼 그려지면서 완성이 됩니다.</p>
-<p><a href="https://github.com/jaredrummler/AnimatedSvgView/blob/master/demo/src/main/java/com/jrummyapps/android/animatedsvgview/demo/SVG.java" title="https://github.com/jaredrummler/AnimatedSvgView/blob/master/demo/src/main/java/com/jrummyapps/android/animatedsvgview/demo/SVG.java" target="_blank" rel="external"><strong>jaredrummler/AnimatedSvgView</strong><br>_AnimatedSvgView - Animated SVG Drawing for Android_github.com</a><a href="https://github.com/jaredrummler/AnimatedSvgView/blob/master/demo/src/main/java/com/jrummyapps/android/animatedsvgview/demo/SVG.java" target="_blank" rel="external"></a></p>
-<p>데모로 그려주는 소스는 위의 링크에서 찾아 볼수 있구요.</p>
-<p>아래와 같은 형태를 하고 있습니다.</p>
-<pre><code>_DEVPOOLS_(  
-new String\[\]{  
-&quot;M110,830,l0,-710,710,0,710,0,0,710,0,710,-710,0,-710,0,0,-710z m1360,0,l0,-650,-650,0,-650,0,0,650,0,650,650,0,650,0,0,-650z&quot;,  
-&quot;M314,832,c-30,-20,-19,-82,15,-82,29,0,46,36,32,66,-11,24,-27,30,-47,16z&quot;,  
-&quot;M1320,826,c-15,-19,-9,-56,12,-69,34,-22,66,41,36,71,-16,16,-33,15,-48,-2z&quot;,  
-&quot;M657,692,c-9,-13,20,-83,45,-109,12,-14,35,-31,50,-39,35,-18,119,-18,162,0,42,18,85,73,93,120,5,33,4,36,-20,36,-20,0,-28,-7,-37,-34,-23,-72,-102,-105,-172,-72,-34,17,-68,61,-68,90,0,16,-44,23,-53,8z&quot;  
-},new int\[\]{  
-Color._BLACK_,  
-Color._RED_,  
-Color._RED_,  
-Color._RED  
-_},  
-1630,1650  
-),
-</code></pre><p>쉽게 말씀드리면</p>
-<p>첫번째 면수로는 Path의 배열 두번째는 그 Path의 색, 넓이, 높이 순으로 입력하면 같은 모양으로 그리게 됩니다.</p>
-<p>DEVPOOLS 로고를 입력해 보았습니다.</p>
-<p><img src="/images/1*wD_VfSBTFnvcy1kWpDsEzA.gi" alt=""></p>
-<p>훌륭하게 그려지는 군요</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/c261a4dd9771" target="_blank" rel="external">June 15, 2016</a>.</p>
+<p><img src="/images/1*PtCoqy6txdoduWXQvG48nA.png" alt=""></p>
+<p>이렇게 죽 읽어봐도 엄청나게 많은 목록들이 보이네요.</p>
+<p>하지만, 영어라는 허들이 뭔가를 바로 찾기 어렵게 하는 단점이 있네요.</p>
+<p>한국 사람 누군가 fork해 가지 않았을까? 해서 찾아보았습니다.</p>
+<p><img src="/images/1*LvwxY_8yiGuCFBHO91WoSA.png" alt=""></p>
+<p>translate2Korean 이라는 브랜치가 있네요. 음홧홧!</p>
+<p><a href="https://github.com/ikaruce/tips/blob/translate2korean/README-korean.md#스테이지-되지-않은-최종-커밋-이후에-변경된-내용-보기" title="https://github.com/ikaruce/tips/blob/translate2korean/README-korean.md#스테이지-되지-않은-최종-커밋-이후에-변경된-내용-보기" target="_blank" rel="external"><strong>ikaruce/tips</strong><br>_Most commonly used git tips and tricks._github.com</a><a href="https://github.com/ikaruce/tips/blob/translate2korean/README-korean.md#스테이지-되지-않은-최종-커밋-이후에-변경된-내용-보기" target="_blank" rel="external"></a></p>
+<p><img src="/images/1*2JR6I2ed-RQ7grBaKYE-3w.pn" alt=""></p>
+<p>훌륭한 번역이 되어 있네요.</p>
+<p>조만간 merge될거 같군요.</p>
+<p>이 프로젝트 또한 중요체크!입니다~</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/3a9dd56f44aa" target="_blank" rel="external">June 9, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -201,7 +185,7 @@ _},
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-06-15 12:06:31]Tensorflow-101"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-06-09 19:00:21]megaboilerplate"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -209,7 +193,7 @@ _},
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/06/15/[2016-06-15 12:06:31]Tensorflow-101/">Tensorflow-101</a>
+      <a class="article-title" href="/2016/06/09/[2016-06-09 19:00:21]megaboilerplate/">megaboilerplate</a>
     </h1>
   
 
@@ -217,8 +201,8 @@ _},
     
     <div class="article-meta">
       
-	<a href="/2016/06/15/[2016-06-15 12:06:31]Tensorflow-101/" class="article-date">
-	  <time datetime="2016-06-15T03:06:31.000Z" itemprop="datePublished">6월 15, 2016</time>
+	<a href="/2016/06/09/[2016-06-09 19:00:21]megaboilerplate/" class="article-date">
+	  <time datetime="2016-06-09T10:00:21.000Z" itemprop="datePublished">6월 9, 2016</time>
 	</a>
 
        
@@ -226,29 +210,60 @@ _},
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>이세돌과 알파고 때문에 마음이 상하신 분들 많으시죠? 그런데 여러 많은 사람들이 한국에는 이게 축복이라고 합니다.</p>
-<p>그 이유가 뭘까요? 미리 인공지능세대를 준비하기 때문이라고 하는데, 저도 많은 의미에서 동의가 됩니다.</p>
-<p>오늘 소개드릴 프로젝트는 tensorflow 에 대한 예제를 모아놓은 프로젝트입니다. 꽤 많은 프로젝트들이 tensorflow 예제들을 가지고 있습니다만 이 프로젝트도 한국 사람이 진행했습니다.</p>
-<p>2016/06/15 Editor’s choice</p>
-<p><a href="https://github.com/sjchoi86/Tensorflow-101" title="https://github.com/sjchoi86/Tensorflow-101" target="_blank" rel="external"><strong>sjchoi86/Tensorflow-101</strong><br>_Tensorflow-101 - TensorFlow Tutorials_github.com</a><a href="https://github.com/sjchoi86/Tensorflow-101" target="_blank" rel="external"></a></p>
+        <p><img src="/images/1*9hd2zEsMImq0JR263UgPEA.png" alt="">끝판왕</p>
+<p>끝판왕이라는 말은 매우 진부하죠. 이젠?</p>
+<p>넘치고 넘치는 웹 개발 boilerplate 뭘 써야 될지 궁금하셨을 텐데요. 이런 고민을 한방에 종결시켜 줄 가능성이 보이는 프로젝트가 나타났습니다.</p>
+<p><a href="https://github.com/sahat/megaboilerplate" title="https://github.com/sahat/megaboilerplate" target="_blank" rel="external"><strong>sahat/megaboilerplate</strong><br>_megaboilerplate - Handcrafted starter projects, optimized for simplicity and ease of use._github.com</a><a href="https://github.com/sahat/megaboilerplate" target="_blank" rel="external"></a></p>
+<h4 id="왜-일케-호들갑이셩"><a href="#왜-일케-호들갑이셩" class="headerlink" title="왜 일케 호들갑이셩"></a>왜 일케 호들갑이셩</h4><p>그죠. 좀 호들갑이 심했습니다. 한번 보고 생각해 보자고 일단 움짤을 만들어 봤습니다.</p>
+<p><img src="/images/1*JoTk4L5vzKYAmEbFqiANWQ.gif" alt=""></p>
+<p>네, 저렇게 내가 쓰고 싶은 레이어별 프레임워크들을 선택하고 나니 megaboilerplate-app이라는 이름의 압축파일이 땋하고 떨어지고, 압축을 풀고 atom으로 열어보니</p>
+<p><img src="/images/1*jcu4CVJF9mz3-Np4nb_W2g.png" alt=""></p>
+<p>어머, 친절하게 웹 팩 설정도 왠걸 완벽하게 나오네요.</p>
+<p>며칠전에 나온 reactpack을 리뷰할까 하다가 이걸 먼저 리뷰하게 됩니다.</p>
+<p><a href="https://github.com/olahol/reactpack" title="https://github.com/olahol/reactpack" target="_blank" rel="external"><strong>olahol/reactpack</strong><br>_reactpack - :package: build your react apps with one command and one `npm i`._github.com</a><a href="https://github.com/olahol/reactpack" target="_blank" rel="external"></a></p>
 <hr>
-<h4 id="설치하기"><a href="#설치하기" class="headerlink" title="설치하기"></a>설치하기</h4><p>설치는 tensorflow 를 사용할 수 있는 set가 기본입니다.</p>
-<ul>
-<li>tensorflow</li>
-<li>Numpy</li>
-<li>SciPy</li>
-<li>Pretrained VGG :</li>
-</ul>
-<hr>
-<h4 id="실습하기"><a href="#실습하기" class="headerlink" title="실습하기"></a>실습하기</h4><p>iPython notebook 으로 되어 있습니다. notebook 은 doc와 실습을 적절하게 할 수 있는 훌륭한 도구입니다.</p>
-<hr>
-<p>아마, 처음 시작하시려는 분들은 어디서 부터 시작해야할 지 많이들 망설이실 것 같습니다.</p>
-<p>이런 notebook이 도움이 되지만 좋은 컨셉을 어디서 잡을수 있을지..</p>
-<p>여러군데 문의한 결과 대부분의 대답이 Andrew Ng의 강의를 추천하더군요.</p>
-<p>그래서 링크를 걸어 두었습니다. 같이 보시가다 이야기 하실 것이 있으면 의견을 교환해도 좋을 것 같습니다.</p>
-<p><a href="https://www.coursera.org/learn/machine-learning" title="https://www.coursera.org/learn/machine-learning" target="_blank" rel="external"><strong>Machine Learning - Stanford University | Coursera</strong><br>_Machine Learning from Stanford University. Machine learning is the science of getting computers to act without being…_www.coursera.org</a><a href="https://www.coursera.org/learn/machine-learning" target="_blank" rel="external"></a></p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/f6f5db4ef09e" target="_blank" rel="external">June 15, 2016</a>.</p>
-<p>Exported from <a href="https://medium.co" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+<h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><pre><code>$npm install
+</code></pre><p>을 통해 dependency 가 걸려있는 라이브러리들을 내려받고는</p>
+<pre><code>$node server
+</code></pre><p>를 실행시키면 에러가 납니다. lodash는 공통적으로 package.json파일에 누락되어 있네요.</p>
+<p>.env파일의 database만 설정해 주고 다시</p>
+<pre><code>$node server
+</code></pre><p><img src="/images/1*FLuS2KGtdgcB6uOILeq3PA.png" alt="">기대보다 좋아요!</p>
+<p>만들어진 소스 진입점은</p>
+<pre><code>import &apos;whatwg-fetch&apos;;  
+import React from &apos;react&apos;;  
+import ReactDOM from &apos;react-dom&apos;;  
+import { Provider } from &apos;react-redux&apos;  
+import { Router, browserHistory } from &apos;react-router&apos;;  
+import configureStore from &apos;./store/configureStore&apos;;  
+import getRoutes from &apos;./routes&apos;;
+
+const store = configureStore(window.INITIAL\_STATE);
+
+ReactDOM.render(  
+&lt;Provider store={store}\&gt;  
+&lt;Router history={browserHistory} routes={getRoutes(store)}/\&gt;  
+&lt;/Provider\&gt;,  
+document.getElementById(&apos;app&apos;)  
+);
+</code></pre><p>redux, router,fetch등 React 가 minimal로 가져야 할 것들을 훌륭하게 갖고 있습니다.</p>
+<p>서버쪽 라우팅은 아래와 같이 express 가 지원.</p>
+<p><img src="/images/1*_kAzHMkVfSZdT9ZCZEumBg.pn" alt=""></p>
+<p>node DB모듈은 knex를 쓰고 있습니다.</p>
+<pre><code>var config = require(&apos;../knexfile&apos;);  
+var knex = require(&apos;knex&apos;)(config);  
+var bookshelf = require(&apos;bookshelf&apos;)(knex);
+
+bookshelf.plugin(&apos;virtuals&apos;);
+
+knex.migrate.latest();
+
+module.exports = bookshelf;
+</code></pre><hr>
+<p>mega라는 말을 쓰길래 덕후거나 허풍이 심한 프로젝트 아닐까 하고 의심의 눈을 가지고 프로젝트를 들여다 보니 이거 정말 볼매였습니다.</p>
+<p>lodash 관련해서는 PU 날리기 좋은 타이밍인데요!</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/135f6bd1fd28" target="_blank" rel="external">June 9, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
     </div>
@@ -272,7 +287,7 @@ _},
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/42/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><a class="page-number" href="/page/42/">42</a><span class="page-number current">43</span><a class="page-number" href="/page/44/">44</a><a class="page-number" href="/page/45/">45</a><span class="space">&hellip;</span><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/44/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/42/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><a class="page-number" href="/page/42/">42</a><span class="page-number current">43</span><a class="page-number" href="/page/44/">44</a><a class="page-number" href="/page/45/">45</a><span class="space">&hellip;</span><a class="page-number" href="/page/96/">96</a><a class="extend next" rel="next" href="/page/44/">Next</a>
   </nav>
 
 </section>
@@ -404,7 +419,7 @@ _},
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">191</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -424,7 +439,7 @@ _},
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">9월 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">35</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

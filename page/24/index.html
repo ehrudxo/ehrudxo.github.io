@@ -123,7 +123,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-08-12 17:30:56]우왓 감사합니다~"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-08-04 00:13:46]sharingbuttons.io"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +131,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/08/12/[2016-08-12 17:30:56]우왓 감사합니다~/">우왓 감사합니다~</a>
+      <a class="article-title" href="/2016/08/04/[2016-08-04 00:13:46]sharingbuttons.io/">sharingbuttons.io</a>
     </h1>
   
 
@@ -139,8 +139,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/08/12/[2016-08-12 17:30:56]우왓 감사합니다~/" class="article-date">
-	  <time datetime="2016-08-12T08:30:56.000Z" itemprop="datePublished">8월 12, 2016</time>
+	<a href="/2016/08/04/[2016-08-04 00:13:46]sharingbuttons.io/" class="article-date">
+	  <time datetime="2016-08-03T15:13:46.000Z" itemprop="datePublished">8월 4, 2016</time>
 	</a>
 
        
@@ -148,8 +148,32 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/78a8b044ab4b" target="_blank" rel="external">August 12, 2016</a>.</p>
-<p>Exported from <a href="https://medium.co" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+        <p>Social media 에 정보를 공유하는 아이콘을 가지고 만든 프로젝트는 워낙 많이 봐 와서 질리신다구요? 오늘 소개하는 프로젝트는 깜짝 놀랄만큼 빠르게 동작하면 React 컴포넌트화 되어 있어서 너무나도 손쉽게 사용할 수 있습니다. 게다가 강조하는게, No JavaScript. No tracking.</p>
+<p>그냥 링크 걸고 HTML만 작성하도록 되어 있습니다.</p>
+<p>2016/08/03 Editor’s choice</p>
+<p><a href="https://github.com/mxstbr/sharingbuttons.io" title="https://github.com/mxstbr/sharingbuttons.io" target="_blank" rel="external"><strong>mxstbr/sharingbuttons.io</strong><br>_sharingbuttons.io - Quickly generate social sharing buttons with a tiny performance footprint_github.com</a><a href="https://github.com/mxstbr/sharingbuttons.io" target="_blank" rel="external"></a></p>
+<p>말이 더 필요할까요. 바로 샘플 페이지를 확인해 보겠습니다.(이미지를 클릭하면 페이지로 이동합니다)</p>
+<p><a href="http://sharingbuttons.io/" target="_blank" rel="external"><img src="/images/1*ewTxqSfBJB7MJiRXiHwnHw.png" alt=""></a>이쁜 예제네요. 감각 있습니다.</p>
+<p>왼쪽의 옵션들을 클릭하다보면 오른쪽 버튼의 배열들이 보여지고 클릭하면 share 할 수 있는 옵션으로 넘어가는데 너무도 순식간에 빨리 넘어 갑니다. 말그대로 super fast!</p>
+<hr>
+<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><pre><code>$git clone [https://github.com/mxstbr/sharingbuttons.io.git][anchor3]   
+$cd sharingbuttons.io   
+$npm install
+</code></pre><h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><pre><code>$npm start
+</code></pre><p>이후 위의 이미지와 똑같은 화면이 나타납니다.</p>
+<h4 id="코드구조"><a href="#코드구조" class="headerlink" title="코드구조"></a>코드구조</h4><p><img src="/images/1*yac2twk8_Cz8SjNiB3ZH3Q.jpeg" alt=""></p>
+<p>형태는 대강 보면 flux 아키텍쳐를 가지고 있습니다.</p>
+<p>Generator를 통해 버튼을 만들고 클릭하면 실제 실행이 되도록 설계가 되어 있습니다.</p>
+<p>flux 아키텍쳐니까 AppStore.js 파일을 살펴 봐야겠죠?</p>
+<p><a href="https://github.com/mxstbr/sharingbuttons.io/blob/master/js/stores/AppStore.js" title="https://github.com/mxstbr/sharingbuttons.io/blob/master/js/stores/AppStore.js" target="_blank" rel="external"><strong>mxstbr/sharingbuttons.io</strong><br>_sharingbuttons.io - Quickly generate social sharing buttons with a tiny performance footprint_github.com</a><a href="https://github.com/mxstbr/sharingbuttons.io/blob/master/js/stores/AppStore.js" target="_blank" rel="external"></a></p>
+<p>medium이 코드를 raw코드에 대해서도 gist 처럼 보여주면 얼마나 좋을까요?</p>
+<p><img src="/images/1*fOzhKxKv7hCe9Ai2nSjU3g.pn" alt=""></p>
+<p>data[“network”][“facebook”] 형태의 JSON데이타를 가지고 있습니다.</p>
+<p>이렇게 저장된 Store를 가지고 HTML을 만들고 클릭했을 때에</p>
+<p>와 같은 형태의 링크로 동작하게 되는 메커니즘으로 동작하는 거죠.</p>
+<p>재미있는 발상의 좋은 소스입니다~</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/3a16defe073a" target="_blank" rel="external">August 3, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
     </div>
@@ -169,7 +193,7 @@
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-08-10 23:01:55]security-guide-for-developers"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-08-02 23:38:20]sublime-enhanced"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -177,7 +201,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/08/10/[2016-08-10 23:01:55]security-guide-for-developers/">security-guide-for-developers</a>
+      <a class="article-title" href="/2016/08/02/[2016-08-02 23:38:20]sublime-enhanced/">sublime-enhanced</a>
     </h1>
   
 
@@ -185,8 +209,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/08/10/[2016-08-10 23:01:55]security-guide-for-developers/" class="article-date">
-	  <time datetime="2016-08-10T14:01:55.000Z" itemprop="datePublished">8월 10, 2016</time>
+	<a href="/2016/08/02/[2016-08-02 23:38:20]sublime-enhanced/" class="article-date">
+	  <time datetime="2016-08-02T14:38:20.000Z" itemprop="datePublished">8월 2, 2016</time>
 	</a>
 
        
@@ -194,37 +218,75 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>프론트엔드 개발자를 위한 보안 가이드가 오늘 소개해 드릴 프로젝트입니다. 몇번씩이나 깃헙 수위권을 차지 했었는데요. 상당히 읽어 볼만한 내용들을 포함하고 있습니다.</p>
-<p>2016/08/10 best Practice</p>
-<p><a href="https://github.com/FallibleInc/security-guide-for-developers" title="https://github.com/FallibleInc/security-guide-for-developers" target="_blank" rel="external"><strong>FallibleInc/security-guide-for-developers</strong><br>_security-guide-for-developers - Security Guide for Developers (实用性开发人员安全须知)_github.com</a><a href="https://github.com/FallibleInc/security-guide-for-developers" target="_blank" rel="external"></a></p>
-<hr>
-<h4 id="배경설명"><a href="#배경설명" class="headerlink" title="배경설명"></a>배경설명</h4><p><a href="https://fallible.co/" title="https://fallible.co/" target="_blank" rel="external"><strong>Fallible - Secure your startup</strong><br>_About us We are a group of hackers passionate about improving the security posture of companies, tech startups in…_fallible.co</a><a href="https://fallible.co/" target="_blank" rel="external"></a></p>
-<p>해커 그룹이 만든 fallible 라는 회사는</p>
-<p><img src="/images/1*xYBVRvNvwE3LKISwLYSLFQ.pn" alt=""></p>
-<p>의 가격에 취약점에서 서비스를 지켜준다고 하는군요.</p>
-<p>아무튼 이 회사에서 깃헙에 security가이드를 내 주고 공개해서 많은 사람들의 호응을 얻고 있는데, 문서가 다 완성되어 있지 않는데에도 스타가 1만개가 넘는군요</p>
-<hr>
-<h4 id="체크리스트"><a href="#체크리스트" class="headerlink" title="체크리스트"></a>체크리스트</h4><p><a href="https://github.com/FallibleInc/security-guide-for-developers/blob/master/security-checklist.md" title="https://github.com/FallibleInc/security-guide-for-developers/blob/master/security-checklist.md" target="_blank" rel="external"><strong>FallibleInc/security-guide-for-developers</strong><br>_security-guide-for-developers - Security Guide for Developers (实用性开发人员安全须知)_github.com</a><a href="https://github.com/FallibleInc/security-guide-for-developers/blob/master/security-checklist.md" target="_blank" rel="external"></a></p>
-<p>체크리스트 하나를 만들어 나가고 있는데 꽤나 볼만 합니다. 한번 이 문서를 번역해서 PU 날려주는 것도 많을 거 같습니다.</p>
-<p><strong>일단 인증을 살펴볼까요?</strong></p>
-<ul>
-<li>HTTPS 를 꼭 쓸것</li>
-<li>비밀번호 해쉬를 저장할 때는 Bcrypt를 사용할것. (salt는 Bcrypt가 알아서 해 주니 필요없음</li>
-<li>로그아웃 후에는 session ID 값을 지울 것</li>
-<li>패스워드 변경때는 살아있는 모든 session 을 지울 것</li>
-<li>OAuth2 는 state 매개변수를 무조건 가질 것</li>
-<li>성공적으로 로그인하고 나서는 열려 있는 리다이렉트는 없앨 것</li>
-<li>회원등록/로그인 입력값을 해석할 때 javascript와 data, CRLF 값등을 깨끗하게 유지할 것</li>
-<li>쿠키는 암호화한 http 내용만 허용</li>
-<li>모바일 에서 사용되는 OTP 검증 시, OTP를 생성하거나 리셋한 결과 값을 리턴하는 response에 패스워드를 보내지 말것</li>
-<li>로그인 혹은 OTP검증 혹은 관련된 API사용의 횟수를 제한할 것. captcha 기반의 챌린지를 가질 것</li>
-<li>이메일 링크와 SMS 로 보내진 리셋 패스워드의 난수값을 확인할 것</li>
-<li>리셋 패스워드의 만기일을 설정할 것(납득할만한 기간)</li>
-<li>토큰 값이 성공적으로 사용되고 나서는 삭제할 것</li>
-</ul>
-<p>이것 이외도 많은 내용이 있으니 살펴볼만 한 듯합니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/5bdef1d0feb4" target="_blank" rel="external">August 10, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+        <p>sublime Text 의 플러그인들의 모음입니다.</p>
+<p>2016/08/02 Editor’s choice</p>
+<p><a href="https://github.com/shagabutdinov/sublime-enhanced" title="https://github.com/shagabutdinov/sublime-enhanced" target="_blank" rel="external"><strong>shagabutdinov/sublime-enhanced</strong><br>_sublime-enhanced - Set of plugins for beloved sublime text editor_github.com</a><a href="https://github.com/shagabutdinov/sublime-enhanced" target="_blank" rel="external"></a></p>
+<p>gh-ost 를 리뷰할 생각이었으나 gh-ost는 앞으로 며칠간 수위권을 장식할 예정이라 간단하게 플러그인들의 모음을 모아 놓은 사이트만 공유합니다.</p>
+<p>3가지의 목표를 가지고 만든 프로젝트입니다.</p>
+<ol>
+<li>Mouseless usage of sublime</li>
+<li>Navigation (in code and files) improvement</li>
+<li>Common micro-tasks automation</li>
+</ol>
+<p>마우스 없이 쓰고 코드와 파일간을 쉽게 컨트롤 하고 공통적으로 행해지는 작업들을 자동화 한다는 군요.</p>
+<p>데모로 보이는 페이지에는 method를 작성하면 기본적으로 skeleton 코드를 만들어 주는</p>
+<p><a href="https://github.com/shagabutdinov/sublime-method" title="https://github.com/shagabutdinov/sublime-method" target="_blank" rel="external"><strong>shagabutdinov/sublime-method</strong><br>_sublime-method - Sublime plugin that allows to manipulate methods in file_github.com</a><a href="https://github.com/shagabutdinov/sublime-method" target="_blank" rel="external"></a></p>
+<p>프로젝트로 시작해 아래와 같이 많은 프로젝트들을 기본 세팅해서 사용할 수 있습니다.</p>
+<pre><code>git clone git@github.com:shagabutdinov/sublime-align-cursors.git AlignCursors;  
+git clone git@github.com:shagabutdinov/sublime-align-hash-table.git AlignHashTable;  
+git clone git@github.com:shagabutdinov/sublime-append-selection.git AppendSelection;  
+git clone git@github.com:shagabutdinov/sublime-autocompletion.git Autocompletion;  
+git clone git@github.com:shagabutdinov/sublime-clone-file.git CloneFile;  
+git clone git@github.com:shagabutdinov/sublime-close-other.git CloseOther;  
+git clone git@github.com:shagabutdinov/sublime-context.git Context;  
+git clone git@github.com:shagabutdinov/sublime-devastate-mini.git DevastateMini;  
+git clone git@github.com:shagabutdinov/sublime-duplicate-lines-enhanced.git DuplicateLinesEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-eval-selection.git EvalSelection;  
+git clone git@github.com:shagabutdinov/sublime-delayed-save-all.git DelayedSaveAll;  
+git clone git@github.com:shagabutdinov/sublime-expression.git Expression;  
+git clone git@github.com:shagabutdinov/sublime-file-dialog.git FileDialog;  
+git clone git@github.com:shagabutdinov/sublime-file-list.git FileList;  
+git clone git@github.com:shagabutdinov/sublime-file-util.git FileUtil;  
+git clone git@github.com:shagabutdinov/sublime-folder-files.git FolderFiles;  
+git clone git@github.com:shagabutdinov/sublime-full-undo.git FullUndo;  
+git clone git@github.com:shagabutdinov/sublime-goto-anything-enhanced.git GotoAnythingEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-goto-character.git GotoCharacter;  
+git clone git@github.com:shagabutdinov/sublime-goto-definition-enhanced.git GotoDefinitionEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-goto-last-edit-enhanced.git GotoLastEditEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-goto-line-enhanced.git GotoLineEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-indentation-navigation.git IndentationNavigation;  
+git clone git@github.com:shagabutdinov/sublime-join-assignment.git JoinAssignment;  
+git clone git@github.com:shagabutdinov/sublime-join-chain-call.git JoinChainCall;  
+git clone git@github.com:shagabutdinov/sublime-join-lines-enhanced.git JoinLinesEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-join-statement.git JoinStatement;  
+git clone git@github.com:shagabutdinov/sublime-keymap-enhanced.git KeymapEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-keyword.git Keyword;  
+git clone git@github.com:shagabutdinov/sublime-local-variable.git LocalVariable;  
+git clone git@github.com:shagabutdinov/sublime-method.git Method;  
+git clone git@github.com:shagabutdinov/sublime-named-mark.git NamedMark;  
+git clone git@github.com:shagabutdinov/sublime-nested-snippet.git NestedSnippet;  
+git clone git@github.com:shagabutdinov/sublime-nesting-snippet.git NestingSnippet;  
+git clone git@github.com:shagabutdinov/sublime-open-path.git OpenPath;  
+git clone git@github.com:shagabutdinov/sublime-project-files.git ProjectFiles;  
+git clone git@github.com:shagabutdinov/sublime-quick-search-enhanced.git QuickSearchEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-remove-selection.git RemoveSelection;  
+git clone git@github.com:shagabutdinov/sublime-repeat-command.git RepeatCommand;  
+git clone git@github.com:shagabutdinov/sublime-scope-context.git ScopeContext;  
+git clone git@github.com:shagabutdinov/sublime-scroll-enhanced.git ScrollEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-search-panel-enhanced.git SearchPanelEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-semicolon.git Semicolon;  
+git clone git@github.com:shagabutdinov/sublime-shell-status.git ShellStatus;  
+git clone git@github.com:shagabutdinov/sublime-snippet-caller.git SnippetCaller;  
+git clone git@github.com:shagabutdinov/sublime-snippet-manager.git SnippetManager;  
+git clone git@github.com:shagabutdinov/sublime-statement.git Statement;  
+git clone git@github.com:shagabutdinov/sublime-status-message.git StatusMessage;  
+git clone git@github.com:shagabutdinov/sublime-enhanced.git SublimeEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-terminal-project-folder.git TerminalProjectFolder;  
+git clone git@github.com:shagabutdinov/sublime-toggle-wrap.git ToggleWrap;  
+git clone git@github.com:shagabutdinov/sublime-utilities.git Utilities;  
+git clone git@github.com:shagabutdinov/sublime-wrap-statement.git WrapStatement
+</code></pre><p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/a165c2f033b0" target="_blank" rel="external">August 2, 2016</a>.</p>
+<p>Exported from <a href="https://medium.co" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
     </div>
@@ -248,7 +310,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/23/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><span class="page-number current">24</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="space">&hellip;</span><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/25/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/23/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><span class="page-number current">24</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="space">&hellip;</span><a class="page-number" href="/page/96/">96</a><a class="extend next" rel="next" href="/page/25/">Next</a>
   </nav>
 
 </section>
@@ -380,7 +442,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">191</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -400,7 +462,7 @@
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">9월 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">35</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

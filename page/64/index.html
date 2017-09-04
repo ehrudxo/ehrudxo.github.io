@@ -123,7 +123,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-05-09 07:26:32]structured-text-tools"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-04-29 08:12:13]xi-editor"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +131,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/05/09/[2016-05-09 07:26:32]structured-text-tools/">structured-text-tools</a>
+      <a class="article-title" href="/2016/04/29/[2016-04-29 08:12:13]xi-editor/">xi-editor</a>
     </h1>
   
 
@@ -139,8 +139,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/05/09/[2016-05-09 07:26:32]structured-text-tools/" class="article-date">
-	  <time datetime="2016-05-08T22:26:32.000Z" itemprop="datePublished">5월 9, 2016</time>
+	<a href="/2016/04/29/[2016-04-29 08:12:13]xi-editor/" class="article-date">
+	  <time datetime="2016-04-28T23:12:13.000Z" itemprop="datePublished">4월 29, 2016</time>
 	</a>
 
        
@@ -148,79 +148,32 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/1*96Dc_oYFvKKrU4BZEzSE7w.png" alt=""></p>
-<p>jo라는 프로젝트를 리뷰한 적이 있습니다. json을 만들어 주는 프로젝트인데 command line툴을 활용하는 것이었습니다. 예를 들자면</p>
-<pre><code>$ jo -p name=jo n=17 parser=false
-</code></pre><p>라고 명령어를 치면</p>
-<pre><code>{  
-&quot;name&quot;: &quot;jo&quot;,  
-&quot;n&quot;: 17,  
-&quot;parser&quot;: false  
-}
-</code></pre><p>형태의 json 이 만들어 지는 거죠.</p>
-<p>이런 일들을 해 주는 오픈소스 command line tools 들을 모아 둔 프로젝트입니다. json 이외에도 structured-text들이 어떤 것이 있는지 알아보기에도 좋은 프로젝트 입니다.</p>
-<p>2016/05/09 Editor’s choice</p>
-<p><a href="https://github.com/dbohdan/structured-text-tools" title="https://github.com/dbohdan/structured-text-tools" target="_blank" rel="external"><strong>dbohdan/structured-text-tools</strong><br>_What follows is a list of text-based file formats with command line tools for manipulating each (with a focus on Linux…_github.com</a><a href="https://github.com/dbohdan/structured-text-tools" target="_blank" rel="external"></a></p>
+        <p><img src="/images/1*YhZobpLLXKJZKNfpPb9g7A.png" alt=""></p>
+<p>구글에서 텍스트 에디터 프로젝트를 내 놓았습니다. xi-editor라는 프로젝트입니다. 지향점 몇 가지는 살펴볼만 합니다. 개발자가 느낄 수 있는 인사이트도 있습니다. 한번 살펴 볼까요?</p>
+<p>2016/04/29 Editor’s choice</p>
+<p><a href="https://github.com/google/xi-editor" title="https://github.com/google/xi-editor" target="_blank" rel="external"><strong>google/xi-editor</strong><br>_xi-editor - A modern editor with a backend written in Rust._github.com</a><a href="https://github.com/google/xi-editor" target="_blank" rel="external"></a></p>
 <hr>
-<h4 id="어떤-것들이-있을까"><a href="#어떤-것들이-있을까" class="headerlink" title="어떤 것들이 있을까?"></a>어떤 것들이 있을까?</h4><p>목차는 다음과 같습니다.</p>
-<ul>
-<li>DSV</li>
-<li>XML,HTML</li>
-<li>JSON</li>
-<li>YAML, TOML</li>
-<li>INI</li>
-</ul>
-<hr>
-<h4 id="DSV"><a href="#DSV" class="headerlink" title="DSV"></a>DSV</h4><p>DSV는 Delimiter-separated values 의 약자로 CSV 와 TSV를 포함하고 있습니다. 손쉽게 예를 들자면 text 파일안에 구분자를 두고 필드 속성을 할당하는 형태입니다. XML과 JSON이 나오기 전, 대부분의 텍스트 파일 인코딩은 속도를 위해 버퍼를 쪼개는 형식이 아니라면 이 형태를 사용했었습니다.</p>
-<p>이 분야의 절대 강자라면 아무래도 오크(AWK) 겠죠.</p>
-<p><img src="/images/1*BvtMX-1l7AE0dn44S3-DHw.png" alt="">전 오크가 아닙니다.</p>
-<p>awk는 상당히 많은 기능이 있는데, 다 소개하기는 곤란하고</p>
-<p>빈도 체크를 위해 imsi.qwk 파일을 아래와 같이 만들고</p>
-<pre><code>// 소스 원작 : [https://ko.wikipedia.org/wiki/AWK][anchor2]  
-{   
-**for** (i=1; i&lt;=NF; i++)  
-words\[$i\]++  
-}  
-
-END {   
-**for** (i in words)  
-**print** i, words\[i\]  
-}
-</code></pre><p>김건모의 잘못된 만남 가사를 입력하면</p>
-<p>$ awk -f imsi.awk gunmo.txt</p>
-<p><img src="/images/1*mh9wZQUyq8xHzIRWqw9FCg.png" alt="">그 어느날!</p>
-<p>친구는이 6번 있군요… 같은 결과를 얻을 수 있습니다.</p>
-<p>그 외에도 POSIX 커맨드 자체로도 이런 일들을 할 수 있고, GNU datamash, Miller, tab,xsv 같은 프로그램들을 링크로 소개하고 있습니다.</p>
-<p>csv같은 경우는 database 툴들과 아주 밀접하게 관계가 있습니다. 아무래도 읽고 쓰는 방법이 밀접하게 연관되어 있으니까요.</p>
-<p>관련된 툴도 설명하고 있네요</p>
-<hr>
-<h4 id="XML-HTML"><a href="#XML-HTML" class="headerlink" title="XML, HTML"></a>XML, HTML</h4><p>15년전 병특할 때 XML개발자는 300만원(그 때 기준이니까… 좀 다르겠죠?) 씩 주면서 찾던 기억이 나네요. 이제는 그냥 기반 기술이 되어 버렸는데 말이죠.</p>
-<p>xml, html 툴은 생각보다 많지 않은게 요즘은 json으로 대세가 넘어가서 그런가 봅니다. SAXON툴은 java의 SAX를 xml2는 libxml같은 걸 사용하는 걸 보면 올드하면서도 견고한(concrete) 라이브러리들 위주로 되어 있습니다.</p>
-<p>그나마 최신 트렌드를 반영하는 pup는</p>
-<p>go로 설치하거나 brew로 설치가 가능합니다.</p>
-<pre><code>$go get github.com/ericchiang/pup
-
-or  
-$ brew install https://raw.githubusercontent.com/EricChiang/pup/master/pup.rb
-</code></pre><p>이제는 데이타 스크래핑의 고전이 되어있는 해커뉴스의 링크를 얻어와 보겠습니다.</p>
-<pre><code>$curl -s https://news.ycombinator.com/ | pup &apos;table table tr:nth-last-of-type(n+2) td.title a&apos;
-</code></pre><p>를 실행하면..</p>
-<p><img src="/images/1*vVfoTFdnhf5XzNELq6h-HQ.png" alt=""></p>
-<p>주루륵 결과가 떨어집니다.</p>
-<p>주로 파싱에 관련된 부분입니다.</p>
-<h4 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h4><p>JSON은 뭔가 상당히 많을 거 같으면서도 좀 썰렁한데 있을 건 다 있는 느낌입니다.</p>
-<p><img src="/images/1*3SsRVJU-f82rH26amP77Lw.pn" alt=""></p>
-<p>자세한 설명은 jo를 위에 잠깐 언급한 걸로 대신하겠습니다. jq라던지, jshon등은 살펴보고 싶네요</p>
-<h4 id="YAML-TOML-INI"><a href="#YAML-TOML-INI" class="headerlink" title="YAML,TOML,INI"></a>YAML,TOML,INI</h4><p>YAML은 루비 개발자들에게는 필수인 직렬화 형식으로 YAML이란 것은 마크업 언어가 아님을 천명하는 재귀적인 이름입니다. 리눅스처럼 말이죠</p>
-<blockquote>
-<p>YAML Ain’t Markup Language</p>
+<h4 id="native-native"><a href="#native-native" class="headerlink" title="native! native!"></a>native! native!</h4><blockquote>
+<p>Native UI. Cross-platform UI toolkits never look and feel quite right. The best technology for building a UI is the native framework of the platform. On Mac, that’s Cocoa.</p>
 </blockquote>
-<p>자쿠와는 다르다! 자쿠와는!</p>
-<p>jq, validyaml등을 소개하고 있습니다.</p>
-<p>INI파일은 윈도우즈…설정파일의 대명사죠.</p>
+<p>기본적으로 Native UI로 컴파일하도록 합니다. 철학적인 컨셉으로 크로스 플랫폼 UI 툴킷은 이쁘지 않다는 것을 그 이유로 듭니다. 일견 동의가 되면서도 동의할 수 없는 부분이기는 합니다.</p>
 <hr>
-<p>뭔가 빠진게 있을까 한참 생각을 해 봤는데, 최근에는 XML, JSON, YAML등 말고는 크게 사용할 일이 없을 거 같다는 생각이 듭니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/6567f7da692" target="_blank" rel="external">May 8, 2016</a>.</p>
+<h4 id="Background-is-Rust"><a href="#Background-is-Rust" class="headerlink" title="Background is Rust"></a>Background is Rust</h4><blockquote>
+<p>Rust. The back-end needs to be extremely performant. In particular, it should use little more memory than the buffers being edited. That level of performance is possible in C++, but Rust offers a much more reliable, and in many ways, higher level programming platform.</p>
+</blockquote>
+<p>성능! 을 위해서 UI는 코코아를 쓰고 background job (파일 및 버퍼등을 만지는)은 Rust를 이용한다고 하는구요. 성능상의 이유로 Rust는 이제 정말 각광 받는 언어가 되었나 봅니다. (<em>Golang 어쩔…</em>)</p>
+<hr>
+<h4 id="기타-특징"><a href="#기타-특징" class="headerlink" title="기타 특징"></a>기타 특징</h4><p>persistent rope data structure는 큰 포맷의 데이타를 처리하기 위해 사용되고, 비동기 형식으로 모든 operation을 만들어서 사용이 버벅! 거리는 일이 없게하는 것, 플러그인 관리를 파이프로 처리해서 scripting 하는 일을 줄이겠다, JSON으로 back-end,fron-end는 통신하는 등.</p>
+<p>좋은 내용을 담고 있습니다. 많은 부분이 제가 주력으로 쓰는 아톰에디터에서 pain point라고 생각했던 부분인데 좋은 아키텍쳐를 표방하고 있습니다.</p>
+<hr>
+<h4 id="믿을-수-있을까"><a href="#믿을-수-있을까" class="headerlink" title="믿을 수 있을까?"></a>믿을 수 있을까?</h4><p><img src="/images/1*bge8LQEWKehC2B1KNqpusA.pn" alt="">draft.min.js</p>
+<p>뭐랄까 언젠가 부터 구글의 오픈 소스는 어느 정도 의혹의 눈길을 받기 시작하는 거 같습니다. 정말 쓰일만한 걸 만드는 걸지, 아니면 저러다 drop 하는 건 아닐지. 자기들도 안쓰는 프레임워크(Angular)를 내 놓는 건 아닌지.</p>
+<p>실행시켜 봤습니다.</p>
+<p>성능에 대한 강조가 부심이 지나친 듯하여 min파일을 읽어보았습니다. 버벅 거리는 거는 마찬가지…입니다. (vi 가 아니면 다 똑같?) 하지만 응답 없음이 뜨지는 않는 군요.</p>
+<hr>
+<p>아키텍처와 지향점은 굉장히 좋아고 생각합니다. min파일을 읽을때 대부분 에디터가 멈춤현상을 겪지만 그나마 빠르게 처리가 되는 것 같다는 부분에서 꽤나 인상적입니다. 이런 아키텍쳐를 다른 에디터들이 많이 가져가면 좋겠다는 생각이 듭니다.</p>
+<p>syntax 강조 기능같은 에디터로서의 기초기능도 아직은 없으니 조금 더 기다려보면 좋은 에디터가 될 가능성도 무궁무진합니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/511d60f80eae" target="_blank" rel="external">April 28, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -241,7 +194,7 @@ $ brew install https://raw.githubusercontent.com/EricChiang/pup/master/pup.rb
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-05-08 08:27:28]GithubWidget-2"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-04-28 06:31:43]useful-java-links"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -249,7 +202,7 @@ $ brew install https://raw.githubusercontent.com/EricChiang/pup/master/pup.rb
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/05/08/[2016-05-08 08:27:28]GithubWidget-2/">GithubWidget-2</a>
+      <a class="article-title" href="/2016/04/28/[2016-04-28 06:31:43]useful-java-links/">useful-java-links</a>
     </h1>
   
 
@@ -257,8 +210,8 @@ $ brew install https://raw.githubusercontent.com/EricChiang/pup/master/pup.rb
     
     <div class="article-meta">
       
-	<a href="/2016/05/08/[2016-05-08 08:27:28]GithubWidget-2/" class="article-date">
-	  <time datetime="2016-05-07T23:27:28.000Z" itemprop="datePublished">5월 8, 2016</time>
+	<a href="/2016/04/28/[2016-04-28 06:31:43]useful-java-links/" class="article-date">
+	  <time datetime="2016-04-27T21:31:43.000Z" itemprop="datePublished">4월 28, 2016</time>
 	</a>
 
        
@@ -266,82 +219,23 @@ $ brew install https://raw.githubusercontent.com/EricChiang/pup/master/pup.rb
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>GithubWidget에 대해서 소스 분석을 하겠다고 이야기하고서는 후회중입니다. 하지만 진행해야겠죠? 새로운 안드로이드 에뮬레이터 성능도 확인해 볼겸 쓰겠습니다.</p>
-<p><img src="/images/1*ZTdnXUIv_7h2fi9Le_ydEw.png" alt=""></p>
-<p><a href="https://medium.com/p/9baed4577c79" title="https://medium.com/p/9baed4577c79" target="_blank" rel="external"><strong>GithubWidget</strong><br>_깃헙에 관련되어서 앱이 있으면 좋겠다고 생각은 하는데 일단 공식앱을 쓸만한 안드로이드 앱은 없다고 보면 좋은데, 오늘 소개해 드릴 위젯은 일단 이쁩니다. 이 위젯은 개인 profile 이랑 streak…_medium.com</a><a href="https://medium.com/p/9baed4577c79" target="_blank" rel="external"></a></p>
-<p>링크가 걸려 있는 지난 리뷰에서도 말씀드린데로 상당히 이쁜 위젯을 어떻게 만들었을까 궁금했습니다.</p>
-<p>국내에서도 크게 위젯 관련된 내용의 블로깅은 겉핥기 수준 정도인거 같아서 크게 안심하고 저도 겉핥는 심정으로…</p>
-<p><img src="/images/1*5vOBMGBxQZ2S9-4OY3HKqw.png" alt="">에디터는dragula</p>
-<p>프로젝트를 열면 위와 같은 형태의 일반적인 형태를 띕니다. 재밌는 것은 Default Activity가 없어서 안드로이드 실행에 x표시가 뜬다는 점입니다.(당연하겠죠?)</p>
-<p><img src="/images/1*hXGAW9ZpwByT3cNenDkAXg.png" alt="">하지만 빌드는 가능해요</p>
-<p>Widget은 기본적으로 4가지 정도의 중요한 작업들을 해 줘야합니다.</p>
-<ul>
-<li>Widget Layout</li>
-<li>WidgetProvider</li>
-<li>Menifest.xml</li>
-<li>Widget</li>
-</ul>
-<p>소스를 처음 받으면 저 같은경우는 Widget.class가 WidGet으로 잘못 타이핑 되어 있어서 소스를 고쳐야 컴파일이 되었습니다.</p>
+        <p><img src="/images/1*OMI0PNJL8bCEJ28UQDywLw.png" alt="">chain links</p>
+<p>Awesome 시리즈가 한참 유행하는 듯 했습니다. 좋은 페이지나 블로그등을 링크하는 프로젝트들은 언제나 반갑습니다.</p>
+<p>useful java links는 awesome java 를 fork 한 뒤 더 발전 시킨 프로젝트입니다.</p>
+<p>20016/04/28 Editor’s choice</p>
+<p><a href="https://github.com/Vedenin/useful-java-links" title="https://github.com/Vedenin/useful-java-links" target="_blank" rel="external"><strong>Vedenin/useful-java-links</strong><br>_useful-java-links - A list of useful Java frameworks, libraries, software and hello worlds examples_github.com</a><a href="https://github.com/Vedenin/useful-java-links" target="_blank" rel="external"></a></p>
 <hr>
-<h4 id="WidgetLayout"><a href="#WidgetLayout" class="headerlink" title="WidgetLayout"></a>WidgetLayout</h4><p>첫번째 위젯의 레이아웃을 만져 보도록 하겠습니다.</p>
-<p><img src="/images/1*IwRafpMlGFJyhxfUgpQkpA.png" alt="">촘촘한 이미지뷰</p>
-<p>일단 레이아웃 파일은 전체 그림을 커버하고 있지만, 실제 실행은 다르게 됩니다.</p>
+<p>awesome java를 가져와서 라이센스 정보와 깃헙 스타 정보를 업데이트 하고 글의 구조를 조금 바꿨는데 훨씬 잘 정리되어 보입니다.</p>
+<p>예를 들어 web framework 의 spring을 살펴보면 awesome-java의 경우</p>
+<p><img src="/images/1*-sfSxG50SNOyCpwrDeB0Iw.png" alt=""></p>
+<p>한줄의 간단한 정보인데 비해</p>
+<p><img src="/images/1*HQ_fhTsIferyP_xPmktNqA.pn" alt=""></p>
+<p>useful java links는 좀 더 자세한 정보를 보여줍니다.</p>
+<p>이게 가능한 것은 각 프로젝트의 description을 긁어 온 것입니다.</p>
 <hr>
-<h4 id="Widget-Provider"><a href="#Widget-Provider" class="headerlink" title="Widget Provider"></a>Widget Provider</h4><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?\&gt;  
-&lt;appwidget-provider  
-xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;  
-android:initialLayout=&quot;@layout/github\_widget\_0&quot;  
-android:minWidth=&quot;250dp&quot;  
-android:minHeight=&quot;40dp&quot;  
-\&gt;  
-
-&lt;/appwidget-provider\&gt;
-</code></pre><p>provider xml은 간단하게 정의되어 있습니다. minWidth, minHeight 정도를 정의했습니다.</p>
-<hr>
-<h4 id="AndroidMenifst-xml"><a href="#AndroidMenifst-xml" class="headerlink" title="AndroidMenifst.xml"></a>AndroidMenifst.xml</h4><p>위젯안에 형태가 상당히 많지만 여기서 소개한 widget_0 만 살펴 보자면</p>
-<pre><code>&lt;receiver  
-android:name=&quot;.GithubWidget0&quot;  
-android:label=&quot;4×1&quot;\&gt;  
-&lt;meta-data  
-android:name=&quot;android.appwidget.provider&quot;  
-android:resource=&quot;@xml/appwidget\_provider\_0&quot;/\&gt;  
-
-&lt;intent-filter\&gt;  
-&lt;action android:name=&quot;com.nightonke.githubwidget.action.CLICK\_ALL&quot; /\&gt;  
-&lt;action android:name=&quot;com.nightonke.githubwidget.action.CLICK\_AVATAR&quot; /\&gt;  
-&lt;action android:name=&quot;com.nightonke.githubwidget.action.CLICK\_CONTRIBUTIONS&quot; /\&gt;  
-&lt;action android:name=&quot;com.nightonke.githubwidget.action.CLICK\_CONTRIBUTIONS\_SUM&quot; /\&gt;  
-&lt;action android:name=&quot;com.nightonke.githubwidget.action.UPDATE\_FROM\_SERVICE&quot; /\&gt;  
-&lt;action android:name=&quot;android.appwidget.action.APPWIDGET\_UPDATE&quot; /\&gt;  
-&lt;/intent-filter\&gt;  
-&lt;/receiver\&gt;
-</code></pre><p>receiver 셋팅으로 provider를 지정해 두었습니다.</p>
-<p>그리고는</p>
-<pre><code>&lt;service android:name=&quot;.GithubWidgetService&quot; /\&gt;
-</code></pre><p>서비스들을 등록해 두었습니다.</p>
-<hr>
-<h4 id="WidgetClass"><a href="#WidgetClass" class="headerlink" title="WidgetClass"></a>WidgetClass</h4><p>실제 Java 소스들을 살펴보면</p>
-<p>GithubWidget0 클래스는</p>
-<pre><code>public class GithubWidget0 extends AppWidgetProvider
-</code></pre><p>로 AppWidetProvider 를 상속받고 다음의 메쏘드들을 오버라이드 해서 사용합니다.</p>
-<ul>
-<li>onReceive</li>
-<li>onUpdate</li>
-<li>onDisabled</li>
-</ul>
-<p>각 상황별로 액션과 작업들을 정해주고는 updateAll을 실행하는 구조로 만들어져 있습니다.</p>
-<hr>
-<h4 id="ContributionTask"><a href="#ContributionTask" class="headerlink" title="ContributionTask"></a>ContributionTask</h4><p>다른 위젯보다 도드러 지는 부분은 아무래도 컨트리뷰션 맵이겠죠? 가장 이쁜 부분이라고 생각되어지는 부분은 어떻게 만들어졌을까요?</p>
-<p><img src="/images/1*9nyrgjRXcKGmSIl1iXzroA.pn" alt="">2D 혹은 3D</p>
-<pre><code>ContributionsTask
-</code></pre><p>클래스를 찾아가 보니 Util.get2DBitmap, Util.get3DBitmap등의 함수가 있습니다.</p>
-<p>get2DBitMap 함수는 한땀한땀 장인이 그림 그리듯 canvas 에다 drawing 해 두었습니다.</p>
-<p>get3D는 같은 Util함수에 들어가 있습니다. 저는 3D라서 openGL을 기대하고 들어같는데 그렇게 한 것은 아니고 canvas에 삼각함수를 이용해서 3D 효과를 주게 그려져 있습니다.</p>
-<hr>
-<p>Widget관련 프로젝트를 만들어야 하는 입장이라면 참조하기에 좋은 소스인 거 같고 실제로 제가 본 깃헙을 제외하고서라도 위젯중에서는 가장 이쁜 위젯이라 분석해 봤습니다.</p>
-<hr>
-<p>아쉬운것은 drawing 하는 클래스를 Util안에서 다 구현을 한 부분인데, 이런 부분은 차차 업데이트 하면서 바뀔 거 같습니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/ee9b24d25504" target="_blank" rel="external">May 7, 2016</a>.</p>
+<h4 id="HelloWorld"><a href="#HelloWorld" class="headerlink" title="HelloWorld"></a>HelloWorld</h4><p>또 한가지 눈에 띄는 것은 HelloWorlds 디렉토리인데 예제들을 수록해 놓았습니다.</p>
+<p>Java관련해서 총망라한 것 같은 프로젝트를 찬찬히 살펴보다 보면 큰 도움이 될 듯 합니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/876b81e1ba5a" target="_blank" rel="external">April 27, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -366,7 +260,7 @@ android:resource=&quot;@xml/appwidget\_provider\_0&quot;/\&gt;
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/63/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/62/">62</a><a class="page-number" href="/page/63/">63</a><span class="page-number current">64</span><a class="page-number" href="/page/65/">65</a><a class="page-number" href="/page/66/">66</a><span class="space">&hellip;</span><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/65/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/63/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/62/">62</a><a class="page-number" href="/page/63/">63</a><span class="page-number current">64</span><a class="page-number" href="/page/65/">65</a><a class="page-number" href="/page/66/">66</a><span class="space">&hellip;</span><a class="page-number" href="/page/96/">96</a><a class="extend next" rel="next" href="/page/65/">Next</a>
   </nav>
 
 </section>
@@ -498,7 +392,7 @@ android:resource=&quot;@xml/appwidget\_provider\_0&quot;/\&gt;
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">191</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -518,7 +412,7 @@ android:resource=&quot;@xml/appwidget\_provider\_0&quot;/\&gt;
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">9월 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">35</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

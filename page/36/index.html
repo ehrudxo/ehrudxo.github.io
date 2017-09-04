@@ -123,7 +123,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-07-04 00:12:14]React.createClass vs ES6 classes extends"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-06-29 07:21:44]mac-cli"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +131,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/07/04/[2016-07-04 00:12:14]React.createClass vs ES6 classes extends/">React.createClass vs ES6 classes extends</a>
+      <a class="article-title" href="/2016/06/29/[2016-06-29 07:21:44]mac-cli/">mac-cli</a>
     </h1>
   
 
@@ -139,8 +139,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/07/04/[2016-07-04 00:12:14]React.createClass vs ES6 classes extends/" class="article-date">
-	  <time datetime="2016-07-03T15:12:14.000Z" itemprop="datePublished">7월 4, 2016</time>
+	<a href="/2016/06/29/[2016-06-29 07:21:44]mac-cli/" class="article-date">
+	  <time datetime="2016-06-28T22:21:44.000Z" itemprop="datePublished">6월 29, 2016</time>
 	</a>
 
        
@@ -148,38 +148,26 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code>**React 관련 블로깅을 팀블로깅을 같이 하고 있습니다. 아래 내용은 일부이며 아래에 전문 링크가 있습니다.**
-
-**매일 깃헙은 주중에 작성하고, 주말에는 관련 내용이 연재될 예정입니다.**
-</code></pre><p>React 컴포넌트를 작성하는 방법은 크게 두가지가 있습니다.(정확하게는 세가지가 있습니다.)</p>
-<p>하나는 React.createClass 메쏘드를 이용하는 방법이고 또 다른 방법은 ES2015의 class extends 를 사용하는 방법입니다.</p>
-<p>React.createClass 로 컴포넌트를 작성할때에는 다음과 같은 형태로 만들수 있습니다.</p>
-<pre><code>import React from &apos;react&apos;;  
-var MugreComponent = React.createClass({  
-render(){  
-return(  
-&lt;div\&gt;mugre contents!&lt;/div\&gt;  
-);  
-}  
-});  
-export default MugreComponent;
-</code></pre><p>ES2015의 class extends를 사용하는 방법은 다음과 같습니다.</p>
-<pre><code>import React from &apos;react&apos;;
-
-class MugreComponent extends React.Component {  
-render() {  
-return (  
-&lt;div\&gt;mugre contents!&lt;/div\&gt;  
-);  
-}  
-}
-
-export default MugreComponent;
-</code></pre><p>이렇게 코드를 들여다 보면 의구심이 듭니다. React.createClass를 통해 Class생성을 하는 것과 ES2015 class extends를 이용하는 것은 어떤 차이가 있을까요?</p>
-<p>… (중략)</p>
-<p><a href="http://devpools.kr/2016/07/03/react-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8/" title="http://devpools.kr/2016/07/03/react-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8/" target="_blank" rel="external"><strong>REACT 컴포넌트</strong><br>_React 컴포넌트를 작성하는 방법은 크게 두가지가 있습니다.(정확하게는 세가지가 있습니다.) 하나는 React.createClass 메쏘드를 이용하는 방법이고 또 다른 방법은 ES2015의 class…_devpools.kr</a><a href="http://devpools.kr/2016/07/03/react-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8/" target="_blank" rel="external"></a></p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/bc7c89f341ad" target="_blank" rel="external">July 3, 2016</a>.</p>
-<p>Exported from <a href="https://medium.co" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+        <p>오늘은 mac에서 필요한 유용한 cli 툴들을 명령어 하나로 모아 놓은 프로젝트인 mac-cli를 소개합니다.</p>
+<p><img src="/images/1*Si8lIH9NOPXxlSRztngvnA.png" alt=""></p>
+<p>꽤나 아이디어가 좋다고 느껴지는게 일단 네이밍 부터가 mac으로 시작하는 명령어 라니. 라고 생각했습니다.</p>
+<p>> github streak를 볼 수 있는</p>
+<pre><code>$mac github:streak
+</code></pre><p><img src="/images/1*JMkrYs4K6i0cb9X23A3e_g.png" alt=""></p>
+<p>> mac에 지금 열려있는 포트를 확인해 볼 수 있는</p>
+<pre><code>$mac ports
+</code></pre><p><img src="/images/1*4HLRgJtDoPbq_HUugJ0sQw.png" alt="">mysql!!</p>
+<p>>mac 의 시스템 정보를 확인해 볼 수 있는</p>
+<pre><code>$mac system
+</code></pre><p><img src="/images/1*IiQVRjtuND9RQ_i5plLGqw.png" alt=""></p>
+<p>>mac의 메모리 사용량을 확인해 볼 수 있는</p>
+<p>$mac memory</p>
+<p><img src="/images/1*Puj_TGIRqJIXUnBLaZcexg.pn" alt=""></p>
+<p>등의 유용한 cli들을 가지고 있습니다.</p>
+<p>그리고 마지막으로 magento라는 명령어가 있길래, 찾아보니 개발자가 magento의 개발자였습니다. 7년 경력 개발자라고 하는군요.</p>
+<p><a href="https://magento.com/" title="https://magento.com/" target="_blank" rel="external"><strong>eCommerce Software &amp; eCommerce Platform Solutions | Magento</strong><br>_Magento is the eCommerce software and platform trusted by the world’s leading brands. Grow your online business with…_magento.com</a><a href="https://magento.com/" target="_blank" rel="external"></a></p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/bf729c53a171" target="_blank" rel="external">June 28, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
     </div>
@@ -199,7 +187,7 @@ export default MugreComponent;
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-07-03 23:52:43]REACT 컴포넌트"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-06-28 08:08:07]anime"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -207,7 +195,7 @@ export default MugreComponent;
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/07/03/[2016-07-03 23:52:43]REACT 컴포넌트/">REACT 컴포넌트</a>
+      <a class="article-title" href="/2016/06/28/[2016-06-28 08:08:07]anime/">anime</a>
     </h1>
   
 
@@ -215,8 +203,8 @@ export default MugreComponent;
     
     <div class="article-meta">
       
-	<a href="/2016/07/03/[2016-07-03 23:52:43]REACT 컴포넌트/" class="article-date">
-	  <time datetime="2016-07-03T14:52:43.000Z" itemprop="datePublished">7월 3, 2016</time>
+	<a href="/2016/06/28/[2016-06-28 08:08:07]anime/" class="article-date">
+	  <time datetime="2016-06-27T23:08:07.000Z" itemprop="datePublished">6월 28, 2016</time>
 	</a>
 
        
@@ -224,60 +212,68 @@ export default MugreComponent;
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/0*01Gp9JaG1xVlNiCL.png" alt=""></p>
-<p>React 컴포넌트를 작성하는 방법은 크게 두가지가 있습니다.(정확하게는 세가지가 있습니다.)</p>
-<p>하나는 React.createClass 메쏘드를 이용하는 방법이고 또 다른 방법은 ES2015의 class extends 를 사용하는 방법입니다.</p>
-<p>React.createClass 로 컴포넌트를 작성할때와 ES2015의 class extends를 사용하는 방법은 다음과 같습니다.</p>
-<p>이렇게 코드를 들여다 보면 의구심이 듭니다. React.createClass를 통해 Class생성을 하는 것과 ES2015 class extends를 이용하는 것은 어떤 차이가 있을까요?</p>
-<h4 id="실행환경에서-살펴보기"><a href="#실행환경에서-살펴보기" class="headerlink" title="실행환경에서 살펴보기"></a>실행환경에서 살펴보기</h4><h4 id="React-createClass"><a href="#React-createClass" class="headerlink" title="React.createClass"></a>React.createClass</h4><p>먼저 코드를 짜 보겠습니다.</p>
-<p>html 코드와 js 코드는 다음과 같습니다.</p>
-<p>위와 같이 javascript 코드를 짜면 손 쉽게 React.createClass를 이용해서 만든 코드가 실행환경에서 어떻게 보이는지 확인해 볼 수 있습니다.</p>
-<p>브라우저의 console 도구를 활용해서 본 클래스는 실제로는 function으로 정의가 되고 다음과 같이 보여집니다.</p>
-<p><img src="/images/0*XXacyAoWEKfF-PBs.jpg" alt="React.createClass"></p>
-<p>var로 지정한 ReactComponent를 이름으로 가지고 prototype에 여러가지 속성들을 가지는데 한번 눈여겨 볼 필요가 있습니다.</p>
-<p>componentDidUpdate, componentWillMount, componentWillReceiveProps, componentWillUnmount, componentWillUpdate 등은 바로 뒤에 다룰 생명주기 함수들과 연관이 있습니다. 하지만 render 말고는 모두 null 로 셋팅이 되어 있는 것도 왜 그럴까 라고 생각해 보면 좋은 학습이 될 거 같습니다.( DeepDive#1)</p>
-<h4 id="ES2015-class"><a href="#ES2015-class" class="headerlink" title="ES2015 class"></a>ES2015 class</h4><p>ES2015 의 코드를 똑같이 짜 보도록 하겠습니다.</p>
-<p>코드는 다음과 같습니다</p>
-<p>어떤 일이 벌어질까요?</p>
-<p><img src="/images/0*8G2VkXRQkORTcDGb.jpg" alt="ES2015.Class"></p>
-<p>어떤가요? React.createClass 와 비교해 보면 어떤 형태인가요?</p>
-<p>함수 이름은 ES2015Component로 바뀌었는데, prototype 부분에 있어야 할 많은 속성, 혹은 함수들이 보이지 않습니다.</p>
-<p>왜 이런 일이 벌어지는 걸까요? 이에 대한 답을 하기 전에 아까 두가지라고 하고는 괄호로 세가지라고 힌트를 준 걸 기억하실 겁니다. 다음 내용을 먼저 보시죠.</p>
-<h4 id="function-만으로-컴포넌트-생성"><a href="#function-만으로-컴포넌트-생성" class="headerlink" title="function 만으로 컴포넌트 생성"></a>function 만으로 컴포넌트 생성</h4><p>코드는 다음과 같습니다.</p>
-<p>실행을 하면 어떤 일이 벌어질까요?</p>
-<p><img src="/images/0*E3SrCFflGCtxXn2L.jpg" alt="PureFunction01"></p>
-<p>보시는 바와 같이 훌륭하게 페이지에 출력 됩니다.</p>
-<p>콘솔 도구를 확인해 보겠습니다.</p>
-<p><img src="/images/0*wB3wsZzKpqoW7wfk.jpg" alt="PureFunction02"></p>
-<p>훨씬 간단한 함수가 있다는 사실을 알게 됩니다.</p>
-<h4 id="왜-이렇게-돌아가는-걸까"><a href="#왜-이렇게-돌아가는-걸까" class="headerlink" title="왜 이렇게 돌아가는 걸까."></a>왜 이렇게 돌아가는 걸까.</h4><p><a href="https://facebook.github.io/react/docs/glossary.html" target="_blank" rel="external">facebook 공식 페이지에 따르면</a> ReacDOM.render 함수의 첫번째 arguments는 (ReactElement, HTMLElement | SVGElement)를 받을 수 있도록 되어 있습니다.</p>
-<p>결국 순수 함수라고는 했지만 이 함수가 하는 일은 HTML Element 를 반환하는 것 뿐입니다.</p>
-<p>즉 다음과 같이 표현식을 바꾸는 거랑 똑같은 역할을 한다는 것입니다.</p>
-<p>이렇게 그려 넣고 보니 어떤가요?</p>
-<p>너무 당연한걸 돌아 돌아 설명을 한 거 같습니다. 처음 서두에 React 컴포넌트를 생성하는 방법은 두가지 라고 설명을 드렸습니다만, 반전으로 말씀드리면 Javascript Syntax로 클래스 라고 생각되는 방법을 크게 두가지로 알면 될 것 같습니다.</p>
-<pre><code>조금 더 심화의 내용으로 설명드리면 ES2015를 가더라도 브라우저가 인식하는 java 같은 언어에서 얘기하는 class라는 개념은 실제로는 존재하지 않습니다.  
-보셔서 아시겠지만 function 이자 prototype 을 이용해서 React가 활용을 하는 셈이지요.  
-관련 내용에 대해서 더 알고 싶으신 분을 위해서는 Javascript Definite Guide 책을 추천드립니다.
-</code></pre><h4 id="그럼-어떤-방식으로-짜는-게-좋을까요"><a href="#그럼-어떤-방식으로-짜는-게-좋을까요" class="headerlink" title="그럼 어떤 방식으로 짜는 게 좋을까요?"></a>그럼 어떤 방식으로 짜는 게 좋을까요?</h4><p>Airbnb 는 각 개발언어의 style guide를 훌륭하게 내기로 유명한데 <a href="https://github.com/airbnb/javascript/tree/master/react" target="_blank" rel="external">React 용 style 가이드</a>도 공개했습니다.</p>
-<p>아래와 같은 원칙을 갖고 있네요.</p>
-<p>생명주기와 관련된 함수가 사용되지 않는 이상(stateless) pure function 으로 사용하는 것이 낫다고 하는데, 여기에 대해서는 장기적인 performance 이슈를 그 예로 들고 있습니다. 이와 관련해서는 저도 찬성입니다.</p>
-<pre><code>**즉, 단순히 HTML을 구조화 하는 state 가 변할 필요학 없는 tag에 대해서는 javascript function 을 사용할 것. 그리고 그 경우가 아니면 ES2015 로 갈 것.**
-</code></pre><p>을 원칙으로 하면 될 것 같습니다.</p>
-<p>저도 글을 작성할 때에 ES2015기준으로 작성하되, 설명을 위한 특별한 기준이 필요할 때에는 혼용해서 사용할 수 있음을 밝혀둡니다.</p>
-<h4 id="ES2015로-가면-모든-기능에-문제가-없을까"><a href="#ES2015로-가면-모든-기능에-문제가-없을까" class="headerlink" title="ES2015로 가면 모든 기능에 문제가 없을까?"></a>ES2015로 가면 모든 기능에 문제가 없을까?</h4><p>일단 ES2015를 이용하려면 브라우저 호환성을 위해 <a href="https://babeljs.io/" target="_blank" rel="external">Babel</a> 같은 transpiler(혹은 compiler)와 <a href="https://webpack.github.io/" target="_blank" rel="external">webpack</a> 같은 번들러가 필요합니다.</p>
-<p>컴포넌트에 관해서만 이야기하면 React 컴포넌트의 mixin, this autobinding 기능은 ES2015에서는 사용할 수 없습니다. 관련 기능을 이용하시려면 React.createClass를 이용해서 컴포넌트를 작성해야 합니다.(mixin 및 autobinding 기능은 재사용 컴포넌트 만들기를 설명할 때에 다시 다루도록 하겠습니다.)</p>
-<h4 id="끝내기-전에"><a href="#끝내기-전에" class="headerlink" title="끝내기 전에"></a>끝내기 전에</h4><p>읽어보다 SVGElement 관련해서 잠깐 언급된 적이 있죠?</p>
-<p>잘 되는지 한번 확인해 봐야겠습니다.</p>
-<p>SVG 코드 안에는 Devpools 로고를 집어 넣어 보겠습니다.</p>
-<p>결과를 확인해 보니</p>
-<p><img src="/images/0*rmiUrlWa3fN2aAJd.jp" alt="svg_element"></p>
-<p>잘 나오는 것을 확인해 볼 수 있습니다.</p>
-<p>이것이 의미 하는 것은?</p>
-<p>UI관련 컴포넌트를 만드는 데에도 React는 잘 준비되어 있다라는 것과 아직 구조적으로 Canvas에 대한 지원은 없겠구나 라는 것을 확인할 수 있습니다.</p>
-<p>위 내용의 코드는 모두 다음의 jsfiddle 사이트에서 확인할 수 있습니다.</p>
+        <p><img src="/images/1*-AVldJyGij2ySa7OnkvjJA.png" alt="">이러다 곧 manga도 나오겠네용</p>
+<p>javascript animation 프레임 워크 입니다. 아직 엄청나게 많은 기능을 제공하는 수준은 아닙니다만, 가볍고 빠르게 동작하는 것이 특징입니다.</p>
+<p>2016/06/28 Editor’s choice</p>
+<p><a href="https://github.com/juliangarnier/anime" title="https://github.com/juliangarnier/anime" target="_blank" rel="external"><strong>juliangarnier/anime</strong><br>_anime - Polyvalent yet lightweight Javascript animation library_github.com</a><a href="https://github.com/juliangarnier/anime" target="_blank" rel="external"></a></p>
 <hr>
-<p><em>Originally published at </em><a href="http://devpools.kr/2016/07/03/react-%ec%bb%b4%ed%8f%ac%eb%84%8c%ed%8a%b8/" target="_blank" rel="external"><em>개발바보들</em></a><em>.</em></p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/12317070d32e" target="_blank" rel="external">July 3, 2016</a>.</p>
+<p>설치는 그냥 프로젝트에 소스가 존해하고 min파일까지 제공하고 있습니다. 별도의 작업 없이 사용할수 있습니다.</p>
+<p><img src="/images/1*3fB0-vmkgC6wEXDt1Egg8w.gif" alt=""></p>
+<pre><code>var myAnimation = anime({  
+targets: \[&apos;.blue&apos;, &apos;.green&apos;\],  
+translateX: &apos;13rem&apos;,  
+rotate: 180,  
+borderRadius: 8,  
+duration: 2000,  
+loop: true  
+});
+</code></pre><p>간단하게 애니메이션이 구현 됩니다.</p>
+<p>제가 가장 재밌게 본 것은 SVG 의 path를 따라 그려주는 것인데,</p>
+<p>불꽃을 한번 따라서 구현해 봤습니다.</p>
+<p><img src="/images/1*S7KH6oVP8DWsd-elChkNAw.gi" alt=""></p>
+<p>결과는 위의 그림과 같고 소스는 다음과 같습니다.</p>
+<p>javascript</p>
+<pre><code>var path = anime.path(&apos;path&apos;);
+
+anime({  
+targets: &apos;rect&apos;,  
+translateX: path,  
+translateY: path,  
+rotate: path,  
+duration: 3000,  
+loop: true,  
+easing: &apos;linear&apos;  
+});
+
+anime({  
+targets: &apos;path&apos;,  
+opacity: 0,  
+duration: 6000,  
+loop: true,  
+direction: &apos;alternate&apos;,  
+easing: &apos;easeInOutExpo&apos;  
+});
+</code></pre><p>SVG</p>
+<pre><code>&lt;section\&gt;  
+&lt;article\&gt;  
+&lt;svg width=&quot;512&quot; height=&quot;512&quot; viewBox=&quot;0 0 512 512&quot;\&gt;  
+&lt;path d=&quot;M223.899,32c25.691,145--96.732,142--95.895,288c0.686,119.51,104.975,160,128.143,160c23.166,0,113.88--26,126.931--160  
+C393.711,210.816,310.572,96,223.899,32z M256.147,472c0,0--40.701--35.816--40.701--80c0--44.183,40.555--80,40.555--80  
+s40.332,35.817,40.332,80C296.332,436.184,256.147,472,256.147,472z M367.153,318.449c-2.823,28.988--9.704,54.523--20.45,75.894  
+c-8.749,17.397--20.084,32.114--33.692,43.743c-6.522,5.575--13.255,10.115--19.771,13.749c10.039--15.938,19.093--36.72,19.093--59.835  
+c0--50.788--43.842--90.307--45.708--91.963l-10.594--9.41l-10.621,9.381c-1.877,1.657--45.963,41.178--45.963,91.992  
+c0,21.842,8.168,41.594,17.636,57.152c-7.381--4.326--15.215--9.748--22.986--16.451c-14.688--12.67--26.365--27.608--34.708--44.402  
+c-10.063--20.255--15.239--43.265--15.383--68.391c-0.367--63.986,24.09--95.746,49.983--129.369c24.568--31.903,49.829--64.7,49.458--122.113  
+c32.513,28.827,61.257,63.03,82.822,98.877C357.576,219.35,371.715,271.615,367.153,318.449z&quot;/\&gt;  
+&lt;rect fill=&quot;\#38FF9B&quot; width=&quot;16&quot; height=&quot;16&quot; x=&quot;-8&quot; y=&quot;-8&quot;/\&gt;  
+&lt;/svg\&gt;  
+&lt;/article\&gt;  
+&lt;footer\&gt;  
+&lt;span\&gt;Made with&lt;/span\&gt; &lt;a href=&quot;[http://anime-js.com][anchor2]&quot;\&gt;anime.js&lt;/a\&gt;  
+&lt;/footer\&gt;  
+&lt;a class=&quot;logo&quot; href=&quot;[http://anime-js.com][anchor2]&quot;\&gt;&lt;img src=&quot;[https://s3-us-west-2.amazonaws.com/s.cdpn.io/1137/anime-logo.png][anchor3]&quot;\&gt;&lt;/img\&gt;&lt;/a\&gt;  
+&lt;/section\&gt;
+</code></pre><p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/bf417b7c0960" target="_blank" rel="external">June 27, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -302,7 +298,7 @@ export default MugreComponent;
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/35/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/34/">34</a><a class="page-number" href="/page/35/">35</a><span class="page-number current">36</span><a class="page-number" href="/page/37/">37</a><a class="page-number" href="/page/38/">38</a><span class="space">&hellip;</span><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/37/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/35/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/34/">34</a><a class="page-number" href="/page/35/">35</a><span class="page-number current">36</span><a class="page-number" href="/page/37/">37</a><a class="page-number" href="/page/38/">38</a><span class="space">&hellip;</span><a class="page-number" href="/page/96/">96</a><a class="extend next" rel="next" href="/page/37/">Next</a>
   </nav>
 
 </section>
@@ -434,7 +430,7 @@ export default MugreComponent;
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">191</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -454,7 +450,7 @@ export default MugreComponent;
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">9월 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">35</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
