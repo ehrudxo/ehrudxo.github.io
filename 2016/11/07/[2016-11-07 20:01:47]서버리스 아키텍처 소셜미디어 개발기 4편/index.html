@@ -11,31 +11,31 @@
   
   
   
-  <meta name="description" content="서버리스 아키텍처 소셜미디어 개발기 4편지난 편에서는 Editor 에서 데이타를 어떻게 나눌지살펴보았고 Firebase 기초, 테스트 코드를 작성해 보았습니다. 이번에는 그 기반으로 어떻게 실제로 데이타를 입력하고 리스트를 작성하는지 확인해 보겠습니다. 서버리스 아키텍처 소셜미디어 개발기 3편_지난 번 글에서는 기초적인 편집기를 만드는 작업을 했습니다. 사">
+  <meta name="description" content="지난 편에서는 Editor 에서 데이타를 어떻게 나눌지살펴보았고 Firebase 기초, 테스트 코드를 작성해 보았습니다. 이번에는 그 기반으로 어떻게 실제로 데이타를 입력하고 리스트를 작성하는지 확인해 보겠습니다. 서버리스 아키텍처 소셜미디어 개발기 3편_지난 번 글에서는 기초적인 편집기를 만드는 작업을 했습니다. 사용자 스토리에 기반한 하나의 편집기와 버">
 <meta name="keywords" content="github, github-trend, tech-trend">
 <meta property="og:type" content="article">
 <meta property="og:title" content="서버리스 아키텍처 소셜미디어 개발기 4편">
 <meta property="og:url" content="http://keen.devpools.kr/2016/11/07/[2016-11-07 20:01:47]서버리스 아키텍처 소셜미디어 개발기 4편/index.html">
 <meta property="og:site_name" content="keen blog">
-<meta property="og:description" content="서버리스 아키텍처 소셜미디어 개발기 4편지난 편에서는 Editor 에서 데이타를 어떻게 나눌지살펴보았고 Firebase 기초, 테스트 코드를 작성해 보았습니다. 이번에는 그 기반으로 어떻게 실제로 데이타를 입력하고 리스트를 작성하는지 확인해 보겠습니다. 서버리스 아키텍처 소셜미디어 개발기 3편_지난 번 글에서는 기초적인 편집기를 만드는 작업을 했습니다. 사">
+<meta property="og:description" content="지난 편에서는 Editor 에서 데이타를 어떻게 나눌지살펴보았고 Firebase 기초, 테스트 코드를 작성해 보았습니다. 이번에는 그 기반으로 어떻게 실제로 데이타를 입력하고 리스트를 작성하는지 확인해 보겠습니다. 서버리스 아키텍처 소셜미디어 개발기 3편_지난 번 글에서는 기초적인 편집기를 만드는 작업을 했습니다. 사용자 스토리에 기반한 하나의 편집기와 버">
 <meta property="og:locale" content="ko">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*XsSPffTzyvwuC1S91xBEQg.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*37MgCskWYkYLPyTbX0pk4w.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*Co56vTxmYqNHebg6cbpTIg.jpeg">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*AznUyNRBj7jXOF1SDCStrA.jpeg">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*c6rdZGLFcp3fVwGfBS7TEA.jpeg">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*tCRiy6x6RFlpyLNOxMLA9A.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*PO1wRepSjhEEzYTOB5nDmQ.jpeg">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*5o8unzS6sekGXi1NK5BoxA.jpeg">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*nnNkaY52MqIkTrKOLOAtqg.jpeg">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*u-ULofFcX5OO9FTbXaNgfQ.jpeg">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*EMFoazxLNSoxe_MeFEnVuQ.jpeg">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*mC0OnTn1oW6V0k-RBNFEKA.jpeg">
-<meta property="og:updated_time" content="2017-09-03T14:05:19.000Z">
+<meta property="og:image" content="http://keen.devpools.kr/images/1*XsSPffTzyvwuC1S91xBEQg.png">
+<meta property="og:image" content="http://keen.devpools.kr/images/1*37MgCskWYkYLPyTbX0pk4w.png">
+<meta property="og:image" content="http://keen.devpools.kr/images/1*Co56vTxmYqNHebg6cbpTIg.jpeg">
+<meta property="og:image" content="http://keen.devpools.kr/images/1*AznUyNRBj7jXOF1SDCStrA.jpeg">
+<meta property="og:image" content="http://keen.devpools.kr/images/1*c6rdZGLFcp3fVwGfBS7TEA.jpeg">
+<meta property="og:image" content="http://keen.devpools.kr/images/1*tCRiy6x6RFlpyLNOxMLA9A.png">
+<meta property="og:image" content="http://keen.devpools.kr/images/1*PO1wRepSjhEEzYTOB5nDmQ.jpeg">
+<meta property="og:image" content="http://keen.devpools.kr/images/1*5o8unzS6sekGXi1NK5BoxA.jpeg">
+<meta property="og:image" content="http://keen.devpools.kr/images/1*nnNkaY52MqIkTrKOLOAtqg.jpeg">
+<meta property="og:image" content="http://keen.devpools.kr/images/1*u-ULofFcX5OO9FTbXaNgfQ.jpeg">
+<meta property="og:image" content="http://keen.devpools.kr/images/1*EMFoazxLNSoxe_MeFEnVuQ.jpeg">
+<meta property="og:image" content="http://keen.devpools.kr/images/1*mC0OnTn1oW6V0k-RBNFEKA.jpe">
+<meta property="og:updated_time" content="2017-09-04T09:17:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="서버리스 아키텍처 소셜미디어 개발기 4편">
-<meta name="twitter:description" content="서버리스 아키텍처 소셜미디어 개발기 4편지난 편에서는 Editor 에서 데이타를 어떻게 나눌지살펴보았고 Firebase 기초, 테스트 코드를 작성해 보았습니다. 이번에는 그 기반으로 어떻게 실제로 데이타를 입력하고 리스트를 작성하는지 확인해 보겠습니다. 서버리스 아키텍처 소셜미디어 개발기 3편_지난 번 글에서는 기초적인 편집기를 만드는 작업을 했습니다. 사">
-<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*XsSPffTzyvwuC1S91xBEQg.png">
+<meta name="twitter:description" content="지난 편에서는 Editor 에서 데이타를 어떻게 나눌지살펴보았고 Firebase 기초, 테스트 코드를 작성해 보았습니다. 이번에는 그 기반으로 어떻게 실제로 데이타를 입력하고 리스트를 작성하는지 확인해 보겠습니다. 서버리스 아키텍처 소셜미디어 개발기 3편_지난 번 글에서는 기초적인 편집기를 만드는 작업을 했습니다. 사용자 스토리에 기반한 하나의 편집기와 버">
+<meta name="twitter:image" content="http://keen.devpools.kr/images/1*XsSPffTzyvwuC1S91xBEQg.png">
   
     <link rel="alternate" href="/atom.xml" title="keen blog" type="application/atom+xml">
   
@@ -167,12 +167,12 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="서버리스-아키텍처-소셜미디어-개발기-4편"><a href="#서버리스-아키텍처-소셜미디어-개발기-4편" class="headerlink" title="서버리스 아키텍처 소셜미디어 개발기 4편"></a>서버리스 아키텍처 소셜미디어 개발기 4편</h3><p>지난 편에서는 Editor 에서 데이타를 어떻게 나눌지살펴보았고 Firebase 기초, 테스트 코드를 작성해 보았습니다. 이번에는 그 기반으로 어떻게 실제로 데이타를 입력하고 리스트를 작성하는지 확인해 보겠습니다.</p>
+        <p>지난 편에서는 Editor 에서 데이타를 어떻게 나눌지살펴보았고 Firebase 기초, 테스트 코드를 작성해 보았습니다. 이번에는 그 기반으로 어떻게 실제로 데이타를 입력하고 리스트를 작성하는지 확인해 보겠습니다.</p>
 <p><a href="https://techstory.shma.so/%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%86%8C%EC%85%9C%EB%AF%B8%EB%94%94%EC%96%B4-%EA%B0%9C%EB%B0%9C%EA%B8%B0-3%ED%8E%B8-4820c96df984" title="https://techstory.shma.so/%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%86%8C%EC%85%9C%EB%AF%B8%EB%94%94%EC%96%B4-%EA%B0%9C%EB%B0%9C%EA%B8%B0-3%ED%8E%B8-4820c96df984" target="_blank" rel="external"><strong>서버리스 아키텍처 소셜미디어 개발기 3편</strong><br>_지난 번 글에서는 기초적인 편집기를 만드는 작업을 했습니다. 사용자 스토리에 기반한 하나의 편집기와 버튼으로만 구현할 수 있도록 화면을 구성했구요._techstory.shma.so</a><a href="https://techstory.shma.so/%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%86%8C%EC%85%9C%EB%AF%B8%EB%94%94%EC%96%B4-%EA%B0%9C%EB%B0%9C%EA%B8%B0-3%ED%8E%B8-4820c96df984" target="_blank" rel="external"></a></p>
 <blockquote>
 <p>2. 김개발이 사이트를 방문해서 자신이 어제 유심하게 읽은 글을 올릴 수 있다. 이렇게 하면 다른 사람들이 볼 수 있다.<br>* 에디터 창은 하나만 있고 거기서 글을 작성하고 업로드 하면 글이 외부 클라우드 공간에 저장이 된다.<br>* 아무런 내용도 김개발이 입력하지 않으면 업로드하지 않는다.( 버튼이 눌러지지 않는다. )<br>3. 김개발이 작성한 글이 목록으로 보여진다. 이렇게 함으로써 다른 사람들이 목록을 확인할 수 있다.</p>
 </blockquote>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*XsSPffTzyvwuC1S91xBEQg.png" alt="">cloud data</p>
+<p><img src="/images/1*XsSPffTzyvwuC1S91xBEQg.png" alt="">cloud data</p>
 <h4 id="1-Firebase-DAO-Data-Access-Object-만들기"><a href="#1-Firebase-DAO-Data-Access-Object-만들기" class="headerlink" title="1. Firebase DAO(Data Access Object) 만들기"></a>1. Firebase DAO(Data Access Object) 만들기</h4><p>JavaScript라서 DAO패턴을 좋아하지는 않지만 굳이 이해를 돕기 위해 DAO라는 이름을 명명하고 작업을 하겠습니다.</p>
 <p>(인터페이스를 만들고 Implementation 소스를 만드는 작업까지는 굳이 하지 않겠습니다.)</p>
 <p><strong>테스트 코드를 짜 보자.</strong></p>
@@ -198,7 +198,7 @@ thumbnailHeight :80
 <p>firebase를 사용하기 위해서 모듈을 설치합니다. 이미 설치된 모듈이 아니기 때문에 다음의 명령어를 사용합니다.</p>
 <pre><code>$npm install firebase --save
 </code></pre><p><strong>DAO 만들기</strong></p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*37MgCskWYkYLPyTbX0pk4w.png" alt="">if code is coffee</p>
+<p><img src="/images/1*37MgCskWYkYLPyTbX0pk4w.png" alt="">if code is coffee</p>
 <p>자 이제 DAO를 어떻게 만들면 좋을까요?</p>
 <p>먼저 DAO에는 입력, 수정, 삭제, 조회(insert, update, delete, list)는 기본적으로 들어갈 것이고,한 건 검색을 위한 getArticle이 필요할 것입니다. 일단 입력에 관한 유저 스토리 이지만 DAO는 한꺼번에 작성할 수 있는 것은 먼저 작성해 보도록 하겠습니다.</p>
 <p>사용자 스토리의 기본 중 하나는 <strong>확인할 수 있어야 한다</strong> 인데, 입력이 되면 조회를 할 수 있어야 하기 때문입니다.</p>
@@ -216,7 +216,7 @@ expect(snapShot.key).toEqual(key);
 return inserted;  
 });
 </code></pre><p>자, 이제 npm test를 실행하면 되는데, 다음의 셋팅을 하지 않으면 데이터 값이 로딩이 되지 않을 것입니다.<br>firebase는 인증 시스템을 갖고 있는데, 일단 그림과 같이 anonymous가 입력할 수 있도록 해 두고 이후 인증관련 모듈을 같이 붙인 후에 셋팅을 바꿔보도록 하겠습니다.</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*Co56vTxmYqNHebg6cbpTIg.jpeg" alt="">그림1</p>
+<p><img src="/images/1*Co56vTxmYqNHebg6cbpTIg.jpeg" alt="">그림1</p>
 <p>StandUp-> Database -> 규칙 메뉴를 따라가면 될 듯 합니다.</p>
 <pre><code>{  
 &quot;rules&quot;: {  
@@ -225,10 +225,10 @@ return inserted;
 }  
 }
 </code></pre><p>자 이제 npm test 를 실행하고 나면</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*AznUyNRBj7jXOF1SDCStrA.jpeg" alt="">그림2</p>
+<p><img src="/images/1*AznUyNRBj7jXOF1SDCStrA.jpeg" alt="">그림2</p>
 <p>아래와 같은 결과와 함께 외부 firebase 에 저장이 됩니다.</p>
 <p>firebase 웹 콘솔에서 확인해 봐야겠죠?</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*c6rdZGLFcp3fVwGfBS7TEA.jpeg" alt="">그림3</p>
+<p><img src="/images/1*c6rdZGLFcp3fVwGfBS7TEA.jpeg" alt="">그림3</p>
 <p>그림과 같이 firebase 웹 콘솔에서 Database 의 데이터 탭에서 방금 올린 데이터를 확인할 수 있습니다.</p>
 <p>이렇게만 데이터를 쌓아도 되지만 개인화 서비스를 위해 username 기반으로 데이터를 쌓이도록 변경해 보겠습니다.</p>
 <p>이런 경우는 key값을 먼저 만들고 같은 key를 가지는 posts와 user-post 데이터 베이스를 만들어야 하는 관계로 update 함수를 작성하도록 하겠습니다. 아직 user 정보를 어떻게 가지고 올지 결정하지 않았으므로 똑같이 genji 폴더에만 작성하도록 하겠습니다.</p>
@@ -289,11 +289,11 @@ return firebase.database().ref(&apos;/posts/&apos; + key);
 }  
 }
 </code></pre><p>자 이제 테스트 코드 하나로 입력-> 수정 -> 삭제를 하는 코드베이스가 완성되었습니다.</p>
-<h4 id="2-사용자-스토리2-—-입력하기"><a href="#2-사용자-스토리2-—-입력하기" class="headerlink" title="2. 사용자 스토리2 — 입력하기"></a>2. 사용자 스토리2 — 입력하기</h4><p><img src="https://cdn-images-1.medium.com/max/1600/1*tCRiy6x6RFlpyLNOxMLA9A.png" alt=""></p>
+<h4 id="2-사용자-스토리2-—-입력하기"><a href="#2-사용자-스토리2-—-입력하기" class="headerlink" title="2. 사용자 스토리2 — 입력하기"></a>2. 사용자 스토리2 — 입력하기</h4><p><img src="/images/1*tCRiy6x6RFlpyLNOxMLA9A.png" alt=""></p>
 <pre><code>업로드 하면 글이 외부 클라우드 공간에 저장이 된다.
 </code></pre><p>부분을 위한 테스트 코드와 DAO를 완성했으니 프레젠테이션 레이어와 결합해 보도록 하겠습니다.</p>
 <p>지금 에디터에서 글을 쓰고 스탠드업! 버튼을 누를 경우에</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*PO1wRepSjhEEzYTOB5nDmQ.jpeg" alt="">그림4</p>
+<p><img src="/images/1*PO1wRepSjhEEzYTOB5nDmQ.jpeg" alt="">그림4</p>
 <p>이루어지는 이벤트는 다음과 같습니다.</p>
 <pre><code>&lt;button className=&quot;upload&quot;  
 disabled={!this.hasValue(this.state.content)}  
@@ -314,7 +314,7 @@ expect(article1.urls\[0\].imgWidth).toEqual(article2.urls\[0\].imgWidth);
 </code></pre><p>왜 이런 작업을 했을까요? 간단히 말씀 드리면 4일차 작업에는 url로 카드를 만들 때 외부에서 URL에 해당하는 메타정보(title, description, thumbnail image)등의 작업을 하지 않기 때문입니다. 그래서 일단은 더미 작업을 하고 이 부분을 카드를 가져오는 방법으로 전환하는 과정을 5일차에 진행하려고 하기 때문입니다.</p>
 <p>그런 과정중에 Article의 URL 이외의 부분은 자동으로 채우게 하도록Mocking 데이타를 활용해서 보도록 하는 것입니다.</p>
 <p>자 이제 다시 에디터로 돌아가겠습니다.</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*5o8unzS6sekGXi1NK5BoxA.jpeg" alt="">그림5</p>
+<p><img src="/images/1*5o8unzS6sekGXi1NK5BoxA.jpeg" alt="">그림5</p>
 <p>Editor 안의 state는 보시다시피 embedlyUrl, content 두가지를 설정해 두었습니다.<br>이 embedlyUrl을 App.js에게 값을 전달해 이후 list 컴포넌트를 만드는 사용자 스토리까지 전달되기 전까지가 지금의 해결 과제입니다.</p>
 <p>[그림 5] 에 묘사가 되어 있듯이 Editor.js 의 handleSubmit은 props 속성으로 App.js와 연결되어 있습니다. handleSubmit event는 App.js의 submit 을 가리키게 되어 있는 것이죠.</p>
 <p>그래서 submit 은 Article을 변수로 받아서 firebase 에 저장하는 역할을 하면 됩니다.</p>
@@ -346,9 +346,9 @@ article.content = this.state.content;
 article.urls\[0\].url = this.state.embedlyUrl;  
 this.props.submit(article);  
 }
-</code></pre><p><img src="https://cdn-images-1.medium.com/max/1600/1*nnNkaY52MqIkTrKOLOAtqg.jpeg" alt="">그림6</p>
+</code></pre><p><img src="/images/1*nnNkaY52MqIkTrKOLOAtqg.jpeg" alt="">그림6</p>
 <p>[그림6]과 같이 작성을 하고 업로드를 하면</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*u-ULofFcX5OO9FTbXaNgfQ.jpeg" alt="">그림7</p>
+<p><img src="/images/1*u-ULofFcX5OO9FTbXaNgfQ.jpeg" alt="">그림7</p>
 <p>훌륭하게 값이 들어간 것을 확인할 수 있습니다.</p>
 <p><strong>이제 입력한 목록만 간단하게 보여지는 것을 보고는 마무리 하겠습니다.</strong></p>
 <p>FirebaseDao에 list에 관련된 함수를 추가해 봅시다.</p>
@@ -370,7 +370,7 @@ return firebase.database().ref(&apos;/posts/&apos;)
 </code></pre><p>위와 같이 작성하면 npm test를 통해 값이 훌륭하게 가져와 있는지 확인할 수 있습니다.</p>
 <p>이제 App.js 파일을 고쳐 보겠습니다.</p>
 <p>React 컴포넌트의 생명주기에서 mounting 과정은 [그림8] 과 같습니다.</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*EMFoazxLNSoxe_MeFEnVuQ.jpeg" alt="">그림8</p>
+<p><img src="/images/1*EMFoazxLNSoxe_MeFEnVuQ.jpeg" alt="">그림8</p>
 <p>componentWillMount 메쏘드를 이용해 데이타 이벤트를 등록합니다.</p>
 <p>가지고 온 article들은 상태(state)값에 등록하기 위해 생성자 함수에 먼저 상태값을 등록해 둡니다.</p>
 <pre><code>this.state = {  
@@ -411,7 +411,7 @@ lis.push(&lt;li key={this.state.articles\[i\].key}\&gt;{this.state.articles\[i\]
 return lis;  
 }
 </code></pre><p>이렇게 작성하고 나면 목록이 다음 [그림7]과 같이 완성됩니다.</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*mC0OnTn1oW6V0k-RBNFEKA.jpeg" alt="">그림7</p>
+<p><img src="/images/1*mC0OnTn1oW6V0k-RBNFEKA.jpe" alt="">그림7</p>
 <p>다음 번에는 이제 목록과 입력에 사용할 카드를 만들고 URL값을 어떻게 제대로 입력하는지 알아보도록 하겠습니다.</p>
 <p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/d7173b5784d1" target="_blank" rel="external">November 7, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
@@ -483,7 +483,7 @@ return lis;
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-      <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#서버리스-아키텍처-소셜미디어-개발기-4편"><span class="nav-number">1.</span> <span class="nav-text">서버리스 아키텍처 소셜미디어 개발기 4편</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Firebase-DAO-Data-Access-Object-만들기"><span class="nav-number">1.1.</span> <span class="nav-text">1. Firebase DAO(Data Access Object) 만들기</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-사용자-스토리2-—-입력하기"><span class="nav-number">1.2.</span> <span class="nav-text">2. 사용자 스토리2 — 입력하기</span></a></li></ol></li></ol>
+      <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Firebase-DAO-Data-Access-Object-만들기"><span class="nav-number">1.</span> <span class="nav-text">1. Firebase DAO(Data Access Object) 만들기</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-사용자-스토리2-—-입력하기"><span class="nav-number">2.</span> <span class="nav-text">2. 사용자 스토리2 — 입력하기</span></a></li></ol>
     
     </div>
   </aside>

@@ -123,7 +123,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-08-24 05:44:30]openMCT"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-10-04 06:42:30]art-of-readme"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +131,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/08/24/[2016-08-24 05:44:30]openMCT/">openMCT</a>
+      <a class="article-title" href="/2016/10/04/[2016-10-04 06:42:30]art-of-readme/">art-of-readme</a>
     </h1>
   
 
@@ -139,8 +139,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/08/24/[2016-08-24 05:44:30]openMCT/" class="article-date">
-	  <time datetime="2016-08-23T20:44:30.000Z" itemprop="datePublished">8월 24, 2016</time>
+	<a href="/2016/10/04/[2016-10-04 06:42:30]art-of-readme/" class="article-date">
+	  <time datetime="2016-10-03T21:42:30.000Z" itemprop="datePublished">10월 4, 2016</time>
 	</a>
 
        
@@ -148,42 +148,40 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="openMCT"><a href="#openMCT" class="headerlink" title="openMCT"></a>openMCT</h3><p>NASA의 클래스를 보여주는 프로젝트가 깃헙에 올라 왔습니다. NASA야 최고의 과학자들이 모이니까! 라고 흘려 버릴 수도 있지만 상당히 재미있는 프로젝트입니다.</p>
-<p>일종의 대시보드를 만들고 같이 볼 수 있는 페이지입니다.</p>
-<p>2016/08/24 Today’s Best</p>
-<p><a href="https://github.com/nasa/openmct" title="https://github.com/nasa/openmct" target="_blank" rel="external"><strong>nasa/openmct</strong><br>_openmct - A web based mission control framework._github.com</a><a href="https://github.com/nasa/openmct" target="_blank" rel="external"></a></p>
-<hr>
-<h4 id="openMCT-1"><a href="#openMCT-1" class="headerlink" title="openMCT?"></a>openMCT?</h4><p>깃헙페이지를 방문해 보면 openMCT에 대한 소개가 있습니다.</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*93n--p9Ou9afEPCptGrdYg.png" alt=""></p>
-<p>차세대 mission control framework이라고 하는군요. NASA에서 임무를 수행할때 사용될 프레임워크에 contribution 할 수 있다니 가슴이 뛰지 않나요?</p>
-<p>일단 데모페이지를 헤로쿠에 올려놓아서 가보도록 하겠습니다.</p>
-<p>오호. 이런 일이 가능하다니욧. 호호호.</p>
-<p>일단은 데모페이지는 animated gif군요.(헐 낚시왕 김NASA)</p>
-<hr>
-<h4 id="설치-및-실행"><a href="#설치-및-실행" class="headerlink" title="설치 및 실행"></a>설치 및 실행</h4><p><a href="https://asciinema.org/a/a3xjjqxs2jgmclzbpdg0c4p7e" target="_blank" rel="external"><img src="https://cdn-images-1.medium.com/max/1600/1*FtZ76REu7zpAuSRw6lV-Gw.png" alt=""></a>링크 클릭</p>
-<pre><code>git clone [https://github.com/nasa/openmct.git][anchor3]
-
-npm install
-
-npm start
-</code></pre><p>지금은 에러가 나서 최신 release된 commit 버전으로 checkout 받아서 다시 실행시키니 통과가 됩니다.</p>
-<pre><code>$git checkout acc1b8e207365b80dc3082386a97c9e349654fcd
-
-$npm install
-
-$npm start
-</code></pre><p>그랬더니 다음과 같은 창이 뜨는군요. 좀 만져 봤습니다.</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*WN03ZTSxuH5bZ_61PmGXgg.png" alt=""></p>
-<p>즉, NASA의 mission을 수행할 수 있는 작업들과 그 task들을 수행할 수 있는 그래프와 URL리소스들을 배치할 수 있고 그것들을 대시보드로 같이 볼 수 있는 역할을 하고 있습니다.</p>
-<h4 id="소스-구성"><a href="#소스-구성" class="headerlink" title="소스 구성"></a>소스 구성</h4><p>gulp파일을 따라 main.js 파일을 따라가면</p>
-<p><a href="https://github.com/nasa/openmct/blob/master/main.js" title="https://github.com/nasa/openmct/blob/master/main.js" target="_blank" rel="external"><strong>nasa/openmct</strong><br>_openmct - A web based mission control framework._github.com</a><a href="https://github.com/nasa/openmct/blob/master/main.js" target="_blank" rel="external"></a></p>
-<p>angular기반으로 프레임워크는 구성이 되어 있음을 알 수 있습니다. 전체 MVVW 프레임워크는 angular이고, jquery대신에 zepto를 사용했네요. 통계를 그리기 위해서는 csv파일을 사용한 듯 싶습니다.</p>
-<p>UI 컴포넌트들은 각각 NASA에서 만들고, 그것들을 오픈소스화 한 개념입니다.</p>
-<p>예를 들어 다이알로그의 경우는</p>
-<p><a href="https://github.com/nasa/openmct/tree/master/platform/commonUI/dialog" title="https://github.com/nasa/openmct/tree/master/platform/commonUI/dialog" target="_blank" rel="external"><strong>nasa/openmct</strong><br>_openmct - A web based mission control framework._github.com</a><a href="https://github.com/nasa/openmct/tree/master/platform/commonUI/dialog" target="_blank" rel="external"></a></p>
-<p>처럼 컴포넌트화 했고 README파일도 훌륭하게 빠져 있습니다.</p>
-<p>NASA프로젝트에 contribution 하고 싶은 프론트엔드 개발자에게는 지금이 절호의 찬스가 되겠군요. 다만~ Angular 능력자여야 할 거 같다는 생각은 드는데, 어떻습니까? 오타를 찾아도 contributor 인데 한번 도전해 봐도 나쁘지 않을 거 같네요.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/85c00e7e40b3" target="_blank" rel="external">August 23, 2016</a>.</p>
+        <p><img src="/images/1*5yo0ZRoa_HKLLaGFQkg0pQ.png" alt="">Alice in wonderland</p>
+<p>깃헙에서 프로젝트를 사용할 때 리드미파일의 영향도는 얼마나 된다고 보시나요? 저의 경우는 Readme파일의 완성도를 보고 프로젝트의 완성도를 가늠하는데 아주 높은 확률로 Readme 와 프로젝트의 완성도는 비슷했던 것 같습니다. 그런 의미에서 제 프로젝트를 아침부터 반성하게 되는데요</p>
+<p>2016/10/04 Editor’s choice</p>
+<p><a href="https://github.com/noffle/art-of-readme" title="https://github.com/noffle/art-of-readme" target="_blank" rel="external"><strong>noffle/art-of-readme</strong><br>_art-of-readme - :love_letter: Learn the art of writing quality READMEs._github.com</a><a href="https://github.com/noffle/art-of-readme" target="_blank" rel="external"></a></p>
+<h3 id="어원"><a href="#어원" class="headerlink" title="어원"></a>어원</h3><p>어원은 어디서 부터 왔을까요?</p>
+<p>학술적으로 보면 1970년대의 특정 프로젝트까지 거슬러 올라갑니다.</p>
+<p><a href="http://pdp-10.trailing-edge.com/decuslib10-04/01/43,50322/read.me.html" title="http://pdp-10.trailing-edge.com/decuslib10-04/01/43,50322/read.me.html" target="_blank" rel="external"><strong>PDP-10 Archive: 43,50322/read.me from decuslib10-04</strong><br>_UCI LISP Random Notes The files on this FAILSAFE tape constitute the UCI LISP system. They are for the most part…_pdp-10.trailing-edge.com</a><a href="http://pdp-10.trailing-edge.com/decuslib10-04/01/43,50322/read.me.html" target="_blank" rel="external"></a></p>
+<p>또 혹자는 루이스 캐롤의 ‘이상한 나라의 앨리스’에서 비롯되었다고 합니다. 물약과 케이크에 “Drink Me” 그리고 “Eat Me” 라고 적혀 있었다고 하는군요.</p>
+<p><img src="/images/1*-hfIdGKXlKkRtmVKRozwGw.pn" alt=""></p>
+<p>흥미롭네요.</p>
+<p>뭐 어쨌거나 이 README 파일은 “사용자가 작업하기 전에 읽어봐야 되는 중요한 정보”로써 사용되고 있습니다.</p>
+<h3 id="저자를-위해-사용자를-위해"><a href="#저자를-위해-사용자를-위해" class="headerlink" title="저자를 위해, 사용자를 위해"></a>저자를 위해, 사용자를 위해</h3><p>이 프로젝트는 README를 작성하는 사람과 읽는 사람 모두에게 필요하므로 작성되었다고 하는데 저 또한 동의합니다.</p>
+<p>작성자에게는 6개월 정도가 지나면 새로울 것이므로 남겨놓는 유산으로써의미가 있고 사용자에게는 의존성을 파악하고 프로젝트를 사용하는데에 도움이 됩니다</p>
+<h3 id="프로답게-쓰는-README"><a href="#프로답게-쓰는-README" class="headerlink" title="프로답게 쓰는 README"></a>프로답게 쓰는 README</h3><p>읽는 사람을 생각해서 작성한다면 기본적으로 다음을 고려해야 하는데요</p>
+<ol>
+<li>이게 무엇인지(what)</li>
+<li>동작할 때 어떻게 보이는지(what it looks like in action)</li>
+<li>어떻게 사용하는 지(how)</li>
+<li>관련된 상세(details)</li>
+</ol>
+<p>등을 고려해야 한다고 합니다.</p>
+<h3 id="핵심-섹션"><a href="#핵심-섹션" class="headerlink" title="핵심 섹션"></a>핵심 섹션</h3><p>기본적인 골격은 다음과 같습니다.</p>
+<ol>
+<li>이름 — 이름이 무엇보다 중요합니다. react-router라는 이름은 이름만으로 무슨 프로젝트인지 알 수 있으니까요</li>
+<li>한줄 요약 — 이름이 중요한 것 처럼 한줄로 이 프로젝트의 정체성을 나타내 주는 것이 좋습니다</li>
+<li>사용법 — API 문서로 바로 가는 것보다 사용법을 설명해 주는 것이 좋습니다.</li>
+<li>API — 이름, 설명, 사용법이 보여지고 나면 API의 상세함이 프로젝트의 품격을 결정합니다</li>
+<li>설치방법 — 자, 이제 전체를 읽어봤으니 어떻게 설치할 지를 알 수 있어야 사용자가 마지막 결정을할 수 있습니다.</li>
+<li>라이센스 — 이 프로젝트를 내가 사용할 수 있는지에 대한 중요한 정보를 담고 있죠.</li>
+</ol>
+<p>이후도 중요한 내용들을 많이 담고 있지만, 인상깊게 읽었던 부분은 사람들의 시간을 고려해라, 백그라운드 섹션을 할애해라. 공격적으로 링크를 걸고 arguments와 parameter를자세하게 적어라. 등등이 기억에 남는군요.</p>
+<p>그리고, 이 프로젝트의 저자는 Node 생태계를 위해 이 글을 작성했는데, Perl 의 개발자들이 작성했던 좋은 예들을 설명하고 있습니다.</p>
+<p>이런 좋은 프로젝트를 아침부터 만난다는 것은 즐거운 일이군요~</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/cd19f86b0456" target="_blank" rel="external">October 3, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -204,7 +202,7 @@ $npm start
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-08-22 11:13:56]pigz"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-09-20 19:42:40]다시 시작…"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -212,7 +210,7 @@ $npm start
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/08/22/[2016-08-22 11:13:56]pigz/">pigz</a>
+      <a class="article-title" href="/2016/09/20/[2016-09-20 19:42:40]다시 시작…/">다시 시작…</a>
     </h1>
   
 
@@ -220,8 +218,8 @@ $npm start
     
     <div class="article-meta">
       
-	<a href="/2016/08/22/[2016-08-22 11:13:56]pigz/" class="article-date">
-	  <time datetime="2016-08-22T02:13:56.000Z" itemprop="datePublished">8월 22, 2016</time>
+	<a href="/2016/09/20/[2016-09-20 19:42:40]다시 시작…/" class="article-date">
+	  <time datetime="2016-09-20T10:42:40.000Z" itemprop="datePublished">9월 20, 2016</time>
 	</a>
 
        
@@ -229,26 +227,10 @@ $npm start
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="pigz"><a href="#pigz" class="headerlink" title="pigz"></a>pigz</h3><p>지금 소개하는 이 프로젝트는 gzip의 하부 프로젝트입니다. gzip 을 약간 다르게 배열하면 pigz가 되는데 제 생각에는 이게 async의 특징을 표현하기 위해 이렇게 적은게 아닌가 싶습니다.</p>
-<p>2016/08/22 Editor’s choice</p>
-<p><a href="https://github.com/madler/pigz" title="https://github.com/madler/pigz" target="_blank" rel="external"><strong>madler/pigz</strong><br>_pigz - A parallel implementation of gzip for modern multi-processor, multi-core machines._github.com</a><a href="https://github.com/madler/pigz" target="_blank" rel="external"></a></p>
-<p>이른바</p>
-<blockquote>
-<p>A parallel implementation of gzip for modern multi-processor, multi-core machines.</p>
-</blockquote>
-<p>멀티 프로세서, 멀티코어를 위한 gzip의 병렬 처리 프로그램!</p>
-<hr>
-<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><pre><code>$git clone [https://github.com/madler/pigz.git][anchor2]
-</code></pre><p>내려 받은뒤 make 면 빌드가 됩니다.</p>
-<h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><p>실행은 PATH에 추가하지 않고</p>
-<p>gzip 과 pigz를 같이 실행해 보았습니다.</p>
-<p>결과는?</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*BzzTQA-Br1NbDuWecDKwAg.png" alt=""></p>
-<p>아직은 gzip 압승입니다.</p>
-<p>pigz 는 프로세스가 끝나지 않는데, 이게 아무래도 버그인 듯 싶네요.</p>
-<p>하지만 조만간 훌륭하게 패치 되겠죠?</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/5f2673d9517a" target="_blank" rel="external">August 22, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+        <p>한동안 역시 저의 게으름 때문에 github trend page를 관리를 안했군요.</p>
+<p>내일 부터 다시 시작해야겠어요. 게으름을 핑계대지 말아야지</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/b3c2aeb355d8" target="_blank" rel="external">September 20, 2016</a>.</p>
+<p>Exported from <a href="https://medium.co" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
     </div>
@@ -272,7 +254,7 @@ $npm start
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/18/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/96/">96</a><a class="extend next" rel="next" href="/page/20/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/18/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/20/">Next</a>
   </nav>
 
 </section>
@@ -404,7 +386,7 @@ $npm start
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">182</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">191</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -424,7 +406,7 @@ $npm start
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">9월 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">35</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

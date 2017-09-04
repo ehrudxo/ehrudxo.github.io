@@ -123,7 +123,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-02-23 05:52:28] -github-trend- swift web-frameworks"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-03-02 18:01:01]React Makes You Sad"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +131,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/02/23/[2016-02-23 05:52:28] -github-trend- swift web-frameworks/">-github-trend- swift web-frameworks</a>
+      <a class="article-title" href="/2016/03/02/[2016-03-02 18:01:01]React Makes You Sad/">React Makes You Sad</a>
     </h1>
   
 
@@ -139,8 +139,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/02/23/[2016-02-23 05:52:28] -github-trend- swift web-frameworks/" class="article-date">
-	  <time datetime="2016-02-22T20:52:28.000Z" itemprop="datePublished">2월 23, 2016</time>
+	<a href="/2016/03/02/[2016-03-02 18:01:01]React Makes You Sad/" class="article-date">
+	  <time datetime="2016-03-02T09:01:01.000Z" itemprop="datePublished">3월 2, 2016</time>
 	</a>
 
        
@@ -148,57 +148,21 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="github-trend-swift-web-frameworks"><a href="#github-trend-swift-web-frameworks" class="headerlink" title="[github-trend]swift web-frameworks"></a>[github-trend]swift web-frameworks</h3><p>오늘은 swift로 된 두개의 web-framework 가 동시에 깃헙 트렌딩에 올라 왔습니다.</p>
-<p>2016/02/23 editor’s choice</p>
-<p>하나는 vapor라는 녀석이구요.또 다른 하나는 SwiftOn 입니다.</p>
-<p><strong>1.Vapor</strong></p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*HV_TmmL13N2MP_edFhMJ2w.png" alt=""><a href="https://github.com/qutheory/vapor" target="_blank" rel="external">https://github.com/qutheory/vapor</a></p>
-<p>보시다시피 Laravel/Lumen 으로부터 영감을 받았다고 합니다. iOS,OSX, Linux에서 돌아가도록 만들었다고 합니다.</p>
-<p>일단 실행환경을 보면 Ubuntu를 위한 example 과 docker 파일들이 있습니다.</p>
-<p>heroku에서 돌리기 위해서는 <a href="https://github.com/kylef/heroku-buildpack-swift" target="_blank" rel="external">https://github.com/kylef/heroku-buildpack-swift</a> 빌드팩을 참조하면 됩니다.</p>
-<p>잘 돌아가는 예제는 <a href="http://vapor.qutheory.io/" target="_blank" rel="external">http://vapor.qutheory.io/</a> 에서 확인할 수 있습니다.</p>
-<p>swifton.me 라는 온라인 실행환경 사이트에서 example을 돌려보면 같은 결과를 확인할 수 있습니다.</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*OY-v6I3MY54hHoAW1czXFA.png" alt="">app is being deployed</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*j4lqs3CWXyurqJ5HQGcDGg.png" alt=""></p>
-<p>서비스를 구성하는 것은 간단합니다.</p>
-<pre><code>import Vapor  
-
-let server = Server()  
-server.run()
-</code></pre><p>이렇게 간단하게 서버를 기동 시킬 수도 있지만,</p>
-<pre><code>Route.get(&quot;solar-system&quot;) { request in  
-let json = \[  
-&quot;planets&quot; : \[  
-&quot;mars&quot;,  
-&quot;venus&quot;,  
-&quot;jupiter&quot;,  
-&quot;earth&quot;  
-\]  
-\]  
-return Json(json)  
-}
-</code></pre><p>와 같은 형태의 Routing 도 가능하군요.</p>
-<p>흥미로운 것은, <a href="https://github.com/qutheory/vapor-stencil" target="_blank" rel="external">vapor-stencil</a> (<a href="https://github.com/kylef/Stencil" target="_blank" rel="external">Stencil</a>의 implementation for vapor)이라는 자매프로젝트로 View 단의 Template 언어로 사용하는 점과 MiddleWare를 활용한다는 점입니다.</p>
-<p><strong>2. SwiftOn</strong></p>
-<p>두번째는 SwiftOn 입니다.</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*igDzfZrE6oLTNHo7Q8sxog.png" alt=""></p>
-<p>이 프로젝트는 RubyOnRails에서 영감을 받았다고 하는군요. 음 위의 짤이 뭘 의미하는지는 잘 모르겠습니다.</p>
-<p>똑같이 Heroku빌드팩과 Docker 파일을 포함하고 있습니다.</p>
-<p>코드도 대강 비슷합니다.</p>
-<pre><code>let router = Router()  
-router.get(&quot;/todos/new&quot;, TodosController()\[&quot;new&quot;\])  
-router.get(&quot;/todos/{id}&quot;, TodosController()\[&quot;show&quot;\])  
-router.get(&quot;/todos/{id}/edit&quot;, TodosController()\[&quot;edit&quot;\])  
-router.get(&quot;/todos&quot;, TodosController()\[&quot;index&quot;\])  
-router.post(&quot;/todos&quot;, TodosController()\[&quot;create&quot;\])  
-router.delete(&quot;/todos/{id}&quot;, TodosController()\[&quot;destroy&quot;\])  
-router.patch(&quot;/todos/{id}&quot;, TodosController()\[&quot;update&quot;\])
-</code></pre><p>당연히 router를 포함하고, stencil을 사용하는것, 미들웨어를 포함하고 JSON응답을 지원하는 등.</p>
-<p><strong>3. 인사이트</strong></p>
-<p>Swift는 애플이 오픈소스로 풀자마자 이렇게 많은 프로젝트로 확장되는 걸 보면, 정말 올바른 선택을 한 것이 아닌가 하는 생각이 듭니다.</p>
-<p>노드 생태계의 express 나 ROR 처럼 일통하는 프레임워크가 언젠가 나올 수 도 있고, Python 처럼 난립할 수도 있겠지만, 웹 프레임워크의 지속적인 등장은 Swift서버 생태계가 풍성해지는 가장 좋은 방법이라고 생각합니다.</p>
-<p>지속적으로 Swift를 지켜봐도 괜찮을 거 같습니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/ffc493c7b4f5" target="_blank" rel="external">February 22, 2016</a>.</p>
+        <p><img src="/images/1*3h-e_HM32qX-1iPZKk9uKA.png" alt=""></p>
+<p>React에 대한 불만은 ‘어렵다’ 일지도 모르겠습니다. 사실 React 자체는 무척이나 간단한데, React를 사용한 프로젝트를 받아보면 대부분 난감해 합니다. 이에 대한 해결책을 workflow 로 만든 프로젝트가 있습니다.</p>
+<p>2016/03/02 editor’s choice(369★)</p>
+<p>일단 Gaeron 이 보는 가장 큰 문제점은 boilerpate의 남용이라고 보고 있네요. boilerplate 를 쓰지말고 혼자만의 React 프로그램을 ES2015 없이 먼저 작성해 보고 점차 적용하라는 관점을 견지하고 있습니다.</p>
+<hr>
+<p>오늘 새벽에 이 프로젝트를 보자마자 무척이나 용감하게, 번역해서 PR(Pull Request)를 날렸는데 다행히 Gaeron 이 merge 해 주었습니다.</p>
+<p><a href="https://github.com/gaearon/react-makes-you-sad" title="https://github.com/gaearon/react-makes-you-sad" target="_blank" rel="external"><strong>gaearon/react-makes-you-sad</strong><br>_react-makes-you-sad - Here’s a flowchart to make you happy again!_github.com</a><a href="https://github.com/gaearon/react-makes-you-sad" target="_blank" rel="external"></a></p>
+<p><img src="/images/1*rxbwD7t5tDc93rGtg-nEMw.png" alt=""><a href="https://cdn.rawgit.com/ehrudxo/react-makes-you-sad/korean/fatigue.svg" target="_blank" rel="external">https://cdn.rawgit.com/ehrudxo/react-makes-you-sad/korean/fatigue.svg</a></p>
+<p><img src="/images/1*fWmt1wD-AOPMSGVuRS1-DQ.pn" alt=""></p>
+<p>한국어 번역이 추가된 모습입니다.</p>
+<p>아직 작은 화면에서는 깨지는 부분이 있는데 그것은 원본도 마찬가지군요. 약간 큰 화면에서 보기 좋아 보입니다.</p>
+<p>한국어 번역된 프로젝트 링크는 다음과 같습니다.</p>
+<p><a href="https://github.com/ehrudxo/react-makes-you-sad" title="https://github.com/ehrudxo/react-makes-you-sad" target="_blank" rel="external"><strong>ehrudxo/react-makes-you-sad</strong><br>_react-makes-you-sad - Here’s a flowchart to make you happy again!_github.com</a><a href="https://github.com/ehrudxo/react-makes-you-sad" target="_blank" rel="external"></a></p>
+<p>번역체나 오타 혹은 더 좋은 제안을 PR로 날려 주시면 반영하겠습니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/728f7343ca9a" target="_blank" rel="external">March 2, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -219,7 +183,7 @@ router.patch(&quot;/todos/{id}&quot;, TodosController()\[&quot;update&quot;\])
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-02-22 07:48:15] -github-trend- imagicalMine"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-03-01 13:16:22]gifi"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -227,7 +191,7 @@ router.patch(&quot;/todos/{id}&quot;, TodosController()\[&quot;update&quot;\])
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/02/22/[2016-02-22 07:48:15] -github-trend- imagicalMine/">-github-trend- imagicalMine</a>
+      <a class="article-title" href="/2016/03/01/[2016-03-01 13:16:22]gifi/">gifi</a>
     </h1>
   
 
@@ -235,8 +199,8 @@ router.patch(&quot;/todos/{id}&quot;, TodosController()\[&quot;update&quot;\])
     
     <div class="article-meta">
       
-	<a href="/2016/02/22/[2016-02-22 07:48:15] -github-trend- imagicalMine/" class="article-date">
-	  <time datetime="2016-02-21T22:48:15.000Z" itemprop="datePublished">2월 22, 2016</time>
+	<a href="/2016/03/01/[2016-03-01 13:16:22]gifi/" class="article-date">
+	  <time datetime="2016-03-01T04:16:22.000Z" itemprop="datePublished">3월 1, 2016</time>
 	</a>
 
        
@@ -244,16 +208,20 @@ router.patch(&quot;/todos/{id}&quot;, TodosController()\[&quot;update&quot;\])
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="github-trend-imagicalMine"><a href="#github-trend-imagicalMine" class="headerlink" title="[github-trend]imagicalMine"></a>[github-trend]imagicalMine</h3><p>마인크래프트 많이들 하시나요? 초딩들의 절대 지지를 받고 있는 게임이라지요? 성인들도 많이 하는 걸로 알고 있습니다. 안드로이드, iOS 등에 포팅 되면서 Pocket Edition이 론칭되었는데 그 PE버전의 서버가 오픈 소스 프로젝트로 나와 있습니다.</p>
-<p>2016/02/22 Editor’s choice</p>
-<p><a href="https://github.com/PocketMine/PocketMine-MP" title="https://github.com/PocketMine/PocketMine-MP" target="_blank" rel="external"><strong>PocketMine/PocketMine-MP</strong><br>_PocketMine-MP is a server software for Minecraft: Pocket Edition. It has a Plugin API that enables a developer to…_github.com</a><a href="https://github.com/PocketMine/PocketMine-MP" target="_blank" rel="external"></a></p>
-<p>바로 PocketMine-MP라는 프로젝트인데요</p>
-<p>오늘 소개할 ImagicalMine은 PocketMine-MP의 첫번째 써드파티 프로젝트 라는 군요.</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*yG5KkvJFeAYPHVMKh5ICaA.png" alt="">imagicalMine Logo</p>
-<p>Winodws, android, linux, OSX등의 서버에 설치가 가능합니다.</p>
-<p>마인크래프트 서버 설치를 한번 꿈꾸셨던 분들이라면 도전해 보면 좋을 거 같습니다.</p>
-<p>설치기는 조만간 공유드리도록 하겠습니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/c5d751fe1b03" target="_blank" rel="external">February 21, 2016</a>.</p>
+        <p>지루한 npm은가라! npm을 wrapping 해서 만든 명령어 gifi입니다. iterm2 버전 2.9 이상에서만 제대로 나오는데요. 생각보다 재밌네요.</p>
+<p><img src="/images/1*5LRIisX0O6b97ppy5uoWpA.gif" alt=""></p>
+<p>링크 : <a href="https://github.com/vdemedes/gifi" target="_blank" rel="external">https://github.com/vdemedes/gifi</a></p>
+<p>크게 더 설명할 필요는 없을 것 같구요.</p>
+<p>iTerm의 경우는 stable 버전은 2.1.4 버전이 최신인데 비해 Test Release 버전은 2.9.20~ 대입니다. Test Release 버전을 받는 다는 불안함 정도(?) 만 감수하면 npm 명령어를 치면 5초 마다 짤구경을 할 수 있습니다. 유머는 미국식 유머라, 재미 없을 수도 있습니다.</p>
+<ol>
+<li>설치 : $ npm install gifi — global</li>
+<li><p>실행</p>
+<p> $ gifi install koa –save</p>
+</li>
+</ol>
+<p>인터럽트를 한번 걸어보니 다음과 같이 png string을 뱉는 에러를 보여주기는 하네요</p>
+<p><img src="/images/1*wD2qGwMsV30mURiC6EJbRA.pn" alt=""></p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/eb3f1e7e3929" target="_blank" rel="external">March 1, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -278,7 +246,7 @@ router.patch(&quot;/todos/{id}&quot;, TodosController()\[&quot;update&quot;\])
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/94/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/93/">93</a><a class="page-number" href="/page/94/">94</a><span class="page-number current">95</span><a class="page-number" href="/page/96/">96</a><a class="extend next" rel="next" href="/page/96/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/94/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/93/">93</a><a class="page-number" href="/page/94/">94</a><span class="page-number current">95</span><a class="page-number" href="/page/96/">96</a><a class="page-number" href="/page/97/">97</a><span class="space">&hellip;</span><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/96/">Next</a>
   </nav>
 
 </section>
@@ -410,7 +378,7 @@ router.patch(&quot;/todos/{id}&quot;, TodosController()\[&quot;update&quot;\])
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">182</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">191</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -430,7 +398,7 @@ router.patch(&quot;/todos/{id}&quot;, TodosController()\[&quot;update&quot;\])
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">9월 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">35</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

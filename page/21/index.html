@@ -123,7 +123,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-08-18 23:28:01]with"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-08-22 11:13:56]pigz"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +131,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/08/18/[2016-08-18 23:28:01]with/">with</a>
+      <a class="article-title" href="/2016/08/22/[2016-08-22 11:13:56]pigz/">pigz</a>
     </h1>
   
 
@@ -139,8 +139,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/08/18/[2016-08-18 23:28:01]with/" class="article-date">
-	  <time datetime="2016-08-18T14:28:01.000Z" itemprop="datePublished">8월 18, 2016</time>
+	<a href="/2016/08/22/[2016-08-22 11:13:56]pigz/" class="article-date">
+	  <time datetime="2016-08-22T02:13:56.000Z" itemprop="datePublished">8월 22, 2016</time>
 	</a>
 
        
@@ -148,28 +148,25 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="with"><a href="#with" class="headerlink" title="with"></a>with</h3><p>재미있는 툴이네요.</p>
-<p>prefix를 붙여준다는 내용 설명인데, 예를 들어 이런 일을 합니다.</p>
-<p>git의 경우 git command 를 계속</p>
-<pre><code>$git add.
-
-$git commit -m &quot;update for some reason&quot;
-
-$git push origin master
-</code></pre><p>앞에 붙여주게 되는데 이런 일들을 줄일 수 있습니다.</p>
-<p>2016/08/18 Editor’s choice</p>
-<p><a href="https://github.com/mchav/with" title="https://github.com/mchav/with" target="_blank" rel="external"><strong>mchav/with</strong><br>_with - Command prefixing for continuous workflow using a single tool._github.com</a><a href="https://github.com/mchav/with" target="_blank" rel="external"></a></p>
-<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><pre><code>curl -s [https://raw.githubusercontent.com/mchav/with/master/install][anchor2] | bash
-</code></pre><h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><p><a href="https://asciinema.org/a/9qzy4co6jf1ansnpgl1ergcd3" target="_blank" rel="external"><img src="https://cdn-images-1.medium.com/max/1600/1*qRUSxQp7uiaQfuG1Hhck4g.png" alt=""></a>클릭하면 볼 수 있습니다.</p>
-<p>위의 이미지를 클릭하면 asciinema를 통해 어떻게 동작하는지를 볼 수 있습니다.</p>
-<p>포스트 처음 git 명령어의 git을 생략하고 실행할 수 있습니다. git같은 명령어를 쓰는 곳에서는 매우 좋은 툴입니다.</p>
-<pre><code>$with git  
-git\&gt;add .
-
-git\&gt;commit -m &quot;update for some reason&quot;
-
-git\&gt;push origin master
-</code></pre><p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/aa4259f1be01" target="_blank" rel="external">August 18, 2016</a>.</p>
+        <p>지금 소개하는 이 프로젝트는 gzip의 하부 프로젝트입니다. gzip 을 약간 다르게 배열하면 pigz가 되는데 제 생각에는 이게 async의 특징을 표현하기 위해 이렇게 적은게 아닌가 싶습니다.</p>
+<p>2016/08/22 Editor’s choice</p>
+<p><a href="https://github.com/madler/pigz" title="https://github.com/madler/pigz" target="_blank" rel="external"><strong>madler/pigz</strong><br>_pigz - A parallel implementation of gzip for modern multi-processor, multi-core machines._github.com</a><a href="https://github.com/madler/pigz" target="_blank" rel="external"></a></p>
+<p>이른바</p>
+<blockquote>
+<p>A parallel implementation of gzip for modern multi-processor, multi-core machines.</p>
+</blockquote>
+<p>멀티 프로세서, 멀티코어를 위한 gzip의 병렬 처리 프로그램!</p>
+<hr>
+<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><pre><code>$git clone [https://github.com/madler/pigz.git][anchor2]
+</code></pre><p>내려 받은뒤 make 면 빌드가 됩니다.</p>
+<h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><p>실행은 PATH에 추가하지 않고</p>
+<p>gzip 과 pigz를 같이 실행해 보았습니다.</p>
+<p>결과는?</p>
+<p><img src="/images/1*BzzTQA-Br1NbDuWecDKwAg.pn" alt=""></p>
+<p>아직은 gzip 압승입니다.</p>
+<p>pigz 는 프로세스가 끝나지 않는데, 이게 아무래도 버그인 듯 싶네요.</p>
+<p>하지만 조만간 훌륭하게 패치 되겠죠?</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/5f2673d9517a" target="_blank" rel="external">August 22, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -190,7 +187,7 @@ git\&gt;push origin master
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-08-17 08:50:04]httpie"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-08-22 07:19:51]react-dates"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -198,7 +195,7 @@ git\&gt;push origin master
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/08/17/[2016-08-17 08:50:04]httpie/">httpie</a>
+      <a class="article-title" href="/2016/08/22/[2016-08-22 07:19:51]react-dates/">react-dates</a>
     </h1>
   
 
@@ -206,8 +203,8 @@ git\&gt;push origin master
     
     <div class="article-meta">
       
-	<a href="/2016/08/17/[2016-08-17 08:50:04]httpie/" class="article-date">
-	  <time datetime="2016-08-16T23:50:04.000Z" itemprop="datePublished">8월 17, 2016</time>
+	<a href="/2016/08/22/[2016-08-22 07:19:51]react-dates/" class="article-date">
+	  <time datetime="2016-08-21T22:19:51.000Z" itemprop="datePublished">8월 22, 2016</time>
 	</a>
 
        
@@ -215,35 +212,20 @@ git\&gt;push origin master
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="httpie"><a href="#httpie" class="headerlink" title="httpie"></a>httpie</h3><p>http request 를 CLI 환경에서 보낼 때 주로 많이 사용하시는 것은 curl 일 겁니다. 혹은 wget을 사용할 수도 있습니다.</p>
-<p>하지만 오늘 나온 이 httpie는 세가지 정도의 강점을 가진 CLI http툴이라고 보시면 됩니다.</p>
-<p>2016/08/17 Editor’s choice</p>
-<p><a href="https://github.com/jkbrzt/httpie" title="https://github.com/jkbrzt/httpie" target="_blank" rel="external"><strong>jkbrzt/httpie</strong><br>_httpie - CLI HTTP client, user-friendly curl replacement with intuitive UI, JSON support, syntax highlighting, wget…_github.com</a><a href="https://github.com/jkbrzt/httpie" target="_blank" rel="external"></a></p>
-<hr>
-<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><pre><code>$brew install httpie
-</code></pre><h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><pre><code>$http www.daum.net
-</code></pre><p><img src="https://cdn-images-1.medium.com/max/1600/1*DpMtrsEgCSVj03AD_nr1BQ.gif" alt=""></p>
-<p>보시다시피 content highlighting 기능을 가지고 있는게 우선적으로 다른 툴과는 다른 모습을 보여줍니다.</p>
-<p>게다가</p>
-<pre><code>http PUT example.org name=John email=john@example.org
-</code></pre><p>형태의 key=value 쌍이 들어갈 경우에 JSON으로 자동으로 치환해서 업로드 해주는 기능을 갖고 있습니다.</p>
-<pre><code>PUT / HTTP/1.1  
-Accept: application/json, \*/\*  
-Accept-Encoding: gzip, deflate  
-Content-Type: application/json  
-Host: example.org  
+        <p>date picker 관련 프론트엔드 모듈은 꽤 널리고 널렸습니다. 하지만 오늘 소개해 드릴 date picker는 특별할 지도 모르겠습니다. 왜냐구요? airbnb에서 공개하는 date picker 이기 때문입니다. 일정을 정하고 숙박 날짜를 정하는 데 누구보다 고민을 많이 했을 것 같은 모듈입니다.</p>
+<p>2016/08/22 Editor’s choice</p>
+<p><a href="https://github.com/airbnb/react-dates" title="https://github.com/airbnb/react-dates" target="_blank" rel="external"><strong>airbnb/react-dates</strong><br>_react-dates - An accessible, easily internationalizable, mobile-friendly datepicker library for the web_github.com</a><a href="https://github.com/airbnb/react-dates" target="_blank" rel="external"></a></p>
+<p><img src="/images/1*1PtiM_2YqgkOxLbW3k5sRA.png" alt=""></p>
+<p>한번 샘플 페이지에서 사용을 해 봐도 간단하지만 멋진 UX에 감탄이 나오는 군요. 아마 사용방법도 간단하겠죠?</p>
+<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><pre><code>$npm install
 
-{  
-&quot;name&quot;: &quot;John&quot;,  
-&quot;email&quot;: &quot;john@example.org&quot;  
-}
-</code></pre><p>게다가</p>
-<pre><code>$ http --download example.org/file
-</code></pre><p><img src="https://cdn-images-1.medium.com/max/1600/1*kh4KHdJrBPqIfECkI-BSmQ.gif" alt=""></p>
-<p>— download 옵션을 쓰면 wget처럼 파일을 다운 받을 수 있습니다.</p>
-<p>상당히 유용하게 사용할 수 있는 툴이겠네요.</p>
-<p>하지만 curl과 wget 사용층이 많은 만큼 대체할 수 있을지는 의문입니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/46d570969716" target="_blank" rel="external">August 16, 2016</a>.</p>
+$npm run storybook
+</code></pre><p>git clone 받은 뒤에 npm 명령어를 실행시키고 나면 아래와 같은 창이 뜹니다.</p>
+<p><img src="/images/1*xySu4XOVV9dEkJMoYhUybQ.png" alt=""></p>
+<h4 id="실행코드"><a href="#실행코드" class="headerlink" title="실행코드"></a>실행코드</h4><p>실제 코드에서는 다음과 같이 사용됩니다.</p>
+<p>DateRangePicker, SingleDatePicker, DayPicker중에 하나를 JSX코드에서 가져와 onDatesChange, onFocusChane, focusedInput등의 이벤트를 처리할 수 있는 메쏘드 들로 지정해 주면 됩니다.</p>
+<p><img src="/images/1*H_vKkRirfEPHx-6CIxDFiw.pn" alt=""></p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/14b2dd259dd5" target="_blank" rel="external">August 21, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -268,7 +250,7 @@ Host: example.org
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/20/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/96/">96</a><a class="extend next" rel="next" href="/page/22/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/20/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/22/">Next</a>
   </nav>
 
 </section>
@@ -400,7 +382,7 @@ Host: example.org
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">182</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">191</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -420,7 +402,7 @@ Host: example.org
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">9월 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">35</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

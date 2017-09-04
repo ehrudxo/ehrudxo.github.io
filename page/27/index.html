@@ -123,7 +123,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-07-27 09:28:33]create-react-app"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-08-02 00:00:18]lumen"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +131,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/07/27/[2016-07-27 09:28:33]create-react-app/">create-react-app</a>
+      <a class="article-title" href="/2016/08/02/[2016-08-02 00:00:18]lumen/">lumen</a>
     </h1>
   
 
@@ -139,8 +139,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/07/27/[2016-07-27 09:28:33]create-react-app/" class="article-date">
-	  <time datetime="2016-07-27T00:28:33.000Z" itemprop="datePublished">7월 27, 2016</time>
+	<a href="/2016/08/02/[2016-08-02 00:00:18]lumen/" class="article-date">
+	  <time datetime="2016-08-01T15:00:18.000Z" itemprop="datePublished">8월 2, 2016</time>
 	</a>
 
        
@@ -148,50 +148,132 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="create-react-app"><a href="#create-react-app" class="headerlink" title="create-react-app"></a>create-react-app</h3><p>react-native를 쓰면서 정말 좋았던 것 중에 하나는 react-native 명령어로 react-native app을 직접 만들 수 있다는 것이었습니다. 그걸 보고 거꾸로 react에도 내가 일일이 boilerplate를 설정하지 말고 그냥 명령어로 만들면 좋겠다. 라고 생각했었습니다.</p>
-<p>이런 내 마음을 읽은 것일까요?</p>
-<p>facebookincubator에서 create-react-app 프로젝트를 내 놓았습니다.</p>
-<p>2016/07/27 Best Project</p>
-<p><a href="https://github.com/facebookincubator/create-react-app" title="https://github.com/facebookincubator/create-react-app" target="_blank" rel="external"><strong>facebookincubator/create-react-app</strong><br>_create-react-app - Create React apps with no build configuration._github.com</a><a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="external"></a></p>
+        <p>Back To The Mac을 쓰는 기분이네요. 이런 프로젝트를 소개할 때는 말이죠.</p>
+<p><img src="/images/1*N6Ydhj0lf4y6DnPQx4Mlcw.gif" alt=""></p>
+<p>화면의 밝기를 조절해 주는 Mac용 앱 프로젝트 입니다.</p>
+<p>“자동으로 밝기 조절” 옵션을 disable 해 줘야 제대로 작동합니다.</p>
+<p><img src="/images/1*n0d7zU71NNs8Zubsognj_Q.pn" alt=""></p>
+<p>2016/08/01 Today’s Best</p>
+<p><a href="https://github.com/anishathalye/lumen" title="https://github.com/anishathalye/lumen" target="_blank" rel="external"><strong>anishathalye/lumen</strong><br>_lumen - Magic auto brightness based on screen contents :bulb:_github.com</a><a href="https://github.com/anishathalye/lumen" target="_blank" rel="external"></a></p>
+<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><p>기본적으로 binary를 제공합니다.</p>
+<p>공식사이트에서</p>
+<p><a href="http://www.anishathalye.com/2016/07/31/lumen/" title="http://www.anishathalye.com/2016/07/31/lumen/" target="_blank" rel="external"><strong>Lumen: Magic Auto Brightness Based on Screen Contents</strong><br>_I do most of my software development in my terminal, with my trusty tmux / zsh / vim setup. When coding, I frequently…_www.anishathalye.com</a><a href="http://www.anishathalye.com/2016/07/31/lumen/" target="_blank" rel="external"></a></p>
+<p>다운로드 받아서 설치할 수 있습니다.</p>
+<h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><p>실행하면 바로 MacOS의 status Bar에 해당 어플리케이션이 설치되고 Main Display 의 화면을 분석해서 색깔을 조절합니다.</p>
 <hr>
-<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><pre><code>$npm install -g create-react-app
-</code></pre><h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><pre><code>$create-react-app my-app  
-$cd may-app  
-$npm start
-</code></pre><p>정말 간단하네요.</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*_T0EqB1_4koW1HFY3S9lXA.png" alt=""></p>
-<p>watchify도 적용되어 있는 거 같습니다. 바로 저장하자마자 뿅~</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*D3bS9t-jRsAMBTAVkW_5oQ.png" alt=""></p>
-<h4 id="deep-inside"><a href="#deep-inside" class="headerlink" title="deep inside"></a>deep inside</h4><p>create-react-app으로 설치를 하고 나면 기본적으로</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*Dl1Ra8gznhH06hCwGCEXqQ.png" alt=""></p>
-<p>와 같은 구조의 파일들이 생깁니다.</p>
-<p>package.json을 살펴보면</p>
-<pre><code>{  
-&quot;name&quot;: &quot;my-app&quot;,  
-&quot;version&quot;: &quot;0.0.1&quot;,  
-&quot;private&quot;: true,  
-&quot;devDependencies&quot;: {  
-&quot;react-scripts&quot;: &quot;0.1.0&quot;  
-},  
-&quot;dependencies&quot;: {  
-&quot;react&quot;: &quot;^15.2.1&quot;,  
-&quot;react-dom&quot;: &quot;^15.2.1&quot;  
-},  
-&quot;scripts&quot;: {  
-&quot;start&quot;: &quot;react-scripts start&quot;,  
-&quot;build&quot;: &quot;react-scripts build&quot;,  
-&quot;eject&quot;: &quot;react-scripts eject&quot;  
-}  
+<h4 id="소스-보기"><a href="#소스-보기" class="headerlink" title="소스 보기"></a>소스 보기</h4><p><a href="https://github.com/anishathalye/lumen/blob/master/Lumen/BrightnessController.m" title="https://github.com/anishathalye/lumen/blob/master/Lumen/BrightnessController.m" target="_blank" rel="external"><strong>anishathalye/lumen</strong><br>_lumen - Magic auto brightness based on screen contents :bulb:_github.com</a><a href="https://github.com/anishathalye/lumen/blob/master/Lumen/BrightnessController.m" target="_blank" rel="external"></a></p>
+<p>BrightnessController.m 파일이 대부분의 기능을 담당하고 있습니다.</p>
+<p>AppDelegate.m 파일의 applicationDidFinishLaunching 을 살펴보면</p>
+<pre><code>- (void)applicationDidFinishLaunching:(NSNotification \*)aNotification {
+
+self.statusItem = \[\[NSStatusBar systemStatusBar\] statusItemWithLength:NSVariableStatusItemLength\];
+
+\[self.statusItem setMenu:self.statusMenu\];
+
+\[self.statusItem setTitle:MENU\_SYMBOL\];
+
+\[self.statusItem setHighlightMode:YES\];
+
+self.brightnessController = \[\[BrightnessController alloc\] init\];
+
+\[self.brightnessController start\];
+
+\[self.toggle setTitle:STOP\];
+
 }
-</code></pre><p>형태의 간단한 프로젝트가 생성이 됩니다.</p>
-<p>dependency가 react 만 가지게 되어 있고 dev-dependencies를 살펴보니 react-script 라는 녀석이 있습니다.</p>
-<p>react-script를 살펴보았습니다.</p>
-<p>babel, webpack, eslint등의 많은 일들을 해 주고 있습니다.</p>
-<p>즉 create-react-app이라는 것은 보일러 플레이트 메이커 정도로 이해하면 될 거 같습니다.</p>
-<pre><code>$npm build
-</code></pre><p>명령어를 통해서 production 레벨의 스크립트로 만들어 주는 부분들도 지원을 합니다.</p>
-<p>react-script라는 녀석이 깃헙에 있을까 찾아보았는데 그게 보이지는 않고 create-react의 devDependency오 동일한걸 보니 파일들을 생성하는 역할만으로 끝인듯 합니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/420f5610d0e1" target="_blank" rel="external">July 27, 2016</a>.</p>
+</code></pre><p>brightnessController start</p>
+<p>함수를 콜 하게 됩니다.</p>
+<p>이 함수는 타이머를 실행시키는데 이 대부분이 링크 BrightnessController.m 파일에 작성되어 있죠.</p>
+<p>타이머가 콜하는 tick은</p>
+<pre><code>(void)tick:(NSTimer \*)timer {
+
+// 스크린의 밝기를 얻고
+
+CGImageRef contents = \[self getScreenContents\];
+
+if (!contents) {
+
+return;
+
+}
+
+double lightness = \[self computeLightness:contents\];
+
+CFRelease(contents);
+
+// 백라이트가 수동으로 설정되었는지 확인한 후에
+
+static bool noticed = false;
+
+static float lastNoticed = 0;
+
+float setPoint = \[self getBrightness\];
+
+if (noticed || fabsf(self.lastSet --- setPoint) \&gt; CHANGE\_NOTICE) {
+
+if (!noticed) {
+
+noticed = true;
+
+lastNoticed = setPoint;
+
+return; // 계속 바뀌는 치 체크
+
+}
+
+if (fabsf(setPoint --- lastNoticed) \&gt; CHANGE\_NOTICE) {
+
+lastNoticed = setPoint;
+
+return; // it&apos;s still changing
+
+} else {
+
+\[self.model observeOutput:setPoint forInput:lightness\];
+
+noticed = false;
+
+// don&apos;t return, fall through and evaluate model here
+
+}
+
+}
+
+float brightness = \[self.model predictFromInput:lightness\];
+
+\[self setBrightness:brightness\];
+
+}
+</code></pre><p>마지막으로 계산된 값으로 밝기를 셋팅합니다.</p>
+<p>관련된 계산식은 computeLightness 에 작성되어 있습니다.</p>
+<pre><code>double brightness = 0;
+
+const unsigned int kSkip = 16; // uniformly sample screen pixels
+
+// find RMS brightness value
+
+if (data) {
+
+for (size\_t y = 0; y &lt; height; y += kSkip) {
+
+for (size\_t x = 0; x &lt; width; x += kSkip) {
+
+const unsigned char \*dptr = &amp;data\[(width \* y + x) \* 4\];
+
+double l = srgb\_to\_brightness(dptr\[0\], dptr\[1\], dptr\[2\]);
+
+brightness += l \* l;
+
+}
+
+}
+
+}
+
+**brightness = sqrt(brightness / (width \* height / (kSkip \* kSkip)));**
+</code></pre><p>오늘은 왠일로 소스 분석까지 해 버렸네요. 아이쿵.</p>
+<p>이런 코드 너무 좋아요~</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/21b4a7988f67" target="_blank" rel="external">August 1, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -212,7 +294,7 @@ $npm start
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-07-20 21:14:00]api-guidelines"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-07-30 08:00:07]image-diff"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -220,7 +302,7 @@ $npm start
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/07/20/[2016-07-20 21:14:00]api-guidelines/">api-guidelines</a>
+      <a class="article-title" href="/2016/07/30/[2016-07-30 08:00:07]image-diff/">image-diff</a>
     </h1>
   
 
@@ -228,8 +310,8 @@ $npm start
     
     <div class="article-meta">
       
-	<a href="/2016/07/20/[2016-07-20 21:14:00]api-guidelines/" class="article-date">
-	  <time datetime="2016-07-20T12:14:00.000Z" itemprop="datePublished">7월 20, 2016</time>
+	<a href="/2016/07/30/[2016-07-30 08:00:07]image-diff/" class="article-date">
+	  <time datetime="2016-07-29T23:00:07.000Z" itemprop="datePublished">7월 30, 2016</time>
 	</a>
 
        
@@ -237,34 +319,26 @@ $npm start
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="api-guidelines"><a href="#api-guidelines" class="headerlink" title="api-guidelines"></a><a href="https://github.com/Microsoft/api-guidelines" target="_blank" rel="external">api-guidelines</a></h3><p>프로젝트를 나가면 SPM문서가 보통 존재합니다. 그 문서 안에는 개발을 하는 여러가지 방법들과 표준들이 서술되어 있습니다. 그와 비슷하게 guideline 같은 문서들이 존재 하는데 오늘 소개해 드릴 깃헙 프로젝트는 MS에서 내 놓은 REST API 가이드라인입니다.</p>
-<p>2016/07/20 Editor’s choice</p>
-<p><a href="https://github.com/Microsoft/api-guidelines/blob/master/Guidelines.md" title="https://github.com/Microsoft/api-guidelines/blob/master/Guidelines.md" target="_blank" rel="external"><strong>Microsoft/api-guidelines</strong><br>_api-guidelines - Microsoft REST API Guidelines_github.com</a><a href="https://github.com/Microsoft/api-guidelines/blob/master/Guidelines.md" target="_blank" rel="external"></a></p>
+        <p>Uber 에서 굉장히 재미있는 프로젝트를 내 놓았습니다.</p>
+<p>image-diff 라는 제목에서 알 수 있듯이 이미지간에 다른 부분들을 찾아주는 일들을 해 주는 프로젝트입니다.</p>
+<p><img src="/images/1*sUqGYdgSjSTPDJj3EY8Mcg.png" alt="">간단하죠?</p>
+<p>2016/07/30 Today’s Best</p>
+<p><a href="https://github.com/uber/image-diff" title="https://github.com/uber/image-diff" target="_blank" rel="external"><strong>uber/image-diff</strong><br>_image-diff - Create image differential between two images_github.com</a><a href="https://github.com/uber/image-diff" target="_blank" rel="external"></a></p>
 <hr>
-<p>Airbnb말고는 가이드라인에 관한 문서는 크게 소개해 드린 적은 없었던 거 같은데, MS의 API 가이드라인을 소개할 날이 올 줄은 몰랐네요.</p>
-<p>중요한 내용 위주로 훑어보도록 하겠습니다.</p>
-<p>시작은 Microsoft Cloud Platform에 대한 이야기 부터 시작합니다. 클라우드 플랫폼을 많이 쓰는데, REST API를 많이 쓰고 있으니 표준을 잡겠다고 시작을 합니다.</p>
-<p>API작성을 위한 추천할 만한 링크를 소개하는데</p>
-<p><a href="http://www.ietf.org/rfc/rfc2616.txt" target="_blank" rel="external">http://www.ietf.org/rfc/rfc2616.txt</a></p>
-<p>REST API spec 과 아마존의 추천서 하나</p>
-<p><a href="https://www.amazon.com/REST-Practice-Hypermedia-Systems-Architecture/dp/0596805829?ie=UTF8&amp;*Version*=1&amp;*entries*=0" title="https://www.amazon.com/REST-Practice-Hypermedia-Systems-Architecture/dp/0596805829?ie=UTF8&amp;*Version*=1&amp;*entries*=0" target="_blank" rel="external"><strong>REST in Practice: Hypermedia and Systems Architecture</strong><br>_Edit description_www.amazon.com</a><a href="https://www.amazon.com/REST-Practice-Hypermedia-Systems-Architecture/dp/0596805829?ie=UTF8&amp;*Version*=1&amp;*entries*=0" target="_blank" rel="external"></a></p>
-<p>그리고 Wikipedia의 링크</p>
-<p><a href="https://en.wikipedia.org/wiki/Representational_state_transfer" title="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank" rel="external"><strong>Representational state transfer</strong><br>_”REST” redirects here. For other uses, see Rest. In computing, representational state transfer ( REST) is an…_en.wikipedia.org</a><a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank" rel="external"></a></p>
-<hr>
-<p>7장 이 Guide line의 본격적인 시작이라고 보여지는데 URL구조부터 시작하는군요</p>
-<blockquote>
-<p>Humans SHOULD be able to easily read and construct URLs.</p>
-</blockquote>
-<p>사람이 읽기 좋은 URL을 가져야한다는 군요.</p>
-<p>좋은 예는</p>
-<pre><code>https://api.contoso.com/v1.0/people/jdoe@contoso.com/inbox
-</code></pre><p>나쁜 예는</p>
-<pre><code>https://api.contoso.com/EWS/OData/Users(&apos;jdoe@microsoft.com&apos;)/Folders(&apos;AAMkADdiYzI1MjUzLTk4MjQtNDQ1Yy05YjJkLWNlMzMzYmIzNTY0MwAuAAAAAACzMsPHYH6HQoSwfdpDx-2bAQCXhUk6PC1dS7AERFluCgBfAAABo58UAAA=&apos;)
-</code></pre><p>REST API는 다음과 같은 VERB를 가진다로 표현을 하는군요</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*sd6UX9LJxmaaaza9IbHjEg.png" alt=""></p>
-<p>PATCH와 OPTIONS는 생소하네요.</p>
-<p>일종의 REST API백서라고 볼 수 있는데, 아주 상세하게 표현이 되어 있습니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/48f9b8ad7f7e" target="_blank" rel="external">July 20, 2016</a>.</p>
+<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><p>cli 명령어로 사용하기 좋기 때문에 저 같은 경우는 global 옵션을 줘서 인스톨 했습니다.</p>
+<pre><code>$npm install -g image-diff
+</code></pre><h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><pre><code>$image-diff original-image gariginal-image result-image
+</code></pre><hr>
+<h4 id="어디에-쓸꼬"><a href="#어디에-쓸꼬" class="headerlink" title="어디에 쓸꼬?"></a>어디에 쓸꼬?</h4><p>Uber에서 왜 이미지 diff 를 구하는 지를 곰곰이 생각해 보았습니다. 두가지 정도의 추측을 할 수 있는데 하나는 기사들의 라이센스 위조같은 부분일 거라는 생각이 들었고 하나는 지도 이미지 데이타의 차이점을 파악해서 기사들에게 지형변화에 대한 감지를 할 수 있겠구나 정도의 생각입니다.</p>
+<h4 id="이미지-위변조-detect"><a href="#이미지-위변조-detect" class="headerlink" title="이미지 위변조 detect"></a>이미지 위변조 detect</h4><p>아주 유명한 그림인 모나리자 그림을 한번 위변조 해 보겠습니다.</p>
+<p><img src="/images/1*5J5j9ulD8FH6TlY1yAydKw.png" alt="">gimp는 내 친구</p>
+<p>우측 하단에 검정색 글씨로 “keen is king”이라는 아주 민망한 글자를 써 놓았습니다만, 이미지로 export하면 육안으로는 전혀 알 수가 없습니다.</p>
+<p>하지만, image-diff 를 이용해서 원본 이미지와 diff 를 해보니</p>
+<p><img src="/images/1*OUUFnu-PG-yeZK01nSpWEg.png" alt=""></p>
+<p>위와 같은 이미지가 떨어지고, 확대를 한번 해 보면</p>
+<p><img src="/images/1*o4-5s2-PZcgoHiP7QI7AGw.pn" alt=""></p>
+<p>이라는 아주 민망한 글자가 새겨져 있는 것을 볼 수 있습니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/455a8417f054" target="_blank" rel="external">July 29, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -289,7 +363,7 @@ $npm start
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/26/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><a class="page-number" href="/page/29/">29</a><span class="space">&hellip;</span><a class="page-number" href="/page/96/">96</a><a class="extend next" rel="next" href="/page/28/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/26/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><a class="page-number" href="/page/29/">29</a><span class="space">&hellip;</span><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/28/">Next</a>
   </nav>
 
 </section>
@@ -421,7 +495,7 @@ $npm start
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">182</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">191</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -441,7 +515,7 @@ $npm start
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">9월 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">35</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

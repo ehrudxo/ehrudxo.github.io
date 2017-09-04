@@ -123,7 +123,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-05-04 07:09:18]json-server"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-05-11 07:31:34]gitsome"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +131,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/05/04/[2016-05-04 07:09:18]json-server/">json-server</a>
+      <a class="article-title" href="/2016/05/11/[2016-05-11 07:31:34]gitsome/">gitsome</a>
     </h1>
   
 
@@ -139,8 +139,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/05/04/[2016-05-04 07:09:18]json-server/" class="article-date">
-	  <time datetime="2016-05-03T22:09:18.000Z" itemprop="datePublished">5월 4, 2016</time>
+	<a href="/2016/05/11/[2016-05-11 07:31:34]gitsome/" class="article-date">
+	  <time datetime="2016-05-10T22:31:34.000Z" itemprop="datePublished">5월 11, 2016</time>
 	</a>
 
        
@@ -148,35 +148,24 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="json-server"><a href="#json-server" class="headerlink" title="json-server"></a>json-server</h3><p><img src="https://cdn-images-1.medium.com/max/1600/1*sevW-e6MR_7efWPYwB4-5A.png" alt="">json의 향연</p>
-<p>인터페이스를 먼저 정의하고 서버 사이드와 클라이언트 사이드를 동시에 개발 진행 많이들 해 보셨으리라 생각합니다. 특히 모바일 개발을 할 때 더 더욱 이런 방법을 많이 씁니다. json은 모바일 데이타 주고 받는 데에 표준 처럼 사용되는 상황입니다. json-server는 이런 경우에 많이 사용할 수 있는 프로젝트입니다.</p>
-<p><a href="https://github.com/typicode/json-server" title="https://github.com/typicode/json-server" target="_blank" rel="external"><strong>typicode/json-server</strong><br>_json-server - Get a full fake REST API with zero coding in less than 30 seconds (seriously)_github.com</a><a href="https://github.com/typicode/json-server" target="_blank" rel="external"></a></p>
+        <p><img src="/images/1*nYY8JvGw9MBa9dCAGf6Whg.gif" alt="">작정하고 만든 듯 합니다.</p>
+<p>git 명령어는 150개가 넘고, github 관련된 정보들도 자유롭게 보고 싶고, 여러가지 git에 대한 요구사항들이 많습니다. 지금 소개하는 프로젝트는 이런 개발자들을 위한 편리성을 제공합니다.</p>
+<p>2016/05/11 Today’s Best(679✰)</p>
+<p><a href="https://github.com/donnemartin/gitsome" title="https://github.com/donnemartin/gitsome" target="_blank" rel="external"><strong>donnemartin/gitsome</strong><br>_gitsome - A Supercharged Git/Shell Autocompleter with GitHub Integration._github.com</a><a href="https://github.com/donnemartin/gitsome" target="_blank" rel="external"></a></p>
 <hr>
-<h4 id="설치를-해-봅시다"><a href="#설치를-해-봅시다" class="headerlink" title="설치를 해 봅시다"></a>설치를 해 봅시다</h4><p>언제나 반복하는 말이죠. 간단합니다.</p>
-<pre><code>$ npm install -g json-server
-</code></pre><h4 id="사용을-해-봅시다"><a href="#사용을-해-봅시다" class="headerlink" title="사용을 해 봅시다"></a>사용을 해 봅시다</h4><p>json-server가 사용할 데이타베이스를 구성해 봅시다.</p>
-<p>이렇게 보통의 mongodb같은 NoSQL에서 줄것만 같은 형태로 json을 구성하고 나서 json-server를 실행 시켜 봅니다.</p>
-<pre><code>$ json-server --watch db.json
-</code></pre><p>어떤 일이 발생했을까요?</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*MoIREMES4GjP-HrvWFP6gQ.png" alt="">와 실행이다</p>
-<p><a href="http://localhost:3000를" target="_blank" rel="external">http://localhost:3000를</a> 확인해 봐야겠죠?</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*-pPmV7a5PcP4gNInf4UrjQ.png" alt=""></p>
-<p>이런 형태의 페이지가 뜹니다.</p>
-<p>그리고 각 router에 따라서 json service 를 입맛에 따라 확인해 볼 수 있습니다. 주의 깊은 개발자라면 watch 옵션을 확인했을 텐데요. 이 옵션을 통해 파일을 실시간을 고치고 그것이 서버에 반영됩니다.</p>
-<p>그리고 서버를 실행시킬 때에</p>
-<p>Type s + enter at any time to create a snapshot of the database</p>
-<p>라는 문구를 볼 수 있는데 스냅샷을 저장할 수 있는 옵션입니다.</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*RIcYDwvVaWlO-17XRwtTcQ.png" alt="">더러워 콧구멍이라니</p>
-<p>실제 실행해 보면 이런형태로 저장이 되는군요. 파일을 변화시킬때 서비스 별로 스냅샷을 지정할 수도 있겠습니다.</p>
-<h4 id="다양한-기능"><a href="#다양한-기능" class="headerlink" title="다양한 기능"></a>다양한 기능</h4><ul>
-<li>Node.js 에서 서버로 활용할 수 있고 그에 따른 API도 지원합니다.</li>
-<li>Routes 섹션을 살펴보면 NoSQL이 해 주는 여러가지 라우팅 옵션들을 자체 지원합니다. (Filter, Sort, Full text Search등등)</li>
-<li>Static File Server, Port변경, 랜덤 데이타 기능등등 개발할 때 필요한 부분들을 골고루 갖추고 있습니다.</li>
-</ul>
-<h4 id="Typicode"><a href="#Typicode" class="headerlink" title="Typicode"></a>Typicode</h4><p>이 프로젝트를 만든 Typicode 는 최근에 핫한 프로젝트를 연달아 내고 있는데 hotel, husky,lowdb등이 있습니다.</p>
-<p>hotel은 localhost:2000 같이 나오는 url을 my.dev형태로 바꿔주는 프로젝트이고 husky는 git hook를 손쉽게 걸어주는 프로젝트이고 lowdb는 정말 간단한 형태의 json db를 구성할 수 있는 프로젝트입니다.</p>
-<p>다음에 같이 다뤄보도록하겠습니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/c36409454352" target="_blank" rel="external">May 3, 2016</a>.</p>
+<h4 id="설치해-봅시다"><a href="#설치해-봅시다" class="headerlink" title="설치해 봅시다."></a>설치해 봅시다.</h4><p>pip install을 실행합니다. 저의 경우는 pip3를 사용합니다.</p>
+<pre><code>$ sudo -H pip3 install gitsome
+</code></pre><hr>
+<h4 id="실행해-봅시다"><a href="#실행해-봅시다" class="headerlink" title="실행해 봅시다."></a>실행해 봅시다.</h4><p>어떤 기능이 있을까요?</p>
+<p>기본적으로 auto completion 기능을 제공합니다.</p>
+<p><img src="/images/1*bjgnrMAzgBsjn_GcmM9Y8w.gif" alt=""></p>
+<p>그리고 directory에 git 정보가 있을 때에 branch 정보를 같이 보여줍니다.</p>
+<p>github관련 기능</p>
+<p>깃헙 사용자 관련 기능도 제공합니다.</p>
+<p><img src="/images/1*wKmkUmCqKYUNb05dSdtZCA.gi" alt="">명령어 캐시까지</p>
+<p>참 신통방통한 녀석이네요.</p>
+<p>그 외에도 trending 서비스도 제공하는 등 여러가지 많은 기능들을 포함하고 있습니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/f845b0b2c8de" target="_blank" rel="external">May 10, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -197,7 +186,7 @@
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-05-03 07:16:19]NativeBase"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-05-10 20:35:14]@Burt.K 네, 좋은 피드백 너무 감사합니다!"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -205,7 +194,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/05/03/[2016-05-03 07:16:19]NativeBase/">NativeBase</a>
+      <a class="article-title" href="/2016/05/10/[2016-05-10 20:35:14]@Burt.K 네, 좋은 피드백 너무 감사합니다!/">@Burt.K 네, 좋은 피드백 너무 감사합니다!</a>
     </h1>
   
 
@@ -213,8 +202,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/05/03/[2016-05-03 07:16:19]NativeBase/" class="article-date">
-	  <time datetime="2016-05-02T22:16:19.000Z" itemprop="datePublished">5월 3, 2016</time>
+	<a href="/2016/05/10/[2016-05-10 20:35:14]@Burt.K 네, 좋은 피드백 너무 감사합니다!/" class="article-date">
+	  <time datetime="2016-05-10T11:35:14.000Z" itemprop="datePublished">5월 10, 2016</time>
 	</a>
 
        
@@ -222,41 +211,8 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="NativeBase"><a href="#NativeBase" class="headerlink" title="NativeBase"></a>NativeBase</h3><p><img src="https://cdn-images-1.medium.com/max/1600/1*WN4-6QMrWgH8o8oEuBlZaA.png" alt="">오랜만에 상관없는 이미지</p>
-<p>React Native 다들 개발은 하고 계시죠? 개발자라면 한 번 도전은 해 봤을 텐데요.(응?) 죄송합니다. Native 컴포넌트를 Javascript로 그리고, Style을 직접 주다 보니 본의아니게 개자이너 혹은 디발자의 영역을 넘나드셨을 거라고 봅니다.</p>
-<p>그러다 보면 당연하게 생기는 생각이 “아 부트스트랩 같은 녀석 없을까” 인데 여기 그런 프로젝트가 있습니다.</p>
-<p>2016/05/03 Editor’s choice</p>
-<p><a href="https://github.com/GeekyAnts/NativeBase" title="https://github.com/GeekyAnts/NativeBase" target="_blank" rel="external"><strong>GeekyAnts/NativeBase</strong><br>_NativeBase - The missing piece of React Native_github.com</a><a href="https://github.com/GeekyAnts/NativeBase" target="_blank" rel="external"></a></p>
-<hr>
-<h4 id="설치를-합시다"><a href="#설치를-합시다" class="headerlink" title="설치를 합시다."></a>설치를 합시다.</h4><p>설치는 간단합니다. (물론 react-native를 해 보셨다면 말이죠.)</p>
-<p>프로젝트에서는 일단 react-native init 부터 시작하던데 다음의 명령어면 기존 프로젝트도 충분합니다.</p>
-<pre><code>npm install native-base --save
-</code></pre><p>만약에 처음부터 만들 요랑이시라면</p>
-<pre><code>react-native init AwesomeNativeBase  
-cd AwesomeNativeBase  
-npm install
-</code></pre><p>명령어가 먼저 필요합니다.</p>
-<h4 id="rnpm"><a href="#rnpm" class="headerlink" title="rnpm"></a>rnpm</h4><p>rnpm이라는 명령어는 react-native 를 사용하는데 요즘은 필수가 되었습니다. native 컴포넌트를 가진 프로젝트를 추가하면 (npm install) 이후 관례적으로 해 주게 되는데요</p>
-<ul>
-<li>$rnpm link</li>
-</ul>
-<p>명령어로 가능합니다. 기본적으로 설치되어 있는 모듈 전부에 대한 링크를 점검해 줍니다.</p>
-<hr>
-<h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><p>이런 일들이 갖추어 지고 나면 xcode를 켜서 run 을 통해 실행을 해 봅니다.</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*BoKp35W_FR6O4wqlMUlKhQ.png" alt=""></p>
-<p>엇 달라진게 없습니다.</p>
-<p>index.ios.js 소스를 고쳐보겠습니다.</p>
-<p>그리고 다시 실행을 하면</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*YZAKSPNHgDxCx9hxNJOACA.png" alt="">어익후 깜짝이야</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*00BX8NWzdAzy-fPXzUwczQ.png" alt=""></p>
-<p>이런 그림이 나타납니다.</p>
-<p>분명히 개자이너, 디발자 어쩌구 저쩌구 했는데, 아무리 좋은 툴을 가져다 줘도 저같은 디알못은 소용없나 봅니다.</p>
-<hr>
-<h4 id="아-글쎄-이쁘다니깐요"><a href="#아-글쎄-이쁘다니깐요" class="headerlink" title="아 글쎄 이쁘다니깐요"></a>아 글쎄 이쁘다니깐요</h4><p><a href="http://nativebase.io/docs/v0.2.1/assets/img/magic-with-nativebase-020.mp4" target="_blank" rel="external">http://nativebase.io/docs/v0.2.1/assets/img/magic-with-nativebase-020.mp4</a></p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*CU_TNA9hvVu5S-lSsiiIFg.png" alt="">클릭은 위의 링크. 미디엄은 이미지 링크를 지원하라!</p>
-<p>동영상을 감상해 보시면 글쎄 이쁜… 프로젝트가 나옵니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/7a1635cd0a55" target="_blank" rel="external">May 2, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+        <p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/d632aba09673" target="_blank" rel="external">May 10, 2016</a>.</p>
+<p>Exported from <a href="https://medium.co" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
     </div>
@@ -280,7 +236,7 @@ npm install
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/61/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/60/">60</a><a class="page-number" href="/page/61/">61</a><span class="page-number current">62</span><a class="page-number" href="/page/63/">63</a><a class="page-number" href="/page/64/">64</a><span class="space">&hellip;</span><a class="page-number" href="/page/96/">96</a><a class="extend next" rel="next" href="/page/63/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/61/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/60/">60</a><a class="page-number" href="/page/61/">61</a><span class="page-number current">62</span><a class="page-number" href="/page/63/">63</a><a class="page-number" href="/page/64/">64</a><span class="space">&hellip;</span><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/63/">Next</a>
   </nav>
 
 </section>
@@ -412,7 +368,7 @@ npm install
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">182</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">191</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -432,7 +388,7 @@ npm install
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">9월 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">35</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

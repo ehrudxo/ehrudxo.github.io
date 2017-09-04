@@ -123,7 +123,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-05-13 07:40:50]amazon-dsstne"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-05-20 06:01:35]질문 고맙습니다."  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +131,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/05/13/[2016-05-13 07:40:50]amazon-dsstne/">amazon-dsstne</a>
+      <a class="article-title" href="/2016/05/20/[2016-05-20 06:01:35]질문 고맙습니다./">질문 고맙습니다.</a>
     </h1>
   
 
@@ -139,8 +139,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/05/13/[2016-05-13 07:40:50]amazon-dsstne/" class="article-date">
-	  <time datetime="2016-05-12T22:40:50.000Z" itemprop="datePublished">5월 13, 2016</time>
+	<a href="/2016/05/20/[2016-05-20 06:01:35]질문 고맙습니다./" class="article-date">
+	  <time datetime="2016-05-19T21:01:35.000Z" itemprop="datePublished">5월 20, 2016</time>
 	</a>
 
        
@@ -148,53 +148,10 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="amazon-dsstne"><a href="#amazon-dsstne" class="headerlink" title="amazon-dsstne"></a>amazon-dsstne</h3><p>아마존에서 이번에는 딥러닝 관련된 모델을 오픈소스로 공개했습니다.</p>
-<p>2016/05/13 Editor’s choice</p>
-<p><a href="https://github.com/amznlabs/amazon-dsstne" title="https://github.com/amznlabs/amazon-dsstne" target="_blank" rel="external"><strong>amznlabs/amazon-dsstne</strong><br>_amazon-dsstne - Deep Scalable Sparse Tensor Network Engine (DSSTNE) is an Amazon developed library for building Deep…_github.com</a><a href="https://github.com/amznlabs/amazon-dsstne" target="_blank" rel="external"></a></p>
-<p>tensor network engine이 이름에 들어가는군요.</p>
-<h4 id="설치해-보기"><a href="#설치해-보기" class="headerlink" title="설치해 보기"></a>설치해 보기</h4><p>3가지의 기본 설치 방법을 제공하고 있습니다.</p>
-<ul>
-<li>docker</li>
-<li>AWS</li>
-<li>dev install</li>
-</ul>
-<p>보통은 빌드 툴과 docker 를 제공하고 마는데 역시 AWS를 이용한 방법을 쓰고 있습니다.</p>
-<p>docker runtime으로는 10G 가 필요하다고 하는군요. 전철 안에서는 docker를 받아서는 안될거 같네요.</p>
-<h4 id="사용자-가이드"><a href="#사용자-가이드" class="headerlink" title="사용자 가이드"></a>사용자 가이드</h4><p>사용자 가이드는 Data Format으로 부터 시작합니다. NetCDF 포맷만 지원한다고 하며 그 형태는 다음과 같습니다.</p>
-<pre><code>Example1 Feature1:Feature2:Feature3  
-Example2 Feature5:Feature2:Feature4  
-Example3 Feature6:Feature7:Feature8
-</code></pre><p><a href="https://en.wikipedia.org/wiki/NetCDF" title="https://en.wikipedia.org/wiki/NetCDF" target="_blank" rel="external"><strong>NetCDF</strong><br>_NetCDF ( Network Common Data Form) is a set of software libraries and self-describing, machine-independent data formats…_en.wikipedia.org</a><a href="https://en.wikipedia.org/wiki/NetCDF" target="_blank" rel="external"></a></p>
-<p>데이타 포맷과 달리 레이어 포맷은 JSON을 통해 인풋 아웃풋이 결정됩니다</p>
-<pre><code>{  
-&quot;Version&quot; : 0.8,  
-&quot;Name&quot; : &quot;2 Hidden Layer&quot;,  
-&quot;Kind&quot; : &quot;FeedForward&quot;,   
-
-&quot;ShuffleIndices&quot; : false,  
-
-
-&quot;ScaledMarginalCrossEntropy&quot; : {  
-&quot;oneTarget&quot; : 1.0,  
-&quot;zeroTarget&quot; : 0.0,  
-&quot;oneScale&quot; : 1.0,  
-&quot;zeroScale&quot; : 1.0  
-},  
-&quot;Layers&quot; : \[  
-{ &quot;Name&quot; : &quot;Input&quot;, &quot;Kind&quot; : &quot;Input&quot;, &quot;N&quot; : &quot;auto&quot;, &quot;DataSet&quot; : &quot;input&quot;, &quot;Sparse&quot; : true },  
-{ &quot;Name&quot; : &quot;Hidden1&quot;, &quot;Kind&quot; : &quot;Hidden&quot;, &quot;Type&quot; : &quot;FullyConnected&quot;, &quot;Source&quot; : &quot;Input&quot;, &quot;N&quot; : 1024, &quot;Activation&quot; : &quot;Relu&quot;, &quot;Sparse&quot; : false, &quot;pDropout&quot; : 0.5, &quot;WeightInit&quot; : { &quot;Scheme&quot; : &quot;Gaussian&quot;, &quot;Scale&quot; : 0.01 } },  
-{ &quot;Name&quot; : &quot;Hidden2&quot;, &quot;Kind&quot; : &quot;Hidden&quot;, &quot;Type&quot; : &quot;FullyConnected&quot;, &quot;Source&quot; : \[&quot;Hidden1&quot;\], &quot;N&quot; : 1024, &quot;Activation&quot; : &quot;Relu&quot;, &quot;Sparse&quot; : false, &quot;pDropout&quot; : 0.5, &quot;WeightInit&quot; : { &quot;Scheme&quot; : &quot;Gaussian&quot;, &quot;Scale&quot; : 0.01 } },   
-{ &quot;Name&quot; : &quot;Output&quot;, &quot;Kind&quot; : &quot;Output&quot;, &quot;Type&quot; : &quot;FullyConnected&quot;, &quot;DataSet&quot; : &quot;output&quot;, &quot;N&quot; : &quot;auto&quot;, &quot;Activation&quot; : &quot;Sigmoid&quot;, &quot;Sparse&quot; : true , &quot;WeightInit&quot; : { &quot;Scheme&quot; : &quot;Gaussian&quot;, &quot;Scale&quot; : 0.01, &quot;Bias&quot; : -10.2 }}  
-\],  
-
-&quot;ErrorFunction&quot; : &quot;ScaledMarginalCrossEntropy&quot;  
-}
-</code></pre><p>필드를 보시면 아시겠지만 다른 여타 딥러닝 레이어 처럼</p>
-<p>input, hidden layer, output 이렇게 세가지 중요한 factor들을 가지고 있습니다.</p>
-<p>관련된 예제들도 같은 레파지토리들을 통해 확인해 볼 수 있습니다.</p>
-<p><a href="https://github.com/amznlabs/amazon-dsstne/blob/master/docs/getting_started/examples.md" title="https://github.com/amznlabs/amazon-dsstne/blob/master/docs/getting_started/examples.md" target="_blank" rel="external"><strong>amznlabs/amazon-dsstne</strong><br>_After you have followed setup we should be able to start neural network modeling using DSSTNE. As with any modeling we…_github.com</a><a href="https://github.com/amznlabs/amazon-dsstne/blob/master/docs/getting_started/examples.md" target="_blank" rel="external"></a></p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/72fcd6334a25" target="_blank" rel="external">May 12, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+        <p>Numpy를 사용하는 건 맞구요. 저장하는 것은 hash binary를 이용해서 비교하네요. echoprint가 generation된 코드를 이용하는 거랑 비슷한 방식인거 같아요.</p>
+<p><a href="http://willdrevo.com/fingerprinting-and-audio-recognition-with-python/" title="http://willdrevo.com/fingerprinting-and-audio-recognition-with-python/" target="_blank" rel="external"><strong>Audio Fingerprinting with Python and Numpy</strong><br>_The first day I tried out Shazam, I was blown away. Next to GPS and surviving the fall down a flight of stairs, being…_willdrevo.com</a><a href="http://willdrevo.com/fingerprinting-and-audio-recognition-with-python/" target="_blank" rel="external"></a></p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/3a47fba54a1e" target="_blank" rel="external">May 19, 2016</a>.</p>
+<p>Exported from <a href="https://medium.co" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
     </div>
@@ -214,7 +171,7 @@ Example3 Feature6:Feature7:Feature8
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-05-12 23:15:00]Scala-native"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-05-19 22:11:45]Dejavu"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -222,7 +179,7 @@ Example3 Feature6:Feature7:Feature8
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/05/12/[2016-05-12 23:15:00]Scala-native/">Scala-native</a>
+      <a class="article-title" href="/2016/05/19/[2016-05-19 22:11:45]Dejavu/">Dejavu</a>
     </h1>
   
 
@@ -230,8 +187,8 @@ Example3 Feature6:Feature7:Feature8
     
     <div class="article-meta">
       
-	<a href="/2016/05/12/[2016-05-12 23:15:00]Scala-native/" class="article-date">
-	  <time datetime="2016-05-12T14:15:00.000Z" itemprop="datePublished">5월 12, 2016</time>
+	<a href="/2016/05/19/[2016-05-19 22:11:45]Dejavu/" class="article-date">
+	  <time datetime="2016-05-19T13:11:45.000Z" itemprop="datePublished">5월 19, 2016</time>
 	</a>
 
        
@@ -239,36 +196,84 @@ Example3 Feature6:Feature7:Feature8
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Scala-native"><a href="#Scala-native" class="headerlink" title="Scala-native"></a>Scala-native</h3><p><img src="https://cdn-images-1.medium.com/max/1600/1*jTIfe8oR64pXF33JOpAu-g.png" alt="">클래시 로얄 아이콘은 민망합니다.</p>
-<p>밤새 핫한 프로젝트들이 많이 올라왔습니다. 1등은 facebook의 프로젝트가 했을에도 불구하고 오늘은 약간의 사명감을 가지고 scala-native를 리뷰하겠습니다.</p>
-<p>2016/05/12 Editor’s choice</p>
-<p><a href="https://github.com/scala-native/scala-native" title="https://github.com/scala-native/scala-native" target="_blank" rel="external"><strong>scala-native/scala-native</strong><br>_scala-native - Your favourite language gets closer to bare metal._github.com</a><a href="https://github.com/scala-native/scala-native" target="_blank" rel="external"></a></p>
-<p>LLVM 기반으로 컴파일 하기 때문에 엄청나게 빠르다! 라고 강조하고 있습니다. 이제 JIT를 쓰지 않는다는 것은 JVM안녕으로 보면 되겠네요.</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*d-U8OcP90goslw8Ai3J7KA.png" alt=""></p>
-<p>JVM은 모두가 공유하되 여러가지 언어가 올라갈 것이라던 사람들에게 어떻게 보면 낯선 이야기 이지만 성능을 위한 결정이니 좋다고 봅니다.</p>
-<p>그리고 실제 소스는 여러 가지 이런 생각들을 많이 의식했는지 Comparison to JVM이 많이 나옵니다.</p>
+        <p><img src="/images/1*9kuN-oaUgKiUWDmJ5ktJRA.png" alt=""></p>
+<p>오늘 소개해 드릴 프로젝트는 Dejavu입니다. Acoustic Fingerprinting용 오픈 소스인데요. 이 Acoustic Fingerprinting은 Shazam 이라던지 Spotify처럼 음악을 듣고는 어떤 음악인지 알아내는 알고리즘을 가지고 있습니다.</p>
+<p>2016/05/19 Editor’s choice</p>
+<p><a href="https://github.com/worldveil/dejavu" title="https://github.com/worldveil/dejavu" target="_blank" rel="external"><strong>worldveil/dejavu</strong><br>_dejavu - Audio fingerprinting and recognition in Python_github.com</a><a href="https://github.com/worldveil/dejavu" target="_blank" rel="external"></a></p>
 <hr>
-<h4 id="설치하기"><a href="#설치하기" class="headerlink" title="설치하기"></a>설치하기</h4><p>아직 sbt-native-cli 뭐 이런 녀석이 존재하는 것은 아닌듯 싶습니다.</p>
-<p>Mac을 새로 구입해서(데헷) 누구나 하는</p>
-<pre><code>$brew install sbt
-</code></pre><p>로 scala build tool을 다운 받습니다.</p>
-<p>왜냐 하면</p>
-<pre><code>$git clone [https://github.com/scala-native/scala-native.git][anchor2]
-</code></pre><p>받아 보시면, sbt 로 빌드파일이 짜여져 있기 때문입니다.</p>
-<p>sbt 를 실행하고</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*rzVOQcWSWBj1TDT5bZPp9g.png" alt="">여기서 10분을 기다릴 줄이야</p>
-<p>디펜던시를 모두 성공적으로 설치하고 다시 빌드를 돌리면</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*tabaRG2x7-gI4_G4ipTijQ.png" alt="">이야…뭐지? 어쩌라고 어.</p>
-<p>이런 썰렁한 콘솔이 나옵니다.</p>
-<h4 id="아키텍쳐"><a href="#아키텍쳐" class="headerlink" title="아키텍쳐"></a>아키텍쳐</h4><p>scala-native 아키텍처 컨셉은 다음과 같습니다.</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*RFj19vLUIhc99vZAjSgNew.png" alt="">아 간단하다</p>
-<p>스칼라 파일을 입력으로 받아서 ll파일이 나온다니. 요?</p>
-<p>관련 PT는 아래 주소를 찾아가면 나옵니다.</p>
-<p><a href="https://github.com/densh/talks/blob/517b20c30dd4aaf390785039cdd002f623eaa91e/2016-05-11-scala-goes-native.pdf" target="_blank" rel="external">https://github.com/densh/talks/blob/517b20c30dd4aaf390785039cdd002f623eaa91e/2016-05-11-scala-goes-native.pdf</a></p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*JkSBgNt2LXWza96dyFyzcg.png" alt=""></p>
-<p>프론트엔드 관련 내용도 들어 있는데 감흥이 느껴지는 슬라이드는 아니네요.</p>
-<p>아직은 조금 두고봐야 하는 상황이라는 생각이 듭니다. 뭔가 훌륭하게 비교해 볼 수 있는 벤치마크도 없지만 많은 개발자들이 더 훌륭한 상황들을 만들어 낼 것 같습니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/7868234d5bd7" target="_blank" rel="external">May 12, 2016</a>.</p>
+<h4 id="Acoustic-fingerprinting-이란"><a href="#Acoustic-fingerprinting-이란" class="headerlink" title="Acoustic fingerprinting 이란?"></a>Acoustic fingerprinting 이란?</h4><p><a href="https://en.wikipedia.org/wiki/Acoustic_fingerprint" title="https://en.wikipedia.org/wiki/Acoustic_fingerprint" target="_blank" rel="external"><strong>Acoustic fingerprint - Wikipedia, the free encyclopedia</strong><br>_Practical uses of acoustic fingerprinting include identifying songs, melodies, tunes, or advertisements; sound effect…_en.wikipedia.org</a><a href="https://en.wikipedia.org/wiki/Acoustic_fingerprint" target="_blank" rel="external"></a></p>
+<p>네, 위키가 영어라서 죄송합니다.</p>
+<p>원래 이 쪽 분야에서 유명한 프로젝트는 echoprint 라는 오픈 소스입니다. 안드로이드용으로 어떻게 만들 것인지에 대한 알고리즘까지 NDK 용으로 만들어져 있습니다.</p>
+<p><a href="https://github.com/echonest/" title="https://github.com/echonest/" target="_blank" rel="external"><strong>The Echo Nest</strong><br>_GitHub is where people build software. More than 14 million people use GitHub to discover, fork, and contribute to over…_github.com</a><a href="https://github.com/echonest/" target="_blank" rel="external"></a></p>
+<p>이렇게 유명한 오픈소스가 있지만 dejavu를 소개하는 것은 mysql 데이타베이스에 입력하고 쿼리를 통해 가져오는 방식이라 독특함이 있어서 입니다.</p>
+<hr>
+<h4 id="설치를-해-봅시다"><a href="#설치를-해-봅시다" class="headerlink" title="설치를 해 봅시다"></a>설치를 해 봅시다</h4><p><a href="https://github.com/worldveil/dejavu/blob/master/INSTALLATION.md" title="https://github.com/worldveil/dejavu/blob/master/INSTALLATION.md" target="_blank" rel="external"><strong>worldveil/dejavu</strong><br>_dejavu - Audio fingerprinting and recognition in Python_github.com</a><a href="https://github.com/worldveil/dejavu/blob/master/INSTALLATION.md" target="_blank" rel="external"></a></p>
+<p>설치 가이드가 있어서 죽 살펴보고는 리눅스가 더 쉽겠네 라고 덤볐다가 yum, apt-get 최신 레파지토리에서는 제대로 찾아지지 않아서 (제 실력 부족일 수 있습니다.)</p>
+<p>Mac으로 다시 복귀했습니다.</p>
+<p>Python은 2.7 기준으로 작업을 했습니다.</p>
+<pre><code>brew install portaudio  
+brew install ffmpeg  
+
+sudo easy\_install pyaudio  
+sudo easy\_install pydub  
+sudo easy\_install numpy  
+sudo easy\_install scipy  
+sudo easy\_install matplotlib  
+sudo easy\_install pip  
+
+sudo pip install MySQL-python  
+
+sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/lib/libmysqlclient.18.dylib
+</code></pre><p>짧은 몇줄 밖에 안되지만 마지막 두줄은 그냥 되지 않습니다.</p>
+<p>mysql을 기본적으로 깔아야 하고 (이미 깔려 있을 테지만요)</p>
+<p>마지막 줄은 Mac OS X -El Capitan에서는</p>
+<p><a href="http://macnews.tistory.com/3408" title="http://macnews.tistory.com/3408" target="_blank" rel="external"><strong>OS X 10.11 엘 캐피탄에 도입된 새로운 보안체계 ‘루트리스(Rootless)’를 끄고 켜는 방법</strong><br>_업데이트 (2015/12): OS X 엘 캐피탄이 업데이트 되면서 csrutil status 명령어와 관련해 변경사항이 있었습니다. 이번 WWDC가 개최되기 전부터 새로운 보안 기능이 애플의 두 운영체제에 도입될…_macnews.tistory.com</a><a href="http://macnews.tistory.com/3408" target="_blank" rel="external"></a></p>
+<p>여기를 참조하세요.</p>
+<hr>
+<h4 id="실행을-해-봅시다"><a href="#실행을-해-봅시다" class="headerlink" title="실행을 해 봅시다."></a>실행을 해 봅시다.</h4><p>python2. 7을 기준으로 실행을 합니다.</p>
+<pre><code>\&gt;\&gt;\&gt; from dejavu import Dejavu  
+\&gt;\&gt;\&gt; config = {  
+... &quot;database&quot;: {  
+... &quot;host&quot;: &quot;127.0.0.1&quot;,  
+... &quot;user&quot;: &quot;root&quot;,  
+... &quot;passwd&quot;: &lt;password above\&gt;,   
+... &quot;db&quot;: &lt;name of the database you created above\&gt;,  
+... }  
+... }  
+\&gt;\&gt;\&gt; djv = Dejavu(config)
+</code></pre><p>이 소스는 Mysql 에 접근을 하는 소스입니다.</p>
+<p>설치를 하고</p>
+<pre><code>$python example.py
+</code></pre><p>를 실행시켜 주면 dejavu 데이타베이스 및에 fingerprints 와 songs 테이블이 생깁니다.</p>
+<pre><code>+-----------------+
+
+|Tables\_in\_dejavu |  
++-----------------+
+
+|fingerprints |
+
+|songs |  
++-----------------+
+</code></pre><p>안에는 아래와 같이 데이타들이 들어 있습니다.</p>
+<p><img src="/images/1*jdVBB8s_7RXVCwgd49Ug4Q.pn" alt=""></p>
+<p>대강 Database 에 어떻게 저장하고 비교를 하는지 알것 같습니다.</p>
+<p>더 자세한 설명은 아래의 링크를 참조하시면 될 것 같습니다.</p>
+<p><a href="http://willdrevo.com/fingerprinting-and-audio-recognition-with-python/" title="http://willdrevo.com/fingerprinting-and-audio-recognition-with-python/" target="_blank" rel="external"><strong>Audio Fingerprinting with Python and Numpy</strong><br>_The first day I tried out Shazam, I was blown away. Next to GPS and surviving the fall down a flight of stairs, being…_willdrevo.com</a><a href="http://willdrevo.com/fingerprinting-and-audio-recognition-with-python/" target="_blank" rel="external"></a></p>
+<hr>
+<h4 id="그러면-앱을-어떻게-만들면-좋을까요"><a href="#그러면-앱을-어떻게-만들면-좋을까요" class="headerlink" title="그러면 앱을 어떻게 만들면 좋을까요?"></a>그러면 앱을 어떻게 만들면 좋을까요?</h4><p>파일 Recognizer를 한번 실행해 보았습니다.</p>
+<pre><code>\&gt;\&gt;\&gt; from dejavu.recognize import FileRecognizer  
+\&gt;\&gt;\&gt; song = djv.recognize(FileRecognizer, &quot;./wav/18000.wav&quot;)  
+\&gt;\&gt;\&gt; print song  
+{&apos;song\_id&apos;: 6, &apos;song\_name&apos;: &apos;18000&apos;, &apos;file\_sha1&apos;: &apos;AF3C75663CC86AD857E05E79EE8A028678D85359&apos;, &apos;confidence&apos;: 19, &apos;offset\_seconds&apos;: 0.0, &apos;match\_time&apos;: 1.4198949337005615, &apos;offset&apos;: 0}
+</code></pre><p>아래와 같이 잘 인식 합니다.</p>
+<p>wav파일들을 잘만 만들어서 스피커를 통해 아웃풋을 통해 들어오는 음악을 잘 만진다면 spotify 같은 앱도 만들 수 있겠군요. ( 오 이 근자감)</p>
+<hr>
+<h4 id="바로-되는-건-없어요"><a href="#바로-되는-건-없어요" class="headerlink" title="바로 되는 건 없어요?"></a>바로 되는 건 없어요?</h4><p>있습니다. 눈썰미가 있으신 분은 Recognizer를 보고 예감하셨을 텐데요. MicrophoneRecognizer 라는 녀석이 있어서 실행을 시켜 보았습니다.</p>
+<pre><code>\&gt;\&gt;\&gt; from dejavu.recognize import MicrophoneRecognizer  
+\&gt;\&gt;\&gt; song = djv.recognize(MicrophoneRecognizer, seconds=10)
+</code></pre><p>이상하게 잘 작동하지 못하는 걸 보니 화이트 노이즈가 많아서 그런 듯 합니다.</p>
+<p>이 노이즈들을 제거하는 내용은 다음번에 알아보겠습니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/463e28f71f62" target="_blank" rel="external">May 19, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -293,7 +298,7 @@ Example3 Feature6:Feature7:Feature8
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/56/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/55/">55</a><a class="page-number" href="/page/56/">56</a><span class="page-number current">57</span><a class="page-number" href="/page/58/">58</a><a class="page-number" href="/page/59/">59</a><span class="space">&hellip;</span><a class="page-number" href="/page/96/">96</a><a class="extend next" rel="next" href="/page/58/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/56/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/55/">55</a><a class="page-number" href="/page/56/">56</a><span class="page-number current">57</span><a class="page-number" href="/page/58/">58</a><a class="page-number" href="/page/59/">59</a><span class="space">&hellip;</span><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/58/">Next</a>
   </nav>
 
 </section>
@@ -425,7 +430,7 @@ Example3 Feature6:Feature7:Feature8
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">182</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">191</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -445,7 +450,7 @@ Example3 Feature6:Feature7:Feature8
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">9월 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">35</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

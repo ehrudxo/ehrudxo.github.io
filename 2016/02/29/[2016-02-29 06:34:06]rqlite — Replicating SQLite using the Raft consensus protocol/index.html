@@ -11,20 +11,20 @@
   
   
   
-  <meta name="description" content="rqlite — Replicating SQLite using the Raft consensus protocol분산환경을 위한 Database 복제에 대해서는 여러번 들어보셨을 거라고 생각합니다. rqlite는 sqlite 를 분산 환경에서 복제할 수 있게 만들어 주는 프로젝트입니다. sqlite를 그런 이유에서 쓸 만한 이유들이 그렇게 많은지는 모르겠습니다">
+  <meta name="description" content="분산환경을 위한 Database 복제에 대해서는 여러번 들어보셨을 거라고 생각합니다. rqlite는 sqlite 를 분산 환경에서 복제할 수 있게 만들어 주는 프로젝트입니다. sqlite를 그런 이유에서 쓸 만한 이유들이 그렇게 많은지는 모르겠습니다만 한번 들여다 보도록 하겠습니다. 2016/02/29 today’s best ( 357 ★)  일단 cons">
 <meta name="keywords" content="github, github-trend, tech-trend">
 <meta property="og:type" content="article">
 <meta property="og:title" content="rqlite — Replicating SQLite using the Raft consensus protocol">
 <meta property="og:url" content="http://keen.devpools.kr/2016/02/29/[2016-02-29 06:34:06]rqlite — Replicating SQLite using the Raft consensus protocol/index.html">
 <meta property="og:site_name" content="keen blog">
-<meta property="og:description" content="rqlite — Replicating SQLite using the Raft consensus protocol분산환경을 위한 Database 복제에 대해서는 여러번 들어보셨을 거라고 생각합니다. rqlite는 sqlite 를 분산 환경에서 복제할 수 있게 만들어 주는 프로젝트입니다. sqlite를 그런 이유에서 쓸 만한 이유들이 그렇게 많은지는 모르겠습니다">
+<meta property="og:description" content="분산환경을 위한 Database 복제에 대해서는 여러번 들어보셨을 거라고 생각합니다. rqlite는 sqlite 를 분산 환경에서 복제할 수 있게 만들어 주는 프로젝트입니다. sqlite를 그런 이유에서 쓸 만한 이유들이 그렇게 많은지는 모르겠습니다만 한번 들여다 보도록 하겠습니다. 2016/02/29 today’s best ( 357 ★)  일단 cons">
 <meta property="og:locale" content="ko">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*uvCAYCFZhR9XXGVNGWa3QQ.png">
-<meta property="og:updated_time" content="2017-09-03T14:05:02.000Z">
+<meta property="og:image" content="http://keen.devpools.kr/images/1*uvCAYCFZhR9XXGVNGWa3QQ.pn">
+<meta property="og:updated_time" content="2017-09-04T09:16:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="rqlite — Replicating SQLite using the Raft consensus protocol">
-<meta name="twitter:description" content="rqlite — Replicating SQLite using the Raft consensus protocol분산환경을 위한 Database 복제에 대해서는 여러번 들어보셨을 거라고 생각합니다. rqlite는 sqlite 를 분산 환경에서 복제할 수 있게 만들어 주는 프로젝트입니다. sqlite를 그런 이유에서 쓸 만한 이유들이 그렇게 많은지는 모르겠습니다">
-<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*uvCAYCFZhR9XXGVNGWa3QQ.png">
+<meta name="twitter:description" content="분산환경을 위한 Database 복제에 대해서는 여러번 들어보셨을 거라고 생각합니다. rqlite는 sqlite 를 분산 환경에서 복제할 수 있게 만들어 주는 프로젝트입니다. sqlite를 그런 이유에서 쓸 만한 이유들이 그렇게 많은지는 모르겠습니다만 한번 들여다 보도록 하겠습니다. 2016/02/29 today’s best ( 357 ★)  일단 cons">
+<meta name="twitter:image" content="http://keen.devpools.kr/images/1*uvCAYCFZhR9XXGVNGWa3QQ.pn">
   
     <link rel="alternate" href="/atom.xml" title="keen blog" type="application/atom+xml">
   
@@ -156,9 +156,9 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="rqlite-—-Replicating-SQLite-using-the-Raft-consensus-protocol"><a href="#rqlite-—-Replicating-SQLite-using-the-Raft-consensus-protocol" class="headerlink" title="rqlite — Replicating SQLite using the Raft consensus protocol"></a>rqlite — Replicating SQLite using the Raft consensus protocol</h3><p>분산환경을 위한 Database 복제에 대해서는 여러번 들어보셨을 거라고 생각합니다. rqlite는 sqlite 를 분산 환경에서 복제할 수 있게 만들어 주는 프로젝트입니다. sqlite를 그런 이유에서 쓸 만한 이유들이 그렇게 많은지는 모르겠습니다만 한번 들여다 보도록 하겠습니다.</p>
+        <p>분산환경을 위한 Database 복제에 대해서는 여러번 들어보셨을 거라고 생각합니다. rqlite는 sqlite 를 분산 환경에서 복제할 수 있게 만들어 주는 프로젝트입니다. sqlite를 그런 이유에서 쓸 만한 이유들이 그렇게 많은지는 모르겠습니다만 한번 들여다 보도록 하겠습니다.</p>
 <p>2016/02/29 today’s best ( 357 ★)</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*uvCAYCFZhR9XXGVNGWa3QQ.png" alt=""></p>
+<p><img src="/images/1*uvCAYCFZhR9XXGVNGWa3QQ.pn" alt=""></p>
 <p>일단 consensus protocol 에 대해서 알아야 합니다.</p>
 <p><a href="https://en.wikipedia.org/wiki/Consensus_%28computer_science%29" title="https://en.wikipedia.org/wiki/Consensus_(computer_science)" target="_blank" rel="external"><strong>Consensus (computer science)</strong><br>_A fundamental problem in distributed computing and multi-agent systems is to achieve overall system reliability in the…_en.wikipedia.org</a><a href="https://en.wikipedia.org/wiki/Consensus_%28computer_science%29" target="_blank" rel="external"></a></p>
 <p>consensus 알고리즘은 멀티 에이전트와 분산 컴퓨팅 환경에서 시스템 오류를 해결할 수 있는 알고리즘입니다. leader 를 맡는 에이전트 하나를 기반으로 state machine 복제와 atomic broadcasting 에 대한 내용이 중점적인 골자를 이루고 있습니다. (응?)</p>
@@ -233,9 +233,9 @@ $GOPATH/bin/rqlited -http localhost:4005 -raft :4006 -join :4001 ~/node.3
     </a>
   
   
-    <a href="/2016/02/27/[2016-02-27 15:31:13] -github-trend- GDOM/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/02/27/[2016-02-27 15:31:13][github-trend]GDOM/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">-github-trend- GDOM</div>
+      <div class="article-nav-title">[github-trend]GDOM</div>
     </a>
   
 </nav>
@@ -249,7 +249,7 @@ $GOPATH/bin/rqlited -http localhost:4005 -raft :4006 -join :4001 ~/node.3
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-      <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#rqlite-—-Replicating-SQLite-using-the-Raft-consensus-protocol"><span class="nav-number">1.</span> <span class="nav-text">rqlite — Replicating SQLite using the Raft consensus protocol</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-설치-및-실행"><span class="nav-number">1.1.</span> <span class="nav-text">1- 설치 및 실행</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-클러스터-만들기"><span class="nav-number">1.2.</span> <span class="nav-text">2- 클러스터 만들기</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-인사이트"><span class="nav-number">1.3.</span> <span class="nav-text">3- 인사이트</span></a></li></ol></li></ol>
+      <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-설치-및-실행"><span class="nav-number">1.</span> <span class="nav-text">1- 설치 및 실행</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-클러스터-만들기"><span class="nav-number">2.</span> <span class="nav-text">2- 클러스터 만들기</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-인사이트"><span class="nav-number">3.</span> <span class="nav-text">3- 인사이트</span></a></li></ol>
     
     </div>
   </aside>

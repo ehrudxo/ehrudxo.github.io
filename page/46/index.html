@@ -123,7 +123,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-06-04 00:54:26]react-infinite-calendar"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-06-09 19:00:21]megaboilerplate"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +131,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/06/04/[2016-06-04 00:54:26]react-infinite-calendar/">react-infinite-calendar</a>
+      <a class="article-title" href="/2016/06/09/[2016-06-09 19:00:21]megaboilerplate/">megaboilerplate</a>
     </h1>
   
 
@@ -139,8 +139,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/06/04/[2016-06-04 00:54:26]react-infinite-calendar/" class="article-date">
-	  <time datetime="2016-06-03T15:54:26.000Z" itemprop="datePublished">6월 4, 2016</time>
+	<a href="/2016/06/09/[2016-06-09 19:00:21]megaboilerplate/" class="article-date">
+	  <time datetime="2016-06-09T10:00:21.000Z" itemprop="datePublished">6월 9, 2016</time>
 	</a>
 
        
@@ -148,40 +148,59 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="react-infinite-calendar"><a href="#react-infinite-calendar" class="headerlink" title="react-infinite-calendar"></a>react-infinite-calendar</h3><p><img src="https://cdn-images-1.medium.com/max/2000/1*R9O5awF-PH8OBHcM6ZDYmg.jpeg" alt="">calendar</p>
-<p>언제나 이쁜 calendar 앱은 개발자들에게 인기가 좋습니다. 게다가 코드짜기가 더 쉽다고 하면 더할 나위 없을 거 같습니다.</p>
-<p>React 컴포넌트로 만든 무한하게 스크롤 되는 Calendar 앱입니다.</p>
-<p>2016/06/03 Editor’s choice</p>
-<p><a href="https://github.com/clauderic/react-infinite-calendar" title="https://github.com/clauderic/react-infinite-calendar" target="_blank" rel="external"><strong>clauderic/react-infinite-calendar</strong><br>_react-infinite-calendar - ✨ Infinite scrolling date-picker built with React, with localization, themes, keyboard…_github.com</a><a href="https://github.com/clauderic/react-infinite-calendar" target="_blank" rel="external"></a></p>
-<p>이런 디자인마저 잘하는 개발자 정말 부럽습니다.</p>
+        <p><img src="/images/1*9hd2zEsMImq0JR263UgPEA.png" alt="">끝판왕</p>
+<p>끝판왕이라는 말은 매우 진부하죠. 이젠?</p>
+<p>넘치고 넘치는 웹 개발 boilerplate 뭘 써야 될지 궁금하셨을 텐데요. 이런 고민을 한방에 종결시켜 줄 가능성이 보이는 프로젝트가 나타났습니다.</p>
+<p><a href="https://github.com/sahat/megaboilerplate" title="https://github.com/sahat/megaboilerplate" target="_blank" rel="external"><strong>sahat/megaboilerplate</strong><br>_megaboilerplate - Handcrafted starter projects, optimized for simplicity and ease of use._github.com</a><a href="https://github.com/sahat/megaboilerplate" target="_blank" rel="external"></a></p>
+<h4 id="왜-일케-호들갑이셩"><a href="#왜-일케-호들갑이셩" class="headerlink" title="왜 일케 호들갑이셩"></a>왜 일케 호들갑이셩</h4><p>그죠. 좀 호들갑이 심했습니다. 한번 보고 생각해 보자고 일단 움짤을 만들어 봤습니다.</p>
+<p><img src="/images/1*JoTk4L5vzKYAmEbFqiANWQ.gif" alt=""></p>
+<p>네, 저렇게 내가 쓰고 싶은 레이어별 프레임워크들을 선택하고 나니 megaboilerplate-app이라는 이름의 압축파일이 땋하고 떨어지고, 압축을 풀고 atom으로 열어보니</p>
+<p><img src="/images/1*jcu4CVJF9mz3-Np4nb_W2g.png" alt=""></p>
+<p>어머, 친절하게 웹 팩 설정도 왠걸 완벽하게 나오네요.</p>
+<p>며칠전에 나온 reactpack을 리뷰할까 하다가 이걸 먼저 리뷰하게 됩니다.</p>
+<p><a href="https://github.com/olahol/reactpack" title="https://github.com/olahol/reactpack" target="_blank" rel="external"><strong>olahol/reactpack</strong><br>_reactpack - :package: build your react apps with one command and one `npm i`._github.com</a><a href="https://github.com/olahol/reactpack" target="_blank" rel="external"></a></p>
 <hr>
-<h4 id="설치하기"><a href="#설치하기" class="headerlink" title="설치하기"></a>설치하기</h4><pre><code>$ npm install react-infinite-calendar --save
-</code></pre><p>React는 일반적으로는 npm install을 할 일이 많죠?</p>
-<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;react-infinite-calendar/styles.css&quot;\&gt;  
-&lt;script src=&quot;react-infinite-calendar/dist/umd/react-infinite-calendar.js&quot;\&gt;&lt;/script\&gt;
-</code></pre><p>umd 스타일의 링크도 가능합니다.</p>
-<h4 id="사용해-보기"><a href="#사용해-보기" class="headerlink" title="사용해 보기"></a>사용해 보기</h4><pre><code>import InfiniteCalendar from &apos;react-infinite-calendar&apos;;  
-import &apos;react-infinite-calendar/styles.css&apos;;  
-.... 중략  
-var today = new Date();  
-var minDate = Number(new Date()) - (24\*60\*60\*1000) \* 7;  
+<h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><pre><code>$npm install
+</code></pre><p>을 통해 dependency 가 걸려있는 라이브러리들을 내려받고는</p>
+<pre><code>$node server
+</code></pre><p>를 실행시키면 에러가 납니다. lodash는 공통적으로 package.json파일에 누락되어 있네요.</p>
+<p>.env파일의 database만 설정해 주고 다시</p>
+<pre><code>$node server
+</code></pre><p><img src="/images/1*FLuS2KGtdgcB6uOILeq3PA.png" alt="">기대보다 좋아요!</p>
+<p>만들어진 소스 진입점은</p>
+<pre><code>import &apos;whatwg-fetch&apos;;  
+import React from &apos;react&apos;;  
+import ReactDOM from &apos;react-dom&apos;;  
+import { Provider } from &apos;react-redux&apos;  
+import { Router, browserHistory } from &apos;react-router&apos;;  
+import configureStore from &apos;./store/configureStore&apos;;  
+import getRoutes from &apos;./routes&apos;;
 
-render(  
-&lt;InfiniteCalendar  
-width={400}  
-height={600}  
-selectedDate={today}  
-disabledDays={\[0,6\]}  
-minDate={minDate}  
-keyboardSupport={true}  
-/\&gt;,  
-document.getElementById(&apos;root&apos;)  
+const store = configureStore(window.INITIAL\_STATE);
+
+ReactDOM.render(  
+&lt;Provider store={store}\&gt;  
+&lt;Router history={browserHistory} routes={getRoutes(store)}/\&gt;  
+&lt;/Provider\&gt;,  
+document.getElementById(&apos;app&apos;)  
 );
-</code></pre><p>와 같이 하면</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*i1eK6Q-DT4h9AAIanSRwkw.png" alt="">이쁘죵?</p>
-<p>와 같은 이쁜 화면이 나타납니다.소스는 위와 같습니다.</p>
-<p>jsFiddle 쪽은 약간 지금 설정 문제가 있는 듯 합니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/c52aa37f005c" target="_blank" rel="external">June 3, 2016</a>.</p>
+</code></pre><p>redux, router,fetch등 React 가 minimal로 가져야 할 것들을 훌륭하게 갖고 있습니다.</p>
+<p>서버쪽 라우팅은 아래와 같이 express 가 지원.</p>
+<p><img src="/images/1*_kAzHMkVfSZdT9ZCZEumBg.pn" alt=""></p>
+<p>node DB모듈은 knex를 쓰고 있습니다.</p>
+<pre><code>var config = require(&apos;../knexfile&apos;);  
+var knex = require(&apos;knex&apos;)(config);  
+var bookshelf = require(&apos;bookshelf&apos;)(knex);
+
+bookshelf.plugin(&apos;virtuals&apos;);
+
+knex.migrate.latest();
+
+module.exports = bookshelf;
+</code></pre><hr>
+<p>mega라는 말을 쓰길래 덕후거나 허풍이 심한 프로젝트 아닐까 하고 의심의 눈을 가지고 프로젝트를 들여다 보니 이거 정말 볼매였습니다.</p>
+<p>lodash 관련해서는 PU 날리기 좋은 타이밍인데요!</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/135f6bd1fd28" target="_blank" rel="external">June 9, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -202,7 +221,7 @@ document.getElementById(&apos;root&apos;)
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-06-02 23:56:01]One Click to Be Pro"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-06-08 22:00:46]swift-algorithm-club"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -210,7 +229,7 @@ document.getElementById(&apos;root&apos;)
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/06/02/[2016-06-02 23:56:01]One Click to Be Pro/">One Click to Be Pro</a>
+      <a class="article-title" href="/2016/06/08/[2016-06-08 22:00:46]swift-algorithm-club/">swift-algorithm-club</a>
     </h1>
   
 
@@ -218,8 +237,8 @@ document.getElementById(&apos;root&apos;)
     
     <div class="article-meta">
       
-	<a href="/2016/06/02/[2016-06-02 23:56:01]One Click to Be Pro/" class="article-date">
-	  <time datetime="2016-06-02T14:56:01.000Z" itemprop="datePublished">6월 2, 2016</time>
+	<a href="/2016/06/08/[2016-06-08 22:00:46]swift-algorithm-club/" class="article-date">
+	  <time datetime="2016-06-08T13:00:46.000Z" itemprop="datePublished">6월 8, 2016</time>
 	</a>
 
        
@@ -227,32 +246,27 @@ document.getElementById(&apos;root&apos;)
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="One-Click-to-Be-Pro"><a href="#One-Click-to-Be-Pro" class="headerlink" title="One Click to Be Pro"></a>One Click to Be Pro</h3><p><img src="https://cdn-images-1.medium.com/max/1600/1*PWVwZ76tctzH-LAKAw6PYg.jpeg" alt=""></p>
-<p>이런 당당함이 좋습니다.</p>
-<p>Github 에는 여러가지 종류의 프로젝트가 많이 올라 옵니다만, 좋은 링크들을 모아놓은 프로젝트들이 종종 많은 사람들의 star를 받고는 합니다.</p>
-<p>2016/06/02 Best Project</p>
-<p><a href="https://github.com/vic317yeh/One-Click-to-Be-Pro" title="https://github.com/vic317yeh/One-Click-to-Be-Pro" target="_blank" rel="external"><strong>vic317yeh/One-Click-to-Be-Pro</strong><br>_One-Click-to-Be-Pro - All you need is one link to become a pro in some area_github.com</a><a href="https://github.com/vic317yeh/One-Click-to-Be-Pro" target="_blank" rel="external"></a></p>
-<hr>
-<p>한번만 클릭하면 프로가 될 수 있는 링크라니 당돌하죠? 하지만 그 자신감 혹은 근자감은 사람이 은근히 믿어보고 싶게 만드는 매력이 있습니다.</p>
-<p>저도 조만간 한번 이런 자신감을 표출할 날이 있겠죠?</p>
-<hr>
-<p>각설하겠습니다.</p>
-<hr>
-<h4 id="확인들어갑니다"><a href="#확인들어갑니다" class="headerlink" title="확인들어갑니다."></a>확인들어갑니다.</h4><p>정말 볼만한 사이트들을 차려 놓았는지 확인해 보겠습니다.</p>
-<p><a href="http://courses.reactjsprogram.com/courses/reactjsfundamentals" title="http://courses.reactjsprogram.com/courses/reactjsfundamentals" target="_blank" rel="external"><strong>React.js Fundamentals: The best place to learn React.js and the React.js Ecosystem</strong><br>_The React.js Fundamentals course is the best place to start learning React.js and the React.js ecosystem_courses.reactjsprogram.com</a><a href="http://courses.reactjsprogram.com/courses/reactjsfundamentals" target="_blank" rel="external"></a></p>
-<p>ReactJs 관련되어 어떤 것들이 있는지 보고 있습니다.</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*wkV2J1Wdi1Y2jmy-oe7qeg.png" alt=""></p>
-<p>헐, 장난 아닌 컨텐츠들이 펼쳐지는군요.</p>
-<hr>
-<h4 id="편식하면-안되니까"><a href="#편식하면-안되니까" class="headerlink" title="편식하면 안되니까"></a>편식하면 안되니까</h4><p>하나만 더 살펴보겠습니다.</p>
-<p>디자인 쪽은</p>
-<p><a href="https://medium.com/p/5071be5f2e43" title="https://medium.com/p/5071be5f2e43" target="_blank" rel="external"><strong>Design Resources</strong><br>_Links and tools and things that might be useful. Last updated: 5.12.2016_medium.com</a><a href="https://medium.com/p/5071be5f2e43" target="_blank" rel="external"></a></p>
-<p>미디엄 내의 링크군요.</p>
-<p>디자인 리소스를 총망라해 놓은 페이지군요.</p>
-<hr>
-<h4 id="메타-메타-메타"><a href="#메타-메타-메타" class="headerlink" title="메타, 메타, 메타"></a>메타, 메타, 메타</h4><p>제가 올리고 있는 블로그 포스팅도 어쩌면 메타 성격이 강한데요, 웹의 강점이 이런 부분인 거 같습니다. 약간 github 의 강점도 저런 부분에 있는 거 같다는 생각도 강하게 드는군요.</p>
-<p>그나저나 Mac 에서 보던 미디엄 한글 폰트는 나쁘지 않았는데 윈도우즈에서는 왜 이렇게 안 이쁘게 보이는 걸까요?</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/21761cfdb6d2" target="_blank" rel="external">June 2, 2016</a>.</p>
+        <p><img src="/images/1*VZGhC_okm961AceOdIdsPw.png" alt=""></p>
+<p>swift로 구현하는 알고리즘!</p>
+<blockquote>
+<p>여기에 누구나 좋아하는 새로운 언어인 swift로 구현해 본 알고리즘 세트가 있습니다!</p>
+</blockquote>
+<p>라고 시작하고 있는 따끈 따끈한 프로젝트입니다.</p>
+<p>기본적으로 알고리즘 코드는 playground로 되어 있습니다.</p>
+<pre><code>$git clone [https://github.com/raywenderlich/swift-algorithm-club][anchor0]
+</code></pre><p>을 해서 내려 받고 나면</p>
+<p><img src="/images/1*VhmVFN8NTQVLFGVhTxa7Zg.png" alt=""></p>
+<p>와 같이 많은 양의 알고리즘 프로젝트가 나옵니다.</p>
+<h4 id="Tree를-한번-살펴보겠습니다"><a href="#Tree를-한번-살펴보겠습니다" class="headerlink" title="Tree를 한번 살펴보겠습니다."></a>Tree를 한번 살펴보겠습니다.</h4><pre><code>$cd Tree &amp; open Tree.swift
+</code></pre><p><img src="/images/1*LeYFzul50Magf5uE-wjZbw.png" alt=""></p>
+<p>playground가 있어서 너무 좋은 거 같네요.</p>
+<p>근데 소스 코드만 있다면 상당히 썰렁할 수 있겠죠?</p>
+<p><a href="https://github.com/raywenderlich/swift-algorithm-club/tree/master/Tree" title="https://github.com/raywenderlich/swift-algorithm-club/tree/master/Tree" target="_blank" rel="external"><strong>raywenderlich/swift-algorithm-club</strong><br>_A tree represents hierarchical relationships between objects. This is a tree: A tree consists of nodes, and these nodes…_github.com</a><a href="https://github.com/raywenderlich/swift-algorithm-club/tree/master/Tree" target="_blank" rel="external"></a></p>
+<h4 id="진짜는-Readme-md-파일"><a href="#진짜는-Readme-md-파일" class="headerlink" title="진짜는 Readme.md 파일"></a>진짜는 Readme.md 파일</h4><p>각각의 알고리즘 별로 설명이 잘 되어 있습니다. 알고리즘을 공부 하시는데 많은 도움이 될것으로 보입니다.</p>
+<p><img src="/images/1*z6iPuOsEwm58JuqXcGdKJw.png" alt=""></p>
+<p>말이 더 필요할까요?</p>
+<p><img src="/images/1*KHv1bezdpBBGRIquevFePQ.pn" alt=""></p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/59e742b2c29b" target="_blank" rel="external">June 8, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -277,7 +291,7 @@ document.getElementById(&apos;root&apos;)
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/45/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="page-number" href="/page/45/">45</a><span class="page-number current">46</span><a class="page-number" href="/page/47/">47</a><a class="page-number" href="/page/48/">48</a><span class="space">&hellip;</span><a class="page-number" href="/page/96/">96</a><a class="extend next" rel="next" href="/page/47/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/45/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="page-number" href="/page/45/">45</a><span class="page-number current">46</span><a class="page-number" href="/page/47/">47</a><a class="page-number" href="/page/48/">48</a><span class="space">&hellip;</span><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/47/">Next</a>
   </nav>
 
 </section>
@@ -409,7 +423,7 @@ document.getElementById(&apos;root&apos;)
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">182</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">191</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -429,7 +443,7 @@ document.getElementById(&apos;root&apos;)
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">9월 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">35</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

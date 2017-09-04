@@ -11,20 +11,20 @@
   
   
   
-  <meta name="description" content="REACT 컴포넌트 생명 주기React 사이트에서 정의를 따라 DOM혹은 페이지 위에 올라갈 때를 mount, DOM트리에서 삭제되거나 웹 페이지에서 없어질 때를 unmount로 정의합시다. 또한 mount 와 unmount 사이에는 여러가지 생명 주기 함수들이 동작할 것인데, state와 props는 이 함수들과 밀접하게 연관이 있습니다. props는 컴">
+  <meta name="description" content="React 사이트에서 정의를 따라 DOM혹은 페이지 위에 올라갈 때를 mount, DOM트리에서 삭제되거나 웹 페이지에서 없어질 때를 unmount로 정의합시다. 또한 mount 와 unmount 사이에는 여러가지 생명 주기 함수들이 동작할 것인데, state와 props는 이 함수들과 밀접하게 연관이 있습니다. props는 컴포넌트의 속성을 나타내는 변수">
 <meta name="keywords" content="github, github-trend, tech-trend">
 <meta property="og:type" content="article">
 <meta property="og:title" content="REACT 컴포넌트 생명 주기">
 <meta property="og:url" content="http://keen.devpools.kr/2016/07/10/[2016-07-10 22:50:26]REACT 컴포넌트 생명 주기/index.html">
 <meta property="og:site_name" content="keen blog">
-<meta property="og:description" content="REACT 컴포넌트 생명 주기React 사이트에서 정의를 따라 DOM혹은 페이지 위에 올라갈 때를 mount, DOM트리에서 삭제되거나 웹 페이지에서 없어질 때를 unmount로 정의합시다. 또한 mount 와 unmount 사이에는 여러가지 생명 주기 함수들이 동작할 것인데, state와 props는 이 함수들과 밀접하게 연관이 있습니다. props는 컴">
+<meta property="og:description" content="React 사이트에서 정의를 따라 DOM혹은 페이지 위에 올라갈 때를 mount, DOM트리에서 삭제되거나 웹 페이지에서 없어질 때를 unmount로 정의합시다. 또한 mount 와 unmount 사이에는 여러가지 생명 주기 함수들이 동작할 것인데, state와 props는 이 함수들과 밀접하게 연관이 있습니다. props는 컴포넌트의 속성을 나타내는 변수">
 <meta property="og:locale" content="ko">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/0*S19d0cO2G5DcQbfS.jpg">
-<meta property="og:updated_time" content="2017-09-03T14:05:14.000Z">
+<meta property="og:image" content="http://keen.devpools.kr/images/0*S19d0cO2G5DcQbfS.jp">
+<meta property="og:updated_time" content="2017-09-04T09:17:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="REACT 컴포넌트 생명 주기">
-<meta name="twitter:description" content="REACT 컴포넌트 생명 주기React 사이트에서 정의를 따라 DOM혹은 페이지 위에 올라갈 때를 mount, DOM트리에서 삭제되거나 웹 페이지에서 없어질 때를 unmount로 정의합시다. 또한 mount 와 unmount 사이에는 여러가지 생명 주기 함수들이 동작할 것인데, state와 props는 이 함수들과 밀접하게 연관이 있습니다. props는 컴">
-<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/0*S19d0cO2G5DcQbfS.jpg">
+<meta name="twitter:description" content="React 사이트에서 정의를 따라 DOM혹은 페이지 위에 올라갈 때를 mount, DOM트리에서 삭제되거나 웹 페이지에서 없어질 때를 unmount로 정의합시다. 또한 mount 와 unmount 사이에는 여러가지 생명 주기 함수들이 동작할 것인데, state와 props는 이 함수들과 밀접하게 연관이 있습니다. props는 컴포넌트의 속성을 나타내는 변수">
+<meta name="twitter:image" content="http://keen.devpools.kr/images/0*S19d0cO2G5DcQbfS.jp">
   
     <link rel="alternate" href="/atom.xml" title="keen blog" type="application/atom+xml">
   
@@ -156,7 +156,7 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="REACT-컴포넌트-생명-주기"><a href="#REACT-컴포넌트-생명-주기" class="headerlink" title="REACT 컴포넌트 생명 주기"></a>REACT 컴포넌트 생명 주기</h3><p>React 사이트에서 정의를 따라 DOM혹은 페이지 위에 올라갈 때를 mount, DOM트리에서 삭제되거나 웹 페이지에서 없어질 때를 unmount로 정의합시다.</p>
+        <p>React 사이트에서 정의를 따라 DOM혹은 페이지 위에 올라갈 때를 mount, DOM트리에서 삭제되거나 웹 페이지에서 없어질 때를 unmount로 정의합시다.</p>
 <p>또한 mount 와 unmount 사이에는 여러가지 생명 주기 함수들이 동작할 것인데, state와 props는 이 함수들과 밀접하게 연관이 있습니다. props는 컴포넌트의 속성을 나타내는 변수 값을 담는 객체입니다. state는 컴포넌트 상태를 나타내는 변수 값을담는 객체입니다. 이 값들의 변화에 따라 컴포넌트는 일종의 동작을 해야 하고(생명주기 함수) 혹은 그 변화의 끝에 다시 컴포넌트를 그려줘야 할 일들이 생깁니다.(render)</p>
 <p>다음과 같이 생명주기를 나뉘어서 컴포넌트의 상태 변화를 확인해 볼 수 있을 거 같습니다.</p>
 <ul>
@@ -173,7 +173,7 @@ componentWillReceiveProps,
 componentWillUnmount,  
 componentWillUpdate 등은 바로 뒤에 다룰 생명주기 함수들과 연관이 있습니다
 </code></pre><p>라고 이야기 했습니다. 각각의 미리 선언된 속성들을 개발자 도구에서 확인해 볼 수 있겠죠?</p>
-<p><img src="https://cdn-images-1.medium.com/max/1600/0*S19d0cO2G5DcQbfS.jpg" alt=""></p>
+<p><img src="/images/0*S19d0cO2G5DcQbfS.jp" alt=""></p>
 <p>그러면 실제로 React 클래스를 생성해서 컴포넌트를 Mount 를 하고 어떻게 동작하는지를 확인해 보겠습니다.</p>
 <p>(중략)</p>
 <p><a href="http://devpools.kr/2016/07/10/react-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%83%9D%EB%AA%85-%EC%A3%BC%EA%B8%B0/" title="http://devpools.kr/2016/07/10/react-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%83%9D%EB%AA%85-%EC%A3%BC%EA%B8%B0/" target="_blank" rel="external"><strong>REACT 컴포넌트 생명 주기</strong><br>_지난 번 글에 대해 피드백을 많이 주셨습니다. 너무 감사합니다. Bind 에 관련해서 다뤄봤으면 하는 부분은 조만간 다루도록 하겠습니다. Stateless 함수의 Airbnb의 입장에 대해 어느 정도 갑론 을박도…_devpools.kr</a><a href="http://devpools.kr/2016/07/10/react-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%83%9D%EB%AA%85-%EC%A3%BC%EA%B8%B0/" target="_blank" rel="external"></a></p>
@@ -247,7 +247,7 @@ componentWillUpdate 등은 바로 뒤에 다룰 생명주기 함수들과 연관
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-      <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#REACT-컴포넌트-생명-주기"><span class="nav-number">1.</span> <span class="nav-text">REACT 컴포넌트 생명 주기</span></a></li></ol>
+      <ol class="nav">None</ol>
     
     </div>
   </aside>
