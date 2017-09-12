@@ -123,6 +123,129 @@
         
           <section id="main">
   
+    <article id="post-[2016-05-19 22:11:45]Dejavu"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/05/19/[2016-05-19 22:11:45]Dejavu/">Dejavu</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/05/19/[2016-05-19 22:11:45]Dejavu/" class="article-date">
+	  <time datetime="2016-05-19T13:11:45.000Z" itemprop="datePublished">5월 19, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/1*9kuN-oaUgKiUWDmJ5ktJRA.png" alt=""></p>
+<p>오늘 소개해 드릴 프로젝트는 Dejavu입니다. Acoustic Fingerprinting용 오픈 소스인데요. 이 Acoustic Fingerprinting은 Shazam 이라던지 Spotify처럼 음악을 듣고는 어떤 음악인지 알아내는 알고리즘을 가지고 있습니다.</p>
+<p>2016/05/19 Editor’s choice</p>
+<p><a href="https://github.com/worldveil/dejavu" title="https://github.com/worldveil/dejavu" target="_blank" rel="external"><strong>worldveil/dejavu</strong><br>_dejavu - Audio fingerprinting and recognition in Python_github.com</a><a href="https://github.com/worldveil/dejavu" target="_blank" rel="external"></a></p>
+<hr>
+<h4 id="Acoustic-fingerprinting-이란"><a href="#Acoustic-fingerprinting-이란" class="headerlink" title="Acoustic fingerprinting 이란?"></a>Acoustic fingerprinting 이란?</h4><p><a href="https://en.wikipedia.org/wiki/Acoustic_fingerprint" title="https://en.wikipedia.org/wiki/Acoustic_fingerprint" target="_blank" rel="external"><strong>Acoustic fingerprint - Wikipedia, the free encyclopedia</strong><br>_Practical uses of acoustic fingerprinting include identifying songs, melodies, tunes, or advertisements; sound effect…_en.wikipedia.org</a><a href="https://en.wikipedia.org/wiki/Acoustic_fingerprint" target="_blank" rel="external"></a></p>
+<p>네, 위키가 영어라서 죄송합니다.</p>
+<p>원래 이 쪽 분야에서 유명한 프로젝트는 echoprint 라는 오픈 소스입니다. 안드로이드용으로 어떻게 만들 것인지에 대한 알고리즘까지 NDK 용으로 만들어져 있습니다.</p>
+<p><a href="https://github.com/echonest/" title="https://github.com/echonest/" target="_blank" rel="external"><strong>The Echo Nest</strong><br>_GitHub is where people build software. More than 14 million people use GitHub to discover, fork, and contribute to over…_github.com</a><a href="https://github.com/echonest/" target="_blank" rel="external"></a></p>
+<p>이렇게 유명한 오픈소스가 있지만 dejavu를 소개하는 것은 mysql 데이타베이스에 입력하고 쿼리를 통해 가져오는 방식이라 독특함이 있어서 입니다.</p>
+<hr>
+<h4 id="설치를-해-봅시다"><a href="#설치를-해-봅시다" class="headerlink" title="설치를 해 봅시다"></a>설치를 해 봅시다</h4><p><a href="https://github.com/worldveil/dejavu/blob/master/INSTALLATION.md" title="https://github.com/worldveil/dejavu/blob/master/INSTALLATION.md" target="_blank" rel="external"><strong>worldveil/dejavu</strong><br>_dejavu - Audio fingerprinting and recognition in Python_github.com</a><a href="https://github.com/worldveil/dejavu/blob/master/INSTALLATION.md" target="_blank" rel="external"></a></p>
+<p>설치 가이드가 있어서 죽 살펴보고는 리눅스가 더 쉽겠네 라고 덤볐다가 yum, apt-get 최신 레파지토리에서는 제대로 찾아지지 않아서 (제 실력 부족일 수 있습니다.)</p>
+<p>Mac으로 다시 복귀했습니다.</p>
+<p>Python은 2.7 기준으로 작업을 했습니다.</p>
+<pre><code>brew install portaudio  
+brew install ffmpeg  
+
+sudo easy\_install pyaudio  
+sudo easy\_install pydub  
+sudo easy\_install numpy  
+sudo easy\_install scipy  
+sudo easy\_install matplotlib  
+sudo easy\_install pip  
+
+sudo pip install MySQL-python  
+
+sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/lib/libmysqlclient.18.dylib
+</code></pre><p>짧은 몇줄 밖에 안되지만 마지막 두줄은 그냥 되지 않습니다.</p>
+<p>mysql을 기본적으로 깔아야 하고 (이미 깔려 있을 테지만요)</p>
+<p>마지막 줄은 Mac OS X -El Capitan에서는</p>
+<p><a href="http://macnews.tistory.com/3408" title="http://macnews.tistory.com/3408" target="_blank" rel="external"><strong>OS X 10.11 엘 캐피탄에 도입된 새로운 보안체계 ‘루트리스(Rootless)’를 끄고 켜는 방법</strong><br>_업데이트 (2015/12): OS X 엘 캐피탄이 업데이트 되면서 csrutil status 명령어와 관련해 변경사항이 있었습니다. 이번 WWDC가 개최되기 전부터 새로운 보안 기능이 애플의 두 운영체제에 도입될…_macnews.tistory.com</a><a href="http://macnews.tistory.com/3408" target="_blank" rel="external"></a></p>
+<p>여기를 참조하세요.</p>
+<hr>
+<h4 id="실행을-해-봅시다"><a href="#실행을-해-봅시다" class="headerlink" title="실행을 해 봅시다."></a>실행을 해 봅시다.</h4><p>python2. 7을 기준으로 실행을 합니다.</p>
+<pre><code>\&gt;\&gt;\&gt; from dejavu import Dejavu  
+\&gt;\&gt;\&gt; config = {  
+... &quot;database&quot;: {  
+... &quot;host&quot;: &quot;127.0.0.1&quot;,  
+... &quot;user&quot;: &quot;root&quot;,  
+... &quot;passwd&quot;: &lt;password above\&gt;,   
+... &quot;db&quot;: &lt;name of the database you created above\&gt;,  
+... }  
+... }  
+\&gt;\&gt;\&gt; djv = Dejavu(config)
+</code></pre><p>이 소스는 Mysql 에 접근을 하는 소스입니다.</p>
+<p>설치를 하고</p>
+<pre><code>$python example.py
+</code></pre><p>를 실행시켜 주면 dejavu 데이타베이스 및에 fingerprints 와 songs 테이블이 생깁니다.</p>
+<pre><code>+-----------------+
+
+|Tables\_in\_dejavu |  
++-----------------+
+
+|fingerprints |
+
+|songs |  
++-----------------+
+</code></pre><p>안에는 아래와 같이 데이타들이 들어 있습니다.</p>
+<p><img src="/images/1*jdVBB8s_7RXVCwgd49Ug4Q.pn" alt=""></p>
+<p>대강 Database 에 어떻게 저장하고 비교를 하는지 알것 같습니다.</p>
+<p>더 자세한 설명은 아래의 링크를 참조하시면 될 것 같습니다.</p>
+<p><a href="http://willdrevo.com/fingerprinting-and-audio-recognition-with-python/" title="http://willdrevo.com/fingerprinting-and-audio-recognition-with-python/" target="_blank" rel="external"><strong>Audio Fingerprinting with Python and Numpy</strong><br>_The first day I tried out Shazam, I was blown away. Next to GPS and surviving the fall down a flight of stairs, being…_willdrevo.com</a><a href="http://willdrevo.com/fingerprinting-and-audio-recognition-with-python/" target="_blank" rel="external"></a></p>
+<hr>
+<h4 id="그러면-앱을-어떻게-만들면-좋을까요"><a href="#그러면-앱을-어떻게-만들면-좋을까요" class="headerlink" title="그러면 앱을 어떻게 만들면 좋을까요?"></a>그러면 앱을 어떻게 만들면 좋을까요?</h4><p>파일 Recognizer를 한번 실행해 보았습니다.</p>
+<pre><code>\&gt;\&gt;\&gt; from dejavu.recognize import FileRecognizer  
+\&gt;\&gt;\&gt; song = djv.recognize(FileRecognizer, &quot;./wav/18000.wav&quot;)  
+\&gt;\&gt;\&gt; print song  
+{&apos;song\_id&apos;: 6, &apos;song\_name&apos;: &apos;18000&apos;, &apos;file\_sha1&apos;: &apos;AF3C75663CC86AD857E05E79EE8A028678D85359&apos;, &apos;confidence&apos;: 19, &apos;offset\_seconds&apos;: 0.0, &apos;match\_time&apos;: 1.4198949337005615, &apos;offset&apos;: 0}
+</code></pre><p>아래와 같이 잘 인식 합니다.</p>
+<p>wav파일들을 잘만 만들어서 스피커를 통해 아웃풋을 통해 들어오는 음악을 잘 만진다면 spotify 같은 앱도 만들 수 있겠군요. ( 오 이 근자감)</p>
+<hr>
+<h4 id="바로-되는-건-없어요"><a href="#바로-되는-건-없어요" class="headerlink" title="바로 되는 건 없어요?"></a>바로 되는 건 없어요?</h4><p>있습니다. 눈썰미가 있으신 분은 Recognizer를 보고 예감하셨을 텐데요. MicrophoneRecognizer 라는 녀석이 있어서 실행을 시켜 보았습니다.</p>
+<pre><code>\&gt;\&gt;\&gt; from dejavu.recognize import MicrophoneRecognizer  
+\&gt;\&gt;\&gt; song = djv.recognize(MicrophoneRecognizer, seconds=10)
+</code></pre><p>이상하게 잘 작동하지 못하는 걸 보니 화이트 노이즈가 많아서 그런 듯 합니다.</p>
+<p>이 노이즈들을 제거하는 내용은 다음번에 알아보겠습니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/463e28f71f62" target="_blank" rel="external">May 19, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-[2016-05-18 07:35:25]Xamarin"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -242,80 +365,11 @@
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-05-17 07:11:48]paper-onboarding-android"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/05/17/[2016-05-17 07:11:48]paper-onboarding-android/">paper-onboarding-android</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/05/17/[2016-05-17 07:11:48]paper-onboarding-android/" class="article-date">
-	  <time datetime="2016-05-16T22:11:48.000Z" itemprop="datePublished">5월 17, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/1*nYk1tHLDQDMTWBdOpQu6ig.gif" alt=""></p>
-<p>OnBoarding은 앱이 시작될때 사용자로 하여금 액션을 유도하게 해서 더 흥미를 느끼게 하는 일종의 게이미피케이션 입니다. Raymotion이라는 그룹은 아름다운 모바일 UI 컴포넌트를 많이 만들어 내는데, 이번엔 온보딩용 프로젝트를 내 놓았습니다.</p>
-<p>2016/05/17 Editor’s choice</p>
-<p><a href="https://github.com/Ramotion/paper-onboarding-android" title="https://github.com/Ramotion/paper-onboarding-android" target="_blank" rel="external"><strong>Ramotion/paper-onboarding-android</strong><br>_paper-onboarding-android - PaperOnboarding is a material design slider_github.com</a><a href="https://github.com/Ramotion/paper-onboarding-android" target="_blank" rel="external"></a></p>
-<hr>
-<h4 id="설치하기"><a href="#설치하기" class="headerlink" title="설치하기"></a>설치하기</h4><p>설치는 gradle 기준으로 설명하겠습니다.</p>
-<p>아래의 dependency를 build.gradle에 추가해 주면 됩니다.</p>
-<pre><code>dependencies {
-
-....  
-compile &apos;com.ramotion.paperonboarding:paper-onboarding:1.0.0&apos;
-
-....  
-}
-</code></pre><p>샘플을 돌리려면 image 들을 카피해 주면 됩니다.</p>
-<p><img src="/images/1*ZAF446pnL4Fa9Pir_3p-vw.png" alt="">리소스 파일을 복사-붙여넣기!</p>
-<h4 id="실행하기"><a href="#실행하기" class="headerlink" title="실행하기"></a>실행하기</h4><p>이번엔 소스를 한번 살펴 볼까요?</p>
-<p>onCreate 메쏘드에 setOnChangeListenser를 셋팅해 주면 됩니다.</p>
-<p>저렇게 Swipe 액션에 대해서 정의를 해 주면 인터페이스는 정의가 되었고</p>
-<p>각각의 카드는 ArrayList로 추가만 해주면 됩니다.</p>
-<p>이러게 하고 실행을 하면 이런 형태로 땋! 하고 실행됩니다.</p>
-<p><img src="/images/1*ksw5wG9BkvLRm8653vqZCQ.gi" alt="">새로운 에뮬은 좋은데 메모리는 많이 먹네요</p>
-<p>온보딩을 이쁘게 꾸미고 싶으신 분들에게는 굉장히 유용한 프로젝트임에 틀림없습니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/963c3f477a73" target="_blank" rel="external">May 16, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/54/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/53/">53</a><a class="page-number" href="/page/54/">54</a><span class="page-number current">55</span><a class="page-number" href="/page/56/">56</a><a class="page-number" href="/page/57/">57</a><span class="space">&hellip;</span><a class="page-number" href="/page/96/">96</a><a class="extend next" rel="next" href="/page/56/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/54/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/53/">53</a><a class="page-number" href="/page/54/">54</a><span class="page-number current">55</span><a class="page-number" href="/page/56/">56</a><a class="page-number" href="/page/57/">57</a><span class="space">&hellip;</span><a class="page-number" href="/page/97/">97</a><a class="extend next" rel="next" href="/page/56/">Next</a>
   </nav>
 
 </section>
@@ -362,6 +416,18 @@ compile &apos;com.ramotion.paperonboarding:paper-onboarding:1.0.0&apos;
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2017/09/08/deeplearning-basic01/">딥러닝 무식하게 정리해 보기 01</a></h6>
+              <span>9월 8, 2017</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -423,18 +489,6 @@ compile &apos;com.ramotion.paperonboarding:paper-onboarding:1.0.0&apos;
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/05/31/tech-trend-01/">(tech-trend) 기술트렌드에 대한 블로깅을 시작하며</a></h6>
-              <span>5월 31, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -447,7 +501,7 @@ compile &apos;com.ramotion.paperonboarding:paper-onboarding:1.0.0&apos;
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -457,7 +511,7 @@ compile &apos;com.ramotion.paperonboarding:paper-onboarding:1.0.0&apos;
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
+      <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
     </div>
   </div>
 
@@ -467,7 +521,7 @@ compile &apos;com.ramotion.paperonboarding:paper-onboarding:1.0.0&apos;
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

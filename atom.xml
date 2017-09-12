@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://keen.devpools.kr/"/>
-  <updated>2017-08-06T07:13:21.000Z</updated>
+  <updated>2017-09-08T03:23:07.000Z</updated>
   <id>http://keen.devpools.kr/</id>
   
   <author>
@@ -14,6 +14,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>딥러닝 무식하게 정리해 보기 01</title>
+    <link href="http://keen.devpools.kr/2017/09/08/deeplearning-basic01/"/>
+    <id>http://keen.devpools.kr/2017/09/08/deeplearning-basic01/</id>
+    <published>2017-09-08T02:44:06.000Z</published>
+    <updated>2017-09-08T03:23:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>딥러닝, 인공지능 이야기를 하면 CNN, RNN 같은 알고리즘에 관한 글만 굉장히 많아서 조금 탑뷰에서 바라볼 수 있는 관점에서 전체 기술과 활용처를 분류하고 딥러닝 프레임워크에 대해서 알아 보았다. 딥러닝 프레임워크는 같이 프로젝트를 하고 있는 팀 로자미아 가 같이 정리를 해 주었다. Mabel, Jin, Alex 에게 감사를 드린다.</p>
+<h2 id="AI-기술의-응용-분야"><a href="#AI-기술의-응용-분야" class="headerlink" title="AI 기술의 응용 분야"></a>AI 기술의 응용 분야</h2><p>딥러닝은 여러가지 알고리즘을 가지고 있지만 결국 하고자 하는 대부분의 일들이 군집(clustering)과 분류(classification) 라는 관점으로 귀결된다.<br>그에 따라 AI 기술 스택을 분류하는 방법은 여러가지가 있고 활용되는 분야도 다양하지만 아래와 같이 분류를 해보았다.<br>먼저 챗봇과 번역등에 사용되는 NLU등을 사용하는 Conversational AI.<br>두번째는 개와 고양이 구분하기 등에 많이 사용되는 Visual AI 분야.<br>마지막으로는 전통적으로 진행하던 데이타 분석을 하는 Analytic AI.</p>
+<h3 id="Conversational-AI"><a href="#Conversational-AI" class="headerlink" title="Conversational AI"></a>Conversational AI</h3><p><img src="/images/playmobil-451203_640.jpg" alt="conversation goes on"></p>
+<p>Conversational AI 에는 기본적으로 NLU(Naturla Language Understanding)을 그 근간으로 한다. 오픈 소스중에선 Rasa.ai 같은 프레임워크가 존재하고 오픈 서비스로는 wit.ai 와 api.ai 가 있고 제품으로 유명한 것은 IBM의 conversational 엔진이 유명하다. 일반적인 개발자들이 가장 많이 만나는 것은 페이스북을 가지고 챗봇을 한번 만들어보다가 만나게 되는 것이 NLU 와의 처음 만남이 된다고 볼 수 있다. 이 NLU 엔진은 여러가지 기능을 가지는데 기본적으로 전체의 맥락을 판단하고 키워드를 뽑아내는 게 으뜸된 기능인데 이것을 인텐트와 엔터티라는 업계 용어로 지칭한다.<br>맥락 혹은 화행에는 기본적으로 의도가 들어가 있고 감정이 들어가 있어서 이런 감성을 파악해 내는 데 word2vec doc2vec 같은 툴들이 사용된다. 한글의 경우는 영어와 다른 구조를 가지고 있기 때문에 형태소를 분석해야 하고 mecab-ko 나 은전한잎 같은 툴들이 이용된다. </p>
+<p>여기까지는 일반적인 NLU에 대한 이야기만 한 것이고, 챗봇을 위해서는 다이알로그의 룰이 존재하기 마련이라 룰 매니저 혹은 다이알로그 매니저들이 존재한다. 얘룰 들면 페이스북 챗봇을 만들 때 이런 말이 들어오면 이렇게 대답해야지.. 라고 만드는 대화 구성이 그런 역할을 하는 것이다. 이런 다이알로그 개념이 들어가면 한 문장의 문맥이 아닌 전체 문맥을 파악해야하는 기능과 랭킹 시스템을 구축해야 한다.</p>
+<p>조금 더 나아가면 보통 STT(Speech To Text), TTS(Text To Speech) 로 알고 있는 음성자동 시스템이랑 연결해서 사용자의 음성을 듣고 텍스트로 변환해 준 뒤에 그것을 구축해 놓은 챗봇 시스템과 연결해 구축하는 작업들이 생겨나고 있다.</p>
+<h3 id="AI-for-media"><a href="#AI-for-media" class="headerlink" title="AI for media"></a>AI for media</h3><p><img src="/images/abstract-1233873_640.jpg" alt="AI for media"></p>
+<p>얼굴 인식, 피플 카운팅 등에 사용되는 Face Recognition 과 딥러닝 기반의 Object Recognition 은 미디어들을 통해 사람을 인식하거나 장면등을 파악해서 시스템과 연결하는 일들을 할 때 많이 사용된다. 딥러닝 기반 객체 인식은 보통 CNN 알고리즘으로 유명한데 최근에는 여러가지 알고리즘이 더 들어간 경우가 많고 YOLO Darknet 같은 경우는 인식률과 속도에서 다른 범용 툴을 압도한다.<br>피플 카운팅을 응용하면 히트맵 히트존 등의 기술등으로 확장이 가능하다.<br>OCR 프로그램은 기존에도 존재했던 것들인 많은데, 딥러닝 기반으로 프로젝트들이 변경되고 있다. 구글 tesseract 도 LSTM 알고리즘의 4.0 버전을 테스트 중이다.</p>
+<h3 id="Analytics"><a href="#Analytics" class="headerlink" title="Analytics"></a>Analytics</h3><p>기존의 데이터들을 분석하는 툴 기반이라 딥러닝 보다는 기존 스파크와 하둡 기반의 빅데이터 툴들이 더 많은 일들을 해 주는 부분들이다.</p>
+<h2 id="AI-기반-기술-스택-별로-알아보자-1"><a href="#AI-기반-기술-스택-별로-알아보자-1" class="headerlink" title="AI 기반 기술 스택 별로 알아보자 (1)"></a>AI 기반 기술 스택 별로 알아보자 (1)</h2><h3 id="인공지능을-위한-프로세서의-발전"><a href="#인공지능을-위한-프로세서의-발전" class="headerlink" title="인공지능을 위한 프로세서의 발전"></a>인공지능을 위한 프로세서의 발전</h3><p><img src="/images/nvidia-1201077_640.jpg" alt="템빨은 언제나 진리"></p>
+<p>딥러닝은 기본적으로 다층 레이어의 많은 학습을 요구하기 때문에 단순한 계산이 순식간에 많이 일어나는 것을 특징으로 한다. 그렇기에 병렬처리 컴퓨팅이 가장 중요한 핵심기능이 되어서 기존 CPU이외의 다른 대안들이 필요하다.<br>그런 의미에서 프로세서 유니트(코어) 각각의 성능은 떨어지지만 프로세서 유니트 수가 압도적으로 많은 GPU 가 각광을 받았다. 특히 엔비디아 CUDA (병렬컴퓨팅 플랫폼의 API모델) 의 등장은 프로세서 경쟁에 불을 붙였다.<br>참조 : <a href="http://www.epnc.co.kr/news/articleView.html?idxno=75603" target="_blank" rel="external">http://www.epnc.co.kr/news/articleView.html?idxno=75603</a> </p>
+<h4 id="GPGPU-General-Purpose-GPU"><a href="#GPGPU-General-Purpose-GPU" class="headerlink" title="GPGPU - General Purpose GPU"></a>GPGPU - General Purpose GPU</h4><p>범용 GPU를 이야기 하는 것으로 AI 용으로만 사용될 때는 TPU라는 이름을 쓰기도 한다.(Tensor Processing Unit) NVIDIA의 GPGPU를 극대화 하기 위한 CUDA 기술을 공개했고 동시에 범용 GPU 기능이 주목 받기 시작했다</p>
+<h4 id="GPGPU를-넘어서"><a href="#GPGPU를-넘어서" class="headerlink" title="GPGPU를 넘어서"></a>GPGPU를 넘어서</h4><p>구글의 딥러닝의 학습속도를 향상시키기 위해 자체 디자인한 반도체 칩셋(ASIC)를 적용되면서 더 각광 받기 시작함. 구글의 ASIC를 TPU(Tensor Processing Unit) 이라 부르고 GPGPU의 범주에 놓기도 한다.<br>MS는 같은 목적으로 FPGA 칩을 클라우드 데이타 센터에 탑재해 Azure 서비스에도 이용하고 있는데, FPGA는 저전력의 강점도 가지고 있다.</p>
+<h4 id="Neuromorphic-Processor"><a href="#Neuromorphic-Processor" class="headerlink" title="Neuromorphic Processor"></a>Neuromorphic Processor</h4><p>신경구조와 유사한 프로세서가 차후 프로세서로 각광을 받고 있고 IBM 같은 회사들이 준비하고 있다.<br>링크 : <a href="http://www.research.ibm.com/cognitive-computing/neurosynaptic-chips.shtml#fbid=rXQq5aX-WkP" target="_blank" rel="external">http://www.research.ibm.com/cognitive-computing/neurosynaptic-chips.shtml#fbid=rXQq5aX-WkP</a></p>
+<h3 id="딥러닝-서비스를-위한-인프라"><a href="#딥러닝-서비스를-위한-인프라" class="headerlink" title="딥러닝 서비스를 위한 인프라"></a>딥러닝 서비스를 위한 인프라</h3><p><img src="/images/server-2160321_640.jpg" alt="요즘엔 서버실에 갈 일이 있어야지"></p>
+<p>크게 딥러닝 전용 인프라는 클라우드와 판매형 인프라로 나뉘어서 볼 수 있을 것 같은데 기존의 아마존 AWS, 마이크로소프트의 Azure, 구글 클라우드 같은 빅3는 이미 클라우드 인프라를 가지고 있다.<br>AWS의 경우는 클라우드 AMI(Amazon Machin Image)도 제공하고 있어서 굉장히 편리하게 쓸 수 있다. AMI라는 것은 미리 만들어진 이미지 같은 개념으로 볼 수 있다. NVidia 의 경우는 자사의 GPU를 이용한 클라우드 서비스를 하고 있는 것이 흥미롭다.<br>판매형 인프라는 기존의 서버 벤더들과 비슷한 형태를 취하고 있는데 웨이브 컴퓨팅은 하나의 모델을 제안하는 데 텐서플로 같은 소프트웨어에 특화되어 만들어져 있다.이에 비해 Penguin computing 은 몇가지 옵션들을 더 제공하고 있다.</p>
+<h2 id="맺으며"><a href="#맺으며" class="headerlink" title="맺으며"></a>맺으며</h2><p>딥러닝, 인공지능 등을 바라볼때 탑뷰로 어떤 기술이 있는지를 알아보는 과정을 거치고 있다. 다음 번엔 개발자에게는 가장 중요한 딥러닝 프레임워크들을 다뤄보도록 하겠다. </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;딥러닝, 인공지능 이야기를 하면 CNN, RNN 같은 알고리즘에 관한 글만 굉장히 많아서 조금 탑뷰에서 바라볼 수 있는 관점에서 전체 기술과 활용처를 분류하고 딥러닝 프레임워크에 대해서 알아 보았다. 딥러닝 프레임워크는 같이 프로젝트를 하고 있는
+    
+    </summary>
+    
+    
+      <category term="deep learning" scheme="http://keen.devpools.kr/tags/deep-learning/"/>
+    
+  </entry>
   
   <entry>
     <title>(tech-trend) 구루들이 찾는다는 테크 트렌드 - 유명 블로그와 소셜 유명인</title>
@@ -1161,143 +1198,6 @@ dao.listGroupArticle(groupName).then((articles)=\&gt;dispatch(getArticle(article
     
       &lt;p&gt;대망의 마지막 편입니다.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://techstory.shma.so/%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%86%
-    
-    </summary>
-    
-    
-      <category term="github, github-trend, tech-trend" scheme="http://keen.devpools.kr/tags/github-github-trend-tech-trend/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>WebAssembly — hello world 어셈블리를 브라우저에 올려보자</title>
-    <link href="http://keen.devpools.kr/2017/01/21/%5B2017-01-21%2022:07:01%5DWebAssembly%20%E2%80%94%20hello%20world%20%E1%84%8B%E1%85%A5%E1%84%89%E1%85%A6%E1%86%B7%E1%84%87%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%87%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%84%8C%E1%85%A5%E1%84%8B%E1%85%A6%20%E1%84%8B%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A7%E1%84%87%E1%85%A9%E1%84%8C%E1%85%A1/"/>
-    <id>http://keen.devpools.kr/2017/01/21/[2017-01-21 22:07:01]WebAssembly — hello world 어셈블리를 브라우저에 올려보자/</id>
-    <published>2017-01-21T13:07:01.000Z</published>
-    <updated>2017-09-04T09:17:08.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>WebAssembly 이름만 들어도 긴장되는 이 프로젝트는 지금 읽으시면서 생각하시는 그대로 web + Assmbly의 조합입니다.</p>
-<p>링크 : <a href="http://webassembly.org/" target="_blank" rel="external">http://webassembly.org/</a></p>
-<p><img src="/images/0*by1GvhRfgZVsxMem.jpg" alt="스크린샷 2017-01-21 오후 10.11.16"></p>
-<blockquote>
-<p><strong>어셈블리어(assembly)</strong>는 기계어와 일대일 대응이 되는 컴퓨터 프로그래밍의 저급 언어이다.</p>
-<p>출처: <a href="http://blog.opid.kr/162" target="_blank" rel="external">http://blog.opid.kr/162</a> [opid’s document]</p>
-</blockquote>
-<p>브라우저 상에서 돌아가는 기계어라니 생각만 해도 즐거운 이 상상은 사실 비슷한 일들을 시도 했었던 몇 군데의 의기투합으로 완성됩니다.</p>
-<p>결론부터 얘기하자면 오늘 소개하고 싶은 최종 프로젝트는 Web Assmebly의 binaryen 입니다.</p>
-<p><img src="/images/0*6ykKmeIlKWb_cjYM." alt="WebAssembly/binaryen"></p>
-<p><a href="https://github.com/WebAssembly/binaryen" target="_blank" rel="external">WebAssembly/binaryen</a></p>
-<p><a href="https://github.com/WebAssembly/binaryen" target="_blank" rel="external">binaryen — Compiler infrastructure and toolchain library for WebAssembly, in C++</a></p>
-<p>GitHub</p>
-<p>이 프로젝트를 설명을 하기 위해서는 먼길을 가야 할 거 같습니다. 하지만 매우 흥미로운 주제라고 생각되니까 시작해 보겠습니다.</p>
-<h3 id="1-asm-js-와-emscripten"><a href="#1-asm-js-와-emscripten" class="headerlink" title="1. asm.js 와 emscripten"></a><strong>1. asm.js 와 emscripten</strong></h3><p>최근 몇년동안 브라우저에서 mame게임이라던지 둠이라던지 등의 오픈소스로 풀려있는 게임들에 대해서 브라우저에서 돌아가는 프로젝트를 많이들 보셨을 겁니다. 어제 저는 Quake3 를 웹에서 돌려 보았습니다.</p>
-<p><img src="/images/0*L1iUaPf28281K9Xv.png" alt="크롬에서 퀘이크 하는 모습">[그림1]크롬 퀘이크 출처 — <a href="https://twitter.com/search?q=%23quakejs" target="_blank" rel="external">https://twitter.com/search?q=%23quakejs</a> 오오오 다 부시고 싶다!!!!</p>
-<p>먼저 브라우저 상에서 저런 게임 개발 + 연산을 하기 위해서는 어떤 일이 있어야 하는지를 생각해 봅시다.</p>
-<ol>
-<li>엄청나게 빠른 자바스크립트를 개발하는거야!</li>
-<li>네이티브 코드를 브라우저에서 돌리는 거야</li>
-<li>WebGL로 짜면 안되나요?</li>
-</ol>
-<p>이렇게 접근한 눈에 띄는 큰 세력이 있었습니다. 하나는 asm.js라는 커뮤니티고 또 하나는 Emscripten 입니다.</p>
-<h4 id="1-1-asm-js"><a href="#1-1-asm-js" class="headerlink" title="1.1. asm.js."></a>1.1. asm.js.</h4><p>링크 : <a href="http://asmjs.org/" target="_blank" rel="external">http://asmjs.org/</a></p>
-<p><img src="/images/0*iMCz0tjs7MMao1Uo.jpg" alt="스크린샷 2017-01-21 오후 10.16.19"></p>
-<p>asm.js는 다들 오해하시고 있는 부분이 있는데 어떤 새로운 컴파일 된 형태의 언어를 뜻하는 것은 아닙니다. JavaScript 스펙 중에 C나, C++ 처럼 좀더 low level로 건드릴 수 있는 형태로 나와 있는 API들을 사용해서 조금 덜 human readable한 코드지만 성능이 빠른 형태의 코드를 뜻합니다.</p>
-<p>좀더 깊은 이해를 위해서는 아웃사이더 님의 다음글을 추천합니다.</p>
-<p><img src="/images/0*pBD-wDzgoXG6GKCl.gif" alt="asm.js에 대해서 :: Outsider&#39;s Dev Story"></p>
-<p><a href="https://blog.outsider.ne.kr/927" target="_blank" rel="external">asm.js에 대해서 :: Outsider’s Dev Story</a></p>
-<p><a href="https://blog.outsider.ne.kr/927" target="_blank" rel="external">asm.js을 처음 듣게 된 것은 존 레식이 올린 다음 트윗을 보고나서였다. Asm.js is seriously one of the most exciting things to happen in JavaScript-land in a long time. Congrats Firefox team!? John Re…</a></p>
-<p>Outsider’s Dev Story</p>
-<p>어쨌든 결론만 놓고 보면 asm.js를 사용하면 native 코드에 비해 1.5배밖에 안느린 코드를 짤 수 있다. 라는 놀라운 일이 벌어집니다. GUI 쪽은 Java보다 대 놓고 빨라질 가능성을 가지게 되는 점입니다.</p>
-<h4 id="1-2-Emscripten"><a href="#1-2-Emscripten" class="headerlink" title="1.2.Emscripten"></a>1.2.Emscripten</h4><p>이번엔 그렇다면 다른 방법으로 native 코드를 JavaScript로 바꿔야지 하고 접근한 프로젝트를 소개합니다.</p>
-<p>​</p>
-<p><img src="/images/0*Ohlu_01KzRBMbfhs.jpg" alt="스크린샷 2017-01-21 오후 10.19.21"></p>
-<p>사이트에가서 보면 아시겠지만 이 프로젝트는 LLVM(Low Level Virtual Machine) 기반으로 C,C++로 짜여진 것을 JavaScript로 바꿔주는 프로젝트라는 것을 알 수 있습니다.</p>
-<h4 id="1-3-도원결의"><a href="#1-3-도원결의" class="headerlink" title="1.3. 도원결의"></a>1.3. 도원결의</h4><p><img src="/images/0*zbCOVWXY411KNapH.jpg" alt="">출처 : 나무위키 진삼국무쌍7</p>
-<p>뭐 여러분 모두 짐작하셨다시피 asm.js의 엄청난 속도를 보고 emscripten은 LLVM을 asm.js로 컴파일 하기에 이릅니다.</p>
-<p>1.4. 한방 그림</p>
-<p><img src="/images/0*0j3K5GJnzvKTPKe0.png" alt="">출처 : <a href="http://ejohn.org/blog/asmjs-javascript-compile-target/" target="_blank" rel="external">http://ejohn.org/blog/asmjs-javascript-compile-target/</a></p>
-<p>그림은 jquery의 구루 john resig의 <a href="http://ejohn.org/blog/asmjs-javascript-compile-target/" target="_blank" rel="external">사이트에</a> 올라와 있는 그림인데, C/C++ 코드를 짜면 Clang이 LLVM의 바이트 코드로 뱉어 냅니다. 그 결과는 spec 이 있으므로 컴파일러가 이해하는 수준의 순서로 Asm.js 스펙에 넣고 OpenGL을 쓰는 경우는 WebGL 스펙까지도 내려가서 변환해 줍니다. 그림 하나면 이해가 될 거를 많이도 내려 왔습니다.</p>
-<h3 id="2-WebAssembly"><a href="#2-WebAssembly" class="headerlink" title="2. WebAssembly"></a>2. WebAssembly</h3><p>드디어 오늘 이야기 할 WebAssembly 입니다. 자 이쯤 오면 이런 생각할 사람이 있을 거 같습니다.</p>
-<blockquote>
-<p><strong><em>흠… 그럴게 아니라 진짜 Assembly Spec을 만드는게 어때?</em></strong></p>
-</blockquote>
-<p>그런데 그것이 실제로 일어났습니다.</p>
-<p>어느 순간에 깃헙에 WebAssembly라는 그룹이 생기더니 design이라는 프로젝트를 통해 스펙을 주고 받고 있었습니다.</p>
-<p><img src="/images/0*y25032RUtLIORxka." alt="WebAssembly/design"></p>
-<p><a href="https://github.com/WebAssembly/design" target="_blank" rel="external">WebAssembly/design</a></p>
-<p><a href="https://github.com/WebAssembly/design" target="_blank" rel="external">design — WebAssembly Design Documents</a></p>
-<p>GitHub</p>
-<p>한 1년 정도 watch를 하고 두고 보고 있었습니다. 최근에 생긴변화 마일 스톤이 생겨서 한번 확인해 보면 좋겠다 싶어서 들여다 보았더니 생각보다 이야기 할 것들이 있습니다.</p>
-<h4 id="Past-Milestones"><a href="#Past-Milestones" class="headerlink" title="Past Milestones"></a>Past Milestones</h4><ul>
-<li>April 2015 — <a href="https://www.w3.org/community/webassembly" target="_blank" rel="external">WebAssembly Community Group</a> started</li>
-<li>June 2015 — The first <a href="https://github.com/WebAssembly/design/issues/150" target="_blank" rel="external">public announcement</a> [<a href="https://blogs.msdn.microsoft.com/mikeholman/2015/06/17/working-on-the-future-of-compile-to-web-applications/" target="_blank" rel="external">1</a>][<a href="https://blog.mozilla.org/luke/2015/06/17/webassembly/" target="_blank" rel="external">2</a>]</li>
-<li>March 2016 — Definition of core feature with multiple interoperable implementations [<a href="https://blogs.windows.com/msedgedev/2016/03/15/previewing-webassembly-experiments" target="_blank" rel="external">1</a>] [<a href="https://v8project.blogspot.com/2016/03/experimental-support-for-webassembly.html" target="_blank" rel="external">2</a>] [<a href="https://hacks.mozilla.org/2016/03/a-webassembly-milestone/" target="_blank" rel="external">3</a>]</li>
-<li>October 2016 — Browser Preview announced with multiple interoperable implementations [<a href="https://blogs.windows.com/msedgedev/2016/10/31/webassembly-browser-preview/" target="_blank" rel="external">1</a>] [<a href="http://v8project.blogspot.com/2016/10/webassembly-browser-preview.html" target="_blank" rel="external">2</a>] [<a href="https://hacks.mozilla.org/2016/10/webassembly-browser-preview" target="_blank" rel="external">3</a>]</li>
-</ul>
-<p>16년 12월에 브라우저 프리뷰로 올라온 버전 위주로 이야기를 할까 합니다.</p>
-<h4 id="2-1-binaryen"><a href="#2-1-binaryen" class="headerlink" title="2.1. binaryen"></a>2.1. binaryen</h4><p><img src="/images/0*woRWYul7YcorCH2p.jpg" alt="">실제로 targaryen 네이밍 컨벤션을 따랐다고 합니다. 헐. 덕.</p>
-<p>뭔가 왕좌의 게임에 나올 거 같은 프로젝트 이름인데 실제로 emscripten 과 라임을 맞추기 위해서 노력했고 네이밍 컨벤션은 그걸 따랐다고 깃헙 공식페이지에 announce하고 있습니다. 개발의 시작은 덕질</p>
-<p>먼저 시작하기 전에 이 어셈블리 (바이너리) 파일 포맷을 wasm 라고 정의했고 파일 확장자는 .wasm이라는 것만 알아두시면 됩니다. 저는 이걸 아는데 시간이 많이 걸렸어요. 이후 binayen은 굉장히 간단합니다. 브라우저에서 이제 wasm 파일을 인식하니 두가지 옵션이 남았죠.</p>
-<ol>
-<li>emscripten으로 컴파일 할때 wasm 파일을 만들어 준다.</li>
-<li>asm.js 파일을 wasm 파일로 바꿔준다.</li>
-</ol>
-<h4 id="2-2-hello-world를-찍어보자"><a href="#2-2-hello-world를-찍어보자" class="headerlink" title="2.2. hello world를 찍어보자."></a>2.2. hello world를 찍어보자.</h4><p>백문이 불여일타! 개발자라면 응당 한번 찍어봐야 합니다.</p>
-<p>2.2.1. 선행 설치</p>
-<p>아 가슴뛰는 순간이네요. 일단 emscripten 과 binaryen을 인스톨 해야죠. 여기서 상당히 헤메었엇는데 저만 믿고 따라오시면 됩니다.</p>
-<p>먼저 EMSDK라는 Emscripten SDK를 설치 하셔야 됩니다. 아래 걸어둔 링크에 따라 다운로드 받고 순서대로 실행하시면 됩니다.</p>
-<p>링크 : <a href="http://kripken.github.io/emscripten-site/docs/getting_started/downloads.html" target="_blank" rel="external">http://kripken.github.io/emscripten-site/docs/getting_started/downloads.html</a></p>
-<p><img src="/images/0*FHw6LCYpS09cn02b.jpg" alt="스크린샷 2017-01-22 오후 1.46.23"></p>
-<p>그런데 문제가 있습니다. EMSKD의 명령어 중에 옵션에 latest 를 하면 1.35 버전을 가지고 오게 되서 binaryen을 지원하지 않습니다. 바꿔야 되는 부분은 제가 빨간색으로 표시해 두겠습니다.</p>
-<pre><code>\# Fetch the latest registry of available tools.  
-./emsdk update  
-
-\# Download and install the latest SDK tools.  
-./emsdk install incoming  
-
-\# Make the &quot;latest&quot; SDK &quot;active&quot;  
-./emsdk activate sdk-incoming-64bit
-</code></pre><p>으로 변경을 해 주셔야만 제대로 컴파일이 됩니다.</p>
-<p>먼저 helloworld.c 소스를 작성해 보겠습니다.</p>
-<pre><code>\#include &lt;stdio.h\&gt;  
-
-int main() {  
-printf(&quot;hello, world!\\n&quot;);  
-return 0;  
-}
-</code></pre><p>이제 다음과 같은 명령어를 통해 컴파일을 실행하면</p>
-<pre><code>$emcc hello\_world.c -o hello.js -s &apos;BINARYEN=&quot;~/dev/native-osx/binaryen&quot;&apos;
-</code></pre><p>hello.wasm 파일이 떨어집니다.</p>
-<p>hex 에디터로 열어서 hello, world를 찾아 보는것이 도리겠죠?</p>
-<p><img src="/images/0*W-PeZRqrQ4Uu1XW4.jpg" alt="">오…. 소름</p>
-<p>그런데… 이걸 어떻게 브라우저에 띄울까요? 걱정 안해도 됩니다. 브라우저에서 볼 수 있도록 명령어를 제공합니다.</p>
-<pre><code>emcc hello\_world.c -s WASM=1 -o hello.html
-</code></pre><p>타겟을 html로 주고 WASM=1로 주게 되면 우리가 필요한 모든 파일들을 볼 수 있으며textarea 에 뜨는 것을 확인할 수 있습니다.</p>
-<p><img src="/images/0*nuL7btbxqKJp1te9.jpg" alt=""></p>
-<p>물론 실행은 크롬 canary 버전에서 실행했습니다. 아직 프리뷰 버전이라 정식 버전에는 들어가지 않았습니다.</p>
-<h4 id="2-3-한방-그림"><a href="#2-3-한방-그림" class="headerlink" title="2.3. 한방 그림"></a>2.3. 한방 그림</h4><p><strong>C,C++ -> Clang -> LLVM -> WASM</strong> 로 바로 되는 그림이면 좋겠지만 아직은 <strong>C,C++ -> (Clang -> LLVM -> asm.js )-> WASM</strong> 과정으로 이루어지는 형태입니다. 물론 이런 것들은 시간이 더 지나면서 바뀌게 될 것으로 보입니다. 괄호 안의 것들을 지우는 작업이 미래의 일이리라 보여집니다.</p>
-<h3 id="3-여담들"><a href="#3-여담들" class="headerlink" title="3. 여담들"></a><strong>3. 여담들</strong></h3><ol>
-<li>마지막으로 Angry bots 가 브라우저상에 돌아가는 동영상이고 저는 직접 플레이 해 보았는데 그냥.. 3D게임을 그대로 돌리는데 전혀 이상없는 수준이고 로딩 속도도 훨씬 빠르더군요.</li>
-</ol>
-<p>이 프로젝트는 지속적으로 주목해 봐야 합니다. 단연코!</p>
-<ol>
-<li>참고로 WASM 파일을 어떻게 다룰 것인지는 아래 링크를 참조하시기 바랍니다.</li>
-</ol>
-<p>링크 : <a href="http://webassembly.org/docs/js/" target="_blank" rel="external">http://webassembly.org/docs/js/</a></p>
-<p><img src="/images/0*PRvvr7IQ5fFwLVQR.jp" alt="스크린샷 2017-01-22 오후 1.49.16"></p>
-<ol>
-<li>이전에 emscripten같은 프로젝트가 없었냐 하면 그것도 아닙니다. GWT는 java를 JavaScript로 바꾸는 작업을 했었고 이런 일련의 과정들이 현재의 밑거름이 되겠죠.</li>
-</ol>
-<hr>
-<p><em>Originally published at </em><a href="http://devpools.kr/2017/01/21/webassembly-binaryen-emscripten/" target="_blank" rel="external"><em>개발바보들</em></a><em>.</em></p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/f35130448c71" target="_blank" rel="external">January 21, 2017</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;WebAssembly 이름만 들어도 긴장되는 이 프로젝트는 지금 읽으시면서 생각하시는 그대로 web + Assmbly의 조합입니다.&lt;/p&gt;
-&lt;p&gt;링크 : &lt;a href=&quot;http://webassembly.org/&quot; target=&quot;_blank&quot; r
     
     </summary>
     

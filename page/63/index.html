@@ -123,6 +123,80 @@
         
           <section id="main">
   
+    <article id="post-[2016-05-04 07:09:18]json-server"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/05/04/[2016-05-04 07:09:18]json-server/">json-server</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/05/04/[2016-05-04 07:09:18]json-server/" class="article-date">
+	  <time datetime="2016-05-03T22:09:18.000Z" itemprop="datePublished">5월 4, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/1*sevW-e6MR_7efWPYwB4-5A.png" alt="">json의 향연</p>
+<p>인터페이스를 먼저 정의하고 서버 사이드와 클라이언트 사이드를 동시에 개발 진행 많이들 해 보셨으리라 생각합니다. 특히 모바일 개발을 할 때 더 더욱 이런 방법을 많이 씁니다. json은 모바일 데이타 주고 받는 데에 표준 처럼 사용되는 상황입니다. json-server는 이런 경우에 많이 사용할 수 있는 프로젝트입니다.</p>
+<p><a href="https://github.com/typicode/json-server" title="https://github.com/typicode/json-server" target="_blank" rel="external"><strong>typicode/json-server</strong><br>_json-server - Get a full fake REST API with zero coding in less than 30 seconds (seriously)_github.com</a><a href="https://github.com/typicode/json-server" target="_blank" rel="external"></a></p>
+<hr>
+<h4 id="설치를-해-봅시다"><a href="#설치를-해-봅시다" class="headerlink" title="설치를 해 봅시다"></a>설치를 해 봅시다</h4><p>언제나 반복하는 말이죠. 간단합니다.</p>
+<pre><code>$ npm install -g json-server
+</code></pre><h4 id="사용을-해-봅시다"><a href="#사용을-해-봅시다" class="headerlink" title="사용을 해 봅시다"></a>사용을 해 봅시다</h4><p>json-server가 사용할 데이타베이스를 구성해 봅시다.</p>
+<p>이렇게 보통의 mongodb같은 NoSQL에서 줄것만 같은 형태로 json을 구성하고 나서 json-server를 실행 시켜 봅니다.</p>
+<pre><code>$ json-server --watch db.json
+</code></pre><p>어떤 일이 발생했을까요?</p>
+<p><img src="/images/1*MoIREMES4GjP-HrvWFP6gQ.png" alt="">와 실행이다</p>
+<p><a href="http://localhost:3000를" target="_blank" rel="external">http://localhost:3000를</a> 확인해 봐야겠죠?</p>
+<p><img src="/images/1*-pPmV7a5PcP4gNInf4UrjQ.png" alt=""></p>
+<p>이런 형태의 페이지가 뜹니다.</p>
+<p>그리고 각 router에 따라서 json service 를 입맛에 따라 확인해 볼 수 있습니다. 주의 깊은 개발자라면 watch 옵션을 확인했을 텐데요. 이 옵션을 통해 파일을 실시간을 고치고 그것이 서버에 반영됩니다.</p>
+<p>그리고 서버를 실행시킬 때에</p>
+<p>Type s + enter at any time to create a snapshot of the database</p>
+<p>라는 문구를 볼 수 있는데 스냅샷을 저장할 수 있는 옵션입니다.</p>
+<p><img src="/images/1*RIcYDwvVaWlO-17XRwtTcQ.pn" alt="">더러워 콧구멍이라니</p>
+<p>실제 실행해 보면 이런형태로 저장이 되는군요. 파일을 변화시킬때 서비스 별로 스냅샷을 지정할 수도 있겠습니다.</p>
+<h4 id="다양한-기능"><a href="#다양한-기능" class="headerlink" title="다양한 기능"></a>다양한 기능</h4><ul>
+<li>Node.js 에서 서버로 활용할 수 있고 그에 따른 API도 지원합니다.</li>
+<li>Routes 섹션을 살펴보면 NoSQL이 해 주는 여러가지 라우팅 옵션들을 자체 지원합니다. (Filter, Sort, Full text Search등등)</li>
+<li>Static File Server, Port변경, 랜덤 데이타 기능등등 개발할 때 필요한 부분들을 골고루 갖추고 있습니다.</li>
+</ul>
+<h4 id="Typicode"><a href="#Typicode" class="headerlink" title="Typicode"></a>Typicode</h4><p>이 프로젝트를 만든 Typicode 는 최근에 핫한 프로젝트를 연달아 내고 있는데 hotel, husky,lowdb등이 있습니다.</p>
+<p>hotel은 localhost:2000 같이 나오는 url을 my.dev형태로 바꿔주는 프로젝트이고 husky는 git hook를 손쉽게 걸어주는 프로젝트이고 lowdb는 정말 간단한 형태의 json db를 구성할 수 있는 프로젝트입니다.</p>
+<p>다음에 같이 다뤄보도록하겠습니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/c36409454352" target="_blank" rel="external">May 3, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-[2016-05-03 07:16:19]NativeBase"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -202,69 +276,11 @@ npm install
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-05-02 06:35:07]Programming Language Theory"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/05/02/[2016-05-02 06:35:07]Programming Language Theory/">Programming Language Theory</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/05/02/[2016-05-02 06:35:07]Programming Language Theory/" class="article-date">
-	  <time datetime="2016-05-01T21:35:07.000Z" itemprop="datePublished">5월 2, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/1*5jT5aN6kzmkH3Ae5Q2sHuA.png" alt="">여… 열공</p>
-<p>공부를 하고자 하면 뭐든 할 수 있는 세상입니다. 배우고자 하는 뭐든 맘만 먹는다면 할 수 있도록 정보가 널린 세상인데요, 거기에 깃헙도 한 몫 하고 있다고 생각합니다. 오늘은 제목 그대로 Programming Language 이론을 공부하기 위한 프로젝트 입니다.</p>
-<p>2016/05/01 Best Project(720★)</p>
-<p><a href="https://github.com/steshaw/plt" title="https://github.com/steshaw/plt" target="_blank" rel="external"><strong>steshaw/plt</strong><br>_plt - A path to Programming Language Theory enlightenment_github.com</a><a href="https://github.com/steshaw/plt" target="_blank" rel="external"></a></p>
-<hr>
-<h4 id="시작은-수학부터"><a href="#시작은-수학부터" class="headerlink" title="시작은 수학부터"></a>시작은 수학부터</h4><p>으억… Mathmaticl Literacy부터 시작합니다. 수학적으로 읽고 생각하는 능력이라고나 할까요? 그리고 무려 How to prove it… 입니다.</p>
-<p>이후로도 Algebra(대수학) 관련해서는 기초와 어느 정도의 수준을 갖추고 시작해야 한다는 입장입니다.</p>
-<p><img src="/images/1*omG0ti_0WocSUT2st9Q-sA.pn" alt=""></p>
-<p>타입이론</p>
-<p>타입에 대한 이론을 다루고 있는데 비디오, 논문, pdf들을 다양하게 묶어 놓았습니다.</p>
-<p>디자인 이론, 컴파일러, 런타임, 함수형 프로그래밍 등을 죽 다루고 있습니다.</p>
-<p>내용도 방대하고 어렵지만, Programming Language 에 대해서 깊이 이해하려면 꽤나 많은 노력을 들여야 한다는 사실을 확인할 수 있네요.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/54ed96db2bd9" target="_blank" rel="external">May 1, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/62/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/61/">61</a><a class="page-number" href="/page/62/">62</a><span class="page-number current">63</span><a class="page-number" href="/page/64/">64</a><a class="page-number" href="/page/65/">65</a><span class="space">&hellip;</span><a class="page-number" href="/page/96/">96</a><a class="extend next" rel="next" href="/page/64/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/62/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/61/">61</a><a class="page-number" href="/page/62/">62</a><span class="page-number current">63</span><a class="page-number" href="/page/64/">64</a><a class="page-number" href="/page/65/">65</a><span class="space">&hellip;</span><a class="page-number" href="/page/97/">97</a><a class="extend next" rel="next" href="/page/64/">Next</a>
   </nav>
 
 </section>
@@ -311,6 +327,18 @@ npm install
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2017/09/08/deeplearning-basic01/">딥러닝 무식하게 정리해 보기 01</a></h6>
+              <span>9월 8, 2017</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -372,18 +400,6 @@ npm install
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/05/31/tech-trend-01/">(tech-trend) 기술트렌드에 대한 블로깅을 시작하며</a></h6>
-              <span>5월 31, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -396,7 +412,7 @@ npm install
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -406,7 +422,7 @@ npm install
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
+      <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
     </div>
   </div>
 
@@ -416,7 +432,7 @@ npm install
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
