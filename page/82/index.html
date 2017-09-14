@@ -55,32 +55,10 @@
 
 
   
-  
-  <div class="site-header-image">
-    <img id="originBg" width="100%" alt="Hike News" src="">
-  </div>
-
-  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
-    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
-  </div>
-
-  <script>
-        var imgUrls = "images/storm.png".split(",");
-        var random = Math.floor((Math.random() * imgUrls.length ));
-        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
-          document.getElementById("originBg").src=imgUrls[random];
-          document.getElementById("blurBg").src=imgUrls[random];
-        } else {
-          document.getElementById("originBg").src='/' + imgUrls[random];
-          document.getElementById("blurBg").src='/' + imgUrls[random];
-        }
-    </script>
-
-
 
 
 <header id="allheader" class="site-header" role="banner" 
-   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+   >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -123,7 +101,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-03-21 07:07:51]react-native-image-picker"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-03-23 06:56:19]transfer.sh"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +109,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/03/21/[2016-03-21 07:07:51]react-native-image-picker/">react-native-image-picker</a>
+      <a class="article-title" href="/2016/03/23/[2016-03-23 06:56:19]transfer.sh/">transfer.sh</a>
     </h1>
   
 
@@ -139,8 +117,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/03/21/[2016-03-21 07:07:51]react-native-image-picker/" class="article-date">
-	  <time datetime="2016-03-20T22:07:51.000Z" itemprop="datePublished">3월 21, 2016</time>
+	<a href="/2016/03/23/[2016-03-23 06:56:19]transfer.sh/" class="article-date">
+	  <time datetime="2016-03-22T21:56:19.000Z" itemprop="datePublished">3월 23, 2016</time>
 	</a>
 
        
@@ -148,19 +126,19 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/1*ss-g_QiUDZHnPdUckYvyaw.png" alt=""></p>
-<p>모바일 앱에서 Image-Picker는 필수라고 볼수 있죠. React-native에서 이미지를 어떻게 참조할지 알고 싶다면 이 프로젝트가 좋은 아이디어를 줄 것입니다.</p>
-<p>2016/03/21 Editor’s choice</p>
-<p><a href="https://github.com/marcshilling/react-native-image-picker" title="https://github.com/marcshilling/react-native-image-picker" target="_blank" rel="external"><strong>marcshilling/react-native-image-picker</strong><br>_react-native-image-picker - A React Native module that allows you to use native UI to select media from the device…_github.com</a><a href="https://github.com/marcshilling/react-native-image-picker" target="_blank" rel="external"></a></p>
-<p>native 이미지 피커를 이용해서 작업을 합니다.</p>
-<h3 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h3><pre><code>$npm install react-native-image-picker@latest --- save  
-$rnpm link
-</code></pre><p>rnpm link를 이용하면 dependency 문제는 대부분 해결을 해 주기 때문에 위 프로젝트 readme의 설정은 건드리지 않아도 됩니다.</p>
-<p>하지만, 이 프로젝트는 android의 경우는 권한을 줘야 하는 부분이 있기 때문에 한가지 작업만 더 하겠습니다. AndroidMenifest.xml파일만 다음의 부분을 추가해 주세요.</p>
-<p>소스예제</p>
-<p>와 같이 적용했더니 아래와 같이 이미지를 고를 수 있게 나옵니다.</p>
-<p><img src="/images/1*UJbe_2RSmGQlg2ODMJ2Kgw.pn" alt=""></p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/4455a9ff79bd" target="_blank" rel="external">March 20, 2016</a>.</p>
+        <p><img src="/images/1*7jLoQ1MH4QtqgoOQEV-KvQ.jpe" alt=""></p>
+<p>프로젝트를 하면서 ftp서버를 구축한다던지 혹은 파일 쉐어링을 할 일이 많은데, 뭔가 조금은 더 쉽게 하고 싶다. 혹은 더 간단한 방법이 있으면 좋겠다는 생각들 많이 하셨을 거라고 봅니다. 특히 curl 에 특화된 서버가 있으면 좋겠다고 생각하시는 분들도 계셨을 건데요. 이 프로젝트는 그런 문제에 대한 해답이 될 지도 모르겠습니다.</p>
+<p>2016/03/23 Editor’s choice(315 ★)</p>
+<p><a href="https://github.com/dutchcoders/transfer.sh" title="https://github.com/dutchcoders/transfer.sh" target="_blank" rel="external"><strong>dutchcoders/transfer.sh</strong><br>_transfer.sh - Easy and fast file sharing from the command-line._github.com</a><a href="https://github.com/dutchcoders/transfer.sh" target="_blank" rel="external"></a></p>
+<p>서버사이드는 Golang으로 만들어져 있습니다.</p>
+<p>소스를 한번 확인해 보면</p>
+<p>mux라는 http 라우터를 사용해서 파일들을 손쉽게 컨트롤 할 수 있도록 만든 것을 볼 수 있습니다.</p>
+<p>이런 일련의 작업들은 mux 라는 http multiplexer를 이용해서 가능해 졌습니다.</p>
+<p><a href="https://github.com/gorilla/mux" title="https://github.com/gorilla/mux" target="_blank" rel="external"><strong>gorilla/mux</strong><br>_mux - A powerful URL router and dispatcher for golang._github.com</a><a href="https://github.com/gorilla/mux" target="_blank" rel="external"></a></p>
+<p>node.js 를 가지고 ftp 서버를 만들고 하던 작업들과 비교해 보면 대강 비슷한 형태의 프로젝트라고 볼 수 있습니다.</p>
+<p>단순히 transfer.sh 서버만 존재하는 것은 아니고 웹 페이지도 함께 있어서 사용하는데 더욱 편리한데 다음 페이지에서 어떻게 돌아가는지 확인할 수 있습니다.</p>
+<p><a href="https://transfer.sh/" title="https://transfer.sh/" target="_blank" rel="external"><strong>transfer.sh - <em>Easy and fast file sharing from the command-line.</em></strong><br>Easy and fast file sharing from the command-line.transfer.sh</a><a href="https://transfer.sh/" target="_blank" rel="external"></a></p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/51b5e6cce40f" target="_blank" rel="external">March 22, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -181,7 +159,7 @@ $rnpm link
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-03-21 06:15:31]libphonenumber"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-03-22 05:41:00]searchkit"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -189,7 +167,7 @@ $rnpm link
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/03/21/[2016-03-21 06:15:31]libphonenumber/">libphonenumber</a>
+      <a class="article-title" href="/2016/03/22/[2016-03-22 05:41:00]searchkit/">searchkit</a>
     </h1>
   
 
@@ -197,8 +175,8 @@ $rnpm link
     
     <div class="article-meta">
       
-	<a href="/2016/03/21/[2016-03-21 06:15:31]libphonenumber/" class="article-date">
-	  <time datetime="2016-03-20T21:15:31.000Z" itemprop="datePublished">3월 21, 2016</time>
+	<a href="/2016/03/22/[2016-03-22 05:41:00]searchkit/" class="article-date">
+	  <time datetime="2016-03-21T20:41:00.000Z" itemprop="datePublished">3월 22, 2016</time>
 	</a>
 
        
@@ -206,18 +184,19 @@ $rnpm link
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/1*hDJLK1uHSLmoHiZd04_cUg.jpeg" alt=""></p>
-<p>안드로이드 4.0 (Icecream Sandwich) 때 부터 사용되어온 국제화 도구인 libphonenumber 입니다. 간단하게 설명하면 사용되고 있는 전화번호 (010–1234–5678) 과 국가 번호 (kr)을 입력하면 국제 전화 번호를 아웃풋으로 받을 수 있습니다.</p>
-<p>2016/03/21 today’s Best ( 264★)</p>
-<p><a href="https://github.com/googlei18n/libphonenumber" title="https://github.com/googlei18n/libphonenumber" target="_blank" rel="external"><strong>googlei18n/libphonenumber</strong><br>_libphonenumber - Google’s common Java, C++ and JavaScript library for parsing, formatting, and validating international…_github.com</a><a href="https://github.com/googlei18n/libphonenumber" target="_blank" rel="external"></a></p>
-<h3 id="데모"><a href="#데모" class="headerlink" title="데모"></a>데모</h3><p><a href="https://rawgit.com/googlei18n/libphonenumber/master/javascript/i18n/phonenumbers/demo-compiled.html" target="_blank" rel="external">Javascript</a></p>
-<p><img src="/images/1*OvZSOJnSQkLPvBvQGUZSfg.png" alt=""></p>
-<p>보시는 것 처럼 010–1234–5678 에 대한 결과 값을 얻을 수 있습니다. isPossibleNumber가 전화번호로 전화를 걸 수 있다는 것인지는 잘 모르겠습니다. 흠. 존재하는 번호였나요?</p>
-<p><a href="http://libphonenumber.appspot.com/" target="_blank" rel="external">Java</a></p>
-<p>Javascript 버전보다 약간 깔끔하게 정리가 되어 있습니다만, 내용은 동일하므로 스샷은 제외합니다.</p>
-<p><img src="/images/1*p71OqBlTvZkkcQQtJc-JAw.pn" alt=""></p>
-<p>재미 있는 것은 한 프로젝트 안에 C++, Javascript, Java버전 모두 제공하는 형태를 띄고 있다는 것입니다. 이런 대표적인 예가 TODO App 인데 말이죠.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/e400eee8ab52" target="_blank" rel="external">March 20, 2016</a>.</p>
+        <p><img src="/images/1*bcvaOS0qZF5sDomZncHk0A.jpeg" alt=""></p>
+<p>React 는 기본적으로 UI 컴포넌트 이고 View 만 담당한다. 라는 기본의미에 충실하게 여러가지 컴포넌트들이 나오고 있는데요. 오늘 소개할 프로젝트는 elastic search 엔진만 있으면 서치툴바를 꽤나 멋지게 꾸밀 수 있는 UI 위젯 정도가 될 거 같습니다.</p>
+<p>2016/03/22 ( 513 ★ )</p>
+<p><a href="https://github.com/searchkit/searchkit" title="https://github.com/searchkit/searchkit" target="_blank" rel="external"><strong>searchkit/searchkit</strong><br>_searchkit - React UI components / widgets. The easiest way to build a great search experience with Elasticsearch._github.com</a><a href="https://github.com/searchkit/searchkit" target="_blank" rel="external"></a></p>
+<p><img src="/images/1*46_y65bWc9P24VU3TtANjA.pn" alt=""></p>
+<p>보시는 이미지 예제 처럼 <searchbox \=""> 태그와 Filter 들을 셋팅하면 근사한 결과들을 볼 수 있습니다.</searchbox></p>
+<p><a href="http://demo.searchkit.co/" target="_blank" rel="external">Live demo</a></p>
+<p>를 통해 영화 검색을 테스트 해 봐도 좋을 거 같습니다.</p>
+<p>소스보기</p>
+<pre><code>const searchkit = new SearchkitManager(&quot;http://demo.searchkit.co/api/movies/&quot;)
+</code></pre><p>SearchkitManager(ElasticSearch 주소) 를 통해 searchkit을 정의한 후에</p>
+<p>React Componenet 상에서 사용하면 됩니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/980dd2963ad4" target="_blank" rel="external">March 21, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -242,7 +221,7 @@ $rnpm link
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/81/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/80/">80</a><a class="page-number" href="/page/81/">81</a><span class="page-number current">82</span><a class="page-number" href="/page/83/">83</a><a class="page-number" href="/page/84/">84</a><span class="space">&hellip;</span><a class="page-number" href="/page/97/">97</a><a class="extend next" rel="next" href="/page/83/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/81/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/80/">80</a><a class="page-number" href="/page/81/">81</a><span class="page-number current">82</span><a class="page-number" href="/page/83/">83</a><a class="page-number" href="/page/84/">84</a><span class="space">&hellip;</span><a class="page-number" href="/page/98/">98</a><a class="extend next" rel="next" href="/page/83/">Next</a>
   </nav>
 
 </section>
@@ -296,6 +275,30 @@ $rnpm link
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a></h6>
+              <span>9월 14, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2017/09/14/puppeteer/">[github]Node.js 기반 헤드리스 브라우저 컨트롤 API - puppeteer</a></h6>
+              <span>9월 14, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2017/09/08/deeplearning-basic01/">딥러닝 무식하게 정리해 보기 01</a></h6>
               <span>9월 8, 2017</span>
             </div>
@@ -338,30 +341,6 @@ $rnpm link
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/06/09/feedwordpress/">feedwordpress를 설치하다</a></h6>
-              <span>6월 9, 2017</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/06/07/about-test/">헤드리스 크롬과 selenium2의 조합을 사용해 보자 with node</a></h6>
-              <span>6월 7, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -374,7 +353,7 @@ $rnpm link
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-trend-github/">github-trend, github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -384,7 +363,7 @@ $rnpm link
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
+      <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/github-trend-github/" style="font-size: 10px;">github-trend, github</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/tip-docker-devops-git/" style="font-size: 10px;">tip, docker, devops, git</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
     </div>
   </div>
 
@@ -394,7 +373,7 @@ $rnpm link
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -445,9 +424,6 @@ $rnpm link
 
 
     <!-- headerblur min height -->
-    
-      var headerblur = document.getElementById("header-blur");
-      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

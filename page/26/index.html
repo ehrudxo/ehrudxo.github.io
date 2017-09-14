@@ -55,32 +55,10 @@
 
 
   
-  
-  <div class="site-header-image">
-    <img id="originBg" width="100%" alt="Hike News" src="">
-  </div>
-
-  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
-    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
-  </div>
-
-  <script>
-        var imgUrls = "images/storm.png".split(",");
-        var random = Math.floor((Math.random() * imgUrls.length ));
-        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
-          document.getElementById("originBg").src=imgUrls[random];
-          document.getElementById("blurBg").src=imgUrls[random];
-        } else {
-          document.getElementById("originBg").src='/' + imgUrls[random];
-          document.getElementById("blurBg").src='/' + imgUrls[random];
-        }
-    </script>
-
-
 
 
 <header id="allheader" class="site-header" role="banner" 
-   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+   >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -123,7 +101,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-07-30 08:00:07]image-diff"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-08-02 23:38:20]sublime-enhanced"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +109,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/07/30/[2016-07-30 08:00:07]image-diff/">image-diff</a>
+      <a class="article-title" href="/2016/08/02/[2016-08-02 23:38:20]sublime-enhanced/">sublime-enhanced</a>
     </h1>
   
 
@@ -139,8 +117,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/07/30/[2016-07-30 08:00:07]image-diff/" class="article-date">
-	  <time datetime="2016-07-29T23:00:07.000Z" itemprop="datePublished">7월 30, 2016</time>
+	<a href="/2016/08/02/[2016-08-02 23:38:20]sublime-enhanced/" class="article-date">
+	  <time datetime="2016-08-02T14:38:20.000Z" itemprop="datePublished">8월 2, 2016</time>
 	</a>
 
        
@@ -148,27 +126,75 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Uber 에서 굉장히 재미있는 프로젝트를 내 놓았습니다.</p>
-<p>image-diff 라는 제목에서 알 수 있듯이 이미지간에 다른 부분들을 찾아주는 일들을 해 주는 프로젝트입니다.</p>
-<p><img src="/images/1*sUqGYdgSjSTPDJj3EY8Mcg.png" alt="">간단하죠?</p>
-<p>2016/07/30 Today’s Best</p>
-<p><a href="https://github.com/uber/image-diff" title="https://github.com/uber/image-diff" target="_blank" rel="external"><strong>uber/image-diff</strong><br>_image-diff - Create image differential between two images_github.com</a><a href="https://github.com/uber/image-diff" target="_blank" rel="external"></a></p>
-<hr>
-<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><p>cli 명령어로 사용하기 좋기 때문에 저 같은 경우는 global 옵션을 줘서 인스톨 했습니다.</p>
-<pre><code>$npm install -g image-diff
-</code></pre><h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><pre><code>$image-diff original-image gariginal-image result-image
-</code></pre><hr>
-<h4 id="어디에-쓸꼬"><a href="#어디에-쓸꼬" class="headerlink" title="어디에 쓸꼬?"></a>어디에 쓸꼬?</h4><p>Uber에서 왜 이미지 diff 를 구하는 지를 곰곰이 생각해 보았습니다. 두가지 정도의 추측을 할 수 있는데 하나는 기사들의 라이센스 위조같은 부분일 거라는 생각이 들었고 하나는 지도 이미지 데이타의 차이점을 파악해서 기사들에게 지형변화에 대한 감지를 할 수 있겠구나 정도의 생각입니다.</p>
-<h4 id="이미지-위변조-detect"><a href="#이미지-위변조-detect" class="headerlink" title="이미지 위변조 detect"></a>이미지 위변조 detect</h4><p>아주 유명한 그림인 모나리자 그림을 한번 위변조 해 보겠습니다.</p>
-<p><img src="/images/1*5J5j9ulD8FH6TlY1yAydKw.png" alt="">gimp는 내 친구</p>
-<p>우측 하단에 검정색 글씨로 “keen is king”이라는 아주 민망한 글자를 써 놓았습니다만, 이미지로 export하면 육안으로는 전혀 알 수가 없습니다.</p>
-<p>하지만, image-diff 를 이용해서 원본 이미지와 diff 를 해보니</p>
-<p><img src="/images/1*OUUFnu-PG-yeZK01nSpWEg.png" alt=""></p>
-<p>위와 같은 이미지가 떨어지고, 확대를 한번 해 보면</p>
-<p><img src="/images/1*o4-5s2-PZcgoHiP7QI7AGw.pn" alt=""></p>
-<p>이라는 아주 민망한 글자가 새겨져 있는 것을 볼 수 있습니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/455a8417f054" target="_blank" rel="external">July 29, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+        <p>sublime Text 의 플러그인들의 모음입니다.</p>
+<p>2016/08/02 Editor’s choice</p>
+<p><a href="https://github.com/shagabutdinov/sublime-enhanced" title="https://github.com/shagabutdinov/sublime-enhanced" target="_blank" rel="external"><strong>shagabutdinov/sublime-enhanced</strong><br>_sublime-enhanced - Set of plugins for beloved sublime text editor_github.com</a><a href="https://github.com/shagabutdinov/sublime-enhanced" target="_blank" rel="external"></a></p>
+<p>gh-ost 를 리뷰할 생각이었으나 gh-ost는 앞으로 며칠간 수위권을 장식할 예정이라 간단하게 플러그인들의 모음을 모아 놓은 사이트만 공유합니다.</p>
+<p>3가지의 목표를 가지고 만든 프로젝트입니다.</p>
+<ol>
+<li>Mouseless usage of sublime</li>
+<li>Navigation (in code and files) improvement</li>
+<li>Common micro-tasks automation</li>
+</ol>
+<p>마우스 없이 쓰고 코드와 파일간을 쉽게 컨트롤 하고 공통적으로 행해지는 작업들을 자동화 한다는 군요.</p>
+<p>데모로 보이는 페이지에는 method를 작성하면 기본적으로 skeleton 코드를 만들어 주는</p>
+<p><a href="https://github.com/shagabutdinov/sublime-method" title="https://github.com/shagabutdinov/sublime-method" target="_blank" rel="external"><strong>shagabutdinov/sublime-method</strong><br>_sublime-method - Sublime plugin that allows to manipulate methods in file_github.com</a><a href="https://github.com/shagabutdinov/sublime-method" target="_blank" rel="external"></a></p>
+<p>프로젝트로 시작해 아래와 같이 많은 프로젝트들을 기본 세팅해서 사용할 수 있습니다.</p>
+<pre><code>git clone git@github.com:shagabutdinov/sublime-align-cursors.git AlignCursors;  
+git clone git@github.com:shagabutdinov/sublime-align-hash-table.git AlignHashTable;  
+git clone git@github.com:shagabutdinov/sublime-append-selection.git AppendSelection;  
+git clone git@github.com:shagabutdinov/sublime-autocompletion.git Autocompletion;  
+git clone git@github.com:shagabutdinov/sublime-clone-file.git CloneFile;  
+git clone git@github.com:shagabutdinov/sublime-close-other.git CloseOther;  
+git clone git@github.com:shagabutdinov/sublime-context.git Context;  
+git clone git@github.com:shagabutdinov/sublime-devastate-mini.git DevastateMini;  
+git clone git@github.com:shagabutdinov/sublime-duplicate-lines-enhanced.git DuplicateLinesEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-eval-selection.git EvalSelection;  
+git clone git@github.com:shagabutdinov/sublime-delayed-save-all.git DelayedSaveAll;  
+git clone git@github.com:shagabutdinov/sublime-expression.git Expression;  
+git clone git@github.com:shagabutdinov/sublime-file-dialog.git FileDialog;  
+git clone git@github.com:shagabutdinov/sublime-file-list.git FileList;  
+git clone git@github.com:shagabutdinov/sublime-file-util.git FileUtil;  
+git clone git@github.com:shagabutdinov/sublime-folder-files.git FolderFiles;  
+git clone git@github.com:shagabutdinov/sublime-full-undo.git FullUndo;  
+git clone git@github.com:shagabutdinov/sublime-goto-anything-enhanced.git GotoAnythingEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-goto-character.git GotoCharacter;  
+git clone git@github.com:shagabutdinov/sublime-goto-definition-enhanced.git GotoDefinitionEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-goto-last-edit-enhanced.git GotoLastEditEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-goto-line-enhanced.git GotoLineEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-indentation-navigation.git IndentationNavigation;  
+git clone git@github.com:shagabutdinov/sublime-join-assignment.git JoinAssignment;  
+git clone git@github.com:shagabutdinov/sublime-join-chain-call.git JoinChainCall;  
+git clone git@github.com:shagabutdinov/sublime-join-lines-enhanced.git JoinLinesEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-join-statement.git JoinStatement;  
+git clone git@github.com:shagabutdinov/sublime-keymap-enhanced.git KeymapEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-keyword.git Keyword;  
+git clone git@github.com:shagabutdinov/sublime-local-variable.git LocalVariable;  
+git clone git@github.com:shagabutdinov/sublime-method.git Method;  
+git clone git@github.com:shagabutdinov/sublime-named-mark.git NamedMark;  
+git clone git@github.com:shagabutdinov/sublime-nested-snippet.git NestedSnippet;  
+git clone git@github.com:shagabutdinov/sublime-nesting-snippet.git NestingSnippet;  
+git clone git@github.com:shagabutdinov/sublime-open-path.git OpenPath;  
+git clone git@github.com:shagabutdinov/sublime-project-files.git ProjectFiles;  
+git clone git@github.com:shagabutdinov/sublime-quick-search-enhanced.git QuickSearchEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-remove-selection.git RemoveSelection;  
+git clone git@github.com:shagabutdinov/sublime-repeat-command.git RepeatCommand;  
+git clone git@github.com:shagabutdinov/sublime-scope-context.git ScopeContext;  
+git clone git@github.com:shagabutdinov/sublime-scroll-enhanced.git ScrollEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-search-panel-enhanced.git SearchPanelEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-semicolon.git Semicolon;  
+git clone git@github.com:shagabutdinov/sublime-shell-status.git ShellStatus;  
+git clone git@github.com:shagabutdinov/sublime-snippet-caller.git SnippetCaller;  
+git clone git@github.com:shagabutdinov/sublime-snippet-manager.git SnippetManager;  
+git clone git@github.com:shagabutdinov/sublime-statement.git Statement;  
+git clone git@github.com:shagabutdinov/sublime-status-message.git StatusMessage;  
+git clone git@github.com:shagabutdinov/sublime-enhanced.git SublimeEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-terminal-project-folder.git TerminalProjectFolder;  
+git clone git@github.com:shagabutdinov/sublime-toggle-wrap.git ToggleWrap;  
+git clone git@github.com:shagabutdinov/sublime-utilities.git Utilities;  
+git clone git@github.com:shagabutdinov/sublime-wrap-statement.git WrapStatement
+</code></pre><p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/a165c2f033b0" target="_blank" rel="external">August 2, 2016</a>.</p>
+<p>Exported from <a href="https://medium.co" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
     </div>
@@ -188,7 +214,7 @@
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-07-29 21:34:15]unmaintainable-code"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-08-02 00:00:18]lumen"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -196,7 +222,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/07/29/[2016-07-29 21:34:15]unmaintainable-code/">unmaintainable-code</a>
+      <a class="article-title" href="/2016/08/02/[2016-08-02 00:00:18]lumen/">lumen</a>
     </h1>
   
 
@@ -204,8 +230,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/07/29/[2016-07-29 21:34:15]unmaintainable-code/" class="article-date">
-	  <time datetime="2016-07-29T12:34:15.000Z" itemprop="datePublished">7월 29, 2016</time>
+	<a href="/2016/08/02/[2016-08-02 00:00:18]lumen/" class="article-date">
+	  <time datetime="2016-08-01T15:00:18.000Z" itemprop="datePublished">8월 2, 2016</time>
 	</a>
 
        
@@ -213,25 +239,132 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>2012년에 ‘유지보수 하기 어렵게 코딩하는 방법: 개발자로 평생 먹고 살 수 있다’ 라는 책을 기억하실 겁니다. 아마도.</p>
-<p>반어법이죠. 이렇게 해서는 안된다는 방법을 거꾸로 보여 줌으로써 유지보수 개발을 위한 컨벤션등을 강조하는 책이었습니다.</p>
-<p><a href="http://www.hanbit.co.kr/store/books/look.php?p_code=E2375873090" target="_blank" rel="external"><img src="/images/1*hKFp5A0rL47103EOcsPPFQ.png" alt=""></a>이미지를 클릭하면 한빛 사이트로 이동합니다</p>
-<p>지금 한빛에서는 ebook은 무료로 구매가 가능하네요.</p>
-<p>원전은 다음 링크에 있습니다.</p>
-<p><a href="http://mindprod.com/jgloss/unmain.html" title="http://mindprod.com/jgloss/unmain.html" target="_blank" rel="external"><strong>unmaintainable code : Java Glossary</strong><br>_unmaintainable code This is my most popular essay. It is amazing how many people don’t realise it is tongue in cheek If…_mindprod.com</a><a href="http://mindprod.com/jgloss/unmain.html" target="_blank" rel="external"></a></p>
-<p>한글 pdf 가 훨씬 읽을만 합니다. 이 사이트가 좋은 서버 개발자인지는 몰라도 웹사이트는 젬병인 모양입니다.</p>
-<p>저처럼 생각한 사람이 한 둘이 아니었나 봅니다.</p>
-<p>2016/07/29 Editor’s choice</p>
-<p><a href="https://github.com/Droogans/unmaintainable-code" title="https://github.com/Droogans/unmaintainable-code" target="_blank" rel="external"><strong>Droogans/unmaintainable-code</strong><br>_unmaintainable-code - An easier to share version of the infamous http://mindprod.com/jgloss/unmain.html_github.com</a><a href="https://github.com/Droogans/unmaintainable-code" target="_blank" rel="external"></a></p>
-<p>누군가 깃헙에 이 책을 정리해 놓았습니다.</p>
-<p>그것도 아주 읽기 쉽게 한 페이지로!</p>
-<p>하지만 책인 관계로 저작권을 문제 삼지 않을까 원본 페이지에 보니 저작권을 명시하고 있습니다.</p>
-<p><strong>이런 걱정 저 말고도 하고 있었나 봅니다.</strong></p>
-<p><img src="/images/1*RSYu7RMVFkGSqZMW-lRijw.pn" alt=""></p>
-<p>누군가 물어봤고, 저작자에게 사용해도 된다고 하는 허락을 받았다고 하는 군요. 우와.</p>
-<p>대인배.</p>
-<p>그러고 보니 한빛 미디어도 대인배군요.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/36dfbf74bbc6" target="_blank" rel="external">July 29, 2016</a>.</p>
+        <p>Back To The Mac을 쓰는 기분이네요. 이런 프로젝트를 소개할 때는 말이죠.</p>
+<p><img src="/images/1*N6Ydhj0lf4y6DnPQx4Mlcw.gif" alt=""></p>
+<p>화면의 밝기를 조절해 주는 Mac용 앱 프로젝트 입니다.</p>
+<p>“자동으로 밝기 조절” 옵션을 disable 해 줘야 제대로 작동합니다.</p>
+<p><img src="/images/1*n0d7zU71NNs8Zubsognj_Q.pn" alt=""></p>
+<p>2016/08/01 Today’s Best</p>
+<p><a href="https://github.com/anishathalye/lumen" title="https://github.com/anishathalye/lumen" target="_blank" rel="external"><strong>anishathalye/lumen</strong><br>_lumen - Magic auto brightness based on screen contents :bulb:_github.com</a><a href="https://github.com/anishathalye/lumen" target="_blank" rel="external"></a></p>
+<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><p>기본적으로 binary를 제공합니다.</p>
+<p>공식사이트에서</p>
+<p><a href="http://www.anishathalye.com/2016/07/31/lumen/" title="http://www.anishathalye.com/2016/07/31/lumen/" target="_blank" rel="external"><strong>Lumen: Magic Auto Brightness Based on Screen Contents</strong><br>_I do most of my software development in my terminal, with my trusty tmux / zsh / vim setup. When coding, I frequently…_www.anishathalye.com</a><a href="http://www.anishathalye.com/2016/07/31/lumen/" target="_blank" rel="external"></a></p>
+<p>다운로드 받아서 설치할 수 있습니다.</p>
+<h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><p>실행하면 바로 MacOS의 status Bar에 해당 어플리케이션이 설치되고 Main Display 의 화면을 분석해서 색깔을 조절합니다.</p>
+<hr>
+<h4 id="소스-보기"><a href="#소스-보기" class="headerlink" title="소스 보기"></a>소스 보기</h4><p><a href="https://github.com/anishathalye/lumen/blob/master/Lumen/BrightnessController.m" title="https://github.com/anishathalye/lumen/blob/master/Lumen/BrightnessController.m" target="_blank" rel="external"><strong>anishathalye/lumen</strong><br>_lumen - Magic auto brightness based on screen contents :bulb:_github.com</a><a href="https://github.com/anishathalye/lumen/blob/master/Lumen/BrightnessController.m" target="_blank" rel="external"></a></p>
+<p>BrightnessController.m 파일이 대부분의 기능을 담당하고 있습니다.</p>
+<p>AppDelegate.m 파일의 applicationDidFinishLaunching 을 살펴보면</p>
+<pre><code>- (void)applicationDidFinishLaunching:(NSNotification \*)aNotification {
+
+self.statusItem = \[\[NSStatusBar systemStatusBar\] statusItemWithLength:NSVariableStatusItemLength\];
+
+\[self.statusItem setMenu:self.statusMenu\];
+
+\[self.statusItem setTitle:MENU\_SYMBOL\];
+
+\[self.statusItem setHighlightMode:YES\];
+
+self.brightnessController = \[\[BrightnessController alloc\] init\];
+
+\[self.brightnessController start\];
+
+\[self.toggle setTitle:STOP\];
+
+}
+</code></pre><p>brightnessController start</p>
+<p>함수를 콜 하게 됩니다.</p>
+<p>이 함수는 타이머를 실행시키는데 이 대부분이 링크 BrightnessController.m 파일에 작성되어 있죠.</p>
+<p>타이머가 콜하는 tick은</p>
+<pre><code>(void)tick:(NSTimer \*)timer {
+
+// 스크린의 밝기를 얻고
+
+CGImageRef contents = \[self getScreenContents\];
+
+if (!contents) {
+
+return;
+
+}
+
+double lightness = \[self computeLightness:contents\];
+
+CFRelease(contents);
+
+// 백라이트가 수동으로 설정되었는지 확인한 후에
+
+static bool noticed = false;
+
+static float lastNoticed = 0;
+
+float setPoint = \[self getBrightness\];
+
+if (noticed || fabsf(self.lastSet --- setPoint) \&gt; CHANGE\_NOTICE) {
+
+if (!noticed) {
+
+noticed = true;
+
+lastNoticed = setPoint;
+
+return; // 계속 바뀌는 치 체크
+
+}
+
+if (fabsf(setPoint --- lastNoticed) \&gt; CHANGE\_NOTICE) {
+
+lastNoticed = setPoint;
+
+return; // it&apos;s still changing
+
+} else {
+
+\[self.model observeOutput:setPoint forInput:lightness\];
+
+noticed = false;
+
+// don&apos;t return, fall through and evaluate model here
+
+}
+
+}
+
+float brightness = \[self.model predictFromInput:lightness\];
+
+\[self setBrightness:brightness\];
+
+}
+</code></pre><p>마지막으로 계산된 값으로 밝기를 셋팅합니다.</p>
+<p>관련된 계산식은 computeLightness 에 작성되어 있습니다.</p>
+<pre><code>double brightness = 0;
+
+const unsigned int kSkip = 16; // uniformly sample screen pixels
+
+// find RMS brightness value
+
+if (data) {
+
+for (size\_t y = 0; y &lt; height; y += kSkip) {
+
+for (size\_t x = 0; x &lt; width; x += kSkip) {
+
+const unsigned char \*dptr = &amp;data\[(width \* y + x) \* 4\];
+
+double l = srgb\_to\_brightness(dptr\[0\], dptr\[1\], dptr\[2\]);
+
+brightness += l \* l;
+
+}
+
+}
+
+}
+
+**brightness = sqrt(brightness / (width \* height / (kSkip \* kSkip)));**
+</code></pre><p>오늘은 왠일로 소스 분석까지 해 버렸네요. 아이쿵.</p>
+<p>이런 코드 너무 좋아요~</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/21b4a7988f67" target="_blank" rel="external">August 1, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -256,7 +389,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/25/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/page/97/">97</a><a class="extend next" rel="next" href="/page/27/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/25/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/page/98/">98</a><a class="extend next" rel="next" href="/page/27/">Next</a>
   </nav>
 
 </section>
@@ -310,6 +443,30 @@
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a></h6>
+              <span>9월 14, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2017/09/14/puppeteer/">[github]Node.js 기반 헤드리스 브라우저 컨트롤 API - puppeteer</a></h6>
+              <span>9월 14, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2017/09/08/deeplearning-basic01/">딥러닝 무식하게 정리해 보기 01</a></h6>
               <span>9월 8, 2017</span>
             </div>
@@ -352,30 +509,6 @@
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/06/09/feedwordpress/">feedwordpress를 설치하다</a></h6>
-              <span>6월 9, 2017</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/06/07/about-test/">헤드리스 크롬과 selenium2의 조합을 사용해 보자 with node</a></h6>
-              <span>6월 7, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -388,7 +521,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-trend-github/">github-trend, github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -398,7 +531,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
+      <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/github-trend-github/" style="font-size: 10px;">github-trend, github</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/tip-docker-devops-git/" style="font-size: 10px;">tip, docker, devops, git</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
     </div>
   </div>
 
@@ -408,7 +541,7 @@
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -459,9 +592,6 @@
 
 
     <!-- headerblur min height -->
-    
-      var headerblur = document.getElementById("header-blur");
-      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

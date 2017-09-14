@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가 | keen blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="tip, docker, devops, git" />
+  
+  
+  
+  
+  <meta name="description" content="깃랩같은 좋은 툴은 언제나 파워풀하지만, 설치가 쉽지않다. 그래서 깃랩을 설정하기가 어려운 부분은 도커가 최근에는 대신하고 있다.그런데, 도커로 설치를 하다보면 CI, CD 환경을 꾸미는 것은 어떻게 해야할지 감이 오지 않을 때가 많다. 도커로 깃랩을 설치하는 것과 관련된 글은 검색을 하면 수십개가 나오고, 젠킨스와 깃랩을 연동하는 부분도 굉장히 많이 나오">
+<meta name="keywords" content="tip, docker, devops, git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가">
+<meta property="og:url" content="http://keen.devpools.kr/2017/09/14/gitjenkinstip/index.html">
+<meta property="og:site_name" content="keen blog">
+<meta property="og:description" content="깃랩같은 좋은 툴은 언제나 파워풀하지만, 설치가 쉽지않다. 그래서 깃랩을 설정하기가 어려운 부분은 도커가 최근에는 대신하고 있다.그런데, 도커로 설치를 하다보면 CI, CD 환경을 꾸미는 것은 어떻게 해야할지 감이 오지 않을 때가 많다. 도커로 깃랩을 설치하는 것과 관련된 글은 검색을 하면 수십개가 나오고, 젠킨스와 깃랩을 연동하는 부분도 굉장히 많이 나오">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="http://keen.devpools.kr/images/sourcecodemgmt.png">
+<meta property="og:updated_time" content="2017-09-14T04:57:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가">
+<meta name="twitter:description" content="깃랩같은 좋은 툴은 언제나 파워풀하지만, 설치가 쉽지않다. 그래서 깃랩을 설정하기가 어려운 부분은 도커가 최근에는 대신하고 있다.그런데, 도커로 설치를 하다보면 CI, CD 환경을 꾸미는 것은 어떻게 해야할지 감이 오지 않을 때가 많다. 도커로 깃랩을 설치하는 것과 관련된 글은 검색을 하면 수십개가 나오고, 젠킨스와 깃랩을 연동하는 부분도 굉장히 많이 나오">
+<meta name="twitter:image" content="http://keen.devpools.kr/images/sourcecodemgmt.png">
+  
+    <link rel="alternate" href="/atom.xml" title="keen blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/fashion.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="keen blog" rel="home"> keen blog </a>
+            
+          </h1>
+          
+          
+            <div class="site-description">techblog</div>
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-gitjenkinstip" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      [tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2017/09/14/gitjenkinstip/" class="article-date">
+	  <time datetime="2017-09-14T04:31:23.000Z" itemprop="datePublished">9월 14, 2017</time>
+	</a>
+
+       
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>깃랩같은 좋은 툴은 언제나 파워풀하지만, 설치가 쉽지않다. 그래서 깃랩을 설정하기가 어려운 부분은 도커가 최근에는 대신하고 있다.<br>그런데, 도커로 설치를 하다보면 CI, CD 환경을 꾸미는 것은 어떻게 해야할지 감이 오지 않을 때가 많다.</p>
+<p>도커로 깃랩을 설치하는 것과 관련된 글은 검색을 하면 수십개가 나오고, 젠킨스와 깃랩을 연동하는 부분도 굉장히 많이 나오지만 도커로 설치된 깃랩과 젠킨스 연동을 위한 중요한 링크가 빠져 있다.</p>
+<p>중요한 두가지 설정 포인트가 필요하다.</p>
+<ol>
+<li>ssh 포트 변경된 경우 git 연결<br>~/.ssh/config 파일을 만든다.<br>ServerName, UserName, Port 은 프로젝트에 맞춰 준다.<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Host &#123;ServerName&#125;</div><div class="line">        User &#123;UserName&#125;</div><div class="line">        Port &#123;Port&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>이후 git 명령어로 프로젝트를 잘 가져오는지 확인하자.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$git</span> <span class="built_in">clone</span> ssh://git@server:[port]/url </div><div class="line">`</div></pre></td></tr></table></figure>
+<ol>
+<li>git 연결 주소 설정<br>참고로, 퍼블릭키와 프라이빗 키는 이미 잘 설정되어 있을 거라는 전제하에 얘기한다.</li>
+</ol>
+<p>링크 : <a href="http://egloos.zum.com/mcchae/v/11246199" target="_blank" rel="external">gitlab과 Jenkins연동</a></p>
+<p>위 링크에 대해서 URL을 설정하는 부분만 아래와 같이 바꾸면 잘 해결되는 것을 확인할 수 있다.</p>
+<p><img src="/images/sourcecodemgmt.png" alt="링크 주소 설정"></p>
+<p>이렇게 되고 나면 깃에 자유자재로 업데이트하고 긁어올 수 있음을 알 수 있다. 나머지 CI, CD 옵션은 원하는데로 구성하면 된다.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/14/puppeteer/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">[github]Node.js 기반 헤드리스 브라우저 컨트롤 API - puppeteer</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav">None</ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2017 keen blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

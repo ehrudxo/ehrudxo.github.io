@@ -55,32 +55,10 @@
 
 
   
-  
-  <div class="site-header-image">
-    <img id="originBg" width="100%" alt="Hike News" src="">
-  </div>
-
-  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
-    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
-  </div>
-
-  <script>
-        var imgUrls = "images/storm.png".split(",");
-        var random = Math.floor((Math.random() * imgUrls.length ));
-        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
-          document.getElementById("originBg").src=imgUrls[random];
-          document.getElementById("blurBg").src=imgUrls[random];
-        } else {
-          document.getElementById("originBg").src='/' + imgUrls[random];
-          document.getElementById("blurBg").src='/' + imgUrls[random];
-        }
-    </script>
-
-
 
 
 <header id="allheader" class="site-header" role="banner" 
-   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+   >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -123,7 +101,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-10-05 10:18:57]text-spinners"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-10-07 12:17:20]create-react-app에 관하여 -1"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +109,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/10/05/[2016-10-05 10:18:57]text-spinners/">text-spinners</a>
+      <a class="article-title" href="/2016/10/07/[2016-10-07 12:17:20]create-react-app에 관하여 -1/">create-react-app에 관하여 -1</a>
     </h1>
   
 
@@ -139,8 +117,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/10/05/[2016-10-05 10:18:57]text-spinners/" class="article-date">
-	  <time datetime="2016-10-05T01:18:57.000Z" itemprop="datePublished">10월 5, 2016</time>
+	<a href="/2016/10/07/[2016-10-07 12:17:20]create-react-app에 관하여 -1/" class="article-date">
+	  <time datetime="2016-10-07T03:17:20.000Z" itemprop="datePublished">10월 7, 2016</time>
 	</a>
 
        
@@ -148,33 +126,80 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>오늘은 짧지만 강렬한(?) 모듈을 소개하고 갈까 합니다. spinner는 너무나 많이 쓰이고 있습니다.</p>
-<p><img src="/images/1*k2XJTv9Ee83UA-iQ4zmF_Q.png" alt=""></p>
-<p>이런 spinner 가 초기에 많이 쓰였다고 한다면</p>
-<p>안드로이드, iOS, web 가릴 것 없이 빙글빙글 돌아가는 spinner는 사용자에게 기다리는 동안의 안정감을 선사하죠.</p>
-<p><a href="https://github.com/tawian/text-spinners" title="https://github.com/tawian/text-spinners" target="_blank" rel="external"><strong>tawian/text-spinners</strong><br>_text-spinners - Pure text, CSS only, font independent, inline loading indicators_github.com</a><a href="https://github.com/tawian/text-spinners" target="_blank" rel="external"></a></p>
-<p>지금 소개하는 spinner는 text spinner 입니다. 아주 간단한 codepen 부터 보고 가시죠?</p>
-<p>사실.. 이 코드펜만 보면 더 설명할 것도 없습니다.</p>
-<p>그저 가져다쓰기만 하면 프로젝트를 아주 훌륭하게 만들어주는 좋은 도구입니다.</p>
-<h3 id="어디에서-영감을-얻었을까"><a href="#어디에서-영감을-얻었을까" class="headerlink" title="어디에서 영감을 얻었을까?"></a>어디에서 영감을 얻었을까?</h3><p>하지만 프로젝트를 잘 보면 cli-spinner에 영감을 받았다고 합니다.</p>
-<p><a href="https://github.com/sindresorhus/cli-spinners" title="https://github.com/sindresorhus/cli-spinners" target="_blank" rel="external"><strong>sindresorhus/cli-spinners</strong><br>_cli-spinners - Spinners for use in the terminal_github.com</a><a href="https://github.com/sindresorhus/cli-spinners" target="_blank" rel="external"></a></p>
-<p>cli-spinner는 Node 기반의 커맨드라인에서 돌아가는 spinner 입니다.</p>
-<p>아래를 클릭하시면 돌아가는 모습을 볼 수 있습니다.</p>
-<p><a href="https://asciinema.org/a/9mlcoussb137m32swwuqtb2p1?size=big" target="_blank" rel="external"><img src="/images/1*iY8Qg-HmzXIbcCSCjMYJUw.pn" alt=""></a></p>
-<h3 id="Cli-spinner-소스-설명"><a href="#Cli-spinner-소스-설명" class="headerlink" title="Cli-spinner 소스 설명"></a>Cli-spinner 소스 설명</h3><p>소스는 의외로 간단합니다.</p>
-<p>와 같이 interval time을 정해 두고 frame 별로 돌아가는 문자를 지정하면 애니메이션이 나타나는 방법을 취하고 있구요</p>
-<pre><code>setInterval(() =\&gt; {  
-const frames = spinner.frames;  
-logUpdate(frames\[i = ++i % frames.length\] + &apos; Unicorns&apos;);  
-}, spinner.interval);
-</code></pre><p>와 같이 setInterval을 호출하고 있습니다.</p>
-<h3 id="text-spinner-소스-분석"><a href="#text-spinner-소스-분석" class="headerlink" title="text-spinner 소스 분석"></a>text-spinner 소스 분석</h3><pre><code>.loading::after {   
-content: &quot;\\A.\\A..\\A...&quot;;   
-animation: spin4 2s steps(4) infinite;  
-}
-</code></pre><p>cli-spinner가 javascript의 setInterval을 이용했다고 하면 text-spinner는 animation기능을 이용해서 같은 내용을 구현했네요.</p>
-<p>정말 깜놀한 아이디어네요~</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/cead081833f9" target="_blank" rel="external">October 5, 2016</a>.</p>
+        <p><img src="/images/1*Sqja_E6mwDuxWtf8BcQcfg.jpeg" alt=""></p>
+<p>create-react-app은 <a href="https://github.com/facebookincubator" target="_blank" rel="external">facebook incubator</a>라는 깃헙 공간에 자신의 위치를 차지하고 있습니다.<br>react, jest, flow, immutable.js 등은 facebook 공식 그룹 밑에 있는데 facebook incubator 밑에는 지금 create-react-app, dhcplb, exerslide 등 세가지 프로젝트가 자리잡고 있습니다.</p>
+<p>2016/10/06 editor’s deepdive</p>
+<p><a href="https://github.com/facebookincubator/create-react-app" title="https://github.com/facebookincubator/create-react-app" target="_blank" rel="external"><strong>facebookincubator/create-react-app</strong><br>_create-react-app - Create React apps with no build configuration._github.com</a><a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="external"></a></p>
+<h3 id="boilerplate"><a href="#boilerplate" class="headerlink" title="boilerplate"></a>boilerplate</h3><p>web상의 많은 프로젝트들, 특히 bootstrap 을 필두로한 web 프로젝트들은 boilerplate들을 갖고 있습니다.</p>
+<pre><code>`정보기술에서 말하는 보일러 플레이트는 변경 없이 계속하여 재 사용할 수 있는 저작품을 말한다.  
+(중략)  
+보일러 플레이트는 일종의 템플릿 등과 비교될 수 있는데, 이는 템플릿을 마치 빈칸을 채우도록 되어 있는 보일러 플레이트라고 생각할 수 있기 때문이다. 일부 대표적인 보일러 플레이트에는, 임무 기록서, 안전 표지, 일반적으로 사용되는 설치 절차서, 저작권 관련 문서, 그리고 책임 포기 성명서 등을 예로 들 수 있다.`
+</code></pre><p>출처 : <a href="http://www.terms.co.kr/boilerplate.htm" target="_blank" rel="external">http://www.terms.co.kr/boilerplate.htm</a></p>
+<p>웹 프로젝트들은 특별히 의존성을 많이 가지고 있기 때문에 이런 boilerplate 혹은 bootstrap이라는 이름의 템플릿 프로젝트를 많이 만듭니다.</p>
+<p>React 생태계는 특히나 이 boilerplate가 우후죽순 생겨났었는데, 그 중요한 이유가 생태계의 변화 속도가 그 어떤 프레임워크와 비교해도 빠르게 발전했기 때문입니다.</p>
+<p><a href="https://github.com/enaqx/awesome-react#boilerplates" target="_blank" rel="external">awesome-react의 boilerplate</a> 섹션만 보더라도 15개의 boilerplate가 있습니다.</p>
+<h3 id="설정상의-어려움들"><a href="#설정상의-어려움들" class="headerlink" title="설정상의 어려움들"></a>설정상의 어려움들</h3><p>react 커뮤니티에서 소스들이 ES2015를 주로 이용하기 시작하면서 react를 이용하기 위해서는 예전에는 webpack, babel, gulp.. 등등<br>알아야 할 것도 너무 많았고 설정해야 할 것도 너무 많아서 이런 일들을 배우는 것 자체가 허들처럼 느껴질 때가 있었습니다.</p>
+<p>“나는 React 문법만 알면 개발을 할 수 있을 줄 알았는데….” 라는 자조들이 쏟아져 나오기 시작합니다.</p>
+<p>이 때에 <a href="https://github.com/gaearon/react-makes-you-sad" target="_blank" rel="external">react-makes-you-sad</a>(<a href="https://github.com/ehrudxo/react-makes-you-sad" target="_blank" rel="external">한글번역</a>), <a href="https://github.com/petehunt/react-howto" target="_blank" rel="external">react-howto</a>(<a href="https://github.com/ehrudxo/react-howto" target="_blank" rel="external">한글번역</a>) 등이<br>나온 것은 그 어려움들을 이야기 하고 있죠.</p>
+<p><a href="https://github.com/petehunt/react-howto" title="https://github.com/petehunt/react-howto" target="_blank" rel="external"><strong>petehunt/react-howto</strong><br>_react-howto - Your guide to the (sometimes overwhelming!) React ecosystem._github.com</a><a href="https://github.com/petehunt/react-howto" target="_blank" rel="external"></a></p>
+<p><a href="https://github.com/ehrudxo/react-makes-you-sad" title="https://github.com/ehrudxo/react-makes-you-sad" target="_blank" rel="external"><strong>ehrudxo/react-makes-you-sad</strong><br>_react-makes-you-sad - Here’s a flowchart to make you happy again!_github.com</a><a href="https://github.com/ehrudxo/react-makes-you-sad" target="_blank" rel="external"></a></p>
+<p>물론, 설정상의 문제점 뿐만이 아니라 빠르게 변화하는 react 커뮤니티에 대한 내용들이 있었습니다.</p>
+<p>그래서 저도 webpack 과 gulp셋팅은 기본적으로 되어 있는 프로젝트들을 찾고는 했습니다.</p>
+<h3 id="create-react-app"><a href="#create-react-app" class="headerlink" title="create-react-app"></a>create-react-app</h3><p>그러던 차에~ create-react-app 이라는 훌륭한 프로젝트가 등장합니다.</p>
+<p>기본적으로 ES2015문법을 지원하는 셋팅과 watchify가 기본 설정이 되어 있는 것만으로도 훌륭하게 작업할 수 있다는 사실.</p>
+<p>처음</p>
+<pre><code>`$create-react-app [프로젝트명]`
+</code></pre><p>하나로 바로 웹서버를 기동시키고 <code>npm run buid</code>를 이용해 production 수준의 minify,uglify등을 지원하는 등을<br>손쉽게 지원하는 프로젝트인데, 다른 설정들은 신경쓰지 않아도 되었으니 얼마나 반가웠는지 모르겠습니다.</p>
+<p>깃헙페이지의 사용자 가이드를 한번 정리해 보았습니다.</p>
+<h3 id="사용자-가이드"><a href="#사용자-가이드" class="headerlink" title="사용자 가이드"></a>사용자 가이드</h3><h3 id="새로-릴리즈-버전이-나올때-업데이트-하기"><a href="#새로-릴리즈-버전이-나올때-업데이트-하기" class="headerlink" title="새로 릴리즈 버전이 나올때 업데이트 하기"></a>새로 릴리즈 버전이 나올때 업데이트 하기</h3><p>저도 궁금했습니다. react 버전이 바뀌면 또 create-react-app 자체가 바뀌면 어떻게 적응이 될지.</p>
+<p>Create React App은 두개의 패키지로 나눠지는 데  </p>
+<ul>
+<li><code>create-react-app</code> 은 새로운 React 앱을 만드는 시스템 전체의 CLI 명령어입니다  </li>
+<li><code>react-scripts</code> 은 생성된 프로젝트에서 개발 의존성을 관리합니다.</li>
+</ul>
+<p>대부분의 경우 create-react-app을 업데이트할 필요는 없을 거 같습니다. 모든 셋업 관련 내용은 <code>react-scripts</code>가 담당합니다.</p>
+<pre><code>`**create**-react-app [프로젝트명]`
+</code></pre><p>작업을 할 때 자동으로 최신의 <code>react-scripts</code> 를 가지고 와서 업데이트를 하게 됩니다.</p>
+<p>그러면 create-react 자체를 업데이트 하려면?</p>
+<pre><code>`npm **update** -g **create**-react-app`
+</code></pre><p>명령어를 사용하면 됩니다.</p>
+<p>다만, 이미 create-react-app으로 만들어진 프로젝트의 <code>react-scripts</code>를 업데이트 하실 때는 조심하셔야 합니다.<br>package.json에서 버전을 확인한 후에 <a href="https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md" target="_blank" rel="external">CHANGELOG</a><br>를 확인해서 의존성에 변화가 없는지를 확인해야 합니다.</p>
+<p>이후, 대부분의 경우는 package.json 의 react-scripts 버전을 바꾸고 npm install 을 하면 별 문제 없이 업데이트가 될 것입니다.</p>
+<h3 id="폴더-구조"><a href="#폴더-구조" class="headerlink" title="폴더 구조"></a>폴더 구조</h3><p>$create-react-app 을 하고 나면 폴더 구조는 다음과 같이 보여질 것입니다.</p>
+<pre><code>`**my**-app/  
+README.md  
+node_modules/  
+**package**.json  
+public/  
+**index**.html  
+favicon.ico  
+src/  
+App.css  
+App.js  
+App.test.js  
+**index**.css  
+**index**.js  
+logo.svg`
+</code></pre><p><img src="/images/1*vgv-YSF2sBCmMFDklRVqQg.png" alt=""></p>
+<p>프로젝트를 빌드 하기 위해서는 다음의 파일들은 정확하게 아래와 같이 존재해야 합니다<br>* public/index.html은 페이지 템플릿입니다.<br>* src/index.js는 JavaScript 진입점입니다.</p>
+<p>이 외의 파일들은 필요에 따라 지우거나 바꾸셔도 됩니다.</p>
+<p>src 폴더 하위가 하위폴더로 사용되는데, 바꿀 수는 있습니다. 빠를 빌드 자동화를 위한 조치입니다만 기본적으로는(설정을 바꾸지 전에는)<br>src 폴더 아래 있는 파일만 Webpack 이 인지할 것입니다. 다른 폴더에 들어간 JS나 CSS파일은 Webpack 이 관여하지 않습니다.</p>
+<p>public 폴더 아래 들어간 파일만 static html파일로 인식합니다.<br>다른 폴더에 JavaScript파일과 HTML 파일을 Asset으로 사용하고 설정하는 방법은 차후에 설명하겠습니다.</p>
+<p>최상위 디렉토리에 생기는 다른 디렉토리는 문서를 포함한 다른 용도로 사용할 수 있습니다.</p>
+<h3 id="npm-script"><a href="#npm-script" class="headerlink" title="npm script"></a>npm script</h3><p>생성된 프로젝트에서 다음과 같은 명령어를 사용할 수 있습니다.</p>
+<pre><code>`$npm start`
+</code></pre><p>웹서버를 개발 모드로 시동합니다. <a href="http://localhost:30000/" target="_blank" rel="external">http://localhost:30000</a> 주소로 브라우저에서 접근할 수 있고<br>watichify가 적용되어 있어서 파일 수정하면 바로바로 반영이 됩니다.<br>에러는 console 로 확인이 가능합니다.</p>
+<pre><code>`$npm test`
+</code></pre><p>test runner를 돌립니다. test 케이스를 어떻게 만들지에 대해서는 차후 다뤄보겠습니다.</p>
+<pre><code>`$npm run build`
+</code></pre><p>개발 모드에서 제품( production ) 모드로 빌드를 돌려서 build 디렉토리 밑으로 보냅니다.<br>최적화(optimization) 과정을 거진 제품모드의 번들 파일입니다.<br>minified 되어 있습니다. 이 과정이 끝나면 deploy 할 수 있는 상태라고 볼 수 있습니다.</p>
+<pre><code>`$npm run eject`
+</code></pre><p>빌드툴과 설정이 맘에 안들면 <code>eject</code>명령어를 사용할 수 있습니다.<br>이렇게 하면 단일 빌드 의존성을 제거하게 됩니다.<br>대신에 모든 설정파일을 당신의 프로젝트 밑으로 집어 넣어서 다른 설정들(babel,webpack, eslint 등등)을 직접할 수 있게 해 줍니다.<br>하지만 대부분의 경우에는 이 <code>eject</code> 명령어를 쓸 필요가 없을 것이고, create-react-app의 설정으로 충분합니다.<br>게다가 eject 명령어는 다시 돌릴 수 없습니다. 조심해서 사용하세요.</p>
+<p>eject 하고 나면 이렇게 많은 devDependency가 package.json파일에 들어 옵니다.</p>
+<p><img src="/images/1*VmerCvViiMoMrVMGNqcBKA.pn" alt=""></p>
+<p>그리고 자동으로 npm install 해 주는 것은 놀랍네요.</p>
+<p>일단 간단한 create-react-app에 대해서 살펴 보았고 이후에는 Lint, Dependency 설치, 컴포넌트와 스타일 시트 설치 하는 것에 대해서 살펴 보겠습니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/935a21297550" target="_blank" rel="external">October 7, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -195,7 +220,7 @@ animation: spin4 2s steps(4) infinite;
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-10-04 06:42:30]art-of-readme"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-10-06 07:44:45]github-audio"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -203,7 +228,7 @@ animation: spin4 2s steps(4) infinite;
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/10/04/[2016-10-04 06:42:30]art-of-readme/">art-of-readme</a>
+      <a class="article-title" href="/2016/10/06/[2016-10-06 07:44:45]github-audio/">github-audio</a>
     </h1>
   
 
@@ -211,8 +236,8 @@ animation: spin4 2s steps(4) infinite;
     
     <div class="article-meta">
       
-	<a href="/2016/10/04/[2016-10-04 06:42:30]art-of-readme/" class="article-date">
-	  <time datetime="2016-10-03T21:42:30.000Z" itemprop="datePublished">10월 4, 2016</time>
+	<a href="/2016/10/06/[2016-10-06 07:44:45]github-audio/" class="article-date">
+	  <time datetime="2016-10-05T22:44:45.000Z" itemprop="datePublished">10월 6, 2016</time>
 	</a>
 
        
@@ -220,40 +245,16 @@ animation: spin4 2s steps(4) infinite;
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/1*5yo0ZRoa_HKLLaGFQkg0pQ.png" alt="">Alice in wonderland</p>
-<p>깃헙에서 프로젝트를 사용할 때 리드미파일의 영향도는 얼마나 된다고 보시나요? 저의 경우는 Readme파일의 완성도를 보고 프로젝트의 완성도를 가늠하는데 아주 높은 확률로 Readme 와 프로젝트의 완성도는 비슷했던 것 같습니다. 그런 의미에서 제 프로젝트를 아침부터 반성하게 되는데요</p>
-<p>2016/10/04 Editor’s choice</p>
-<p><a href="https://github.com/noffle/art-of-readme" title="https://github.com/noffle/art-of-readme" target="_blank" rel="external"><strong>noffle/art-of-readme</strong><br>_art-of-readme - :love_letter: Learn the art of writing quality READMEs._github.com</a><a href="https://github.com/noffle/art-of-readme" target="_blank" rel="external"></a></p>
-<h3 id="어원"><a href="#어원" class="headerlink" title="어원"></a>어원</h3><p>어원은 어디서 부터 왔을까요?</p>
-<p>학술적으로 보면 1970년대의 특정 프로젝트까지 거슬러 올라갑니다.</p>
-<p><a href="http://pdp-10.trailing-edge.com/decuslib10-04/01/43,50322/read.me.html" title="http://pdp-10.trailing-edge.com/decuslib10-04/01/43,50322/read.me.html" target="_blank" rel="external"><strong>PDP-10 Archive: 43,50322/read.me from decuslib10-04</strong><br>_UCI LISP Random Notes The files on this FAILSAFE tape constitute the UCI LISP system. They are for the most part…_pdp-10.trailing-edge.com</a><a href="http://pdp-10.trailing-edge.com/decuslib10-04/01/43,50322/read.me.html" target="_blank" rel="external"></a></p>
-<p>또 혹자는 루이스 캐롤의 ‘이상한 나라의 앨리스’에서 비롯되었다고 합니다. 물약과 케이크에 “Drink Me” 그리고 “Eat Me” 라고 적혀 있었다고 하는군요.</p>
-<p><img src="/images/1*-hfIdGKXlKkRtmVKRozwGw.pn" alt=""></p>
-<p>흥미롭네요.</p>
-<p>뭐 어쨌거나 이 README 파일은 “사용자가 작업하기 전에 읽어봐야 되는 중요한 정보”로써 사용되고 있습니다.</p>
-<h3 id="저자를-위해-사용자를-위해"><a href="#저자를-위해-사용자를-위해" class="headerlink" title="저자를 위해, 사용자를 위해"></a>저자를 위해, 사용자를 위해</h3><p>이 프로젝트는 README를 작성하는 사람과 읽는 사람 모두에게 필요하므로 작성되었다고 하는데 저 또한 동의합니다.</p>
-<p>작성자에게는 6개월 정도가 지나면 새로울 것이므로 남겨놓는 유산으로써의미가 있고 사용자에게는 의존성을 파악하고 프로젝트를 사용하는데에 도움이 됩니다</p>
-<h3 id="프로답게-쓰는-README"><a href="#프로답게-쓰는-README" class="headerlink" title="프로답게 쓰는 README"></a>프로답게 쓰는 README</h3><p>읽는 사람을 생각해서 작성한다면 기본적으로 다음을 고려해야 하는데요</p>
-<ol>
-<li>이게 무엇인지(what)</li>
-<li>동작할 때 어떻게 보이는지(what it looks like in action)</li>
-<li>어떻게 사용하는 지(how)</li>
-<li>관련된 상세(details)</li>
-</ol>
-<p>등을 고려해야 한다고 합니다.</p>
-<h3 id="핵심-섹션"><a href="#핵심-섹션" class="headerlink" title="핵심 섹션"></a>핵심 섹션</h3><p>기본적인 골격은 다음과 같습니다.</p>
-<ol>
-<li>이름 — 이름이 무엇보다 중요합니다. react-router라는 이름은 이름만으로 무슨 프로젝트인지 알 수 있으니까요</li>
-<li>한줄 요약 — 이름이 중요한 것 처럼 한줄로 이 프로젝트의 정체성을 나타내 주는 것이 좋습니다</li>
-<li>사용법 — API 문서로 바로 가는 것보다 사용법을 설명해 주는 것이 좋습니다.</li>
-<li>API — 이름, 설명, 사용법이 보여지고 나면 API의 상세함이 프로젝트의 품격을 결정합니다</li>
-<li>설치방법 — 자, 이제 전체를 읽어봤으니 어떻게 설치할 지를 알 수 있어야 사용자가 마지막 결정을할 수 있습니다.</li>
-<li>라이센스 — 이 프로젝트를 내가 사용할 수 있는지에 대한 중요한 정보를 담고 있죠.</li>
-</ol>
-<p>이후도 중요한 내용들을 많이 담고 있지만, 인상깊게 읽었던 부분은 사람들의 시간을 고려해라, 백그라운드 섹션을 할애해라. 공격적으로 링크를 걸고 arguments와 parameter를자세하게 적어라. 등등이 기억에 남는군요.</p>
-<p>그리고, 이 프로젝트의 저자는 Node 생태계를 위해 이 글을 작성했는데, Perl 의 개발자들이 작성했던 좋은 예들을 설명하고 있습니다.</p>
-<p>이런 좋은 프로젝트를 아침부터 만난다는 것은 즐거운 일이군요~</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/cd19f86b0456" target="_blank" rel="external">October 3, 2016</a>.</p>
+        <p>오늘 업데이트 하는 프로젝트는 그냥 재미삼아 볼 만한 프로젝트입니다.</p>
+<p>일단 감상부터 하시죠.</p>
+<p><a href="https://github.audio/" title="https://github.audio/" target="_blank" rel="external"><strong>GitHub Audio</strong><br>_Listen to music generated by events happening across GitHub_github.audio</a><a href="https://github.audio/" target="_blank" rel="external"></a></p>
+<p>2016/10/06 Editor’s choice</p>
+<p><a href="https://github.com/debugger22/github-audio" title="https://github.com/debugger22/github-audio" target="_blank" rel="external"><strong>debugger22/github-audio</strong><br>_github-audio - Listen to music generated by events happening across GitHub 🎷🎸_github.com</a><a href="https://github.com/debugger22/github-audio" target="_blank" rel="external"></a></p>
+<p>github은 굉장히 많은 event들을 notification 에 등록할 수 있습니다. 로그인할 때 보이는 Activities들이 그 예죠</p>
+<p><img src="/images/1*pAlNe3FKG-1ZghB-Ug7-Qg.pn" alt=""></p>
+<p>이런 이벤트들을 소스 삼아서 음악을 play하게 많든 재미 있는 프로젝트 입니다.</p>
+<p>기본적으로 redis를 필요로 하고 설치는 npm install 로 가능하네요.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/2dfc64c6afae" target="_blank" rel="external">October 5, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -278,7 +279,7 @@ animation: spin4 2s steps(4) infinite;
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/17/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/97/">97</a><a class="extend next" rel="next" href="/page/19/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/17/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/98/">98</a><a class="extend next" rel="next" href="/page/19/">Next</a>
   </nav>
 
 </section>
@@ -332,6 +333,30 @@ animation: spin4 2s steps(4) infinite;
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a></h6>
+              <span>9월 14, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2017/09/14/puppeteer/">[github]Node.js 기반 헤드리스 브라우저 컨트롤 API - puppeteer</a></h6>
+              <span>9월 14, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2017/09/08/deeplearning-basic01/">딥러닝 무식하게 정리해 보기 01</a></h6>
               <span>9월 8, 2017</span>
             </div>
@@ -374,30 +399,6 @@ animation: spin4 2s steps(4) infinite;
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/06/09/feedwordpress/">feedwordpress를 설치하다</a></h6>
-              <span>6월 9, 2017</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/06/07/about-test/">헤드리스 크롬과 selenium2의 조합을 사용해 보자 with node</a></h6>
-              <span>6월 7, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -410,7 +411,7 @@ animation: spin4 2s steps(4) infinite;
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-trend-github/">github-trend, github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -420,7 +421,7 @@ animation: spin4 2s steps(4) infinite;
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
+      <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/github-trend-github/" style="font-size: 10px;">github-trend, github</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/tip-docker-devops-git/" style="font-size: 10px;">tip, docker, devops, git</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
     </div>
   </div>
 
@@ -430,7 +431,7 @@ animation: spin4 2s steps(4) infinite;
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -481,9 +482,6 @@ animation: spin4 2s steps(4) infinite;
 
 
     <!-- headerblur min height -->
-    
-      var headerblur = document.getElementById("header-blur");
-      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

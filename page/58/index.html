@@ -55,32 +55,10 @@
 
 
   
-  
-  <div class="site-header-image">
-    <img id="originBg" width="100%" alt="Hike News" src="">
-  </div>
-
-  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
-    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
-  </div>
-
-  <script>
-        var imgUrls = "images/storm.png".split(",");
-        var random = Math.floor((Math.random() * imgUrls.length ));
-        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
-          document.getElementById("originBg").src=imgUrls[random];
-          document.getElementById("blurBg").src=imgUrls[random];
-        } else {
-          document.getElementById("originBg").src='/' + imgUrls[random];
-          document.getElementById("blurBg").src='/' + imgUrls[random];
-        }
-    </script>
-
-
 
 
 <header id="allheader" class="site-header" role="banner" 
-   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+   >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -123,7 +101,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-05-13 07:40:50]amazon-dsstne"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-05-15 08:37:03]nlp-compromise"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +109,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/05/13/[2016-05-13 07:40:50]amazon-dsstne/">amazon-dsstne</a>
+      <a class="article-title" href="/2016/05/15/[2016-05-15 08:37:03]nlp-compromise/">nlp-compromise</a>
     </h1>
   
 
@@ -139,8 +117,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/05/13/[2016-05-13 07:40:50]amazon-dsstne/" class="article-date">
-	  <time datetime="2016-05-12T22:40:50.000Z" itemprop="datePublished">5월 13, 2016</time>
+	<a href="/2016/05/15/[2016-05-15 08:37:03]nlp-compromise/" class="article-date">
+	  <time datetime="2016-05-14T23:37:03.000Z" itemprop="datePublished">5월 15, 2016</time>
 	</a>
 
        
@@ -148,53 +126,53 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>아마존에서 이번에는 딥러닝 관련된 모델을 오픈소스로 공개했습니다.</p>
-<p>2016/05/13 Editor’s choice</p>
-<p><a href="https://github.com/amznlabs/amazon-dsstne" title="https://github.com/amznlabs/amazon-dsstne" target="_blank" rel="external"><strong>amznlabs/amazon-dsstne</strong><br>_amazon-dsstne - Deep Scalable Sparse Tensor Network Engine (DSSTNE) is an Amazon developed library for building Deep…_github.com</a><a href="https://github.com/amznlabs/amazon-dsstne" target="_blank" rel="external"></a></p>
-<p>tensor network engine이 이름에 들어가는군요.</p>
-<h4 id="설치해-보기"><a href="#설치해-보기" class="headerlink" title="설치해 보기"></a>설치해 보기</h4><p>3가지의 기본 설치 방법을 제공하고 있습니다.</p>
-<ul>
-<li>docker</li>
-<li>AWS</li>
-<li>dev install</li>
-</ul>
-<p>보통은 빌드 툴과 docker 를 제공하고 마는데 역시 AWS를 이용한 방법을 쓰고 있습니다.</p>
-<p>docker runtime으로는 10G 가 필요하다고 하는군요. 전철 안에서는 docker를 받아서는 안될거 같네요.</p>
-<h4 id="사용자-가이드"><a href="#사용자-가이드" class="headerlink" title="사용자 가이드"></a>사용자 가이드</h4><p>사용자 가이드는 Data Format으로 부터 시작합니다. NetCDF 포맷만 지원한다고 하며 그 형태는 다음과 같습니다.</p>
-<pre><code>Example1 Feature1:Feature2:Feature3  
-Example2 Feature5:Feature2:Feature4  
-Example3 Feature6:Feature7:Feature8
-</code></pre><p><a href="https://en.wikipedia.org/wiki/NetCDF" title="https://en.wikipedia.org/wiki/NetCDF" target="_blank" rel="external"><strong>NetCDF</strong><br>_NetCDF ( Network Common Data Form) is a set of software libraries and self-describing, machine-independent data formats…_en.wikipedia.org</a><a href="https://en.wikipedia.org/wiki/NetCDF" target="_blank" rel="external"></a></p>
-<p>데이타 포맷과 달리 레이어 포맷은 JSON을 통해 인풋 아웃풋이 결정됩니다</p>
-<pre><code>{  
-&quot;Version&quot; : 0.8,  
-&quot;Name&quot; : &quot;2 Hidden Layer&quot;,  
-&quot;Kind&quot; : &quot;FeedForward&quot;,   
-
-&quot;ShuffleIndices&quot; : false,  
-
-
-&quot;ScaledMarginalCrossEntropy&quot; : {  
-&quot;oneTarget&quot; : 1.0,  
-&quot;zeroTarget&quot; : 0.0,  
-&quot;oneScale&quot; : 1.0,  
-&quot;zeroScale&quot; : 1.0  
-},  
-&quot;Layers&quot; : \[  
-{ &quot;Name&quot; : &quot;Input&quot;, &quot;Kind&quot; : &quot;Input&quot;, &quot;N&quot; : &quot;auto&quot;, &quot;DataSet&quot; : &quot;input&quot;, &quot;Sparse&quot; : true },  
-{ &quot;Name&quot; : &quot;Hidden1&quot;, &quot;Kind&quot; : &quot;Hidden&quot;, &quot;Type&quot; : &quot;FullyConnected&quot;, &quot;Source&quot; : &quot;Input&quot;, &quot;N&quot; : 1024, &quot;Activation&quot; : &quot;Relu&quot;, &quot;Sparse&quot; : false, &quot;pDropout&quot; : 0.5, &quot;WeightInit&quot; : { &quot;Scheme&quot; : &quot;Gaussian&quot;, &quot;Scale&quot; : 0.01 } },  
-{ &quot;Name&quot; : &quot;Hidden2&quot;, &quot;Kind&quot; : &quot;Hidden&quot;, &quot;Type&quot; : &quot;FullyConnected&quot;, &quot;Source&quot; : \[&quot;Hidden1&quot;\], &quot;N&quot; : 1024, &quot;Activation&quot; : &quot;Relu&quot;, &quot;Sparse&quot; : false, &quot;pDropout&quot; : 0.5, &quot;WeightInit&quot; : { &quot;Scheme&quot; : &quot;Gaussian&quot;, &quot;Scale&quot; : 0.01 } },   
-{ &quot;Name&quot; : &quot;Output&quot;, &quot;Kind&quot; : &quot;Output&quot;, &quot;Type&quot; : &quot;FullyConnected&quot;, &quot;DataSet&quot; : &quot;output&quot;, &quot;N&quot; : &quot;auto&quot;, &quot;Activation&quot; : &quot;Sigmoid&quot;, &quot;Sparse&quot; : true , &quot;WeightInit&quot; : { &quot;Scheme&quot; : &quot;Gaussian&quot;, &quot;Scale&quot; : 0.01, &quot;Bias&quot; : -10.2 }}  
-\],  
-
-&quot;ErrorFunction&quot; : &quot;ScaledMarginalCrossEntropy&quot;  
-}
-</code></pre><p>필드를 보시면 아시겠지만 다른 여타 딥러닝 레이어 처럼</p>
-<p>input, hidden layer, output 이렇게 세가지 중요한 factor들을 가지고 있습니다.</p>
-<p>관련된 예제들도 같은 레파지토리들을 통해 확인해 볼 수 있습니다.</p>
-<p><a href="https://github.com/amznlabs/amazon-dsstne/blob/master/docs/getting_started/examples.md" title="https://github.com/amznlabs/amazon-dsstne/blob/master/docs/getting_started/examples.md" target="_blank" rel="external"><strong>amznlabs/amazon-dsstne</strong><br>_After you have followed setup we should be able to start neural network modeling using DSSTNE. As with any modeling we…_github.com</a><a href="https://github.com/amznlabs/amazon-dsstne/blob/master/docs/getting_started/examples.md" target="_blank" rel="external"></a></p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/72fcd6334a25" target="_blank" rel="external">May 12, 2016</a>.</p>
-<p>Exported from <a href="https://medium.co" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+        <p><img src="/images/1*yLPsUcqV0-39LChlWSB2Bw.pn" alt="">what language!</p>
+<p>자연어 처리는 검색과 인공지능 혹은 siri나 alexa 같은 응답형 비서 서비스에는 필수적입니다. javascript기반으로 만들어진 자연어 처리 모듈이 오늘의 깃헙 순위에 올라와 소개합니다.</p>
+<p>2016/05/15 Today’s Best</p>
+<p><a href="https://github.com/nlp-compromise/nlp_compromise" title="https://github.com/nlp-compromise/nlp_compromise" target="_blank" rel="external"><strong>nlp-compromise/nlp_compromise</strong><br>_nlp_compromise - a cool way to use natural language in javascript_github.com</a><a href="https://github.com/nlp-compromise/nlp_compromise" target="_blank" rel="external"></a></p>
+<hr>
+<h4 id="설치하기"><a href="#설치하기" class="headerlink" title="설치하기"></a>설치하기</h4><pre><code>$npm install nlp\_compromise
+</code></pre><h4 id="실행하기"><a href="#실행하기" class="headerlink" title="실행하기"></a>실행하기</h4><p>일단 복수형 테스트 해 볼까요?</p>
+<pre><code>$ node  
+\&gt; let nlp = require(&quot;nlp\_compromise&quot;);  
+NLP {  
+plugin: \[Function\],  
+lexicon: \[Function\],  
+term: \[Function\],  
+noun: \[Function\],  
+verb: \[Function\],  
+adjective: \[Function\],  
+adverb: \[Function\],  
+value: \[Function\],  
+person: \[Function\],  
+place: \[Function\],  
+date: \[Function\],  
+organization: \[Function\],  
+text: \[Function\],  
+sentence: \[Function\],  
+statement: \[Function\],  
+question: \[Function\] }  
+\&gt; nlp.noun(&quot;mouse&quot;).pluralize();  
+&apos;mice&apos;  
+\&gt; nlp.noun(&quot;aircraft&quot;).pluralize();  
+&apos;aircraft&apos;  
+\&gt; nlp.noun(&quot;millnnium&quot;).pluralize();  
+&apos;millnnia&apos;  
+\&gt; nlp.noun(&quot;소녀시대&quot;).pluralize();  
+&apos;s&apos;  
+\&gt; nlp.noun(&quot;super man&quot;).pluralize();  
+&apos;super men&apos;  
+\&gt;
+</code></pre><p>한글은 안되는군요. (뭐 예상했지만)</p>
+<p>mice, aircraft, millenium 같은 복수형이 독특한 단어를 넣어 봤는데, 잘 통과를 합니다.</p>
+<p>재미있는 것은 millnnium 으로 단어는 오타가 났는데도 millnnia 로 변형되어 오더라는 것입니다.</p>
+<p>plurize 소스를 살펴보면</p>
+<p>이렇게 많은 케이스의 단어에 대해 정규식으로 변형 형태를 지정해 놓았네요. 이런 식이라면 한글화는 요원해 보이는군요.</p>
+<p>‘소녀시대’는 s로만 변형된다든지 말이죠.</p>
+<p>compromise라는 접미가 붙은 이유를 알겠네요.</p>
+<p>뭐 어쨌든 영어권에서는 잘 사용될 수 있는 모듈인거 같습니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/4dc7221dc1c7" target="_blank" rel="external">May 14, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
     </div>
@@ -214,7 +192,7 @@ Example3 Feature6:Feature7:Feature8
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-05-12 23:15:00]Scala-native"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-05-14 22:16:57]why-did-you-update"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -222,7 +200,7 @@ Example3 Feature6:Feature7:Feature8
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/05/12/[2016-05-12 23:15:00]Scala-native/">Scala-native</a>
+      <a class="article-title" href="/2016/05/14/[2016-05-14 22:16:57]why-did-you-update/">why-did-you-update</a>
     </h1>
   
 
@@ -230,8 +208,8 @@ Example3 Feature6:Feature7:Feature8
     
     <div class="article-meta">
       
-	<a href="/2016/05/12/[2016-05-12 23:15:00]Scala-native/" class="article-date">
-	  <time datetime="2016-05-12T14:15:00.000Z" itemprop="datePublished">5월 12, 2016</time>
+	<a href="/2016/05/14/[2016-05-14 22:16:57]why-did-you-update/" class="article-date">
+	  <time datetime="2016-05-14T13:16:57.000Z" itemprop="datePublished">5월 14, 2016</time>
 	</a>
 
        
@@ -239,36 +217,21 @@ Example3 Feature6:Feature7:Feature8
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/1*jTIfe8oR64pXF33JOpAu-g.png" alt="">클래시 로얄 아이콘은 민망합니다.</p>
-<p>밤새 핫한 프로젝트들이 많이 올라왔습니다. 1등은 facebook의 프로젝트가 했을에도 불구하고 오늘은 약간의 사명감을 가지고 scala-native를 리뷰하겠습니다.</p>
-<p>2016/05/12 Editor’s choice</p>
-<p><a href="https://github.com/scala-native/scala-native" title="https://github.com/scala-native/scala-native" target="_blank" rel="external"><strong>scala-native/scala-native</strong><br>_scala-native - Your favourite language gets closer to bare metal._github.com</a><a href="https://github.com/scala-native/scala-native" target="_blank" rel="external"></a></p>
-<p>LLVM 기반으로 컴파일 하기 때문에 엄청나게 빠르다! 라고 강조하고 있습니다. 이제 JIT를 쓰지 않는다는 것은 JVM안녕으로 보면 되겠네요.</p>
-<p><img src="/images/1*d-U8OcP90goslw8Ai3J7KA.png" alt=""></p>
-<p>JVM은 모두가 공유하되 여러가지 언어가 올라갈 것이라던 사람들에게 어떻게 보면 낯선 이야기 이지만 성능을 위한 결정이니 좋다고 봅니다.</p>
-<p>그리고 실제 소스는 여러 가지 이런 생각들을 많이 의식했는지 Comparison to JVM이 많이 나옵니다.</p>
+        <p><img src="/images/1*3UZG5P7HY8lupP_BUWPfEg.png" alt="">blog.atom.io</p>
+<p>reflow는 같은 리소스를 또 호출하는 것을 이야기하고, repaint는 다시 redering하는 것을 이야기 합니다. 아무리 페이지를 가볍게 만들어도 reflow와 repaint를 자주 반복한다면 페이지 성능에 문제가 있겠죠?</p>
+<p>이런 관점에서 React 의 값들에 대해서 update가 일어나는 것을 파악해서 알려주는 프로젝트가 있습니다. update 가 일어났는데도 값은 바뀌지 않으면 왜 바뀌지 않았나요? reflow,repaint 아닌가요? 라고 묻습니다.</p>
+<p>2016/05/14 Editor’s choice</p>
+<p><a href="https://github.com/garbles/why-did-you-update" title="https://github.com/garbles/why-did-you-update" target="_blank" rel="external"><strong>garbles/why-did-you-update</strong><br>_why-did-you-update - :boom: Puts your console on blast when React is making unnecessary updates._github.com</a><a href="https://github.com/garbles/why-did-you-update" target="_blank" rel="external"></a></p>
 <hr>
-<h4 id="설치하기"><a href="#설치하기" class="headerlink" title="설치하기"></a>설치하기</h4><p>아직 sbt-native-cli 뭐 이런 녀석이 존재하는 것은 아닌듯 싶습니다.</p>
-<p>Mac을 새로 구입해서(데헷) 누구나 하는</p>
-<pre><code>$brew install sbt
-</code></pre><p>로 scala build tool을 다운 받습니다.</p>
-<p>왜냐 하면</p>
-<pre><code>$git clone [https://github.com/scala-native/scala-native.git][anchor2]
-</code></pre><p>받아 보시면, sbt 로 빌드파일이 짜여져 있기 때문입니다.</p>
-<p>sbt 를 실행하고</p>
-<p><img src="/images/1*rzVOQcWSWBj1TDT5bZPp9g.png" alt="">여기서 10분을 기다릴 줄이야</p>
-<p>디펜던시를 모두 성공적으로 설치하고 다시 빌드를 돌리면</p>
-<p><img src="/images/1*tabaRG2x7-gI4_G4ipTijQ.png" alt="">이야…뭐지? 어쩌라고 어.</p>
-<p>이런 썰렁한 콘솔이 나옵니다.</p>
-<h4 id="아키텍쳐"><a href="#아키텍쳐" class="headerlink" title="아키텍쳐"></a>아키텍쳐</h4><p>scala-native 아키텍처 컨셉은 다음과 같습니다.</p>
-<p><img src="/images/1*RFj19vLUIhc99vZAjSgNew.png" alt="">아 간단하다</p>
-<p>스칼라 파일을 입력으로 받아서 ll파일이 나온다니. 요?</p>
-<p>관련 PT는 아래 주소를 찾아가면 나옵니다.</p>
-<p><a href="https://github.com/densh/talks/blob/517b20c30dd4aaf390785039cdd002f623eaa91e/2016-05-11-scala-goes-native.pdf" target="_blank" rel="external">https://github.com/densh/talks/blob/517b20c30dd4aaf390785039cdd002f623eaa91e/2016-05-11-scala-goes-native.pdf</a></p>
-<p><img src="/images/1*JkSBgNt2LXWza96dyFyzcg.pn" alt=""></p>
-<p>프론트엔드 관련 내용도 들어 있는데 감흥이 느껴지는 슬라이드는 아니네요.</p>
-<p>아직은 조금 두고봐야 하는 상황이라는 생각이 듭니다. 뭔가 훌륭하게 비교해 볼 수 있는 벤치마크도 없지만 많은 개발자들이 더 훌륭한 상황들을 만들어 낼 것 같습니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/7868234d5bd7" target="_blank" rel="external">May 12, 2016</a>.</p>
+<h4 id="설치하기"><a href="#설치하기" class="headerlink" title="설치하기"></a>설치하기</h4><pre><code>$npm install why-did-you-update --save
+</code></pre><p>네, 언제나 그렇듯이.</p>
+<h4 id="실행해-봅시다"><a href="#실행해-봅시다" class="headerlink" title="실행해 봅시다."></a>실행해 봅시다.</h4><p>그냥 React는 당연히 잘 실행을 할 듯 싶어서 작업중이던 React-Native 프로젝트에 한번 넣어 보았습니다.</p>
+<p>그러고 나서 실행을 시켜 보았습니다.</p>
+<p><img src="/images/1*XDkvreehzAJMQPuQiSONDA.pn" alt=""></p>
+<p>Facebook 로그인 모듈에서 미친듯한 data의 update 가 일어나는군요.</p>
+<p>( 아무래도 이 부분은 모듈의 문제라기 보다는 react-native 에서 state가 변하는 방식이 react와는 다르게 일어나는 듯 싶네요)</p>
+<p>어쨌든 데이타 변화를 감지해서 같은 값의 경우 값을 로깅을 해 주네요.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/6e04509a94ce" target="_blank" rel="external">May 14, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -293,7 +256,7 @@ Example3 Feature6:Feature7:Feature8
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/57/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/56/">56</a><a class="page-number" href="/page/57/">57</a><span class="page-number current">58</span><a class="page-number" href="/page/59/">59</a><a class="page-number" href="/page/60/">60</a><span class="space">&hellip;</span><a class="page-number" href="/page/97/">97</a><a class="extend next" rel="next" href="/page/59/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/57/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/56/">56</a><a class="page-number" href="/page/57/">57</a><span class="page-number current">58</span><a class="page-number" href="/page/59/">59</a><a class="page-number" href="/page/60/">60</a><span class="space">&hellip;</span><a class="page-number" href="/page/98/">98</a><a class="extend next" rel="next" href="/page/59/">Next</a>
   </nav>
 
 </section>
@@ -347,6 +310,30 @@ Example3 Feature6:Feature7:Feature8
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a></h6>
+              <span>9월 14, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2017/09/14/puppeteer/">[github]Node.js 기반 헤드리스 브라우저 컨트롤 API - puppeteer</a></h6>
+              <span>9월 14, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2017/09/08/deeplearning-basic01/">딥러닝 무식하게 정리해 보기 01</a></h6>
               <span>9월 8, 2017</span>
             </div>
@@ -389,30 +376,6 @@ Example3 Feature6:Feature7:Feature8
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/06/09/feedwordpress/">feedwordpress를 설치하다</a></h6>
-              <span>6월 9, 2017</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/06/07/about-test/">헤드리스 크롬과 selenium2의 조합을 사용해 보자 with node</a></h6>
-              <span>6월 7, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -425,7 +388,7 @@ Example3 Feature6:Feature7:Feature8
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-trend-github/">github-trend, github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -435,7 +398,7 @@ Example3 Feature6:Feature7:Feature8
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
+      <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/github-trend-github/" style="font-size: 10px;">github-trend, github</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/tip-docker-devops-git/" style="font-size: 10px;">tip, docker, devops, git</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
     </div>
   </div>
 
@@ -445,7 +408,7 @@ Example3 Feature6:Feature7:Feature8
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -496,9 +459,6 @@ Example3 Feature6:Feature7:Feature8
 
 
     <!-- headerblur min height -->
-    
-      var headerblur = document.getElementById("header-blur");
-      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

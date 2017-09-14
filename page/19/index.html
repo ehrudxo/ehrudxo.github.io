@@ -55,32 +55,10 @@
 
 
   
-  
-  <div class="site-header-image">
-    <img id="originBg" width="100%" alt="Hike News" src="">
-  </div>
-
-  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
-    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
-  </div>
-
-  <script>
-        var imgUrls = "images/storm.png".split(",");
-        var random = Math.floor((Math.random() * imgUrls.length ));
-        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
-          document.getElementById("originBg").src=imgUrls[random];
-          document.getElementById("blurBg").src=imgUrls[random];
-        } else {
-          document.getElementById("originBg").src='/' + imgUrls[random];
-          document.getElementById("blurBg").src='/' + imgUrls[random];
-        }
-    </script>
-
-
 
 
 <header id="allheader" class="site-header" role="banner" 
-   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+   >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -123,7 +101,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-08-29 07:18:52]react-music"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-10-05 10:18:57]text-spinners"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +109,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/08/29/[2016-08-29 07:18:52]react-music/">react-music</a>
+      <a class="article-title" href="/2016/10/05/[2016-10-05 10:18:57]text-spinners/">text-spinners</a>
     </h1>
   
 
@@ -139,8 +117,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/08/29/[2016-08-29 07:18:52]react-music/" class="article-date">
-	  <time datetime="2016-08-28T22:18:52.000Z" itemprop="datePublished">8월 29, 2016</time>
+	<a href="/2016/10/05/[2016-10-05 10:18:57]text-spinners/" class="article-date">
+	  <time datetime="2016-10-05T01:18:57.000Z" itemprop="datePublished">10월 5, 2016</time>
 	</a>
 
        
@@ -148,48 +126,33 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code>⊂\_ヽ   
-＼＼ Λ＿Λ   
-＼( &apos;ㅅ&apos; ) 두둠칫   
-\&gt; ⌒ヽ   
-/ へ＼   
-/ / ＼＼   
-ﾚ ノ ヽ\_つ   
-/ /두둠칫   
-/ /|   
-( (ヽ   
-| |、＼   
-| 丿 ＼ ⌒)   
-| | ) /   
-\`ノ ) Lﾉ
-</code></pre><p>역시 코드 wrap 으로 보니 그나마 제대로 보이는군요.</p>
-<p>오늘은 react-music 이 깃헙 대세 프로젝트입니다.</p>
-<p>2016/08/29 Editor’s choice</p>
-<p><img src="/images/1*pGGPNuA6Tum-qRpgIbs3zg.png" alt=""></p>
-<p>제가 오늘 이 프로젝트를 알게 된 것은 Dan Abramov의 트윗 때문이었습니다.</p>
-<blockquote>
-<p><a href="https://twitter.com/dan_abramov/status/769695440447086592" target="_blank" rel="external"></a></p>
-</blockquote>
-<p>따라 따라 들어가 보니 react-music이라는 프로젝트를 formidable labs 에서 내 놓았습니다.</p>
-<p><a href="https://github.com/FormidableLabs/react-music" title="https://github.com/FormidableLabs/react-music" target="_blank" rel="external"><strong>FormidableLabs/react-music</strong><br>_react-music - Make beats with React!_github.com</a><a href="https://github.com/FormidableLabs/react-music" target="_blank" rel="external"></a></p>
-<hr>
-<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><p>repository clone -> npm install -> npm start</p>
-<pre><code>$git clone [https://github.com/FormidableLabs/react-music.git][anchor3]
-
-$npm install
-
-$npm start
-</code></pre><h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><p><img src="/images/1*NyiDadRDF5P8BW8AOR3yrA.gi" alt="">음악이 들리는 거 같죠?</p>
-<p>실행을 시키면 위의 그림과 같이 그래프가 움직이면서 음악이 나옵니다.</p>
-<p>Dan의 샘플러 소스는 다음과 같습니다.</p>
-<p>audio-contour라는 프로젝트가 핵심 프로젝트입니다.</p>
-<p><a href="https://github.com/danigb/audio-contour" title="https://github.com/danigb/audio-contour" target="_blank" rel="external"><strong>danigb/audio-contour</strong><br>_audio-contour - A 5 stage audio envelope generator_github.com</a><a href="https://github.com/danigb/audio-contour" target="_blank" rel="external"></a></p>
-<p><a href="https://danigb.github.io/audio-contour/example/" title="https://danigb.github.io/audio-contour/example/" target="_blank" rel="external"><strong>Create oscillatores - Web Audio Assembler</strong><br>_Edit description_danigb.github.io</a><a href="https://danigb.github.io/audio-contour/example/" target="_blank" rel="external"></a></p>
-<p>demo.js를 잘 살펴보면</p>
-<p><a href="https://github.com/FormidableLabs/react-music/blob/master/demo/demo.js" title="https://github.com/FormidableLabs/react-music/blob/master/demo/demo.js" target="_blank" rel="external"><strong>FormidableLabs/react-music</strong><br>_react-music - Make beats with React!_github.com</a><a href="https://github.com/FormidableLabs/react-music/blob/master/demo/demo.js" target="_blank" rel="external"></a></p>
-<p>악기를 wav파일로 지정해 두고 음악을 연주할 수 있도록 하는 형태입니다.</p>
-<p>조만간 react-midi가 나오겠네요~</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/db01ae7940f" target="_blank" rel="external">August 28, 2016</a>.</p>
+        <p>오늘은 짧지만 강렬한(?) 모듈을 소개하고 갈까 합니다. spinner는 너무나 많이 쓰이고 있습니다.</p>
+<p><img src="/images/1*k2XJTv9Ee83UA-iQ4zmF_Q.png" alt=""></p>
+<p>이런 spinner 가 초기에 많이 쓰였다고 한다면</p>
+<p>안드로이드, iOS, web 가릴 것 없이 빙글빙글 돌아가는 spinner는 사용자에게 기다리는 동안의 안정감을 선사하죠.</p>
+<p><a href="https://github.com/tawian/text-spinners" title="https://github.com/tawian/text-spinners" target="_blank" rel="external"><strong>tawian/text-spinners</strong><br>_text-spinners - Pure text, CSS only, font independent, inline loading indicators_github.com</a><a href="https://github.com/tawian/text-spinners" target="_blank" rel="external"></a></p>
+<p>지금 소개하는 spinner는 text spinner 입니다. 아주 간단한 codepen 부터 보고 가시죠?</p>
+<p>사실.. 이 코드펜만 보면 더 설명할 것도 없습니다.</p>
+<p>그저 가져다쓰기만 하면 프로젝트를 아주 훌륭하게 만들어주는 좋은 도구입니다.</p>
+<h3 id="어디에서-영감을-얻었을까"><a href="#어디에서-영감을-얻었을까" class="headerlink" title="어디에서 영감을 얻었을까?"></a>어디에서 영감을 얻었을까?</h3><p>하지만 프로젝트를 잘 보면 cli-spinner에 영감을 받았다고 합니다.</p>
+<p><a href="https://github.com/sindresorhus/cli-spinners" title="https://github.com/sindresorhus/cli-spinners" target="_blank" rel="external"><strong>sindresorhus/cli-spinners</strong><br>_cli-spinners - Spinners for use in the terminal_github.com</a><a href="https://github.com/sindresorhus/cli-spinners" target="_blank" rel="external"></a></p>
+<p>cli-spinner는 Node 기반의 커맨드라인에서 돌아가는 spinner 입니다.</p>
+<p>아래를 클릭하시면 돌아가는 모습을 볼 수 있습니다.</p>
+<p><a href="https://asciinema.org/a/9mlcoussb137m32swwuqtb2p1?size=big" target="_blank" rel="external"><img src="/images/1*iY8Qg-HmzXIbcCSCjMYJUw.pn" alt=""></a></p>
+<h3 id="Cli-spinner-소스-설명"><a href="#Cli-spinner-소스-설명" class="headerlink" title="Cli-spinner 소스 설명"></a>Cli-spinner 소스 설명</h3><p>소스는 의외로 간단합니다.</p>
+<p>와 같이 interval time을 정해 두고 frame 별로 돌아가는 문자를 지정하면 애니메이션이 나타나는 방법을 취하고 있구요</p>
+<pre><code>setInterval(() =\&gt; {  
+const frames = spinner.frames;  
+logUpdate(frames\[i = ++i % frames.length\] + &apos; Unicorns&apos;);  
+}, spinner.interval);
+</code></pre><p>와 같이 setInterval을 호출하고 있습니다.</p>
+<h3 id="text-spinner-소스-분석"><a href="#text-spinner-소스-분석" class="headerlink" title="text-spinner 소스 분석"></a>text-spinner 소스 분석</h3><pre><code>.loading::after {   
+content: &quot;\\A.\\A..\\A...&quot;;   
+animation: spin4 2s steps(4) infinite;  
+}
+</code></pre><p>cli-spinner가 javascript의 setInterval을 이용했다고 하면 text-spinner는 animation기능을 이용해서 같은 내용을 구현했네요.</p>
+<p>정말 깜놀한 아이디어네요~</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/cead081833f9" target="_blank" rel="external">October 5, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -210,7 +173,7 @@ $npm start
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-08-24 05:44:30]openMCT"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-10-04 06:42:30]art-of-readme"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -218,7 +181,7 @@ $npm start
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/08/24/[2016-08-24 05:44:30]openMCT/">openMCT</a>
+      <a class="article-title" href="/2016/10/04/[2016-10-04 06:42:30]art-of-readme/">art-of-readme</a>
     </h1>
   
 
@@ -226,8 +189,8 @@ $npm start
     
     <div class="article-meta">
       
-	<a href="/2016/08/24/[2016-08-24 05:44:30]openMCT/" class="article-date">
-	  <time datetime="2016-08-23T20:44:30.000Z" itemprop="datePublished">8월 24, 2016</time>
+	<a href="/2016/10/04/[2016-10-04 06:42:30]art-of-readme/" class="article-date">
+	  <time datetime="2016-10-03T21:42:30.000Z" itemprop="datePublished">10월 4, 2016</time>
 	</a>
 
        
@@ -235,42 +198,40 @@ $npm start
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>NASA의 클래스를 보여주는 프로젝트가 깃헙에 올라 왔습니다. NASA야 최고의 과학자들이 모이니까! 라고 흘려 버릴 수도 있지만 상당히 재미있는 프로젝트입니다.</p>
-<p>일종의 대시보드를 만들고 같이 볼 수 있는 페이지입니다.</p>
-<p>2016/08/24 Today’s Best</p>
-<p><a href="https://github.com/nasa/openmct" title="https://github.com/nasa/openmct" target="_blank" rel="external"><strong>nasa/openmct</strong><br>_openmct - A web based mission control framework._github.com</a><a href="https://github.com/nasa/openmct" target="_blank" rel="external"></a></p>
-<hr>
-<h4 id="openMCT"><a href="#openMCT" class="headerlink" title="openMCT?"></a>openMCT?</h4><p>깃헙페이지를 방문해 보면 openMCT에 대한 소개가 있습니다.</p>
-<p><img src="/images/1*93n--p9Ou9afEPCptGrdYg.png" alt=""></p>
-<p>차세대 mission control framework이라고 하는군요. NASA에서 임무를 수행할때 사용될 프레임워크에 contribution 할 수 있다니 가슴이 뛰지 않나요?</p>
-<p>일단 데모페이지를 헤로쿠에 올려놓아서 가보도록 하겠습니다.</p>
-<p>오호. 이런 일이 가능하다니욧. 호호호.</p>
-<p>일단은 데모페이지는 animated gif군요.(헐 낚시왕 김NASA)</p>
-<hr>
-<h4 id="설치-및-실행"><a href="#설치-및-실행" class="headerlink" title="설치 및 실행"></a>설치 및 실행</h4><p><a href="https://asciinema.org/a/a3xjjqxs2jgmclzbpdg0c4p7e" target="_blank" rel="external"><img src="/images/1*FtZ76REu7zpAuSRw6lV-Gw.png" alt=""></a>링크 클릭</p>
-<pre><code>git clone [https://github.com/nasa/openmct.git][anchor3]
-
-npm install
-
-npm start
-</code></pre><p>지금은 에러가 나서 최신 release된 commit 버전으로 checkout 받아서 다시 실행시키니 통과가 됩니다.</p>
-<pre><code>$git checkout acc1b8e207365b80dc3082386a97c9e349654fcd
-
-$npm install
-
-$npm start
-</code></pre><p>그랬더니 다음과 같은 창이 뜨는군요. 좀 만져 봤습니다.</p>
-<p><img src="/images/1*WN03ZTSxuH5bZ_61PmGXgg.pn" alt=""></p>
-<p>즉, NASA의 mission을 수행할 수 있는 작업들과 그 task들을 수행할 수 있는 그래프와 URL리소스들을 배치할 수 있고 그것들을 대시보드로 같이 볼 수 있는 역할을 하고 있습니다.</p>
-<h4 id="소스-구성"><a href="#소스-구성" class="headerlink" title="소스 구성"></a>소스 구성</h4><p>gulp파일을 따라 main.js 파일을 따라가면</p>
-<p><a href="https://github.com/nasa/openmct/blob/master/main.js" title="https://github.com/nasa/openmct/blob/master/main.js" target="_blank" rel="external"><strong>nasa/openmct</strong><br>_openmct - A web based mission control framework._github.com</a><a href="https://github.com/nasa/openmct/blob/master/main.js" target="_blank" rel="external"></a></p>
-<p>angular기반으로 프레임워크는 구성이 되어 있음을 알 수 있습니다. 전체 MVVW 프레임워크는 angular이고, jquery대신에 zepto를 사용했네요. 통계를 그리기 위해서는 csv파일을 사용한 듯 싶습니다.</p>
-<p>UI 컴포넌트들은 각각 NASA에서 만들고, 그것들을 오픈소스화 한 개념입니다.</p>
-<p>예를 들어 다이알로그의 경우는</p>
-<p><a href="https://github.com/nasa/openmct/tree/master/platform/commonUI/dialog" title="https://github.com/nasa/openmct/tree/master/platform/commonUI/dialog" target="_blank" rel="external"><strong>nasa/openmct</strong><br>_openmct - A web based mission control framework._github.com</a><a href="https://github.com/nasa/openmct/tree/master/platform/commonUI/dialog" target="_blank" rel="external"></a></p>
-<p>처럼 컴포넌트화 했고 README파일도 훌륭하게 빠져 있습니다.</p>
-<p>NASA프로젝트에 contribution 하고 싶은 프론트엔드 개발자에게는 지금이 절호의 찬스가 되겠군요. 다만~ Angular 능력자여야 할 거 같다는 생각은 드는데, 어떻습니까? 오타를 찾아도 contributor 인데 한번 도전해 봐도 나쁘지 않을 거 같네요.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/85c00e7e40b3" target="_blank" rel="external">August 23, 2016</a>.</p>
+        <p><img src="/images/1*5yo0ZRoa_HKLLaGFQkg0pQ.png" alt="">Alice in wonderland</p>
+<p>깃헙에서 프로젝트를 사용할 때 리드미파일의 영향도는 얼마나 된다고 보시나요? 저의 경우는 Readme파일의 완성도를 보고 프로젝트의 완성도를 가늠하는데 아주 높은 확률로 Readme 와 프로젝트의 완성도는 비슷했던 것 같습니다. 그런 의미에서 제 프로젝트를 아침부터 반성하게 되는데요</p>
+<p>2016/10/04 Editor’s choice</p>
+<p><a href="https://github.com/noffle/art-of-readme" title="https://github.com/noffle/art-of-readme" target="_blank" rel="external"><strong>noffle/art-of-readme</strong><br>_art-of-readme - :love_letter: Learn the art of writing quality READMEs._github.com</a><a href="https://github.com/noffle/art-of-readme" target="_blank" rel="external"></a></p>
+<h3 id="어원"><a href="#어원" class="headerlink" title="어원"></a>어원</h3><p>어원은 어디서 부터 왔을까요?</p>
+<p>학술적으로 보면 1970년대의 특정 프로젝트까지 거슬러 올라갑니다.</p>
+<p><a href="http://pdp-10.trailing-edge.com/decuslib10-04/01/43,50322/read.me.html" title="http://pdp-10.trailing-edge.com/decuslib10-04/01/43,50322/read.me.html" target="_blank" rel="external"><strong>PDP-10 Archive: 43,50322/read.me from decuslib10-04</strong><br>_UCI LISP Random Notes The files on this FAILSAFE tape constitute the UCI LISP system. They are for the most part…_pdp-10.trailing-edge.com</a><a href="http://pdp-10.trailing-edge.com/decuslib10-04/01/43,50322/read.me.html" target="_blank" rel="external"></a></p>
+<p>또 혹자는 루이스 캐롤의 ‘이상한 나라의 앨리스’에서 비롯되었다고 합니다. 물약과 케이크에 “Drink Me” 그리고 “Eat Me” 라고 적혀 있었다고 하는군요.</p>
+<p><img src="/images/1*-hfIdGKXlKkRtmVKRozwGw.pn" alt=""></p>
+<p>흥미롭네요.</p>
+<p>뭐 어쨌거나 이 README 파일은 “사용자가 작업하기 전에 읽어봐야 되는 중요한 정보”로써 사용되고 있습니다.</p>
+<h3 id="저자를-위해-사용자를-위해"><a href="#저자를-위해-사용자를-위해" class="headerlink" title="저자를 위해, 사용자를 위해"></a>저자를 위해, 사용자를 위해</h3><p>이 프로젝트는 README를 작성하는 사람과 읽는 사람 모두에게 필요하므로 작성되었다고 하는데 저 또한 동의합니다.</p>
+<p>작성자에게는 6개월 정도가 지나면 새로울 것이므로 남겨놓는 유산으로써의미가 있고 사용자에게는 의존성을 파악하고 프로젝트를 사용하는데에 도움이 됩니다</p>
+<h3 id="프로답게-쓰는-README"><a href="#프로답게-쓰는-README" class="headerlink" title="프로답게 쓰는 README"></a>프로답게 쓰는 README</h3><p>읽는 사람을 생각해서 작성한다면 기본적으로 다음을 고려해야 하는데요</p>
+<ol>
+<li>이게 무엇인지(what)</li>
+<li>동작할 때 어떻게 보이는지(what it looks like in action)</li>
+<li>어떻게 사용하는 지(how)</li>
+<li>관련된 상세(details)</li>
+</ol>
+<p>등을 고려해야 한다고 합니다.</p>
+<h3 id="핵심-섹션"><a href="#핵심-섹션" class="headerlink" title="핵심 섹션"></a>핵심 섹션</h3><p>기본적인 골격은 다음과 같습니다.</p>
+<ol>
+<li>이름 — 이름이 무엇보다 중요합니다. react-router라는 이름은 이름만으로 무슨 프로젝트인지 알 수 있으니까요</li>
+<li>한줄 요약 — 이름이 중요한 것 처럼 한줄로 이 프로젝트의 정체성을 나타내 주는 것이 좋습니다</li>
+<li>사용법 — API 문서로 바로 가는 것보다 사용법을 설명해 주는 것이 좋습니다.</li>
+<li>API — 이름, 설명, 사용법이 보여지고 나면 API의 상세함이 프로젝트의 품격을 결정합니다</li>
+<li>설치방법 — 자, 이제 전체를 읽어봤으니 어떻게 설치할 지를 알 수 있어야 사용자가 마지막 결정을할 수 있습니다.</li>
+<li>라이센스 — 이 프로젝트를 내가 사용할 수 있는지에 대한 중요한 정보를 담고 있죠.</li>
+</ol>
+<p>이후도 중요한 내용들을 많이 담고 있지만, 인상깊게 읽었던 부분은 사람들의 시간을 고려해라, 백그라운드 섹션을 할애해라. 공격적으로 링크를 걸고 arguments와 parameter를자세하게 적어라. 등등이 기억에 남는군요.</p>
+<p>그리고, 이 프로젝트의 저자는 Node 생태계를 위해 이 글을 작성했는데, Perl 의 개발자들이 작성했던 좋은 예들을 설명하고 있습니다.</p>
+<p>이런 좋은 프로젝트를 아침부터 만난다는 것은 즐거운 일이군요~</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/cd19f86b0456" target="_blank" rel="external">October 3, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -295,7 +256,7 @@ $npm start
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/18/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/97/">97</a><a class="extend next" rel="next" href="/page/20/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/18/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/98/">98</a><a class="extend next" rel="next" href="/page/20/">Next</a>
   </nav>
 
 </section>
@@ -349,6 +310,30 @@ $npm start
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a></h6>
+              <span>9월 14, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2017/09/14/puppeteer/">[github]Node.js 기반 헤드리스 브라우저 컨트롤 API - puppeteer</a></h6>
+              <span>9월 14, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2017/09/08/deeplearning-basic01/">딥러닝 무식하게 정리해 보기 01</a></h6>
               <span>9월 8, 2017</span>
             </div>
@@ -391,30 +376,6 @@ $npm start
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/06/09/feedwordpress/">feedwordpress를 설치하다</a></h6>
-              <span>6월 9, 2017</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/06/07/about-test/">헤드리스 크롬과 selenium2의 조합을 사용해 보자 with node</a></h6>
-              <span>6월 7, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -427,7 +388,7 @@ $npm start
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-trend-github/">github-trend, github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -437,7 +398,7 @@ $npm start
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
+      <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/github-trend-github/" style="font-size: 10px;">github-trend, github</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/tip-docker-devops-git/" style="font-size: 10px;">tip, docker, devops, git</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
     </div>
   </div>
 
@@ -447,7 +408,7 @@ $npm start
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -498,9 +459,6 @@ $npm start
 
 
     <!-- headerblur min height -->
-    
-      var headerblur = document.getElementById("header-blur");
-      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

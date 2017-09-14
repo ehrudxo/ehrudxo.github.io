@@ -55,32 +55,10 @@
 
 
   
-  
-  <div class="site-header-image">
-    <img id="originBg" width="100%" alt="Hike News" src="">
-  </div>
-
-  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
-    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
-  </div>
-
-  <script>
-        var imgUrls = "images/storm.png".split(",");
-        var random = Math.floor((Math.random() * imgUrls.length ));
-        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
-          document.getElementById("originBg").src=imgUrls[random];
-          document.getElementById("blurBg").src=imgUrls[random];
-        } else {
-          document.getElementById("originBg").src='/' + imgUrls[random];
-          document.getElementById("blurBg").src='/' + imgUrls[random];
-        }
-    </script>
-
-
 
 
 <header id="allheader" class="site-header" role="banner" 
-   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+   >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -123,7 +101,7 @@
         
           <section id="main">
   
-    <article id="post-deeplearning-basic01"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-gitjenkinstip"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +109,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2017/09/08/deeplearning-basic01/">딥러닝 무식하게 정리해 보기 01</a>
+      <a class="article-title" href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a>
     </h1>
   
 
@@ -139,8 +117,8 @@
     
     <div class="article-meta">
       
-	<a href="/2017/09/08/deeplearning-basic01/" class="article-date">
-	  <time datetime="2017-09-08T02:44:06.000Z" itemprop="datePublished">9월 8, 2017</time>
+	<a href="/2017/09/14/gitjenkinstip/" class="article-date">
+	  <time datetime="2017-09-14T04:31:23.000Z" itemprop="datePublished">9월 14, 2017</time>
 	</a>
 
        
@@ -148,23 +126,22 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>딥러닝, 인공지능 이야기를 하면 CNN, RNN 같은 알고리즘에 관한 글만 굉장히 많아서 조금 탑뷰에서 바라볼 수 있는 관점에서 전체 기술과 활용처를 분류하고 딥러닝 프레임워크에 대해서 알아 보았다. 딥러닝 프레임워크는 같이 프로젝트를 하고 있는 팀 로자미아 가 같이 정리를 해 주었다. Mabel, Jin, Alex 에게 감사를 드린다.</p>
-<h2 id="AI-기술의-응용-분야"><a href="#AI-기술의-응용-분야" class="headerlink" title="AI 기술의 응용 분야"></a>AI 기술의 응용 분야</h2><p>딥러닝은 여러가지 알고리즘을 가지고 있지만 결국 하고자 하는 대부분의 일들이 군집(clustering)과 분류(classification) 라는 관점으로 귀결된다.<br>그에 따라 AI 기술 스택을 분류하는 방법은 여러가지가 있고 활용되는 분야도 다양하지만 아래와 같이 분류를 해보았다.<br>먼저 챗봇과 번역등에 사용되는 NLU등을 사용하는 Conversational AI.<br>두번째는 개와 고양이 구분하기 등에 많이 사용되는 Visual AI 분야.<br>마지막으로는 전통적으로 진행하던 데이타 분석을 하는 Analytic AI.</p>
-<h3 id="Conversational-AI"><a href="#Conversational-AI" class="headerlink" title="Conversational AI"></a>Conversational AI</h3><p><img src="/images/playmobil-451203_640.jpg" alt="conversation goes on"></p>
-<p>Conversational AI 에는 기본적으로 NLU(Naturla Language Understanding)을 그 근간으로 한다. 오픈 소스중에선 Rasa.ai 같은 프레임워크가 존재하고 오픈 서비스로는 wit.ai 와 api.ai 가 있고 제품으로 유명한 것은 IBM의 conversational 엔진이 유명하다. 일반적인 개발자들이 가장 많이 만나는 것은 페이스북을 가지고 챗봇을 한번 만들어보다가 만나게 되는 것이 NLU 와의 처음 만남이 된다고 볼 수 있다. 이 NLU 엔진은 여러가지 기능을 가지는데 기본적으로 전체의 맥락을 판단하고 키워드를 뽑아내는 게 으뜸된 기능인데 이것을 인텐트와 엔터티라는 업계 용어로 지칭한다.<br>맥락 혹은 화행에는 기본적으로 의도가 들어가 있고 감정이 들어가 있어서 이런 감성을 파악해 내는 데 word2vec doc2vec 같은 툴들이 사용된다. 한글의 경우는 영어와 다른 구조를 가지고 있기 때문에 형태소를 분석해야 하고 mecab-ko 나 은전한잎 같은 툴들이 이용된다. </p>
-<p>여기까지는 일반적인 NLU에 대한 이야기만 한 것이고, 챗봇을 위해서는 다이알로그의 룰이 존재하기 마련이라 룰 매니저 혹은 다이알로그 매니저들이 존재한다. 얘룰 들면 페이스북 챗봇을 만들 때 이런 말이 들어오면 이렇게 대답해야지.. 라고 만드는 대화 구성이 그런 역할을 하는 것이다. 이런 다이알로그 개념이 들어가면 한 문장의 문맥이 아닌 전체 문맥을 파악해야하는 기능과 랭킹 시스템을 구축해야 한다.</p>
-<p>조금 더 나아가면 보통 STT(Speech To Text), TTS(Text To Speech) 로 알고 있는 음성자동 시스템이랑 연결해서 사용자의 음성을 듣고 텍스트로 변환해 준 뒤에 그것을 구축해 놓은 챗봇 시스템과 연결해 구축하는 작업들이 생겨나고 있다.</p>
-<h3 id="AI-for-media"><a href="#AI-for-media" class="headerlink" title="AI for media"></a>AI for media</h3><p><img src="/images/abstract-1233873_640.jpg" alt="AI for media"></p>
-<p>얼굴 인식, 피플 카운팅 등에 사용되는 Face Recognition 과 딥러닝 기반의 Object Recognition 은 미디어들을 통해 사람을 인식하거나 장면등을 파악해서 시스템과 연결하는 일들을 할 때 많이 사용된다. 딥러닝 기반 객체 인식은 보통 CNN 알고리즘으로 유명한데 최근에는 여러가지 알고리즘이 더 들어간 경우가 많고 YOLO Darknet 같은 경우는 인식률과 속도에서 다른 범용 툴을 압도한다.<br>피플 카운팅을 응용하면 히트맵 히트존 등의 기술등으로 확장이 가능하다.<br>OCR 프로그램은 기존에도 존재했던 것들인 많은데, 딥러닝 기반으로 프로젝트들이 변경되고 있다. 구글 tesseract 도 LSTM 알고리즘의 4.0 버전을 테스트 중이다.</p>
-<h3 id="Analytics"><a href="#Analytics" class="headerlink" title="Analytics"></a>Analytics</h3><p>기존의 데이터들을 분석하는 툴 기반이라 딥러닝 보다는 기존 스파크와 하둡 기반의 빅데이터 툴들이 더 많은 일들을 해 주는 부분들이다.</p>
-<h2 id="AI-기반-기술-스택-별로-알아보자-1"><a href="#AI-기반-기술-스택-별로-알아보자-1" class="headerlink" title="AI 기반 기술 스택 별로 알아보자 (1)"></a>AI 기반 기술 스택 별로 알아보자 (1)</h2><h3 id="인공지능을-위한-프로세서의-발전"><a href="#인공지능을-위한-프로세서의-발전" class="headerlink" title="인공지능을 위한 프로세서의 발전"></a>인공지능을 위한 프로세서의 발전</h3><p><img src="/images/nvidia-1201077_640.jpg" alt="템빨은 언제나 진리"></p>
-<p>딥러닝은 기본적으로 다층 레이어의 많은 학습을 요구하기 때문에 단순한 계산이 순식간에 많이 일어나는 것을 특징으로 한다. 그렇기에 병렬처리 컴퓨팅이 가장 중요한 핵심기능이 되어서 기존 CPU이외의 다른 대안들이 필요하다.<br>그런 의미에서 프로세서 유니트(코어) 각각의 성능은 떨어지지만 프로세서 유니트 수가 압도적으로 많은 GPU 가 각광을 받았다. 특히 엔비디아 CUDA (병렬컴퓨팅 플랫폼의 API모델) 의 등장은 프로세서 경쟁에 불을 붙였다.<br>참조 : <a href="http://www.epnc.co.kr/news/articleView.html?idxno=75603" target="_blank" rel="external">http://www.epnc.co.kr/news/articleView.html?idxno=75603</a> </p>
-<h4 id="GPGPU-General-Purpose-GPU"><a href="#GPGPU-General-Purpose-GPU" class="headerlink" title="GPGPU - General Purpose GPU"></a>GPGPU - General Purpose GPU</h4><p>범용 GPU를 이야기 하는 것으로 AI 용으로만 사용될 때는 TPU라는 이름을 쓰기도 한다.(Tensor Processing Unit) NVIDIA의 GPGPU를 극대화 하기 위한 CUDA 기술을 공개했고 동시에 범용 GPU 기능이 주목 받기 시작했다</p>
-<h4 id="GPGPU를-넘어서"><a href="#GPGPU를-넘어서" class="headerlink" title="GPGPU를 넘어서"></a>GPGPU를 넘어서</h4><p>구글의 딥러닝의 학습속도를 향상시키기 위해 자체 디자인한 반도체 칩셋(ASIC)를 적용되면서 더 각광 받기 시작함. 구글의 ASIC를 TPU(Tensor Processing Unit) 이라 부르고 GPGPU의 범주에 놓기도 한다.<br>MS는 같은 목적으로 FPGA 칩을 클라우드 데이타 센터에 탑재해 Azure 서비스에도 이용하고 있는데, FPGA는 저전력의 강점도 가지고 있다.</p>
-<h4 id="Neuromorphic-Processor"><a href="#Neuromorphic-Processor" class="headerlink" title="Neuromorphic Processor"></a>Neuromorphic Processor</h4><p>신경구조와 유사한 프로세서가 차후 프로세서로 각광을 받고 있고 IBM 같은 회사들이 준비하고 있다.<br>링크 : <a href="http://www.research.ibm.com/cognitive-computing/neurosynaptic-chips.shtml#fbid=rXQq5aX-WkP" target="_blank" rel="external">http://www.research.ibm.com/cognitive-computing/neurosynaptic-chips.shtml#fbid=rXQq5aX-WkP</a></p>
-<h3 id="딥러닝-서비스를-위한-인프라"><a href="#딥러닝-서비스를-위한-인프라" class="headerlink" title="딥러닝 서비스를 위한 인프라"></a>딥러닝 서비스를 위한 인프라</h3><p><img src="/images/server-2160321_640.jpg" alt="요즘엔 서버실에 갈 일이 있어야지"></p>
-<p>크게 딥러닝 전용 인프라는 클라우드와 판매형 인프라로 나뉘어서 볼 수 있을 것 같은데 기존의 아마존 AWS, 마이크로소프트의 Azure, 구글 클라우드 같은 빅3는 이미 클라우드 인프라를 가지고 있다.<br>AWS의 경우는 클라우드 AMI(Amazon Machin Image)도 제공하고 있어서 굉장히 편리하게 쓸 수 있다. AMI라는 것은 미리 만들어진 이미지 같은 개념으로 볼 수 있다. NVidia 의 경우는 자사의 GPU를 이용한 클라우드 서비스를 하고 있는 것이 흥미롭다.<br>판매형 인프라는 기존의 서버 벤더들과 비슷한 형태를 취하고 있는데 웨이브 컴퓨팅은 하나의 모델을 제안하는 데 텐서플로 같은 소프트웨어에 특화되어 만들어져 있다.이에 비해 Penguin computing 은 몇가지 옵션들을 더 제공하고 있다.</p>
-<h2 id="맺으며"><a href="#맺으며" class="headerlink" title="맺으며"></a>맺으며</h2><p>딥러닝, 인공지능 등을 바라볼때 탑뷰로 어떤 기술이 있는지를 알아보는 과정을 거치고 있다. 다음 번엔 개발자에게는 가장 중요한 딥러닝 프레임워크들을 다뤄보도록 하겠다. </p>
+        <p>깃랩같은 좋은 툴은 언제나 파워풀하지만, 설치가 쉽지않다. 그래서 깃랩을 설정하기가 어려운 부분은 도커가 최근에는 대신하고 있다.<br>그런데, 도커로 설치를 하다보면 CI, CD 환경을 꾸미는 것은 어떻게 해야할지 감이 오지 않을 때가 많다.</p>
+<p>도커로 깃랩을 설치하는 것과 관련된 글은 검색을 하면 수십개가 나오고, 젠킨스와 깃랩을 연동하는 부분도 굉장히 많이 나오지만 도커로 설치된 깃랩과 젠킨스 연동을 위한 중요한 링크가 빠져 있다.</p>
+<p>중요한 두가지 설정 포인트가 필요하다.</p>
+<ol>
+<li>ssh 포트 변경된 경우 git 연결<br>~/.ssh/config 파일을 만든다.<br>ServerName, UserName, Port 은 프로젝트에 맞춰 준다.<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Host &#123;ServerName&#125;</div><div class="line">        User &#123;UserName&#125;</div><div class="line">        Port &#123;Port&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>이후 git 명령어로 프로젝트를 잘 가져오는지 확인하자.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$git</span> <span class="built_in">clone</span> ssh://git@server:[port]/url </div><div class="line">`</div></pre></td></tr></table></figure>
+<ol>
+<li>git 연결 주소 설정<br>참고로, 퍼블릭키와 프라이빗 키는 이미 잘 설정되어 있을 거라는 전제하에 얘기한다.</li>
+</ol>
+<p>링크 : <a href="http://egloos.zum.com/mcchae/v/11246199" target="_blank" rel="external">gitlab과 Jenkins연동</a></p>
+<p>위 링크에 대해서 URL을 설정하는 부분만 아래와 같이 바꾸면 잘 해결되는 것을 확인할 수 있다.</p>
+<p><img src="/images/sourcecodemgmt.png" alt="링크 주소 설정"></p>
+<p>이렇게 되고 나면 깃에 자유자재로 업데이트하고 긁어올 수 있음을 알 수 있다. 나머지 CI, CD 옵션은 원하는데로 구성하면 된다.</p>
 
       
     </div>
@@ -172,7 +149,7 @@
       
       
   <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/deep-learning/">deep learning</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a></li></ul>
 
       
     </footer>
@@ -184,7 +161,7 @@
 <!-- Table of Contents -->
 
   
-    <article id="post-tech-trend-03"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-puppeteer"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -192,7 +169,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2017/08/03/tech-trend-03/">(tech-trend) 구루들이 찾는다는 테크 트렌드 - 유명 블로그와 소셜 유명인</a>
+      <a class="article-title" href="/2017/09/14/puppeteer/">[github]Node.js 기반 헤드리스 브라우저 컨트롤 API - puppeteer</a>
     </h1>
   
 
@@ -200,8 +177,8 @@
     
     <div class="article-meta">
       
-	<a href="/2017/08/03/tech-trend-03/" class="article-date">
-	  <time datetime="2017-08-03T10:00:00.000Z" itemprop="datePublished">8월 3, 2017</time>
+	<a href="/2017/09/14/puppeteer/" class="article-date">
+	  <time datetime="2017-09-14T04:09:55.000Z" itemprop="datePublished">9월 14, 2017</time>
 	</a>
 
        
@@ -209,83 +186,22 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>이 글은 회사 기술 블로그에 올리고 있는 내용입니다. 회사 기술 블로그에는 이슈가 되고 있는 기술 트렌드와 개인적으로 관심있는 기술 이야기의 주제를 번갈아 가며 연재할 예정입니다. ES2015 리팩토링에 관한 이야기를 진행 중에 있습니다.</p>
-<p>필자는 SDS Agile Core Team 에서 테크리드를 담당하고 있습니다.<br>OSGeo에서 오픈소스 활동을 하고 있습니다. 잘 모르는 기술에 대해서 낯선 사람들과 이야기 하면서 배워 나가는 것을 좋아합니다.</p>
-</blockquote>
-<h2 id="기술-트렌드에-관련해서-3-blog-amp-social-star"><a href="#기술-트렌드에-관련해서-3-blog-amp-social-star" class="headerlink" title="기술 트렌드에 관련해서 - 3. blog &amp; social star"></a>기술 트렌드에 관련해서 - 3. blog &amp; social star</h2><p>구루들이 찾는 다는 테크 트렌드의 마지막 시간이다. 이후에는 React 개발 때 TDD를 어떻게 적용하는 지에 대한 내용을 다뤄볼까 한다. 사실 여기에 들어갈 블로그와 소셜스타를 일일이 나열하기에는 굉장히 본인의 네트워크의 한계와 좁은 지식에 기댈 수 밖에 없어서 굉장히 조심스럽지만 처음 테크트렌드를 찾는 사람들을 위해서 조금 라이트하게 읽을 수 있는 아티클을 쓰시는 분들 혹은 개발회사 블로그 위주로 설명하겠다.</p>
-<h3 id="회사-기술-블로그"><a href="#회사-기술-블로그" class="headerlink" title="회사 기술 블로그"></a>회사 기술 블로그</h3><p>좋은 기술 회사는 기본적으로 좋은 회사 기술 블로그를 가지고 있습니다. 양질의 좋은 컨텐츠를 가지고 기술의 가야할 바도 제시하고 실제 하고 있는 일들을 잠깐씩 엿볼 수 있는 좋은 기회라고 볼 수 있다. </p>
-<ul>
-<li><p><a href="http://woowabros.github.io/" target="_blank" rel="external">우아한 형제들</a></p>
-<ul>
-<li>배달의 민족으로 O2O 의 새로운 지평을 열고 있는 쪽의 개발 블로그. 최근 MSA 글이 화제가 되었다. (<a href="http://woowabros.github.io/r&amp;d/2017/06/13/apigateway.html" target="_blank" rel="external">배민 API GATEWAY - spring cloud zuul 적용기</a>) 개발자들 모두가 쓰고 있다는 착각이 들 정도로 필자가 다양한 것이 특징. 그래서 글 마다 편차는 좀 존재한다.<br><img src="/images/wooa.png" alt="배민 API GATEWAY - spring cloud zuul 적용기"></li>
-</ul>
-</li>
-<li><p><a href="http://d2.naver.com/home" target="_blank" rel="external">네이버 d2</a></p>
-<ul>
-<li>네이버 개발자들의 수준을 가늠해 볼 수 있는 좋은 블로그. 필자와 필력을 관리하는 것인지 대부분의 아티클들이 양과 질에서 여타 다른 회사 기술 블로그보다 평타이상을 한다. 번역글도 가끔 올라 오는데 2012년 화제가 된 글인 <a href="http://d2.naver.com/helloworld/59361" target="_blank" rel="external">“브라우저는 어떻게 작동하는가”</a> 같은 내용은 아직도 유효하고 유익하다.<br><img src="/images/naver_d2.png" alt="브라우저는 어떻게 작동하는가"></li>
-</ul>
-</li>
-</ul>
-<p>이 외에도 <a href="http://tech.lezhin.com/" target="_blank" rel="external">레진 기술블로그</a>, <a href="http://tech.kakao.com/" target="_blank" rel="external">카카오 기술 블로그</a> 등의 찾아가 볼만한 내용들을 가진 곳들이 꽤 많이 존재한다. 전통적인 기술 창고인 <a href="https://msdn.microsoft.com/ko-kr/default.aspx" target="_blank" rel="external">MSDN</a>, <a href="https://code.facebook.com/" target="_blank" rel="external">페이스 북 코드</a> 및 [구글 개발자 사이트][<a href="https://developers.google.com/" target="_blank" rel="external">https://developers.google.com/</a>] 에서 개발 흐름을 찾아 보는 것도 굉장한 도움이 된다.</p>
-<h3 id="팀-블로그-혹은-큐레이션-블로그"><a href="#팀-블로그-혹은-큐레이션-블로그" class="headerlink" title="팀 블로그 (혹은 큐레이션 블로그)"></a>팀 블로그 (혹은 큐레이션 블로그)</h3><p>개발자들끼리 모여서 블로그를 같이 진행하는 경우도 몇군데 있는데, 이런 경우는 서로의 철학과 가고자 하는 방향이 잘 맞는 사람들끼리 모여서 진행을 하고 있다. 필자가 활동하는 팝잇(popit), 개발바보들(devpools)도 그 연장선상에 있다고 볼 수 있다. 주제를 정해서 같이 연재할 수 있는 장점도 있고 서로의 발전을 도모한다는 점에서도 이로운 방향이라고 볼 수 있다.</p>
-<ul>
-<li><p><a href="http://blog.weirdx.io/" target="_blank" rel="external">이상한 모임</a></p>
-<ul>
-<li>개발자(Dev), 오프모임(OFFLINE), 코드(CODE) , IT 기기(GADGET) 등의 광범위한 관심사를 가지고 있는 사람들이 모여서 자신들의 블로그를 올리는 형태의 블로그. 오프모임도 종종 진행하고 관리자가 이벤트를 꽤나 많이 주체하는 흥미로운 사이트다.<br><img src="/images/weird.png" alt="weird"></li>
-</ul>
-</li>
-<li><p><a href="http://www.popit.kr" target="_blank" rel="external">팝잇</a></p>
-<ul>
-<li>주최측이 꽤나 개발자들 사이에서는 알려진 사람들로 이루어진 사이트. 주로 개발에 관련된 이야기만 한다. 좋은 점은 양질의 글을 읽을 수 있다는 점이고 나쁜 점은 개발자들의 관심사가 꽤나 비슷비습하다는 점이다.</li>
-</ul>
-</li>
-</ul>
-<h3 id="소셜-스타-개인-블로그"><a href="#소셜-스타-개인-블로그" class="headerlink" title="소셜 스타(개인 블로그)"></a>소셜 스타(개인 블로그)</h3><p>보통 트위터나 페이스북에서 유명 개발자 혹은 IT 쪽 인플루언서들을 찾아가 보면 대부분은 블로그가 그 원동력이다. 트위터나 페이스북은 그 사람의 지속적인 관심사나 생각의 흐름을 잡아내는데 굉장히 유용하다. 지금부터 언급되는 사람들은 소셜미디어에서도 유명하지만 블로그를 지속적으로 관심을 가지고 봐도 될만한 사람이다. 이 챕터는 기술의 깊이와 넓이에 따라서 굉장히 많은 사람이 호 불호가 갈릴 수 있어서 모두가 이해할 수 있는 선에서 그 영역을 마무리 짓고자 한다.</p>
-<ul>
-<li><p><a href="https://twitter.com/kwang82" target="_blank" rel="external">광파리</a></p>
-<ul>
-<li>트위터와 블로그 둘중 무엇을 링크를 걸까 하다가 트위터를 걸어 두었다. 트위터에 페북과 블로그 주소가 모두 존재하므로 방문하는데에는 지장이 없을 듯 한다. 원래 한국 경제 신문 IT 전문 기자였다가 지금은 D캠프 센터장. 전직 기자의 안목에서 보는 트렌드를 쫒아갈 수 있어서 큰 그림을 파악하는데에는 도움이 된다.</li>
-</ul>
-<ul>
-<li><a href="https://blog.outsider.ne.kr/" target="_blank" rel="external">아웃사이더</a></li>
-</ul>
-<ul>
-<li>굉장히 광범위하게 기술을 건드리는 개발자. 자바 이야기는 찾아 보기 힘들지만 주로 Node.js 와 자바스크립트. AWS 등의 기술들을 접할 수 있다. 깊이 있게 다루는 것에서 자기의 삽질기 까지. 필자의 관심사항과 굉장히 유사한 부분들을 건드린다. </li>
-</ul>
-<ul>
-<li><a href="https://twitter.com/xguru?lang=ko" target="_blank" rel="external">xguru</a></li>
-</ul>
-<ul>
-<li>최근에는 외부 블로깅과 소셜 활동을 많이 하진 않는 듯 한데, 한번 올리는 글에 힘이 있고 많은 사람들이 관심을 가진다. 예전 KTH 관련된 내용들을 많이 엿볼 수 있었다면 최근에는 레진의 내용들을 확인할 수 있다.</li>
-</ul>
-<ul>
-<li><a href="http://blog.benelog.net/" target="_blank" rel="external">정상혁</a></li>
-</ul>
-<ul>
-<li>여기는 한 사람의 개발닌자를 만난 듯한 인상을 주는 블로그. 넓이 보다는 깊이를 추구하는 독자에게는 도움이 될 수 있는 심오한 내용들을 많이 블로깅하고 있다. 오피스를 쓰냐 안쓰냐에 따라 개발자 혹은 개발회사로 구분할 수 있다는 철학을 가진 개발자</li>
-</ul>
-<ul>
-<li><a href="http://blog.doortts.com/" target="_blank" rel="external">채수원</a></li>
-</ul>
-<ul>
-<li>국내에 TDD 에 대해서 한 사람을 꼽으라고 한다면 꼭 이야기 하고 싶은 한 사람. 하지만 그 외에도 여러가지 이야기를 쓰고 잡담도 곧잘 올라오는데 필력이 대단해서 그 잡담마저 흥미롭다.</li>
-</ul>
-</li>
-</ul>
-<p>이상 간단하게 정리해 보았는데 아마도 더 유명한 사람들이 있을 수 있고 누군가의 취향은 다를 수 있다.. 그래서 깃헙의 다음 프로젝트를 조금은 더 자세한게 설명해 볼까 한다.</p>
-<h2 id="8월의-프로젝트-Awesome-Devblog"><a href="#8월의-프로젝트-Awesome-Devblog" class="headerlink" title="8월의 프로젝트 - Awesome Devblog"></a>8월의 프로젝트 - Awesome Devblog</h2><p>지난번에 한번 설명을 한 대로 깁허브(github) 에는 여러 형태의 프로젝트가 존재하는데 그 중 하나라 Awesome 으로 시작되는 북마크 프로젝트들이 존재한다. 지금 소개할 프로젝트는 한국 기준으로 먼저 작성이 된 좋은 개발자(개발 블로그) 모음이다.<br>아마도 위에 정리한 사람들 혹은 팀은 거의 대부분 이 프로젝트에 정리가 되어 있다.</p>
-<p><img src="/images/devblog.png" alt="awesome devblog"></p>
-<p>일단 목차는 다음과 같다.</p>
-<ul>
-<li><a href="https://github.com/sarojaba/awesome-devblog#%EA%B5%AD%EB%82%B4-%EA%B0%9C%EC%9D%B8-%EC%82%AC%EC%9D%B4%ED%8A%B8" target="_blank" rel="external">국내 개인 사이트</a></li>
-<li><a href="https://github.com/sarojaba/awesome-devblog#%EA%B5%AD%EB%82%B4-%ED%8C%80-%EC%82%AC%EC%9D%B4%ED%8A%B8" target="_blank" rel="external">국내 팀 사이트</a></li>
-<li><a href="https://github.com/sarojaba/awesome-devblog#%EA%B5%AD%EC%99%B8-%EA%B0%9C%EC%9D%B8-%EC%82%AC%EC%9D%B4%ED%8A%B8" target="_blank" rel="external">해외 개인 사이트</a></li>
-<li><a href="https://github.com/sarojaba/awesome-devblog#%EA%B5%AD%EC%99%B8-%ED%8C%80-%EC%82%AC%EC%9D%B4%ED%8A%B8" target="_blank" rel="external">해외 팀 사이트</a></li>
-</ul>
-<p>팀 안에 회사에 대한 구분은 없이 가나다 순 알파벳 순으로 소팅을 해 둔 사이트다.<br>이 안에서 한명 한명 찾아 보면서 시간을 보내도 휴가를 재미있게 즐길 수 있다.</p>
-<p>하지만 이런 것들을 내가 실시간으로 최신 트렌드를 받아볼 수는 없을까? 이런 생각을 하면 누군가는 이미 작성을 해 두었다.<br>깃헙에 RSS 프로젝트를 만들었고( 아 이런 수고를 하다니 정말 대다나다.) RSS도 공개 되어 있다.<br><a href="https://github.com/BenjaminKim/awesome-blogs" target="_blank" rel="external">깃헙 프로젝트</a><br><a href="https://awesome-blogs.petabytes.org/feeds?group=dev" target="_blank" rel="external">RSS : https://awesome-blogs.petabytes.org/feeds?group=dev</a></p>
-<p><img src="/images/devblog-rss.png" alt="devblog-rss"></p>
+        <p><img src="/images/puppeteer.jpg" alt="puppeteer"><br>프로젝트 링크 : <a href="https://github.com/GoogleChrome/puppeteer/" target="_blank" rel="external">https://github.com/GoogleChrome/puppeteer/</a><br>첫번째 프로젝트는 구글 크롬 프로젝트에서 Headless Chrome Node API 로 내 놓은 퍼펫티어다. 퍼펫이라고 하면 번역하면 인형술사이고 꼭두각시 인형을 다루는 사람을 이야기 한다. 이 프로젝트의 배경부터 이야기 하자면 올해(2017년) 4월 경 구글프로젝트에서는 크롬에 Headless 모드를 추가했다.<br>Headless 브라우저라고 하면 일반적으로 CLI환경에서 브라우저가 시각적으로 보여지지 않고 백그라운드에서 작동할 수 있는 것을 이야기 하는데, 이 전까지 가장 유명한 것은 PhantomJS라는 프로젝트였다. 크롤링을 하고 스크린 샷을 찍어서 다운로드하고 등의 일들을 할 수 있었다. 그래서 데스크탑이 아닌 서버에서 DOM을 읽어야 하는 경우 등에서 많이 사용되고는 했었다. </p>
+<p>필자의 경우는 테스트 환경을 꾸밀 수 있지 않을까 하는 기대에 관련된 작업들을 진행해 보았고 관련되어 링크를 남기기도 했다.<br>링크 : 헤드리스 크롬과 selenium2의 조합을 사용해 보자 with node (<a href="http://keen.devpools.kr/2017/06/07/about-test/">http://keen.devpools.kr/2017/06/07/about-test/</a> ) </p>
+<p>그런데, 8월 한달 가장 주목받은 프로젝트가 된 이 puppeteer는 Node.js에서 헤드리스 크롬을 사용할 수 있는 API들을 제공하는 것이다. Headless 모드를 발표하자마자 Phantom.JS는 더 이상 개발 안하기로 선언을 한 것과 마찬가지로 Node.js 진영에 새로운 무기가 생겨버린 셈이 되었다</p>
+<h2 id="1-설치를-해보자"><a href="#1-설치를-해보자" class="headerlink" title="1. 설치를 해보자"></a>1. 설치를 해보자</h2><p>먼저 프로젝트를 한번 만들어 보자.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$mkdir</span> puppeteer-project &amp;&amp; <span class="built_in">cd</span> puppeteer-project</div><div class="line"><span class="variable">$yarn</span> add puppeteer</div></pre></td></tr></table></figure></p>
+<p>이렇게 설치를 하고 나면 프로젝트에 index.js 파일을 만든다..</p>
+<p>&lt;코드&gt;index.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> puppeteer = <span class="built_in">require</span>(<span class="string">'puppeteer'</span>);</div><div class="line"></div><div class="line">(<span class="keyword">async</span> () =&gt; &#123;</div><div class="line">  <span class="keyword">const</span> browser = <span class="keyword">await</span> puppeteer.launch();</div><div class="line">  <span class="keyword">const</span> page = <span class="keyword">await</span> browser.newPage();</div><div class="line">  <span class="keyword">await</span> page.goto(<span class="string">'http://devpools.kr'</span>);</div><div class="line">  <span class="keyword">await</span> page.screenshot(&#123;<span class="attr">path</span>: <span class="string">'devpools.png'</span>&#125;);</div><div class="line"></div><div class="line">  browser.close();</div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
+<p>스크린샷을 가져 오는 코드가 작성되었다.  개발바보들 첫 페이지의 스크린 샷을 가져오는 소스 코드를 작성한 이후에 node index.js 명령어를 입력하면 다음과 같은 이미지를 가지고 오는 것을 볼 수 있다. </p>
+<p>기본적으로 지정된 이미지 크기는 800*600으로 지정된 듯 하다. 보통 phantomJS 같은 경우는 스크롤을 다 잡아 가던 초반 모습에 비해 메모리 관리를 위한 것인지 이미지 해상도도 그렇게 좋은 거 같지는 않아 보인다. </p>
+<p>PDF로 Export 하는 기능도 API를 통해 구현이 가능하다. </p>
+<p><img src="/images/crawled_devpools.jpg" alt="개발바보들 스크린샷"></p>
+<h2 id="2-크롤링을-해-보자"><a href="#2-크롤링을-해-보자" class="headerlink" title="2. 크롤링을 해 보자."></a>2. 크롤링을 해 보자.</h2><p>이번엔 find.js 라는 파일을 아래와 같이 만들어 본다. 실제로 이미지와 지금 아래 크롤링 소스는 해당 프로젝트와 내용이 거의 유사하다. </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="meta">'use strict'</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> puppeteer = <span class="built_in">require</span>(<span class="string">'puppeteer'</span>);</div><div class="line"></div><div class="line">(<span class="keyword">async</span>() =&gt; &#123;</div><div class="line"><span class="comment">//브라우저 객체와 페이지 객체를 만들고</span></div><div class="line"><span class="keyword">const</span> browser = <span class="keyword">await</span> puppeteer.launch();</div><div class="line"><span class="keyword">const</span> page = <span class="keyword">await</span> browser.newPage();</div><div class="line"></div><div class="line"><span class="comment">// 구글 검색창 방문</span></div><div class="line"><span class="keyword">await</span> page.goto(<span class="string">'https://google.com'</span>, &#123;<span class="attr">waitUntil</span>: <span class="string">'networkidle'</span>&#125;);</div><div class="line"><span class="comment">//개발 바보들에 대한 검색어를 입력하고</span></div><div class="line"><span class="keyword">await</span> page.type(<span class="string">'devpools'</span>);</div><div class="line"><span class="comment">// 검색버튼을 누르고</span></div><div class="line"><span class="keyword">await</span> page.click(<span class="string">'input[type="submit"]'</span>);</div><div class="line"><span class="comment">//검색한 결과의 타이틀을 가져와서</span></div><div class="line"><span class="comment">// Wait for the results to show up</span></div><div class="line"><span class="keyword">await</span> page.waitForSelector(<span class="string">'h3 a'</span>);</div><div class="line"></div><div class="line"><span class="keyword">const</span> links = <span class="keyword">await</span> page.evaluate(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">  <span class="keyword">const</span> anchors = <span class="built_in">Array</span>.from(<span class="built_in">document</span>.querySelectorAll(<span class="string">'h3 a'</span>));</div><div class="line">  <span class="keyword">return</span> anchors.map(<span class="function"><span class="params">anchor</span> =&gt;</span> anchor.textContent);</div><div class="line">&#125;);</div><div class="line"><span class="comment">//콘솔에 출력한다.</span></div><div class="line"><span class="built_in">console</span>.log(links.join(<span class="string">'\n'</span>));</div><div class="line">browser.close();</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p>소스 코드에 대한 설명은 주석에 달아 둔데로 브라우저 객체와 페이지 객체를 만들고 구글 검색창을 방문해서 개발 바보들에 대한 검색어를 입력하고 검색버튼을 누른 뒤 검색된 결과의 타이틀을 가져와서 콘솔에 출력한다.</p>
+<p>그 결과는 다음과 같다. 이 과정 중에 어떤 브라우저의 인터렉션도 필요 없었고 (내부적으로는 크롬 헤드리스 브라우저가 작동을 했지만) 사용자의 경우는 결과만 가져올 수 있다.</p>
+<p><img src="/images/searchresults.jpg" alt="devpools 검색결과"></p>
+<h2 id="맺음말"><a href="#맺음말" class="headerlink" title="맺음말"></a>맺음말</h2><p>왜 구글은 이런 제품을 내놓고 있는 걸까? 워낙 혁신적인 기업이라 속내를 다 살펴볼 수는 없지만 지속적으로 API를 내놓고 있는 것은 웹의 많은 부분이 자동화로 돌아설 것이고 그 중심에 인공지능이 있지 않을까 하는 생각이 들어 잠시 한번 고민을 해 보았다. 아마도 텐서플로가 조만간 DOM 기반의 러닝 모델을 공개하는 날이 오지 않을까?</p>
 
       
     </div>
@@ -293,7 +209,7 @@
       
       
   <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-trend-github/">github-trend, github</a></li></ul>
 
       
     </footer>
@@ -309,7 +225,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/97/">97</a><a class="extend next" rel="next" href="/page/2/">Next</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/98/">98</a><a class="extend next" rel="next" href="/page/2/">Next</a>
   </nav>
 
 </section>
@@ -363,6 +279,30 @@
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a></h6>
+              <span>9월 14, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2017/09/14/puppeteer/">[github]Node.js 기반 헤드리스 브라우저 컨트롤 API - puppeteer</a></h6>
+              <span>9월 14, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2017/09/08/deeplearning-basic01/">딥러닝 무식하게 정리해 보기 01</a></h6>
               <span>9월 8, 2017</span>
             </div>
@@ -405,30 +345,6 @@
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/06/09/feedwordpress/">feedwordpress를 설치하다</a></h6>
-              <span>6월 9, 2017</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/06/07/about-test/">헤드리스 크롬과 selenium2의 조합을 사용해 보자 with node</a></h6>
-              <span>6월 7, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -441,7 +357,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-trend-github/">github-trend, github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -451,7 +367,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
+      <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/github-trend-github/" style="font-size: 10px;">github-trend, github</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/tip-docker-devops-git/" style="font-size: 10px;">tip, docker, devops, git</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
     </div>
   </div>
 
@@ -461,7 +377,7 @@
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -512,9 +428,6 @@
 
 
     <!-- headerblur min height -->
-    
-      var headerblur = document.getElementById("header-blur");
-      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

@@ -55,32 +55,10 @@
 
 
   
-  
-  <div class="site-header-image">
-    <img id="originBg" width="100%" alt="Hike News" src="">
-  </div>
-
-  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
-    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
-  </div>
-
-  <script>
-        var imgUrls = "images/storm.png".split(",");
-        var random = Math.floor((Math.random() * imgUrls.length ));
-        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
-          document.getElementById("originBg").src=imgUrls[random];
-          document.getElementById("blurBg").src=imgUrls[random];
-        } else {
-          document.getElementById("originBg").src='/' + imgUrls[random];
-          document.getElementById("blurBg").src='/' + imgUrls[random];
-        }
-    </script>
-
-
 
 
 <header id="allheader" class="site-header" role="banner" 
-   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+   >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -123,7 +101,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-05-23 07:02:41]Algorithm Visualizer"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-05-24 07:28:45]bideo"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +109,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/05/23/[2016-05-23 07:02:41]Algorithm Visualizer/">Algorithm Visualizer</a>
+      <a class="article-title" href="/2016/05/24/[2016-05-24 07:28:45]bideo/">bideo</a>
     </h1>
   
 
@@ -139,8 +117,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/05/23/[2016-05-23 07:02:41]Algorithm Visualizer/" class="article-date">
-	  <time datetime="2016-05-22T22:02:41.000Z" itemprop="datePublished">5월 23, 2016</time>
+	<a href="/2016/05/24/[2016-05-24 07:28:45]bideo/" class="article-date">
+	  <time datetime="2016-05-23T22:28:45.000Z" itemprop="datePublished">5월 24, 2016</time>
 	</a>
 
        
@@ -148,21 +126,46 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>최근 모 그룹에서는 알고리즘 등급 시험을 보기 시작했죠. 입사에도 활용을 하고 내부 평가에도 적용을 하고 있습니다. 현대 사회 고수준 프로그래밍에서 그게 그렇게 큰 의미가 있을까 생각이 들지만, 좋은 방향이라는 생각도 듭니다.</p>
-<p>지금 소개하는 프로젝트는 대표적일 알고리즘들을 비주얼라이제이션해서 이해하기 쉽게 표현해 준 프로젝트입니다. 무엇보다 한국 사람이 만든 프로젝트라 아무 고민 없이 추천합니다.</p>
-<p>2016/05/23 Editor’s choice</p>
-<p><a href="https://github.com/parkjs814/AlgorithmVisualizer" title="https://github.com/parkjs814/AlgorithmVisualizer" target="_blank" rel="external"><strong>parkjs814/AlgorithmVisualizer</strong><br>_AlgorithmVisualizer - Algorithm Visualizer_github.com</a><a href="https://github.com/parkjs814/AlgorithmVisualizer" target="_blank" rel="external"></a></p>
+        <p><img src="/images/1*3DJMQyyKU3B7KoE5acr_Ng.gi" alt="">일단 감상하시죠</p>
+<p>으억. 백그라운드 이미지 효과가 장난이 아니죠?</p>
+<p>네, 사실 백그라운드 이미지가 아니라 백그라운드 비디오입니다. 응?</p>
+<p>2016/05/24 Editor’s choice</p>
+<p><a href="https://github.com/rishabhp/bideo.js" title="https://github.com/rishabhp/bideo.js" target="_blank" rel="external"><strong>rishabhp/bideo.js</strong><br>_bideo.js - Fullscreen HTML5 Background Video for the Web._github.com</a><a href="https://github.com/rishabhp/bideo.js" target="_blank" rel="external"></a></p>
+<p>개발자의 완성은 얼굴이랬는데, 아직 미완성</p>
 <hr>
-<h4 id="설치를-해-보자"><a href="#설치를-해-보자" class="headerlink" title="설치를 해 보자"></a>설치를 해 보자</h4><p>$git clone <a href="https://github.com/parkjs814/AlgorithmVisualizer.git" target="_blank" rel="external">https://github.com/parkjs814/AlgorithmVisualizer.git</a></p>
-<p>일단 클론을 받으면 끝입니다.</p>
+<h4 id="설치하기"><a href="#설치하기" class="headerlink" title="설치하기"></a>설치하기</h4><p>는 생략. 페이지니까</p>
 <hr>
-<h4 id="실행을-해-보자"><a href="#실행을-해-보자" class="headerlink" title="실행을 해 보자"></a>실행을 해 보자</h4><p>약간 썰렁할 수는 있는데, 내려받으면 프로젝트 자체가 페이지입니다.</p>
-<p>Cross-Domain문제를 겪지 않으려면 웹서버를 띄워줘야 되는데 저자는 node-server를 설치하라고 하지만 제 경우는 python SimpleHTTPServer를 사용해서 띄우고 확인해 보았습니다.</p>
-<p>그랬더니 그냥 땋하고 페이지를 확인해 볼 수 있습니다.</p>
-<p>화면은 Dijkstra 알고리즘입니다.</p>
-<p><img src="/images/1*9beDTxxQqP-Jkc4VIUtYPg.pn" alt=""></p>
-<p>알고리즘을 이해하는데 좋은 도움이 될 프로젝트입니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/6b973b76d136" target="_blank" rel="external">May 22, 2016</a>.</p>
+<h4 id="실행하기"><a href="#실행하기" class="headerlink" title="실행하기"></a>실행하기</h4><p>보다는 codepen 페이지를 통해 설명할까 합니다.</p>
+<p>이 페이지를 만드는데 가장 큰 어려움은 무엇일까요?</p>
+<p><a href="http://codetheory.in/html5-fullscreen-background-video/" title="http://codetheory.in/html5-fullscreen-background-video/" target="_blank" rel="external"><strong>HTML5 Fullscreen Background Video with CSS and JS (Plugin/Library)</strong><br>_Fullscreen background videos that autoplay right when the webpage loads (above the fold) has become quite a popular…_codetheory.in</a><a href="http://codetheory.in/html5-fullscreen-background-video/" target="_blank" rel="external"></a></p>
+<p>이 페이지를 읽어보면 개발자가 어떤 고민을 하면서 이 페이지를 만들었는지 나옵니다.</p>
+<ol>
+<li>비디오 센터 정렬</li>
+<li>페이지 리사이즈 처리</li>
+<li>오버레이</li>
+<li>비디오 커버</li>
+<li>네트워크 속도</li>
+<li>비디오 태그 속성</li>
+</ol>
+<p>등으로 설명 될 수 있을 거 같습니다.</p>
+<h4 id="비디오-센터-정렬-amp-페이지-리사이즈-처리"><a href="#비디오-센터-정렬-amp-페이지-리사이즈-처리" class="headerlink" title="비디오 센터 정렬 &amp; 페이지 리사이즈 처리"></a>비디오 센터 정렬 &amp; 페이지 리사이즈 처리</h4><p>이 부분은 CSS로 다음과 같이 정렬했습니다.</p>
+<blockquote>
+<p>video {</p>
+<p>position: absolute;</p>
+<p>/* Vertical and Horizontal center*/</p>
+<p>left: 50%; top: 50%;</p>
+<p>transform: translate(-50%, -50%);</p>
+<p>}</p>
+</blockquote>
+<p>left, top을 각기 50% 씩 주고 정렬했습니다. 이후 javscript 로 이미지 크기를 지정해 주도록 정렬!</p>
+<p>이 코드펜 사이트에서 잘 설명되고 있습니다.</p>
+<h4 id="오버레이"><a href="#오버레이" class="headerlink" title="오버레이"></a>오버레이</h4><p>오버레이의 핵심은 position:absolute를 주고 0,0 포지션에서 페이지가 시작되도록 해 주는 것입니다.</p>
+<p>다르게 보이는 것을 알 수 있습니다.</p>
+<h4 id="video-cover"><a href="#video-cover" class="headerlink" title="video_cover"></a>video_cover</h4><p>지금부터는 약간 세부적인 사항인데, 이미지가 다 로딩 되기 전에 전체 화면에 시작 이미지가 있어야지 어색함이 덜하죠(유튜브 처럼)</p>
+<p>이후 네트워트랑 비디오 태그들을 implementation하면서 이 프로젝트에 대한 설명이 마쳐집니다.</p>
+<hr>
+<p>예제는 전체를 커버하는 비디오 mp4가 12메가 정도를 하고 있습니다. 요즘LTE환경에서는 굉장히 효과적으로 페이지를 꾸미는 방법이 될 것 같습니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/a4d34ed3b856" target="_blank" rel="external">May 23, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -183,7 +186,7 @@
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-05-22 23:16:34]black-screen"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-05-23 20:54:38]2016 5월 주간깃헙 2호"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -191,7 +194,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/05/22/[2016-05-22 23:16:34]black-screen/">black-screen</a>
+      <a class="article-title" href="/2016/05/23/[2016-05-23 20:54:38]2016 5월 주간깃헙 2호/">2016 5월 주간깃헙 2호</a>
     </h1>
   
 
@@ -199,8 +202,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/05/22/[2016-05-22 23:16:34]black-screen/" class="article-date">
-	  <time datetime="2016-05-22T14:16:34.000Z" itemprop="datePublished">5월 22, 2016</time>
+	<a href="/2016/05/23/[2016-05-23 20:54:38]2016 5월 주간깃헙 2호/" class="article-date">
+	  <time datetime="2016-05-23T11:54:38.000Z" itemprop="datePublished">5월 23, 2016</time>
 	</a>
 
        
@@ -208,29 +211,44 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/1*-3iP5-TURZj9w0z5SQZr8Q.png" alt="">type. type.</p>
+        <ul>
+<li><a href="https://github.com/Nickersoft/push.js" target="_blank" rel="external">push.js</a></li>
+</ul>
+<p><img src="/images/1*x50EZ5g4WPsIJKJDn0CG0Q.png" alt=""></p>
+<p>크롬에서 facebook 페이지에 들어가면 알림을 허용 하느냐고 묻는 걸 본 적이 있을 겁니다. 응 이게 뭐여 하고 수신을 했다가 Mac사용자는 자체 facebook notification 을 두개 받아 보신 분도 있을 겁니다.</p>
+<p>네, Web Push Notification을 손쉽게 구현할 수 있는 프로젝트 push.js 입니다.</p>
+<p><a href="https://techstory.shma.so/push-js-897d5d467f94#.j9l91d8aj" target="_blank" rel="external">리뷰 보러가기</a></p>
+<ul>
+<li><a href="https://github.com/rethinkdb/horizon" target="_blank" rel="external">horizon</a></li>
+</ul>
+<p><img src="/images/1*l-1W6LntxYQWjgGLa6fb6A.png" alt=""></p>
+<p>이 프로젝트 horizon은 rethinkdb 에서 내 놓은 오픈소스 설치형 Firebase라고 생각하시면 될 거 같습니다.</p>
+<p><a href="https://techstory.shma.so/horizon-ed9f5ad7c3c9#.59q865bp7" target="_blank" rel="external">리뷰 보러가기</a></p>
+<ul>
+<li><a href="https://github.com/mxstbr/react-boilerplate" target="_blank" rel="external">react-boilerplate</a></li>
+</ul>
+<p><img src="/images/0*nijQNeqWGzZ9DmM9.jpg" alt=""></p>
+<p>boilerplate라고 하는 것은 개발 커뮤니티에서 사용하는 용어로는 미리 잘 만들어진 템플릿이라는 뜻을 가지고 있습니다. react로 개발할 때 어떤 템플릿을 쓸까 고민이 많은데 이 프로젝트는 최신트렌드들을 몽땅 망라한 백화점 같은 boilerplate라고 보시면 될 거 같습니다.</p>
+<ul>
+<li><a href="https://github.com/Selz/plyr" target="_blank" rel="external">plyr</a></li>
+</ul>
+<p>비디오 플레이어를 설치할 생각하면 많이 갑갑하죠? HTML5 mp4부터 youtube, vimeo 등의 플레이어를 간단하게 javascript로 볼 수 있도록 해주는 plyr 프로젝트 입니다. 꾹 눌러 데모를 확인하시죠.</p>
+<p><img src="/images/0*ooMvknnKw2MurDOk." alt=""></p>
+<ul>
+<li><a href="https://github.com/buunguyen/octotree" target="_blank" rel="external">octotree</a></li>
+</ul>
+<p><img src="/images/1*kSqnLGLK6FLj_k5xG3bj4w.pn" alt=""></p>
+<p>깃헙 혹은 깃랩을 쓰실 때에 소스코드 보기가 너무 어렵다라는 생각하셨던 사람이 적지 않았을 것입니다. 브라우저의 히스토리만으로 왔다갔다 하다 보면 짜증이 많이 났을텐데요, 에디터의 tree 구조를 보여주는 프로젝트가 나왔습니다</p>
+<p><a href="https://techstory.shma.so/octotree-37fdde36d5f#.kjesytjvl" target="_blank" rel="external">리뷰 보러가기</a></p>
+<ul>
+<li><a href="https://github.com/shockone/black-screen" target="_blank" rel="external">black-screen</a></li>
+</ul>
 <p>Electron, Atom 을 볼 때 어떤 가능성을 보셨습니까? Native 어플리케이션을 모두 웹으로 작성하는 생각을 해 보셨을 텐데요. 오늘은 정말 재미있는 프로젝트가 깃헙에 올라 왔습니다. 썰이 길죠?</p>
 <p>black-screen은 Electron 을 이용해서 만든 iTerm 같은 터미날 프로그램입니다.</p>
-<p>2016/05/22 Editor’s choice(623✰)</p>
-<p><a href="https://github.com/shockone/black-screen" title="https://github.com/shockone/black-screen" target="_blank" rel="external"><strong>shockone/black-screen</strong><br>_black-screen - A terminal emulator for the 21st century._github.com</a><a href="https://github.com/shockone/black-screen" target="_blank" rel="external"></a></p>
+<p><a href="https://techstory.shma.so/black-screen-d6e783922fab#.x902rbvlu" target="_blank" rel="external">리뷰 보러가기</a></p>
 <hr>
-<h4 id="설치하기"><a href="#설치하기" class="headerlink" title="설치하기"></a>설치하기</h4><pre><code>git clone https://github.com/shockone/black-screen.git &amp;&amp; cd black-screen  
-npm i
-</code></pre><p>너무나 간단하죠</p>
-<hr>
-<h4 id="실행하기"><a href="#실행하기" class="headerlink" title="실행하기"></a>실행하기</h4><pre><code>npm start
-</code></pre><p><img src="/images/1*53PzecKOUjK01Csh9b8I5Q.gif" alt=""></p>
-<p>이렇게 실행히 됩니다. 놀랍죠?</p>
-<p>아톰 에티터와 같은 스타일로 i-Term 같은 터미날을 쓴다니.</p>
-<p>지금 zsh 맛을 겨울 알았는데 지원해 주는 기능들을 보니 편리함을 위해 auto complete같은 기능은 기본적으로 제공을 해 주네요.</p>
-<h4 id="vi"><a href="#vi" class="headerlink" title="vi"></a>vi</h4><p>vi 를 실행했을 때에는 약간 어색하기는 하네요. 화살표가 안 먹어서 살펴보니 jkl같은 기본 명령어로만 동작이 되는군요.</p>
-<h4 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h4><p>cat 명령어로 json을 볼 때는 웹 개발자에겐 축복같은 화면이 나오는 군요</p>
-<p><img src="/images/1*iyK2nu9AUfGH7Txc7zFU-g.png" alt="">헐. json트리야. json 트리</p>
-<h4 id="top"><a href="#top" class="headerlink" title="top"></a>top</h4><p><img src="/images/1*9-7RNQ5kOAN2jmmtzjrqQQ.pn" alt=""></p>
-<p>top 명령어를 실행하면 이쁘게 잘 보이는 화면은 캡쳐를 뜨지 않았습니다.(이쯤되면 당연…)</p>
-<p>명령어를 종료하고 나서 snapshot을 적갈색 화면으로 보여주는게 너무 이쁘네요.</p>
-<p>아마도 한참동안 iTerm을 대체할 수는 없을 것 같지만, 지금 Atom을 주력 에디터로 쓰게 되리라고 1년전에는 상상도 할 수 없었을 테니 모르는 거죠.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/d6e783922fab" target="_blank" rel="external">May 22, 2016</a>.</p>
+<p><em>Originally published at </em><a href="http://devpools.kr/2016/05/23/2016-5%ec%9b%94-%ec%a3%bc%ea%b0%84%ea%b9%83%ed%97%99-2%ed%98%b8/" target="_blank" rel="external"><em>개발바보들</em></a><em>.</em></p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/36e270cc3d4b" target="_blank" rel="external">May 23, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -255,7 +273,7 @@ npm i
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/52/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/51/">51</a><a class="page-number" href="/page/52/">52</a><span class="page-number current">53</span><a class="page-number" href="/page/54/">54</a><a class="page-number" href="/page/55/">55</a><span class="space">&hellip;</span><a class="page-number" href="/page/97/">97</a><a class="extend next" rel="next" href="/page/54/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/52/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/51/">51</a><a class="page-number" href="/page/52/">52</a><span class="page-number current">53</span><a class="page-number" href="/page/54/">54</a><a class="page-number" href="/page/55/">55</a><span class="space">&hellip;</span><a class="page-number" href="/page/98/">98</a><a class="extend next" rel="next" href="/page/54/">Next</a>
   </nav>
 
 </section>
@@ -309,6 +327,30 @@ npm i
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a></h6>
+              <span>9월 14, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2017/09/14/puppeteer/">[github]Node.js 기반 헤드리스 브라우저 컨트롤 API - puppeteer</a></h6>
+              <span>9월 14, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2017/09/08/deeplearning-basic01/">딥러닝 무식하게 정리해 보기 01</a></h6>
               <span>9월 8, 2017</span>
             </div>
@@ -351,30 +393,6 @@ npm i
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/06/09/feedwordpress/">feedwordpress를 설치하다</a></h6>
-              <span>6월 9, 2017</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/06/07/about-test/">헤드리스 크롬과 selenium2의 조합을 사용해 보자 with node</a></h6>
-              <span>6월 7, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -387,7 +405,7 @@ npm i
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-trend-github/">github-trend, github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -397,7 +415,7 @@ npm i
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
+      <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/github-trend-github/" style="font-size: 10px;">github-trend, github</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/tip-docker-devops-git/" style="font-size: 10px;">tip, docker, devops, git</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
     </div>
   </div>
 
@@ -407,7 +425,7 @@ npm i
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -458,9 +476,6 @@ npm i
 
 
     <!-- headerblur min height -->
-    
-      var headerblur = document.getElementById("header-blur");
-      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

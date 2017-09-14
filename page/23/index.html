@@ -55,32 +55,10 @@
 
 
   
-  
-  <div class="site-header-image">
-    <img id="originBg" width="100%" alt="Hike News" src="">
-  </div>
-
-  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
-    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
-  </div>
-
-  <script>
-        var imgUrls = "images/storm.png".split(",");
-        var random = Math.floor((Math.random() * imgUrls.length ));
-        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
-          document.getElementById("originBg").src=imgUrls[random];
-          document.getElementById("blurBg").src=imgUrls[random];
-        } else {
-          document.getElementById("originBg").src='/' + imgUrls[random];
-          document.getElementById("blurBg").src='/' + imgUrls[random];
-        }
-    </script>
-
-
 
 
 <header id="allheader" class="site-header" role="banner" 
-   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+   >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -123,7 +101,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-08-10 23:01:55]security-guide-for-developers"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-08-17 08:50:04]httpie"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +109,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/08/10/[2016-08-10 23:01:55]security-guide-for-developers/">security-guide-for-developers</a>
+      <a class="article-title" href="/2016/08/17/[2016-08-17 08:50:04]httpie/">httpie</a>
     </h1>
   
 
@@ -139,8 +117,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/08/10/[2016-08-10 23:01:55]security-guide-for-developers/" class="article-date">
-	  <time datetime="2016-08-10T14:01:55.000Z" itemprop="datePublished">8월 10, 2016</time>
+	<a href="/2016/08/17/[2016-08-17 08:50:04]httpie/" class="article-date">
+	  <time datetime="2016-08-16T23:50:04.000Z" itemprop="datePublished">8월 17, 2016</time>
 	</a>
 
        
@@ -148,36 +126,35 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>프론트엔드 개발자를 위한 보안 가이드가 오늘 소개해 드릴 프로젝트입니다. 몇번씩이나 깃헙 수위권을 차지 했었는데요. 상당히 읽어 볼만한 내용들을 포함하고 있습니다.</p>
-<p>2016/08/10 best Practice</p>
-<p><a href="https://github.com/FallibleInc/security-guide-for-developers" title="https://github.com/FallibleInc/security-guide-for-developers" target="_blank" rel="external"><strong>FallibleInc/security-guide-for-developers</strong><br>_security-guide-for-developers - Security Guide for Developers (实用性开发人员安全须知)_github.com</a><a href="https://github.com/FallibleInc/security-guide-for-developers" target="_blank" rel="external"></a></p>
+        <p>http request 를 CLI 환경에서 보낼 때 주로 많이 사용하시는 것은 curl 일 겁니다. 혹은 wget을 사용할 수도 있습니다.</p>
+<p>하지만 오늘 나온 이 httpie는 세가지 정도의 강점을 가진 CLI http툴이라고 보시면 됩니다.</p>
+<p>2016/08/17 Editor’s choice</p>
+<p><a href="https://github.com/jkbrzt/httpie" title="https://github.com/jkbrzt/httpie" target="_blank" rel="external"><strong>jkbrzt/httpie</strong><br>_httpie - CLI HTTP client, user-friendly curl replacement with intuitive UI, JSON support, syntax highlighting, wget…_github.com</a><a href="https://github.com/jkbrzt/httpie" target="_blank" rel="external"></a></p>
 <hr>
-<h4 id="배경설명"><a href="#배경설명" class="headerlink" title="배경설명"></a>배경설명</h4><p><a href="https://fallible.co/" title="https://fallible.co/" target="_blank" rel="external"><strong>Fallible - Secure your startup</strong><br>_About us We are a group of hackers passionate about improving the security posture of companies, tech startups in…_fallible.co</a><a href="https://fallible.co/" target="_blank" rel="external"></a></p>
-<p>해커 그룹이 만든 fallible 라는 회사는</p>
-<p><img src="/images/1*xYBVRvNvwE3LKISwLYSLFQ.pn" alt=""></p>
-<p>의 가격에 취약점에서 서비스를 지켜준다고 하는군요.</p>
-<p>아무튼 이 회사에서 깃헙에 security가이드를 내 주고 공개해서 많은 사람들의 호응을 얻고 있는데, 문서가 다 완성되어 있지 않는데에도 스타가 1만개가 넘는군요</p>
-<hr>
-<h4 id="체크리스트"><a href="#체크리스트" class="headerlink" title="체크리스트"></a>체크리스트</h4><p><a href="https://github.com/FallibleInc/security-guide-for-developers/blob/master/security-checklist.md" title="https://github.com/FallibleInc/security-guide-for-developers/blob/master/security-checklist.md" target="_blank" rel="external"><strong>FallibleInc/security-guide-for-developers</strong><br>_security-guide-for-developers - Security Guide for Developers (实用性开发人员安全须知)_github.com</a><a href="https://github.com/FallibleInc/security-guide-for-developers/blob/master/security-checklist.md" target="_blank" rel="external"></a></p>
-<p>체크리스트 하나를 만들어 나가고 있는데 꽤나 볼만 합니다. 한번 이 문서를 번역해서 PU 날려주는 것도 많을 거 같습니다.</p>
-<p><strong>일단 인증을 살펴볼까요?</strong></p>
-<ul>
-<li>HTTPS 를 꼭 쓸것</li>
-<li>비밀번호 해쉬를 저장할 때는 Bcrypt를 사용할것. (salt는 Bcrypt가 알아서 해 주니 필요없음</li>
-<li>로그아웃 후에는 session ID 값을 지울 것</li>
-<li>패스워드 변경때는 살아있는 모든 session 을 지울 것</li>
-<li>OAuth2 는 state 매개변수를 무조건 가질 것</li>
-<li>성공적으로 로그인하고 나서는 열려 있는 리다이렉트는 없앨 것</li>
-<li>회원등록/로그인 입력값을 해석할 때 javascript와 data, CRLF 값등을 깨끗하게 유지할 것</li>
-<li>쿠키는 암호화한 http 내용만 허용</li>
-<li>모바일 에서 사용되는 OTP 검증 시, OTP를 생성하거나 리셋한 결과 값을 리턴하는 response에 패스워드를 보내지 말것</li>
-<li>로그인 혹은 OTP검증 혹은 관련된 API사용의 횟수를 제한할 것. captcha 기반의 챌린지를 가질 것</li>
-<li>이메일 링크와 SMS 로 보내진 리셋 패스워드의 난수값을 확인할 것</li>
-<li>리셋 패스워드의 만기일을 설정할 것(납득할만한 기간)</li>
-<li>토큰 값이 성공적으로 사용되고 나서는 삭제할 것</li>
-</ul>
-<p>이것 이외도 많은 내용이 있으니 살펴볼만 한 듯합니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/5bdef1d0feb4" target="_blank" rel="external">August 10, 2016</a>.</p>
+<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><pre><code>$brew install httpie
+</code></pre><h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><pre><code>$http www.daum.net
+</code></pre><p><img src="/images/1*DpMtrsEgCSVj03AD_nr1BQ.gif" alt=""></p>
+<p>보시다시피 content highlighting 기능을 가지고 있는게 우선적으로 다른 툴과는 다른 모습을 보여줍니다.</p>
+<p>게다가</p>
+<pre><code>http PUT example.org name=John email=john@example.org
+</code></pre><p>형태의 key=value 쌍이 들어갈 경우에 JSON으로 자동으로 치환해서 업로드 해주는 기능을 갖고 있습니다.</p>
+<pre><code>PUT / HTTP/1.1  
+Accept: application/json, \*/\*  
+Accept-Encoding: gzip, deflate  
+Content-Type: application/json  
+Host: example.org  
+
+{  
+&quot;name&quot;: &quot;John&quot;,  
+&quot;email&quot;: &quot;john@example.org&quot;  
+}
+</code></pre><p>게다가</p>
+<pre><code>$ http --download example.org/file
+</code></pre><p><img src="/images/1*kh4KHdJrBPqIfECkI-BSmQ.gi" alt=""></p>
+<p>— download 옵션을 쓰면 wget처럼 파일을 다운 받을 수 있습니다.</p>
+<p>상당히 유용하게 사용할 수 있는 툴이겠네요.</p>
+<p>하지만 curl과 wget 사용층이 많은 만큼 대체할 수 있을지는 의문입니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/46d570969716" target="_blank" rel="external">August 16, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -198,7 +175,7 @@
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-08-09 07:14:40]demystifying-js-engine"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-08-16 06:28:21]webpack-dashboard"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -206,7 +183,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/08/09/[2016-08-09 07:14:40]demystifying-js-engine/">demystifying-js-engine</a>
+      <a class="article-title" href="/2016/08/16/[2016-08-16 06:28:21]webpack-dashboard/">webpack-dashboard</a>
     </h1>
   
 
@@ -214,8 +191,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/08/09/[2016-08-09 07:14:40]demystifying-js-engine/" class="article-date">
-	  <time datetime="2016-08-08T22:14:40.000Z" itemprop="datePublished">8월 9, 2016</time>
+	<a href="/2016/08/16/[2016-08-16 06:28:21]webpack-dashboard/" class="article-date">
+	  <time datetime="2016-08-15T21:28:21.000Z" itemprop="datePublished">8월 16, 2016</time>
 	</a>
 
        
@@ -223,24 +200,27 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>de*mys*ti*fy [dēˈmistəˌfī/] <em>verb</em></p>
-<p>make (a difficult or esoteric subject) clearer and easier to understand.</p>
-<p>무언가를 명확하게 하고 이해하기 쉽게 만든다는 뜻의 demystifying 을 달고 있는 demystifying-js-engine입니다.</p>
-<p>2016/08/09 Editor’s choice</p>
-<p><a href="https://github.com/a0viedo/demystifying-js-engines" title="https://github.com/a0viedo/demystifying-js-engines" target="_blank" rel="external"><strong>a0viedo/demystifying-js-engines</strong><br>_Contribute to demystifying-js-engines development by creating an account on GitHub._github.com</a><a href="https://github.com/a0viedo/demystifying-js-engines" target="_blank" rel="external"></a></p>
+        <p>webpack 을 쓰면서 콘솔창이 시끄럽다고 생각했던 것은 저만이 아니었나 봅니다.</p>
+<p><img src="/images/1*8xix5ooHs0F38maUj4XmNQ.png" alt=""></p>
+<p>위에 보는 형태 처럼 깔끔하게 cli 대시보드로 만들어 줄 수 있는 프로젝트가 등장했네요.</p>
+<p>2016/08/16 Editor’s choice</p>
+<p><a href="https://github.com/FormidableLabs/webpack-dashboard" title="https://github.com/FormidableLabs/webpack-dashboard" target="_blank" rel="external"><strong>FormidableLabs/webpack-dashboard</strong><br>_webpack-dashboard - A CLI dashboard for webpack dev server_github.com</a><a href="https://github.com/FormidableLabs/webpack-dashboard" target="_blank" rel="external"></a></p>
 <hr>
-<p>일단 슬라이드 하나 먼저 보고 가시죠.</p>
-<p><a href="http://slides.com/a0viedo/demystifying-js-engines#/" title="http://slides.com/a0viedo/demystifying-js-engines#/" target="_blank" rel="external"><strong>Demystifying (JavaScript) Engines by Alejandro Oviedo García</strong><br>_How JavaScript engines work? What are their elemental components? What is JIT compilation?_slides.com</a><a href="http://slides.com/a0viedo/demystifying-js-engines#/" target="_blank" rel="external"></a></p>
-<p><img src="/images/1*CxwUpGk3t17KbPNFSAgldw.png" alt=""></p>
-<p>결론은 위의 한장이긴 합니다만 각 엔진의 내용들을 설명하기 위해 쉬운 그림으로 만들어져 있습니다.</p>
-<p><img src="/images/1*n4UNXFlRzMZD1Gd7VRt0OA.pn" alt=""></p>
-<p>자세한 내용은 슬라이드를 보시죠.</p>
-<p>이런 대단한 슬라이드를 만들기 위해 뒤져 본 아티클들의 집합들이 다음에 나와 있습니다.</p>
-<p>특히 V8엔진에 관련해서 아티클을 모아 놓은</p>
-<p><a href="http://mrale.ph/v8/resources.html" title="http://mrale.ph/v8/resources.html" target="_blank" rel="external"><strong>V8 Resources</strong><br>_V8 Performance Tuning Tricks (+Daniel Clifford, GDD2011 Berlin) [slides]_mrale.ph</a><a href="http://mrale.ph/v8/resources.html" target="_blank" rel="external"></a></p>
-<p>은 한번 따라 읽어 봅니다. 2011년부터 2013년까지의 자료가 잘 정리되어 있습니다.</p>
-<p>자바스크립트 엔진을 이해하기 위해서는 읽어볼만한 아주 흥미로운 프로젝트 입니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/74d4ff845ec7" target="_blank" rel="external">August 8, 2016</a>.</p>
+<h4 id="설치하기"><a href="#설치하기" class="headerlink" title="설치하기"></a>설치하기</h4><p>간단하게 npm을 이용하면 됩니다.</p>
+<pre><code>$npm install webpack-dashboard --- save-dev
+</code></pre><h4 id="사용하기"><a href="#사용하기" class="headerlink" title="사용하기"></a>사용하기</h4><p>webpack을 사용할 때에 보통 config 파일과 실행파일(dev-server 쪽)을 나눠서 진행할 경우가 많은데, config 쪽에 적용해 줘야 할 부분과 실행 파일쪽에 적용해 줘야 하는 부분으로 나눠서 설명하겠습니다.</p>
+<p>첫번째 server.js 쪽 소스 예제가 실행에 관련된 부분, 부번째가 config.js 관련된 샘플이라고 보시면 됩니다.</p>
+<p>저렇게 실행시키고</p>
+<pre><code>$node server
+</code></pre><p>명령어로 실행을 시켜주고 나면</p>
+<p><img src="/images/1*O4_HxR8l8W272aQF9NhFIQ.png" alt=""></p>
+<p>와 같은 그림이 뜹니다.</p>
+<p>심심하니 에러를 의도적으로 만들어 보겠습니다.</p>
+<p><img src="/images/1*1WlVCuqJt5abKCa3qwxPnw.gi" alt=""></p>
+<p>프로그레스 바가 뜨더니 에러를 로그에 뱉어 주는 군요.</p>
+<p>모듈과 Asset에 대한 내용도 자세히 표시 되어 있습니다.</p>
+<p>깔끔하게 webpack상태를 모니터링 하기에는 좋은 방법으로 보여집니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/cb3fa0038c15" target="_blank" rel="external">August 15, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -265,7 +245,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/22/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><span class="page-number current">23</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="space">&hellip;</span><a class="page-number" href="/page/97/">97</a><a class="extend next" rel="next" href="/page/24/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/22/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><span class="page-number current">23</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="space">&hellip;</span><a class="page-number" href="/page/98/">98</a><a class="extend next" rel="next" href="/page/24/">Next</a>
   </nav>
 
 </section>
@@ -319,6 +299,30 @@
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a></h6>
+              <span>9월 14, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2017/09/14/puppeteer/">[github]Node.js 기반 헤드리스 브라우저 컨트롤 API - puppeteer</a></h6>
+              <span>9월 14, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2017/09/08/deeplearning-basic01/">딥러닝 무식하게 정리해 보기 01</a></h6>
               <span>9월 8, 2017</span>
             </div>
@@ -361,30 +365,6 @@
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/06/09/feedwordpress/">feedwordpress를 설치하다</a></h6>
-              <span>6월 9, 2017</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/06/07/about-test/">헤드리스 크롬과 selenium2의 조합을 사용해 보자 with node</a></h6>
-              <span>6월 7, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -397,7 +377,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-trend-github/">github-trend, github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -407,7 +387,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
+      <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/github-trend-github/" style="font-size: 10px;">github-trend, github</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/tip-docker-devops-git/" style="font-size: 10px;">tip, docker, devops, git</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
     </div>
   </div>
 
@@ -417,7 +397,7 @@
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -468,9 +448,6 @@
 
 
     <!-- headerblur min height -->
-    
-      var headerblur = document.getElementById("header-blur");
-      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

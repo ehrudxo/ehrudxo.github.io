@@ -55,32 +55,10 @@
 
 
   
-  
-  <div class="site-header-image">
-    <img id="originBg" width="100%" alt="Hike News" src="">
-  </div>
-
-  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
-    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
-  </div>
-
-  <script>
-        var imgUrls = "images/storm.png".split(",");
-        var random = Math.floor((Math.random() * imgUrls.length ));
-        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
-          document.getElementById("originBg").src=imgUrls[random];
-          document.getElementById("blurBg").src=imgUrls[random];
-        } else {
-          document.getElementById("originBg").src='/' + imgUrls[random];
-          document.getElementById("blurBg").src='/' + imgUrls[random];
-        }
-    </script>
-
-
 
 
 <header id="allheader" class="site-header" role="banner" 
-   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+   >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -123,7 +101,7 @@
         
           <section id="main">
   
-    <article id="post-[2017-02-08 17:57:12][팁] wordpress 에 https 적용하기"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2017-03-06 08:33:39]개발자들의 인문학 이야기"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +109,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2017/02/08/[2017-02-08 17:57:12][팁] wordpress 에 https 적용하기/">[팁] wordpress 에 https 적용하기</a>
+      <a class="article-title" href="/2017/03/06/[2017-03-06 08:33:39]개발자들의 인문학 이야기/">개발자들의 인문학 이야기</a>
     </h1>
   
 
@@ -139,8 +117,8 @@
     
     <div class="article-meta">
       
-	<a href="/2017/02/08/[2017-02-08 17:57:12][팁] wordpress 에 https 적용하기/" class="article-date">
-	  <time datetime="2017-02-08T08:57:12.000Z" itemprop="datePublished">2월 8, 2017</time>
+	<a href="/2017/03/06/[2017-03-06 08:33:39]개발자들의 인문학 이야기/" class="article-date">
+	  <time datetime="2017-03-05T23:33:39.000Z" itemprop="datePublished">3월 6, 2017</time>
 	</a>
 
        
@@ -148,99 +126,11 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>크롬이 https 사이트가 아니면 warning을 띄우게 되었다는 사실이 알려지면서 많은 설치형 블로거들이 난감해 하시는 분들이 있어서 포스팅 합니다.</p>
-<p><img src="/images/0*ACiAYqim05SWvx4b.jpg" alt="">크롬 도금의 자물쇠…</p>
-<p>세 단계 정도로 나뉘어서 해야할 일들이 있을 것입니다. (세 단계 모두 지정된 플랫폼들이 있어서 해당사항이 아니신 분들도 있을 거 같습니다. )</p>
-<ol>
-<li>호스팅 서비스 port 설정( Amazon 기준)</li>
-<li>웹서버 설정( Ubuntu &amp; Apache2 설정 )</li>
-<li>인증서 설치( Let’s Encrypt 설정)</li>
-</ol>
-<h4 id="1-호스팅-서비스"><a href="#1-호스팅-서비스" class="headerlink" title="1. 호스팅 서비스"></a>1. 호스팅 서비스</h4><p>아마존의 경우는 아마존 콘솔로 들어가셔서</p>
-<p>Network &amp; Security -> Security Groups 에 들어가셔서 서비스가 가지고 있는 정책에 맞는 그룹을 선택하신 후에 Inbound Edit을 선택하시고 https 포트로 들어올 수 있도록 작업을 해 주셔야 합니다.</p>
-<p><img src="/images/0*ykXSSjjeVhrGmC0a.jpg" alt="">어디서든 들어 올 수 있게</p>
-<p>∴이후 아래 설명될 3번 항목만 진행해도 적용이 될 거 같지만 혹시 다른 방법이나 self signed 된 인증서를 통한 설정을 알고 싶은 사람들을 위해서 2번을 설명합니다.</p>
-<h4 id="2-Let’s-Encrypt"><a href="#2-Let’s-Encrypt" class="headerlink" title="2. Let’s Encrypt"></a>2. Let’s Encrypt</h4><p>Let’s Encrypt는 무료라서 3개월에 한번씩 갱신해야 되지만 사용할 수 있는 인증서를 만들어 줍니다. 사이트에 들어가서 무언가를 다운로드 받아야 되나 살펴보면 Let’s Encrypt 에서 바로 제공하는 것은 없고 자동화해 주는 툴이 있는 링크를 제공해 줍니다.</p>
-<p>2.1. certbot</p>
-<p>제가 찾아간 사이트는 바로 certbot이였습니다.</p>
-<p><a href="https://certbot.eff.org/" title="https://certbot.eff.org/" target="_blank" rel="external"><strong>Certbot</strong><br>_Automatically enable HTTPS on your website with EFF’s Certbot, deploying Let’s Encrypt certificates._certbot.eff.org</a><a href="https://certbot.eff.org/" target="_blank" rel="external"></a></p>
-<p>여기서 작업을 하려면 ubuntu 버전 명령어를 통해 버전을 알아야 합니다.</p>
-<pre><code>$cat /etc/\*releaseDISTRIB\_ID=Ubuntu  
-DISTRIB\_RELEASE=14.04  
-DISTRIB\_CODENAME=trusty  
-DISTRIB\_DESCRIPTION=&quot;Ubuntu 14.04.3 LTS&quot;  
-NAME=&quot;Ubuntu&quot;  
-VERSION=&quot;14.04.3 LTS, Trusty Tahr&quot;  
-ID=ubuntu  
-ID\_LIKE=debian  
-PRETTY\_NAME=&quot;Ubuntu 14.04.3 LTS&quot;  
-VERSION\_ID=&quot;14.04&quot;  
-HOME\_URL=&quot;http://www.ubuntu.com/&quot;  
-SUPPORT\_URL=&quot;http://help.ubuntu.com/&quot;  
-BUG\_REPORT\_URL=&quot;http://bugs.launchpad.net/ubuntu/&quot;
-</code></pre><p><img src="/images/0*N-2R0VXN9-2fdXgX.jpg" alt="">certbot 좋아용</p>
-<p>이렇게 선택하고 나면 해당 installation 페이지로 안내해 줍니다.</p>
-<p>저의 경우는 다음 페이지가 되겠죠.</p>
-<p><a href="https://certbot.eff.org/#ubuntutrusty-apache" title="https://certbot.eff.org/#ubuntutrusty-apache" target="_blank" rel="external"><strong>Certbot</strong><br>_Automatically enable HTTPS on your website with EFF’s Certbot, deploying Let’s Encrypt certificates._certbot.eff.org</a><a href="https://certbot.eff.org/#ubuntutrusty-apache" target="_blank" rel="external"></a></p>
-<p>2.2. 인스톨</p>
-<p>2.3. 실행인스톨 하고 chmod로 실행할 수 있도록 만들어 줍니다.</p>
-<pre><code>$ ./certbot-auto
-</code></pre><p>그리고 저 명령어를 한번 실행해 주면 자동적으로 아파치를 찾아서 바꿔줘야 할 옵션들을 자동으로 찾아서 바꿔줍니다.</p>
-<p><img src="/images/0*QlcHGPYZuTB9ib8Q.jpg" alt="">이런 형태의 아웃풋들이 출력됩니다. 설정들을 지속적으로 물어봅니다.</p>
-<p>그러고 나면 warning 이 더 이상 뜨지 않습니다.</p>
-<p><img src="/images/0*3To5wdPO7eUwQLyM.jpg" alt=""></p>
-<p>2.4. 갱신</p>
-<p>3개월에 한번씩 갱신하기 위해서는 아래의 명령어를 cron 잡에 등록해서 작업하시면 됩니다.</p>
-<pre><code>$./path/to/certbot-auto renew --quiet --no-self-upgrade
-</code></pre><p>아래 내용은 2번까지 하신 분들은 크게 필요하지 않을지도 모르지만 혹시라도 https 만 적용하기 위해서 필요하신 분들을 위해서 남겨둡니다. Self-signed 인증서를 쓰는 경우인데 크롬 버전이 올라가면 이 경우는 에러는 여전히 뜰 것으로 예상됩니다.</p>
-<h4 id="3-웹서버-설정-Manually"><a href="#3-웹서버-설정-Manually" class="headerlink" title="3. 웹서버 설정(Manually)"></a>3. 웹서버 설정(Manually)</h4><p>우분투의 경우는 아파치, a2enmod등을 가지고 생각보다 손쉽게 작업을 진행할 수 있습니다.</p>
-<p>아래의 명령어들은 혹시 권한이 필요한 경우가 생기면 sudo를 사용해서 진행하시면 됩니다.</p>
-<p>3.1. SSL 모듈 설치</p>
-<pre><code>$sudo a2enmod ssl  
-
-$sudo service apache2 restart
-</code></pre><p>3.2. Self-signed 인증서 만들기</p>
-<p>a2enmod는 apache2 모듈설정을 자동화해주는 스크립트입니다. SSL을 설치하고 재시작해 줍니다.(<a href="http://man.he.net/man8/a2enmod" target="_blank" rel="external">http://man.he.net/man8/a2enmod</a>)</p>
-<pre><code>`$sudo mkdir /etc/apache2/ssl`
-
-`$sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout   
-/etc/apache2/ssl/self_signed.key   
--out /etc/apache2/ssl/self_signed.crt`
-</code></pre><p>3.3. 버추얼 호스트 설정파일 만들기</p>
-<pre><code>`$sudo vi /etc/apache2/sites-available/default-ssl.conf`
-</code></pre><p>로 파일을 열어서 아래와 같이 편집해 줍니다.</p>
-<pre><code>&lt;IfModule mod\_ssl.c\&gt;  
-&lt;VirtualHost \_default\_:443\&gt;  
-ServerAdmin ehrudxo@gmail.com  
-ServerName devpools.kr  
-ServerAlias [www.devpools.kr][anchor4]  
-DocumentRoot /somewhere/  
-ErrorLog ${APACHE\_LOG\_DIR}/error.log  
-CustomLog ${APACHE\_LOG\_DIR}/access.log combined  
-SSLEngine on  
-SSLCertificateFile /etc/apache2/ssl/self\_signed.crt  
-SSLCertificateKeyFile /etc/apache2/ssl/self\_signed.key  
-&lt;FilesMatch &quot;\\.(cgi|shtml|phtml|php)$&quot;\&gt;  
-SSLOptions +StdEnvVars  
-&lt;/FilesMatch\&gt;  
-&lt;Directory /usr/lib/cgi-bin\&gt;  
-SSLOptions +StdEnvVars  
-&lt;/Directory\&gt;  
-BrowserMatch &quot;MSIE \[2-6\]&quot; \\  
-nokeepalive ssl-unclean-shutdown \\  
-downgrade-1.0 force-response-1.0  
-BrowserMatch &quot;MSIE \[17-9\]&quot; ssl-unclean-shutdown  
-&lt;/VirtualHost\&gt;  
-&lt;/IfModule\&gt;
-</code></pre><p>3.4. 활성화 하기</p>
-<p>이제 다음 명령어로 활성화 하고 재 시작해 줍니다.</p>
-<pre><code>`$sudo a2ensite default-ssl.conf  
-$`sudo service apache2 restart
-</code></pre><p>이제 접속해 보시면 잘 돌아가시는 걸 확인할 수 있습니다.</p>
-<p><img src="/images/0*QwF0PVgY4gUT-UDL.jp" alt="">앗싸~</p>
-<hr>
-<p><em>Originally published at </em><a href="http://devpools.kr/2017/02/08/%ed%8c%81-wordpress-%ec%97%90-https-%ec%a0%81%ec%9a%a9%ed%95%98%ea%b8%b0/" target="_blank" rel="external"><em>개발바보들</em></a><em>.</em></p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/8a82a9fc3b99" target="_blank" rel="external">February 8, 2017</a>.</p>
+        <p>사람들이랑 시작해 보려고 한번 장소를 마련해 봤습니다.</p>
+<p><img src="/images/1*hELtmVbDlk5hPE_O7QjN8A.jpe" alt=""></p>
+<p>인문의 바다에서 한번 우리 헤엄쳐 봅시다.</p>
+<p>일단은 지대넓얕 요약으로 시작하지만 점점 시야를 확장해 보면 언젠가는 거인이 되어 있으리라 서로 믿어봅시다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/6ca84ccc5ebb" target="_blank" rel="external">March 5, 2017</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -261,7 +151,7 @@ $`sudo service apache2 restart
 <!-- Table of Contents -->
 
   
-    <article id="post-[2017-02-01 10:29:09]서버리스 아키텍처 소셜미디어 개발기 7편"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2017-03-05 15:10:19]ESLint with WebStorm"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -269,7 +159,7 @@ $`sudo service apache2 restart
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2017/02/01/[2017-02-01 10:29:09]서버리스 아키텍처 소셜미디어 개발기 7편/">서버리스 아키텍처 소셜미디어 개발기 7편</a>
+      <a class="article-title" href="/2017/03/05/[2017-03-05 15:10:19]ESLint with WebStorm/">ESLint with WebStorm</a>
     </h1>
   
 
@@ -277,8 +167,8 @@ $`sudo service apache2 restart
     
     <div class="article-meta">
       
-	<a href="/2017/02/01/[2017-02-01 10:29:09]서버리스 아키텍처 소셜미디어 개발기 7편/" class="article-date">
-	  <time datetime="2017-02-01T01:29:09.000Z" itemprop="datePublished">2월 1, 2017</time>
+	<a href="/2017/03/05/[2017-03-05 15:10:19]ESLint with WebStorm/" class="article-date">
+	  <time datetime="2017-03-05T06:10:19.000Z" itemprop="datePublished">3월 5, 2017</time>
 	</a>
 
        
@@ -286,126 +176,35 @@ $`sudo service apache2 restart
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>대망의 마지막 편입니다.</p>
-<p><a href="https://techstory.shma.so/%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%86%8C%EC%85%9C%EB%AF%B8%EB%94%94%EC%96%B4-%EA%B0%9C%EB%B0%9C%EA%B8%B0-6%ED%8E%B8-b30a7d6ad854#.2kqclsfo7" title="https://techstory.shma.so/%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%86%8C%EC%85%9C%EB%AF%B8%EB%94%94%EC%96%B4-%EA%B0%9C%EB%B0%9C%EA%B8%B0-6%ED%8E%B8-b30a7d6ad854#.2kqclsfo7" target="_blank" rel="external"><strong>서버리스 아키텍처 소셜미디어 개발기 6편</strong><br>_나프다 발표 이후 한참 글이 뜸했네요. 이제 점점 끝이 보입니다. 속도를 내야겠네요 사용자 스토리4 1. 김개발은 아침 스탠드업 시간에 같이 이야기를 나눌 수 있는 주제를 위해 스탠드업이라는 웹 앱을 찾아간다. …_techstory.shma.so</a><a href="https://techstory.shma.so/%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%86%8C%EC%85%9C%EB%AF%B8%EB%94%94%EC%96%B4-%EA%B0%9C%EB%B0%9C%EA%B8%B0-6%ED%8E%B8-b30a7d6ad854#.2kqclsfo7" target="_blank" rel="external"></a></p>
-<p>지난 편에 이어 계속 하겠습니다.</p>
-<p><img src="/images/1*ylD3EMpOg_303zM3jOxHTA.jpeg" alt="">우린 모두 한 그룹이니까요~</p>
-<pre><code>1\. 김개발은 아침 스탠드업 시간에 같이 이야기를 나눌 수 있는 주제를 위해 스탠드업이라는 웹 앱을 찾아간다. 이렇게 함으로써 사람들과 IT에 대한 주제로 커뮤니케이션을 할 수 있다.  
-2\. 김개발이 사이트를 방문해서 자신이 어제 유심하게 읽은 글을 올릴 수 있다. 이렇게 하면 다른 사람들이 볼 수 있다.  
-\* 에디터 창에 인터넷 링크를 입력하면 자동적으로 페이지 카드가 만들어 진다. 이 때 페이지 링크는 oEmbed를 써서 동작하는데 웹 표준을 준수하고 자연스러워야 한다.  
-\* 에디터 창은 하나만 있고 거기서 글을 작성하고 업로드 하면 글이 외부 클라우드 공간에 저장이 된다.
-
-3\. 김개발이 작성한 글이 목록으로 보여진다. 이렇게 함으로써 다른 사람들이 목록을 확인할 수 있다.  
-4\. 김개발은 google ID를 가지고 로그인을 할 수 있다. 이렇게 함으로써 내가 쓴 글만 따로 모아서 볼 수 있다.**  
-5\. 김개발은 그룹 별로 스탠드업을 만들 수 있고 각 그룹별고 글을 올릴 수 있다**
-</code></pre><p>그룹 기능을 넣고 나서는 내가 이럴려고 계속한다 했나 자괴감 들어.라는 순간이 몇번이나 왔는지 모르겠습니다. 이유는 몇가지가 있는데 첫번째는 처음 설계를 몇번이나 바꿔야 하는 것이며 , 두 번째는 테스트 코드가 어느 순간 동작하지 않는 것이었습니다. 설계를 바꾸는 것은 개발의 숙명이라 받아들일 수 있었는데 테스트 코드는 어느 순간 놓치고 나니 TDD를 진행하지 못한 부분이 있어 많이 부끄러워 지더군요.</p>
-<p>본론으로 들어가서 이번 글에는 유저스토리를 하나 더 추가해 보았습니다. “<strong>김개발은 그룹을 만들 수 있고 각 그룹별고 글을 올릴 수 있다.” </strong>이 내용을 토대로 어떻게 들어갔는지 한번 살펴 보도록 하겠습니다.</p>
-<h4 id="0-고칩니다"><a href="#0-고칩니다" class="headerlink" title="0. 고칩니다"></a>0. 고칩니다</h4><p>이전에 firebase-ui 때문에 외부에 소스를 뺀 적이 있죠? 시간은 어느덧 두달이 지났으니 당연히 npm으로 등록이 되었습니다. 나프다 발표하는 당일에 추가가 되기는 했었습니다.</p>
-<pre><code>$npm install firebase firebaseui --save
-</code></pre><h4 id="1-시작하기-전에"><a href="#1-시작하기-전에" class="headerlink" title="1. 시작하기 전에"></a>1. 시작하기 전에</h4><p><img src="/images/1*OlvH8Q0PNeY0IZpiFELC8g.jpeg" alt="">그림1</p>
-<p>그림 1과 같은 역할을 하는 UI를 먼저 만들어 보려고 합니다. 기본 UI 기능은 그룹을 선택해야 할 수 있어야 하고 그룹을 만들 수 있어야 합니다. 그래서 선택을 할 수 있는 회전목마(Carousel) UI가 필요하고 그룹을 만들 수 있는 UI도 필요해서 새 그룹이라는 버튼을 달아 두었습니다.</p>
-<h4 id="2-그룹-만들기"><a href="#2-그룹-만들기" class="headerlink" title="2. 그룹 만들기"></a>2. 그룹 만들기</h4><p>그룹을 만들기 위해서는 당연히 기존의 firebase 에 저장된 스키마에 대한 조정이 필요하겠죠?</p>
-<p><img src="/images/1*sSrIpCI61RQLXqUo1oReFg.jpeg" alt="">posts 생긴 형태</p>
-<p>기존의 posts라는 스키마에는 모든 글이 저장되고 이 내용을 읽어와서 작업을 했었는데, 이제는 group 별로 조정할 일들이 생겼습니다.</p>
-<p><img src="/images/1*p3_WoYtd7UWa4l3E1wrgMQ.jpeg" alt="">기존의 posts는 더 이상 필요가 없다.</p>
-<p>groups는 그룹을 만들면 생성될 수 있는 엔트리가 될 것이고 group-posts에 각 그룹 별로 아티클이 들어갈 수 있도록 작업을 할 것입니다. 먼저 그룹을 생성하고 리스트 하는 작업을 해 보겠습니다. 생성을 하려면 다음과 같은 UI를 통해 그룹간 이동을 할 수 있습니다.</p>
-<p><img src="/images/1*sVIaS0JmBfItOazHLlQURQ.jpeg" alt=""></p>
-<p>일단 이 일련의 작업들을 하는 세가지 버튼을 만들어 보겠습니다. 먼저 그룹 페이지에 처음 들어오게 되면 그룹에 해당하는 이미지가 보여지고 그룹 작업을 선택하면(1) 새 그룹을 만들 수 있어야 하며(3), 다른 그룹을 선택할 수도(4) 있어야 합니다. 글 쓰기 버튼을 선택하면(2) 글 쓰기를 할 수 있는 에디터가 나와서 글이 작성되어야 하며 여러가지 모든 상황에서 원래 그룹으로 원상복귀(5)할 수 도 있어야 합니다.</p>
-<p>어떤 작업을 먼저 하면 좋을까요? <strong>React 개발에 있어서는 state를 어떻게 관리할 것인가</strong> 를 첫번째 질문으로 가져가야 할 것입니다. 외부에서 URL 기반으로 타이핑해서 들어올 때 처음 형태를 어떻게 가져야 할지를기준으로 설계를 해 보겠습니다.</p>
-<ol>
-<li>기존의 edit를 하던 부분을 URL로 처리했던 부분은 그렇게 중요하지 않을 것입니다.</li>
-<li>내부에서 “선택” 버튼을 누를 경우는 URL이 변경되어야 합니다.</li>
-<li>“글쓰기” 를 작성하면 URL은 변경되지 않지만 버튼의 state는 변경되어야 합니다.</li>
-</ol>
-<p><img src="/images/1*W6HXkcZHcGVkR9-5GLaelQ.jpeg" alt=""></p>
-<p>먼저 세가지 버튼에 대해서 상태를 유지하고 그 값에 따라 아래 Action Bar를 선택하도록 해 보겠습니다.</p>
-<p><img src="/images/1*X5npSzmjYIiumCvSHl-wzA.jpeg" alt="">상태에 따라 색도 변하도록 설계하자버튼 선택에 따라 state 가 바뀌고, 변수 선택에 따른 컴포넌트 렌더링이 달라지게 설계!</p>
-<p>버튼을 클릭하면 selectedButton 즉 선택한 버튼을 확인하게 되고 그에 따라서 CSS 값을 변경해 주는 작업을 하는 컴포넌트입니다. 이걸 가능하게 하기 위해서 actions, reducers 폴더 밑에 각각 Button.js파일을 만들었습니다.</p>
-<pre><code>//ActionBar를 그려준다. 안드로이드의 액션바와는 다르다. 액션바와는...  
-{**this**.renderActionBar(selectedButton)}
-
-//그룹이 존재하고 버튼선택이 된 경우  
-{groupName &amp;&amp; !selectedButton&amp;&amp;  
-&lt;div style={{width:'100%',height:150,position:'relative'}}\&gt;  
-&lt;img src={logoUrl} alt={groupName} style={{width:'100%',height:150}}/\&gt;  
-&lt;div className=&quot;style\_title&quot; style={{width:"100%"}}\&gt;{groupName}&lt;/div\&gt;  
-&lt;/div\&gt;  
-}
-</code></pre><p>renderActionBar는 ActionBar 가 선택된 버튼에 따라서 다르게 그려지도록 했고 어떤 버튼도 선택되지 않을 경우에는 그룹의 로고 URL을 보여주도록합니다.</p>
-<p><strong>2.1. 그룹 만들기</strong></p>
-<p>자, 그럼 그룹은 어떻게 만들까요?</p>
-<p><img src="/images/1*AaIZeG2Tpgf58IMmPG_H5A.jpe" alt="">파일 업로드가 시급하다.</p>
-<p>그룹명이 존재하는지 (1)중복 확인을 한 후에 (2)드래그앤 드롭을 통한 파일 업로드, (3)그룹생성 의 순서대로 이루어집니다.</p>
-<p>이중 1,3번의 Group의 Real Time DB에 대한 DAO는 여기서 다루지 않겠습니다. (소스에서 확인하세요.) 드래그앤 드롭해서 파일 업로드 하는 부분만 확인을 하면 Firebase의 FileUpload에 대한 인터페이스와 Dropzone UI 에 대한 이야기로 나눠서 볼 수 있을 거 같습니다.</p>
-<p><strong>Firebase FileUpload</strong></p>
-<p>src 폴더 아래 FileUtil.js를 만들었습니다.</p>
-<p>주목 하셔야 할 부분은 다음의 storageRef 입니다.</p>
-<pre><code>//storageRef 정의  
-var storageRef = firebase.storage().ref();
-
-**// 업로드  
-var **uploadTask = storageRef.child(&apos;images/&apos; + file.name).put(file, metadata);
-
-// 이벤트 정의
-
-uploadTask.on(firebase.storage._TaskEvent_.STATE\_CHANGED,....(중략)
-</code></pre><p>그럼 이 부분을 호출한 부분을 살펴 볼까요?</p>
-<p><strong>Dropzone</strong></p>
-<p>src 파일 밑에 GroupAdd.js 라는 파일을 만들었습니다. 이 파일에서 중요하게 눈여겨 보실 부분은 react-dropzone이라는 라이브러리를 이용했다는 점이고 그 부분은 소스의 처음 import 부분에 포함이 되어 있습니다.</p>
-<pre><code>&lt;Dropzone onDrop={(acceptedFiles, rejectedFiles)=\&gt;**this**.onDrop} accept=&quot;image/\*&quot; className=&quot;drop-file padding-top&quot;\&gt;  
-&lt;div\&gt;파일을 드래그앤 드롭 하거나 클릭해서 선택하세요&lt;/div\&gt;  
-&lt;/Dropzone\&gt;
-</code></pre><p>Dropzone 에서 onDrop이라는 이벤트를 만들었고 이 이벤트는 기본적으로 허용된 파일과 거절된 파일을 인자로 받아서 처리해 줍니다.</p>
-<pre><code>onDrop (acceptedFiles, rejectedFiles) {
-
-...  
-**if**(acceptedFiles &amp;&amp; acceptedFiles.length\&gt;0){  
-**...**  
-imageUpload(acceptedFiles, 1, (downloadUrl)=\&gt;{  
-**this**.setState({  
-groupImage:downloadUrl,  
-isSpin: **false  
-**});  
-});  
-}**else**{  
-...  
-}  
-}
-</code></pre><h4 id="3-조회하기"><a href="#3-조회하기" class="headerlink" title="3. 조회하기"></a>3. 조회하기</h4><p>이렇게 그룹을 만들고 났으면 URL 별로 그룹이 조회가 되도록 내용을 추가해 줍니다. 스키마에 대해서는 서두에 밝혔으니 소스코드 레벨로만 간단하게 설명하겠습니다. (FirebaseDAO에 대해서는 이미 수차례 설명했으니 소스코드도 최대한 짧게 가겠습니다.)</p>
-<p>reducer는 생략하고 action만 살펴보고 넘어가겠습니다.</p>
-<pre><code>**export function **groupSelect(groupName){  
-**return **(dispatch) =\&gt; {  
-dao.getGroup(groupName).once(&apos;value&apos;, (snapshot) =\&gt; {  
-**if**(snapshot.val()) {  
-**let **logoUrl = snapshot.val().logoUrl;  
-dispatch(getGroup(groupName, logoUrl));  
-dispatch(selectButton());  
-}  
-})  
-}  
-}  
-**export function **getGroup(groupName, logoUrl){  
-**return **(dispatch) =\&gt; {  
-dao.listGroupArticle(groupName).then((articles)=\&gt;dispatch(getArticle(articles,groupName,logoUrl)));  
-}  
-}
-</code></pre><p>소스코드 처럼 group을 가지고 와서 로고 및 데이타를 가져온 뒤에 버튼을 선택하는 액션을 다시한번 연결하고는 끝이 납니다.</p>
-<p>라우터 소스는 그에 따라 아래와 같이 간단해 졌습니다.</p>
-<pre><code>&lt;Provider store={store}\&gt;  
-&lt;Router history={history}\&gt;  
-&lt;Route path=&quot;/&quot; component={App}\&gt;  
-&lt;Route path=&quot;login&quot; component={Login}/\&gt;  
-&lt;Route path=&quot;groups/:groupName&quot; /\&gt;  
-&lt;Route path=&quot;\*&quot; component={NotFound}/\&gt;  
-&lt;/Route\&gt;  
-&lt;/Router\&gt;  
-&lt;/Provider\&gt;
-</code></pre><p>이렇게 그룹의 개념을 집어 넣어서 전체 내용을 다시한번 리마인드 하면서 전체에 대한 시리즈는 끝을 낼까 합니다.</p>
-<p>지금까지는 실행에 대한 내용이었고 이후는 서버리스 아키텍처에 대한 고찰에 관한 이야기 + 리팩토링에 대한 이야기를 해 볼까 합니다.</p>
-<p>그 동안 어려운 내용 같이 따라오신다고 고생하셨습니다.</p>
-<p>소스코드는 아래 링크를 참고하시면 됩니다.</p>
-<p><a href="https://github.com/ehrudxo/standup/tree/day7" title="https://github.com/ehrudxo/standup/tree/day7" target="_blank" rel="external"><strong>ehrudxo/standup</strong><br>_standup project for newbi_github.com</a><a href="https://github.com/ehrudxo/standup/tree/day7" target="_blank" rel="external"></a></p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/c835a41ae9d0" target="_blank" rel="external">February 1, 2017</a>.</p>
+        <p>원본 투고 글 : <a href="http://devpools.kr/2017/02/16/javascript-eslint-webstorm/" target="_blank" rel="external">http://devpools.kr/2017/02/16/javascript-eslint-webstorm/</a></p>
+<p>IntelliJ 의 웹 버전인 WebStorm을 사용할 때 ESLint를 사용하는 방법을 알아보겠습니다. 프로젝트에도 적용할 수 있겠지만 에디터에서 자동으로 문제가 있는 (혹은 버그를 생산하는) 코드를 미리 찾아 볼 수 있습니다.</p>
+<h3 id="ESLint"><a href="#ESLint" class="headerlink" title="ESLint"></a>ESLint</h3><p>“Linting”이라는 행위는 버그가 날 수 있을 만한 코드를 찾아서 체크를 해 주는일을 의미합니다.</p>
+<blockquote>
+<p>In <a href="https://en.wikipedia.org/wiki/Computer_programming" title="Computer programming" target="_blank" rel="external">computer programming</a>, <strong>lint</strong> is a Unix utility that flags some <a href="https://en.wikipedia.org/wiki/C_%28programming_language%29#Language_tools" title="C (programming language)" target="_blank" rel="external">suspicious and non-portable constructs</a> (likely to be bugs) in <a href="https://en.wikipedia.org/wiki/C_%28programming_language%29" title="C (programming language)" target="_blank" rel="external">C language</a><a href="https://en.wikipedia.org/wiki/Source_code" title="Source code" target="_blank" rel="external">source code</a>; generically, lint or a <strong>linter</strong> is any tool that flags suspicious usage in software written in any <a href="https://en.wikipedia.org/wiki/Computer_language" title="Computer language" target="_blank" rel="external">computer language</a>. The term <strong>lint-like behavior</strong> is sometimes applied to the process of flagging suspicious language usage. Lint-like tools generally perform <a href="https://en.wikipedia.org/wiki/Static_code_analysis" title="Static code analysis" target="_blank" rel="external">static analysis</a> of source code. — 위키피디아 <a href="https://en.wikipedia.org/wiki/Lint_%28software%29" target="_blank" rel="external">Lint</a></p>
+</blockquote>
+<p>JavaScript 에서 이 Lint라는 의미를 처음 얘기한 사람은 Douglas crockford 였고 그는 JsLint라는 툴을 만들어 냅니다. JavaScript Definite Guide 같은 책에서도 내용을 언급하고 있습니다.</p>
+<p><a href="http://www.jslint.com/" title="http://www.jslint.com/" target="_blank" rel="external"><strong>JSLint: The JavaScript Code Quality Tool</strong><br>_JSLint, The JavaScript Code Quality Tool. This file allows JSLint to be run from a web browser. It can accept a source…_www.jslint.com</a><a href="http://www.jslint.com/" target="_blank" rel="external"></a></p>
+<p>하지만 최근의 대부분의 JavaScript 커뮤니티에서 사용하는 Lint 툴은 ESLint 툴입니다.</p>
+<p>Nicholas Jakas에 의해 2013년에 나온 이 툴은 현재 여러 툴들에서 플러그인으로 사용되고 있습니다.</p>
+<p><a href="http://eslint.org/" title="http://eslint.org/" target="_blank" rel="external"><strong>ESLint - Pluggable JavaScript linter</strong><br>_A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code…_eslint.org</a><a href="http://eslint.org/" target="_blank" rel="external"></a></p>
+<p>“JSX” 지원하는 것에 대해서 언급이 첫페이지에 있습니다. React 와 JSX는 다르다고 하는군요. 아무래도 Pluggable한 아키텍처로 이루어져 있기에 오리지날인 JSLint에 비해 많이 쓰이는 거라고 보여집니다.</p>
+<h3 id="webstorm"><a href="#webstorm" class="headerlink" title="webstorm"></a>webstorm</h3><p>웹스톰은 IntelliJ를 만든 Jetbrains에서 만든 웹 개발자용 IDE 입니다. 이클립스가 약간은 범용에 가깝다고 하면 이 웹 스톰은 JavaScript 최근 트렌드 및 개발 환경에 대한 이해가 큰 IDE 입니다. Node 모듈에 대한 이해도 가지고 있고 npm 을 기본적으로 작동시킬 수 있습니다. 유료 IDE기는 하지만 IntelliJ에 적응된 개발자들은 이webstorm의 여러가지 기능에 대해서 많이 만족하고 쓰고 있습니다. 최근 팝잇에 올라온 IntelliJ에 관한 글을 읽어보면 많은 인사이트들을 얻을 수 있습니다.</p>
+<p><a href="http://www.popit.kr/%EC%9D%B8%ED%85%94%EB%A6%ACj-%ED%99%9C%EC%9A%A9-%EA%BF%80%ED%8C%81-42%EA%B0%80%EC%A7%80-%EC%A0%95%EB%A6%AC/" title="http://www.popit.kr/%EC%9D%B8%ED%85%94%EB%A6%ACj-%ED%99%9C%EC%9A%A9-%EA%BF%80%ED%8C%81-42%EA%B0%80%EC%A7%80-%EC%A0%95%EB%A6%AC/" target="_blank" rel="external"><strong>인텔리J 활용 꿀팁 42가지 정리 | Popit</strong><br>_인텔리J가 유료 IDE이다 보니 사용하면서 기능들을 최대한 활용하지 않는다면 손해라는 생각이 들었습니다. 그래서 인터넷을 찾아보다 발견한 인텔리J 42가지 팁 소개 동영상를 보고 정리한 글입니다. 해당 동영상은 …_www.popit.kr</a><a href="http://www.popit.kr/%EC%9D%B8%ED%85%94%EB%A6%ACj-%ED%99%9C%EC%9A%A9-%EA%BF%80%ED%8C%81-42%EA%B0%80%EC%A7%80-%EC%A0%95%EB%A6%AC/" target="_blank" rel="external"></a></p>
+<h3 id="WebStrom-ESLint"><a href="#WebStrom-ESLint" class="headerlink" title="WebStrom + ESLint"></a>WebStrom + ESLint</h3><p>이 WebStorm에서 ESLint를 설정하는 방법은 다음과 같습니다.</p>
+<p>preference -> Languges &amp; Framework -> ESLint</p>
+<p><img src="/images/0*qBlmLC3cTz8oJ-Jf." alt=""></p>
+<p>두가지를 셋팅해 주셔야 하는데 하나는 Node 를 지정하는 것이고 또 다른 하나는 ESLint 폴더를 지정해 주는 것입니다. Node 는 각자의 환경을 정하면 될 것입니다.</p>
+<p>ESLint 폴더를 지정할 때는</p>
+<pre><code>$ npm list -g|more
+</code></pre><p>옵션을 통해서 어디에 설치를 했는지 확인해 주시면 됩니다.</p>
+<p>확인이 되셨으면</p>
+<pre><code>`$ npm install -g eslint`
+</code></pre><p><a href="https://github.com/eslint/eslint" title="https://github.com/eslint/eslint" target="_blank" rel="external"><strong>eslint/eslint</strong><br>_eslint - A fully pluggable tool for identifying and reporting on patterns in JavaScript._github.com</a><a href="https://github.com/eslint/eslint" target="_blank" rel="external"></a></p>
+<p>이후 몇가지 모듈을 더 설치해야 합니다.</p>
+<pre><code>$npm install eslint-plugin-react eslint-plugin-jsx-a11y eslint-plugin-import -g
+</code></pre><p>실행해 주고 나서 WebStorm을 다시 작동시키면 아래와 같은 좋은 예를 볼 수 있습니다.</p>
+<p><img src="/images/0*IJ_x1kEFxnkgv5PQ" alt=""></p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/bf9d418993b2" target="_blank" rel="external">March 5, 2017</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -430,7 +229,7 @@ dao.listGroupArticle(groupName).then((articles)=\&gt;dispatch(getArticle(article
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/9/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/97/">97</a><a class="extend next" rel="next" href="/page/11/">Next</a>
+    <a class="extend prev" rel="prev" href="/page/9/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/98/">98</a><a class="extend next" rel="next" href="/page/11/">Next</a>
   </nav>
 
 </section>
@@ -484,6 +283,30 @@ dao.listGroupArticle(groupName).then((articles)=\&gt;dispatch(getArticle(article
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a></h6>
+              <span>9월 14, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2017/09/14/puppeteer/">[github]Node.js 기반 헤드리스 브라우저 컨트롤 API - puppeteer</a></h6>
+              <span>9월 14, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2017/09/08/deeplearning-basic01/">딥러닝 무식하게 정리해 보기 01</a></h6>
               <span>9월 8, 2017</span>
             </div>
@@ -526,30 +349,6 @@ dao.listGroupArticle(groupName).then((articles)=\&gt;dispatch(getArticle(article
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/06/09/feedwordpress/">feedwordpress를 설치하다</a></h6>
-              <span>6월 9, 2017</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/06/07/about-test/">헤드리스 크롬과 selenium2의 조합을 사용해 보자 with node</a></h6>
-              <span>6월 7, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -562,7 +361,7 @@ dao.listGroupArticle(groupName).then((articles)=\&gt;dispatch(getArticle(article
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-trend-github/">github-trend, github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -572,7 +371,7 @@ dao.listGroupArticle(groupName).then((articles)=\&gt;dispatch(getArticle(article
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
+      <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/github-trend-github/" style="font-size: 10px;">github-trend, github</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/tip-docker-devops-git/" style="font-size: 10px;">tip, docker, devops, git</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
     </div>
   </div>
 
@@ -582,7 +381,7 @@ dao.listGroupArticle(groupName).then((articles)=\&gt;dispatch(getArticle(article
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -633,9 +432,6 @@ dao.listGroupArticle(groupName).then((articles)=\&gt;dispatch(getArticle(article
 
 
     <!-- headerblur min height -->
-    
-      var headerblur = document.getElementById("header-blur");
-      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>
