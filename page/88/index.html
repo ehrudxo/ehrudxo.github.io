@@ -55,10 +55,32 @@
 
 
   
+  
+  <div class="site-header-image">
+    <img id="originBg" width="100%" alt="Hike News" src="">
+  </div>
+
+  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
+    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
+  </div>
+
+  <script>
+        var imgUrls = "images/storm.png".split(",");
+        var random = Math.floor((Math.random() * imgUrls.length ));
+        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+          document.getElementById("originBg").src=imgUrls[random];
+          document.getElementById("blurBg").src=imgUrls[random];
+        } else {
+          document.getElementById("originBg").src='/' + imgUrls[random];
+          document.getElementById("blurBg").src='/' + imgUrls[random];
+        }
+    </script>
+
+
 
 
 <header id="allheader" class="site-header" role="banner" 
-   >
+   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -101,6 +123,71 @@
         
           <section id="main">
   
+    <article id="post-[2016-03-13 17:10:05]rebass"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/03/13/[2016-03-13 17:10:05]rebass/">rebass</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/03/13/[2016-03-13 17:10:05]rebass/" class="article-date">
+	  <time datetime="2016-03-13T08:10:05.000Z" itemprop="datePublished">3월 13, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/1*2_4nz277BgjkpQIUIuzYEA.png" alt=""></p>
+<p>react-how-to 리뷰를 며칠전 했었습니다. inline style 은 아주 실험적인(bleeding-edge) 기술이라고 표현했고, React자체와 ES6 같은 것들에 먼저 익숙해 지면 도전해 보라고 했습니다. (관련 리뷰 : <a href="https://github.com/ehrudxo/react-howto/blob/master/README-ko.md" target="_blank" rel="external">https://github.com/ehrudxo/react-howto/blob/master/README-ko.md</a> )</p>
+<p>거기서 언급한 인라인 스타일을 쉽게 해 줄 수 있는 프로젝트입니다.</p>
+<p>Editor’s choice</p>
+<p><a href="https://github.com/jxnblk/rebass" title="https://github.com/jxnblk/rebass" target="_blank" rel="external"><strong>jxnblk/rebass</strong><br>_rebass - Configurable React Stateless Functional UI Components_github.com</a><a href="https://github.com/jxnblk/rebass" target="_blank" rel="external"></a></p>
+<h3 id="Inline-Style을-사용했다고-그게-끝이-아니다"><a href="#Inline-Style을-사용했다고-그게-끝이-아니다" class="headerlink" title="Inline Style을 사용했다고? 그게 끝이 아니다!"></a>Inline Style을 사용했다고? 그게 끝이 아니다!</h3><p>놀라움의 연속입니다. 그냥 inline style 을 잘 쓸 수 있게 만든 정도가 아니라 bootstrap 같은 컴포넌트를 만들고 있습니다.</p>
+<h4 id="벌써-57개의-컴포넌트들이-만들어져-있다"><a href="#벌써-57개의-컴포넌트들이-만들어져-있다" class="headerlink" title="벌써 57개의 컴포넌트들이 만들어져 있다."></a>벌써 57개의 컴포넌트들이 만들어져 있다.</h4><p>57개의 컴포넌트를 만들었고 앞으로 더 만들 예정입니다. 그에 해당하는 예제들을 작성 중에 있는데, 이런 움직임은 점점 react-native 와 심지어는 desktop 의 경계마저 허물수 있겠다는 힌트를 주기도 합니다.</p>
+<p><a href="http://jxnblk.com/rebass/" title="http://jxnblk.com/rebass/" target="_blank" rel="external"><strong>Rebass</strong><br>_Arrow Avatar Badge Banner Block Blockquote Breadcrumbs Button ButtonCircle ButtonOutline Card CardImage Checkbox Close…_jxnblk.com</a><a href="http://jxnblk.com/rebass/" target="_blank" rel="external"></a></p>
+<p><img src="/images/1*JV1WKdysobqxvN0C_wGIzg.png" alt="">현재 지원중인 컴포넌트</p>
+<h3 id="설치-및-실행"><a href="#설치-및-실행" class="headerlink" title="설치 및 실행"></a>설치 및 실행</h3><blockquote>
+<p>npm i rebass — save</p>
+</blockquote>
+<p>npm..(더 이상의 자세한 설명은..)</p>
+<h3 id="컴포넌트-소스-예제"><a href="#컴포넌트-소스-예제" class="headerlink" title="컴포넌트 소스 예제"></a>컴포넌트 소스 예제</h3><p><img src="/images/1*pdCq3X2xGmrDgQRp4sX7Kg.pn" alt=""></p>
+<p>너무나도 직관적으로 사용할 수 있는 예제입니다.</p>
+<p>그간의 style={} 객체안에 욱여 넣던 css 들, 혹은 .css로 따로 빼던 것들에서 각 컴포넌트별로 자세하게 갈 수 있도록 변경할 수 있겠네요.</p>
+<h3 id="인사이트"><a href="#인사이트" class="headerlink" title="인사이트"></a>인사이트</h3><p>이 정도의 완성도 있는 프로젝트가 나오기 시작했으니 표준 처럼 사용하게 될 일도 멀지 않았다는 생각이 듭니다.</p>
+<p>컴포넌트 표준 정도만 css 로 만들고 나머지 inline style은 다 태그 안에 들어가게 되겠군요.</p>
+<p>스타일과 로직을 철저하게 구분하고 싶어하는 개발자들에게는 싫을 수도 있겠지만, 결국 생산성과 재사용성 측면에서는 컴포넌트가 주는 이점을 외면할 수는 없을 거 같습니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/7e8baaec1bda" target="_blank" rel="external">March 13, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-[2016-03-11 07:17:21]AlphaGO"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -140,87 +227,6 @@
 <p>이 논문을 발표하면서 알파고를 만든 딥마인드나, 이 논문을 보면서 복제 AlphaGO를 만들겠다는 개발자나.</p>
 <p>참 대단합니다.</p>
 <p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/f2b8148c44e" target="_blank" rel="external">March 10, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-[2016-03-10 07:34:16]leaf"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/03/10/[2016-03-10 07:34:16]leaf/">leaf</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/03/10/[2016-03-10 07:34:16]leaf/" class="article-date">
-	  <time datetime="2016-03-09T22:34:16.000Z" itemprop="datePublished">3월 10, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/1*81o4RHt67Hscnh61zkzAoA.png" alt=""></p>
-<p>알파고와 이세돌의 대결 때문이었을까요? 오늘 Github 베스트는 machine learning 오픈소스 leaf가 차지했습니다. 구글의 Tensorflow 보다 빠르다고 합니다.</p>
-<p>2016/03/10 Today’s best ( 552 ★)</p>
-<p><a href="https://github.com/autumnai/leaf" title="https://github.com/autumnai/leaf" target="_blank" rel="external"><strong>autumnai/leaf</strong><br>_leaf - The Hacker’s Machine Learning Engine_github.com</a><a href="https://github.com/autumnai/leaf" target="_blank" rel="external"></a></p>
-<h3 id="구글의-Tensorflow-보다-빠르다"><a href="#구글의-Tensorflow-보다-빠르다" class="headerlink" title="구글의 Tensorflow 보다 빠르다!"></a>구글의 Tensorflow 보다 빠르다!</h3><p>어떤 방식으로 benchmark 가 머신 러닝에서 이뤄지는지 모르겠지만, Nvidia Titan X GPU 에서 돌린 결과는 구글의 Tensorflow보다 빠른 결과를 보여줍니다.</p>
-<p><img src="/images/1*AZjjAjdpJ8oydb9Mv54caA.png" alt=""></p>
-<p>Autumnai라는 그룹은 AI platform을 표방하고 있습니다. leaf만 있는 것은 아니고 Autumn, Leaf, Collenchyma 세가지로 이루어져 있습니다.</p>
-<p><img src="/images/1*cpn7ohXQOWv-IFnGMYhCOw.png" alt=""></p>
-<p>Rust로 개발 되었습니다.</p>
-<p><a href="https://www.rust-lang.org/downloads.html" title="https://www.rust-lang.org/downloads.html" target="_blank" rel="external"><strong>Downloads * The Rust Programming Language</strong><br>_A systems programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety._www.rust-lang.org</a><a href="https://www.rust-lang.org/downloads.html" target="_blank" rel="external"></a></p>
-<p>Example 프로젝트도 있습니다.</p>
-<p><a href="https://github.com/autumnai/leaf-examples" title="https://github.com/autumnai/leaf-examples" target="_blank" rel="external"><strong>autumnai/leaf-examples</strong><br>_leaf-examples - Examples for the Hacker’s Machine Learning Framework Leaf_github.com</a><a href="https://github.com/autumnai/leaf-examples" target="_blank" rel="external"></a></p>
-<h3 id="설치-및-실행"><a href="#설치-및-실행" class="headerlink" title="설치 및 실행"></a>설치 및 실행</h3><pre><code>\# rust 설치  
-curl -sSf https://static.rust-lang.org/rustup.sh | sh  
-\# leaf example 클론  
-git clone git@github.com:autumnai/leaf-examples.git &amp;&amp; cd leaf-examples  
-\# 빌드  
-cargo build --release  
-\# 실행  
-target/release/leaf-examples --help
-</code></pre><p>Mac OS X El capitan에서 설치할 때는 에러가 납니다. openssl 문제인데,</p>
-<blockquote>
-<p><em>brew link — force openssl</em></p>
-</blockquote>
-<p>명령어를 통해 해결할 수 있다고 되어 있는데, 저 명령어도 에러를 뱉습니다.</p>
-<pre><code>$ cd /usr/local  
-$ sudo chown -R &lt;your-username\&gt;:&lt;your-group-name\&gt; \*
-</code></pre><p>이렇게 man 파일 권한을 풀어주면 해결이 됩니다.</p>
-<p>groug name 은 id -g 명령어를 통해 풀 수 있습니다.</p>
-<ul>
-<li>혹시 빌드중에 cudnn 관련된 라이브러리 에러가 난다면, carge add cudnn을 해 주셔야 합니다. cargo add 명령어를 실행하기 위해서는 cargo-edit 이라는 프로젝트도 설치해야 합니다.</li>
-<li>cargo는 rust 를 위한 패키지 인스톨러 입니다.</li>
-</ul>
-<h3 id="맺으며"><a href="#맺으며" class="headerlink" title="맺으며"></a>맺으며</h3><p><img src="/images/1*XYtf5AIorG6obtXie2CoYg.pn" alt="">출처 : <a href="http://ppss.kr/archives/75915" target="_blank" rel="external">http://ppss.kr/archives/75915</a></p>
-<p>어제 알파고 관련 개드립 모음을 우연히 봤습니다. 재미있더군요. 오픈소스 AI를 통해 빅브라더 AI를 견제하는 미래가 그려질 지도 모르겠네요</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/f1be6cc386d0" target="_blank" rel="external">March 9, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -299,6 +305,18 @@ $ sudo chown -R &lt;your-username\&gt;:&lt;your-group-name\&gt; \*
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2017/11/27/2017-11-27-11월-깃헙-트렌드/">[2017-11-27] 11월 깃헙 트렌드</a></h6>
+              <span>11월 27, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a></h6>
               <span>9월 14, 2017</span>
             </div>
@@ -353,18 +371,6 @@ $ sudo chown -R &lt;your-username\&gt;:&lt;your-group-name\&gt; \*
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/07/07/tech-trend-02/">(tech-trend) 구루들이 찾는다는 테크 트렌드 - 해커뉴스</a></h6>
-              <span>7월 7, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -397,7 +403,7 @@ $ sudo chown -R &lt;your-username\&gt;:&lt;your-group-name\&gt; \*
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -448,6 +454,9 @@ $ sudo chown -R &lt;your-username\&gt;:&lt;your-group-name\&gt; \*
 
 
     <!-- headerblur min height -->
+    
+      var headerblur = document.getElementById("header-blur");
+      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

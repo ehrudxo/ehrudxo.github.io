@@ -55,10 +55,32 @@
 
 
   
+  
+  <div class="site-header-image">
+    <img id="originBg" width="100%" alt="Hike News" src="">
+  </div>
+
+  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
+    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
+  </div>
+
+  <script>
+        var imgUrls = "images/storm.png".split(",");
+        var random = Math.floor((Math.random() * imgUrls.length ));
+        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+          document.getElementById("originBg").src=imgUrls[random];
+          document.getElementById("blurBg").src=imgUrls[random];
+        } else {
+          document.getElementById("originBg").src='/' + imgUrls[random];
+          document.getElementById("blurBg").src='/' + imgUrls[random];
+        }
+    </script>
+
+
 
 
 <header id="allheader" class="site-header" role="banner" 
-   >
+   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -100,6 +122,95 @@
       <div id="content" class="outer">
         
           <section id="main">
+  
+    <article id="post-[2016-06-06 17:14:32]Inferno"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/06/06/[2016-06-06 17:14:32]Inferno/">Inferno</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/06/06/[2016-06-06 17:14:32]Inferno/" class="article-date">
+	  <time datetime="2016-06-06T08:14:32.000Z" itemprop="datePublished">6월 6, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/1*ROmwB3N0h2K0fwsMQL20Zg.png" alt="">로고가 맘에 드네요</p>
+<p>불지옥이라는 뜻의 프로젝트인 Inferno입니다. React 의 JSX를 그대로 차용했고, 쓰는 방법에서도 크게 차이가 나지 않음에도 불구하고 github에서 star를 이틀새 1680개를 받는데에는 이유가 있을 겁니다.</p>
+<p>2016/06/06 Editor’s choice</p>
+<p><a href="https://github.com/trueadm/inferno" title="https://github.com/trueadm/inferno" target="_blank" rel="external"><strong>trueadm/inferno</strong><br>_inferno - An extremely fast, React-like JavaScript library for building modern user interfaces_github.com</a><a href="https://github.com/trueadm/inferno" target="_blank" rel="external"></a></p>
+<hr>
+<h4 id="속도-속도-속도"><a href="#속도-속도-속도" class="headerlink" title="속도.속도.속도"></a>속도.속도.속도</h4><p>처음부터 끝까지 extremly fast 를 이야기 하고 있습니다. 다른 프레임워크에 비해 React가 가지는 장점이 속도라고 보통 알고 있는데, 그것보다 더 빠르다니. 흠 좋군요.</p>
+<p>git clone 받아서 설치해 보면 example폴더 아래에 animation 예제를 살펴보겠습니다.</p>
+<p>vue.js 의 한 부분인데 시계방향으로 돌아가는 원이 카운트를 세는 예제 입니다. 실행시켜보면</p>
+<p><img src="/images/1*zOlwP0_9_BW3jQG4eAZSrg.gif" alt="">backbone.js</p>
+<p><img src="/images/1*xHGKZiUD0I9B2bNUK7BUNQ.gif" alt="">react.js</p>
+<p><img src="/images/1*WmxrLX6Q4Abes14Un7z-zg.gi" alt="">inferno.js</p>
+<p>눈에 보이는 것만 보면 super fast 가 맞는 거 같습니다.</p>
+<hr>
+<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><p>설치는 npm</p>
+<pre><code>npm install --save inferno
+</code></pre><p>DOM이나 server-side 제품군은 더 설치해 줘야 합니다.</p>
+<hr>
+<p>사용방법</p>
+<pre><code>import Inferno from &apos;inferno&apos;;  
+import { Component } from \`inferno-component\`;  
+import InfernoDOM from &apos;inferno-dom&apos;;  
+
+class MyComponent extends Component {  
+constructor(props) {  
+super(props);  
+this.state = {  
+counter: 0  
+}  
+}  
+render() {  
+return (  
+&lt;div\&gt;  
+&lt;h1\&gt;Header!&lt;/h1\&gt;  
+&lt;span\&gt;Counter is at: { this.state.counter }&lt;/span\&gt;  
+&lt;/div\&gt;  
+)  
+}  
+}  
+
+InfernoDOM.render(&lt;MyComponent /\&gt;, document.body);
+</code></pre><p>네, 그냥 JSX를 그대로 쓴다고 보면 됩니다만, 둘 사이 호환은 되지 않습니다.</p>
+<hr>
+<p>React는 지금 프론트엔드의 중심에 있음에 분명합니다. 하지만 아직도 개선의 여지가 남아 있어보이는 프레임워크라고 하니 시간이 지나면 점점 더 좋아질 거 같습니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/f3c1a8e2f8d6" target="_blank" rel="external">June 6, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
   
     <article id="post-[2016-06-05 22:20:13]libdill"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
@@ -147,81 +258,6 @@
 <hr>
 <h4 id="어떤-데-활용할-수가-있을까요"><a href="#어떤-데-활용할-수가-있을까요" class="headerlink" title="어떤 데 활용할 수가 있을까요?"></a>어떤 데 활용할 수가 있을까요?</h4><p>아마도 여러군데서 활용이 될 수 있을 거 같은데 C 기본 라이브러리로 활용할 수 있다면 모들 플랫폼에서 사용되면서 리턴값만 다른 언어에서 사용하는 형태로도 많이 사용될 수 있을 듯합니다.(MS 계열및 Objective-C 계열 모두 가능?)</p>
 <p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/3f379297a326" target="_blank" rel="external">June 5, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-[2016-06-04 23:42:35]anypixel"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/06/04/[2016-06-04 23:42:35]anypixel/">anypixel</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/06/04/[2016-06-04 23:42:35]anypixel/" class="article-date">
-	  <time datetime="2016-06-04T14:42:35.000Z" itemprop="datePublished">6월 4, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/1*8LLNmc5IFJHY_e1cU6-Q6w.png" alt="">뭐… 뭘까요 이게</p>
-<p>이름은 삼성에서 만든거 같지만 구글 creative lab에서 만든 오픈소스 프로젝트입니다. 삼성도 C-lab 이라는 훌륭한 부서가 있던데 구글 C랩은 무얼할까요?</p>
-<p>2016/06/04 Editor’s choice</p>
-<p><a href="https://github.com/googlecreativelab/anypixel" title="https://github.com/googlecreativelab/anypixel" target="_blank" rel="external"><strong>googlecreativelab/anypixel</strong><br>_anypixel - A web-friendly way for anyone to build unusual displays_github.com</a><a href="https://github.com/googlecreativelab/anypixel" target="_blank" rel="external"></a></p>
-<hr>
-<h4 id="뭔가-창의적인걸-만들고-싶어"><a href="#뭔가-창의적인걸-만들고-싶어" class="headerlink" title="뭔가 창의적인걸 만들고 싶어"></a>뭔가 창의적인걸 만들고 싶어</h4><p>세상은 넓고 이런 일을 하면서도 돈 벌 수 있는 조직에서 일하는 사람은 참 행복하겠다는 생각이 듭니다.</p>
-<p><a href="http://venturebeat.com/2016/06/02/google-open-sources-anypixel-which-lets-anyone-program-interactive-displays/" title="http://venturebeat.com/2016/06/02/google-open-sources-anypixel-which-lets-anyone-program-interactive-displays/" target="_blank" rel="external"><strong>Google open-sources AnyPixel, which lets anyone program interactive displays</strong><br>_Google today is open-sourcing its AnyPixel software for programming interactive displays like the one in the lobby of…_venturebeat.com</a><a href="http://venturebeat.com/2016/06/02/google-open-sources-anypixel-which-lets-anyone-program-interactive-displays/" target="_blank" rel="external"></a></p>
-<p>어제 일자의 기사(미국 시간 고려하면)에 이 프로젝트에 대해서 나왔습니다.</p>
-<blockquote>
-<p>We wanted to build something cool for the new lobby in our New York City office, something that was big, could display a lot of interesting stuff, and (most importantly) was really fun to play and interact with</p>
-</blockquote>
-<p>디씨 식으로 번역해 보자면 뉴욕 오피스 포비에 조낸 멋진 뭔가를 만들고 싶어졌어. 좀 큰놈인데 조낸 흥미로운 녀석인데 핵심은 재미있게 반응해야되.</p>
-<p>정도 입니다.</p>
-<hr>
-<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><p>설치는 크게 두가지를 할 수가 있습니다. 하나는 웹으로 체험해 볼 수 있는 녀석이고 하나는 그냥 진짜 PCB 기판을 사면 됩니다.</p>
-<p>네? 무슨 말이냐구요?</p>
-<p>구글에서 두가지로 오픈을 했는데요. 하나는 크롬이랑 크롬 앱스토어에서 돌려볼 수 있는 브라우저용이고, 하나는 하드웨어 스펙과 조립에 관한 PDF를 배포를 했습니다. 그것도 상당히 친절합니다.</p>
-<h4 id="웹버전"><a href="#웹버전" class="headerlink" title="웹버전"></a>웹버전</h4><p>웹 버전은 간단합니다.</p>
-<p><img src="/images/1*b_Jq9F92Egbb737cI_hY3w.gi" alt="">용량 9M 이미지 폭탄 죄송해요.</p>
-<p>마우스에다 대면 반응하는 형태로 되어 있고, canvas 기반으로 짜여져 있습니다. 터치 이벤트에 반응하는 형태인거 같습니다.</p>
-<pre><code>$npm install  
-$npm run build  
-$preview
-</code></pre><p>명령어면 만들어 집니다.</p>
-<h4 id="설치형-버전"><a href="#설치형-버전" class="headerlink" title="설치형 버전"></a>설치형 버전</h4><p>차마 만들어 볼 시간은 없었네요</p>
-<p>하지만 유튜브에 공개했네요.</p>
-<hr>
-<h4 id="그래서-뭐"><a href="#그래서-뭐" class="headerlink" title="그래서 뭐"></a>그래서 뭐</h4><p>이걸 가지고 무엇을 할 지는 잘 모르겠지만, 흥미로운 프로젝트입니다. 뭔가 오픈 소스 하드웨어 시장까지 이제는 들어올려면 들어갈 수 있다. 정도쯤 되려나요?</p>
-<p>더 인사이트가 있으신 분들은 답변을 주셔도 좋을 듯 싶네요.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/dbefa10574cd" target="_blank" rel="external">June 4, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -300,6 +336,18 @@ $preview
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2017/11/27/2017-11-27-11월-깃헙-트렌드/">[2017-11-27] 11월 깃헙 트렌드</a></h6>
+              <span>11월 27, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a></h6>
               <span>9월 14, 2017</span>
             </div>
@@ -354,18 +402,6 @@ $preview
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/07/07/tech-trend-02/">(tech-trend) 구루들이 찾는다는 테크 트렌드 - 해커뉴스</a></h6>
-              <span>7월 7, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -398,7 +434,7 @@ $preview
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -449,6 +485,9 @@ $preview
 
 
     <!-- headerblur min height -->
+    
+      var headerblur = document.getElementById("header-blur");
+      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

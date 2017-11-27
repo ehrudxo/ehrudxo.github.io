@@ -55,10 +55,32 @@
 
 
   
+  
+  <div class="site-header-image">
+    <img id="originBg" width="100%" alt="Hike News" src="">
+  </div>
+
+  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
+    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
+  </div>
+
+  <script>
+        var imgUrls = "images/storm.png".split(",");
+        var random = Math.floor((Math.random() * imgUrls.length ));
+        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+          document.getElementById("originBg").src=imgUrls[random];
+          document.getElementById("blurBg").src=imgUrls[random];
+        } else {
+          document.getElementById("originBg").src='/' + imgUrls[random];
+          document.getElementById("blurBg").src='/' + imgUrls[random];
+        }
+    </script>
+
+
 
 
 <header id="allheader" class="site-header" role="banner" 
-   >
+   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -101,6 +123,100 @@
         
           <section id="main">
   
+    <article id="post-2017-11-27-11월-깃헙-트렌드"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2017/11/27/2017-11-27-11월-깃헙-트렌드/">[2017-11-27] 11월 깃헙 트렌드</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2017/11/27/2017-11-27-11월-깃헙-트렌드/" class="article-date">
+	  <time datetime="2017-11-27T03:42:39.000Z" itemprop="datePublished">11월 27, 2017</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>11월 한달간 깃헙에 올라온 프로젝트 중 많은 호응을 얻었던 프로젝트들을 정리해 보았다.<br>여전히 자바스크립트와 딥러닝 쪽 트렌드가 초 강세를 보이고 있다. awesome 시리즈 같은 curation 프로젝트도 여전히 최상위권에 존재하는 중.<br>(curation 프로젝트라 함은 좋은 팁과 사이트들을 집합해 놓을 것을 의미함)</p>
+<p>11월 한달(27일 기준) 가장 핫한 프로젝트 10선</p>
+<ul>
+<li><a href="https://github.com/k88hudson/git-flight-rules" target="_blank" rel="external">git-flight-rules</a></li>
+<li><a href="https://github.com/i0natan/nodebestpractices" target="_blank" rel="external">nodebestpractices</a></li>
+<li><a href="https://github.com/frappe/charts" target="_blank" rel="external">charts</a></li>
+<li><a href="https://github.com/thedaviddias/Front-End-Checklist" target="_blank" rel="external">Front-End-Checklist</a></li>
+<li><a href="https://github.com/tensorflow/tensorflow" target="_blank" rel="external">tensorflow</a> </li>
+<li><a href="https://github.com/RedditSota/state-of-the-art-result-for-machine-learning-problems" target="_blank" rel="external">state-of-the-art-result-for-machine-learning-problems</a></li>
+<li><a href="https://github.com/sindresorhus/awesome" target="_blank" rel="external">awesome</a></li>
+<li><a href="https://github.com/ant-design/ant-design-pro" target="_blank" rel="external">ant-design-pro</a></li>
+<li><a href="https://github.com/moment/luxon" target="_blank" rel="external">luxon</a> </li>
+<li><a href="https://github.com/vuejs/vue" target="_blank" rel="external">vue</a> </li>
+</ul>
+<h2 id="git-flight-rules"><a href="#git-flight-rules" class="headerlink" title="git-flight-rules"></a>git-flight-rules</h2><p>링크 : <a href="https://github.com/k88hudson/git-flight-rules" target="_blank" rel="external">git-flight-rules</a></p>
+<p>이 프로젝트는 작명도 훌륭하지만 더 훌륭한 것은 내용이다.<br>예를 들어서 “특정한 리비전으로 파일을 리버트 하고 싶을때에는 어떻게 하지?” 라는 질문 형태의 목록들을 가지고 있다.<br>(우리가 궁금해 하는 바로 그것! 느낌!)<br>예를 들어 질문 목록을 확인해 보면 아래 그림과 같다.</p>
+<p><img src="/images/2017112701.png" alt="질문 목록"></p>
+<p>해석해 보면 </p>
+<ul>
+<li>방금 내가 한 커밋은 뭐였지? </li>
+<li>커밋 메세지를 잘못 입력했을 때 </li>
+<li>커밋할 때 이메일과 이름을 잘못 썼다. </li>
+<li>커밋에서 파일 하나를 제외하고 싶을 때 </li>
+</ul>
+<p>등등으로 실제로 필요한 일상의 개발 노하우가 잘 나타나 있다<br>물론 한글이 아니라 좀 답답하기는 한데 누군가가 한글로 금방 번역해서 올려 줄 것으로 예상된다. </p>
+<h2 id="Node-js-Best-Practices"><a href="#Node-js-Best-Practices" class="headerlink" title="Node.js Best Practices"></a>Node.js Best Practices</h2><p>최근 팀에서 코드리뷰를 하다가 자바스크립트에서 세미콜론(;)을 붙이는것을 표준으로 할 것인지 아니면 붙이지 않는 것을 표준으로 할 것인지에 대한 논쟁이 일어났다.<br>당연히 최근에 나온것이 세미콜론이 없어도 해석할 수 있다이므로 없애는 것에 한표를 던졌는데, 지지를 철회해야 할 지도 모르겠다.</p>
+<p>링크 : <a href="https://github.com/trending?since=monthly" target="_blank" rel="external">Node.js Best Practice</a></p>
+<p><img src="/images/2017112702.png" alt="Node.js Best Practices"></p>
+<p>이 프로젝트는 Node.js 의 BP들을 잘 모아둔 curation 사이트다.<br>많은 사람들이 Node.js에서 신경써야할 아키텍처와 패턴을 잘 몰라하는데 이 프로젝트는 꽤나 많은 해답을 줄 수 있을 것으로 보인다.</p>
+<p>예를 들어 1.3의 “공용(common) 으로 사용하는 자바스크립트는 npm package로 만들어라” 부분 같은 것은 Node 패키지의 기본 컨셉을 담고 있고 2.1의 “에러 핸들링은 Async와 Await을 사용해라” 같은 부분도 최근 코드리뷰를 하면서 팀원들 끼리 옥신 각신 했던 부분인데 왜 그렇게 해야하는지도 잘 설명하고 있는것이 포인트.<br> (콜백 에러 핸들링이 콜백지옥으로 빠지는 것을 Async와 Await을 사용하면 잘 해결 되는 것을 이야기 하고 있음.) </p>
+<h2 id="프라페-charts"><a href="#프라페-charts" class="headerlink" title="프라페 charts"></a>프라페 charts</h2><p>chartJS 가 아님. 다른 프로젝트에 디펜던시가 없는 간단한 차트 프로젝트.<br>프로젝트를 찬찬히 들여다 보면 깃헙의 히트맵과 프로그레스 바를 만들어 둔 것이 인상적이다. 관련 블로그에도 해당 내용이 적혀 있을 정도.</p>
+<p>프로젝트 링크 : <a href="https://github.com/frappe/charts" target="_blank" rel="external">charts 깃헙</a><br>블로그 링크 : <a href="https://medium.com/@pratu16x7/so-we-decided-to-create-our-own-charts-a95cb5032c97" target="_blank" rel="external">so we decided to create our own charts</a> </p>
+<p><img src="https://github.com/frappe/charts/raw/master/.github/example.gif" alt="chart example"></p>
+<p>블로그를 읽다가 보면 c3.js를 사용하다가 스타을 새로 준다던지, 새로운 고객들의 요구에 응하려다가 자체적으로 개발하기로 한 과정들이 나와 있고 DOM을 조작하는데 SnapSVG 나 jquery 없이 만들기 위해 어떤 고려들을 했는지, CSS3 대신에 고려할 것드을 어떻게 확인했는지 등의 이야기가 재미있게 기술되어 있다.<br>( 블로그가 훨씬 흥미로운 내용이 많은 듯 .)</p>
+<p>jquery를 바닐라도 대체할 때 참조할 수 있는 <a href="http://youmightnotneedjquery.com/" target="_blank" rel="external">You might not need jQuery</a><br>라는 사이트도 참조할 만하다. ( 하지만 사이트를 보다보면 jquery 없이 어떻게 개발하지? 라는 생각이 들지도…)</p>
+<h2 id="luxon"><a href="#luxon" class="headerlink" title="luxon"></a>luxon</h2><p>타임스탬프 혹은 Date 라이브러리는 언제나 어렵다. 특히 MSA 같은 이기종간의 데이터를 주고 받는 요즘에 점점 중요해 지지만 매번 어렵기는 마찬가지.<br>이 문제를 해결하기 위한 가장 스마트한 방법은 그동안 모멘트 프로젝트 였는데, 오픈 소스 내부 컨트리뷰터 중에서 모멘트의 구조를 바꾸려고 하다가 프로젝트를 새로 만들었는데 사람들의 주목을 많이 받았습니다.</p>
+<p>링크1: <a href="https://github.com/moment/moment" target="_blank" rel="external">모멘트 프로젝트</a></p>
+<p>링크2: <a href="https://github.com/moment/luxon" target="_blank" rel="external">luxon 프로젝트</a></p>
+<p><img src="/images/2017112703.png" alt="luxon"></p>
+<p>몇가지 눈에 띄는 다른 점을 코드를 통해 살펴보자.</p>
+<p>가장 눈에 띄는 변화는 immutable 의 적용이다.<br>(immutable 이란 객체의 값이 변경되지 않는 것을 의미 하는 것으로 map 같은 객체가 변경이 되는 코드가 들어가면 리턴 값으로 새로운 객체를 반환해 주는 특징을 가지고 있다.)<br><a href="https://facebook.github.io/immutable-js/" target="_blank" rel="external">immutable.js</a> 가 가장 대표적인 라이브러리이다.</p>
+<p>일단 모멘트의 코드부터 살펴보자<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> m1 = moment();</div><div class="line"><span class="keyword">var</span> m2 = m1.add(<span class="number">1</span>, <span class="string">'hours'</span>);</div><div class="line">m1.valueOf() === m2.valueOf(); <span class="comment">//=&gt; true</span></div></pre></td></tr></table></figure></p>
+<p>1시간을 더 했지만 m1 과 m2의 값이 같다니.<br>immutable 을 적용한 luxon의 코드는 다음과 같다. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var d1 = DateTime.local();</div><div class="line">var d2 = d1.plus(&#123; hours: 1 &#125;);</div><div class="line">d1.valueOf() === d2.valueOf(); //=&gt; false</div></pre></td></tr></table></figure>
+<p>d2의 값이 변경되었다. 이렇게 함으로 의도적으로 다른 값을 할당하기 위한 객체의 deep copy를 수행할 필요가 없어진다.</p>
+<p>그 외의 주요 변화는 다음과 같다.</p>
+<ol>
+<li>월(Month)의 인덱스가 1부터 시작을 한다.(Moment 와 네이티브 자바스크립트 Date 는 0부터)</li>
+<li>로칼라이제이션과 타임존이 네이티브 API로 변경된다. (그 전에는 라이브러리에 포함되어 있었음.)</li>
+<li>Duration과 Interval 타입을 전부 가진다.</li>
+</ol>
+<p>참고 : <a href="https://moment.github.io/luxon/docs/manual/faq/moment.html" target="_blank" rel="external">모멘트 개발자가 알아둬야할 부분.</a></p>
+<h2 id="맺으며"><a href="#맺으며" class="headerlink" title="맺으며"></a>맺으며</h2><p>이번에 커버 되지는 않았지만 딥러닝쪽  tensorflow 와 state of art 시리즈를 볼 때 지속적으로 딥러닝 프레임워크 쪽은 들여다 볼 필요가 있을 것으로 생각이 들고 여전히 프론트 엔드쪽은 강세인데 vue.js 가 깃헙 프로젝트의 순위도 점점 평정해 가는 느낌이 강하다. 추세선으로는 react 를 조만간 뛰어넘을 기세로 보인다. 그리고 현장에서는 이미 vue가 통일을 하는 분위기로 보인다. 아직은 중요한 프로젝트들은  react로 의사 결정이 나지만 내년 하반기에는 바뀌지 않을까?</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-gitjenkinstip"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -131,7 +247,7 @@
 <p>중요한 두가지 설정 포인트가 필요하다.</p>
 <h3 id="1-ssh-포트-변경된-경우-git-연결"><a href="#1-ssh-포트-변경된-경우-git-연결" class="headerlink" title="1. ssh 포트 변경된 경우 git 연결"></a>1. ssh 포트 변경된 경우 git 연결</h3><p>~/.ssh/config 파일을 만든다.<br>ServerName, UserName, Port 은 프로젝트에 맞춰 준다.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Host &#123;ServerName&#125;</div><div class="line">        User &#123;UserName&#125;</div><div class="line">        Port &#123;Port&#125;</div></pre></td></tr></table></figure></p>
 <p>이후 git 명령어로 프로젝트를 잘 가져오는지 확인하자.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$git</span> <span class="built_in">clone</span> ssh://git@server:[port]/url </div><div class="line">`</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$git</span> <span class="built_in">clone</span> ssh://git@server:[port]/url</div></pre></td></tr></table></figure>
 <h3 id="2-git-연결-주소-설정"><a href="#2-git-연결-주소-설정" class="headerlink" title="2. git 연결 주소 설정"></a>2. git 연결 주소 설정</h3><p>참고로, 퍼블릭키와 프라이빗 키는 이미 잘 설정되어 있을 거라는 전제하에 얘기한다.</p>
 <p>링크 : <a href="http://egloos.zum.com/mcchae/v/11246199" target="_blank" rel="external">gitlab과 Jenkins연동</a></p>
 <p>위 링크에 대해서 URL을 설정하는 부분만 아래와 같이 바꾸면 잘 해결되는 것을 확인할 수 있다.</p>
@@ -145,66 +261,6 @@
       
   <span class="ico-tags"></span>
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-puppeteer"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2017/09/14/puppeteer/">[github]Node.js 기반 헤드리스 브라우저 컨트롤 API - puppeteer</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2017/09/14/puppeteer/" class="article-date">
-	  <time datetime="2017-09-14T04:09:55.000Z" itemprop="datePublished">9월 14, 2017</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/puppeteer.jpg" alt="puppeteer"><br>프로젝트 링크 : <a href="https://github.com/GoogleChrome/puppeteer/" target="_blank" rel="external">https://github.com/GoogleChrome/puppeteer/</a><br>첫번째 프로젝트는 구글 크롬 프로젝트에서 Headless Chrome Node API 로 내 놓은 퍼펫티어다. 퍼펫이라고 하면 번역하면 인형술사이고 꼭두각시 인형을 다루는 사람을 이야기 한다. 이 프로젝트의 배경부터 이야기 하자면 올해(2017년) 4월 경 구글프로젝트에서는 크롬에 Headless 모드를 추가했다.<br>Headless 브라우저라고 하면 일반적으로 CLI환경에서 브라우저가 시각적으로 보여지지 않고 백그라운드에서 작동할 수 있는 것을 이야기 하는데, 이 전까지 가장 유명한 것은 PhantomJS라는 프로젝트였다. 크롤링을 하고 스크린 샷을 찍어서 다운로드하고 등의 일들을 할 수 있었다. 그래서 데스크탑이 아닌 서버에서 DOM을 읽어야 하는 경우 등에서 많이 사용되고는 했었다. </p>
-<p>필자의 경우는 테스트 환경을 꾸밀 수 있지 않을까 하는 기대에 관련된 작업들을 진행해 보았고 관련되어 링크를 남기기도 했다.<br>링크 : 헤드리스 크롬과 selenium2의 조합을 사용해 보자 with node (<a href="http://keen.devpools.kr/2017/06/07/about-test/">http://keen.devpools.kr/2017/06/07/about-test/</a> ) </p>
-<p>그런데, 8월 한달 가장 주목받은 프로젝트가 된 이 puppeteer는 Node.js에서 헤드리스 크롬을 사용할 수 있는 API들을 제공하는 것이다. Headless 모드를 발표하자마자 Phantom.JS는 더 이상 개발 안하기로 선언을 한 것과 마찬가지로 Node.js 진영에 새로운 무기가 생겨버린 셈이 되었다</p>
-<h2 id="1-설치를-해보자"><a href="#1-설치를-해보자" class="headerlink" title="1. 설치를 해보자"></a>1. 설치를 해보자</h2><p>먼저 프로젝트를 한번 만들어 보자.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$mkdir</span> puppeteer-project &amp;&amp; <span class="built_in">cd</span> puppeteer-project</div><div class="line"><span class="variable">$yarn</span> add puppeteer</div></pre></td></tr></table></figure></p>
-<p>이렇게 설치를 하고 나면 프로젝트에 index.js 파일을 만든다..</p>
-<p>&lt;코드&gt;index.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> puppeteer = <span class="built_in">require</span>(<span class="string">'puppeteer'</span>);</div><div class="line"></div><div class="line">(<span class="keyword">async</span> () =&gt; &#123;</div><div class="line">  <span class="keyword">const</span> browser = <span class="keyword">await</span> puppeteer.launch();</div><div class="line">  <span class="keyword">const</span> page = <span class="keyword">await</span> browser.newPage();</div><div class="line">  <span class="keyword">await</span> page.goto(<span class="string">'http://devpools.kr'</span>);</div><div class="line">  <span class="keyword">await</span> page.screenshot(&#123;<span class="attr">path</span>: <span class="string">'devpools.png'</span>&#125;);</div><div class="line"></div><div class="line">  browser.close();</div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
-<p>스크린샷을 가져 오는 코드가 작성되었다.  개발바보들 첫 페이지의 스크린 샷을 가져오는 소스 코드를 작성한 이후에 node index.js 명령어를 입력하면 다음과 같은 이미지를 가지고 오는 것을 볼 수 있다. </p>
-<p>기본적으로 지정된 이미지 크기는 800*600으로 지정된 듯 하다. 보통 phantomJS 같은 경우는 스크롤을 다 잡아 가던 초반 모습에 비해 메모리 관리를 위한 것인지 이미지 해상도도 그렇게 좋은 거 같지는 않아 보인다. </p>
-<p>PDF로 Export 하는 기능도 API를 통해 구현이 가능하다. </p>
-<p><img src="/images/crawled_devpools.jpg" alt="개발바보들 스크린샷"></p>
-<h2 id="2-크롤링을-해-보자"><a href="#2-크롤링을-해-보자" class="headerlink" title="2. 크롤링을 해 보자."></a>2. 크롤링을 해 보자.</h2><p>이번엔 find.js 라는 파일을 아래와 같이 만들어 본다. 실제로 이미지와 지금 아래 크롤링 소스는 해당 프로젝트와 내용이 거의 유사하다. </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="meta">'use strict'</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> puppeteer = <span class="built_in">require</span>(<span class="string">'puppeteer'</span>);</div><div class="line"></div><div class="line">(<span class="keyword">async</span>() =&gt; &#123;</div><div class="line"><span class="comment">//브라우저 객체와 페이지 객체를 만들고</span></div><div class="line"><span class="keyword">const</span> browser = <span class="keyword">await</span> puppeteer.launch();</div><div class="line"><span class="keyword">const</span> page = <span class="keyword">await</span> browser.newPage();</div><div class="line"></div><div class="line"><span class="comment">// 구글 검색창 방문</span></div><div class="line"><span class="keyword">await</span> page.goto(<span class="string">'https://google.com'</span>, &#123;<span class="attr">waitUntil</span>: <span class="string">'networkidle'</span>&#125;);</div><div class="line"><span class="comment">//개발 바보들에 대한 검색어를 입력하고</span></div><div class="line"><span class="keyword">await</span> page.type(<span class="string">'devpools'</span>);</div><div class="line"><span class="comment">// 검색버튼을 누르고</span></div><div class="line"><span class="keyword">await</span> page.click(<span class="string">'input[type="submit"]'</span>);</div><div class="line"><span class="comment">//검색한 결과의 타이틀을 가져와서</span></div><div class="line"><span class="comment">// Wait for the results to show up</span></div><div class="line"><span class="keyword">await</span> page.waitForSelector(<span class="string">'h3 a'</span>);</div><div class="line"></div><div class="line"><span class="keyword">const</span> links = <span class="keyword">await</span> page.evaluate(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">  <span class="keyword">const</span> anchors = <span class="built_in">Array</span>.from(<span class="built_in">document</span>.querySelectorAll(<span class="string">'h3 a'</span>));</div><div class="line">  <span class="keyword">return</span> anchors.map(<span class="function"><span class="params">anchor</span> =&gt;</span> anchor.textContent);</div><div class="line">&#125;);</div><div class="line"><span class="comment">//콘솔에 출력한다.</span></div><div class="line"><span class="built_in">console</span>.log(links.join(<span class="string">'\n'</span>));</div><div class="line">browser.close();</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
-<p>소스 코드에 대한 설명은 주석에 달아 둔데로 브라우저 객체와 페이지 객체를 만들고 구글 검색창을 방문해서 개발 바보들에 대한 검색어를 입력하고 검색버튼을 누른 뒤 검색된 결과의 타이틀을 가져와서 콘솔에 출력한다.</p>
-<p>그 결과는 다음과 같다. 이 과정 중에 어떤 브라우저의 인터렉션도 필요 없었고 (내부적으로는 크롬 헤드리스 브라우저가 작동을 했지만) 사용자의 경우는 결과만 가져올 수 있다.</p>
-<p><img src="/images/searchresults.jpg" alt="devpools 검색결과"></p>
-<h2 id="맺음말"><a href="#맺음말" class="headerlink" title="맺음말"></a>맺음말</h2><p>왜 구글은 이런 제품을 내놓고 있는 걸까? 워낙 혁신적인 기업이라 속내를 다 살펴볼 수는 없지만 지속적으로 API를 내놓고 있는 것은 웹의 많은 부분이 자동화로 돌아설 것이고 그 중심에 인공지능이 있지 않을까 하는 생각이 들어 잠시 한번 고민을 해 보았다. 아마도 텐서플로가 조만간 DOM 기반의 러닝 모델을 공개하는 날이 오지 않을까?</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-trend-github/">github-trend, github</a></li></ul>
 
       
     </footer>
@@ -274,6 +330,18 @@
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2017/11/27/2017-11-27-11월-깃헙-트렌드/">[2017-11-27] 11월 깃헙 트렌드</a></h6>
+              <span>11월 27, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a></h6>
               <span>9월 14, 2017</span>
             </div>
@@ -328,18 +396,6 @@
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/07/07/tech-trend-02/">(tech-trend) 구루들이 찾는다는 테크 트렌드 - 해커뉴스</a></h6>
-              <span>7월 7, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -372,7 +428,7 @@
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -423,6 +479,9 @@
 
 
     <!-- headerblur min height -->
+    
+      var headerblur = document.getElementById("header-blur");
+      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

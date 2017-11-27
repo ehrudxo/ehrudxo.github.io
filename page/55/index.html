@@ -55,10 +55,32 @@
 
 
   
+  
+  <div class="site-header-image">
+    <img id="originBg" width="100%" alt="Hike News" src="">
+  </div>
+
+  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
+    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
+  </div>
+
+  <script>
+        var imgUrls = "images/storm.png".split(",");
+        var random = Math.floor((Math.random() * imgUrls.length ));
+        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+          document.getElementById("originBg").src=imgUrls[random];
+          document.getElementById("blurBg").src=imgUrls[random];
+        } else {
+          document.getElementById("originBg").src='/' + imgUrls[random];
+          document.getElementById("blurBg").src='/' + imgUrls[random];
+        }
+    </script>
+
+
 
 
 <header id="allheader" class="site-header" role="banner" 
-   >
+   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -100,6 +122,74 @@
       <div id="content" class="outer">
         
           <section id="main">
+  
+    <article id="post-[2016-05-22 23:16:34]black-screen"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/05/22/[2016-05-22 23:16:34]black-screen/">black-screen</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/05/22/[2016-05-22 23:16:34]black-screen/" class="article-date">
+	  <time datetime="2016-05-22T14:16:34.000Z" itemprop="datePublished">5월 22, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/1*-3iP5-TURZj9w0z5SQZr8Q.png" alt="">type. type.</p>
+<p>Electron, Atom 을 볼 때 어떤 가능성을 보셨습니까? Native 어플리케이션을 모두 웹으로 작성하는 생각을 해 보셨을 텐데요. 오늘은 정말 재미있는 프로젝트가 깃헙에 올라 왔습니다. 썰이 길죠?</p>
+<p>black-screen은 Electron 을 이용해서 만든 iTerm 같은 터미날 프로그램입니다.</p>
+<p>2016/05/22 Editor’s choice(623✰)</p>
+<p><a href="https://github.com/shockone/black-screen" title="https://github.com/shockone/black-screen" target="_blank" rel="external"><strong>shockone/black-screen</strong><br>_black-screen - A terminal emulator for the 21st century._github.com</a><a href="https://github.com/shockone/black-screen" target="_blank" rel="external"></a></p>
+<hr>
+<h4 id="설치하기"><a href="#설치하기" class="headerlink" title="설치하기"></a>설치하기</h4><pre><code>git clone https://github.com/shockone/black-screen.git &amp;&amp; cd black-screen  
+npm i
+</code></pre><p>너무나 간단하죠</p>
+<hr>
+<h4 id="실행하기"><a href="#실행하기" class="headerlink" title="실행하기"></a>실행하기</h4><pre><code>npm start
+</code></pre><p><img src="/images/1*53PzecKOUjK01Csh9b8I5Q.gif" alt=""></p>
+<p>이렇게 실행히 됩니다. 놀랍죠?</p>
+<p>아톰 에티터와 같은 스타일로 i-Term 같은 터미날을 쓴다니.</p>
+<p>지금 zsh 맛을 겨울 알았는데 지원해 주는 기능들을 보니 편리함을 위해 auto complete같은 기능은 기본적으로 제공을 해 주네요.</p>
+<h4 id="vi"><a href="#vi" class="headerlink" title="vi"></a>vi</h4><p>vi 를 실행했을 때에는 약간 어색하기는 하네요. 화살표가 안 먹어서 살펴보니 jkl같은 기본 명령어로만 동작이 되는군요.</p>
+<h4 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h4><p>cat 명령어로 json을 볼 때는 웹 개발자에겐 축복같은 화면이 나오는 군요</p>
+<p><img src="/images/1*iyK2nu9AUfGH7Txc7zFU-g.png" alt="">헐. json트리야. json 트리</p>
+<h4 id="top"><a href="#top" class="headerlink" title="top"></a>top</h4><p><img src="/images/1*9-7RNQ5kOAN2jmmtzjrqQQ.pn" alt=""></p>
+<p>top 명령어를 실행하면 이쁘게 잘 보이는 화면은 캡쳐를 뜨지 않았습니다.(이쯤되면 당연…)</p>
+<p>명령어를 종료하고 나서 snapshot을 적갈색 화면으로 보여주는게 너무 이쁘네요.</p>
+<p>아마도 한참동안 iTerm을 대체할 수는 없을 것 같지만, 지금 Atom을 주력 에디터로 쓰게 되리라고 1년전에는 상상도 할 수 없었을 테니 모르는 거죠.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/d6e783922fab" target="_blank" rel="external">May 22, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
   
     <article id="post-[2016-05-21 12:04:53]push.js"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
@@ -185,98 +275,6 @@ timeout : 5000
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-05-20 06:43:00]horizon"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/05/20/[2016-05-20 06:43:00]horizon/">horizon</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/05/20/[2016-05-20 06:43:00]horizon/" class="article-date">
-	  <time datetime="2016-05-19T21:43:00.000Z" itemprop="datePublished">5월 20, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/1*l-1W6LntxYQWjgGLa6fb6A.png" alt="">멋진 이미지네요.출처 :horizon</p>
-<p>Firebase 같은 Cloud Database API를 쓰면 개발이 무척이나 간단해 지죠. 특히 앱개발을 하는 관점에서는 서버사이드에 대한 고민이 사라지니까 많이들 이동하는 걸로 알고 있습니다.</p>
-<p>Firebase는 거기다가 무척이나 좋은 API들을 많이 가지고 있는데요. 이런 환경을 내가 직접 컨트롤 할 수 있다면 좋겠다는 생각을 한 적이 많습니다.</p>
-<p>이 프로젝트 horizon은 rethinkdb 에서 내 놓은 오픈소스 설치형 Firebase라고 생각하시면 될 거 같습니다.</p>
-<p>Realtime, Open-source back-end for javascript apps 라고 자신을 소개하고 있습니다!</p>
-<p><a href="https://github.com/rethinkdb/horizon" title="https://github.com/rethinkdb/horizon" target="_blank" rel="external"><strong>rethinkdb/horizon</strong><br>_horizon - Horizon is a realtime, open-source backend for JavaScript apps._github.com</a><a href="https://github.com/rethinkdb/horizon" target="_blank" rel="external"></a></p>
-<hr>
-<h4 id="설치를-해보자"><a href="#설치를-해보자" class="headerlink" title="설치를 해보자"></a>설치를 해보자</h4><pre><code>$ npm install -g horizon
-</code></pre><hr>
-<h4 id="만들어-봅시다"><a href="#만들어-봅시다" class="headerlink" title="만들어 봅시다"></a>만들어 봅시다</h4><pre><code>$ hz init horizon-example-app
-</code></pre><p><img src="/images/1*Zi9h-asikUkbp6-f2siHIA.png" alt=""></p>
-<p>위와 같은 형태로 앱이 만들어집니다.</p>
-<pre><code>&lt;!doctype html\&gt;  
-&lt;html\&gt;  
-&lt;head\&gt;  
-&lt;meta charset=&quot;UTF-8&quot;\&gt;  
-&lt;script src=&quot;/horizon/horizon.js&quot;\&gt;&lt;/script\&gt;  
-&lt;script\&gt;  
-var horizon = Horizon();  
-horizon.onReady(function() {  
-document.querySelector(&apos;h1&apos;).innerHTML = &apos;It works!&apos;  
-});  
-horizon.connect();  
-&lt;/script\&gt;  
-&lt;/head\&gt;  
-&lt;body\&gt;  
-&lt;marquee\&gt;&lt;h1\&gt;&lt;/h1\&gt;&lt;/marquee\&gt;  
-&lt;/body\&gt;  
-&lt;/html\&gt;
-</code></pre><hr>
-<p>서버를 실행 시켜 보겠습니다.</p>
-<p><img src="/images/1*h5mQIJoCvlY-gZNF9LMPnw.png" alt=""></p>
-<p>rethinkdb가 없어서 에러가 뜨는 군요</p>
-<pre><code>$brew update **&amp;&amp;** brew install rethinkdb
-</code></pre><p>로 rethinkdb를 설치합니다.</p>
-<p>그리고</p>
-<pre><code>$hz serve --dev
-</code></pre><p>명령어를 실행시키면</p>
-<p>시작이 되어야 한다는데</p>
-<p><img src="/images/1*F8g2aqsgZFq6KJd6d9rZDQ.pn" alt=""></p>
-<p>와 같은 에러가 뜹니다.</p>
-<p>아직 초창기랑 버그가 좀 있는 거 같습니다.</p>
-<p>이슈에 올라와 있네요.</p>
-<p><a href="https://github.com/rethinkdb/horizon/issues/401" title="https://github.com/rethinkdb/horizon/issues/401" target="_blank" rel="external"><strong>Unhanded rejection ReqlRuntimeError: Connection is closed in r.db(“app_name_internal”)… * Issue…</strong><br>_Following the horizon getting started guide npm install -g horizon hz init example_app hz serve –dev with RethinkDB 2…_github.com</a><a href="https://github.com/rethinkdb/horizon/issues/401" target="_blank" rel="external"></a></p>
-<p>이슈에서 해결되는데로 이 블로그 포스트는 업데이트 하겠습니다.</p>
-<p>뭐 어쨌든 firebase 라던지, cloudant 같은 제품군을 좋아하는 개발자들에게는 좋은 소식이 될 거 같습니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/ed9f5ad7c3c9" target="_blank" rel="external">May 19, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
@@ -328,6 +326,18 @@ horizon.connect();
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2017/11/27/2017-11-27-11월-깃헙-트렌드/">[2017-11-27] 11월 깃헙 트렌드</a></h6>
+              <span>11월 27, 2017</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -389,18 +399,6 @@ horizon.connect();
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/07/07/tech-trend-02/">(tech-trend) 구루들이 찾는다는 테크 트렌드 - 해커뉴스</a></h6>
-              <span>7월 7, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -433,7 +431,7 @@ horizon.connect();
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -484,6 +482,9 @@ horizon.connect();
 
 
     <!-- headerblur min height -->
+    
+      var headerblur = document.getElementById("header-blur");
+      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

@@ -55,10 +55,32 @@
 
 
   
+  
+  <div class="site-header-image">
+    <img id="originBg" width="100%" alt="Hike News" src="">
+  </div>
+
+  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
+    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
+  </div>
+
+  <script>
+        var imgUrls = "images/storm.png".split(",");
+        var random = Math.floor((Math.random() * imgUrls.length ));
+        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+          document.getElementById("originBg").src=imgUrls[random];
+          document.getElementById("blurBg").src=imgUrls[random];
+        } else {
+          document.getElementById("originBg").src='/' + imgUrls[random];
+          document.getElementById("blurBg").src='/' + imgUrls[random];
+        }
+    </script>
+
+
 
 
 <header id="allheader" class="site-header" role="banner" 
-   >
+   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -100,6 +122,220 @@
       <div id="content" class="outer">
         
           <section id="main">
+  
+    <article id="post-[2016-10-22 22:57:45]서버리스 아키텍처 소셜미디어 개발기 2편"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/10/22/[2016-10-22 22:57:45]서버리스 아키텍처 소셜미디어 개발기 2편/">서버리스 아키텍처 소셜미디어 개발기 2편</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/10/22/[2016-10-22 22:57:45]서버리스 아키텍처 소셜미디어 개발기 2편/" class="article-date">
+	  <time datetime="2016-10-22T13:57:45.000Z" itemprop="datePublished">10월 22, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>지난 글에 이어 계속 됩니다.</p>
+<p><a href="https://techstory.shma.so/%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%86%8C%EC%85%9C%EB%AF%B8%EB%94%94%EC%96%B4-%EA%B0%9C%EB%B0%9C%EA%B8%B0-1%ED%8E%B8-99e12d57429e" title="https://techstory.shma.so/%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%86%8C%EC%85%9C%EB%AF%B8%EB%94%94%EC%96%B4-%EA%B0%9C%EB%B0%9C%EA%B8%B0-1%ED%8E%B8-99e12d57429e" target="_blank" rel="external"><strong>서버리스 아키텍처 소셜미디어 개발기 1편</strong><br>_지난편 보기_techstory.shma.so</a><a href="https://techstory.shma.so/%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%86%8C%EC%85%9C%EB%AF%B8%EB%94%94%EC%96%B4-%EA%B0%9C%EB%B0%9C%EA%B8%B0-1%ED%8E%B8-99e12d57429e" target="_blank" rel="external"></a></p>
+<p>지난 편에서 Hello World 와도 같은 프로그램을 빌드까지 했다고 하면 Day2에서는 실제 페이지를 만들기 위한 기본 작업들로 시작해서 User Story2번의 기초 작업을 해 보도록 하겠습니다.</p>
+<p><img src="/images/1*DlbSvZNpTiTXFEnmDriqYw.png" alt="">슬슬 시작해 볼까?</p>
+<p>일단 create-react-app의 처음 만들어진 폴더 구조는 다음과 같습니다.</p>
+<p><img src="/images/1*zfKn3vrlcOAWNh-i31r7Lg.png" alt=""></p>
+<p>이후 진행에 폴더를 찾는데 참조하시기 바랍니다.</p>
+<p>User Story 들어가기 전에 몸좀 풀죠.</p>
+<h3 id="1-로고-파비콘-favicon-헤더"><a href="#1-로고-파비콘-favicon-헤더" class="headerlink" title="1. 로고, 파비콘(favicon), 헤더"></a>1. 로고, 파비콘(favicon), 헤더</h3><p>처음 실행한 예제에서 이쁘기는 하지만 무지하게 큰 움직이는 로고를 만나보셨을 겁니다. 그리고 헤더가 엄청나게 큰 영역을 차지하고 있다는 것, 파비콘도 react 이미지라는 사실을 알 수 있죠.</p>
+<p>이런 것들을 변경하는 팁을 약간 언급하고 넘어가겠습니다.</p>
+<h4 id="로고"><a href="#로고" class="headerlink" title="로고"></a>로고</h4><p>개발자에게 디자인은 또 다른 어려움일거라 생각합니다.</p>
+<p><a href="http://ko.cooltext.com/" title="http://ko.cooltext.com/" target="_blank" rel="external"><strong>로고 밑 그래픽 생성기 - Cool Text</strong><br>_Cool Text(쿨 텍스트)는 화려한 로고를 웹페이지나 다른 용도로 위해 만들어 주는 무료 그래픽 생성기입니다. 간편하게 원하시는 이미지를 클릭만 해주세요. 그 후 폼을 작성해 주시면 바로 당신만의 이미지를 만…_ko.cooltext.com</a><a href="http://ko.cooltext.com/" target="_blank" rel="external"></a></p>
+<p>위와 같이 로고를 만들어 주는 사이트를 이용해 볼 수 있습니다.<br>Stand Up으로 주고 헤더 색깔을 녹색( #02B875 )으로 지정할 예정이기 때문에 비슷하게 맞춰서 다운 받아 둡니다.</p>
+<p><img src="/images/1*GQ7khUI-AHb0XcRsHcmDlw.png" alt="">훌륭합니다.</p>
+<h4 id="favicon"><a href="#favicon" class="headerlink" title="favicon"></a>favicon</h4><p>favicon은 브라우저에서 타이틀 텍스트 옆에 있는 작은 아이콘입니다. 즐겨찾기에도 표시가 되는 아이콘인데, 이 것도 만들어주는 사이트가 있습니다.</p>
+<p><a href="http://www.favicon-generator.org/" title="http://www.favicon-generator.org/" target="_blank" rel="external"><strong>Favicon &amp; App Icon Generator</strong><br>_Convert PNG to ICO, JPG to ICO, GIF to ICO. Create favicon.ico and iOS / Android App Icons. Edit a favicon to fit your…_www.favicon-generator.org</a><a href="http://www.favicon-generator.org/" target="_blank" rel="external"></a></p>
+<p>같은 사이트는 그런 역할을 해 주는 군요.<br>(재밌는 것은 이 사이트은 파비콘이 없다는 사실입니다.)</p>
+<p>저는 제 캐리커쳐를 올려서 favicon을 만들었습니다.</p>
+<h4 id="헤더"><a href="#헤더" class="headerlink" title="헤더"></a>헤더</h4><p>헤더의 색과 사이즈를 변경할 수 있습니다. src 폴더 아래의 App.css 파일의 CSS 파일을 다음과 같이 고쳐서</p>
+<pre><code>.App-logo {  
+height: 45px;/\* 이미지 사이즈 줄이고\*/  
+}  
+.App-header {  
+background-color: \#02B875;/\* 타이틀 바 색감을 좀 바꾸고\*/  
+height: 50px;/\* 전체 사이즈를 줄였습니다.\*/  
+padding: 5px;  
+color: white;  
+}
+</code></pre><p>로고 이미지와 favicon 을 바꾸도록 App.js를 바꿔보도록 하겠습니다.</p>
+<pre><code>import React, { Component } from &apos;react&apos;;  
+import logo from &apos;./img/stand\_up\_logo.png&apos;;  
+import &apos;./App.css&apos;;
+
+class App extends Component {  
+render() {  
+return (  
+&lt;div className=&quot;App&quot;\&gt;  
+&lt;div className=&quot;App-header&quot;\&gt;  
+&lt;img src={logo} className=&quot;App-logo&quot; alt=&quot;logo&quot; /\&gt;  
+&lt;/div\&gt;  
+&lt;p className=&quot;App-intro&quot;\&gt;  
+이제 여기서 부터 프로젝트는 시작입니다. 로고는 일단은 그냥 둡시다.  
+&lt;/p\&gt;  
+&lt;/div\&gt;  
+);  
+}  
+}  
+export default App;
+</code></pre><p>favicon은 public folder밑에 파일을 대체만 해 주면 됩니다.</p>
+<p>지금부터는 모바일 화면 기준으로 보기 위해 개발자 도구의 모바일 보기 기능을 활용하겠습니다.</p>
+<p><img src="/images/1*J9ymyfVdBSWyG1wxTc4ECg.jpeg" alt=""></p>
+<p>그럼 다음과 같이 보여야 정상입니다.</p>
+<p><img src="/images/1*yxthiRSu5SLY_yNytK5Gpw.jpeg" alt="">호오. 근데 번지는 효과는 어디로 갔나.. 나중에 손좀 봐야겠네요.</p>
+<p>파비콘도 정상이네요</p>
+<p><img src="/images/1*AKnLyYU5D9NY7X3MD_dvrw.jpeg" alt=""></p>
+<blockquote>
+<p>이제 준비가 되었습니다. User Story를 진행합시다</p>
+</blockquote>
+<h3 id="2-User-Story-2"><a href="#2-User-Story-2" class="headerlink" title="2. User Story 2"></a>2. User Story 2</h3><p>정의된 User Story는 다음과 같습니다.</p>
+<blockquote>
+<p>김개발이 사이트를 방문해서 자신이 유심하게 <strong>읽은 글을 올릴 수 있다</strong>. 이렇게 하면 다른 사람들이 볼 수 있다.<br>* 에디터 창은 하나만 있고 거기서 글을 작성하고 업로드 하면 글이 외부 클라우드 공간에 저장이 된다.</p>
+</blockquote>
+<p>유심하게 읽은 글을 올릴 수 있다. 부분을 참조해서 요건을 정의해 봅시다</p>
+<h4 id="요건-확인"><a href="#요건-확인" class="headerlink" title="요건 확인"></a>요건 확인</h4><p>“무엇을 올린 것인가”를 고려해 볼 때 소셜미디어들의 화면을 보도록 하겠습니다.</p>
+<p><img src="/images/1*ap74hP9OxVJzqCUp2B3ezA.jpeg" alt=""></p>
+<p>위의 이미지에서 기본적인 요건을 정의해 보면 다음의 내용들을 기본으로 가지고 있습니다.</p>
+<pre><code>작성자 (writer)  
+작성일 (createdAt)  
+내용 (contents)  
+링크  
+--- 링크 이미지  
+--- 링크 제목  
+--- 링크 설명  
+--- 링크 주소
+</code></pre><p>물론 다 라고 할 수는 없지만 일단 눈에띄는 부분과 변하지 않는 부분 위주로 살펴보죠. 이후에 더 자세하게 바꾸도록 하겠습니다.</p>
+<h3 id="3-Editor-개발"><a href="#3-Editor-개발" class="headerlink" title="3. Editor 개발"></a>3. Editor 개발</h3><p>그렇다면 Editor에 위의 내용들을 입력해서 업로드하기 직전까지의 작업을 지금부터 해 볼 것입니다. 어디에 어떻게 올릴 것인지는 나중에 고민하기로 하고 가장 쉬운 에디터 부터 만들어 보겠습니다.</p>
+<p><img src="/images/1*Xn3nDHJnsYd24ENoN9rE5g.jpeg" alt="">이런 이쁜 editor를 만들어 보자</p>
+<p>요건 정의를 통해 스케치해 본 위의 이미지와 같은 형태의 에디터를 만들 때 필요한 부분은 <strong>사용자 프로파일</strong>과 <strong>타이틀</strong>(‘무엇을 공유할까요’) 부분과 나머지 <strong>입력부</strong> , <strong>버튼</strong> 등이 있을 거 같습니다.</p>
+<h4 id="사용자-프로파일-만들기-타이틀-포함"><a href="#사용자-프로파일-만들기-타이틀-포함" class="headerlink" title="사용자 프로파일 만들기(타이틀 포함)"></a>사용자 프로파일 만들기(타이틀 포함)</h4><p><img src="/images/1*v6-R0HJoZXWFgh4b_sZAWQ.jpeg" alt="">ㄱㅈㄱ ㅎㄲㅎㄷ(가족과 함께한다?)</p>
+<p>지금은 사용자의 세션을 생각하지 말고 Anonymous모드로 프로파일 부분을 먼저 만들어 보도록 하겠습니다.</p>
+<p>Profile.js, Profile.css 파일을 아래와 같이 만들어 보겠습니다.</p>
+<pre><code>//JavaScript  
+import React from &apos;react&apos;;  
+import &apos;./Profile.css&apos;;  
+import Anonymous from &apos;./img/anonymous.png&apos;;
+
+function Profile(isAnonymous){  
+if(isAnonymous){ //익명일 경우  
+return(  
+&lt;div className=&quot;anonymous&quot;\&gt;  
+&lt;div className=&quot;today\_title&quot;\&gt;  
+무엇을 공유할까요?  
+&lt;/div\&gt;  
+&lt;div className=&quot;anonymous\_name&quot;\&gt;  
+겐지  
+&lt;/div\&gt;  
+&lt;div className=&quot;anonymous\_img\_wrap&quot;\&gt;  
+&lt;img src={Anonymous} alt=&quot;profiles&quot; className=&quot;anonymous\_img&quot;/\&gt;  
+&lt;/div\&gt;  
+&lt;/div\&gt;  
+)  
+}else{//익명이 아닐 경우는 일단은 빈 div  
+return &lt;div/\&gt;;  
+}  
+}  
+export default Profile;
+</code></pre><p>CSS는 다음과 같습니다.</p>
+<pre><code>/\*Profile.css\*/  
+.anonymous{  
+text-align: left;  
+background-color: white;  
+border-bottom: 1px solid \#dddfe2;  
+width :100%;  
+height: 50px;  
+}  
+.anonymous\_img\_wrap{  
+text-align: right;  
+border-radius: 50%;  
+display: inline;  
+float: right;  
+}  
+.anonymous\_img{  
+border-radius: 50%;  
+height: 35px;  
+padding: 5px;  
+}  
+.anonymous\_name{  
+padding-right: 10px;  
+float: right;  
+margin-top: 17px;  
+}  
+.today\_title{  
+float: left;  
+margin-top: 17px;  
+padding-left: 10px;  
+}
+</code></pre><p>익명일 경우에 겐지는 일단 Username으로 정하겠습니다.<br>일반 function 함수로 컴포넌트를 만들었고 props 로 isAnonymous 값을 전달 받는다는 사실을 알 수 있습니다.</p>
+<h4 id="입력부와-버튼-만들기"><a href="#입력부와-버튼-만들기" class="headerlink" title="입력부와 버튼 만들기"></a>입력부와 버튼 만들기</h4><p><img src="/images/1*3TWQmUuZIfa5WgckwxARTQ.jpeg" alt=""></p>
+<p>이제는 입력부를 살펴 볼까요?</p>
+<p>전통적으로 웹 에디터의 입력부 작성하는 방법은</p>
+<pre><code>&lt;form target=&quot;\[some url\]&quot;\&gt;  
+&lt;textarea name=&quot;\[text\_area\_name\]&quot;/\&gt;  
+&lt;/form\&gt;
+</code></pre><p>이지만 몇가지 이유에서 div 태그를 이용하도록 하겠습니다. (form 에 넣을 경우는 브라우저 이벤트가 우리가 넣는 이벤트에 우선하기 때문에 엔터를 칠 경우 submit이 되고, Single Page Applicaion의 경우 URL 이 옮겨지는 등의 제어를 위해 들어가야 하는 스크립트들이 많아지는 것등에 대한 코드가 많아지는 일들이 있습니다.)</p>
+<p>div 의 경우는 <strong>content-editable 속성을 주면 편집이 가능합니다</strong>.<br>placeholder 까지 더한코드를 살펴보겠습니다. (placeholder란 HTML 입력 폼에서 사용자가 입력하기 전까지 화면에 표시되는 문자열을 이야기 합니다)</p>
+<pre><code>&lt;div class=&quot;innerEdit&quot;  
+contentEditable=&quot;true&quot;  
+placeholder=&quot;글쓰기...&quot;\&gt;&lt;/div\&gt;
+</code></pre><p>하지만 div는 그냥 placeholder가 작동하지 않습니다. 그래서 <strong><em>innerEdit </em></strong>이라는 CSS클래스를 다음과 같이 작업을 해 줘야 합니다</p>
+<pre><code>\[contenteditable=true\]:empty:before{  
+content: attr(placeholder);  
+color: \#aaa;  
+display: block; /\* For Firefox \*/  
+}
+</code></pre><h4 id="합쳐-만들기"><a href="#합쳐-만들기" class="headerlink" title="합쳐 만들기"></a>합쳐 만들기</h4><p>이제 아까 작성한 Profile.js 를 결합하고 눌렀을 때 동작하는 코드를 만들어 보도록 하겠습니다.(콘솔에 이벤트만 먼저 찍어보도록 하겠습니다.)</p>
+<p>Editor.js 및 Editor.css 파일을 아래와 같이 작성해 보겠습니다.</p>
+<p>이제 Editor.js 파일을 App.js 파일에 컴포넌트로 완성을 해야 입력 폼이 완성이 된다고 볼 수 있습니다.<br>(소스에서 이미 확인하셨겠지만 props로 들어오는 값들이 있습니다.)</p>
+<p>App.js 파일은 다음과 같이 수정하겠습니다.</p>
+<p>변경된 소스를 잘 보셨으면 아시겠지만 Editor에 부모가 가진 메쏘드들을 전달하는 패턴을 쓸때 열거형</p>
+<pre><code>...
+</code></pre><p>을 사용했습니다. 자주 쓸 경우는 불필요한 리소스들까지도 연결 될 수 있으니 잘 확인해서 사용하시기 바랍니다</p>
+<p>이렇게까지 작업을 하면 다음과 같이 페이지가 뜨게 되고 콘솔 값을 확인해 볼 수 있습니다.</p>
+<p><img src="/images/1*yG6J8sQ95kuNSOZiViUshg.jpeg" alt="">이뻐요~</p>
+<p>다음은 콘솔 값이 아니라 간단한 리스트를 페이지에 찍어보고 클라우드 서버(firebase)에 저장하는 내용을 다뤄보도록 하겠습니다.</p>
+<p>이번엔 코드가 많아서 따라오기 힘드셨겠지만,</p>
+<p><a href="https://github.com/ehrudxo/standup/tree/day2" title="https://github.com/ehrudxo/standup/tree/day2" target="_blank" rel="external"><strong>ehrudxo/standup</strong><br>_standup project for newbi_github.com</a><a href="https://github.com/ehrudxo/standup/tree/day2" target="_blank" rel="external"></a></p>
+<p>day2 branch를 잘 참조 하시면 좋은 성과가 있을 거라고 생각됩니다.</p>
+<p><img src="/images/1*Df2WStETx1PSvDr_22r9eA.pn" alt="">겐지가 함께 하니깐요. 출처 : <a href="http://m.ruliweb.com/game/pc/84032/board/read/383" target="_blank" rel="external">http://m.ruliweb.com/game/pc/84032/board/read/383</a> (루리웹)</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/3af179d28f73" target="_blank" rel="external">October 22, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
   
     <article id="post-[2016-10-20 10:10:10]서버리스 아키텍처 소셜미디어 개발기 1편"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
@@ -294,104 +530,6 @@ export default App;
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-10-19 08:47:07]서버리스 아키텍처 소셜미디어 개발기 0편"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/10/19/[2016-10-19 08:47:07]서버리스 아키텍처 소셜미디어 개발기 0편/">서버리스 아키텍처 소셜미디어 개발기 0편</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/10/19/[2016-10-19 08:47:07]서버리스 아키텍처 소셜미디어 개발기 0편/" class="article-date">
-	  <time datetime="2016-10-18T23:47:07.000Z" itemprop="datePublished">10월 19, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>Firebase에 데이타를 저장하고</li>
-<li>소셜 미디어용 카드는 Embed.ly 를 이용해서 만들어</li>
-<li>github-page에 자동으로 배포하는</li>
-</ol>
-<p>100% 서버리스 아키텍쳐의 소셜 미디어를 만들어 보도록 하겠습니다.</p>
-<p>프레임워크는 react를 써 볼까 하고 있습니다.</p>
-<p>해당 내용은 진행하면서</p>
-<p><a href="https://github.com/ehrudxo/standup" title="https://github.com/ehrudxo/standup" target="_blank" rel="external"><strong>ehrudxo/standup</strong><br>_standup project for newbi_github.com</a><a href="https://github.com/ehrudxo/standup" target="_blank" rel="external"></a></p>
-<p>깃헙 프로젝트에 1,2,3,4,5,6,7 편을 branch를 만들면서 진행하도록 하겠습니다. 각각의 소스는 각 branch에서 확인하세요.</p>
-<p>최대한 자세한 내용을 적도록 할테니 따라만 오시면 소셜미디어 앱을 만들 수 있도록 하겠습니다.</p>
-<p><img src="/images/1*wTXc57Dp0jRgzDPE_iiLYg.png" alt=""></p>
-<h3 id="앱-이름-스탠드업"><a href="#앱-이름-스탠드업" class="headerlink" title="앱 이름 : 스탠드업!"></a><strong>앱 이름 : 스탠드업!</strong></h3><p><img src="/images/1*jVcZpT0H9NU0bd0LKL8w4A.png" alt="">stand up meeting</p>
-<h4 id="1-개요"><a href="#1-개요" class="headerlink" title="1. 개요"></a>1. 개요</h4><p>제가 일하고 있는 팀은 애자일 개발방법론을 사용하고 있습니다. 지금은 너무나도 많은 회사, 그 안에서도 많은 팀에서 애자일 개발 방법론을 가지고 개발을 하고 있죠?</p>
-<p>여러가지 애자일 개발 방법론 중에서도 단연코 가장 많이 사용되는 방법론은 스크럼 혹은 스탠드업입니다. 스크럼이라고 하면 굉장히 넓은 의미의 이터레이션까지 포함하시는 경우가 있으니 스탠드 업에만 국한해서 얘기를 하겠습니다.</p>
-<blockquote>
-<p>The stand-up has particular value in Agile software development processes, such as Scrum or Kanban, but can be utilized in context of any software-development methodology.</p>
-</blockquote>
-<p>출처 : <a href="https://en.wikipedia.org/wiki/Stand-up_meeting" target="_blank" rel="external">stand-up meeting</a>(미디어 위키)</p>
-<p>꼭 애자일이 아니더라도 소프트웨어 개발을 위해서는 종종 사용되는 방법이라고 하고 타임박싱은 5분에서 15분 정도를 합니다.</p>
-<p>나머지는 조금씩 다를 수 있겠지만, 10여명이 넘는 팀 전체 스탠드업에는 각 나눠진 작은 팀의 주제보다는 팀 전체를 위한 이슈를 이야기 하는데요. 머리를 말랑말랑하기 위해 간단한 IT 이야기를 할 수 있는 앱을 만들어 볼까 합니다.</p>
-<p><img src="/images/1*OgDA8okO4Yxo-Q0jFRuc0g.png" alt="">꼭 서서 할 필요는 없지만 앉아 있으면 끝나지 않는 회의가 많다!</p>
-<p>기왕이면 아침에 스마트폰으로 볼 수 있도록 모바일을 먼저 고려하는 것도 당연히 들어가야 합니다.</p>
-<h4 id="2-설계"><a href="#2-설계" class="headerlink" title="2. 설계"></a>2. 설계</h4><ul>
-<li><strong>페르소나</strong><br>이름 : 김개발</li>
-</ul>
-<p><img src="/images/1*jyaaYQ7fntJcm9fuagaZqw.png" alt="">으.. CSS…</p>
-<p>애자일 개발자 김개발 씨는 IT 트렌드에 무척이나 민감하다. 아침 스탠드 업 시간에 일간 보고만 하는 것이 매우 못마땅한데 기술적인 이야기를 같이 하면 좋겠다.</p>
-<ul>
-<li><strong>User Story</strong><blockquote>
-<p>1. 김개발은 아침 스탠드업 시간에 같이 이야기를 나눌 수 있는 주제를 위해 스탠드업이라는 웹 앱을 찾아간다. 이렇게 함으로써 사람들과 IT에 대한 주제로 커뮤니케이션을 할 수 있다.</p>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<p>2. 김개발이 사이트를 방문해서 자신이 어제 유심하게 읽은 글을 올릴 수 있다. 이렇게 하면 다른 사람들이 볼 수 있다.<br>* 에디터 창은 하나만 있고 거기서 글을 작성하고 업로드 하면 글이 외부 클라우드 공간에 저장이 된다.</p>
-<p>3. 김개발이 작성한 글이 목록으로 보여진다. 이렇게 함으로써 다른 사람들이 목록을 확인할 수 있다.<br>* 목록글은 해당IT 주제의 대표 이미지와 제목, 간단 요약등이 들어 있는 카드의 리스트 형태로 나열이 되어야 한다.</p>
-</blockquote>
-<p>유저스토리는 개발 과정 중에 변경이 일어날 것인데, 그런 과정도 중간 중간 보 언급하면서 넘어가겠습니다.</p>
-<h4 id="3-개발전-준비"><a href="#3-개발전-준비" class="headerlink" title="3. 개발전 준비"></a>3. 개발전 준비</h4><ul>
-<li>깃헙에 프로젝트 만들기</li>
-</ul>
-<p><img src="/images/1*nKzv8_G235YyfvmAQvI1DA.png" alt=""></p>
-<p>위와 같이 프로젝트를 만들어 줍니다. 물론 fork를 따는 방법도 있겠지만(그래주시면 일단은 감사! star도 한번 눌러주시면 더 감사!) 따라가는 입장에서는 만들어 보는 방법도 좋은 시도 입니다.</p>
-<p>만들고 나면 아래와 같이 설정창이 뜨게 됩니다.</p>
-<p><img src="/images/1*HZyx2-D12f2IiN-lP5jY6g.pn" alt=""></p>
-<ul>
-<li>README.md파일 만들기</li>
-</ul>
-<p>Readme 파일은 Art-of-readme 라는 내용을 참고하시면 더 좋을 거 같습니다.</p>
-<p><a href="https://techstory.shma.so/art-of-readme-cd19f86b0456" title="https://techstory.shma.so/art-of-readme-cd19f86b0456" target="_blank" rel="external"><strong>art-of-readme</strong><br>_깃헙에서 프로젝트를 사용할 때 리드미파일의 영향도는 얼마나 된다고 보시나요? 저의 경우는 Readme파일의 완성도를 보고 프로젝트의 완성도를 가늠하는데 아주 높은 확률로 Readme 와 프로젝트의 완성도는 비슷했…_techstory.shma.so</a><a href="https://techstory.shma.so/art-of-readme-cd19f86b0456" target="_blank" rel="external"></a></p>
-<p>의 형태와 같이 README.md 파일을 만들고 깃에 푸쉬하고 준비과정은 마무리 하도록 하겠습니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/63084e103f77" target="_blank" rel="external">October 18, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
@@ -443,6 +581,18 @@ export default App;
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2017/11/27/2017-11-27-11월-깃헙-트렌드/">[2017-11-27] 11월 깃헙 트렌드</a></h6>
+              <span>11월 27, 2017</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -504,18 +654,6 @@ export default App;
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/07/07/tech-trend-02/">(tech-trend) 구루들이 찾는다는 테크 트렌드 - 해커뉴스</a></h6>
-              <span>7월 7, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -548,7 +686,7 @@ export default App;
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -599,6 +737,9 @@ export default App;
 
 
     <!-- headerblur min height -->
+    
+      var headerblur = document.getElementById("header-blur");
+      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

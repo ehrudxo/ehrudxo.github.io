@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://keen.devpools.kr/"/>
-  <updated>2017-09-14T06:57:55.000Z</updated>
+  <updated>2017-11-27T03:52:22.079Z</updated>
   <id>http://keen.devpools.kr/</id>
   
   <author>
@@ -16,18 +16,89 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>[2017-11-27] 11월 깃헙 트렌드</title>
+    <link href="http://keen.devpools.kr/2017/11/27/2017-11-27-11%EC%9B%94-%EA%B9%83%ED%97%99-%ED%8A%B8%EB%A0%8C%EB%93%9C/"/>
+    <id>http://keen.devpools.kr/2017/11/27/2017-11-27-11월-깃헙-트렌드/</id>
+    <published>2017-11-27T03:42:39.000Z</published>
+    <updated>2017-11-27T03:52:22.079Z</updated>
+    
+    <content type="html"><![CDATA[<p>11월 한달간 깃헙에 올라온 프로젝트 중 많은 호응을 얻었던 프로젝트들을 정리해 보았다.<br>여전히 자바스크립트와 딥러닝 쪽 트렌드가 초 강세를 보이고 있다. awesome 시리즈 같은 curation 프로젝트도 여전히 최상위권에 존재하는 중.<br>(curation 프로젝트라 함은 좋은 팁과 사이트들을 집합해 놓을 것을 의미함)</p>
+<p>11월 한달(27일 기준) 가장 핫한 프로젝트 10선</p>
+<ul>
+<li><a href="https://github.com/k88hudson/git-flight-rules" target="_blank" rel="external">git-flight-rules</a></li>
+<li><a href="https://github.com/i0natan/nodebestpractices" target="_blank" rel="external">nodebestpractices</a></li>
+<li><a href="https://github.com/frappe/charts" target="_blank" rel="external">charts</a></li>
+<li><a href="https://github.com/thedaviddias/Front-End-Checklist" target="_blank" rel="external">Front-End-Checklist</a></li>
+<li><a href="https://github.com/tensorflow/tensorflow" target="_blank" rel="external">tensorflow</a> </li>
+<li><a href="https://github.com/RedditSota/state-of-the-art-result-for-machine-learning-problems" target="_blank" rel="external">state-of-the-art-result-for-machine-learning-problems</a></li>
+<li><a href="https://github.com/sindresorhus/awesome" target="_blank" rel="external">awesome</a></li>
+<li><a href="https://github.com/ant-design/ant-design-pro" target="_blank" rel="external">ant-design-pro</a></li>
+<li><a href="https://github.com/moment/luxon" target="_blank" rel="external">luxon</a> </li>
+<li><a href="https://github.com/vuejs/vue" target="_blank" rel="external">vue</a> </li>
+</ul>
+<h2 id="git-flight-rules"><a href="#git-flight-rules" class="headerlink" title="git-flight-rules"></a>git-flight-rules</h2><p>링크 : <a href="https://github.com/k88hudson/git-flight-rules" target="_blank" rel="external">git-flight-rules</a></p>
+<p>이 프로젝트는 작명도 훌륭하지만 더 훌륭한 것은 내용이다.<br>예를 들어서 “특정한 리비전으로 파일을 리버트 하고 싶을때에는 어떻게 하지?” 라는 질문 형태의 목록들을 가지고 있다.<br>(우리가 궁금해 하는 바로 그것! 느낌!)<br>예를 들어 질문 목록을 확인해 보면 아래 그림과 같다.</p>
+<p><img src="/images/2017112701.png" alt="질문 목록"></p>
+<p>해석해 보면 </p>
+<ul>
+<li>방금 내가 한 커밋은 뭐였지? </li>
+<li>커밋 메세지를 잘못 입력했을 때 </li>
+<li>커밋할 때 이메일과 이름을 잘못 썼다. </li>
+<li>커밋에서 파일 하나를 제외하고 싶을 때 </li>
+</ul>
+<p>등등으로 실제로 필요한 일상의 개발 노하우가 잘 나타나 있다<br>물론 한글이 아니라 좀 답답하기는 한데 누군가가 한글로 금방 번역해서 올려 줄 것으로 예상된다. </p>
+<h2 id="Node-js-Best-Practices"><a href="#Node-js-Best-Practices" class="headerlink" title="Node.js Best Practices"></a>Node.js Best Practices</h2><p>최근 팀에서 코드리뷰를 하다가 자바스크립트에서 세미콜론(;)을 붙이는것을 표준으로 할 것인지 아니면 붙이지 않는 것을 표준으로 할 것인지에 대한 논쟁이 일어났다.<br>당연히 최근에 나온것이 세미콜론이 없어도 해석할 수 있다이므로 없애는 것에 한표를 던졌는데, 지지를 철회해야 할 지도 모르겠다.</p>
+<p>링크 : <a href="https://github.com/trending?since=monthly" target="_blank" rel="external">Node.js Best Practice</a></p>
+<p><img src="/images/2017112702.png" alt="Node.js Best Practices"></p>
+<p>이 프로젝트는 Node.js 의 BP들을 잘 모아둔 curation 사이트다.<br>많은 사람들이 Node.js에서 신경써야할 아키텍처와 패턴을 잘 몰라하는데 이 프로젝트는 꽤나 많은 해답을 줄 수 있을 것으로 보인다.</p>
+<p>예를 들어 1.3의 “공용(common) 으로 사용하는 자바스크립트는 npm package로 만들어라” 부분 같은 것은 Node 패키지의 기본 컨셉을 담고 있고 2.1의 “에러 핸들링은 Async와 Await을 사용해라” 같은 부분도 최근 코드리뷰를 하면서 팀원들 끼리 옥신 각신 했던 부분인데 왜 그렇게 해야하는지도 잘 설명하고 있는것이 포인트.<br> (콜백 에러 핸들링이 콜백지옥으로 빠지는 것을 Async와 Await을 사용하면 잘 해결 되는 것을 이야기 하고 있음.) </p>
+<h2 id="프라페-charts"><a href="#프라페-charts" class="headerlink" title="프라페 charts"></a>프라페 charts</h2><p>chartJS 가 아님. 다른 프로젝트에 디펜던시가 없는 간단한 차트 프로젝트.<br>프로젝트를 찬찬히 들여다 보면 깃헙의 히트맵과 프로그레스 바를 만들어 둔 것이 인상적이다. 관련 블로그에도 해당 내용이 적혀 있을 정도.</p>
+<p>프로젝트 링크 : <a href="https://github.com/frappe/charts" target="_blank" rel="external">charts 깃헙</a><br>블로그 링크 : <a href="https://medium.com/@pratu16x7/so-we-decided-to-create-our-own-charts-a95cb5032c97" target="_blank" rel="external">so we decided to create our own charts</a> </p>
+<p><img src="https://github.com/frappe/charts/raw/master/.github/example.gif" alt="chart example"></p>
+<p>블로그를 읽다가 보면 c3.js를 사용하다가 스타을 새로 준다던지, 새로운 고객들의 요구에 응하려다가 자체적으로 개발하기로 한 과정들이 나와 있고 DOM을 조작하는데 SnapSVG 나 jquery 없이 만들기 위해 어떤 고려들을 했는지, CSS3 대신에 고려할 것드을 어떻게 확인했는지 등의 이야기가 재미있게 기술되어 있다.<br>( 블로그가 훨씬 흥미로운 내용이 많은 듯 .)</p>
+<p>jquery를 바닐라도 대체할 때 참조할 수 있는 <a href="http://youmightnotneedjquery.com/" target="_blank" rel="external">You might not need jQuery</a><br>라는 사이트도 참조할 만하다. ( 하지만 사이트를 보다보면 jquery 없이 어떻게 개발하지? 라는 생각이 들지도…)</p>
+<h2 id="luxon"><a href="#luxon" class="headerlink" title="luxon"></a>luxon</h2><p>타임스탬프 혹은 Date 라이브러리는 언제나 어렵다. 특히 MSA 같은 이기종간의 데이터를 주고 받는 요즘에 점점 중요해 지지만 매번 어렵기는 마찬가지.<br>이 문제를 해결하기 위한 가장 스마트한 방법은 그동안 모멘트 프로젝트 였는데, 오픈 소스 내부 컨트리뷰터 중에서 모멘트의 구조를 바꾸려고 하다가 프로젝트를 새로 만들었는데 사람들의 주목을 많이 받았습니다.</p>
+<p>링크1: <a href="https://github.com/moment/moment" target="_blank" rel="external">모멘트 프로젝트</a></p>
+<p>링크2: <a href="https://github.com/moment/luxon" target="_blank" rel="external">luxon 프로젝트</a></p>
+<p><img src="/images/2017112703.png" alt="luxon"></p>
+<p>몇가지 눈에 띄는 다른 점을 코드를 통해 살펴보자.</p>
+<p>가장 눈에 띄는 변화는 immutable 의 적용이다.<br>(immutable 이란 객체의 값이 변경되지 않는 것을 의미 하는 것으로 map 같은 객체가 변경이 되는 코드가 들어가면 리턴 값으로 새로운 객체를 반환해 주는 특징을 가지고 있다.)<br><a href="https://facebook.github.io/immutable-js/" target="_blank" rel="external">immutable.js</a> 가 가장 대표적인 라이브러리이다.</p>
+<p>일단 모멘트의 코드부터 살펴보자<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> m1 = moment();</div><div class="line"><span class="keyword">var</span> m2 = m1.add(<span class="number">1</span>, <span class="string">'hours'</span>);</div><div class="line">m1.valueOf() === m2.valueOf(); <span class="comment">//=&gt; true</span></div></pre></td></tr></table></figure></p>
+<p>1시간을 더 했지만 m1 과 m2의 값이 같다니.<br>immutable 을 적용한 luxon의 코드는 다음과 같다. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var d1 = DateTime.local();</div><div class="line">var d2 = d1.plus(&#123; hours: 1 &#125;);</div><div class="line">d1.valueOf() === d2.valueOf(); //=&gt; false</div></pre></td></tr></table></figure>
+<p>d2의 값이 변경되었다. 이렇게 함으로 의도적으로 다른 값을 할당하기 위한 객체의 deep copy를 수행할 필요가 없어진다.</p>
+<p>그 외의 주요 변화는 다음과 같다.</p>
+<ol>
+<li>월(Month)의 인덱스가 1부터 시작을 한다.(Moment 와 네이티브 자바스크립트 Date 는 0부터)</li>
+<li>로칼라이제이션과 타임존이 네이티브 API로 변경된다. (그 전에는 라이브러리에 포함되어 있었음.)</li>
+<li>Duration과 Interval 타입을 전부 가진다.</li>
+</ol>
+<p>참고 : <a href="https://moment.github.io/luxon/docs/manual/faq/moment.html" target="_blank" rel="external">모멘트 개발자가 알아둬야할 부분.</a></p>
+<h2 id="맺으며"><a href="#맺으며" class="headerlink" title="맺으며"></a>맺으며</h2><p>이번에 커버 되지는 않았지만 딥러닝쪽  tensorflow 와 state of art 시리즈를 볼 때 지속적으로 딥러닝 프레임워크 쪽은 들여다 볼 필요가 있을 것으로 생각이 들고 여전히 프론트 엔드쪽은 강세인데 vue.js 가 깃헙 프로젝트의 순위도 점점 평정해 가는 느낌이 강하다. 추세선으로는 react 를 조만간 뛰어넘을 기세로 보인다. 그리고 현장에서는 이미 vue가 통일을 하는 분위기로 보인다. 아직은 중요한 프로젝트들은  react로 의사 결정이 나지만 내년 하반기에는 바뀌지 않을까?</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;11월 한달간 깃헙에 올라온 프로젝트 중 많은 호응을 얻었던 프로젝트들을 정리해 보았다.&lt;br&gt;여전히 자바스크립트와 딥러닝 쪽 트렌드가 초 강세를 보이고 있다. awesome 시리즈 같은 curation 프로젝트도 여전히 최상위권에 존재하는 중.
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</title>
     <link href="http://keen.devpools.kr/2017/09/14/gitjenkinstip/"/>
     <id>http://keen.devpools.kr/2017/09/14/gitjenkinstip/</id>
     <published>2017-09-14T04:31:23.000Z</published>
-    <updated>2017-09-14T06:57:55.000Z</updated>
+    <updated>2017-09-14T07:10:43.000Z</updated>
     
     <content type="html"><![CDATA[<p>깃랩같은 좋은 툴은 언제나 파워풀하지만, 설치가 쉽지않다. 그래서 깃랩을 설정하기가 어려운 부분은 도커가 최근에는 대신하고 있다.<br>그런데, 도커로 설치를 하다보면 CI, CD 환경을 꾸미는 것은 어떻게 해야할지 감이 오지 않을 때가 많다.</p>
 <p>도커로 깃랩을 설치하는 것과 관련된 글은 검색을 하면 수십개가 나오고, 젠킨스와 깃랩을 연동하는 부분도 굉장히 많이 나오지만 도커로 설치된 깃랩과 젠킨스 연동을 위한 중요한 링크가 빠져 있다.</p>
 <p>중요한 두가지 설정 포인트가 필요하다.</p>
 <h3 id="1-ssh-포트-변경된-경우-git-연결"><a href="#1-ssh-포트-변경된-경우-git-연결" class="headerlink" title="1. ssh 포트 변경된 경우 git 연결"></a>1. ssh 포트 변경된 경우 git 연결</h3><p>~/.ssh/config 파일을 만든다.<br>ServerName, UserName, Port 은 프로젝트에 맞춰 준다.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Host &#123;ServerName&#125;</div><div class="line">        User &#123;UserName&#125;</div><div class="line">        Port &#123;Port&#125;</div></pre></td></tr></table></figure></p>
 <p>이후 git 명령어로 프로젝트를 잘 가져오는지 확인하자.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$git</span> <span class="built_in">clone</span> ssh://git@server:[port]/url </div><div class="line">`</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$git</span> <span class="built_in">clone</span> ssh://git@server:[port]/url</div></pre></td></tr></table></figure>
 <h3 id="2-git-연결-주소-설정"><a href="#2-git-연결-주소-설정" class="headerlink" title="2. git 연결 주소 설정"></a>2. git 연결 주소 설정</h3><p>참고로, 퍼블릭키와 프라이빗 키는 이미 잘 설정되어 있을 거라는 전제하에 얘기한다.</p>
 <p>링크 : <a href="http://egloos.zum.com/mcchae/v/11246199" target="_blank" rel="external">gitlab과 Jenkins연동</a></p>
 <p>위 링크에 대해서 URL을 설정하는 부분만 아래와 같이 바꾸면 잘 해결되는 것을 확인할 수 있다.</p>
@@ -958,56 +1029,6 @@
 &lt;p&gt;&lt;img src=&quot;/images/1*hELtmVbDlk5hPE_O7QjN8A.jpe&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;인문의 바다에서 한번 우리 헤엄쳐 봅시다.&lt;/p&gt;
 &lt;p&gt;일단은 지
-    
-    </summary>
-    
-    
-      <category term="github, github-trend, tech-trend" scheme="http://keen.devpools.kr/tags/github-github-trend-tech-trend/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ESLint with WebStorm</title>
-    <link href="http://keen.devpools.kr/2017/03/05/%5B2017-03-05%2015:10:19%5DESLint%20with%20WebStorm/"/>
-    <id>http://keen.devpools.kr/2017/03/05/[2017-03-05 15:10:19]ESLint with WebStorm/</id>
-    <published>2017-03-05T06:10:19.000Z</published>
-    <updated>2017-09-04T09:17:09.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>원본 투고 글 : <a href="http://devpools.kr/2017/02/16/javascript-eslint-webstorm/" target="_blank" rel="external">http://devpools.kr/2017/02/16/javascript-eslint-webstorm/</a></p>
-<p>IntelliJ 의 웹 버전인 WebStorm을 사용할 때 ESLint를 사용하는 방법을 알아보겠습니다. 프로젝트에도 적용할 수 있겠지만 에디터에서 자동으로 문제가 있는 (혹은 버그를 생산하는) 코드를 미리 찾아 볼 수 있습니다.</p>
-<h3 id="ESLint"><a href="#ESLint" class="headerlink" title="ESLint"></a>ESLint</h3><p>“Linting”이라는 행위는 버그가 날 수 있을 만한 코드를 찾아서 체크를 해 주는일을 의미합니다.</p>
-<blockquote>
-<p>In <a href="https://en.wikipedia.org/wiki/Computer_programming" title="Computer programming" target="_blank" rel="external">computer programming</a>, <strong>lint</strong> is a Unix utility that flags some <a href="https://en.wikipedia.org/wiki/C_%28programming_language%29#Language_tools" title="C (programming language)" target="_blank" rel="external">suspicious and non-portable constructs</a> (likely to be bugs) in <a href="https://en.wikipedia.org/wiki/C_%28programming_language%29" title="C (programming language)" target="_blank" rel="external">C language</a><a href="https://en.wikipedia.org/wiki/Source_code" title="Source code" target="_blank" rel="external">source code</a>; generically, lint or a <strong>linter</strong> is any tool that flags suspicious usage in software written in any <a href="https://en.wikipedia.org/wiki/Computer_language" title="Computer language" target="_blank" rel="external">computer language</a>. The term <strong>lint-like behavior</strong> is sometimes applied to the process of flagging suspicious language usage. Lint-like tools generally perform <a href="https://en.wikipedia.org/wiki/Static_code_analysis" title="Static code analysis" target="_blank" rel="external">static analysis</a> of source code. — 위키피디아 <a href="https://en.wikipedia.org/wiki/Lint_%28software%29" target="_blank" rel="external">Lint</a></p>
-</blockquote>
-<p>JavaScript 에서 이 Lint라는 의미를 처음 얘기한 사람은 Douglas crockford 였고 그는 JsLint라는 툴을 만들어 냅니다. JavaScript Definite Guide 같은 책에서도 내용을 언급하고 있습니다.</p>
-<p><a href="http://www.jslint.com/" title="http://www.jslint.com/" target="_blank" rel="external"><strong>JSLint: The JavaScript Code Quality Tool</strong><br>_JSLint, The JavaScript Code Quality Tool. This file allows JSLint to be run from a web browser. It can accept a source…_www.jslint.com</a><a href="http://www.jslint.com/" target="_blank" rel="external"></a></p>
-<p>하지만 최근의 대부분의 JavaScript 커뮤니티에서 사용하는 Lint 툴은 ESLint 툴입니다.</p>
-<p>Nicholas Jakas에 의해 2013년에 나온 이 툴은 현재 여러 툴들에서 플러그인으로 사용되고 있습니다.</p>
-<p><a href="http://eslint.org/" title="http://eslint.org/" target="_blank" rel="external"><strong>ESLint - Pluggable JavaScript linter</strong><br>_A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code…_eslint.org</a><a href="http://eslint.org/" target="_blank" rel="external"></a></p>
-<p>“JSX” 지원하는 것에 대해서 언급이 첫페이지에 있습니다. React 와 JSX는 다르다고 하는군요. 아무래도 Pluggable한 아키텍처로 이루어져 있기에 오리지날인 JSLint에 비해 많이 쓰이는 거라고 보여집니다.</p>
-<h3 id="webstorm"><a href="#webstorm" class="headerlink" title="webstorm"></a>webstorm</h3><p>웹스톰은 IntelliJ를 만든 Jetbrains에서 만든 웹 개발자용 IDE 입니다. 이클립스가 약간은 범용에 가깝다고 하면 이 웹 스톰은 JavaScript 최근 트렌드 및 개발 환경에 대한 이해가 큰 IDE 입니다. Node 모듈에 대한 이해도 가지고 있고 npm 을 기본적으로 작동시킬 수 있습니다. 유료 IDE기는 하지만 IntelliJ에 적응된 개발자들은 이webstorm의 여러가지 기능에 대해서 많이 만족하고 쓰고 있습니다. 최근 팝잇에 올라온 IntelliJ에 관한 글을 읽어보면 많은 인사이트들을 얻을 수 있습니다.</p>
-<p><a href="http://www.popit.kr/%EC%9D%B8%ED%85%94%EB%A6%ACj-%ED%99%9C%EC%9A%A9-%EA%BF%80%ED%8C%81-42%EA%B0%80%EC%A7%80-%EC%A0%95%EB%A6%AC/" title="http://www.popit.kr/%EC%9D%B8%ED%85%94%EB%A6%ACj-%ED%99%9C%EC%9A%A9-%EA%BF%80%ED%8C%81-42%EA%B0%80%EC%A7%80-%EC%A0%95%EB%A6%AC/" target="_blank" rel="external"><strong>인텔리J 활용 꿀팁 42가지 정리 | Popit</strong><br>_인텔리J가 유료 IDE이다 보니 사용하면서 기능들을 최대한 활용하지 않는다면 손해라는 생각이 들었습니다. 그래서 인터넷을 찾아보다 발견한 인텔리J 42가지 팁 소개 동영상를 보고 정리한 글입니다. 해당 동영상은 …_www.popit.kr</a><a href="http://www.popit.kr/%EC%9D%B8%ED%85%94%EB%A6%ACj-%ED%99%9C%EC%9A%A9-%EA%BF%80%ED%8C%81-42%EA%B0%80%EC%A7%80-%EC%A0%95%EB%A6%AC/" target="_blank" rel="external"></a></p>
-<h3 id="WebStrom-ESLint"><a href="#WebStrom-ESLint" class="headerlink" title="WebStrom + ESLint"></a>WebStrom + ESLint</h3><p>이 WebStorm에서 ESLint를 설정하는 방법은 다음과 같습니다.</p>
-<p>preference -> Languges &amp; Framework -> ESLint</p>
-<p><img src="/images/0*qBlmLC3cTz8oJ-Jf." alt=""></p>
-<p>두가지를 셋팅해 주셔야 하는데 하나는 Node 를 지정하는 것이고 또 다른 하나는 ESLint 폴더를 지정해 주는 것입니다. Node 는 각자의 환경을 정하면 될 것입니다.</p>
-<p>ESLint 폴더를 지정할 때는</p>
-<pre><code>$ npm list -g|more
-</code></pre><p>옵션을 통해서 어디에 설치를 했는지 확인해 주시면 됩니다.</p>
-<p>확인이 되셨으면</p>
-<pre><code>`$ npm install -g eslint`
-</code></pre><p><a href="https://github.com/eslint/eslint" title="https://github.com/eslint/eslint" target="_blank" rel="external"><strong>eslint/eslint</strong><br>_eslint - A fully pluggable tool for identifying and reporting on patterns in JavaScript._github.com</a><a href="https://github.com/eslint/eslint" target="_blank" rel="external"></a></p>
-<p>이후 몇가지 모듈을 더 설치해야 합니다.</p>
-<pre><code>$npm install eslint-plugin-react eslint-plugin-jsx-a11y eslint-plugin-import -g
-</code></pre><p>실행해 주고 나서 WebStorm을 다시 작동시키면 아래와 같은 좋은 예를 볼 수 있습니다.</p>
-<p><img src="/images/0*IJ_x1kEFxnkgv5PQ" alt=""></p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/bf9d418993b2" target="_blank" rel="external">March 5, 2017</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;원본 투고 글 : &lt;a href=&quot;http://devpools.kr/2017/02/16/javascript-eslint-webstorm/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://devpools.kr/2017/02/1
     
     </summary>
     

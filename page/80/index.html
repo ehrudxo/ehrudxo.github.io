@@ -55,10 +55,32 @@
 
 
   
+  
+  <div class="site-header-image">
+    <img id="originBg" width="100%" alt="Hike News" src="">
+  </div>
+
+  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
+    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
+  </div>
+
+  <script>
+        var imgUrls = "images/storm.png".split(",");
+        var random = Math.floor((Math.random() * imgUrls.length ));
+        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+          document.getElementById("originBg").src=imgUrls[random];
+          document.getElementById("blurBg").src=imgUrls[random];
+        } else {
+          document.getElementById("originBg").src='/' + imgUrls[random];
+          document.getElementById("blurBg").src='/' + imgUrls[random];
+        }
+    </script>
+
+
 
 
 <header id="allheader" class="site-header" role="banner" 
-   >
+   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -101,6 +123,82 @@
         
           <section id="main">
   
+    <article id="post-[2016-03-31 09:31:46]React-Native-Desktop"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/03/31/[2016-03-31 09:31:46]React-Native-Desktop/">React-Native-Desktop</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/03/31/[2016-03-31 09:31:46]React-Native-Desktop/" class="article-date">
+	  <time datetime="2016-03-31T00:31:46.000Z" itemprop="datePublished">3월 31, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/1*Re3jc57_Njm2t1c1eDgVzA.png" alt=""></p>
+<p>이번엔 또 뭐야.라고 하실지 모르겠습니다. React는 뭐고 React Native는 뭐고 이번엔 또 React Native Desktop 이라니…</p>
+<p>2016/03/31 Best project (2640 ★)</p>
+<p><a href="https://github.com/ptmt/react-native-desktop" title="https://github.com/ptmt/react-native-desktop" target="_blank" rel="external"><strong>ptmt/react-native-desktop</strong><br>_react-native-desktop - React Native for OS X_github.com</a><a href="https://github.com/ptmt/react-native-desktop" target="_blank" rel="external"></a></p>
+<p>하루에 2640 스타라니… 덜덜.</p>
+<p>그래서 한번 정리해 보겠습니다.</p>
+<p><img src="/images/1*n_SHE9JAr0Ja3K-LjI0xEA.png" alt=""></p>
+<p>이번에 나온 React-Native-Desktop은 OSX의 Native컴포넌트들을 만듭니다.</p>
+<p>네이밍은 이렇게 정리가 되는 거 같습니다. Native 가 붙는 것은 iOS나 Android, OSX등의 바이너리로 컴파일이 되는 것으로. Desktop은 OSX, Windows 환경으로..</p>
+<p>React-Desktop은 React Web 컴포넌트를 각 Native 처럼 스타일을 바꿔서 Desktop 애플리케이션을 쓰는 것처럼 만들어 줬다면 ( Electron이 가능케함) React-Native-Desktop은 Facebook의 React-Native가 Android 와 iOS의 Native 컴포넌트를 다루는 방식을 따라 갔네요.</p>
+<h3 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h3><pre><code>npm install react-native-desktop-cli -g  
+react-native-desktop init MyProject  
+cd MyProject  
+open osx/MyProject.xcodeproj
+</code></pre><p>설치 방법 조차도 React-Native와 흡사 동일합니다.</p>
+<p>실행</p>
+<p>처음 실행시켜 보면 만들어 내는 프로젝트 형태도 같습니다.</p>
+<p><img src="/images/1*uq-5LCHQaCdmuG6sSC6YdA.png" alt=""></p>
+<p>Welcome to React Native Desktop!을 편집해서 프로젝트를 돌려 보도록 하겠습니다.</p>
+<p>React packager가 일단 똑같이 뜹니다.(React-native 처럼)</p>
+<p><img src="/images/1*DbBePfyMV0cuTEi7SIDTiQ.png" alt=""></p>
+<p>Build Successful이 뜬 다음에 Localhost port를 할당하는 메세지가 완전 재미있게 올라옵니다.</p>
+<p><img src="/images/1*E2ylGSDP8qZS3l16ovcPZQ.png" alt="">맨 아래 보이시나요?</p>
+<p>정말 이렇게 뜰 줄은 몰랐는데, 재치가 번뜩이네요.</p>
+<p>그 이후에</p>
+<p><img src="/images/1*wYyhkz9mwnCaziNf59AOJQ.png" alt=""></p>
+<p>와 같은 메세지가 뜹니다.</p>
+<h3 id="인사이트"><a href="#인사이트" class="headerlink" title="인사이트"></a><strong>인사이트</strong></h3><p>이제 React 문법만 알면 Native 애플리케이션을 정말 손쉽게 만들 수 있겠다는 생각이 듭니다. Android 와 iOS와 같은 컴포넌트 이름을 공유하는 React-Native 의 장점을 생각하면 데스크탑 애플리케이션 개발도 이제는 개발 속도가 정말 빨라지겠네요.</p>
+<p>남은건 이제 windows Native 인가요? 흠. 요즘 MS 행보를 봐서는 MS에서 만들어 줄지도..</p>
+<p><img src="/images/1*hn_9XnUznCXDjvtBmvyENg.pn" alt="">과연?</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/c90acdcdb529" target="_blank" rel="external">March 31, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-[2016-03-30 09:15:11]Spectacle-code-slide"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -137,62 +235,6 @@
 <p>FormidableLabs는 Radium같은 inline style 프레임워크로도 스타를 많이 받았네요. 뭐 어쨌든, 개발자들은 왠만해서는 PPT로 발표를 하는 걸 꺼려하는데 거기에 유용한 프레임워크입니다.</p>
 <p>코드 스니펫으로 개발한 내용을 설명하고 나눌때에 유용한 프로젝트입니다!</p>
 <p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/b75a0e4b123d" target="_blank" rel="external">March 30, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-[2016-03-29 06:47:07]pytrader"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/03/29/[2016-03-29 06:47:07]pytrader/">pytrader</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/03/29/[2016-03-29 06:47:07]pytrader/" class="article-date">
-	  <time datetime="2016-03-28T21:47:07.000Z" itemprop="datePublished">3월 29, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/1*70_q8MR8qiLonVrWTv1Ijw.jpe" alt=""></p>
-<p>machine learning을 통해 주식을 하게 되면 어떻게 될까? 다들 상상해 보셨을 겁니다. 아마 저보다는 잘 할테죠. 이런 생각을 저만 한건 아니었나 봅니다. 깃헙에 머신 러닝 주식 트레이딩 프로젝트가 나왔습니다.</p>
-<p><a href="https://github.com/owocki/pytrader" title="https://github.com/owocki/pytrader" target="_blank" rel="external"><strong>owocki/pytrader</strong><br>_pytrader - cryptocurrency trading robot_github.com</a><a href="https://github.com/owocki/pytrader" target="_blank" rel="external"></a></p>
-<p>python 기반으로 되어 있구요.</p>
-<p>pybrain 과 sklearn 을 가지고 만들었다고 하는군요.</p>
-<p>cryptocurrency 라고 하니 실제 주식을 트레이딩 하는 봇은 아닌 모야입니다. 그러나 주식을 예측하고 때론 사고 판다고 하니 놀랍습니다.</p>
-<p>2016년 1월에 재미로 만들고는 정말로 재미(?)를 좀 봤다고 하는 개발자의 코멘트도 깨알 같군요.</p>
-<p><a href="https://poloniex.com/" title="https://poloniex.com/" target="_blank" rel="external"><strong>Poloniex - Bitcoin/Cryptocurrency Exchange</strong><br>_Edit description_poloniex.com</a><a href="https://poloniex.com/" target="_blank" rel="external"></a></p>
-<p>비트코인으로 거래를 했다고 하니, 더 흥미가 당기는데, fee 에 대한 변화가 알고리즘을 설계하는데 영향을 끼쳤다고 하네요.</p>
-<p>참 놀라운 세상입니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/570cb941938d" target="_blank" rel="external">March 28, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -271,6 +313,18 @@
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2017/11/27/2017-11-27-11월-깃헙-트렌드/">[2017-11-27] 11월 깃헙 트렌드</a></h6>
+              <span>11월 27, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a></h6>
               <span>9월 14, 2017</span>
             </div>
@@ -325,18 +379,6 @@
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/07/07/tech-trend-02/">(tech-trend) 구루들이 찾는다는 테크 트렌드 - 해커뉴스</a></h6>
-              <span>7월 7, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -369,7 +411,7 @@
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -420,6 +462,9 @@
 
 
     <!-- headerblur min height -->
+    
+      var headerblur = document.getElementById("header-blur");
+      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

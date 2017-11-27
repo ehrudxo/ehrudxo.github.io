@@ -55,10 +55,32 @@
 
 
   
+  
+  <div class="site-header-image">
+    <img id="originBg" width="100%" alt="Hike News" src="">
+  </div>
+
+  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
+    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
+  </div>
+
+  <script>
+        var imgUrls = "images/storm.png".split(",");
+        var random = Math.floor((Math.random() * imgUrls.length ));
+        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+          document.getElementById("originBg").src=imgUrls[random];
+          document.getElementById("blurBg").src=imgUrls[random];
+        } else {
+          document.getElementById("originBg").src='/' + imgUrls[random];
+          document.getElementById("blurBg").src='/' + imgUrls[random];
+        }
+    </script>
+
+
 
 
 <header id="allheader" class="site-header" role="banner" 
-   >
+   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -100,6 +122,81 @@
       <div id="content" class="outer">
         
           <section id="main">
+  
+    <article id="post-[2016-05-12 23:15:00]Scala-native"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/05/12/[2016-05-12 23:15:00]Scala-native/">Scala-native</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/05/12/[2016-05-12 23:15:00]Scala-native/" class="article-date">
+	  <time datetime="2016-05-12T14:15:00.000Z" itemprop="datePublished">5월 12, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/1*jTIfe8oR64pXF33JOpAu-g.png" alt="">클래시 로얄 아이콘은 민망합니다.</p>
+<p>밤새 핫한 프로젝트들이 많이 올라왔습니다. 1등은 facebook의 프로젝트가 했을에도 불구하고 오늘은 약간의 사명감을 가지고 scala-native를 리뷰하겠습니다.</p>
+<p>2016/05/12 Editor’s choice</p>
+<p><a href="https://github.com/scala-native/scala-native" title="https://github.com/scala-native/scala-native" target="_blank" rel="external"><strong>scala-native/scala-native</strong><br>_scala-native - Your favourite language gets closer to bare metal._github.com</a><a href="https://github.com/scala-native/scala-native" target="_blank" rel="external"></a></p>
+<p>LLVM 기반으로 컴파일 하기 때문에 엄청나게 빠르다! 라고 강조하고 있습니다. 이제 JIT를 쓰지 않는다는 것은 JVM안녕으로 보면 되겠네요.</p>
+<p><img src="/images/1*d-U8OcP90goslw8Ai3J7KA.png" alt=""></p>
+<p>JVM은 모두가 공유하되 여러가지 언어가 올라갈 것이라던 사람들에게 어떻게 보면 낯선 이야기 이지만 성능을 위한 결정이니 좋다고 봅니다.</p>
+<p>그리고 실제 소스는 여러 가지 이런 생각들을 많이 의식했는지 Comparison to JVM이 많이 나옵니다.</p>
+<hr>
+<h4 id="설치하기"><a href="#설치하기" class="headerlink" title="설치하기"></a>설치하기</h4><p>아직 sbt-native-cli 뭐 이런 녀석이 존재하는 것은 아닌듯 싶습니다.</p>
+<p>Mac을 새로 구입해서(데헷) 누구나 하는</p>
+<pre><code>$brew install sbt
+</code></pre><p>로 scala build tool을 다운 받습니다.</p>
+<p>왜냐 하면</p>
+<pre><code>$git clone [https://github.com/scala-native/scala-native.git][anchor2]
+</code></pre><p>받아 보시면, sbt 로 빌드파일이 짜여져 있기 때문입니다.</p>
+<p>sbt 를 실행하고</p>
+<p><img src="/images/1*rzVOQcWSWBj1TDT5bZPp9g.png" alt="">여기서 10분을 기다릴 줄이야</p>
+<p>디펜던시를 모두 성공적으로 설치하고 다시 빌드를 돌리면</p>
+<p><img src="/images/1*tabaRG2x7-gI4_G4ipTijQ.png" alt="">이야…뭐지? 어쩌라고 어.</p>
+<p>이런 썰렁한 콘솔이 나옵니다.</p>
+<h4 id="아키텍쳐"><a href="#아키텍쳐" class="headerlink" title="아키텍쳐"></a>아키텍쳐</h4><p>scala-native 아키텍처 컨셉은 다음과 같습니다.</p>
+<p><img src="/images/1*RFj19vLUIhc99vZAjSgNew.png" alt="">아 간단하다</p>
+<p>스칼라 파일을 입력으로 받아서 ll파일이 나온다니. 요?</p>
+<p>관련 PT는 아래 주소를 찾아가면 나옵니다.</p>
+<p><a href="https://github.com/densh/talks/blob/517b20c30dd4aaf390785039cdd002f623eaa91e/2016-05-11-scala-goes-native.pdf" target="_blank" rel="external">https://github.com/densh/talks/blob/517b20c30dd4aaf390785039cdd002f623eaa91e/2016-05-11-scala-goes-native.pdf</a></p>
+<p><img src="/images/1*JkSBgNt2LXWza96dyFyzcg.pn" alt=""></p>
+<p>프론트엔드 관련 내용도 들어 있는데 감흥이 느껴지는 슬라이드는 아니네요.</p>
+<p>아직은 조금 두고봐야 하는 상황이라는 생각이 듭니다. 뭔가 훌륭하게 비교해 볼 수 있는 벤치마크도 없지만 많은 개발자들이 더 훌륭한 상황들을 만들어 낼 것 같습니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/7868234d5bd7" target="_blank" rel="external">May 12, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
   
     <article id="post-[2016-05-11 07:31:34]gitsome"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
@@ -144,110 +241,6 @@
 <p>참 신통방통한 녀석이네요.</p>
 <p>그 외에도 trending 서비스도 제공하는 등 여러가지 많은 기능들을 포함하고 있습니다.</p>
 <p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/f845b0b2c8de" target="_blank" rel="external">May 10, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-[2016-05-10 07:04:14]flexbox-layout"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/05/10/[2016-05-10 07:04:14]flexbox-layout/">flexbox-layout</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/05/10/[2016-05-10 07:04:14]flexbox-layout/" class="article-date">
-	  <time datetime="2016-05-09T22:04:14.000Z" itemprop="datePublished">5월 10, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/1*DF0o_mcPdk5xkwudVaeVXg.png" alt="">layout 이쁘쥬?</p>
-<p>flexbox 는 CSS의 새로운 Spec이 될 확률이 상당히 높은 레이아웃을 정의하는 방법입니다. 현재는 Draft를 지나 Candidate Recommendation 상태에 있습니다. react native 의 경우는 이 flexbox 로 컴포넌트들이 배치되게 되어 있습니다. 구글이 Android에서도 flexbox를 통해서 컴포넌트를 배치할 수 있도록 했습니다.</p>
-<p>2016/05/10 Best Project(650✰)</p>
-<p><a href="https://github.com/google/flexbox-layout" title="https://github.com/google/flexbox-layout" target="_blank" rel="external"><strong>google/flexbox-layout</strong><br>_flexbox-layout - Flexbox for Android_github.com</a><a href="https://github.com/google/flexbox-layout" target="_blank" rel="external"></a></p>
-<hr>
-<h4 id="설치하기"><a href="#설치하기" class="headerlink" title="설치하기"></a>설치하기</h4><p>build.gradle 파일에 dependency를 아래와 같이 정의하고 layout.xml에서 사용하면 됩니다.</p>
-<pre><code>dependencies {  
-compile &apos;com.google.android:flexbox:0.1.1&apos;  
-}
-</code></pre><p>layout xml파일은 다음과 같은 형태를 띕니다.</p>
-<pre><code>&lt;com.google.android.flexbox.FlexboxLayout  
-xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;  
-xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;  
-android:layout\_width=&quot;match\_parent&quot;  
-android:layout\_height=&quot;match\_parent&quot;  
-app:flexWrap=&quot;wrap&quot;  
-app:alignItems=&quot;stretch&quot;  
-app:alignContent=&quot;stretch&quot; \&gt;  
-
-&lt;TextView  
-android:id=&quot;@+id/textview1&quot;  
-android:layout\_width=&quot;120dp&quot;  
-android:layout\_height=&quot;80dp&quot;  
-app:layout\_flexBasisPercent=&quot;50%&quot;  
-/\&gt;  
-
-&lt;TextView  
-android:id=&quot;@+id/textview2&quot;  
-android:layout\_width=&quot;80dp&quot;  
-android:layout\_height=&quot;80dp&quot;  
-app:layout\_alignSelf=&quot;center&quot;  
-/\&gt;  
-
-&lt;TextView  
-android:id=&quot;@+id/textview3&quot;  
-android:layout\_width=&quot;160dp&quot;  
-android:layout\_height=&quot;80dp&quot;  
-app:layout\_alignSelf=&quot;flex\_end&quot;  
-/\&gt;  
-&lt;/com.google.android.flexbox.FlexboxLayout\&gt;
-</code></pre><hr>
-<h4 id="실행해보기"><a href="#실행해보기" class="headerlink" title="실행해보기"></a>실행해보기</h4><p>IDE를 켜고 activity_main.xml을 켜면 다음과 같은 화면이 나옵니다.</p>
-<p><img src="/images/1*mh_quvYLfJn5DRrktv0W5g.png" alt=""></p>
-<p>새로운 에뮬레이터 qemu 로 실행을 해 보겠습니다.</p>
-<p>일단 flex direction에 대해서 확인해 볼 수 있는 예제입니다.</p>
-<p><img src="/images/1*wIJ5Bd86TdZuQLT-6whb-g.gi" alt="">qemu 개좋아염</p>
-<p>flexbox 자체에 대해서도 손쉽게 이해할 수 있는 예제들이군요.</p>
-<hr>
-<h4 id="Flexbox-에-대해서"><a href="#Flexbox-에-대해서" class="headerlink" title="Flexbox 에 대해서"></a>Flexbox 에 대해서</h4><p>flexbox 개요에 대해서는 서문에 약간 언급을 했구요. spec 은 아래에서 찾아 볼 수 있습니다.</p>
-<p><a href="https://www.w3.org/TR/css-flexbox-1/" title="https://www.w3.org/TR/css-flexbox-1/" target="_blank" rel="external"><strong>CSS Flexible Box Layout Module Level 1</strong><br>_This section is not normative. CSS 2.1 defined four layout modes - algorithms which determine the size and position of…_www.w3.org</a><a href="https://www.w3.org/TR/css-flexbox-1/" target="_blank" rel="external"></a></p>
-<p>정말 간단한 한글 블로깅은 아래에서 찾아볼 수 있습니다.</p>
-<p><a href="http://ko.learnlayout.com/flexbox.html" title="http://ko.learnlayout.com/flexbox.html" target="_blank" rel="external"><strong>CSS - flexbox</strong><br>_새로운 flexbox 레이아웃 모드는 우리가 CSS로 레이아웃을 잡는 방법을 재정의할 기세입니다. 아쉽게도 flexbox 규격이 최근에 상당히 많이 바뀌었기 때문에 각 브라우저마다 다른 식으로 구현돼 있습니다. …_ko.learnlayout.com</a><a href="http://ko.learnlayout.com/flexbox.html" target="_blank" rel="external"></a></p>
-<p>하지만 웹 관점에서 보자면 가장 이해하기 좋은 문서는 이 포스트 입니다.</p>
-<p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" title="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="external"><strong>A Complete Guide to Flexbox | CSS-Tricks</strong><br>_The Flexbox Layout (Flexible Box) module (currently a W3C Last Call Working Draft) aims at providing a more efficient…_css-tricks.com</a><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="external"></a></p>
-<h4 id="사용법이-다-달라요"><a href="#사용법이-다-달라요" class="headerlink" title="사용법이 다 달라요!"></a>사용법이 다 달라요!</h4><p>네, 아직은 javascript, react-native, android 에서 약간씩은 다르게 사용되고 있습니다. 하지만 기본적인 컨셉(flex-direction,wrap) 등은 같기 때문에 빨리 적응하면 할수록 더 좋을 듯 싶습니다.</p>
-<h4 id="이거-꼭-배워야-하나요"><a href="#이거-꼭-배워야-하나요" class="headerlink" title="이거 꼭 배워야 하나요?"></a>이거 꼭 배워야 하나요?</h4><p>지금 당장은 아닐 수 있습니다. 하지만 web component들이 일반화 되는 시점이 되면 대부분의 layout들은 웹과 native 모두 저렇게 바뀌지 않을까요?</p>
-<p>swift의 경우도 github에 개인 프로젝트이기는 하지만 flexbox관련 프로젝트가 올라와 있네요</p>
-<p><a href="https://github.com/joshaber/SwiftBox" title="https://github.com/joshaber/SwiftBox" target="_blank" rel="external"><strong>joshaber/SwiftBox</strong><br>_SwiftBox - Flexbox in Swift, using Facebook’s css-layout._github.com</a><a href="https://github.com/joshaber/SwiftBox" target="_blank" rel="external"></a></p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/816c012a3a48" target="_blank" rel="external">May 9, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -326,6 +319,18 @@ app:layout\_alignSelf=&quot;flex\_end&quot;
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2017/11/27/2017-11-27-11월-깃헙-트렌드/">[2017-11-27] 11월 깃헙 트렌드</a></h6>
+              <span>11월 27, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a></h6>
               <span>9월 14, 2017</span>
             </div>
@@ -380,18 +385,6 @@ app:layout\_alignSelf=&quot;flex\_end&quot;
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/07/07/tech-trend-02/">(tech-trend) 구루들이 찾는다는 테크 트렌드 - 해커뉴스</a></h6>
-              <span>7월 7, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -424,7 +417,7 @@ app:layout\_alignSelf=&quot;flex\_end&quot;
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -475,6 +468,9 @@ app:layout\_alignSelf=&quot;flex\_end&quot;
 
 
     <!-- headerblur min height -->
+    
+      var headerblur = document.getElementById("header-blur");
+      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

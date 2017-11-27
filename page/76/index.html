@@ -55,10 +55,32 @@
 
 
   
+  
+  <div class="site-header-image">
+    <img id="originBg" width="100%" alt="Hike News" src="">
+  </div>
+
+  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
+    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
+  </div>
+
+  <script>
+        var imgUrls = "images/storm.png".split(",");
+        var random = Math.floor((Math.random() * imgUrls.length ));
+        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+          document.getElementById("originBg").src=imgUrls[random];
+          document.getElementById("blurBg").src=imgUrls[random];
+        } else {
+          document.getElementById("originBg").src='/' + imgUrls[random];
+          document.getElementById("blurBg").src='/' + imgUrls[random];
+        }
+    </script>
+
+
 
 
 <header id="allheader" class="site-header" role="banner" 
-   >
+   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -100,6 +122,77 @@
       <div id="content" class="outer">
         
           <section id="main">
+  
+    <article id="post-[2016-04-09 11:26:33]youtube-dl"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/04/09/[2016-04-09 11:26:33]youtube-dl/">youtube-dl</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/04/09/[2016-04-09 11:26:33]youtube-dl/" class="article-date">
+	  <time datetime="2016-04-09T02:26:33.000Z" itemprop="datePublished">4월 9, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/1*2g89wS55B94moWVQDeQKDA.png" alt=""></p>
+<p>youtube downloader 가 자주 필요하시잖아요. 그죠? 그죠? 웹페이지도 몇개들 알고 계실 걸로 알고 있고 윈도우즈 프로그램도 갖고 계실걸로 알지만 command line으로 다운로드를 무척이나 하고 싶다…라고 생각하신 분들을 위한 프로젝트가 나왔습니다.</p>
+<p>2016/04/09 Best Project( 746 ★)</p>
+<p><a href="https://github.com/rg3/youtube-dl" title="https://github.com/rg3/youtube-dl" target="_blank" rel="external"><strong>rg3/youtube-dl</strong><br>_youtube-dl - Small command-line program to download videos from YouTube.com and other video sites_github.com</a><a href="https://github.com/rg3/youtube-dl" target="_blank" rel="external"></a></p>
+<p>설치</p>
+<p>이보다도 간단할 수 없습니다.(mac 기준)</p>
+<pre><code>brew install youtube-dl
+</code></pre><p>실행</p>
+<p>은 더 간단합니다.</p>
+<p>한번 강의 프로그램을 다운 받아 보겠습니다.</p>
+<p><img src="/images/1*HFWcbJydvY_LQonAB-aU8A.png" alt=""></p>
+<p>url 을 copy 한 후에</p>
+<pre><code>$youtube-dl &lt;url\&gt;
+</code></pre><p><img src="/images/1*5Jf09rAgjCsgWix1OiOxoA.png" alt="">boom!</p>
+<p>실행 시키고 나면</p>
+<p><img src="/images/1*hacjYZXfM4BpigU1YXiMOQ.png" alt="">webm이라니!</p>
+<p>webm 형태로 다운 받아집니다.</p>
+<p>chrome 에서 실행이 가능하네요~</p>
+<hr>
+<p>여기서 끝이 아닙니다. 또 하나의 프로젝트가 있네요.</p>
+<p><a href="https://github.com/MrS0m30n3/youtube-dl-gui" title="https://github.com/MrS0m30n3/youtube-dl-gui" target="_blank" rel="external"><strong>MrS0m30n3/youtube-dl-gui</strong><br>_youtube-dl-gui - A cross platform front-end GUI of the popular youtube-dl written in wxPython._github.com</a><a href="https://github.com/MrS0m30n3/youtube-dl-gui" target="_blank" rel="external"></a></p>
+<p>이 youtube-dl을 이용한 gui를 구현한 프로젝트입니다. wxpython으로 만들었습니다.</p>
+<p><img src="/images/1*BH4c3GbxHOFV9Wp7015jDQ.png" alt=""></p>
+<p><img src="/images/1*0bOcg-gNDTurp5syfdrfZQ.pn" alt=""></p>
+<p>세상은 넓고 프로그래머는 많습니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/883772a1ce6c" target="_blank" rel="external">April 9, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
   
     <article id="post-[2016-04-07 20:10:45]popper"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
@@ -152,83 +245,6 @@ content: &apos;My awesome popper!&apos;
 <p>생각하던 것 이상으로 간단하지만</p>
 <p>그 이상 이쁜 팝오버네요!</p>
 <p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/f2623d21378f" target="_blank" rel="external">April 7, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-[2016-04-07 09:16:09]Panama-papers-dataset-2016"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/04/07/[2016-04-07 09:16:09]Panama-papers-dataset-2016/">Panama-papers-dataset-2016</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/04/07/[2016-04-07 09:16:09]Panama-papers-dataset-2016/" class="article-date">
-	  <time datetime="2016-04-07T00:16:09.000Z" itemprop="datePublished">4월 7, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/1*Uht7N26BCdUIYthoGxQlxQ.jpe" alt="">panama!</p>
-<p>며칠 전 ICIJ(국제 탐사 보도 언론인 연합회)에서는 조세회피를 하고 있는 사람들의 명단을 공개 했습니다.</p>
-<p><a href="http://www.nocutnews.co.kr/news/4573644" title="http://www.nocutnews.co.kr/news/4573644" target="_blank" rel="external"><strong>푸틴*시진핑*메시*청룽 등 줄줄이 조세회피처 의혹 - 노컷뉴스</strong><br>_푸틴 러시아 대통령을 포함한 각국 정상과 스타급 인사들도 조세도피처를 이용해 불법금융거래를 해온 정황이 속속 드러나고 있다. 국제탐사보도언론인협회(ICIJ)와 뉴스타파에 따르면 파나마의 법무법인 ‘모색 폰세.._www.nocutnews.co.kr</a><a href="http://www.nocutnews.co.kr/news/4573644" target="_blank" rel="external"></a></p>
-<p>재밌는 것은 아래에 data visualization 페이지입니다.</p>
-<p><a href="https://panamapapers.icij.org/the_power_players/" title="https://panamapapers.icij.org/the_power_players/" target="_blank" rel="external"><strong>The Power Players</strong><br>_The Center for Public Integrity is a 501(c)(3) nonprofit organization. Contributions to The Center for Public Integrity…_panamapapers.icij.org</a><a href="https://panamapapers.icij.org/the_power_players/" target="_blank" rel="external"></a></p>
-<p>주로 유력인사들을 뽑아 놓은 페이지에서 누군가는 페이지를 뒤지다가 csv파일을 발견하고 그것들을 차례로 깃헙 프로젝트로 옮겨 놓았네요</p>
-<p>2016/04/07 Editor’s choice</p>
-<p><a href="https://github.com/amaboura/panama-papers-dataset-2016" title="https://github.com/amaboura/panama-papers-dataset-2016" target="_blank" rel="external"><strong>amaboura/panama-papers-dataset-2016</strong><br>_panama-papers-dataset-2016 - Structured data about Panama papers collected from official ICIJ website_github.com</a><a href="https://github.com/amaboura/panama-papers-dataset-2016" target="_blank" rel="external"></a></p>
-<p>csv 파일은 다음의 컬럼을 가지고 있습니다.</p>
-<pre><code>story-title  
-story-subtitle  
-story-image-if-linked-person  
-story-narrative  
-story-category-code  
-story-priority  
-story-region-codes  
-story-country-1-code  
-story-country-1-name  
-story-country-2-code  
-story-country-2-name  
-story-document-1-title  
-data-person-1-name  
-data-person-1-description-if-politician  
-data-person-1-relationship,  
-data-person-1-image  
-data-person-1-viz-publish  
-data-person-1-comment
-</code></pre><p>프로젝트 개발자는 ICIJ와 자기는 아무 상관이 없고 단지 Visualization 프로젝트를 위한 도구로만 쓰겠다고 합니다.</p>
-<p>일반적인 정보들이 얻고 싶다면 Wiki페이지에 이미 다 정리 되어 있으니 이걸 보는게 편할 거 같습니다.</p>
-<p><a href="https://en.wikipedia.org/wiki/Panama_Papers" title="https://en.wikipedia.org/wiki/Panama_Papers" target="_blank" rel="external"><strong>Panama Papers</strong><br>_The Panama Papers are a leaked set of 11.5 million confidential documents that provide detailed information about more…_en.wikipedia.org</a><a href="https://en.wikipedia.org/wiki/Panama_Papers" target="_blank" rel="external"></a></p>
-<p>이번 발표에 가장 이슈가 된 사람은 푸틴, 성룡, 메시 쯤 될 거 같네요. (네, 그 축구 선수 리오넬 메시 맞습니다.)</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/32374805db8a" target="_blank" rel="external">April 7, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -307,6 +323,18 @@ data-person-1-comment
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2017/11/27/2017-11-27-11월-깃헙-트렌드/">[2017-11-27] 11월 깃헙 트렌드</a></h6>
+              <span>11월 27, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a></h6>
               <span>9월 14, 2017</span>
             </div>
@@ -361,18 +389,6 @@ data-person-1-comment
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/07/07/tech-trend-02/">(tech-trend) 구루들이 찾는다는 테크 트렌드 - 해커뉴스</a></h6>
-              <span>7월 7, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -405,7 +421,7 @@ data-person-1-comment
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -456,6 +472,9 @@ data-person-1-comment
 
 
     <!-- headerblur min height -->
+    
+      var headerblur = document.getElementById("header-blur");
+      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

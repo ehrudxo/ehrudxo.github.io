@@ -55,10 +55,32 @@
 
 
   
+  
+  <div class="site-header-image">
+    <img id="originBg" width="100%" alt="Hike News" src="">
+  </div>
+
+  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
+    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
+  </div>
+
+  <script>
+        var imgUrls = "images/storm.png".split(",");
+        var random = Math.floor((Math.random() * imgUrls.length ));
+        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+          document.getElementById("originBg").src=imgUrls[random];
+          document.getElementById("blurBg").src=imgUrls[random];
+        } else {
+          document.getElementById("originBg").src='/' + imgUrls[random];
+          document.getElementById("blurBg").src='/' + imgUrls[random];
+        }
+    </script>
+
+
 
 
 <header id="allheader" class="site-header" role="banner" 
-   >
+   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -101,6 +123,104 @@
         
           <section id="main">
   
+    <article id="post-[2016-10-19 08:47:07]서버리스 아키텍처 소셜미디어 개발기 0편"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/10/19/[2016-10-19 08:47:07]서버리스 아키텍처 소셜미디어 개발기 0편/">서버리스 아키텍처 소셜미디어 개발기 0편</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/10/19/[2016-10-19 08:47:07]서버리스 아키텍처 소셜미디어 개발기 0편/" class="article-date">
+	  <time datetime="2016-10-18T23:47:07.000Z" itemprop="datePublished">10월 19, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>Firebase에 데이타를 저장하고</li>
+<li>소셜 미디어용 카드는 Embed.ly 를 이용해서 만들어</li>
+<li>github-page에 자동으로 배포하는</li>
+</ol>
+<p>100% 서버리스 아키텍쳐의 소셜 미디어를 만들어 보도록 하겠습니다.</p>
+<p>프레임워크는 react를 써 볼까 하고 있습니다.</p>
+<p>해당 내용은 진행하면서</p>
+<p><a href="https://github.com/ehrudxo/standup" title="https://github.com/ehrudxo/standup" target="_blank" rel="external"><strong>ehrudxo/standup</strong><br>_standup project for newbi_github.com</a><a href="https://github.com/ehrudxo/standup" target="_blank" rel="external"></a></p>
+<p>깃헙 프로젝트에 1,2,3,4,5,6,7 편을 branch를 만들면서 진행하도록 하겠습니다. 각각의 소스는 각 branch에서 확인하세요.</p>
+<p>최대한 자세한 내용을 적도록 할테니 따라만 오시면 소셜미디어 앱을 만들 수 있도록 하겠습니다.</p>
+<p><img src="/images/1*wTXc57Dp0jRgzDPE_iiLYg.png" alt=""></p>
+<h3 id="앱-이름-스탠드업"><a href="#앱-이름-스탠드업" class="headerlink" title="앱 이름 : 스탠드업!"></a><strong>앱 이름 : 스탠드업!</strong></h3><p><img src="/images/1*jVcZpT0H9NU0bd0LKL8w4A.png" alt="">stand up meeting</p>
+<h4 id="1-개요"><a href="#1-개요" class="headerlink" title="1. 개요"></a>1. 개요</h4><p>제가 일하고 있는 팀은 애자일 개발방법론을 사용하고 있습니다. 지금은 너무나도 많은 회사, 그 안에서도 많은 팀에서 애자일 개발 방법론을 가지고 개발을 하고 있죠?</p>
+<p>여러가지 애자일 개발 방법론 중에서도 단연코 가장 많이 사용되는 방법론은 스크럼 혹은 스탠드업입니다. 스크럼이라고 하면 굉장히 넓은 의미의 이터레이션까지 포함하시는 경우가 있으니 스탠드 업에만 국한해서 얘기를 하겠습니다.</p>
+<blockquote>
+<p>The stand-up has particular value in Agile software development processes, such as Scrum or Kanban, but can be utilized in context of any software-development methodology.</p>
+</blockquote>
+<p>출처 : <a href="https://en.wikipedia.org/wiki/Stand-up_meeting" target="_blank" rel="external">stand-up meeting</a>(미디어 위키)</p>
+<p>꼭 애자일이 아니더라도 소프트웨어 개발을 위해서는 종종 사용되는 방법이라고 하고 타임박싱은 5분에서 15분 정도를 합니다.</p>
+<p>나머지는 조금씩 다를 수 있겠지만, 10여명이 넘는 팀 전체 스탠드업에는 각 나눠진 작은 팀의 주제보다는 팀 전체를 위한 이슈를 이야기 하는데요. 머리를 말랑말랑하기 위해 간단한 IT 이야기를 할 수 있는 앱을 만들어 볼까 합니다.</p>
+<p><img src="/images/1*OgDA8okO4Yxo-Q0jFRuc0g.png" alt="">꼭 서서 할 필요는 없지만 앉아 있으면 끝나지 않는 회의가 많다!</p>
+<p>기왕이면 아침에 스마트폰으로 볼 수 있도록 모바일을 먼저 고려하는 것도 당연히 들어가야 합니다.</p>
+<h4 id="2-설계"><a href="#2-설계" class="headerlink" title="2. 설계"></a>2. 설계</h4><ul>
+<li><strong>페르소나</strong><br>이름 : 김개발</li>
+</ul>
+<p><img src="/images/1*jyaaYQ7fntJcm9fuagaZqw.png" alt="">으.. CSS…</p>
+<p>애자일 개발자 김개발 씨는 IT 트렌드에 무척이나 민감하다. 아침 스탠드 업 시간에 일간 보고만 하는 것이 매우 못마땅한데 기술적인 이야기를 같이 하면 좋겠다.</p>
+<ul>
+<li><strong>User Story</strong><blockquote>
+<p>1. 김개발은 아침 스탠드업 시간에 같이 이야기를 나눌 수 있는 주제를 위해 스탠드업이라는 웹 앱을 찾아간다. 이렇게 함으로써 사람들과 IT에 대한 주제로 커뮤니케이션을 할 수 있다.</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>2. 김개발이 사이트를 방문해서 자신이 어제 유심하게 읽은 글을 올릴 수 있다. 이렇게 하면 다른 사람들이 볼 수 있다.<br>* 에디터 창은 하나만 있고 거기서 글을 작성하고 업로드 하면 글이 외부 클라우드 공간에 저장이 된다.</p>
+<p>3. 김개발이 작성한 글이 목록으로 보여진다. 이렇게 함으로써 다른 사람들이 목록을 확인할 수 있다.<br>* 목록글은 해당IT 주제의 대표 이미지와 제목, 간단 요약등이 들어 있는 카드의 리스트 형태로 나열이 되어야 한다.</p>
+</blockquote>
+<p>유저스토리는 개발 과정 중에 변경이 일어날 것인데, 그런 과정도 중간 중간 보 언급하면서 넘어가겠습니다.</p>
+<h4 id="3-개발전-준비"><a href="#3-개발전-준비" class="headerlink" title="3. 개발전 준비"></a>3. 개발전 준비</h4><ul>
+<li>깃헙에 프로젝트 만들기</li>
+</ul>
+<p><img src="/images/1*nKzv8_G235YyfvmAQvI1DA.png" alt=""></p>
+<p>위와 같이 프로젝트를 만들어 줍니다. 물론 fork를 따는 방법도 있겠지만(그래주시면 일단은 감사! star도 한번 눌러주시면 더 감사!) 따라가는 입장에서는 만들어 보는 방법도 좋은 시도 입니다.</p>
+<p>만들고 나면 아래와 같이 설정창이 뜨게 됩니다.</p>
+<p><img src="/images/1*HZyx2-D12f2IiN-lP5jY6g.pn" alt=""></p>
+<ul>
+<li>README.md파일 만들기</li>
+</ul>
+<p>Readme 파일은 Art-of-readme 라는 내용을 참고하시면 더 좋을 거 같습니다.</p>
+<p><a href="https://techstory.shma.so/art-of-readme-cd19f86b0456" title="https://techstory.shma.so/art-of-readme-cd19f86b0456" target="_blank" rel="external"><strong>art-of-readme</strong><br>_깃헙에서 프로젝트를 사용할 때 리드미파일의 영향도는 얼마나 된다고 보시나요? 저의 경우는 Readme파일의 완성도를 보고 프로젝트의 완성도를 가늠하는데 아주 높은 확률로 Readme 와 프로젝트의 완성도는 비슷했…_techstory.shma.so</a><a href="https://techstory.shma.so/art-of-readme-cd19f86b0456" target="_blank" rel="external"></a></p>
+<p>의 형태와 같이 README.md 파일을 만들고 깃에 푸쉬하고 준비과정은 마무리 하도록 하겠습니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/63084e103f77" target="_blank" rel="external">October 18, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-[2016-10-11 21:12:14]create-react-app에 대하여 -3"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -129,54 +249,6 @@
         <p><img src="/images/1*dTk4VC8-4fcCaXM4Fvoqxw.pn" alt=""></p>
 <p>어느덧 리뷰를 넘어서 반 이상이 번역이 되었네요. PU나 조만간 날려봐야겠네요. TDD in React를 써야겠다는 용기(?) 가 드네요.</p>
 <p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/482e40291419" target="_blank" rel="external">October 11, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-[2016-10-10 06:22:23]create-react-app에 관하여 — 2"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/10/10/[2016-10-10 06:22:23]create-react-app에 관하여 — 2/">create-react-app에 관하여 — 2</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/10/10/[2016-10-10 06:22:23]create-react-app에 관하여 — 2/" class="article-date">
-	  <time datetime="2016-10-09T21:22:23.000Z" itemprop="datePublished">10월 10, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/1*EKtgoHP7zINvA5THgh7mxQ.pn" alt=""></p>
-<p>그나 저나 md 파일 import 기능이 medium에서 되는게 놀랍네용 @.@</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/9d6fcf4d4bc9" target="_blank" rel="external">October 9, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -255,6 +327,18 @@
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2017/11/27/2017-11-27-11월-깃헙-트렌드/">[2017-11-27] 11월 깃헙 트렌드</a></h6>
+              <span>11월 27, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a></h6>
               <span>9월 14, 2017</span>
             </div>
@@ -309,18 +393,6 @@
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/07/07/tech-trend-02/">(tech-trend) 구루들이 찾는다는 테크 트렌드 - 해커뉴스</a></h6>
-              <span>7월 7, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -353,7 +425,7 @@
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -404,6 +476,9 @@
 
 
     <!-- headerblur min height -->
+    
+      var headerblur = document.getElementById("header-blur");
+      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

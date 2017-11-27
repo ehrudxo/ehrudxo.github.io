@@ -55,10 +55,32 @@
 
 
   
+  
+  <div class="site-header-image">
+    <img id="originBg" width="100%" alt="Hike News" src="">
+  </div>
+
+  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
+    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
+  </div>
+
+  <script>
+        var imgUrls = "images/storm.png".split(",");
+        var random = Math.floor((Math.random() * imgUrls.length ));
+        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+          document.getElementById("originBg").src=imgUrls[random];
+          document.getElementById("blurBg").src=imgUrls[random];
+        } else {
+          document.getElementById("originBg").src='/' + imgUrls[random];
+          document.getElementById("blurBg").src='/' + imgUrls[random];
+        }
+    </script>
+
+
 
 
 <header id="allheader" class="site-header" role="banner" 
-   >
+   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -100,6 +122,103 @@
       <div id="content" class="outer">
         
           <section id="main">
+  
+    <article id="post-[2016-07-01 13:12:31]warriorjs"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/07/01/[2016-07-01 13:12:31]warriorjs/">warriorjs</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/07/01/[2016-07-01 13:12:31]warriorjs/" class="article-date">
+	  <time datetime="2016-07-01T04:12:31.000Z" itemprop="datePublished">7월 1, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>javascript를 게임을 하듯이 배우고 싶은 사람들이 있을 거라고 생각합니다.</p>
+<p>먼저 클릭해서 감상부터 해 보시죠.</p>
+<p><a href="https://asciinema.org/a/0sp5lqs53k1ddr906dlli8p5k" target="_blank" rel="external"><img src="/images/1*ZnIo5UQUG6RhPD1oPx_JFw.png" alt=""></a></p>
+<p>해당 작업을 하는 소스는 다음과 같습니다.</p>
+<pre><code>class Player {  
+playTurn(warrior) {  
+// Cool code goes here  
+warrior.walk(&quot;forward&quot;);  
+}  
+}
+</code></pre><p>2016/07/01 Today’s Best</p>
+<p><a href="https://github.com/olistic/warriorjs" title="https://github.com/olistic/warriorjs" target="_blank" rel="external"><strong>olistic/warriorjs</strong><br>_warriorjs - Game written in JavaScript for learning JavaScript and artificial intelligence._github.com</a><a href="https://github.com/olistic/warriorjs" target="_blank" rel="external"></a></p>
+<hr>
+<p>위의 asciinema를 플레이 해 보신 분이라면 마지막에 다음 레벨로 갈꺼냐고 묻는 gamification도 적용되어 있습니다.</p>
+<p>마치 해킹 사이트에서 다음 단계로 가려면 문제를 푸세요. 라고 하는 방식과 똑같습니다.</p>
+<p>다음단계로 가겠다고 하니 README 파일이 바뀌네요.</p>
+<p>두번째 문제네요.</p>
+<p>Level 2</p>
+<pre><code>It is too dark to see anything, but you smell sludge nearby.
+
+Tip: Use \`warrior.feel().isEmpty()\` to see if there is anything in front of you, and \`warrior.attack()\` to fight it. Remember, you can only do one action per turn.
+
+╔════════╗  
+║@ s \&gt; ║  
+╚════════╝
+
+\&gt; = stairs  
+@ = keen
+
+Warrior abilities:
+
+warrior.walk()
+
+warrior.attack() (NEW!)
+
+warrior.feel() (NEW!)
+</code></pre><p>어떻게 풀면 좋을까요?</p>
+<pre><code>warrior.feel().isEmpty()
+</code></pre><p>를 활용하면 좋을 거 같군요.</p>
+<pre><code>class Player {  
+playTurn(warrior) {  
+if(warrior.feel().isEmpty())warrior.walk(&quot;forward&quot;);  
+else warrior.attack();  
+}  
+}
+</code></pre><p>이랬더니 아래와 같이 움직입니다.</p>
+<p><a href="https://asciinema.org/a/8ecgg38emzglhdrx1h0xazt8i" target="_blank" rel="external"><img src="/images/1*dq3zWf4v1Ndlo0-6FbHDTg.pn" alt=""></a></p>
+<p>어흑 진짜 재밌네요. 저는 적을 만나면 부셨는데, left,right을 이용하면 우회해서 올라갈 수도 있겠네요.</p>
+<p>올라가다 보면 움직이는 적도 나오겠네요.</p>
+<p>이걸 왜 만들었는지는 모르겠지만, 상당히 재밌네요.</p>
+<p>강추~</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/870343ae8baa" target="_blank" rel="external">July 1, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
   
     <article id="post-[2016-06-30 09:19:00]Willow"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
@@ -203,70 +322,6 @@ return true
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-06-29 07:21:44]mac-cli"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/06/29/[2016-06-29 07:21:44]mac-cli/">mac-cli</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/06/29/[2016-06-29 07:21:44]mac-cli/" class="article-date">
-	  <time datetime="2016-06-28T22:21:44.000Z" itemprop="datePublished">6월 29, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>오늘은 mac에서 필요한 유용한 cli 툴들을 명령어 하나로 모아 놓은 프로젝트인 mac-cli를 소개합니다.</p>
-<p><img src="/images/1*Si8lIH9NOPXxlSRztngvnA.png" alt=""></p>
-<p>꽤나 아이디어가 좋다고 느껴지는게 일단 네이밍 부터가 mac으로 시작하는 명령어 라니. 라고 생각했습니다.</p>
-<p>> github streak를 볼 수 있는</p>
-<pre><code>$mac github:streak
-</code></pre><p><img src="/images/1*JMkrYs4K6i0cb9X23A3e_g.png" alt=""></p>
-<p>> mac에 지금 열려있는 포트를 확인해 볼 수 있는</p>
-<pre><code>$mac ports
-</code></pre><p><img src="/images/1*4HLRgJtDoPbq_HUugJ0sQw.png" alt="">mysql!!</p>
-<p>>mac 의 시스템 정보를 확인해 볼 수 있는</p>
-<pre><code>$mac system
-</code></pre><p><img src="/images/1*IiQVRjtuND9RQ_i5plLGqw.png" alt=""></p>
-<p>>mac의 메모리 사용량을 확인해 볼 수 있는</p>
-<p>$mac memory</p>
-<p><img src="/images/1*Puj_TGIRqJIXUnBLaZcexg.pn" alt=""></p>
-<p>등의 유용한 cli들을 가지고 있습니다.</p>
-<p>그리고 마지막으로 magento라는 명령어가 있길래, 찾아보니 개발자가 magento의 개발자였습니다. 7년 경력 개발자라고 하는군요.</p>
-<p><a href="https://magento.com/" title="https://magento.com/" target="_blank" rel="external"><strong>eCommerce Software &amp; eCommerce Platform Solutions | Magento</strong><br>_Magento is the eCommerce software and platform trusted by the world’s leading brands. Grow your online business with…_magento.com</a><a href="https://magento.com/" target="_blank" rel="external"></a></p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/bf729c53a171" target="_blank" rel="external">June 28, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
@@ -318,6 +373,18 @@ return true
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2017/11/27/2017-11-27-11월-깃헙-트렌드/">[2017-11-27] 11월 깃헙 트렌드</a></h6>
+              <span>11월 27, 2017</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -379,18 +446,6 @@ return true
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/07/07/tech-trend-02/">(tech-trend) 구루들이 찾는다는 테크 트렌드 - 해커뉴스</a></h6>
-              <span>7월 7, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -423,7 +478,7 @@ return true
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -474,6 +529,9 @@ return true
 
 
     <!-- headerblur min height -->
+    
+      var headerblur = document.getElementById("header-blur");
+      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

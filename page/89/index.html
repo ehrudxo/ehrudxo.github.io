@@ -55,10 +55,32 @@
 
 
   
+  
+  <div class="site-header-image">
+    <img id="originBg" width="100%" alt="Hike News" src="">
+  </div>
+
+  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
+    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
+  </div>
+
+  <script>
+        var imgUrls = "images/storm.png".split(",");
+        var random = Math.floor((Math.random() * imgUrls.length ));
+        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+          document.getElementById("originBg").src=imgUrls[random];
+          document.getElementById("blurBg").src=imgUrls[random];
+        } else {
+          document.getElementById("originBg").src='/' + imgUrls[random];
+          document.getElementById("blurBg").src='/' + imgUrls[random];
+        }
+    </script>
+
+
 
 
 <header id="allheader" class="site-header" role="banner" 
-   >
+   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -100,6 +122,87 @@
       <div id="content" class="outer">
         
           <section id="main">
+  
+    <article id="post-[2016-03-10 07:34:16]leaf"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/03/10/[2016-03-10 07:34:16]leaf/">leaf</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/03/10/[2016-03-10 07:34:16]leaf/" class="article-date">
+	  <time datetime="2016-03-09T22:34:16.000Z" itemprop="datePublished">3월 10, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/1*81o4RHt67Hscnh61zkzAoA.png" alt=""></p>
+<p>알파고와 이세돌의 대결 때문이었을까요? 오늘 Github 베스트는 machine learning 오픈소스 leaf가 차지했습니다. 구글의 Tensorflow 보다 빠르다고 합니다.</p>
+<p>2016/03/10 Today’s best ( 552 ★)</p>
+<p><a href="https://github.com/autumnai/leaf" title="https://github.com/autumnai/leaf" target="_blank" rel="external"><strong>autumnai/leaf</strong><br>_leaf - The Hacker’s Machine Learning Engine_github.com</a><a href="https://github.com/autumnai/leaf" target="_blank" rel="external"></a></p>
+<h3 id="구글의-Tensorflow-보다-빠르다"><a href="#구글의-Tensorflow-보다-빠르다" class="headerlink" title="구글의 Tensorflow 보다 빠르다!"></a>구글의 Tensorflow 보다 빠르다!</h3><p>어떤 방식으로 benchmark 가 머신 러닝에서 이뤄지는지 모르겠지만, Nvidia Titan X GPU 에서 돌린 결과는 구글의 Tensorflow보다 빠른 결과를 보여줍니다.</p>
+<p><img src="/images/1*AZjjAjdpJ8oydb9Mv54caA.png" alt=""></p>
+<p>Autumnai라는 그룹은 AI platform을 표방하고 있습니다. leaf만 있는 것은 아니고 Autumn, Leaf, Collenchyma 세가지로 이루어져 있습니다.</p>
+<p><img src="/images/1*cpn7ohXQOWv-IFnGMYhCOw.png" alt=""></p>
+<p>Rust로 개발 되었습니다.</p>
+<p><a href="https://www.rust-lang.org/downloads.html" title="https://www.rust-lang.org/downloads.html" target="_blank" rel="external"><strong>Downloads * The Rust Programming Language</strong><br>_A systems programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety._www.rust-lang.org</a><a href="https://www.rust-lang.org/downloads.html" target="_blank" rel="external"></a></p>
+<p>Example 프로젝트도 있습니다.</p>
+<p><a href="https://github.com/autumnai/leaf-examples" title="https://github.com/autumnai/leaf-examples" target="_blank" rel="external"><strong>autumnai/leaf-examples</strong><br>_leaf-examples - Examples for the Hacker’s Machine Learning Framework Leaf_github.com</a><a href="https://github.com/autumnai/leaf-examples" target="_blank" rel="external"></a></p>
+<h3 id="설치-및-실행"><a href="#설치-및-실행" class="headerlink" title="설치 및 실행"></a>설치 및 실행</h3><pre><code>\# rust 설치  
+curl -sSf https://static.rust-lang.org/rustup.sh | sh  
+\# leaf example 클론  
+git clone git@github.com:autumnai/leaf-examples.git &amp;&amp; cd leaf-examples  
+\# 빌드  
+cargo build --release  
+\# 실행  
+target/release/leaf-examples --help
+</code></pre><p>Mac OS X El capitan에서 설치할 때는 에러가 납니다. openssl 문제인데,</p>
+<blockquote>
+<p><em>brew link — force openssl</em></p>
+</blockquote>
+<p>명령어를 통해 해결할 수 있다고 되어 있는데, 저 명령어도 에러를 뱉습니다.</p>
+<pre><code>$ cd /usr/local  
+$ sudo chown -R &lt;your-username\&gt;:&lt;your-group-name\&gt; \*
+</code></pre><p>이렇게 man 파일 권한을 풀어주면 해결이 됩니다.</p>
+<p>groug name 은 id -g 명령어를 통해 풀 수 있습니다.</p>
+<ul>
+<li>혹시 빌드중에 cudnn 관련된 라이브러리 에러가 난다면, carge add cudnn을 해 주셔야 합니다. cargo add 명령어를 실행하기 위해서는 cargo-edit 이라는 프로젝트도 설치해야 합니다.</li>
+<li>cargo는 rust 를 위한 패키지 인스톨러 입니다.</li>
+</ul>
+<h3 id="맺으며"><a href="#맺으며" class="headerlink" title="맺으며"></a>맺으며</h3><p><img src="/images/1*XYtf5AIorG6obtXie2CoYg.pn" alt="">출처 : <a href="http://ppss.kr/archives/75915" target="_blank" rel="external">http://ppss.kr/archives/75915</a></p>
+<p>어제 알파고 관련 개드립 모음을 우연히 봤습니다. 재미있더군요. 오픈소스 AI를 통해 빅브라더 AI를 견제하는 미래가 그려질 지도 모르겠네요</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/f1be6cc386d0" target="_blank" rel="external">March 9, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
   
     <article id="post-[2016-03-09 04:26:31]Status Page"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
@@ -178,72 +281,6 @@ Systems, eg (Website,API): Website, CDN, API
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-03-08 06:49:55]TermPDF"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/03/08/[2016-03-08 06:49:55]TermPDF/">TermPDF</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/03/08/[2016-03-08 06:49:55]TermPDF/" class="article-date">
-	  <time datetime="2016-03-07T21:49:55.000Z" itemprop="datePublished">3월 8, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/1*-3iP5-TURZj9w0z5SQZr8Q.png" alt=""></p>
-<p>제목만으로도 감이 오는 프로젝트죠. 터미날 프로그램에서 pdf 문서를 보여주는 프로젝트입니다. 지난 번에 소개한 gifi 처럼, iterm 2.9 최신버전 이상만 지원하는 것이 특징입니다.</p>
-<p>2016/03/08 editor’s choice( 279 ★)</p>
-<p><a href="https://github.com/dsanson/termpdf" title="https://github.com/dsanson/termpdf" target="_blank" rel="external"><strong>dsanson/termpdf</strong><br>_termpdf - barebones graphic pdf viewer that works inside terminals that support inline graphics_github.com</a><a href="https://github.com/dsanson/termpdf" target="_blank" rel="external"></a></p>
-<h4 id="Seeing-is-believing"><a href="#Seeing-is-believing" class="headerlink" title="Seeing is believing"></a>Seeing is believing</h4><p><img src="/images/1*NsYvXJCFuGu72dlrpT8rLw.png" alt=""></p>
-<h3 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h3><p>미리 설치할 프로그램들은 brew로 설치할 수 있습니다. (OSX 기준)</p>
-<pre><code>$brew install gs imagemagick poppler pdfgrep djvulibre selecta
-</code></pre><p>Ubuntu 의 경우는</p>
-<pre><code>$sudo apt-get install ghostscript imagemagick poppler-utils pdfgrep  
-djvulibre-bin w3m-img
-</code></pre><p>명령어를 통해서 설치가 가능합니다.</p>
-<p>이후</p>
-<pre><code>$git clone [https://github.com/dsanson/termpdf.git][anchor2]
-</code></pre><p>를 통해 bash 파일을 내려받아 path에 등록 하고서는 실행을 하면 됩니다.</p>
-<h3 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h3><pre><code>$./termpdf ~/Downloads/golang-tdd-sample.pdf
-</code></pre><p>같은 형태로 실행시키면 됩니다. 다음은 실행한 결과 화면 입니다.</p>
-<p><img src="/images/1*ySs3U_GiCNTMe6JmOFtPFw.png" alt=""></p>
-<p>한글도 잘 되는지 궁금했습니다.</p>
-<p><img src="/images/1*HrqWianUC37hKRpXNWqW8A.pn" alt=""></p>
-<p>잘 되는군요</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/ea9d076d99a3" target="_blank" rel="external">March 7, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
@@ -295,6 +332,18 @@ djvulibre-bin w3m-img
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2017/11/27/2017-11-27-11월-깃헙-트렌드/">[2017-11-27] 11월 깃헙 트렌드</a></h6>
+              <span>11월 27, 2017</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -356,18 +405,6 @@ djvulibre-bin w3m-img
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/07/07/tech-trend-02/">(tech-trend) 구루들이 찾는다는 테크 트렌드 - 해커뉴스</a></h6>
-              <span>7월 7, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -400,7 +437,7 @@ djvulibre-bin w3m-img
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -451,6 +488,9 @@ djvulibre-bin w3m-img
 
 
     <!-- headerblur min height -->
+    
+      var headerblur = document.getElementById("header-blur");
+      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

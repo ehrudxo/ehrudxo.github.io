@@ -55,10 +55,32 @@
 
 
   
+  
+  <div class="site-header-image">
+    <img id="originBg" width="100%" alt="Hike News" src="">
+  </div>
+
+  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
+    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
+  </div>
+
+  <script>
+        var imgUrls = "images/storm.png".split(",");
+        var random = Math.floor((Math.random() * imgUrls.length ));
+        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+          document.getElementById("originBg").src=imgUrls[random];
+          document.getElementById("blurBg").src=imgUrls[random];
+        } else {
+          document.getElementById("originBg").src='/' + imgUrls[random];
+          document.getElementById("blurBg").src='/' + imgUrls[random];
+        }
+    </script>
+
+
 
 
 <header id="allheader" class="site-header" role="banner" 
-   >
+   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -101,6 +123,84 @@
         
           <section id="main">
   
+    <article id="post-[2017-03-13 18:26:57]딥러닝을 위한 수학 1"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2017/03/13/[2017-03-13 18:26:57]딥러닝을 위한 수학 1/">딥러닝을 위한 수학 1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2017/03/13/[2017-03-13 18:26:57]딥러닝을 위한 수학 1/" class="article-date">
+	  <time datetime="2017-03-13T09:26:57.000Z" itemprop="datePublished">3월 13, 2017</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>원문은 아래에 지속적으로 업데이트</p>
+<p><a href="https://github.com/ehrudxo/til" title="https://github.com/ehrudxo/til" target="_blank" rel="external"><strong>ehrudxo/til</strong><br>_til - today I learned. 오늘 공부한것을 위키 형식으로 적기시작 해봄._github.com</a><a href="https://github.com/ehrudxo/til" target="_blank" rel="external"></a></p>
+<p>수학은 워낙 넓으니까 선형대수를 다 다시 공부할 수도 없고… 주로 나오는 것만 위주로 나열하기로 함.</p>
+<p>딥러닝에 왜 이런 여러가지가 나오는지를 먼저 이해하는 것이 중요함. 다른 대부분의 강의나 튜토리얼은 그런 설명없이 바로 수식을 전개함. 너무 간단해서 언급을 안하는 거 같은데, 나 같은 더미를 위해서 이야기 하면 딥러닝을 통해 머신이 내리는 결정은 대부분이 통계와 수학식을 통해 전개됨.</p>
+<p>통계를 위해서는 확률을 알아야 하고 이 결정을 위한 확률의 기본이 베이즈 이론이라고 보면 됨. 이후 여러가지 알고리즘과 방법들이 나오는 것도 결국 이 확률이론이 토대가 된다.</p>
+<p>뉴럴 네트워크가 들어가는 경우는 부분에 쓰이는 수학은 변수와 모델의 통제라는 측면에서 미분 그 중에서도 편미분이 중요하고 레이어의 계산이 한꺼번에 이루어지는 관점에서는 행렬식이 너무나 중요하다. 정도로만 개념을 잡고 (일단은) 넘어가면 된다.</p>
+<p>결국은 문제를 어떻게 정의하는가가 핵심이고 그 문제를 푸는 방법으로써의 딥러닝이 각광을 받고 있다고 보면 내가 가지고 있는 해결해야 하는 문제들을 수학적으로 어떻게 정의하는지를 알아야 하는 것이 첫번째, 그리고 그것을 해결하는 다양한 방법들을 배우는 것을 두번째라고 생각하면 된다.</p>
+<p>일단 확률에 대해서 알아보자.</p>
+<h3 id="조건부-확률"><a href="#조건부-확률" class="headerlink" title="조건부 확률"></a>조건부 확률</h3><ul>
+<li>P(Y=y|X=x) : 구름(X)이 꼈을때(true) 비(Y)가 올 확률을 의미함. — 출처 <a href="https://ko.wikipedia.org/wiki/%EC%A1%B0%EA%B1%B4%EB%B6%80_%ED%99%95%EB%A5%A0" target="_blank" rel="external">위키피디아 : 조건부 확률</a></li>
+<li>P(E|F) = P(E and F)/P(F)</li>
+<li>곱셈 정리 : P(E and F) = P(E|F) * P(F)</li>
+<li>치환 정리 : P(E|F) * P(F) = P(F|E) * P(E)</li>
+</ul>
+<h4 id="한-개의-주사위를-두-번-던질-때-합이-3이-나올-확률-vs-두-개의-주사위를-던져서-합이-3이-나올-확률"><a href="#한-개의-주사위를-두-번-던질-때-합이-3이-나올-확률-vs-두-개의-주사위를-던져서-합이-3이-나올-확률" class="headerlink" title="한 개의 주사위를 두 번 던질 때 합이 3이 나올 확률 vs 두 개의 주사위를 던져서 합이 3이 나올 확률 :"></a>한 개의 주사위를 두 번 던질 때 합이 3이 나올 확률 vs 두 개의 주사위를 던져서 합이 3이 나올 확률 :</h4><ul>
+<li>(1/6*1/6)/1/6 = 1/6 vs 2/36 = 1/18</li>
+<li>표본 공간이 바뀌었다(축소 표본 공간)</li>
+</ul>
+<h4 id="1개의-주사위를-네번-굴려서-6이-한번-나오는-경우-vs-2개의-주사위를-24번-굴려서-동시에-6이-한번-나오는-경우-드-메레-문제"><a href="#1개의-주사위를-네번-굴려서-6이-한번-나오는-경우-vs-2개의-주사위를-24번-굴려서-동시에-6이-한번-나오는-경우-드-메레-문제" class="headerlink" title="1개의 주사위를 네번 굴려서 6이 한번 나오는 경우 vs 2개의 주사위를 24번 굴려서 동시에 6이 한번 나오는 경우 ( 드 메레 문제 )"></a>1개의 주사위를 네번 굴려서 6이 한번 나오는 경우 vs 2개의 주사위를 24번 굴려서 동시에 6이 한번 나오는 경우 ( 드 메레 문제 )</h4><ul>
+<li>여사건 정의(1-P(E))를 통해서 풀어야 하는데 그 이유는 처음에 6이 나오면 표본공간 자체가 필요없어지기 때문에 절대 안나오는 확률을 기준으로 계산을 한 다음에 여사건 정의로 푼다 1-(5/6)⁴ = 0.518 : 같은 방법.</li>
+<li>표본공간을 확보하는 것이 관건</li>
+<li>2개의 주사위를 굴려서 동시에 안 나오는 경우는 1 -(35/36)²⁴ = 0.491 — “세상에서 가장 재미있는 통계학”</li>
+</ul>
+<h3 id="베이즈-정리"><a href="#베이즈-정리" class="headerlink" title="베이즈 정리"></a>베이즈 정리</h3><ul>
+<li>개요 : 베이즈 정리는 1740년대의 영국의 목사인 토머스 베이즈(Thomas Bayes)가 정립한, 조건부 확률에 대한 수학적 정리이다. 사건 A가 있고 사건 B가 있을 때 사건 B가 일어난 것을 전제로 한 사건 A의 조건부 확률을 구하고 싶다. 그런데 지금 알고 있는 것은 사건 A가 일어난 것을 전제로 한 사건 B의 조건부 확률, A의 확률, B의 확률뿐이다. 그럴 때 다음과 같이 구할 수가 있다. 출처 : <a href="https://namu.wiki/w/%EB%B2%A0%EC%9D%B4%EC%A6%88%20%EC%A0%95%EB%A6%AC" target="_blank" rel="external">나무위키</a> .</li>
+<li>조금 더 수식으로 풀어 쓰면</li>
+</ul>
+<p><img src="/images/0*s9FyujgqEUU8HAKf.jp" alt="">출처 <a href="https://namu.wiki/w/%EB%B2%A0%EC%9D%B4%EC%A6%88%20%EC%A0%95%EB%A6%AC" target="_blank" rel="external">나무 위키 베이즈 정리</a></p>
+<ul>
+<li>인구 1000명당 한 명꼴로 걸리는 희귀병. 병에 걸린 사람의 경우는 90% 양성, 건강한 사람의 2% 가 양성 -> 양성반응을 보인 사람의 병에 걸릴 확률은?</li>
+<li>즉, 인간의 사고는 처음에는 아무 정보가 없던 상태에서 <strong>새로운 정보를 받아들이고, 이를 통해 자신이 가지고 있던 일종의 사전 확률 체계를 업데이트시켜 세상을 해석하거나 판단을 내리고 의사결정을 하는 방향으로 발전되어 왔다는 것이다</strong>. 그리고 이렇게 발전된 사후 확률 체계는 새로운 사전 확률이 되어, 새로운 정보가 유입될 때마다 업데이트를 반복해간다. — 나무위키 인지과학 및 인공지능에서의 베이즈 정리</li>
+</ul>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/c5e1cb31a7ca" target="_blank" rel="external">March 13, 2017</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-[2017-03-11 18:22:15]딥러닝 생초짜를 위한 로드맵을 짜주마"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -131,60 +231,6 @@
 <p>매일 발표나 스터디 요약을 위해 정리하는 자리인데 아무래도 나야말로 딥러닝 생초짜이기 때문에 꼭 정확한 방법이라고 할 수는 없지만 이 프로젝트에는 지속적으로 전체 큰그림을 구조화 하고 상세화 해서 누구나 읽을 수 있도록 업로드 하도록 하겠다. 그러면서 매일 매일의 내용은 같이 스터디 하는 팀에 공유 하도록 하겠다.</p>
 <p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/c295bf9e565c" target="_blank" rel="external">March 11, 2017</a>.</p>
 <p>Exported from <a href="https://medium.co" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-[2017-03-07 09:57:53]안옥윤에게서 오이디푸스를 찾다"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2017/03/07/[2017-03-07 09:57:53]안옥윤에게서 오이디푸스를 찾다/">안옥윤에게서 오이디푸스를 찾다</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2017/03/07/[2017-03-07 09:57:53]안옥윤에게서 오이디푸스를 찾다/" class="article-date">
-	  <time datetime="2017-03-07T00:57:53.000Z" itemprop="datePublished">3월 7, 2017</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://namu.wiki/w/%EC%95%94%EC%82%B4%282015%29" title="https://namu.wiki/w/%EC%95%94%EC%82%B4(2015)" target="_blank" rel="external"><strong>암살(2015) - 나무위키</strong><br>_안옥윤, 속사포, 그리고 황덕삼은 상하이 임시정부 사무실에서 김원봉이 제안하고 상하이 대한민국 임시정부 경무국 대장인 염석진의 주도로 나라를 팔아먹은 매국노 강인국과 조선 주둔군 사령관인 일본 육군소장 카와구치 …_namu.wiki</a><a href="https://namu.wiki/w/%EC%95%94%EC%82%B4%282015%29" target="_blank" rel="external"></a></p>
-<h4 id="이것은-지나친-망상일까"><a href="#이것은-지나친-망상일까" class="headerlink" title="이것은 지나친 망상일까."></a>이것은 지나친 망상일까.</h4><p>미치코와 안옥윤이 마주치는 순간 오이디푸스 컴플렉스의 변주를 생각한 것은. 그래 인정하자. 너무 나갔다. 아버지를 죽이는 동기도 그렇고 오이디푸스는 예언을 이루게 하지 않기 위하여 돌아 돌았지만 예언에 따라 움직인 것이라고 생각을 하면 이것은 너무나도 의지에 대한 이야기니까.</p>
-<p>하지만 내내 이 작품에서 운명론적인 장치가 들어 있었다면 더욱 마음 졸이며 봤을까. 안옥윤이 고민하는 모습이 있었다면 더 안타까웠을까.</p>
-<p>영화 전반부 안옥윤의 생모가 강인국에게 “딸에게 죽을 것” 이라는 저주를 퍼붓고 도망치다 죽었다면, 미치꼬 마저도 다른 집에 입양되었다가 강인국을 죽이고 난 뒤에 생부라는 것을 알았다면</p>
-<p>……</p>
-<p>여성이 더 강인하게 부각되는 현대사회에 오이디푸스의 이야기를 변주했어도 좋았을 거 같다.</p>
-<p><a href="https://namu.wiki/w/%EC%98%A4%EC%9D%B4%EB%94%94%ED%91%B8%EC%8A%A4" title="https://namu.wiki/w/%EC%98%A4%EC%9D%B4%EB%94%94%ED%91%B8%EC%8A%A4" target="_blank" rel="external"><strong>오이디푸스 - 나무위키</strong><br>_오이디푸스는 테바이의 라이오스 왕과 이오카스테 왕비 사이에서 아들로 태어났다. 그러나 델포이의 신전에서 오이디푸스에 대하여 ‘아버지를 죽이고 어머니와 동침할 것이다’라는 신탁을 내놓자 이에 기겁한 라이오스 왕은 …_namu.wiki</a><a href="https://namu.wiki/w/%EC%98%A4%EC%9D%B4%EB%94%94%ED%91%B8%EC%8A%A4" target="_blank" rel="external"></a></p>
-<h4 id="하지만-재미없었겠지-ㅎㅎ"><a href="#하지만-재미없었겠지-ㅎㅎ" class="headerlink" title="하지만 재미없었겠지..ㅎㅎ"></a>하지만 재미없었겠지..ㅎㅎ</h4><p><img src="/images/1*OtVM62TH8z6RGOnpUIAovA.pn" alt="">막짤은 프로이트.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/d18a1c8584df" target="_blank" rel="external">March 7, 2017</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
     </div>
@@ -262,6 +308,18 @@
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2017/11/27/2017-11-27-11월-깃헙-트렌드/">[2017-11-27] 11월 깃헙 트렌드</a></h6>
+              <span>11월 27, 2017</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a></h6>
               <span>9월 14, 2017</span>
             </div>
@@ -316,18 +374,6 @@
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/07/07/tech-trend-02/">(tech-trend) 구루들이 찾는다는 테크 트렌드 - 해커뉴스</a></h6>
-              <span>7월 7, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -360,7 +406,7 @@
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -411,6 +457,9 @@
 
 
     <!-- headerblur min height -->
+    
+      var headerblur = document.getElementById("header-blur");
+      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>
