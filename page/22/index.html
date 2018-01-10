@@ -123,7 +123,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-08-22 07:19:51]react-dates"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-08-24 05:44:30]openMCT"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +131,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/08/22/[2016-08-22 07:19:51]react-dates/">react-dates</a>
+      <a class="article-title" href="/2016/08/24/[2016-08-24 05:44:30]openMCT/">openMCT</a>
     </h1>
   
 
@@ -139,8 +139,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/08/22/[2016-08-22 07:19:51]react-dates/" class="article-date">
-	  <time datetime="2016-08-21T22:19:51.000Z" itemprop="datePublished">8월 22, 2016</time>
+	<a href="/2016/08/24/[2016-08-24 05:44:30]openMCT/" class="article-date">
+	  <time datetime="2016-08-23T20:44:30.000Z" itemprop="datePublished">8월 24, 2016</time>
 	</a>
 
        
@@ -148,20 +148,42 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>date picker 관련 프론트엔드 모듈은 꽤 널리고 널렸습니다. 하지만 오늘 소개해 드릴 date picker는 특별할 지도 모르겠습니다. 왜냐구요? airbnb에서 공개하는 date picker 이기 때문입니다. 일정을 정하고 숙박 날짜를 정하는 데 누구보다 고민을 많이 했을 것 같은 모듈입니다.</p>
-<p>2016/08/22 Editor’s choice</p>
-<p><a href="https://github.com/airbnb/react-dates" title="https://github.com/airbnb/react-dates" target="_blank" rel="external"><strong>airbnb/react-dates</strong><br>_react-dates - An accessible, easily internationalizable, mobile-friendly datepicker library for the web_github.com</a><a href="https://github.com/airbnb/react-dates" target="_blank" rel="external"></a></p>
-<p><img src="/images/1*1PtiM_2YqgkOxLbW3k5sRA.png" alt=""></p>
-<p>한번 샘플 페이지에서 사용을 해 봐도 간단하지만 멋진 UX에 감탄이 나오는 군요. 아마 사용방법도 간단하겠죠?</p>
-<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><pre><code>$npm install
+        <p>NASA의 클래스를 보여주는 프로젝트가 깃헙에 올라 왔습니다. NASA야 최고의 과학자들이 모이니까! 라고 흘려 버릴 수도 있지만 상당히 재미있는 프로젝트입니다.</p>
+<p>일종의 대시보드를 만들고 같이 볼 수 있는 페이지입니다.</p>
+<p>2016/08/24 Today’s Best</p>
+<p><a href="https://github.com/nasa/openmct" title="https://github.com/nasa/openmct" target="_blank" rel="external"><strong>nasa/openmct</strong><br>_openmct - A web based mission control framework._github.com</a><a href="https://github.com/nasa/openmct" target="_blank" rel="external"></a></p>
+<hr>
+<h4 id="openMCT"><a href="#openMCT" class="headerlink" title="openMCT?"></a>openMCT?</h4><p>깃헙페이지를 방문해 보면 openMCT에 대한 소개가 있습니다.</p>
+<p><img src="/images/1*93n--p9Ou9afEPCptGrdYg.png" alt=""></p>
+<p>차세대 mission control framework이라고 하는군요. NASA에서 임무를 수행할때 사용될 프레임워크에 contribution 할 수 있다니 가슴이 뛰지 않나요?</p>
+<p>일단 데모페이지를 헤로쿠에 올려놓아서 가보도록 하겠습니다.</p>
+<p>오호. 이런 일이 가능하다니욧. 호호호.</p>
+<p>일단은 데모페이지는 animated gif군요.(헐 낚시왕 김NASA)</p>
+<hr>
+<h4 id="설치-및-실행"><a href="#설치-및-실행" class="headerlink" title="설치 및 실행"></a>설치 및 실행</h4><p><a href="https://asciinema.org/a/a3xjjqxs2jgmclzbpdg0c4p7e" target="_blank" rel="external"><img src="/images/1*FtZ76REu7zpAuSRw6lV-Gw.png" alt=""></a>링크 클릭</p>
+<pre><code>git clone [https://github.com/nasa/openmct.git][anchor3]
 
-$npm run storybook
-</code></pre><p>git clone 받은 뒤에 npm 명령어를 실행시키고 나면 아래와 같은 창이 뜹니다.</p>
-<p><img src="/images/1*xySu4XOVV9dEkJMoYhUybQ.png" alt=""></p>
-<h4 id="실행코드"><a href="#실행코드" class="headerlink" title="실행코드"></a>실행코드</h4><p>실제 코드에서는 다음과 같이 사용됩니다.</p>
-<p>DateRangePicker, SingleDatePicker, DayPicker중에 하나를 JSX코드에서 가져와 onDatesChange, onFocusChane, focusedInput등의 이벤트를 처리할 수 있는 메쏘드 들로 지정해 주면 됩니다.</p>
-<p><img src="/images/1*H_vKkRirfEPHx-6CIxDFiw.pn" alt=""></p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/14b2dd259dd5" target="_blank" rel="external">August 21, 2016</a>.</p>
+npm install
+
+npm start
+</code></pre><p>지금은 에러가 나서 최신 release된 commit 버전으로 checkout 받아서 다시 실행시키니 통과가 됩니다.</p>
+<pre><code>$git checkout acc1b8e207365b80dc3082386a97c9e349654fcd
+
+$npm install
+
+$npm start
+</code></pre><p>그랬더니 다음과 같은 창이 뜨는군요. 좀 만져 봤습니다.</p>
+<p><img src="/images/1*WN03ZTSxuH5bZ_61PmGXgg.pn" alt=""></p>
+<p>즉, NASA의 mission을 수행할 수 있는 작업들과 그 task들을 수행할 수 있는 그래프와 URL리소스들을 배치할 수 있고 그것들을 대시보드로 같이 볼 수 있는 역할을 하고 있습니다.</p>
+<h4 id="소스-구성"><a href="#소스-구성" class="headerlink" title="소스 구성"></a>소스 구성</h4><p>gulp파일을 따라 main.js 파일을 따라가면</p>
+<p><a href="https://github.com/nasa/openmct/blob/master/main.js" title="https://github.com/nasa/openmct/blob/master/main.js" target="_blank" rel="external"><strong>nasa/openmct</strong><br>_openmct - A web based mission control framework._github.com</a><a href="https://github.com/nasa/openmct/blob/master/main.js" target="_blank" rel="external"></a></p>
+<p>angular기반으로 프레임워크는 구성이 되어 있음을 알 수 있습니다. 전체 MVVW 프레임워크는 angular이고, jquery대신에 zepto를 사용했네요. 통계를 그리기 위해서는 csv파일을 사용한 듯 싶습니다.</p>
+<p>UI 컴포넌트들은 각각 NASA에서 만들고, 그것들을 오픈소스화 한 개념입니다.</p>
+<p>예를 들어 다이알로그의 경우는</p>
+<p><a href="https://github.com/nasa/openmct/tree/master/platform/commonUI/dialog" title="https://github.com/nasa/openmct/tree/master/platform/commonUI/dialog" target="_blank" rel="external"><strong>nasa/openmct</strong><br>_openmct - A web based mission control framework._github.com</a><a href="https://github.com/nasa/openmct/tree/master/platform/commonUI/dialog" target="_blank" rel="external"></a></p>
+<p>처럼 컴포넌트화 했고 README파일도 훌륭하게 빠져 있습니다.</p>
+<p>NASA프로젝트에 contribution 하고 싶은 프론트엔드 개발자에게는 지금이 절호의 찬스가 되겠군요. 다만~ Angular 능력자여야 할 거 같다는 생각은 드는데, 어떻습니까? 오타를 찾아도 contributor 인데 한번 도전해 봐도 나쁘지 않을 거 같네요.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/85c00e7e40b3" target="_blank" rel="external">August 23, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -182,7 +204,7 @@ $npm run storybook
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-08-20 17:39:03]powershell"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-08-22 11:13:56]pigz"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -190,7 +212,7 @@ $npm run storybook
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/08/20/[2016-08-20 17:39:03]powershell/">powershell</a>
+      <a class="article-title" href="/2016/08/22/[2016-08-22 11:13:56]pigz/">pigz</a>
     </h1>
   
 
@@ -198,8 +220,8 @@ $npm run storybook
     
     <div class="article-meta">
       
-	<a href="/2016/08/20/[2016-08-20 17:39:03]powershell/" class="article-date">
-	  <time datetime="2016-08-20T08:39:03.000Z" itemprop="datePublished">8월 20, 2016</time>
+	<a href="/2016/08/22/[2016-08-22 11:13:56]pigz/" class="article-date">
+	  <time datetime="2016-08-22T02:13:56.000Z" itemprop="datePublished">8월 22, 2016</time>
 	</a>
 
        
@@ -207,40 +229,25 @@ $npm run storybook
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>모두가 다 아는 내용에 대해서는 리뷰하기를 원하지는 않는데, 제대로 작동하는지 정말 너무나 궁금해 졌습니다. 그래서 리뷰를 해 봤습니다.</p>
-<p>2016/08/20 Editor’s choice</p>
-<p><a href="https://github.com/PowerShell/PowerShell/tree/master/docs/learning-powershell" title="https://github.com/PowerShell/PowerShell/tree/master/docs/learning-powershell" target="_blank" rel="external"><strong>PowerShell/PowerShell</strong><br>_PowerShell for every system!_github.com</a><a href="https://github.com/PowerShell/PowerShell/tree/master/docs/learning-powershell" target="_blank" rel="external"></a></p>
-<hr>
+        <p>지금 소개하는 이 프로젝트는 gzip의 하부 프로젝트입니다. gzip 을 약간 다르게 배열하면 pigz가 되는데 제 생각에는 이게 async의 특징을 표현하기 위해 이렇게 적은게 아닌가 싶습니다.</p>
+<p>2016/08/22 Editor’s choice</p>
+<p><a href="https://github.com/madler/pigz" title="https://github.com/madler/pigz" target="_blank" rel="external"><strong>madler/pigz</strong><br>_pigz - A parallel implementation of gzip for modern multi-processor, multi-core machines._github.com</a><a href="https://github.com/madler/pigz" target="_blank" rel="external"></a></p>
+<p>이른바</p>
 <blockquote>
-<p><strong>윈도우 파워셸</strong>(Windows PowerShell)은 <a href="https://ko.wikipedia.org/wiki/%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%86%8C%ED%94%84%ED%8A%B8" title="마이크로소프트" target="_blank" rel="external">마이크로소프트</a>가 개발한 확장 가능한 <a href="https://ko.wikipedia.org/wiki/%EB%AA%85%EB%A0%B9_%EC%A4%84_%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4" title="명령 줄 인터페이스" target="_blank" rel="external">명령 줄 인터페이스</a>(CLI) <a href="https://ko.wikipedia.org/wiki/%EC%85%B8" title="셸" target="_blank" rel="external">셸</a> 및 <a href="https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_%EC%96%B8%EC%96%B4" title="스크립트 언어" target="_blank" rel="external">스크립트 언어</a>를 특징으로 하는 <a href="https://ko.wikipedia.org/wiki/%EB%AA%85%EB%A0%B9%EC%96%B4_%EC%9D%B8%ED%84%B0%ED%94%84%EB%A6%AC%ED%84%B0" title="명령어 인터프리터" target="_blank" rel="external">명령어 인터프리터</a>이다.</p>
+<p>A parallel implementation of gzip for modern multi-processor, multi-core machines.</p>
 </blockquote>
-<p>출처 : <a href="https://ko.wikipedia.org/wiki/%EC%9C%88%EB%8F%84%EC%9A%B0_%ED%8C%8C%EC%9B%8C%EC%85%B8" target="_blank" rel="external">한국어 위키</a></p>
-<p>뭔가 내용이 부실해 보입니다.</p>
-<p>리눅스나 유닉스 계열의 서버 관리자가 윈도우즈를 만졌을 때 셸 스크립트가 턱없이 부족하다고 느껴지는 명령어 자동화의 영역을 커버해 주는 것이 윈도우 파워셸이었습니다.</p>
-<p>그런데, 이번에 마이크로 소프트에서는 이 파워셸을 리눅스와 MacOS에서 돌아갈 수 있도록 포팅을했네요.</p>
-<p>이게 가능하게 된 배경은 아무래도</p>
-<p><a href="https://github.com/aspnet/home" title="https://github.com/aspnet/home" target="_blank" rel="external"><strong>aspnet/Home</strong><br>_The Home repository is the starting point for people to learn about ASP.NET Core._github.com</a><a href="https://github.com/aspnet/home" target="_blank" rel="external"></a></p>
-<p>dotnet core 자체를 오픈 소스화 하고 모든 플랫폼 위에서 돌아가도록 한 그간의 노력들 덕분이겠지요?</p>
+<p>멀티 프로세서, 멀티코어를 위한 gzip의 병렬 처리 프로그램!</p>
 <hr>
-<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><p><a href="https://github.com/PowerShell/PowerShell/releases" title="https://github.com/PowerShell/PowerShell/releases" target="_blank" rel="external"><strong>PowerShell/PowerShell</strong><br>_PowerShell for every system!_github.com</a><a href="https://github.com/PowerShell/PowerShell/releases" target="_blank" rel="external"></a></p>
-<p>릴리즈 버전에서 자기가 사용하는 OS에 맞게 설치 하면 됩니다.</p>
-<p>저는 Mac pkg를 다운 받았습니다. brew 같은 툴로 설치하지는 않는 군요.</p>
-<p>다운받아서 pkg 를 실행시키면 인스톨러가 step by step으로 따라갈 수 있도록 해 줍니다.</p>
-<h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><p>실행하면 바로 사용할 수 있는 거는 아니군요.</p>
-<p>powershell도 shell인지라 Mac의 기본 shell로 사용할 수는 없고 일단은</p>
-<pre><code>$/usr/local/microsoft/powershell/&lt;버전\&gt;/powershell
-</code></pre><p>을 실행시키면</p>
-<p><img src="/images/1*xORf9cWDRd4TgyftyOBvQA.png" alt=""></p>
-<p>shell 이 나오고 dir을 실행 시킬 수 있습니다.</p>
-<pre><code>\&gt;Get-ChildItem|Export-Csv mm.csv  
-\&gt;Invoke-Item mm.csv
-</code></pre><p>같은 명령어를 통해 dir한 결과를 mm.csv파일에 저장하고 엑셀로 그걸 열어보는 약간의 고난이도(?) 기술을 실행해 보겠습니다.</p>
-<p>이번에는 ps파일로 저장을 할 것이기 때문에 VS Code에 플러그인으로 설치해서</p>
-<p><img src="/images/1*NM_WIAVe-3EFWSr_o7x5NA.png" alt=""></p>
-<p>실행을 하면 다음과 같이 실행이 됩니다.</p>
-<p><img src="/images/1*ZwU_2VIwx4FgTfJeKyMSGg.gi" alt=""></p>
-<p>파워셸을 좋아하는 사람들이라면 두 손들고 반길만 하겠네요.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/f84085b46765" target="_blank" rel="external">August 20, 2016</a>.</p>
+<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><pre><code>$git clone [https://github.com/madler/pigz.git][anchor2]
+</code></pre><p>내려 받은뒤 make 면 빌드가 됩니다.</p>
+<h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><p>실행은 PATH에 추가하지 않고</p>
+<p>gzip 과 pigz를 같이 실행해 보았습니다.</p>
+<p>결과는?</p>
+<p><img src="/images/1*BzzTQA-Br1NbDuWecDKwAg.pn" alt=""></p>
+<p>아직은 gzip 압승입니다.</p>
+<p>pigz 는 프로세스가 끝나지 않는데, 이게 아무래도 버그인 듯 싶네요.</p>
+<p>하지만 조만간 훌륭하게 패치 되겠죠?</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/5f2673d9517a" target="_blank" rel="external">August 22, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -265,7 +272,7 @@ $npm run storybook
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/21/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><span class="page-number current">22</span><a class="page-number" href="/page/23/">23</a><a class="page-number" href="/page/24/">24</a><span class="space">&hellip;</span><a class="page-number" href="/page/98/">98</a><a class="extend next" rel="next" href="/page/23/">다음</a>
+    <a class="extend prev" rel="prev" href="/page/21/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><span class="page-number current">22</span><a class="page-number" href="/page/23/">23</a><a class="page-number" href="/page/24/">24</a><span class="space">&hellip;</span><a class="page-number" href="/page/99/">99</a><a class="extend next" rel="next" href="/page/23/">다음</a>
   </nav>
 
 </section>
@@ -319,6 +326,30 @@ $npm run storybook
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2018/01/08/2018-01-08-2018년-1월-깃헙-트렌드/">[2018-01-08] 2018년 1월 깃헙 트렌드 - Rust와 웹 어셈블리의 혁신적인 도발</a></h6>
+              <span>1월 8, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/01/05/peer-review-md/">peer-review.md</a></h6>
+              <span>1월 5, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2017/11/27/2017-11-27-11월-깃헙-트렌드/">[2017-11-27] 11월 깃헙 트렌드</a></h6>
               <span>11월 27, 2017</span>
             </div>
@@ -361,30 +392,6 @@ $npm run storybook
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/08/03/tech-trend-03/">(tech-trend) 구루들이 찾는다는 테크 트렌드 - 유명 블로그와 소셜 유명인</a></h6>
-              <span>8월 3, 2017</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/08/01/refactoring02/">ES2015 리팩토링 – 2. 빠레꽁(var let const)</a></h6>
-              <span>8월 1, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -397,7 +404,7 @@ $npm run storybook
   <div class="widget-wrap">
     <h3 class="widget-title">태그</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-trend-github/">github-trend, github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">184</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-trend-github/">github-trend, github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -417,7 +424,7 @@ $npm run storybook
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -442,7 +449,7 @@ $npm run storybook
 
   <div class="clearfix container">
       <div class="site-info">
-	      &copy; 2017 keen blog All Rights Reserved.
+	      &copy; 2018 keen blog All Rights Reserved.
         
             <span id="busuanzi_container_site_uv">
               本站访客数<span id="busuanzi_value_site_uv"></span>人次  

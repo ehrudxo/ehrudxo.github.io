@@ -123,7 +123,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-03-15 06:57:04]pseudo"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-03-16 06:39:29][React-Native] image 늘리기"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +131,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/03/15/[2016-03-15 06:57:04]pseudo/">pseudo</a>
+      <a class="article-title" href="/2016/03/16/[2016-03-16 06:39:29][React-Native] image 늘리기/">[React-Native] image 늘리기</a>
     </h1>
   
 
@@ -139,8 +139,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/03/15/[2016-03-15 06:57:04]pseudo/" class="article-date">
-	  <time datetime="2016-03-14T21:57:04.000Z" itemprop="datePublished">3월 15, 2016</time>
+	<a href="/2016/03/16/[2016-03-16 06:39:29][React-Native] image 늘리기/" class="article-date">
+	  <time datetime="2016-03-15T21:39:29.000Z" itemprop="datePublished">3월 16, 2016</time>
 	</a>
 
        
@@ -148,27 +148,21 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/1*bgEKqXM9VTjf3SueK4oNrA.png" alt=""></p>
-<p>code converting이 자유 자재로 되는 세상. 누구나 꿈꾸는 이상형이죠. 여기그것을 위해 달리는 프로젝트가 있습니다. pseudo 는 기본적인 단계에서는 이미 코드 컨버팅을 지원합니다.</p>
-<p>2016/03/15 editor’s choice ( ★)</p>
-<p><a href="https://github.com/alehander42/pseudo" title="https://github.com/alehander42/pseudo" target="_blank" rel="external"><strong>alehander42/pseudo</strong><br>_pseudo — automated algorithm translation for Python, C++, JS, Go, C#, Ruby :alien:_github.com</a><a href="https://github.com/alehander42/pseudo" target="_blank" rel="external"></a></p>
-<h3 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h3><blockquote>
-<p>$pip3 install pseudo</p>
-<p>$pip3 install pseudo-python</p>
-</blockquote>
-<h3 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h3><pre><code>def fib(n):  
-if n &lt;= 1:  
-return 1;  
-else:  
-return fib(n-1) + fib(n-2)  
-print(fib(4))
-</code></pre><p>라는 origin.py 코드를 만든 뒤에</p>
-<pre><code>$pseudo-python original.py fib.js
-</code></pre><p>를 실행 시키고 나니 다음과 같은 코드가 생성이 되어 있네요.</p>
-<p><img src="/images/1*Vie5RPgUB60demGWdMZUxQ.pn" alt=""></p>
-<p>실행 결과 값은 같습니다.</p>
-<p>조금 더 들여다 보면서 pseudo 코드와 AST등을 자세히 살펴볼 여지는 있는 것 같은 프로젝트입니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/2769da32b6a6" target="_blank" rel="external">March 14, 2016</a>.</p>
+        <p><img src="/images/1*8g_8leaDJr9jC0kCHYjISg.png" alt="">hard to stretch</p>
+<p>React Native 는 여러가지 새로운 개념들 (예를 들어 flex)를 많이 적용하는데, 이미지 width : 100% 같은 형태를 주려고 하면 생각보다 잘 되지 않는다.</p>
+<p><img src="/images/1*rDdJNacr54VdZSaY2f8ffQ.png" alt=""></p>
+<p>이렇게 나오거나 지나치게 꽉 채워서 나오지만, 실제 어플리케이션을 짜려고 하면, width는 화면 사이즈에 맞춰 늘리고 height는 동일한 크기로 셋팅하고 싶을 때가 많다. 이럴 경우는 어쩌면 좋을까?</p>
+<h3 id="Dimension과-resizeMode를-적절히-활용"><a href="#Dimension과-resizeMode를-적절히-활용" class="headerlink" title="Dimension과 resizeMode를 적절히 활용"></a>Dimension과 resizeMode를 적절히 활용</h3><p>다음은 소스다.</p>
+<pre><code>var {height, width} = Dimensions.get(&apos;window&apos;);
+</code></pre><p>이 부분에 주의 하자. Dimension은 기본적으로 React에 포함되어 있는 모듈이므로 사용하는데 무리가 없음.</p>
+<p>이후 style 에 width는 지정한 width로 height는 개발자가 원하는 데로 줄 수 있다.</p>
+<p>그리고 React Image Component 에는 resizeMode가 존재한다.</p>
+<p><img src="/images/1*2tID_iqXkL8E8uGozf86Kg.png" alt=""></p>
+<p>stretch모드로 두면 높이와 넓이를 따로 지정할 수 있는데, 기본적으로 Dimension 만 알아둬도 웹앱을 제작하는데에는 어려움이 없을 것으로 보인다.</p>
+<p>이렇게 작업을 하고 나면</p>
+<p><img src="/images/1*zYLaqNyy8YCKR7S8e4614w.pn" alt=""></p>
+<p>원하는 레이아웃이 나온다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/b562da8ed665" target="_blank" rel="external">March 15, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -189,7 +183,7 @@ print(fib(4))
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-03-14 06:11:38]jo"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-03-16 05:40:15]UnivaqInformaticaBot"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -197,7 +191,7 @@ print(fib(4))
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/03/14/[2016-03-14 06:11:38]jo/">jo</a>
+      <a class="article-title" href="/2016/03/16/[2016-03-16 05:40:15]UnivaqInformaticaBot/">UnivaqInformaticaBot</a>
     </h1>
   
 
@@ -205,8 +199,8 @@ print(fib(4))
     
     <div class="article-meta">
       
-	<a href="/2016/03/14/[2016-03-14 06:11:38]jo/" class="article-date">
-	  <time datetime="2016-03-13T21:11:38.000Z" itemprop="datePublished">3월 14, 2016</time>
+	<a href="/2016/03/16/[2016-03-16 05:40:15]UnivaqInformaticaBot/" class="article-date">
+	  <time datetime="2016-03-15T20:40:15.000Z" itemprop="datePublished">3월 16, 2016</time>
 	</a>
 
        
@@ -214,31 +208,30 @@ print(fib(4))
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/1*EGG1YWJmw66ATjAe5a0Mgw.pn" alt=""></p>
-<p>json을 만들어야 하는데, 굳이 javascript 코딩은 하고 싶지 않고 따옴표 중복의 실수는 하기는 싫고… 이런생각을 한번쯤은 개발하다가 해 보셨을 것입니다. CLI환경에서 shell command로 이런 상상을 실현해 주는 프로젝트입니다.</p>
-<p>2016/03/14 Editor’s choice ( 292 ★ )</p>
-<p><a href="https://github.com/jpmens/jo" title="https://github.com/jpmens/jo" target="_blank" rel="external"><strong>jpmens/jo</strong><br>_jo - JSON output from a shell_github.com</a><a href="https://github.com/jpmens/jo" target="_blank" rel="external"></a></p>
-<h3 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h3><p>설치 방법은 정말 간단합니다.</p>
-<p>Mac은</p>
-<pre><code>brew install caius/jo/jo
-</code></pre><p>Ubuntu의 경우는</p>
-<pre><code>apt-add-repository ppa:duggan/jo --yes  
-apt-get update -q  
-apt-get install jo
-</code></pre><p>source 컴파일</p>
-<pre><code>git clone git://github.com/jpmens/jo.git  
-cd jo  
-autoreconf -i  
-./configure  
-make check  
-make install
-</code></pre><h3 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h3><p>실행은 더 간단합니다.</p>
+        <p><img src="/images/1*nsIz66YPDwm6TLLEpKTGzQ.pn" alt="">bot..</p>
+<p>Telegram이 여러모로 화두가 되고 있는 가운데, 오늘의 깃헙은 <a href="http://univaq.it/" target="_blank" rel="external">L’Aquila</a> 대학의 텔레그램 봇이 차지했습니다! 교수 정보, 매점(카페테리아) 정보, 뉴스 등을 제공하고 있네요.</p>
+<p>Today’s best ( 708 ★ )</p>
+<p><a href="https://github.com/UnivaqTelegramBot/UnivaqInformaticaBot" title="https://github.com/UnivaqTelegramBot/UnivaqInformaticaBot" target="_blank" rel="external"><strong>UnivaqTelegramBot/UnivaqInformaticaBot</strong><br>_UnivaqInformaticaBot - A telegram bot that shares news of our university’s department_github.com</a><a href="https://github.com/UnivaqTelegramBot/UnivaqInformaticaBot" target="_blank" rel="external"></a></p>
 <blockquote>
-<p>$ jo -p name=keen age=40 dev=true has=son<br>{<br>“name”: “keen”,<br>“age”: 40,<br>“dev”: true,<br>“has”: “son”<br>}</p>
+<p>It’s built to provide a single and simple source of information for the the students of university of L’Aquila, in particular for the faculty of Computer Science</p>
 </blockquote>
-<p>짧지만 훌륭한 블로그 매뉴얼도 가지고 있습니다.</p>
-<p><a href="http://jpmens.net/2016/03/05/a-shell-command-to-create-json-jo/" title="http://jpmens.net/2016/03/05/a-shell-command-to-create-json-jo/" target="_blank" rel="external"><strong>A shell command to create JSON: jo</strong><br>_I tired of mangling shell scripts to produce JSON. You’ve likely seen this somewhere: It gets merrier if an element…_jpmens.net</a><a href="http://jpmens.net/2016/03/05/a-shell-command-to-create-json-jo/" target="_blank" rel="external"></a></p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/14213c965e7e" target="_blank" rel="external">March 13, 2016</a>.</p>
+<p>명령어는 다음과 같이 제공을 하고 있습니다.</p>
+<pre><code>La lista di comandi:  
+
+/help - Stampa questo messaggio (도움말 메세지)  
+/news - Leggi le ultime 10 news (최신 뉴스 10개)  
+/news num - Leggi le ultime &lt;num\&gt; news (뉴스 x개)- num 만큼  
+/newson - Abilita le notifiche per ogni nuova news(default)-news보기  
+/newsoff - Disabilita le notifiche per ogni nuova news - news 안보기  
+/prof - Stampa la lista dei professori - 교수 목록  
+/prof cognome - Info su un docente - 교수 정보  
+/segreteria - Info sulla segreteria studenti - 학사 사무실 정보  
+/mensa - Info sugli orari della mensa - 카페테리아 정보  
+/adsu - Info sull&apos;adsu - ???
+</code></pre><h3 id="텔레그램-봇이란"><a href="#텔레그램-봇이란" class="headerlink" title="텔레그램 봇이란?"></a>텔레그램 봇이란?</h3><p>텔레그램에 대해서는 ( 더 이상의 자세한 설명은 ..한다) 최근 국내 이슈들로 모두들 알고 계실 듯 합니다. 봇이라고 하는 것은 메신저 상에서 명령어로 원하는 정보들을 얻어내는 일들을 하는 것입니다. 국내 유명 봇으로는 <a href="http://www.simsimi.com/" target="_blank" rel="external">심심이</a>가 있겠네요. (MSN메신저에서 카톡까지 있던데)</p>
+<p><a href="https://core.telegram.org/bots" title="https://core.telegram.org/bots" target="_blank" rel="external"><strong>Bots: An introduction for developers</strong><br>_Bots are special Telegram accounts designed to handle messages automatically. Users can interact with bots by sending…_core.telegram.org</a><a href="https://core.telegram.org/bots" target="_blank" rel="external"></a></p>
+<p>텔레그램 bot API 페이지 입니다. 사내 델라코트 메뉴 관련해서 봇을 만들면 좋겠다는 생각도 드는군요.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/94a8ac5dc781" target="_blank" rel="external">March 15, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -263,7 +256,7 @@ make install
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/86/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/85/">85</a><a class="page-number" href="/page/86/">86</a><span class="page-number current">87</span><a class="page-number" href="/page/88/">88</a><a class="page-number" href="/page/89/">89</a><span class="space">&hellip;</span><a class="page-number" href="/page/98/">98</a><a class="extend next" rel="next" href="/page/88/">다음</a>
+    <a class="extend prev" rel="prev" href="/page/86/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/85/">85</a><a class="page-number" href="/page/86/">86</a><span class="page-number current">87</span><a class="page-number" href="/page/88/">88</a><a class="page-number" href="/page/89/">89</a><span class="space">&hellip;</span><a class="page-number" href="/page/99/">99</a><a class="extend next" rel="next" href="/page/88/">다음</a>
   </nav>
 
 </section>
@@ -317,6 +310,30 @@ make install
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2018/01/08/2018-01-08-2018년-1월-깃헙-트렌드/">[2018-01-08] 2018년 1월 깃헙 트렌드 - Rust와 웹 어셈블리의 혁신적인 도발</a></h6>
+              <span>1월 8, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/01/05/peer-review-md/">peer-review.md</a></h6>
+              <span>1월 5, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2017/11/27/2017-11-27-11월-깃헙-트렌드/">[2017-11-27] 11월 깃헙 트렌드</a></h6>
               <span>11월 27, 2017</span>
             </div>
@@ -359,30 +376,6 @@ make install
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/08/03/tech-trend-03/">(tech-trend) 구루들이 찾는다는 테크 트렌드 - 유명 블로그와 소셜 유명인</a></h6>
-              <span>8월 3, 2017</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/08/01/refactoring02/">ES2015 리팩토링 – 2. 빠레꽁(var let const)</a></h6>
-              <span>8월 1, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -395,7 +388,7 @@ make install
   <div class="widget-wrap">
     <h3 class="widget-title">태그</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-trend-github/">github-trend, github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">184</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-trend-github/">github-trend, github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -415,7 +408,7 @@ make install
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -440,7 +433,7 @@ make install
 
   <div class="clearfix container">
       <div class="site-info">
-	      &copy; 2017 keen blog All Rights Reserved.
+	      &copy; 2018 keen blog All Rights Reserved.
         
             <span id="busuanzi_container_site_uv">
               本站访客数<span id="busuanzi_value_site_uv"></span>人次  

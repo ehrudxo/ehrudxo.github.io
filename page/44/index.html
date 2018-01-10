@@ -123,7 +123,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-06-12 23:28:08]nbind"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-06-16 08:34:59]AnimatedSVGView"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +131,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/06/12/[2016-06-12 23:28:08]nbind/">nbind</a>
+      <a class="article-title" href="/2016/06/16/[2016-06-16 08:34:59]AnimatedSVGView/">AnimatedSVGView</a>
     </h1>
   
 
@@ -139,8 +139,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/06/12/[2016-06-12 23:28:08]nbind/" class="article-date">
-	  <time datetime="2016-06-12T14:28:08.000Z" itemprop="datePublished">6월 12, 2016</time>
+	<a href="/2016/06/16/[2016-06-16 08:34:59]AnimatedSVGView/" class="article-date">
+	  <time datetime="2016-06-15T23:34:59.000Z" itemprop="datePublished">6월 16, 2016</time>
 	</a>
 
        
@@ -148,49 +148,39 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>최근 웹 환경이 급격하게 바뀌고 있는 것들은 모두가 인지하고 있습니다. native 앱과 웹의 경계도 점점 더 무너져 가고 있습니다.</p>
-<p>오늘 소개해 드리는 프로젝트는 그 연장 선상에 있다고 보면 됩니다. 간단하게만 말씀드리면 Javascript에서 C++ 라이브러리의 헤더에 접근이 가능하게 하는 프로젝트입니다.(와우!)</p>
-<p>2016/06/12 Editor’s choice</p>
-<p><a href="https://github.com/charto/nbind" title="https://github.com/charto/nbind" target="_blank" rel="external"><strong>charto/nbind</strong><br>_nbind - Magical headers that make your C++ library accessible from JavaScript_github.com</a><a href="https://github.com/charto/nbind" target="_blank" rel="external"></a></p>
+        <p>SVG라는 포맷은 여러모로 많이 쓰이는 벡터포맷입니다. Canvas가 나오기 전까지는 DOM위에 그릴 수 있는 Vecotr 포맷으로 가장 유용한 역할을 하고 있었고, HTML5 Canvas가 나온 이후에도 브라우저 지원등의 이유로 여전히 사랑을 받고 있습니다.</p>
+<p>이미지를 SVG로 바꿔주는 여러가지 시도들도 있었죠.</p>
+<p>2016/06/16 Editor’s choice</p>
+<p>오늘은 Android에서 SVG를 보여주는 프로젝트입니다.</p>
+<p><a href="https://github.com/jaredrummler/AnimatedSvgView" title="https://github.com/jaredrummler/AnimatedSvgView" target="_blank" rel="external"><strong>jaredrummler/AnimatedSvgView</strong><br>_AnimatedSvgView - Animated SVG Drawing for Android_github.com</a><a href="https://github.com/jaredrummler/AnimatedSvgView" target="_blank" rel="external"></a></p>
 <hr>
-<h4 id="기술적-배경"><a href="#기술적-배경" class="headerlink" title="기술적 배경"></a>기술적 배경</h4><p>전체적인 그림은 다음과 같습니다.</p>
-<p><img src="/images/1*ng8lQ6mPnwPG0MGALOMkbQ.png" alt=""></p>
-<p>결국은 C++ API를 javascript(서버 및 클라이언트 환경)에서 사용할 수 있게 해 준다는 내용의 어마어마한 프로젝트입니다.</p>
-<p>이프로젝트는 화살표 한개가 완성될 일이 없기 때문에(compile to native library -> browser)약간은 미완이고 결국은 WebAssembly가 오기전의 과도기적인 한계를 가지고는 있지만 좋은 시도입니다.</p>
-<p>엄밀히 말하면 사용예도 emscripten 을 생각을 한다면 외전 격으로 봐야 할 수도 있겠지만 그림은 좀 더 포괄적인 그림을 그려놓았네요.</p>
-<hr>
-<h4 id="emscripten은-뭐래"><a href="#emscripten은-뭐래" class="headerlink" title="emscripten은 뭐래"></a>emscripten은 뭐래</h4><p>emscripten은 LLVM기반으로 컴파일 된 C++ 을 asm.js로 변환해 브라우저 및 javascript 환경에서 사용할 수 있도록 해 준 프로젝트 입니다.</p>
-<p><a href="http://kripken.github.io/emscripten-site/" title="http://kripken.github.io/emscripten-site/" target="_blank" rel="external"><strong>Main - Emscripten 1.36.4 documentation</strong><br>_Getting started using Emscripten from Visual Studio_kripken.github.io</a><a href="http://kripken.github.io/emscripten-site/" target="_blank" rel="external"></a></p>
-<p>이에 대한 자세한 이해는 우리나라에서는 실제 asm.js에 대한 아웃사이드님의 블로그로 먼저 소개 되었으므로 링크로 대체할 까 합니다.</p>
-<p><a href="https://blog.outsider.ne.kr/927" title="https://blog.outsider.ne.kr/927" target="_blank" rel="external"><strong>asm.js에 대해서 :: Outsider’s Dev Story</strong><br>_asm.js 을 처음 듣게 된 것은 존 레식이 올린 다음 트윗을 보고나서였다. Asm.js is seriously one of the most exciting things to happen in JavaScript…_blog.outsider.ne.kr</a><a href="https://blog.outsider.ne.kr/927" target="_blank" rel="external"></a></p>
-<p>약간 여기서 언급되지 않은 부분을 조금 더 이야기 하자면</p>
-<p>이런 움직임이 이제는 웹 표준으로까지 확대가 될 예정이라.</p>
-<p><a href="https://webassembly.github.io/" title="https://webassembly.github.io/" target="_blank" rel="external"><strong>WebAssembly</strong><br>_WebAssembly is currently being designed as an open standard by a W3C Community Group that includes representatives from…_webassembly.github.io</a><a href="https://webassembly.github.io/" target="_blank" rel="external"></a></p>
-<p>(github에서 제가 유일하게 noti를 받고있는 프로젝트…입니다)</p>
-<p>로 장기적으로는 대체가 될 확률이 높습니다. (하지만 지금 속도 상으로는 10년은 걸릴거 같다는…)</p>
-<p>이 얘기인 즉슨 C,Java등의 다른 언어로 만든 프로그램이 asm.js 의 아키텍쳐 같은 혹은 더 상위레벨의 바이트 코드 형태로 만들어진다는 이야기가 될 수 있겠습니다.</p>
-<pre><code>&lt;script src=&quot;googlesearch.dll&quot; type=&quot;webassembly&quot;\&gt;&lt;/script\&gt;
-</code></pre><p>태그 같은 녀석을 보더라도 당황하지 말아야 한다는 이야기입니다.</p>
-<hr>
-<h4 id="그래서-nbind는-뭐야"><a href="#그래서-nbind는-뭐야" class="headerlink" title="그래서 nbind는 뭐야"></a>그래서 nbind는 뭐야</h4><p>네 웹의 미래도 현재에 발 붙여야 하는 법. 표준과 상관은 없겠지만 이런 프로젝트가 많이 나올수록 개발자가 활약할 필드는 풍성해 지겠죠?</p>
-<p>nbind는 C++을 standard library 11이상이라면 LLVM단에서 header 에 있는 API콜이 가능하도록 만들어 준다는 이야기 입니다.</p>
-<hr>
-<h4 id="어떻게-가능할까요"><a href="#어떻게-가능할까요" class="headerlink" title="어떻게 가능할까요?"></a>어떻게 가능할까요?</h4><p>이 프로젝트가 뭔가 특별한 어려운 걸 한 거 같아 보이지는 않습니다. 이전에 존재하던 기술들을 잘 묶어 놓았다는 것인데, 다이어그램의 중단부는 emscripten이 해 주고 하부 native api 콜은 node-gyp를 통해 가능하게 했습니다.</p>
-<h4 id="아깐-emscripten-이번엔-node-gyp"><a href="#아깐-emscripten-이번엔-node-gyp" class="headerlink" title="아깐 emscripten 이번엔 node-gyp?"></a>아깐 emscripten 이번엔 node-gyp?</h4><p>node 개발을 하신 분들은 많이들 알고 있는 node-gyp는 node.js에서 네이티브 모듈을 사용할 때에 브릿지처럼 사용할 수 있는 javascript 와 네이티브 간의 연결을 해주는 툴입니다.</p>
-<p><a href="https://github.com/nodejs/node-gyp" title="https://github.com/nodejs/node-gyp" target="_blank" rel="external"><strong>nodejs/node-gyp</strong><br>_node-gyp is a cross-platform command-line tool written in Node.js for compiling native addon modules for Node.js. It…_github.com</a><a href="https://github.com/nodejs/node-gyp" target="_blank" rel="external"></a></p>
-<p>이 친구는 구글에서 크로스 플랫폼에서 돌아갈 수 있는 브라우저 (정확하게는 IDE)를 만들던 gyp 프로젝트에서 시작되었습니다.</p>
-<p><a href="https://gyp.gsrc.io/" title="https://gyp.gsrc.io/" target="_blank" rel="external"><strong>GYP - Generate Your Projects.</strong><br>_GYP can also be used to generate “hybrid” projects that provide the IDE scaffolding for a nice user experience but call…_gyp.gsrc.io</a><a href="https://gyp.gsrc.io/" target="_blank" rel="external"></a></p>
-<p>즉 크로미엄 -> node -> nbind라고 보시면 됩니다. GYP는 구글판 CMAKE로 보시면 정확합니다.</p>
-<hr>
-<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><p>설치랄 것도 없는 프로젝트인데 pre-requisite이 빡셉니다.</p>
-<p><img src="/images/1*Y7Jhq5Q4RnK1Sdf-SQNhvw.png" alt=""></p>
-<p>저 중에서 emscripten만 설치가 약간 어렵고 나머지는 각 OS 의 패키지 인스톨러로 가능합니다.</p>
-<h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><p><img src="/images/1*0QhZkPqItRfAjAuWqYNwZw.pn" alt=""></p>
-<p>그냥 이 스텝들을 그대로 따라주면 무난하게결과를 볼 수 있더군요. 어떻게 보면 너무 당연하달까요?</p>
-<p>gtk와 cairo같은 걸 통해서 GUI 콜을 하는 걸 한번 해 보고 있는데 간단히 안되는 군요. issue 등록해 봐야겠습니다.</p>
-<hr>
-<h4 id="구슬이-서말이라도-꿰어야-보배"><a href="#구슬이-서말이라도-꿰어야-보배" class="headerlink" title="구슬이 서말이라도 꿰어야 보배"></a>구슬이 서말이라도 꿰어야 보배</h4><p>매일매일 프로젝트들이 튀어나오고 있는데, 이런 것들을 이렇게 잘 꿰는 방법도 괜찮은 거 같습니다. 다만, 이런 프로젝트들의 한계는 원래 프로젝트의 버그와 한계를 똑같이 가진다는 점만 빼면 말이죠!</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/307a93e44f10" target="_blank" rel="external">June 12, 2016</a>.</p>
+<p>그런데, 그냥 보여 주는 것은 아닙니다.</p>
+<p>SVG는 기본적으로 drawing하는 점,선, 면들의 xml집합체로 되어 있는데, 그 집합체들을 약간의 시간을 두고 이쁘게 그릴 수 있도록 해 주고 있습니다.</p>
+<p><img src="/images/1*OeABEdHx0BYxfkgvX0PENg.gif" alt=""></p>
+<p>보시면 아시겠지만, 그려지는 순서대로 파티클이 뿌려지는 효과 처럼 그려지면서 완성이 됩니다.</p>
+<p><a href="https://github.com/jaredrummler/AnimatedSvgView/blob/master/demo/src/main/java/com/jrummyapps/android/animatedsvgview/demo/SVG.java" title="https://github.com/jaredrummler/AnimatedSvgView/blob/master/demo/src/main/java/com/jrummyapps/android/animatedsvgview/demo/SVG.java" target="_blank" rel="external"><strong>jaredrummler/AnimatedSvgView</strong><br>_AnimatedSvgView - Animated SVG Drawing for Android_github.com</a><a href="https://github.com/jaredrummler/AnimatedSvgView/blob/master/demo/src/main/java/com/jrummyapps/android/animatedsvgview/demo/SVG.java" target="_blank" rel="external"></a></p>
+<p>데모로 그려주는 소스는 위의 링크에서 찾아 볼수 있구요.</p>
+<p>아래와 같은 형태를 하고 있습니다.</p>
+<pre><code>_DEVPOOLS_(  
+new String\[\]{  
+&quot;M110,830,l0,-710,710,0,710,0,0,710,0,710,-710,0,-710,0,0,-710z m1360,0,l0,-650,-650,0,-650,0,0,650,0,650,650,0,650,0,0,-650z&quot;,  
+&quot;M314,832,c-30,-20,-19,-82,15,-82,29,0,46,36,32,66,-11,24,-27,30,-47,16z&quot;,  
+&quot;M1320,826,c-15,-19,-9,-56,12,-69,34,-22,66,41,36,71,-16,16,-33,15,-48,-2z&quot;,  
+&quot;M657,692,c-9,-13,20,-83,45,-109,12,-14,35,-31,50,-39,35,-18,119,-18,162,0,42,18,85,73,93,120,5,33,4,36,-20,36,-20,0,-28,-7,-37,-34,-23,-72,-102,-105,-172,-72,-34,17,-68,61,-68,90,0,16,-44,23,-53,8z&quot;  
+},new int\[\]{  
+Color._BLACK_,  
+Color._RED_,  
+Color._RED_,  
+Color._RED  
+_},  
+1630,1650  
+),
+</code></pre><p>쉽게 말씀드리면</p>
+<p>첫번째 면수로는 Path의 배열 두번째는 그 Path의 색, 넓이, 높이 순으로 입력하면 같은 모양으로 그리게 됩니다.</p>
+<p>DEVPOOLS 로고를 입력해 보았습니다.</p>
+<p><img src="/images/1*wD_VfSBTFnvcy1kWpDsEzA.gi" alt=""></p>
+<p>훌륭하게 그려지는 군요</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/c261a4dd9771" target="_blank" rel="external">June 15, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -211,7 +201,7 @@
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-06-11 23:52:12]AOS"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-06-15 12:06:31]Tensorflow-101"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -219,7 +209,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/06/11/[2016-06-11 23:52:12]AOS/">AOS</a>
+      <a class="article-title" href="/2016/06/15/[2016-06-15 12:06:31]Tensorflow-101/">Tensorflow-101</a>
     </h1>
   
 
@@ -227,8 +217,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/06/11/[2016-06-11 23:52:12]AOS/" class="article-date">
-	  <time datetime="2016-06-11T14:52:12.000Z" itemprop="datePublished">6월 11, 2016</time>
+	<a href="/2016/06/15/[2016-06-15 12:06:31]Tensorflow-101/" class="article-date">
+	  <time datetime="2016-06-15T03:06:31.000Z" itemprop="datePublished">6월 15, 2016</time>
 	</a>
 
        
@@ -236,31 +226,29 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/1*CgbJq7w_clA2YB36ROtglg.gif" alt="">페이지의 수려한 효과</p>
-<p>애플 페이지를 보면서 감탄을 했던 것 중 하나가 스크롤을 할때 애니메이션을 각 객체별로 줘서 훨씬 고급스럽게 보이게 했었던 부분입니다.</p>
-<p>스크롤을 할 때에 애니메이션을 줄 수 있는 프로젝트가 여기 있습니다.</p>
-<p>2016/06/11 Editor’s choice</p>
-<p><a href="https://github.com/michalsnik/aos" title="https://github.com/michalsnik/aos" target="_blank" rel="external"><strong>michalsnik/aos</strong><br>_aos - Animate on scroll library_github.com</a><a href="https://github.com/michalsnik/aos" target="_blank" rel="external"></a></p>
+        <p>이세돌과 알파고 때문에 마음이 상하신 분들 많으시죠? 그런데 여러 많은 사람들이 한국에는 이게 축복이라고 합니다.</p>
+<p>그 이유가 뭘까요? 미리 인공지능세대를 준비하기 때문이라고 하는데, 저도 많은 의미에서 동의가 됩니다.</p>
+<p>오늘 소개드릴 프로젝트는 tensorflow 에 대한 예제를 모아놓은 프로젝트입니다. 꽤 많은 프로젝트들이 tensorflow 예제들을 가지고 있습니다만 이 프로젝트도 한국 사람이 진행했습니다.</p>
+<p>2016/06/15 Editor’s choice</p>
+<p><a href="https://github.com/sjchoi86/Tensorflow-101" title="https://github.com/sjchoi86/Tensorflow-101" target="_blank" rel="external"><strong>sjchoi86/Tensorflow-101</strong><br>_Tensorflow-101 - TensorFlow Tutorials_github.com</a><a href="https://github.com/sjchoi86/Tensorflow-101" target="_blank" rel="external"></a></p>
 <hr>
-<p>프로젝트 이름도 Animate on Scroll입니다.</p>
-<p><img src="/images/1*M87MQbl4yZVizztjUlInBQ.gi" alt=""></p>
-<p>스크롤을 하면서 어떻게 화면에 보이게 될지 궁금해서 죽 내리면서 봤는데 훌륭합니다.</p>
+<h4 id="설치하기"><a href="#설치하기" class="headerlink" title="설치하기"></a>설치하기</h4><p>설치는 tensorflow 를 사용할 수 있는 set가 기본입니다.</p>
+<ul>
+<li>tensorflow</li>
+<li>Numpy</li>
+<li>SciPy</li>
+<li>Pretrained VGG :</li>
+</ul>
 <hr>
-<h4 id="설치해보기"><a href="#설치해보기" class="headerlink" title="설치해보기"></a>설치해보기</h4><p>bower install을 선호합니다.</p>
-<pre><code>$bower install aos --save
-</code></pre><h4 id="사용하기"><a href="#사용하기" class="headerlink" title="사용하기"></a>사용하기</h4><p>페이지에서 사용할 폴더 트리에 따라 적절하게 배치하시고</p>
-<pre><code>&lt;script src=&quot;bower\_components/aos/dist/aos.js&quot;\&gt;&lt;/script\&gt;
-</code></pre><p>embed 후에</p>
-<pre><code>&lt;script\&gt;  
-AOS.init();  
-&lt;/script\&gt;
-</code></pre><p>init 메쏘드를 통해 실행 시켜 주면 됩니다.</p>
-<p>HTML 태그에는</p>
-<pre><code>&lt;div aos=&quot;animation\_name&quot;\&gt;
-</code></pre><p>형태로 태깅을 하면 그 태깅에 따라 페이지가 작업되는 방법을 취하고 있습니다.</p>
-<p>현재 제공하고 있는 애니메이션 종류는 크게 Fade, Flip, Slide, Zoom을 지원하고 있고 각각의 애니메이션 오브젝트의 anchor 와 esasing 방법들을 지원하는 옵션들을 API로 지정할 수 있습니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/c2c1593276c0" target="_blank" rel="external">June 11, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+<h4 id="실습하기"><a href="#실습하기" class="headerlink" title="실습하기"></a>실습하기</h4><p>iPython notebook 으로 되어 있습니다. notebook 은 doc와 실습을 적절하게 할 수 있는 훌륭한 도구입니다.</p>
+<hr>
+<p>아마, 처음 시작하시려는 분들은 어디서 부터 시작해야할 지 많이들 망설이실 것 같습니다.</p>
+<p>이런 notebook이 도움이 되지만 좋은 컨셉을 어디서 잡을수 있을지..</p>
+<p>여러군데 문의한 결과 대부분의 대답이 Andrew Ng의 강의를 추천하더군요.</p>
+<p>그래서 링크를 걸어 두었습니다. 같이 보시가다 이야기 하실 것이 있으면 의견을 교환해도 좋을 것 같습니다.</p>
+<p><a href="https://www.coursera.org/learn/machine-learning" title="https://www.coursera.org/learn/machine-learning" target="_blank" rel="external"><strong>Machine Learning - Stanford University | Coursera</strong><br>_Machine Learning from Stanford University. Machine learning is the science of getting computers to act without being…_www.coursera.org</a><a href="https://www.coursera.org/learn/machine-learning" target="_blank" rel="external"></a></p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/f6f5db4ef09e" target="_blank" rel="external">June 15, 2016</a>.</p>
+<p>Exported from <a href="https://medium.co" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
     </div>
@@ -284,7 +272,7 @@ AOS.init();
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/43/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="page-number" href="/page/43/">43</a><span class="page-number current">44</span><a class="page-number" href="/page/45/">45</a><a class="page-number" href="/page/46/">46</a><span class="space">&hellip;</span><a class="page-number" href="/page/98/">98</a><a class="extend next" rel="next" href="/page/45/">다음</a>
+    <a class="extend prev" rel="prev" href="/page/43/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="page-number" href="/page/43/">43</a><span class="page-number current">44</span><a class="page-number" href="/page/45/">45</a><a class="page-number" href="/page/46/">46</a><span class="space">&hellip;</span><a class="page-number" href="/page/99/">99</a><a class="extend next" rel="next" href="/page/45/">다음</a>
   </nav>
 
 </section>
@@ -338,6 +326,30 @@ AOS.init();
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2018/01/08/2018-01-08-2018년-1월-깃헙-트렌드/">[2018-01-08] 2018년 1월 깃헙 트렌드 - Rust와 웹 어셈블리의 혁신적인 도발</a></h6>
+              <span>1월 8, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/01/05/peer-review-md/">peer-review.md</a></h6>
+              <span>1월 5, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2017/11/27/2017-11-27-11월-깃헙-트렌드/">[2017-11-27] 11월 깃헙 트렌드</a></h6>
               <span>11월 27, 2017</span>
             </div>
@@ -380,30 +392,6 @@ AOS.init();
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/08/03/tech-trend-03/">(tech-trend) 구루들이 찾는다는 테크 트렌드 - 유명 블로그와 소셜 유명인</a></h6>
-              <span>8월 3, 2017</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/08/01/refactoring02/">ES2015 리팩토링 – 2. 빠레꽁(var let const)</a></h6>
-              <span>8월 1, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -416,7 +404,7 @@ AOS.init();
   <div class="widget-wrap">
     <h3 class="widget-title">태그</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-trend-github/">github-trend, github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">184</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-trend-github/">github-trend, github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -436,7 +424,7 @@ AOS.init();
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -461,7 +449,7 @@ AOS.init();
 
   <div class="clearfix container">
       <div class="site-info">
-	      &copy; 2017 keen blog All Rights Reserved.
+	      &copy; 2018 keen blog All Rights Reserved.
         
             <span id="busuanzi_container_site_uv">
               本站访客数<span id="busuanzi_value_site_uv"></span>人次  

@@ -123,7 +123,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-03-16 06:39:29][React-Native] image 늘리기"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-03-18 08:04:23]Feathers"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +131,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/03/16/[2016-03-16 06:39:29][React-Native] image 늘리기/">[React-Native] image 늘리기</a>
+      <a class="article-title" href="/2016/03/18/[2016-03-18 08:04:23]Feathers/">Feathers</a>
     </h1>
   
 
@@ -139,8 +139,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/03/16/[2016-03-16 06:39:29][React-Native] image 늘리기/" class="article-date">
-	  <time datetime="2016-03-15T21:39:29.000Z" itemprop="datePublished">3월 16, 2016</time>
+	<a href="/2016/03/18/[2016-03-18 08:04:23]Feathers/" class="article-date">
+	  <time datetime="2016-03-17T23:04:23.000Z" itemprop="datePublished">3월 18, 2016</time>
 	</a>
 
        
@@ -148,21 +148,26 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/1*8g_8leaDJr9jC0kCHYjISg.png" alt="">hard to stretch</p>
-<p>React Native 는 여러가지 새로운 개념들 (예를 들어 flex)를 많이 적용하는데, 이미지 width : 100% 같은 형태를 주려고 하면 생각보다 잘 되지 않는다.</p>
-<p><img src="/images/1*rDdJNacr54VdZSaY2f8ffQ.png" alt=""></p>
-<p>이렇게 나오거나 지나치게 꽉 채워서 나오지만, 실제 어플리케이션을 짜려고 하면, width는 화면 사이즈에 맞춰 늘리고 height는 동일한 크기로 셋팅하고 싶을 때가 많다. 이럴 경우는 어쩌면 좋을까?</p>
-<h3 id="Dimension과-resizeMode를-적절히-활용"><a href="#Dimension과-resizeMode를-적절히-활용" class="headerlink" title="Dimension과 resizeMode를 적절히 활용"></a>Dimension과 resizeMode를 적절히 활용</h3><p>다음은 소스다.</p>
-<pre><code>var {height, width} = Dimensions.get(&apos;window&apos;);
-</code></pre><p>이 부분에 주의 하자. Dimension은 기본적으로 React에 포함되어 있는 모듈이므로 사용하는데 무리가 없음.</p>
-<p>이후 style 에 width는 지정한 width로 height는 개발자가 원하는 데로 줄 수 있다.</p>
-<p>그리고 React Image Component 에는 resizeMode가 존재한다.</p>
-<p><img src="/images/1*2tID_iqXkL8E8uGozf86Kg.png" alt=""></p>
-<p>stretch모드로 두면 높이와 넓이를 따로 지정할 수 있는데, 기본적으로 Dimension 만 알아둬도 웹앱을 제작하는데에는 어려움이 없을 것으로 보인다.</p>
-<p>이렇게 작업을 하고 나면</p>
-<p><img src="/images/1*zYLaqNyy8YCKR7S8e4614w.pn" alt=""></p>
-<p>원하는 레이아웃이 나온다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/b562da8ed665" target="_blank" rel="external">March 15, 2016</a>.</p>
+        <p><img src="/images/1*7Kxfm3HGG6iUUaoCcDLRyQ.png" alt=""></p>
+<p>깃털처럼 가벼운 프레임워크…를 지향하는 프로젝트입니다. minimalist javascript framework라고 자기 소개를 하고 있는 feather는 제공하고 있는 feature들은 minimal하지 않고 오히려 powerful합니다. 아마도 같은 레벨의 일을 해 주고 있는 meteor 같은 애들과 비교를 했을 때 가볍다는 것인거 같습니다.</p>
+<p>2016/03/18 Today’s best ( 550 ★ )</p>
+<p><a href="https://github.com/feathersjs/feathers" title="https://github.com/feathersjs/feathers" target="_blank" rel="external"><strong>feathersjs/feathers</strong><br>_feathers - A minimalist real-time JavaScript framework for tomorrow’s apps._github.com</a><a href="https://github.com/feathersjs/feathers" target="_blank" rel="external"></a></p>
+<p><a href="http://docs.feathersjs.com/why/philosophy.html" target="_blank" rel="external">http://docs.feathersjs.com/why/philosophy.html</a> 를 읽어보면 재미 있는 글이 나옵니다.</p>
+<blockquote>
+<p>We know! You’re probably screaming “Not another Javascript Framework!”</p>
+</blockquote>
+<p>번역하자면, 또 다른 자바스크립트라니! 정도 쯤 될까요? 자기들도 Rails 를 본따 MVC형태를 만든 많은 프레임워크들을 많이 보아 왔다고 이야기 하면서 자기들의 다른 점들을 이야기 하고 있습니다. 이런 시작은 좋습니다. 다만 doc 페이지가 훌륭함에도 불구하고 chrome브라우저에서 스크롤이 멈추는 것을 제외하고 말이죠.</p>
+<p>universal 앱부터 realtime API, DB 지원, authentication 지원 등 많은 모던한 장점들을 가지고 있습니다. express와 socket.io 를 기반하여 만들어져 있습니다. mean 스택도 생각이납니다만, 조금 더 stack들이 많이 쌓여져 있다라는 점이 강점이 아닐까 생각해 봅니다. 예를 들어 설치 화면 중간에 authentication 은 어떻게, db는 어떤걸 묻는 부분들은 인상적이였습니다. (yo의 위엄?)</p>
+<p><img src="/images/1*UnjEIgQUlPWGu4VwhRy3aw.png" alt=""></p>
+<p>이런 interactive 한 질문들을 통해 설치가 끝나고 나면</p>
+<p>로 프로젝트는 시작됩니다.</p>
+<p><img src="/images/1*DYsOioYAEaUV-yzIRhtQTw.png" alt=""></p>
+<pre><code>$npm start 
+</code></pre><p>하라면 해야죠</p>
+<p>받아서 실행시켜 보면 꽤나 썰렁한 페이지가 나옵니다. 설치된 디렉토리 구조는 다음과 같습니다.</p>
+<p><img src="/images/1*zXSBl9EzbiwJh1gJYALgRA.pn" alt=""></p>
+<p>새로 프로젝트를 실행해 보기에 좋은 프레임워크 같습니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/e820d4c5c70c" target="_blank" rel="external">March 17, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -183,7 +188,7 @@
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-03-16 05:40:15]UnivaqInformaticaBot"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-03-17 07:52:39]Deep Learning Flappy Bird"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -191,7 +196,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/03/16/[2016-03-16 05:40:15]UnivaqInformaticaBot/">UnivaqInformaticaBot</a>
+      <a class="article-title" href="/2016/03/17/[2016-03-17 07:52:39]Deep Learning Flappy Bird/">Deep Learning Flappy Bird</a>
     </h1>
   
 
@@ -199,8 +204,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/03/16/[2016-03-16 05:40:15]UnivaqInformaticaBot/" class="article-date">
-	  <time datetime="2016-03-15T20:40:15.000Z" itemprop="datePublished">3월 16, 2016</time>
+	<a href="/2016/03/17/[2016-03-17 07:52:39]Deep Learning Flappy Bird/" class="article-date">
+	  <time datetime="2016-03-16T22:52:39.000Z" itemprop="datePublished">3월 17, 2016</time>
 	</a>
 
        
@@ -208,30 +213,26 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/1*nsIz66YPDwm6TLLEpKTGzQ.pn" alt="">bot..</p>
-<p>Telegram이 여러모로 화두가 되고 있는 가운데, 오늘의 깃헙은 <a href="http://univaq.it/" target="_blank" rel="external">L’Aquila</a> 대학의 텔레그램 봇이 차지했습니다! 교수 정보, 매점(카페테리아) 정보, 뉴스 등을 제공하고 있네요.</p>
-<p>Today’s best ( 708 ★ )</p>
-<p><a href="https://github.com/UnivaqTelegramBot/UnivaqInformaticaBot" title="https://github.com/UnivaqTelegramBot/UnivaqInformaticaBot" target="_blank" rel="external"><strong>UnivaqTelegramBot/UnivaqInformaticaBot</strong><br>_UnivaqInformaticaBot - A telegram bot that shares news of our university’s department_github.com</a><a href="https://github.com/UnivaqTelegramBot/UnivaqInformaticaBot" target="_blank" rel="external"></a></p>
-<blockquote>
-<p>It’s built to provide a single and simple source of information for the the students of university of L’Aquila, in particular for the faculty of Computer Science</p>
-</blockquote>
-<p>명령어는 다음과 같이 제공을 하고 있습니다.</p>
-<pre><code>La lista di comandi:  
-
-/help - Stampa questo messaggio (도움말 메세지)  
-/news - Leggi le ultime 10 news (최신 뉴스 10개)  
-/news num - Leggi le ultime &lt;num\&gt; news (뉴스 x개)- num 만큼  
-/newson - Abilita le notifiche per ogni nuova news(default)-news보기  
-/newsoff - Disabilita le notifiche per ogni nuova news - news 안보기  
-/prof - Stampa la lista dei professori - 교수 목록  
-/prof cognome - Info su un docente - 교수 정보  
-/segreteria - Info sulla segreteria studenti - 학사 사무실 정보  
-/mensa - Info sugli orari della mensa - 카페테리아 정보  
-/adsu - Info sull&apos;adsu - ???
-</code></pre><h3 id="텔레그램-봇이란"><a href="#텔레그램-봇이란" class="headerlink" title="텔레그램 봇이란?"></a>텔레그램 봇이란?</h3><p>텔레그램에 대해서는 ( 더 이상의 자세한 설명은 ..한다) 최근 국내 이슈들로 모두들 알고 계실 듯 합니다. 봇이라고 하는 것은 메신저 상에서 명령어로 원하는 정보들을 얻어내는 일들을 하는 것입니다. 국내 유명 봇으로는 <a href="http://www.simsimi.com/" target="_blank" rel="external">심심이</a>가 있겠네요. (MSN메신저에서 카톡까지 있던데)</p>
-<p><a href="https://core.telegram.org/bots" title="https://core.telegram.org/bots" target="_blank" rel="external"><strong>Bots: An introduction for developers</strong><br>_Bots are special Telegram accounts designed to handle messages automatically. Users can interact with bots by sending…_core.telegram.org</a><a href="https://core.telegram.org/bots" target="_blank" rel="external"></a></p>
-<p>텔레그램 bot API 페이지 입니다. 사내 델라코트 메뉴 관련해서 봇을 만들면 좋겠다는 생각도 드는군요.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/94a8ac5dc781" target="_blank" rel="external">March 15, 2016</a>.</p>
+        <p><img src="/images/1*JGPRFtMtnj0dlN-6B8373w.jpeg" alt=""></p>
+<p>네, 이해합니다. 이제 딥러닝은 지겨울 수도 있습니다. 온통 알파고 이후 딥러닝, 머신러닝… 하지만 이 프로젝트는 어떨까요? Flappy Bird 게임을 딥러닝을 통해 풀어본 프로젝트가 깃헙에 공개되었습니다.</p>
+<p>2016/03/17 Editor’s choice (340 ★)</p>
+<p><a href="https://github.com/yenchenlin1994/DeepLearningFlappyBird" title="https://github.com/yenchenlin1994/DeepLearningFlappyBird" target="_blank" rel="external"><strong>yenchenlin1994/DeepLearningFlappyBird</strong><br>_DeepLearningFlappyBird - Flappy Bird hack using Deep Reinforcement Learning (Deep Q-learning)._github.com</a><a href="https://github.com/yenchenlin1994/DeepLearningFlappyBird" target="_blank" rel="external"></a></p>
+<h3 id="동영상"><a href="#동영상" class="headerlink" title="동영상"></a>동영상</h3><p>한번 감상해 보시죠</p>
+<p>15분이면 저보다 잘하는군요. T.T</p>
+<h3 id="어떻게-만들었을까"><a href="#어떻게-만들었을까" class="headerlink" title="어떻게 만들었을까"></a>어떻게 만들었을까</h3><ul>
+<li>Python 2.7</li>
+<li>TensorFlow</li>
+<li>pygame</li>
+<li>OpenCV-Python</li>
+</ul>
+<p>TensorFlow가 오픈된지 얼마 되지 않은 거 같은데, 이렇게 활용되는 것을 보면 한번 머신러닝 관련 프로젝트를 중점적으로 살펴봐야할 거 같습니다.</p>
+<p>OpenCV를 통해 이미지를 파악하고 TensorFlow를 딥러닝으로 사용한다.</p>
+<p>구조도는 다음과 같습니다.</p>
+<p><img src="/images/1*bx4c-QNzXj0tHv6MyLBwlA.pn" alt=""></p>
+<p>심화를 위해서는</p>
+<p><a href="https://github.com/asrivat1/DeepLearningVideoGames" title="https://github.com/asrivat1/DeepLearningVideoGames" target="_blank" rel="external"><strong>asrivat1/DeepLearningVideoGames</strong><br>_Contribute to DeepLearningVideoGames development by creating an account on GitHub._github.com</a><a href="https://github.com/asrivat1/DeepLearningVideoGames" target="_blank" rel="external"></a></p>
+<p>에서 Deep Q Learning 알고리즘에 대해서 알아야 합니다. 조만간 이 부분에 대해서 공부를 해 보는것도 좋을 거 같습니다. 알파고도 블럭깨기부터 시작을 했다고 하니까, 도움이 될 거 같습니다. 능력자들이라면 저 프로젝트를 번역해 보는 것도 도움이 될거 같네요.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/ded48be7fa4" target="_blank" rel="external">March 16, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -256,7 +257,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/85/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/84/">84</a><a class="page-number" href="/page/85/">85</a><span class="page-number current">86</span><a class="page-number" href="/page/87/">87</a><a class="page-number" href="/page/88/">88</a><span class="space">&hellip;</span><a class="page-number" href="/page/98/">98</a><a class="extend next" rel="next" href="/page/87/">다음</a>
+    <a class="extend prev" rel="prev" href="/page/85/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/84/">84</a><a class="page-number" href="/page/85/">85</a><span class="page-number current">86</span><a class="page-number" href="/page/87/">87</a><a class="page-number" href="/page/88/">88</a><span class="space">&hellip;</span><a class="page-number" href="/page/99/">99</a><a class="extend next" rel="next" href="/page/87/">다음</a>
   </nav>
 
 </section>
@@ -310,6 +311,30 @@
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2018/01/08/2018-01-08-2018년-1월-깃헙-트렌드/">[2018-01-08] 2018년 1월 깃헙 트렌드 - Rust와 웹 어셈블리의 혁신적인 도발</a></h6>
+              <span>1월 8, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/01/05/peer-review-md/">peer-review.md</a></h6>
+              <span>1월 5, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2017/11/27/2017-11-27-11월-깃헙-트렌드/">[2017-11-27] 11월 깃헙 트렌드</a></h6>
               <span>11월 27, 2017</span>
             </div>
@@ -352,30 +377,6 @@
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/08/03/tech-trend-03/">(tech-trend) 구루들이 찾는다는 테크 트렌드 - 유명 블로그와 소셜 유명인</a></h6>
-              <span>8월 3, 2017</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/08/01/refactoring02/">ES2015 리팩토링 – 2. 빠레꽁(var let const)</a></h6>
-              <span>8월 1, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -388,7 +389,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">태그</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-trend-github/">github-trend, github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">184</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-trend-github/">github-trend, github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -408,7 +409,7 @@
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -433,7 +434,7 @@
 
   <div class="clearfix container">
       <div class="site-info">
-	      &copy; 2017 keen blog All Rights Reserved.
+	      &copy; 2018 keen blog All Rights Reserved.
         
             <span id="busuanzi_container_site_uv">
               本站访客数<span id="busuanzi_value_site_uv"></span>人次  

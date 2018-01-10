@@ -123,7 +123,7 @@
         
           <section id="main">
   
-    <article id="post-[2016-05-07 22:32:34]15DaysofSwiftAnimation"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-05-09 07:26:32]structured-text-tools"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -131,7 +131,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/05/07/[2016-05-07 22:32:34]15DaysofSwiftAnimation/">15DaysofSwiftAnimation</a>
+      <a class="article-title" href="/2016/05/09/[2016-05-09 07:26:32]structured-text-tools/">structured-text-tools</a>
     </h1>
   
 
@@ -139,8 +139,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/05/07/[2016-05-07 22:32:34]15DaysofSwiftAnimation/" class="article-date">
-	  <time datetime="2016-05-07T13:32:34.000Z" itemprop="datePublished">5월 7, 2016</time>
+	<a href="/2016/05/09/[2016-05-09 07:26:32]structured-text-tools/" class="article-date">
+	  <time datetime="2016-05-08T22:26:32.000Z" itemprop="datePublished">5월 9, 2016</time>
 	</a>
 
        
@@ -148,46 +148,79 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/1*guK9C6XJVIzItV0duMMpMQ.png" alt="">되게 많아 보입니다.네 아직 11일째</p>
-<p>15일째 리뷰를 할 걸 그랬나요. 따끈 따끈한 프로젝트가 왔습니다. 애니메이션 때문에 mpeg to gif 앱도 몇가지를 깔게 되는군요. 아 이게 새로운 맥을 사서 가능해진 호사네요.</p>
-<p>15days swift, 30days android 등등 시리즈들이 지속적으로 깃헙에는 올라옵니다. 오늘 소개해 드릴 프로젝트는 그 중에서 Swift의 애니메이션을 코드로 어떻게 짜는지에 대한 프로젝트 입니다.</p>
-<p>2016/05/07 Editor’s choice</p>
-<p><a href="https://github.com/larrynatalicio/15DaysofAnimationsinSwift" title="https://github.com/larrynatalicio/15DaysofAnimationsinSwift" target="_blank" rel="external"><strong>larrynatalicio/15DaysofAnimationsinSwift</strong><br>_15DaysofAnimationsinSwift - A project to learn animations._github.com</a><a href="https://github.com/larrynatalicio/15DaysofAnimationsinSwift" target="_blank" rel="external"></a></p>
-<p>흠.. 개발자의 완성은? 얼….</p>
+        <p><img src="/images/1*96Dc_oYFvKKrU4BZEzSE7w.png" alt=""></p>
+<p>jo라는 프로젝트를 리뷰한 적이 있습니다. json을 만들어 주는 프로젝트인데 command line툴을 활용하는 것이었습니다. 예를 들자면</p>
+<pre><code>$ jo -p name=jo n=17 parser=false
+</code></pre><p>라고 명령어를 치면</p>
+<pre><code>{  
+&quot;name&quot;: &quot;jo&quot;,  
+&quot;n&quot;: 17,  
+&quot;parser&quot;: false  
+}
+</code></pre><p>형태의 json 이 만들어 지는 거죠.</p>
+<p>이런 일들을 해 주는 오픈소스 command line tools 들을 모아 둔 프로젝트입니다. json 이외에도 structured-text들이 어떤 것이 있는지 알아보기에도 좋은 프로젝트 입니다.</p>
+<p>2016/05/09 Editor’s choice</p>
+<p><a href="https://github.com/dbohdan/structured-text-tools" title="https://github.com/dbohdan/structured-text-tools" target="_blank" rel="external"><strong>dbohdan/structured-text-tools</strong><br>_What follows is a list of text-based file formats with command line tools for manipulating each (with a focus on Linux…_github.com</a><a href="https://github.com/dbohdan/structured-text-tools" target="_blank" rel="external"></a></p>
 <hr>
-<h4 id="설치해-봅시다"><a href="#설치해-봅시다" class="headerlink" title="설치해 봅시다"></a>설치해 봅시다</h4><p>설치할게 뭐 있을까 싶네요</p>
-<pre><code>$git clone [https://github.com/larrynatalicio/15DaysofAnimationsinSwift.git][anchor2]
-</code></pre><p>프로젝트를 받고 나면</p>
-<p><img src="/images/1*EXdHILi3TJlajOTflinH7g.png" alt="">4일 남았군요.</p>
-<p>다음과 같은 프로젝트들이 있습니다.</p>
+<h4 id="어떤-것들이-있을까"><a href="#어떤-것들이-있을까" class="headerlink" title="어떤 것들이 있을까?"></a>어떤 것들이 있을까?</h4><p>목차는 다음과 같습니다.</p>
+<ul>
+<li>DSV</li>
+<li>XML,HTML</li>
+<li>JSON</li>
+<li>YAML, TOML</li>
+<li>INI</li>
+</ul>
 <hr>
-<h4 id="실행해-봅시다"><a href="#실행해-봅시다" class="headerlink" title="실행해 봅시다"></a>실행해 봅시다</h4><p>1번과 6번을 실행해 볼 예정입니다.</p>
+<h4 id="DSV"><a href="#DSV" class="headerlink" title="DSV"></a>DSV</h4><p>DSV는 Delimiter-separated values 의 약자로 CSV 와 TSV를 포함하고 있습니다. 손쉽게 예를 들자면 text 파일안에 구분자를 두고 필드 속성을 할당하는 형태입니다. XML과 JSON이 나오기 전, 대부분의 텍스트 파일 인코딩은 속도를 위해 버퍼를 쪼개는 형식이 아니라면 이 형태를 사용했었습니다.</p>
+<p>이 분야의 절대 강자라면 아무래도 오크(AWK) 겠죠.</p>
+<p><img src="/images/1*BvtMX-1l7AE0dn44S3-DHw.png" alt="">전 오크가 아닙니다.</p>
+<p>awk는 상당히 많은 기능이 있는데, 다 소개하기는 곤란하고</p>
+<p>빈도 체크를 위해 imsi.qwk 파일을 아래와 같이 만들고</p>
+<pre><code>// 소스 원작 : [https://ko.wikipedia.org/wiki/AWK][anchor2]  
+{   
+**for** (i=1; i&lt;=NF; i++)  
+words\[$i\]++  
+}  
+
+END {   
+**for** (i in words)  
+**print** i, words\[i\]  
+}
+</code></pre><p>김건모의 잘못된 만남 가사를 입력하면</p>
+<p>$ awk -f imsi.awk gunmo.txt</p>
+<p><img src="/images/1*mh9wZQUyq8xHzIRWqw9FCg.png" alt="">그 어느날!</p>
+<p>친구는이 6번 있군요… 같은 결과를 얻을 수 있습니다.</p>
+<p>그 외에도 POSIX 커맨드 자체로도 이런 일들을 할 수 있고, GNU datamash, Miller, tab,xsv 같은 프로그램들을 링크로 소개하고 있습니다.</p>
+<p>csv같은 경우는 database 툴들과 아주 밀접하게 관계가 있습니다. 아무래도 읽고 쓰는 방법이 밀접하게 연관되어 있으니까요.</p>
+<p>관련된 툴도 설명하고 있네요</p>
+<hr>
+<h4 id="XML-HTML"><a href="#XML-HTML" class="headerlink" title="XML, HTML"></a>XML, HTML</h4><p>15년전 병특할 때 XML개발자는 300만원(그 때 기준이니까… 좀 다르겠죠?) 씩 주면서 찾던 기억이 나네요. 이제는 그냥 기반 기술이 되어 버렸는데 말이죠.</p>
+<p>xml, html 툴은 생각보다 많지 않은게 요즘은 json으로 대세가 넘어가서 그런가 봅니다. SAXON툴은 java의 SAX를 xml2는 libxml같은 걸 사용하는 걸 보면 올드하면서도 견고한(concrete) 라이브러리들 위주로 되어 있습니다.</p>
+<p>그나마 최신 트렌드를 반영하는 pup는</p>
+<p>go로 설치하거나 brew로 설치가 가능합니다.</p>
+<pre><code>$go get github.com/ericchiang/pup
+
+or  
+$ brew install https://raw.githubusercontent.com/EricChiang/pup/master/pup.rb
+</code></pre><p>이제는 데이타 스크래핑의 고전이 되어있는 해커뉴스의 링크를 얻어와 보겠습니다.</p>
+<pre><code>$curl -s https://news.ycombinator.com/ | pup &apos;table table tr:nth-last-of-type(n+2) td.title a&apos;
+</code></pre><p>를 실행하면..</p>
+<p><img src="/images/1*vVfoTFdnhf5XzNELq6h-HQ.png" alt=""></p>
+<p>주루륵 결과가 떨어집니다.</p>
+<p>주로 파싱에 관련된 부분입니다.</p>
+<h4 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h4><p>JSON은 뭔가 상당히 많을 거 같으면서도 좀 썰렁한데 있을 건 다 있는 느낌입니다.</p>
+<p><img src="/images/1*3SsRVJU-f82rH26amP77Lw.pn" alt=""></p>
+<p>자세한 설명은 jo를 위에 잠깐 언급한 걸로 대신하겠습니다. jq라던지, jshon등은 살펴보고 싶네요</p>
+<h4 id="YAML-TOML-INI"><a href="#YAML-TOML-INI" class="headerlink" title="YAML,TOML,INI"></a>YAML,TOML,INI</h4><p>YAML은 루비 개발자들에게는 필수인 직렬화 형식으로 YAML이란 것은 마크업 언어가 아님을 천명하는 재귀적인 이름입니다. 리눅스처럼 말이죠</p>
 <blockquote>
-<p>NavigationBarAnimation</p>
+<p>YAML Ain’t Markup Language</p>
 </blockquote>
-<p>아래와 같이 스크롤해서 내려가면 NavigationBar가 사라졌다가 다시 스크롤을 올리면 NavigationBar 가 복귀되는 간단한 프로젝트입니다.</p>
-<p><img src="/images/1*z4fftua-ygEtt9d6ZmayNw.gif" alt=""></p>
-<p>XCODE를 열어서 확인해 보겠습니다. 아마도 많은 사람들이 그냥 간단하게 할 수 있을거라고 생각하시는 부분일텐데요.</p>
-<p><img src="/images/1*mqQ0dx8JS1vZuksCE96W0w.png" alt="">xcode</p>
-<p>AppDelegate는 주로 앱 전체 옵션들을 정할 수 있고, ViewController를 확인해 보면 스크롤 액션에 대한 소스들을 확인할 수 있습니다.</p>
-<p>UITableViewController 를 상속한 ViewController의 소스는 다음과 같습니다.</p>
-<p>마지막 configureNavigationController 함수의</p>
-<p>hideBarOnSwipe 만 false 로 바꾸면 동작하지 않는 간단한 예제 입니다.</p>
-<blockquote>
-<p>StretchyHeaderAnimation</p>
-</blockquote>
-<p>이 예제는 스크롤을 당기면 화면의 이미지가 줌되는 애니메이션을 보여줍니다. 일단 스크린샷을 보시면 감이 오실 거 같습니다.</p>
-<p><img src="/images/1*LIMr_YWmCwEdbeDbanDkzg.gif" alt="">으어억 성이 커진다</p>
-<p>성을 광화문으로 바꿔볼까요?</p>
-<p><img src="/images/1*tPt9iFbbIh29dvNz5zuqWA.png" alt="">광화문이다~</p>
-<p>Supporting Files의 Asset에 kcastle.jpg 만 집어 넣고 Main.storyboard 의 이미지만 kcastle로 선택해 주면 화면은 바뀝니다.</p>
-<p><img src="/images/1*WjP5n6a-e9saCZhO6vIKvw.gi" alt="">이렇게 말이죠.</p>
-<p>이런 일을 하는 소스를 한번 살펴 봐야겠죠? 첫번째 예제의 경우와 똑같이 ViewController 소스를 살펴봐야합니다.</p>
-<p>이 updateHeaderView 의 y값과 Height를 변경해 주는 것으로 애니메이션이 실행됩니다.</p>
-<p>이 함수를 viewDidLoad와 scrollViewDidScroll 에서 호출을 해 줘서 화면이 뜨고 스크롤이 될때 값이 변하는 형태로 애니메이션을 구현했네요.</p>
-<p>scrollViewDidScroll 은 UIScrollViewDelegate에서 가져왔네요.</p>
-<p>Swift를 하면서 수려한 애니메이션을 구현하시고 싶었던 분들에게는 무척이나 좋은 프로젝트가 될 것 같습니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/93eb0720914c" target="_blank" rel="external">May 7, 2016</a>.</p>
+<p>자쿠와는 다르다! 자쿠와는!</p>
+<p>jq, validyaml등을 소개하고 있습니다.</p>
+<p>INI파일은 윈도우즈…설정파일의 대명사죠.</p>
+<hr>
+<p>뭔가 빠진게 있을까 한참 생각을 해 봤는데, 최근에는 XML, JSON, YAML등 말고는 크게 사용할 일이 없을 거 같다는 생각이 듭니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/6567f7da692" target="_blank" rel="external">May 8, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -208,7 +241,7 @@
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-05-06 08:57:32]GithubWidget"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-[2016-05-08 08:27:28]GithubWidget-2"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -216,7 +249,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/05/06/[2016-05-06 08:57:32]GithubWidget/">GithubWidget</a>
+      <a class="article-title" href="/2016/05/08/[2016-05-08 08:27:28]GithubWidget-2/">GithubWidget-2</a>
     </h1>
   
 
@@ -224,8 +257,8 @@
     
     <div class="article-meta">
       
-	<a href="/2016/05/06/[2016-05-06 08:57:32]GithubWidget/" class="article-date">
-	  <time datetime="2016-05-05T23:57:32.000Z" itemprop="datePublished">5월 6, 2016</time>
+	<a href="/2016/05/08/[2016-05-08 08:27:28]GithubWidget-2/" class="article-date">
+	  <time datetime="2016-05-07T23:27:28.000Z" itemprop="datePublished">5월 8, 2016</time>
 	</a>
 
        
@@ -233,35 +266,82 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/1*fBwpGQ6mj_FPjD0NSCSc4g.png" alt="">오 아름 답네요</p>
-<p>깃헙에 관련되어서 앱이 있으면 좋겠다고 생각은 하는데 일단 공식앱을 쓸만한 안드로이드 앱은 없다고 보면 좋은데, 오늘 소개해 드릴 위젯은 일단 이쁩니다. 이 위젯은 개인 profile 이랑 streak의 timeline등을 보여줍니다.</p>
-<p>2016/05/06 Editor’s choice</p>
-<p><a href="https://github.com/Nightonke/GithubWidget" title="https://github.com/Nightonke/GithubWidget" target="_blank" rel="external"><strong>Nightonke/GithubWidget</strong><br>_GithubWidget - Contributions, stars, followers, trending etc. on Github._github.com</a><a href="https://github.com/Nightonke/GithubWidget" target="_blank" rel="external"></a></p>
-<p>깃헙의 profile페이지에 들어가면 볼 수 있는 정보를 긁어와서 보여줍니다.</p>
-<ol>
-<li>Contributions chart(2D/3D)</li>
-<li>Total contribution of this year</li>
-<li>Avatar</li>
-<li>Motto</li>
-<li>Followers</li>
-<li>Contributions of today</li>
-<li>Current streak</li>
-<li>Addition of stars</li>
-<li>Contributions of busiest day</li>
-<li>Longest streak</li>
-<li>Trending(daily/weekly/monthly)</li>
-<li>Received events</li>
-</ol>
-<p>등의 정보를 볼 수 있습니다.</p>
-<p>차지하고 있는 타일크기에 따라 보여주는 정보의 양은 다릅니다.</p>
-<p>저의 경우는 최근 커밋이 없구나! 빨리 커밋해야지 하는 채찍질의 용도로 사용하기 위해서 1X4면 충분해서 사용중입니다.</p>
+        <p>GithubWidget에 대해서 소스 분석을 하겠다고 이야기하고서는 후회중입니다. 하지만 진행해야겠죠? 새로운 안드로이드 에뮬레이터 성능도 확인해 볼겸 쓰겠습니다.</p>
 <p><img src="/images/1*ZTdnXUIv_7h2fi9Le_ydEw.png" alt=""></p>
-<p>다양한 위젯 모습들이 있습니다.</p>
-<p><img src="/images/1*HvZxnobZHSuxCmOstGAtMw.pn" alt="">3D model ㄷㄷ</p>
-<p>잠금 화면으로 만들어 봐도 좋겠다는 생각도 들기는 하네요.</p>
-<p>위젯 프로젝트 BP로도 괜찮겠다 싶어서 git clone을 해 봅니다.</p>
-<p>소스분석은 다음편에 계속하도록 하겠습니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/9baed4577c79" target="_blank" rel="external">May 5, 2016</a>.</p>
+<p><a href="https://medium.com/p/9baed4577c79" title="https://medium.com/p/9baed4577c79" target="_blank" rel="external"><strong>GithubWidget</strong><br>_깃헙에 관련되어서 앱이 있으면 좋겠다고 생각은 하는데 일단 공식앱을 쓸만한 안드로이드 앱은 없다고 보면 좋은데, 오늘 소개해 드릴 위젯은 일단 이쁩니다. 이 위젯은 개인 profile 이랑 streak…_medium.com</a><a href="https://medium.com/p/9baed4577c79" target="_blank" rel="external"></a></p>
+<p>링크가 걸려 있는 지난 리뷰에서도 말씀드린데로 상당히 이쁜 위젯을 어떻게 만들었을까 궁금했습니다.</p>
+<p>국내에서도 크게 위젯 관련된 내용의 블로깅은 겉핥기 수준 정도인거 같아서 크게 안심하고 저도 겉핥는 심정으로…</p>
+<p><img src="/images/1*5vOBMGBxQZ2S9-4OY3HKqw.png" alt="">에디터는dragula</p>
+<p>프로젝트를 열면 위와 같은 형태의 일반적인 형태를 띕니다. 재밌는 것은 Default Activity가 없어서 안드로이드 실행에 x표시가 뜬다는 점입니다.(당연하겠죠?)</p>
+<p><img src="/images/1*hXGAW9ZpwByT3cNenDkAXg.png" alt="">하지만 빌드는 가능해요</p>
+<p>Widget은 기본적으로 4가지 정도의 중요한 작업들을 해 줘야합니다.</p>
+<ul>
+<li>Widget Layout</li>
+<li>WidgetProvider</li>
+<li>Menifest.xml</li>
+<li>Widget</li>
+</ul>
+<p>소스를 처음 받으면 저 같은경우는 Widget.class가 WidGet으로 잘못 타이핑 되어 있어서 소스를 고쳐야 컴파일이 되었습니다.</p>
+<hr>
+<h4 id="WidgetLayout"><a href="#WidgetLayout" class="headerlink" title="WidgetLayout"></a>WidgetLayout</h4><p>첫번째 위젯의 레이아웃을 만져 보도록 하겠습니다.</p>
+<p><img src="/images/1*IwRafpMlGFJyhxfUgpQkpA.png" alt="">촘촘한 이미지뷰</p>
+<p>일단 레이아웃 파일은 전체 그림을 커버하고 있지만, 실제 실행은 다르게 됩니다.</p>
+<hr>
+<h4 id="Widget-Provider"><a href="#Widget-Provider" class="headerlink" title="Widget Provider"></a>Widget Provider</h4><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?\&gt;  
+&lt;appwidget-provider  
+xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;  
+android:initialLayout=&quot;@layout/github\_widget\_0&quot;  
+android:minWidth=&quot;250dp&quot;  
+android:minHeight=&quot;40dp&quot;  
+\&gt;  
+
+&lt;/appwidget-provider\&gt;
+</code></pre><p>provider xml은 간단하게 정의되어 있습니다. minWidth, minHeight 정도를 정의했습니다.</p>
+<hr>
+<h4 id="AndroidMenifst-xml"><a href="#AndroidMenifst-xml" class="headerlink" title="AndroidMenifst.xml"></a>AndroidMenifst.xml</h4><p>위젯안에 형태가 상당히 많지만 여기서 소개한 widget_0 만 살펴 보자면</p>
+<pre><code>&lt;receiver  
+android:name=&quot;.GithubWidget0&quot;  
+android:label=&quot;4×1&quot;\&gt;  
+&lt;meta-data  
+android:name=&quot;android.appwidget.provider&quot;  
+android:resource=&quot;@xml/appwidget\_provider\_0&quot;/\&gt;  
+
+&lt;intent-filter\&gt;  
+&lt;action android:name=&quot;com.nightonke.githubwidget.action.CLICK\_ALL&quot; /\&gt;  
+&lt;action android:name=&quot;com.nightonke.githubwidget.action.CLICK\_AVATAR&quot; /\&gt;  
+&lt;action android:name=&quot;com.nightonke.githubwidget.action.CLICK\_CONTRIBUTIONS&quot; /\&gt;  
+&lt;action android:name=&quot;com.nightonke.githubwidget.action.CLICK\_CONTRIBUTIONS\_SUM&quot; /\&gt;  
+&lt;action android:name=&quot;com.nightonke.githubwidget.action.UPDATE\_FROM\_SERVICE&quot; /\&gt;  
+&lt;action android:name=&quot;android.appwidget.action.APPWIDGET\_UPDATE&quot; /\&gt;  
+&lt;/intent-filter\&gt;  
+&lt;/receiver\&gt;
+</code></pre><p>receiver 셋팅으로 provider를 지정해 두었습니다.</p>
+<p>그리고는</p>
+<pre><code>&lt;service android:name=&quot;.GithubWidgetService&quot; /\&gt;
+</code></pre><p>서비스들을 등록해 두었습니다.</p>
+<hr>
+<h4 id="WidgetClass"><a href="#WidgetClass" class="headerlink" title="WidgetClass"></a>WidgetClass</h4><p>실제 Java 소스들을 살펴보면</p>
+<p>GithubWidget0 클래스는</p>
+<pre><code>public class GithubWidget0 extends AppWidgetProvider
+</code></pre><p>로 AppWidetProvider 를 상속받고 다음의 메쏘드들을 오버라이드 해서 사용합니다.</p>
+<ul>
+<li>onReceive</li>
+<li>onUpdate</li>
+<li>onDisabled</li>
+</ul>
+<p>각 상황별로 액션과 작업들을 정해주고는 updateAll을 실행하는 구조로 만들어져 있습니다.</p>
+<hr>
+<h4 id="ContributionTask"><a href="#ContributionTask" class="headerlink" title="ContributionTask"></a>ContributionTask</h4><p>다른 위젯보다 도드러 지는 부분은 아무래도 컨트리뷰션 맵이겠죠? 가장 이쁜 부분이라고 생각되어지는 부분은 어떻게 만들어졌을까요?</p>
+<p><img src="/images/1*9nyrgjRXcKGmSIl1iXzroA.pn" alt="">2D 혹은 3D</p>
+<pre><code>ContributionsTask
+</code></pre><p>클래스를 찾아가 보니 Util.get2DBitmap, Util.get3DBitmap등의 함수가 있습니다.</p>
+<p>get2DBitMap 함수는 한땀한땀 장인이 그림 그리듯 canvas 에다 drawing 해 두었습니다.</p>
+<p>get3D는 같은 Util함수에 들어가 있습니다. 저는 3D라서 openGL을 기대하고 들어같는데 그렇게 한 것은 아니고 canvas에 삼각함수를 이용해서 3D 효과를 주게 그려져 있습니다.</p>
+<hr>
+<p>Widget관련 프로젝트를 만들어야 하는 입장이라면 참조하기에 좋은 소스인 거 같고 실제로 제가 본 깃헙을 제외하고서라도 위젯중에서는 가장 이쁜 위젯이라 분석해 봤습니다.</p>
+<hr>
+<p>아쉬운것은 drawing 하는 클래스를 Util안에서 다 구현을 한 부분인데, 이런 부분은 차차 업데이트 하면서 바뀔 거 같습니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/ee9b24d25504" target="_blank" rel="external">May 7, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -286,7 +366,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/62/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/61/">61</a><a class="page-number" href="/page/62/">62</a><span class="page-number current">63</span><a class="page-number" href="/page/64/">64</a><a class="page-number" href="/page/65/">65</a><span class="space">&hellip;</span><a class="page-number" href="/page/98/">98</a><a class="extend next" rel="next" href="/page/64/">다음</a>
+    <a class="extend prev" rel="prev" href="/page/62/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/61/">61</a><a class="page-number" href="/page/62/">62</a><span class="page-number current">63</span><a class="page-number" href="/page/64/">64</a><a class="page-number" href="/page/65/">65</a><span class="space">&hellip;</span><a class="page-number" href="/page/99/">99</a><a class="extend next" rel="next" href="/page/64/">다음</a>
   </nav>
 
 </section>
@@ -340,6 +420,30 @@
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2018/01/08/2018-01-08-2018년-1월-깃헙-트렌드/">[2018-01-08] 2018년 1월 깃헙 트렌드 - Rust와 웹 어셈블리의 혁신적인 도발</a></h6>
+              <span>1월 8, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/01/05/peer-review-md/">peer-review.md</a></h6>
+              <span>1월 5, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2017/11/27/2017-11-27-11월-깃헙-트렌드/">[2017-11-27] 11월 깃헙 트렌드</a></h6>
               <span>11월 27, 2017</span>
             </div>
@@ -382,30 +486,6 @@
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/08/03/tech-trend-03/">(tech-trend) 구루들이 찾는다는 테크 트렌드 - 유명 블로그와 소셜 유명인</a></h6>
-              <span>8월 3, 2017</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/08/01/refactoring02/">ES2015 리팩토링 – 2. 빠레꽁(var let const)</a></h6>
-              <span>8월 1, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -418,7 +498,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">태그</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">183</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-trend-github/">github-trend, github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">184</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-trend-github/">github-trend, github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -438,7 +518,7 @@
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -463,7 +543,7 @@
 
   <div class="clearfix container">
       <div class="site-info">
-	      &copy; 2017 keen blog All Rights Reserved.
+	      &copy; 2018 keen blog All Rights Reserved.
         
             <span id="busuanzi_container_site_uv">
               本站访客数<span id="busuanzi_value_site_uv"></span>人次  
