@@ -123,6 +123,97 @@
         
           <section id="main">
   
+    <article id="post-[2016-05-13 07:40:50]amazon-dsstne"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/05/13/[2016-05-13 07:40:50]amazon-dsstne/">amazon-dsstne</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/05/13/[2016-05-13 07:40:50]amazon-dsstne/" class="article-date">
+	  <time datetime="2016-05-12T22:40:50.000Z" itemprop="datePublished">5월 13, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>아마존에서 이번에는 딥러닝 관련된 모델을 오픈소스로 공개했습니다.</p>
+<p>2016/05/13 Editor’s choice</p>
+<p><a href="https://github.com/amznlabs/amazon-dsstne" title="https://github.com/amznlabs/amazon-dsstne" target="_blank" rel="external"><strong>amznlabs/amazon-dsstne</strong><br>_amazon-dsstne - Deep Scalable Sparse Tensor Network Engine (DSSTNE) is an Amazon developed library for building Deep…_github.com</a><a href="https://github.com/amznlabs/amazon-dsstne" target="_blank" rel="external"></a></p>
+<p>tensor network engine이 이름에 들어가는군요.</p>
+<h4 id="설치해-보기"><a href="#설치해-보기" class="headerlink" title="설치해 보기"></a>설치해 보기</h4><p>3가지의 기본 설치 방법을 제공하고 있습니다.</p>
+<ul>
+<li>docker</li>
+<li>AWS</li>
+<li>dev install</li>
+</ul>
+<p>보통은 빌드 툴과 docker 를 제공하고 마는데 역시 AWS를 이용한 방법을 쓰고 있습니다.</p>
+<p>docker runtime으로는 10G 가 필요하다고 하는군요. 전철 안에서는 docker를 받아서는 안될거 같네요.</p>
+<h4 id="사용자-가이드"><a href="#사용자-가이드" class="headerlink" title="사용자 가이드"></a>사용자 가이드</h4><p>사용자 가이드는 Data Format으로 부터 시작합니다. NetCDF 포맷만 지원한다고 하며 그 형태는 다음과 같습니다.</p>
+<pre><code>Example1 Feature1:Feature2:Feature3  
+Example2 Feature5:Feature2:Feature4  
+Example3 Feature6:Feature7:Feature8
+</code></pre><p><a href="https://en.wikipedia.org/wiki/NetCDF" title="https://en.wikipedia.org/wiki/NetCDF" target="_blank" rel="external"><strong>NetCDF</strong><br>_NetCDF ( Network Common Data Form) is a set of software libraries and self-describing, machine-independent data formats…_en.wikipedia.org</a><a href="https://en.wikipedia.org/wiki/NetCDF" target="_blank" rel="external"></a></p>
+<p>데이타 포맷과 달리 레이어 포맷은 JSON을 통해 인풋 아웃풋이 결정됩니다</p>
+<pre><code>{  
+&quot;Version&quot; : 0.8,  
+&quot;Name&quot; : &quot;2 Hidden Layer&quot;,  
+&quot;Kind&quot; : &quot;FeedForward&quot;,   
+
+&quot;ShuffleIndices&quot; : false,  
+
+
+&quot;ScaledMarginalCrossEntropy&quot; : {  
+&quot;oneTarget&quot; : 1.0,  
+&quot;zeroTarget&quot; : 0.0,  
+&quot;oneScale&quot; : 1.0,  
+&quot;zeroScale&quot; : 1.0  
+},  
+&quot;Layers&quot; : \[  
+{ &quot;Name&quot; : &quot;Input&quot;, &quot;Kind&quot; : &quot;Input&quot;, &quot;N&quot; : &quot;auto&quot;, &quot;DataSet&quot; : &quot;input&quot;, &quot;Sparse&quot; : true },  
+{ &quot;Name&quot; : &quot;Hidden1&quot;, &quot;Kind&quot; : &quot;Hidden&quot;, &quot;Type&quot; : &quot;FullyConnected&quot;, &quot;Source&quot; : &quot;Input&quot;, &quot;N&quot; : 1024, &quot;Activation&quot; : &quot;Relu&quot;, &quot;Sparse&quot; : false, &quot;pDropout&quot; : 0.5, &quot;WeightInit&quot; : { &quot;Scheme&quot; : &quot;Gaussian&quot;, &quot;Scale&quot; : 0.01 } },  
+{ &quot;Name&quot; : &quot;Hidden2&quot;, &quot;Kind&quot; : &quot;Hidden&quot;, &quot;Type&quot; : &quot;FullyConnected&quot;, &quot;Source&quot; : \[&quot;Hidden1&quot;\], &quot;N&quot; : 1024, &quot;Activation&quot; : &quot;Relu&quot;, &quot;Sparse&quot; : false, &quot;pDropout&quot; : 0.5, &quot;WeightInit&quot; : { &quot;Scheme&quot; : &quot;Gaussian&quot;, &quot;Scale&quot; : 0.01 } },   
+{ &quot;Name&quot; : &quot;Output&quot;, &quot;Kind&quot; : &quot;Output&quot;, &quot;Type&quot; : &quot;FullyConnected&quot;, &quot;DataSet&quot; : &quot;output&quot;, &quot;N&quot; : &quot;auto&quot;, &quot;Activation&quot; : &quot;Sigmoid&quot;, &quot;Sparse&quot; : true , &quot;WeightInit&quot; : { &quot;Scheme&quot; : &quot;Gaussian&quot;, &quot;Scale&quot; : 0.01, &quot;Bias&quot; : -10.2 }}  
+\],  
+
+&quot;ErrorFunction&quot; : &quot;ScaledMarginalCrossEntropy&quot;  
+}
+</code></pre><p>필드를 보시면 아시겠지만 다른 여타 딥러닝 레이어 처럼</p>
+<p>input, hidden layer, output 이렇게 세가지 중요한 factor들을 가지고 있습니다.</p>
+<p>관련된 예제들도 같은 레파지토리들을 통해 확인해 볼 수 있습니다.</p>
+<p><a href="https://github.com/amznlabs/amazon-dsstne/blob/master/docs/getting_started/examples.md" title="https://github.com/amznlabs/amazon-dsstne/blob/master/docs/getting_started/examples.md" target="_blank" rel="external"><strong>amznlabs/amazon-dsstne</strong><br>_After you have followed setup we should be able to start neural network modeling using DSSTNE. As with any modeling we…_github.com</a><a href="https://github.com/amznlabs/amazon-dsstne/blob/master/docs/getting_started/examples.md" target="_blank" rel="external"></a></p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/72fcd6334a25" target="_blank" rel="external">May 12, 2016</a>.</p>
+<p>Exported from <a href="https://medium.co" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-[2016-05-12 23:15:00]Scala-native"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -198,74 +289,11 @@
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-05-11 07:31:34]gitsome"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/05/11/[2016-05-11 07:31:34]gitsome/">gitsome</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/05/11/[2016-05-11 07:31:34]gitsome/" class="article-date">
-	  <time datetime="2016-05-10T22:31:34.000Z" itemprop="datePublished">5월 11, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/1*nYY8JvGw9MBa9dCAGf6Whg.gif" alt="">작정하고 만든 듯 합니다.</p>
-<p>git 명령어는 150개가 넘고, github 관련된 정보들도 자유롭게 보고 싶고, 여러가지 git에 대한 요구사항들이 많습니다. 지금 소개하는 프로젝트는 이런 개발자들을 위한 편리성을 제공합니다.</p>
-<p>2016/05/11 Today’s Best(679✰)</p>
-<p><a href="https://github.com/donnemartin/gitsome" title="https://github.com/donnemartin/gitsome" target="_blank" rel="external"><strong>donnemartin/gitsome</strong><br>_gitsome - A Supercharged Git/Shell Autocompleter with GitHub Integration._github.com</a><a href="https://github.com/donnemartin/gitsome" target="_blank" rel="external"></a></p>
-<hr>
-<h4 id="설치해-봅시다"><a href="#설치해-봅시다" class="headerlink" title="설치해 봅시다."></a>설치해 봅시다.</h4><p>pip install을 실행합니다. 저의 경우는 pip3를 사용합니다.</p>
-<pre><code>$ sudo -H pip3 install gitsome
-</code></pre><hr>
-<h4 id="실행해-봅시다"><a href="#실행해-봅시다" class="headerlink" title="실행해 봅시다."></a>실행해 봅시다.</h4><p>어떤 기능이 있을까요?</p>
-<p>기본적으로 auto completion 기능을 제공합니다.</p>
-<p><img src="/images/1*bjgnrMAzgBsjn_GcmM9Y8w.gif" alt=""></p>
-<p>그리고 directory에 git 정보가 있을 때에 branch 정보를 같이 보여줍니다.</p>
-<p>github관련 기능</p>
-<p>깃헙 사용자 관련 기능도 제공합니다.</p>
-<p><img src="/images/1*wKmkUmCqKYUNb05dSdtZCA.gi" alt="">명령어 캐시까지</p>
-<p>참 신통방통한 녀석이네요.</p>
-<p>그 외에도 trending 서비스도 제공하는 등 여러가지 많은 기능들을 포함하고 있습니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/f845b0b2c8de" target="_blank" rel="external">May 10, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/60/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/59/">59</a><a class="page-number" href="/page/60/">60</a><span class="page-number current">61</span><a class="page-number" href="/page/62/">62</a><a class="page-number" href="/page/63/">63</a><span class="space">&hellip;</span><a class="page-number" href="/page/99/">99</a><a class="extend next" rel="next" href="/page/62/">다음</a>
+    <a class="extend prev" rel="prev" href="/page/60/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/59/">59</a><a class="page-number" href="/page/60/">60</a><span class="page-number current">61</span><a class="page-number" href="/page/62/">62</a><a class="page-number" href="/page/63/">63</a><span class="space">&hellip;</span><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/62/">다음</a>
   </nav>
 
 </section>
@@ -312,6 +340,18 @@
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/04/27/2018-04-27-Responsive-Web을-위해-개발자가-꼭-알아야-하는-기술들/">[2018-04-27]Responsive Web을 위해 개발자가 꼭 알아야 하는 기술들</a></h6>
+              <span>4월 27, 2018</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -373,18 +413,6 @@
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/09/08/deeplearning-basic01/">딥러닝 무식하게 정리해 보기 01</a></h6>
-              <span>9월 8, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -397,7 +425,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">태그</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">184</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-trend-github/">github-trend, github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Front-End/">Front-End</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">184</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-trend-github/">github-trend, github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -407,7 +435,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">태그 클라우드</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/github-trend-github/" style="font-size: 10px;">github-trend, github</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/tip-docker-devops-git/" style="font-size: 10px;">tip, docker, devops, git</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
+      <a href="/tags/Front-End/" style="font-size: 10px;">Front-End</a> <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/github-trend-github/" style="font-size: 10px;">github-trend, github</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/tip-docker-devops-git/" style="font-size: 10px;">tip, docker, devops, git</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
     </div>
   </div>
 
@@ -417,7 +445,7 @@
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

@@ -123,6 +123,119 @@
         
           <section id="main">
   
+    <article id="post-[2016-08-02 23:38:20]sublime-enhanced"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/08/02/[2016-08-02 23:38:20]sublime-enhanced/">sublime-enhanced</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/08/02/[2016-08-02 23:38:20]sublime-enhanced/" class="article-date">
+	  <time datetime="2016-08-02T14:38:20.000Z" itemprop="datePublished">8월 2, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>sublime Text 의 플러그인들의 모음입니다.</p>
+<p>2016/08/02 Editor’s choice</p>
+<p><a href="https://github.com/shagabutdinov/sublime-enhanced" title="https://github.com/shagabutdinov/sublime-enhanced" target="_blank" rel="external"><strong>shagabutdinov/sublime-enhanced</strong><br>_sublime-enhanced - Set of plugins for beloved sublime text editor_github.com</a><a href="https://github.com/shagabutdinov/sublime-enhanced" target="_blank" rel="external"></a></p>
+<p>gh-ost 를 리뷰할 생각이었으나 gh-ost는 앞으로 며칠간 수위권을 장식할 예정이라 간단하게 플러그인들의 모음을 모아 놓은 사이트만 공유합니다.</p>
+<p>3가지의 목표를 가지고 만든 프로젝트입니다.</p>
+<ol>
+<li>Mouseless usage of sublime</li>
+<li>Navigation (in code and files) improvement</li>
+<li>Common micro-tasks automation</li>
+</ol>
+<p>마우스 없이 쓰고 코드와 파일간을 쉽게 컨트롤 하고 공통적으로 행해지는 작업들을 자동화 한다는 군요.</p>
+<p>데모로 보이는 페이지에는 method를 작성하면 기본적으로 skeleton 코드를 만들어 주는</p>
+<p><a href="https://github.com/shagabutdinov/sublime-method" title="https://github.com/shagabutdinov/sublime-method" target="_blank" rel="external"><strong>shagabutdinov/sublime-method</strong><br>_sublime-method - Sublime plugin that allows to manipulate methods in file_github.com</a><a href="https://github.com/shagabutdinov/sublime-method" target="_blank" rel="external"></a></p>
+<p>프로젝트로 시작해 아래와 같이 많은 프로젝트들을 기본 세팅해서 사용할 수 있습니다.</p>
+<pre><code>git clone git@github.com:shagabutdinov/sublime-align-cursors.git AlignCursors;  
+git clone git@github.com:shagabutdinov/sublime-align-hash-table.git AlignHashTable;  
+git clone git@github.com:shagabutdinov/sublime-append-selection.git AppendSelection;  
+git clone git@github.com:shagabutdinov/sublime-autocompletion.git Autocompletion;  
+git clone git@github.com:shagabutdinov/sublime-clone-file.git CloneFile;  
+git clone git@github.com:shagabutdinov/sublime-close-other.git CloseOther;  
+git clone git@github.com:shagabutdinov/sublime-context.git Context;  
+git clone git@github.com:shagabutdinov/sublime-devastate-mini.git DevastateMini;  
+git clone git@github.com:shagabutdinov/sublime-duplicate-lines-enhanced.git DuplicateLinesEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-eval-selection.git EvalSelection;  
+git clone git@github.com:shagabutdinov/sublime-delayed-save-all.git DelayedSaveAll;  
+git clone git@github.com:shagabutdinov/sublime-expression.git Expression;  
+git clone git@github.com:shagabutdinov/sublime-file-dialog.git FileDialog;  
+git clone git@github.com:shagabutdinov/sublime-file-list.git FileList;  
+git clone git@github.com:shagabutdinov/sublime-file-util.git FileUtil;  
+git clone git@github.com:shagabutdinov/sublime-folder-files.git FolderFiles;  
+git clone git@github.com:shagabutdinov/sublime-full-undo.git FullUndo;  
+git clone git@github.com:shagabutdinov/sublime-goto-anything-enhanced.git GotoAnythingEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-goto-character.git GotoCharacter;  
+git clone git@github.com:shagabutdinov/sublime-goto-definition-enhanced.git GotoDefinitionEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-goto-last-edit-enhanced.git GotoLastEditEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-goto-line-enhanced.git GotoLineEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-indentation-navigation.git IndentationNavigation;  
+git clone git@github.com:shagabutdinov/sublime-join-assignment.git JoinAssignment;  
+git clone git@github.com:shagabutdinov/sublime-join-chain-call.git JoinChainCall;  
+git clone git@github.com:shagabutdinov/sublime-join-lines-enhanced.git JoinLinesEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-join-statement.git JoinStatement;  
+git clone git@github.com:shagabutdinov/sublime-keymap-enhanced.git KeymapEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-keyword.git Keyword;  
+git clone git@github.com:shagabutdinov/sublime-local-variable.git LocalVariable;  
+git clone git@github.com:shagabutdinov/sublime-method.git Method;  
+git clone git@github.com:shagabutdinov/sublime-named-mark.git NamedMark;  
+git clone git@github.com:shagabutdinov/sublime-nested-snippet.git NestedSnippet;  
+git clone git@github.com:shagabutdinov/sublime-nesting-snippet.git NestingSnippet;  
+git clone git@github.com:shagabutdinov/sublime-open-path.git OpenPath;  
+git clone git@github.com:shagabutdinov/sublime-project-files.git ProjectFiles;  
+git clone git@github.com:shagabutdinov/sublime-quick-search-enhanced.git QuickSearchEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-remove-selection.git RemoveSelection;  
+git clone git@github.com:shagabutdinov/sublime-repeat-command.git RepeatCommand;  
+git clone git@github.com:shagabutdinov/sublime-scope-context.git ScopeContext;  
+git clone git@github.com:shagabutdinov/sublime-scroll-enhanced.git ScrollEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-search-panel-enhanced.git SearchPanelEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-semicolon.git Semicolon;  
+git clone git@github.com:shagabutdinov/sublime-shell-status.git ShellStatus;  
+git clone git@github.com:shagabutdinov/sublime-snippet-caller.git SnippetCaller;  
+git clone git@github.com:shagabutdinov/sublime-snippet-manager.git SnippetManager;  
+git clone git@github.com:shagabutdinov/sublime-statement.git Statement;  
+git clone git@github.com:shagabutdinov/sublime-status-message.git StatusMessage;  
+git clone git@github.com:shagabutdinov/sublime-enhanced.git SublimeEnhanced;  
+git clone git@github.com:shagabutdinov/sublime-terminal-project-folder.git TerminalProjectFolder;  
+git clone git@github.com:shagabutdinov/sublime-toggle-wrap.git ToggleWrap;  
+git clone git@github.com:shagabutdinov/sublime-utilities.git Utilities;  
+git clone git@github.com:shagabutdinov/sublime-wrap-statement.git WrapStatement
+</code></pre><p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/a165c2f033b0" target="_blank" rel="external">August 2, 2016</a>.</p>
+<p>Exported from <a href="https://medium.co" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-[2016-08-02 00:00:18]lumen"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -294,76 +407,11 @@ brightness += l \* l;
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-07-30 08:00:07]image-diff"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/07/30/[2016-07-30 08:00:07]image-diff/">image-diff</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/07/30/[2016-07-30 08:00:07]image-diff/" class="article-date">
-	  <time datetime="2016-07-29T23:00:07.000Z" itemprop="datePublished">7월 30, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Uber 에서 굉장히 재미있는 프로젝트를 내 놓았습니다.</p>
-<p>image-diff 라는 제목에서 알 수 있듯이 이미지간에 다른 부분들을 찾아주는 일들을 해 주는 프로젝트입니다.</p>
-<p><img src="/images/1*sUqGYdgSjSTPDJj3EY8Mcg.png" alt="">간단하죠?</p>
-<p>2016/07/30 Today’s Best</p>
-<p><a href="https://github.com/uber/image-diff" title="https://github.com/uber/image-diff" target="_blank" rel="external"><strong>uber/image-diff</strong><br>_image-diff - Create image differential between two images_github.com</a><a href="https://github.com/uber/image-diff" target="_blank" rel="external"></a></p>
-<hr>
-<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><p>cli 명령어로 사용하기 좋기 때문에 저 같은 경우는 global 옵션을 줘서 인스톨 했습니다.</p>
-<pre><code>$npm install -g image-diff
-</code></pre><h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><pre><code>$image-diff original-image gariginal-image result-image
-</code></pre><hr>
-<h4 id="어디에-쓸꼬"><a href="#어디에-쓸꼬" class="headerlink" title="어디에 쓸꼬?"></a>어디에 쓸꼬?</h4><p>Uber에서 왜 이미지 diff 를 구하는 지를 곰곰이 생각해 보았습니다. 두가지 정도의 추측을 할 수 있는데 하나는 기사들의 라이센스 위조같은 부분일 거라는 생각이 들었고 하나는 지도 이미지 데이타의 차이점을 파악해서 기사들에게 지형변화에 대한 감지를 할 수 있겠구나 정도의 생각입니다.</p>
-<h4 id="이미지-위변조-detect"><a href="#이미지-위변조-detect" class="headerlink" title="이미지 위변조 detect"></a>이미지 위변조 detect</h4><p>아주 유명한 그림인 모나리자 그림을 한번 위변조 해 보겠습니다.</p>
-<p><img src="/images/1*5J5j9ulD8FH6TlY1yAydKw.png" alt="">gimp는 내 친구</p>
-<p>우측 하단에 검정색 글씨로 “keen is king”이라는 아주 민망한 글자를 써 놓았습니다만, 이미지로 export하면 육안으로는 전혀 알 수가 없습니다.</p>
-<p>하지만, image-diff 를 이용해서 원본 이미지와 diff 를 해보니</p>
-<p><img src="/images/1*OUUFnu-PG-yeZK01nSpWEg.png" alt=""></p>
-<p>위와 같은 이미지가 떨어지고, 확대를 한번 해 보면</p>
-<p><img src="/images/1*o4-5s2-PZcgoHiP7QI7AGw.pn" alt=""></p>
-<p>이라는 아주 민망한 글자가 새겨져 있는 것을 볼 수 있습니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/455a8417f054" target="_blank" rel="external">July 29, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/27/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><a class="page-number" href="/page/27/">27</a><span class="page-number current">28</span><a class="page-number" href="/page/29/">29</a><a class="page-number" href="/page/30/">30</a><span class="space">&hellip;</span><a class="page-number" href="/page/99/">99</a><a class="extend next" rel="next" href="/page/29/">다음</a>
+    <a class="extend prev" rel="prev" href="/page/27/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><a class="page-number" href="/page/27/">27</a><span class="page-number current">28</span><a class="page-number" href="/page/29/">29</a><a class="page-number" href="/page/30/">30</a><span class="space">&hellip;</span><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/29/">다음</a>
   </nav>
 
 </section>
@@ -410,6 +458,18 @@ brightness += l \* l;
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/04/27/2018-04-27-Responsive-Web을-위해-개발자가-꼭-알아야-하는-기술들/">[2018-04-27]Responsive Web을 위해 개발자가 꼭 알아야 하는 기술들</a></h6>
+              <span>4월 27, 2018</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -471,18 +531,6 @@ brightness += l \* l;
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/09/08/deeplearning-basic01/">딥러닝 무식하게 정리해 보기 01</a></h6>
-              <span>9월 8, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -495,7 +543,7 @@ brightness += l \* l;
   <div class="widget-wrap">
     <h3 class="widget-title">태그</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">184</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-trend-github/">github-trend, github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Front-End/">Front-End</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">184</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-trend-github/">github-trend, github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -505,7 +553,7 @@ brightness += l \* l;
   <div class="widget-wrap">
     <h3 class="widget-title">태그 클라우드</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/github-trend-github/" style="font-size: 10px;">github-trend, github</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/tip-docker-devops-git/" style="font-size: 10px;">tip, docker, devops, git</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
+      <a href="/tags/Front-End/" style="font-size: 10px;">Front-End</a> <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/github-trend-github/" style="font-size: 10px;">github-trend, github</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/tip-docker-devops-git/" style="font-size: 10px;">tip, docker, devops, git</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
     </div>
   </div>
 
@@ -515,7 +563,7 @@ brightness += l \* l;
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

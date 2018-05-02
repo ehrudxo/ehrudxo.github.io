@@ -123,6 +123,199 @@
         
           <section id="main">
   
+    <article id="post-[2016-10-20 10:10:10]서버리스 아키텍처 소셜미디어 개발기 1편"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/10/20/[2016-10-20 10:10:10]서버리스 아키텍처 소셜미디어 개발기 1편/">서버리스 아키텍처 소셜미디어 개발기 1편</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/10/20/[2016-10-20 10:10:10]서버리스 아키텍처 소셜미디어 개발기 1편/" class="article-date">
+	  <time datetime="2016-10-20T01:10:10.000Z" itemprop="datePublished">10월 20, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>지난편 보기</p>
+<p><a href="https://techstory.shma.so/%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%86%8C%EC%85%9C%EB%AF%B8%EB%94%94%EC%96%B4-%EA%B0%9C%EB%B0%9C%EA%B8%B0-0%ED%8E%B8-63084e103f77" title="https://techstory.shma.so/%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%86%8C%EC%85%9C%EB%AF%B8%EB%94%94%EC%96%B4-%EA%B0%9C%EB%B0%9C%EA%B8%B0-0%ED%8E%B8-63084e103f77" target="_blank" rel="external"><strong>서버리스 아키텍처 소셜미디어 개발기 0편</strong><br>_Firebase에 데이타를 저장하고_techstory.shma.so</a><a href="https://techstory.shma.so/%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%86%8C%EC%85%9C%EB%AF%B8%EB%94%94%EC%96%B4-%EA%B0%9C%EB%B0%9C%EA%B8%B0-0%ED%8E%B8-63084e103f77" target="_blank" rel="external"></a></p>
+<p>에 이어 계속 하겠습니다.</p>
+<p>User Story 1 번에 관해서 진행하겠습니다.</p>
+<blockquote>
+<p>1. 김개발은 아침 스탠드업 시간에 같이 이야기를 나눌 수 있는 주제를 위해 스탠드업이라는 웹 앱을 찾아간다. 이렇게 함으로써 사람들과 IT에 대한 주제로 커뮤니케이션을 할 수 있다.</p>
+</blockquote>
+<p><img src="/images/1*Ag5zTLMLCWlcFlr81FkpAQ.png" alt=""></p>
+<h4 id="1-create-react-app"><a href="#1-create-react-app" class="headerlink" title="1. create-react-app"></a>1. create-react-app</h4><p>github에 프로젝트를 만들고 로칼에 디렉토리를 standup 이라는 이름을 만들었으면 이제는 프로젝트 셋팅을 해야겠죠.</p>
+<p>react의 boilerplate를 자동으로 만들어 주는 create-react-app을 이용하도록 하겠습니다.create-react-app은 관련된 내용을 서두에 얘기해 두었으니 참조하세요.</p>
+<p><strong>링크</strong></p>
+<p><a href="https://techstory.shma.so/create-react-app%EC%97%90-%EA%B4%80%ED%95%98%EC%97%AC-1-935a21297550#.l8s88rp2k" target="_blank" rel="external">create-react-app에 대하여 -1</a></p>
+<p><a href="https://techstory.shma.so/create-react-app%EC%97%90-%EA%B4%80%ED%95%98%EC%97%AC-2-9d6fcf4d4bc9#.npt9nhd3r" target="_blank" rel="external">create-react-app에 대하여 -2</a></p>
+<p><a href="https://techstory.shma.so/create-react-app%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC-3-482e40291419#.2rfsyr8za" target="_blank" rel="external">create-react-app에 대하여 -3</a></p>
+<p><a href="https://github.com/facebookincubator/create-react-app" title="https://github.com/facebookincubator/create-react-app" target="_blank" rel="external"><strong>facebookincubator/create-react-app</strong><br>_create-react-app — Create React apps with no build configuration._github.com</a><a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="external"></a></p>
+<p><strong>create-react-app 설치</strong></p>
+<pre><code>$npm install create-react-app -g //글로발 옵션
+</code></pre><p><strong>디렉토리에 create-react-app 설정</strong></p>
+<pre><code>create-react-app \[폴더\]
+</code></pre><p>명령어를 사용하면 됩니다. 지금과 같이 standup 폴더를 만든 경우는 아래와 같이 실행하면 됩니다.</p>
+<pre><code>$cd standup &amp;&amp; create-react-app .
+</code></pre><p>다만 이런 과정에서 미리 만들어 둔 README.md파일을 README.old.md 파일로 만들고 create-react-app의README.md파일을 생성하는 만행을 저지릅니다. 그래서 아래와 같이 응징</p>
+<p><img src="/images/1*w9NEYS4WAxLocSphXkygHA.png" alt=""></p>
+<pre><code>$rm README.md &amp;&amp; mv README.old.md README.md
+</code></pre><p>이렇게 해도 상관 없는 것은 언제나 create-react-app 프로젝트를 방문하면 새로 업데이트 된 따끈따끈한 README.md 파일을 볼 수 있기 때문입니다.</p>
+<p>이쯤에서 저는 git branch를 새로 day1을 만들도록 하겠습니다.</p>
+<pre><code>$git branch day1 &amp;&amp; git checkout day1 &amp;&amp; ls -al
+</code></pre><p><img src="/images/1*YdMXguN6ItHl9jDHsoKtWw.png" alt="">ls -al</p>
+<p>와 같은 결과가 나옵니다.</p>
+<h4 id="2-프로젝트-실행"><a href="#2-프로젝트-실행" class="headerlink" title="2. 프로젝트 실행"></a>2. 프로젝트 실행</h4><pre><code>$npm start
+</code></pre><p>를 통해 프로젝트를 실행해 볼 수 있고 아래와 같은 화면을 볼 수 있습니다.<br>한 단계 산은 넘었군요.</p>
+<p><img src="/images/1*PFJyAL-eq3qKSKSe9oTS8w.png" alt=""></p>
+<h4 id="3-gh-pages"><a href="#3-gh-pages" class="headerlink" title="3. gh-pages"></a>3. gh-pages</h4><p>User Story 1번을 한번 확인해 보도록 하겠습니다.</p>
+<blockquote>
+<p>김개발은 아침 스탠드업 시간에 같이 이야기를 나눌 수 있는 주제를 위해 <strong>스탠드업이라는 웹 앱을 찾아간다</strong>. 이렇게 함으로써 사람들과 IT에 대한 주제로 커뮤니케이션을 할 수 있다.</p>
+</blockquote>
+<p>웹 앱을 찾아간다 라는 부분이 있습니다.</p>
+<p>찾아가려고 하면 사람들이 외부에서 참조할 수 있는 사이트 링크가 있어야 하겠죠. 다행히 깃헙은 이런 페이지의 웹 호스팅을 지원합니다.</p>
+<p><img src="/images/1*ho8YklMJxpKr_2ohIeLErg.png" alt="">깃헙 페이지</p>
+<p>만들어 놓은 깃헙 프로젝트에 gh-pages라는 브랜치를 만들어서 푸쉬를 하면</p>
+<blockquote>
+<p><strong><a href="https://\[사용자명\].gihub.io/\[프로젝트명\" target="_blank" rel="external">https://\[사용자명\].gihub.io/\[프로젝트명\</a>]</strong></p>
+</blockquote>
+<p>에 deploy가 됩니다.</p>
+<p>제 경우는 <a href="https://ehrudxo.github.io/standup" target="_blank" rel="external">https://ehrudxo.github.io/standup</a> 이 되겠죠.</p>
+<p>그런데, 이것을 아주 간단하게 해 주는 방법이 있습니다.</p>
+<p>Node에는 gh-pages라는 모듈이 존재합니다.(오오오~)</p>
+<pre><code>$npm install gh-pages --- save
+</code></pre><p>이렇게 하고 gh-pages 명령어를 통해 바로 실행할 수도 있는데, 자동화를 위해 몇가지 작업을 하겠습니다.</p>
+<p>프로젝트 최상위에 존재하는 package.json파일을 열어 봅니다.</p>
+<pre><code>{  
+&quot;name&quot;: &quot;standup&quot;,  
+&quot;version&quot;: &quot;0.1.0&quot;,  
+&quot;private&quot;: true,  
+&quot;devDependencies&quot;: {  
+&quot;react-scripts&quot;: &quot;0.6.1&quot;  
+},  
+&quot;dependencies&quot;: {  
+&quot;gh-pages&quot;: &quot;⁰.11.0&quot;,  
+&quot;react&quot;: &quot;¹⁵.3.2&quot;,  
+&quot;react-dom&quot;: &quot;¹⁵.3.2&quot;  
+},  
+&quot;scripts&quot;: {  
+&quot;start&quot;: &quot;react-scripts start&quot;,  
+&quot;build&quot;: &quot;react-scripts build&quot;,  
+&quot;test&quot;: &quot;react-scripts test --- env=jsdom&quot;,  
+&quot;eject&quot;: &quot;react-scripts eject&quot;  
+}  
+}
+</code></pre><p>처럼 들어가 있을 텐데요.</p>
+<pre><code>&quot;homepage&quot; : &quot;https://\[사용자명\].gihub.io/\[프로젝트명\]&quot;,
+</code></pre><p>를 추가하고 스크립트를 하나 추가하겠습니다.</p>
+<pre><code>&quot;deploy&quot;: &quot;gh-pages -d build&quot;
+</code></pre><p>homepage를 추가하는 것은 create-react-app에서 <strong>빌드를 할 때 경로를 확인</strong>하게 하기 위함이고, deploy 스크립트를 추가하는 것은 <strong>자동화를</strong> 위함입니다.</p>
+<p>즉, create-react-app 으로 앱을 production 단계로 빌드해서 gh-pages 를 통해서 디플로이 하는<strong>Continuous Integration용 명령어를 추가한 것입니다</strong>.</p>
+<p><img src="/images/1*6Fmg-5fHpxXKgP0uZEqEAA.png" alt="">우와~</p>
+<p>최종 package.json 파일은 아래와 같은 형태를 취하게 됩니다.</p>
+<pre><code>{  
+&quot;name&quot;: &quot;standup&quot;,  
+&quot;version&quot;: &quot;0.1.0&quot;,  
+&quot;private&quot;: true,  
+**&quot;homepage&quot; : &quot;**[**https://ehrudxo.github.io/standup**][anchor7]**//변경하시고. 주석은 삭제하세요.&quot;,**  
+&quot;devDependencies&quot;: {  
+&quot;react-scripts&quot;: &quot;0.6.1&quot;  
+},  
+&quot;dependencies&quot;: {  
+&quot;gh-pages&quot;: &quot;⁰.11.0&quot;,  
+&quot;react&quot;: &quot;¹⁵.3.2&quot;,  
+&quot;react-dom&quot;: &quot;¹⁵.3.2&quot;  
+},  
+&quot;scripts&quot;: {  
+&quot;start&quot;: &quot;react-scripts start&quot;,  
+&quot;build&quot;: &quot;react-scripts build&quot;,  
+&quot;test&quot;: &quot;react-scripts test --- env=jsdom&quot;,  
+&quot;eject&quot;: &quot;react-scripts eject&quot;,  
+**&quot;deploy&quot;: &quot;gh-pages -d build&quot;**  
+}  
+}
+</code></pre><h4 id="4-페이지-변경"><a href="#4-페이지-변경" class="headerlink" title="4. 페이지 변경"></a>4. 페이지 변경</h4><p>소스 변경 없이 올리면 너무 썰렁할 테니 대문을 조금 바꾸도록 하겠습니다.</p>
+<p><img src="/images/1*TY6eA6nDnIWCk50YmOTfmA.png" alt=""></p>
+<p>public 폴더 아래의 index.html의 title을 아래와 같이 바꿔주시고</p>
+<pre><code>&lt;!doctype html\&gt;  
+&lt;html lang=&quot;en&quot;\&gt;  
+&lt;head\&gt;  
+&lt;meta charset=&quot;utf-8&quot;\&gt;  
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;\&gt;  
+&lt;link rel=&quot;shortcut icon&quot; href=&quot;%PUBLIC\_URL%/favicon.ico&quot;\&gt;  
+&lt;title\&gt;Stand Up!&lt;/title\&gt;  
+&lt;/head\&gt;  
+&lt;body\&gt;  
+&lt;div id=&quot;root&quot;\&gt;&lt;/div\&gt;  
+&lt;/body\&gt;  
+&lt;/html\&gt;
+</code></pre><p>src 폴더 아래의 App.js파일은 다음과 같이 바꿔 줍시다.</p>
+<pre><code>import React, { Component } from &apos;react&apos;;  
+import logo from &apos;./logo.svg&apos;;  
+import &apos;./App.css&apos;;
+
+class App extends Component {  
+render() {  
+return (  
+&lt;div className=&quot;App&quot;\&gt;  
+&lt;div className=&quot;App-header&quot;\&gt;  
+&lt;img src={logo} className=&quot;App-logo&quot; alt=&quot;logo&quot; /\&gt;  
+&lt;h2\&gt;Stand Up 앱을 만들어 봅시다&lt;/h2\&gt;  
+&lt;/div\&gt;  
+&lt;p className=&quot;App-intro&quot;\&gt;  
+이제 여기서 부터 프로젝트는 시작입니다. 로고는 일단은 그냥 둡시다.  
+&lt;/p\&gt;  
+&lt;/div\&gt;  
+);  
+}  
+}
+
+export default App;
+</code></pre><h4 id="5-빌드"><a href="#5-빌드" class="headerlink" title="5. 빌드"></a>5. 빌드</h4><p>이제 다음 명령어를 치면 <strong>production 레벨의 빌드단계</strong>를 거치게 됩니다.</p>
+<pre><code>$npm run build
+</code></pre><p>아마 build 폴더를 만들면서 아래와 같은 화면을 보여줄 것입니다.</p>
+<p><img src="/images/1*Dg38TDivL64vvCeO8SAYoA.png" alt=""></p>
+<p>build 폴더 아래에는 static 한 파일들과 함께 배포용 파일들이 셋팅되어 있습니다.</p>
+<h4 id="6-배포"><a href="#6-배포" class="headerlink" title="6. 배포"></a>6. 배포</h4><p>아까 만들었던 스크립트를 활용해서</p>
+<pre><code>$npm run deploy
+</code></pre><p><img src="/images/1*oznl6gkZNS2uFnNHkkkGKA.png" alt=""></p>
+<p>명령어를 입력하면 그림과 같이 내가 만든 페이지가 깃헙 호스팅 페이지에 배포 되었습니다!</p>
+<p>놀랍죠.</p>
+<p><img src="/images/1*HYrq-nvjBrrgJxocw9EyxQ.pn" alt=""></p>
+<p>다음 번엔 User Story2 번을 3번에 나눠서 만들어 보도록 하겠습니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/99e12d57429e" target="_blank" rel="external">October 20, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-[2016-10-19 08:47:07]서버리스 아키텍처 소셜미디어 개발기 0편"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -221,59 +414,11 @@
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-10-11 21:12:14]create-react-app에 대하여 -3"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/10/11/[2016-10-11 21:12:14]create-react-app에 대하여 -3/">create-react-app에 대하여 -3</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/10/11/[2016-10-11 21:12:14]create-react-app에 대하여 -3/" class="article-date">
-	  <time datetime="2016-10-11T12:12:14.000Z" itemprop="datePublished">10월 11, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/1*dTk4VC8-4fcCaXM4Fvoqxw.pn" alt=""></p>
-<p>어느덧 리뷰를 넘어서 반 이상이 번역이 되었네요. PU나 조만간 날려봐야겠네요. TDD in React를 써야겠다는 용기(?) 가 드네요.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/482e40291419" target="_blank" rel="external">October 11, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/17/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/99/">99</a><a class="extend next" rel="next" href="/page/19/">다음</a>
+    <a class="extend prev" rel="prev" href="/page/17/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/19/">다음</a>
   </nav>
 
 </section>
@@ -320,6 +465,18 @@
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/04/27/2018-04-27-Responsive-Web을-위해-개발자가-꼭-알아야-하는-기술들/">[2018-04-27]Responsive Web을 위해 개발자가 꼭 알아야 하는 기술들</a></h6>
+              <span>4월 27, 2018</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -381,18 +538,6 @@
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/09/08/deeplearning-basic01/">딥러닝 무식하게 정리해 보기 01</a></h6>
-              <span>9월 8, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -405,7 +550,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">태그</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">184</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-trend-github/">github-trend, github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Front-End/">Front-End</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Refactoring/">JavaScript, Refactoring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom-rss/">atom,rss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot-experience/">chatbot, experience</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a><span class="tag-list-count">184</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-trend-github/">github-trend, github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-hacker-news/">tech trend, hacker news</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech-trend-social-media/">tech trend, social media</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip-docker-devops-git/">tip, docker, devops, git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-test-test-suite-headless-chrome-selenium/">web test, test suite, headless chrome, selenium</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -415,7 +560,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">태그 클라우드</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/github-trend-github/" style="font-size: 10px;">github-trend, github</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/tip-docker-devops-git/" style="font-size: 10px;">tip, docker, devops, git</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
+      <a href="/tags/Front-End/" style="font-size: 10px;">Front-End</a> <a href="/tags/JavaScript-Refactoring/" style="font-size: 15px;">JavaScript, Refactoring</a> <a href="/tags/atom-rss/" style="font-size: 10px;">atom,rss</a> <a href="/tags/chatbot-experience/" style="font-size: 15px;">chatbot, experience</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/github-github-trend-tech-trend/" style="font-size: 20px;">github, github-trend, tech-trend</a> <a href="/tags/github-trend-github/" style="font-size: 10px;">github-trend, github</a> <a href="/tags/tech-trend-hacker-news/" style="font-size: 10px;">tech trend, hacker news</a> <a href="/tags/tech-trend-social-media/" style="font-size: 10px;">tech trend, social media</a> <a href="/tags/tip-docker-devops-git/" style="font-size: 10px;">tip, docker, devops, git</a> <a href="/tags/web-test-test-suite-headless-chrome-selenium/" style="font-size: 10px;">web test, test suite, headless chrome, selenium</a>
     </div>
   </div>
 
@@ -425,7 +570,7 @@
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
