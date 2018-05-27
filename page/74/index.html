@@ -123,6 +123,87 @@
         
           <section id="main">
   
+    <article id="post-[2016-04-17 08:07:23]tensorflow-playground"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/04/17/[2016-04-17 08:07:23]tensorflow-playground/">tensorflow-playground</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/04/17/[2016-04-17 08:07:23]tensorflow-playground/" class="article-date">
+	  <time datetime="2016-04-16T23:07:23.000Z" itemprop="datePublished">4월 17, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/1*5zC5ZE-3W78FdlF_avwAkg.png" alt=""></p>
+<p>이제 좀 식은 거 같아서 오랜만에(?) neural network 관련된 프로젝트를 공유합니다. 여러번 리뷰를 하긴 했는데 많은 분야에서 tensorflow 는 활용되고 있고 그 이후 거의 AI프로그램 플랫폼이 되어 가고 있습니다. 오늘은 tensorflow를 이용한 visualization 툴인 playground 입니다.</p>
+<p>2016/04/17 Editor’s choice</p>
+<p><a href="https://github.com/tensorflow/playground" title="https://github.com/tensorflow/playground" target="_blank" rel="external"><strong>tensorflow/playground</strong><br>_playground - Play with neural networks!_github.com</a><a href="https://github.com/tensorflow/playground" target="_blank" rel="external"></a></p>
+<h3 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h3><p>일단 git clone을 통해 프로젝트를 받습니다.</p>
+<blockquote>
+<p>$git clone <a href="https://github.com/tensorflow/playground" target="_blank" rel="external">https://github.com/tensorflow/playground</a></p>
+</blockquote>
+<p>이후 npm install을 통해 모듈 dependency 를 완성합니다.</p>
+<blockquote>
+<p>$cd playground &amp;&amp;npm install</p>
+</blockquote>
+<p>dependency는 다음과 같습니다.</p>
+<blockquote>
+<p>“devDependencies”: {<br>“typescript”: “^1.8.7”,<br>“typings”: “^0.7.9”,<br>“uglify-js”: “^2.6.2”,<br>“tsify”: “^0.14.1”,<br>“watchify”: “^3.7.0”,<br>“http-server”: “^0.9.0”<br>},<br>“dependencies”: {<br>“catw”: “^1.0.1”,<br>“d3”: “^3.5.16”,<br>“material-design-lite”: “^1.1.3”,<br>“seedrandom”: “^2.4.2”<br>}</p>
+</blockquote>
+<hr>
+<p>실행 시키고 나면 포스팅 상단의 이미지가 나옵니다.</p>
+<p>이게 무엇인고? 하시는 분이 있을 거 같아서 부연설명을 드리자면, 파랑색은 positive value 를, 오렌지는 negative value를 나타냅니다. 숨겨진 레이어는 neural network를 배치해 각 점들의 집합군들을 잘 묶어 판단하게 하고 예측도 할 수 있게하는 역할을 합니다. (<em>이게 다 무슨 말이야!</em>)</p>
+<p>먼저 hidden layer를 하나만 놓고 돌려보겠습니다.</p>
+<p>두번째 데이타 샘플이 흥미롭네요. (<em>4번째 샘플은 충공깽)</em></p>
+<p>링크 거는 첫번째 동영상은 히든 레이어를 하나만 두고 작업을 해 본 케이스 입니다.</p>
+<p>보시면 하단 좌측에서 상단 우측으로 갈라지면서 neural network가 판단을 하는 것을 보실 수 있습니다.</p>
+<p>레이어 두개를 더 추가한 부분을 보면 약간 더 명확해 지는데요</p>
+<p>세개의 레이어가 되니 약간 더 정교한 분류를 하기 시작합니다.</p>
+<p>4번째 샘플인</p>
+<p><img src="/images/1*iaT1yp4UcJQP_Z1sglSX9A.png" alt=""></p>
+<p>이미지가 neural network 가 어떻게 동작하는지 돌려보다가 지금의 방식으로는 쉽게 그림이 완성되지 않는 다는 흥미로운 것을 발견하고는 macbook air를 바꾸면 좀 더 좋아질까 생각해 봤지만 최적화 하는 것이 레이어를 많이두는것과 input 값을 정의하는 방법이 중요하다는 것에 대한 사실에 경외감이 느껴지네요.</p>
+<p>input 값을 sinx,siny 까지 추가해 보니 다음과 같은 정도의 결과를 확인해 볼 수 있네요.</p>
+<p><img src="/images/1*ZabZyDPW5RY7M1ssxAg1Cw.pn" alt=""></p>
+<p>사람이 봤을때 생각할 수 있는 나선형의 결과를 기대했는데 그렇게는 되지 못하더라도 대강의 이해할 만한 수준의 그림이 나오네요.</p>
+<p>Iteration과 layer를 무작정 많이 그린다면 더 좋은 결과를 얻을 수 있겠다는 생각이 듭니다.</p>
+<blockquote>
+<p>neural network 이 어떻게 동작하는지를 이해하는데 정말 좋은 도움을 줄 수 있는 프로젝트라고 생각됩니다.</p>
+</blockquote>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/9be777ba26d6" target="_blank" rel="external">April 16, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-[2016-04-16 23:04:19]react-redux-link"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -163,83 +244,6 @@
 <p>아! 모두 영어라는 어려움이 있지만, 개발자는 매일 영어를 쓰고 살잖아요. 그죠? if, for, in 막 클래스 이름도 다 영어로 짓고…</p>
 <p>본격적으로 React를 공부하시겠다고 생각하시는 분들은 이 프로젝트를 주목하세요.</p>
 <p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/4e6d305c90c9" target="_blank" rel="external">April 16, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-[2016-04-15 07:08:16]f8app"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/04/15/[2016-04-15 07:08:16]f8app/">f8app</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/04/15/[2016-04-15 07:08:16]f8app/" class="article-date">
-	  <time datetime="2016-04-14T22:08:16.000Z" itemprop="datePublished">4월 15, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/1*KTb5z9i3yF-OE2DQ2VetmQ.png" alt=""></p>
-<p>Two days of new products, tools, interactive demos and speakers to help you build, grow and monetize your apps. Whether you’re joining us in San Francisco or watching F8 from around the world, join us for a glimpse into the future of Facebook and learn more about our family of apps and services. — facebook page</p>
-<p>이틀간의 f8행사가 끝이 났습니다. 이번 f8에 어떤 이슈들이 있었는지 다들 궁금해 하실 찰나에 facebook에서 자신들의 행사 앱을 오픈소스로 풀어버린다는 얘기가 나왔고 바야흐로 깃헙에 등록이 되었습니다.</p>
-<p>당연히 어제 순위는 당연히 1등으로 등장!</p>
-<p>2014/04/15 Today’s Best( 1k+ ★)</p>
-<p><a href="https://github.com/fbsamples/f8app" title="https://github.com/fbsamples/f8app" target="_blank" rel="external"><strong>fbsamples/f8app</strong><br>_f8app - Source code of the official F8 app of 2016, powered by React Native and other Facebook open source projects._github.com</a><a href="https://github.com/fbsamples/f8app" target="_blank" rel="external"></a></p>
-<p>소스가 React-Native로 되어 있다고 하길래 바로 다운 받아 보았습니다.</p>
-<h3 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h3><pre><code>\# 먼저 git repo에서 클론을 받습니다.  
-$ git clone [https://github.com/fbsamples/f8app.git][anchor2]  
-$ cd f8app \# 폴더로 들어가서  
-$ npm install \# npm module 설치  
-$ (cd ios; pod install) \# only for iOS version  
-$ npm start \# 서버를 구동  
-$ npm run import-data \# mongodb 에 data를 import 합니다
-</code></pre><p>혹시 mongodb와 cocoapod이 설치되어 있지 않다면 설치합니다.</p>
-<h3 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h3><pre><code>$ react-native run-ios
-</code></pre><p>다음과 같은 화면을 거쳐 facebook계정으로 로그인을 하고 나면</p>
-<p><img src="/images/1*wALgw3qUlB59RxWQ8EYHOg.png" alt=""></p>
-<p>다음과 같은 화면을 만날 수 있습니다.</p>
-<p><img src="/images/1*HBZ8g_d_xiUvgMplXlaqCg.png" alt=""></p>
-<p>왜 같은 react-native app인데 제가 만든 건과 다른지 모르겠습니다. ㅎㅎ</p>
-<p>소스를 살펴보죠.</p>
-<p><img src="/images/1*v_jJqJFHS1jorzR_1UfcIA.png" alt=""></p>
-<p>시작은 보통의 다른 예제와 극히 다를바 없는 소스구조를 갖고 있습니다.</p>
-<p>소스 구조는 index.ios.js -> js/setup.js 로 넘기는 역할을 하고 있습니다.</p>
-<p>babel, eslint, gitignore, watchman등이 설정파일로 담겨져 있습니다.</p>
-<p>License는 저작권 명기만 하면 되는 수준인 거 같습니다.</p>
-<p>setup.js를 살펴보면 눈에 띄는 것은 parseServer/react-native 쪽입니다.</p>
-<p><img src="/images/1*7y-0fRK7i2-iFViYTu_ueA.pn" alt=""></p>
-<p>서비스를 종료했다고 하는데 여기 저기서 많이 쓰이는군요. 그리고 facebook 앱에서도 react-redux 를 쓴다는 사실이 확인 되었군요!</p>
-<p>React-native 로 앱을 만들고 있는 사람들에게는 정말로 좋은 Best-Practice가 나온 거 같습니다. 중요체크!</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/8fd451553017" target="_blank" rel="external">April 14, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -318,6 +322,18 @@ $ npm run import-data \# mongodb 에 data를 import 합니다
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2018/05/27/2018-05-22-2018년-4-5월-깃헙-트렌드-당신만의-프로젝트를-스스로-만들어보기/">[2018-05-22]2018년 4~5월 깃헙 트렌드 - 당신만의 프로젝트를 스스로 만들어보기</a></h6>
+              <span>5월 27, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2018/04/27/2018-04-27-Responsive-Web을-위해-개발자가-꼭-알아야-하는-기술들/">[2018-04-27]Responsive Web을 위해 개발자가 꼭 알아야 하는 기술들</a></h6>
               <span>4월 27, 2018</span>
             </div>
@@ -372,18 +388,6 @@ $ npm run import-data \# mongodb 에 data를 import 합니다
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/09/14/puppeteer/">[github]Node.js 기반 헤드리스 브라우저 컨트롤 API - puppeteer</a></h6>
-              <span>9월 14, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -416,7 +420,7 @@ $ npm run import-data \# mongodb 에 data를 import 합니다
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

@@ -123,6 +123,82 @@
         
           <section id="main">
   
+    <article id="post-[2016-07-04 00:12:14]React.createClass vs ES6 classes extends"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/07/04/[2016-07-04 00:12:14]React.createClass vs ES6 classes extends/">React.createClass vs ES6 classes extends</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/07/04/[2016-07-04 00:12:14]React.createClass vs ES6 classes extends/" class="article-date">
+	  <time datetime="2016-07-03T15:12:14.000Z" itemprop="datePublished">7월 4, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>**React 관련 블로깅을 팀블로깅을 같이 하고 있습니다. 아래 내용은 일부이며 아래에 전문 링크가 있습니다.**
+
+**매일 깃헙은 주중에 작성하고, 주말에는 관련 내용이 연재될 예정입니다.**
+</code></pre><p>React 컴포넌트를 작성하는 방법은 크게 두가지가 있습니다.(정확하게는 세가지가 있습니다.)</p>
+<p>하나는 React.createClass 메쏘드를 이용하는 방법이고 또 다른 방법은 ES2015의 class extends 를 사용하는 방법입니다.</p>
+<p>React.createClass 로 컴포넌트를 작성할때에는 다음과 같은 형태로 만들수 있습니다.</p>
+<pre><code>import React from &apos;react&apos;;  
+var MugreComponent = React.createClass({  
+render(){  
+return(  
+&lt;div\&gt;mugre contents!&lt;/div\&gt;  
+);  
+}  
+});  
+export default MugreComponent;
+</code></pre><p>ES2015의 class extends를 사용하는 방법은 다음과 같습니다.</p>
+<pre><code>import React from &apos;react&apos;;
+
+class MugreComponent extends React.Component {  
+render() {  
+return (  
+&lt;div\&gt;mugre contents!&lt;/div\&gt;  
+);  
+}  
+}
+
+export default MugreComponent;
+</code></pre><p>이렇게 코드를 들여다 보면 의구심이 듭니다. React.createClass를 통해 Class생성을 하는 것과 ES2015 class extends를 이용하는 것은 어떤 차이가 있을까요?</p>
+<p>… (중략)</p>
+<p><a href="http://devpools.kr/2016/07/03/react-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8/" title="http://devpools.kr/2016/07/03/react-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8/" target="_blank" rel="external"><strong>REACT 컴포넌트</strong><br>_React 컴포넌트를 작성하는 방법은 크게 두가지가 있습니다.(정확하게는 세가지가 있습니다.) 하나는 React.createClass 메쏘드를 이용하는 방법이고 또 다른 방법은 ES2015의 class…_devpools.kr</a><a href="http://devpools.kr/2016/07/03/react-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8/" target="_blank" rel="external"></a></p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/bc7c89f341ad" target="_blank" rel="external">July 3, 2016</a>.</p>
+<p>Exported from <a href="https://medium.co" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-[2016-07-03 23:52:43]REACT 컴포넌트"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -222,103 +298,6 @@
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-07-01 13:12:31]warriorjs"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/07/01/[2016-07-01 13:12:31]warriorjs/">warriorjs</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/07/01/[2016-07-01 13:12:31]warriorjs/" class="article-date">
-	  <time datetime="2016-07-01T04:12:31.000Z" itemprop="datePublished">7월 1, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>javascript를 게임을 하듯이 배우고 싶은 사람들이 있을 거라고 생각합니다.</p>
-<p>먼저 클릭해서 감상부터 해 보시죠.</p>
-<p><a href="https://asciinema.org/a/0sp5lqs53k1ddr906dlli8p5k" target="_blank" rel="external"><img src="/images/1*ZnIo5UQUG6RhPD1oPx_JFw.png" alt=""></a></p>
-<p>해당 작업을 하는 소스는 다음과 같습니다.</p>
-<pre><code>class Player {  
-playTurn(warrior) {  
-// Cool code goes here  
-warrior.walk(&quot;forward&quot;);  
-}  
-}
-</code></pre><p>2016/07/01 Today’s Best</p>
-<p><a href="https://github.com/olistic/warriorjs" title="https://github.com/olistic/warriorjs" target="_blank" rel="external"><strong>olistic/warriorjs</strong><br>_warriorjs - Game written in JavaScript for learning JavaScript and artificial intelligence._github.com</a><a href="https://github.com/olistic/warriorjs" target="_blank" rel="external"></a></p>
-<hr>
-<p>위의 asciinema를 플레이 해 보신 분이라면 마지막에 다음 레벨로 갈꺼냐고 묻는 gamification도 적용되어 있습니다.</p>
-<p>마치 해킹 사이트에서 다음 단계로 가려면 문제를 푸세요. 라고 하는 방식과 똑같습니다.</p>
-<p>다음단계로 가겠다고 하니 README 파일이 바뀌네요.</p>
-<p>두번째 문제네요.</p>
-<p>Level 2</p>
-<pre><code>It is too dark to see anything, but you smell sludge nearby.
-
-Tip: Use \`warrior.feel().isEmpty()\` to see if there is anything in front of you, and \`warrior.attack()\` to fight it. Remember, you can only do one action per turn.
-
-╔════════╗  
-║@ s \&gt; ║  
-╚════════╝
-
-\&gt; = stairs  
-@ = keen
-
-Warrior abilities:
-
-warrior.walk()
-
-warrior.attack() (NEW!)
-
-warrior.feel() (NEW!)
-</code></pre><p>어떻게 풀면 좋을까요?</p>
-<pre><code>warrior.feel().isEmpty()
-</code></pre><p>를 활용하면 좋을 거 같군요.</p>
-<pre><code>class Player {  
-playTurn(warrior) {  
-if(warrior.feel().isEmpty())warrior.walk(&quot;forward&quot;);  
-else warrior.attack();  
-}  
-}
-</code></pre><p>이랬더니 아래와 같이 움직입니다.</p>
-<p><a href="https://asciinema.org/a/8ecgg38emzglhdrx1h0xazt8i" target="_blank" rel="external"><img src="/images/1*dq3zWf4v1Ndlo0-6FbHDTg.pn" alt=""></a></p>
-<p>어흑 진짜 재밌네요. 저는 적을 만나면 부셨는데, left,right을 이용하면 우회해서 올라갈 수도 있겠네요.</p>
-<p>올라가다 보면 움직이는 적도 나오겠네요.</p>
-<p>이걸 왜 만들었는지는 모르겠지만, 상당히 재밌네요.</p>
-<p>강추~</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/870343ae8baa" target="_blank" rel="external">July 1, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
@@ -370,6 +349,18 @@ else warrior.attack();
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/05/27/2018-05-22-2018년-4-5월-깃헙-트렌드-당신만의-프로젝트를-스스로-만들어보기/">[2018-05-22]2018년 4~5월 깃헙 트렌드 - 당신만의 프로젝트를 스스로 만들어보기</a></h6>
+              <span>5월 27, 2018</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -431,18 +422,6 @@ else warrior.attack();
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/09/14/puppeteer/">[github]Node.js 기반 헤드리스 브라우저 컨트롤 API - puppeteer</a></h6>
-              <span>9월 14, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -475,7 +454,7 @@ else warrior.attack();
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

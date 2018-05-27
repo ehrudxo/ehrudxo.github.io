@@ -123,6 +123,95 @@
         
           <section id="main">
   
+    <article id="post-[2016-07-27 09:28:33]create-react-app"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/07/27/[2016-07-27 09:28:33]create-react-app/">create-react-app</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/07/27/[2016-07-27 09:28:33]create-react-app/" class="article-date">
+	  <time datetime="2016-07-27T00:28:33.000Z" itemprop="datePublished">7월 27, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>react-native를 쓰면서 정말 좋았던 것 중에 하나는 react-native 명령어로 react-native app을 직접 만들 수 있다는 것이었습니다. 그걸 보고 거꾸로 react에도 내가 일일이 boilerplate를 설정하지 말고 그냥 명령어로 만들면 좋겠다. 라고 생각했었습니다.</p>
+<p>이런 내 마음을 읽은 것일까요?</p>
+<p>facebookincubator에서 create-react-app 프로젝트를 내 놓았습니다.</p>
+<p>2016/07/27 Best Project</p>
+<p><a href="https://github.com/facebookincubator/create-react-app" title="https://github.com/facebookincubator/create-react-app" target="_blank" rel="external"><strong>facebookincubator/create-react-app</strong><br>_create-react-app - Create React apps with no build configuration._github.com</a><a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="external"></a></p>
+<hr>
+<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><pre><code>$npm install -g create-react-app
+</code></pre><h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><pre><code>$create-react-app my-app  
+$cd may-app  
+$npm start
+</code></pre><p>정말 간단하네요.</p>
+<p><img src="/images/1*_T0EqB1_4koW1HFY3S9lXA.png" alt=""></p>
+<p>watchify도 적용되어 있는 거 같습니다. 바로 저장하자마자 뿅~</p>
+<p><img src="/images/1*D3bS9t-jRsAMBTAVkW_5oQ.png" alt=""></p>
+<h4 id="deep-inside"><a href="#deep-inside" class="headerlink" title="deep inside"></a>deep inside</h4><p>create-react-app으로 설치를 하고 나면 기본적으로</p>
+<p><img src="/images/1*Dl1Ra8gznhH06hCwGCEXqQ.pn" alt=""></p>
+<p>와 같은 구조의 파일들이 생깁니다.</p>
+<p>package.json을 살펴보면</p>
+<pre><code>{  
+&quot;name&quot;: &quot;my-app&quot;,  
+&quot;version&quot;: &quot;0.0.1&quot;,  
+&quot;private&quot;: true,  
+&quot;devDependencies&quot;: {  
+&quot;react-scripts&quot;: &quot;0.1.0&quot;  
+},  
+&quot;dependencies&quot;: {  
+&quot;react&quot;: &quot;^15.2.1&quot;,  
+&quot;react-dom&quot;: &quot;^15.2.1&quot;  
+},  
+&quot;scripts&quot;: {  
+&quot;start&quot;: &quot;react-scripts start&quot;,  
+&quot;build&quot;: &quot;react-scripts build&quot;,  
+&quot;eject&quot;: &quot;react-scripts eject&quot;  
+}  
+}
+</code></pre><p>형태의 간단한 프로젝트가 생성이 됩니다.</p>
+<p>dependency가 react 만 가지게 되어 있고 dev-dependencies를 살펴보니 react-script 라는 녀석이 있습니다.</p>
+<p>react-script를 살펴보았습니다.</p>
+<p>babel, webpack, eslint등의 많은 일들을 해 주고 있습니다.</p>
+<p>즉 create-react-app이라는 것은 보일러 플레이트 메이커 정도로 이해하면 될 거 같습니다.</p>
+<pre><code>$npm build
+</code></pre><p>명령어를 통해서 production 레벨의 스크립트로 만들어 주는 부분들도 지원을 합니다.</p>
+<p>react-script라는 녀석이 깃헙에 있을까 찾아보았는데 그게 보이지는 않고 create-react의 devDependency오 동일한걸 보니 파일들을 생성하는 역할만으로 끝인듯 합니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/420f5610d0e1" target="_blank" rel="external">July 27, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-[2016-07-20 21:14:00]api-guidelines"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -176,72 +265,6 @@
 <p>PATCH와 OPTIONS는 생소하네요.</p>
 <p>일종의 REST API백서라고 볼 수 있는데, 아주 상세하게 표현이 되어 있습니다.</p>
 <p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/48f9b8ad7f7e" target="_blank" rel="external">July 20, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-[2016-07-19 00:09:34]PokemonGo-Map"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/07/19/[2016-07-19 00:09:34]PokemonGo-Map/">PokemonGo-Map</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/07/19/[2016-07-19 00:09:34]PokemonGo-Map/" class="article-date">
-	  <time datetime="2016-07-18T15:09:34.000Z" itemprop="datePublished">7월 19, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/1*Rx7T6wE-TcZQwtPzxN8N0A.jpeg" alt="">하루종일 본 짤.</p>
-<p>이 그림 한 짤로 대변 되는 슬픔은 어떻게 표현할까요? 포켓몬 GO를 하면서 주위에 두두 밖에 없어서 육두문자를 날리고 있네요. 이런 사람들을 위한 프로젝트입니다.</p>
-<p>2016/07/18 Editor’s choice</p>
-<p><a href="https://github.com/AHAAAAAAA/PokemonGo-Map" title="https://github.com/AHAAAAAAA/PokemonGo-Map" target="_blank" rel="external"><strong>AHAAAAAAA/PokemonGo-Map</strong><br>_PokemonGo-Map - Live visualization of all the pokemon in your area… and more!_github.com</a><a href="https://github.com/AHAAAAAAA/PokemonGo-Map" target="_blank" rel="external"></a></p>
-<p>지도에서 이렇게 주위의 포켓몬을 보여주는 군요.</p>
-<p><img src="/images/1*Pd916NsS63ruAHDzFDcMBQ.pn" alt=""></p>
-<hr>
-<h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><pre><code>$git clone [https://github.com/AHAAAAAAA/PokemonGo-Map.git][anchor2]
-</code></pre><p>프로젝트를 클론 받고 나서 pip를 이용해서</p>
-<p>pip install -r requirements.txt</p>
-<p>실행시키고 나면 명령어를 통해 실행시킬 수 있습니다.</p>
-<p>python example.py -u myUsername -p myPassword -l “Boulder, CO” -st 5</p>
-<p>ID 와 비밀번호는</p>
-<p><a href="http://www.pokemon.com/us/" title="http://www.pokemon.com/us/" target="_blank" rel="external"><strong>The Official Pokémon Website | Pokemon.com | Explore the World of Pokémon</strong><br>_Explore Pokemon.com for news and information on Pokémon, the Pokédex, Pokémon games, the Trading Card Game, Pokémon…_www.pokemon.com</a><a href="http://www.pokemon.com/us/" target="_blank" rel="external"></a></p>
-<p>에서 발급 받은 것을 사용하면 됩니다.(지금은 정지</p>
-<hr>
-<h4 id="Pokemon-API"><a href="#Pokemon-API" class="headerlink" title="Pokemon API"></a>Pokemon API</h4><p>포켓몬고 API 를 파이썬으로 정리해 놓은 프로젝트도 있습니다. 깃헙트렌드에 같이 올라왔네요.</p>
-<p><a href="https://github.com/Mila432/Pokemon_Go_API" title="https://github.com/Mila432/Pokemon_Go_API" target="_blank" rel="external"><strong>Mila432/Pokemon_Go_API</strong><br>_Pokemon_Go_API - Pokémon GO API in Python_github.com</a><a href="https://github.com/Mila432/Pokemon_Go_API" target="_blank" rel="external"></a></p>
-<p>youtube 에 동영상을 확인하세요.</p>
-<p>열풍이 대단하긴 하네요.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/3d28a998ee3d" target="_blank" rel="external">July 18, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -320,6 +343,18 @@
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2018/05/27/2018-05-22-2018년-4-5월-깃헙-트렌드-당신만의-프로젝트를-스스로-만들어보기/">[2018-05-22]2018년 4~5월 깃헙 트렌드 - 당신만의 프로젝트를 스스로 만들어보기</a></h6>
+              <span>5월 27, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2018/04/27/2018-04-27-Responsive-Web을-위해-개발자가-꼭-알아야-하는-기술들/">[2018-04-27]Responsive Web을 위해 개발자가 꼭 알아야 하는 기술들</a></h6>
               <span>4월 27, 2018</span>
             </div>
@@ -374,18 +409,6 @@
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/09/14/puppeteer/">[github]Node.js 기반 헤드리스 브라우저 컨트롤 API - puppeteer</a></h6>
-              <span>9월 14, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -418,7 +441,7 @@
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

@@ -123,6 +123,298 @@
         
           <section id="main">
   
+    <article id="post-[2016-11-07 20:01:47]서버리스 아키텍처 소셜미디어 개발기 4편"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/11/07/[2016-11-07 20:01:47]서버리스 아키텍처 소셜미디어 개발기 4편/">서버리스 아키텍처 소셜미디어 개발기 4편</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/11/07/[2016-11-07 20:01:47]서버리스 아키텍처 소셜미디어 개발기 4편/" class="article-date">
+	  <time datetime="2016-11-07T11:01:47.000Z" itemprop="datePublished">11월 7, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>지난 편에서는 Editor 에서 데이타를 어떻게 나눌지살펴보았고 Firebase 기초, 테스트 코드를 작성해 보았습니다. 이번에는 그 기반으로 어떻게 실제로 데이타를 입력하고 리스트를 작성하는지 확인해 보겠습니다.</p>
+<p><a href="https://techstory.shma.so/%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%86%8C%EC%85%9C%EB%AF%B8%EB%94%94%EC%96%B4-%EA%B0%9C%EB%B0%9C%EA%B8%B0-3%ED%8E%B8-4820c96df984" title="https://techstory.shma.so/%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%86%8C%EC%85%9C%EB%AF%B8%EB%94%94%EC%96%B4-%EA%B0%9C%EB%B0%9C%EA%B8%B0-3%ED%8E%B8-4820c96df984" target="_blank" rel="external"><strong>서버리스 아키텍처 소셜미디어 개발기 3편</strong><br>_지난 번 글에서는 기초적인 편집기를 만드는 작업을 했습니다. 사용자 스토리에 기반한 하나의 편집기와 버튼으로만 구현할 수 있도록 화면을 구성했구요._techstory.shma.so</a><a href="https://techstory.shma.so/%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%86%8C%EC%85%9C%EB%AF%B8%EB%94%94%EC%96%B4-%EA%B0%9C%EB%B0%9C%EA%B8%B0-3%ED%8E%B8-4820c96df984" target="_blank" rel="external"></a></p>
+<blockquote>
+<p>2. 김개발이 사이트를 방문해서 자신이 어제 유심하게 읽은 글을 올릴 수 있다. 이렇게 하면 다른 사람들이 볼 수 있다.<br>* 에디터 창은 하나만 있고 거기서 글을 작성하고 업로드 하면 글이 외부 클라우드 공간에 저장이 된다.<br>* 아무런 내용도 김개발이 입력하지 않으면 업로드하지 않는다.( 버튼이 눌러지지 않는다. )<br>3. 김개발이 작성한 글이 목록으로 보여진다. 이렇게 함으로써 다른 사람들이 목록을 확인할 수 있다.</p>
+</blockquote>
+<p><img src="/images/1*XsSPffTzyvwuC1S91xBEQg.png" alt="">cloud data</p>
+<h4 id="1-Firebase-DAO-Data-Access-Object-만들기"><a href="#1-Firebase-DAO-Data-Access-Object-만들기" class="headerlink" title="1. Firebase DAO(Data Access Object) 만들기"></a>1. Firebase DAO(Data Access Object) 만들기</h4><p>JavaScript라서 DAO패턴을 좋아하지는 않지만 굳이 이해를 돕기 위해 DAO라는 이름을 명명하고 작업을 하겠습니다.</p>
+<p>(인터페이스를 만들고 Implementation 소스를 만드는 작업까지는 굳이 하지 않겠습니다.)</p>
+<p><strong>테스트 코드를 짜 보자.</strong></p>
+<p>일단 Mocking을 할 데이터를 만들어야 하겠죠.</p>
+<p>__tests__ 폴더 밑에 CloudDao.js 를 만듭니다.</p>
+<pre><code>//CloudDao.js 파일  
+var article = {  
+user : &quot;Genji&quot;,  
+content : &quot;겐지가 함께한다.&quot;,  
+urls:\[{  
+url : &quot;[https://namu.wiki/w/%EA%B2%90%EC%A7%80(%EC%98%A4%EB%B2%84%EC%9B%8C%EC%B9%98)][anchor2]&quot;,  
+title:&quot;겐지(오버워치)&quot;,  
+description : &quot;블리자드 엔터테인먼트 사의 FPS 게임 오버워치의 영웅.기계가 되어버린 몸을 받아들여 내면의 평화를 찾은 강력한 사이보그 닌자.&quot;,  
+imageUrl : &quot;[https://image-proxy.namuwikiusercontent.com/r/https%3A%2F%2Fd1u1mce87gyfbn.cloudfront.net%2Fmedia%2Fartwork%2Fgenji-concept.jpg][anchor3]&quot;,  
+imgWidth: 640,  
+imgHeight : 480,  
+thumbnailUrl : &quot;[https://image-proxy.namuwikiusercontent.com/r/http%3A%2F%2Fi66.tinypic.com%2F10mpje9.jpg][anchor4]&quot; ,  
+thumbnailWidth : 80,  
+thumbnailHeight :80  
+}\]  
+}
+</code></pre><p>Mocking을 위한 데이터를 만들어 보겠습니다. 이 데이터가 잘 입력이 되고 수정이 되고 삭제가 되면서 리스트를 확인하는 작업을 해 보겠습니다.</p>
+<p>firebase를 사용하기 위해서 모듈을 설치합니다. 이미 설치된 모듈이 아니기 때문에 다음의 명령어를 사용합니다.</p>
+<pre><code>$npm install firebase --save
+</code></pre><p><strong>DAO 만들기</strong></p>
+<p><img src="/images/1*37MgCskWYkYLPyTbX0pk4w.png" alt="">if code is coffee</p>
+<p>자 이제 DAO를 어떻게 만들면 좋을까요?</p>
+<p>먼저 DAO에는 입력, 수정, 삭제, 조회(insert, update, delete, list)는 기본적으로 들어갈 것이고,한 건 검색을 위한 getArticle이 필요할 것입니다. 일단 입력에 관한 유저 스토리 이지만 DAO는 한꺼번에 작성할 수 있는 것은 먼저 작성해 보도록 하겠습니다.</p>
+<p>사용자 스토리의 기본 중 하나는 <strong>확인할 수 있어야 한다</strong> 인데, 입력이 되면 조회를 할 수 있어야 하기 때문입니다.</p>
+<blockquote>
+<p>! 여기서 잠깐 !<br>사용자 스토리는 INVEST를 기반으로 하는데<br>Independent : 독립적이어야 한다<br>Negotiable : 조절 가능해야 한다<br>Valuable : 사용자에게 가치가 있어야 한다.<br>Estimatable : 측정가능해야 한다<br>Small : 작아야 한다<br>Testable : 테스트 가능해야 한다.<br>우리가 정해 놓은 사용자 스토리를 위에 맞춰 변경하는 작업도 중간 중간 이루어 질 것입니다.</p>
+</blockquote>
+<p>일단 입력을 위한 테스트 코드를 아래와 같이 작성해 보겠습니다.</p>
+<pre><code>it(&apos;upload article&apos;,function(){  
+let inserted = dao.insert( article );  
+// 입력이 되었는지 key 값을 가지고 검색해서 확인  
+dao.getArticle(key).on(&apos;value&apos;,(snapShot)=\&gt;{  
+//키 값이 같은지 테스트 케이스 작성  
+expect(snapShot.key).toEqual(key);  
+});  
+return inserted;  
+});
+</code></pre><p>자, 이제 npm test를 실행하면 되는데, 다음의 셋팅을 하지 않으면 데이터 값이 로딩이 되지 않을 것입니다.<br>firebase는 인증 시스템을 갖고 있는데, 일단 그림과 같이 anonymous가 입력할 수 있도록 해 두고 이후 인증관련 모듈을 같이 붙인 후에 셋팅을 바꿔보도록 하겠습니다.</p>
+<p><img src="/images/1*Co56vTxmYqNHebg6cbpTIg.jpeg" alt="">그림1</p>
+<p>StandUp-> Database -> 규칙 메뉴를 따라가면 될 듯 합니다.</p>
+<pre><code>{  
+&quot;rules&quot;: {  
+&quot;.read&quot;: true,  
+&quot;.write&quot;: true  
+}  
+}
+</code></pre><p>자 이제 npm test 를 실행하고 나면</p>
+<p><img src="/images/1*AznUyNRBj7jXOF1SDCStrA.jpeg" alt="">그림2</p>
+<p>아래와 같은 결과와 함께 외부 firebase 에 저장이 됩니다.</p>
+<p>firebase 웹 콘솔에서 확인해 봐야겠죠?</p>
+<p><img src="/images/1*c6rdZGLFcp3fVwGfBS7TEA.jpeg" alt="">그림3</p>
+<p>그림과 같이 firebase 웹 콘솔에서 Database 의 데이터 탭에서 방금 올린 데이터를 확인할 수 있습니다.</p>
+<p>이렇게만 데이터를 쌓아도 되지만 개인화 서비스를 위해 username 기반으로 데이터를 쌓이도록 변경해 보겠습니다.</p>
+<p>이런 경우는 key값을 먼저 만들고 같은 key를 가지는 posts와 user-post 데이터 베이스를 만들어야 하는 관계로 update 함수를 작성하도록 하겠습니다. 아직 user 정보를 어떻게 가지고 올지 결정하지 않았으므로 똑같이 genji 폴더에만 작성하도록 하겠습니다.</p>
+<p>해당 관련된 테스트 코드는 다음과 같습니다.</p>
+<pre><code>it(&apos;upload article and edit and delete&apos;,function(){  
+//공통 키값  
+let key = dao.newKey();  
+//입력  
+var updated = dao.update( key, article1 );  
+dao.getArticle(key).on(&apos;value&apos;,(snapShot)=\&gt;{  
+//같은 값이 들어 갔는지 확인  
+expect(snapShot.key).toEqual(key);  
+//수정  
+dao.update(key, article2);  
+//삭제. 데이터의 확인을 위해서는 주석 처리.  
+dao.remove(key);  
+});  
+return updated;  
+});
+</code></pre><p>먼저 key 값을 공통으로 만들고, key 값을 기준으로 입력, 수정, 삭제할 수 있습니다.</p>
+<p>FirebaseDao 전체 소스는 다음과 같습니다.</p>
+<pre><code>import firebase from &apos;firebase&apos;;  
+/\*  
+\* initializeFirebaseApp  
+\*/
+
+export default class FirebaseDao {  
+constructor(config){  
+firebase.initializeApp(config);  
+}  
+//더 이상 입력에 사용하지 않습니다.  
+insert(postData){  
+return firebase.database().ref().child(&apos;posts&apos;).push(postData);  
+}  
+// 수정  
+update(key,postData){  
+var updates = {};  
+updates\[&apos;/posts/&apos; + key\] = postData;  
+updates\[&apos;/user-posts/genji/&apos; + key\] = postData;  
+return firebase.database().ref().update(updates);  
+}  
+// 삭제, delete는 예약어 이므로 remove를 사용  
+remove(key){  
+firebase.database().ref(&apos;/posts/&apos;).child(key).remove();  
+return firebase.database().ref(&apos;/user-posts/genji/&apos;).child(key).remove();  
+}  
+//database에 걸린 이벤트를 종료  
+off(){  
+return firebase.database().ref().off();  
+}  
+//새로 빈 데이터를 만들고 key값만 return  
+newKey(){  
+return firebase.database().ref().child(&apos;posts&apos;).push().key;  
+}  
+//한개의 글을 얻어 온다.  
+getArticle(key){  
+return firebase.database().ref(&apos;/posts/&apos; + key);  
+}  
+}
+</code></pre><p>자 이제 테스트 코드 하나로 입력-> 수정 -> 삭제를 하는 코드베이스가 완성되었습니다.</p>
+<h4 id="2-사용자-스토리2-—-입력하기"><a href="#2-사용자-스토리2-—-입력하기" class="headerlink" title="2. 사용자 스토리2 — 입력하기"></a>2. 사용자 스토리2 — 입력하기</h4><p><img src="/images/1*tCRiy6x6RFlpyLNOxMLA9A.png" alt=""></p>
+<pre><code>업로드 하면 글이 외부 클라우드 공간에 저장이 된다.
+</code></pre><p>부분을 위한 테스트 코드와 DAO를 완성했으니 프레젠테이션 레이어와 결합해 보도록 하겠습니다.</p>
+<p>지금 에디터에서 글을 쓰고 스탠드업! 버튼을 누를 경우에</p>
+<p><img src="/images/1*PO1wRepSjhEEzYTOB5nDmQ.jpeg" alt="">그림4</p>
+<p>이루어지는 이벤트는 다음과 같습니다.</p>
+<pre><code>&lt;button className=&quot;upload&quot;  
+disabled={!this.hasValue(this.state.content)}  
+onClick={this.handleSubmit}\&gt;&lt;span\&gt;스탠드업!&lt;/span\&gt;&lt;/button\&gt;
+</code></pre><p>이 handleSubmit을 어떻게 작성하면 좋을까요? onClick 이벤트가 호출이 되는 시점부터는 데이터의 영역인데 데이터의 흐름은 한군데서 파악하는 것이 개발을 용이하게 합니다. 게다가 우리는 firebase 처럼 우리가 직접 컨트롤하지 않는 데이터의 흐름을 가지고 있기 때문에 내부의 데이터의 흐름은 App.js 같은 애플리케이션 진입점으로 위임하는 편이 현명합니다.</p>
+<p>그럼 이 “데이터”의 기본 단위가 될 Article 을 우리는 미리 정의했었습니다. 처음에 Mocking을 위한 데이타라고 한 부분의 article을 반환하는 임시 파일을 만들겠습니다. 이렇게 하는 이유는 테스트의 완결성을 위해서입니다.</p>
+<p>Article.js 라는 파일을 src 폴더 아래에 만들고 테스트 코드는 아래와 같이 작성합니다.</p>
+<pre><code>import Article from &apos;../Article&apos;;  
+var article1 = Article();  
+it(&apos;Object assign&apos;, function(){  
+var article2 = Object.assign({},article1);  
+article2.user = &quot;Genji&quot;;  
+article2.content = &quot;다음&quot;;  
+article2.urls\[0\].url = &quot;[http://www.daum.net][anchor5]&quot;;  
+//article1의 값이 잘 전달되었는지 확인.  
+expect(article1.urls\[0\].imgWidth).toEqual(article2.urls\[0\].imgWidth);  
+})
+</code></pre><p>왜 이런 작업을 했을까요? 간단히 말씀 드리면 4일차 작업에는 url로 카드를 만들 때 외부에서 URL에 해당하는 메타정보(title, description, thumbnail image)등의 작업을 하지 않기 때문입니다. 그래서 일단은 더미 작업을 하고 이 부분을 카드를 가져오는 방법으로 전환하는 과정을 5일차에 진행하려고 하기 때문입니다.</p>
+<p>그런 과정중에 Article의 URL 이외의 부분은 자동으로 채우게 하도록Mocking 데이타를 활용해서 보도록 하는 것입니다.</p>
+<p>자 이제 다시 에디터로 돌아가겠습니다.</p>
+<p><img src="/images/1*5o8unzS6sekGXi1NK5BoxA.jpeg" alt="">그림5</p>
+<p>Editor 안의 state는 보시다시피 embedlyUrl, content 두가지를 설정해 두었습니다.<br>이 embedlyUrl을 App.js에게 값을 전달해 이후 list 컴포넌트를 만드는 사용자 스토리까지 전달되기 전까지가 지금의 해결 과제입니다.</p>
+<p>[그림 5] 에 묘사가 되어 있듯이 Editor.js 의 handleSubmit은 props 속성으로 App.js와 연결되어 있습니다. handleSubmit event는 App.js의 submit 을 가리키게 되어 있는 것이죠.</p>
+<p>그래서 submit 은 Article을 변수로 받아서 firebase 에 저장하는 역할을 하면 됩니다.</p>
+<p>App.js의 submit을 아래와 같이 변경해 줍니다.</p>
+<pre><code>import FirebaseDao from &apos;./FirebaseDao&apos;  
+import config from &apos;./config&apos;  
+(중략)  
+class App extends Component {  
+//중략  
+constructor(){  
+super();  
+this.dao = new FirebaseDao(config);  
+this.submit = this.submit.bind(this);  
+}  
+submit(article){  
+if(article){  
+let key = this.dao.newKey();  
+let updated = this.dao.update( key, article );  
+return updated;  
+}  
+}  
+//후략  
+}
+</code></pre><p>Editor.js 파일은 아까 언급한 Article.js 를 이용해 handleSubmit을 아래와 같이 작업해 줍니다.</p>
+<pre><code>handleSubmit(event){  
+let article = Object.assign({}, Article());  
+article.user = &quot;Genji&quot;;  
+article.content = this.state.content;  
+article.urls\[0\].url = this.state.embedlyUrl;  
+this.props.submit(article);  
+}
+</code></pre><p><img src="/images/1*nnNkaY52MqIkTrKOLOAtqg.jpeg" alt="">그림6</p>
+<p>[그림6]과 같이 작성을 하고 업로드를 하면</p>
+<p><img src="/images/1*u-ULofFcX5OO9FTbXaNgfQ.jpeg" alt="">그림7</p>
+<p>훌륭하게 값이 들어간 것을 확인할 수 있습니다.</p>
+<p><strong>이제 입력한 목록만 간단하게 보여지는 것을 보고는 마무리 하겠습니다.</strong></p>
+<p>FirebaseDao에 list에 관련된 함수를 추가해 봅시다.</p>
+<p>일단 테스트 코드를 아래와 같이 작성해 봅니다.</p>
+<pre><code>it(&apos;list article&apos;, function(){  
+dao.list(25).once(&apos;value&apos;,(dataSnapshots)=\&gt;{  
+dataSnapshots.forEach((dataSnapshot)=\&gt;{  
+keys.push(dataSnapshot.key);  
+var article = dataSnapshot.val();  
+expect(article.user).toEqual(&quot;Genji&quot;);  
+})  
+});  
+})
+</code></pre><p>DAO 에서 25개까지의 결과만 가지고 와서 데이타의 값을 비교하는 형태이고 콜백함수는 firebase 문서에서 참조해서 작성했습니다.</p>
+<pre><code>list(pagesize){  
+return firebase.database().ref(&apos;/posts/&apos;)  
+.orderByKey().limitToLast(pagesize);  
+}
+</code></pre><p>위와 같이 작성하면 npm test를 통해 값이 훌륭하게 가져와 있는지 확인할 수 있습니다.</p>
+<p>이제 App.js 파일을 고쳐 보겠습니다.</p>
+<p>React 컴포넌트의 생명주기에서 mounting 과정은 [그림8] 과 같습니다.</p>
+<p><img src="/images/1*EMFoazxLNSoxe_MeFEnVuQ.jpeg" alt="">그림8</p>
+<p>componentWillMount 메쏘드를 이용해 데이타 이벤트를 등록합니다.</p>
+<p>가지고 온 article들은 상태(state)값에 등록하기 위해 생성자 함수에 먼저 상태값을 등록해 둡니다.</p>
+<pre><code>this.state = {  
+articles:\[\]  
+}
+</code></pre><p>ComponentWillMount와 componentWillUnmount 값을 정의합니다.</p>
+<pre><code>componentWillMount() {  
+//데이터 조회 이벤트를 등록합니다.  
+this.dao.list(25).on(&apos;value&apos;,(dataSnapshots)=\&gt;{  
+var items = \[\];  
+dataSnapshots.forEach(function(dataSnapshot){  
+//..중략.. 테스트코드와 같게 작성합니다.  
+})  
+if(items &amp;&amp; items.length\&gt;0){  
+// state값에 셋팅  
+this.setState({  
+articles: items.reverse()  
+});  
+}  
+});  
+}  
+componentWillUnmount(){  
+//이벤트 삭제  
+this.dao.off();  
+}
+</code></pre><p>render 메쏘드에도 약간의 변화가 있습니다.<br>기존의 Editor 에 스프레스 함수를 설명하게 넘긴 수많은 속성(props)은 애플리케이션의 견고성을 위해 필요한 값만 넘기고 firebase에 저장된 목록을 가져오는 작업을 해 보겠습니다.</p>
+<p>HTML 에서 목록을 의미하는 태그는 UL, OL입니다. 그 태그를 이용해서 render내의 jsx 는 아래와 같이 작업해 줍니다.</p>
+<pre><code>Editor handleSubmit={this.submit} isAnonymous={this.isAnonymous}/\&gt;  
+&lt;ul\&gt;  
+{this.getArticles()}  
+&lt;/ul\&gt;
+</code></pre><p>getArticles 메쏘드는 Article의 상태를 가져오는 함수입니다.</p>
+<pre><code>getArticles(){  
+let lis = \[\];  
+for(let i=0;i&lt;this.state.articles.length;i++){  
+lis.push(&lt;li key={this.state.articles\[i\].key}\&gt;{this.state.articles\[i\].content}&lt;/li\&gt;);  
+}  
+return lis;  
+}
+</code></pre><p>이렇게 작성하고 나면 목록이 다음 [그림7]과 같이 완성됩니다.</p>
+<p><img src="/images/1*mC0OnTn1oW6V0k-RBNFEKA.jpe" alt="">그림7</p>
+<p>다음 번에는 이제 목록과 입력에 사용할 카드를 만들고 URL값을 어떻게 제대로 입력하는지 알아보도록 하겠습니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/d7173b5784d1" target="_blank" rel="external">November 7, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-[2016-11-07 14:16:13]서버리스 아키텍처 소셜미디어 개발기 3편"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -500,220 +792,6 @@ Test Summary
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-10-22 22:57:45]서버리스 아키텍처 소셜미디어 개발기 2편"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/10/22/[2016-10-22 22:57:45]서버리스 아키텍처 소셜미디어 개발기 2편/">서버리스 아키텍처 소셜미디어 개발기 2편</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/10/22/[2016-10-22 22:57:45]서버리스 아키텍처 소셜미디어 개발기 2편/" class="article-date">
-	  <time datetime="2016-10-22T13:57:45.000Z" itemprop="datePublished">10월 22, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>지난 글에 이어 계속 됩니다.</p>
-<p><a href="https://techstory.shma.so/%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%86%8C%EC%85%9C%EB%AF%B8%EB%94%94%EC%96%B4-%EA%B0%9C%EB%B0%9C%EA%B8%B0-1%ED%8E%B8-99e12d57429e" title="https://techstory.shma.so/%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%86%8C%EC%85%9C%EB%AF%B8%EB%94%94%EC%96%B4-%EA%B0%9C%EB%B0%9C%EA%B8%B0-1%ED%8E%B8-99e12d57429e" target="_blank" rel="external"><strong>서버리스 아키텍처 소셜미디어 개발기 1편</strong><br>_지난편 보기_techstory.shma.so</a><a href="https://techstory.shma.so/%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%86%8C%EC%85%9C%EB%AF%B8%EB%94%94%EC%96%B4-%EA%B0%9C%EB%B0%9C%EA%B8%B0-1%ED%8E%B8-99e12d57429e" target="_blank" rel="external"></a></p>
-<p>지난 편에서 Hello World 와도 같은 프로그램을 빌드까지 했다고 하면 Day2에서는 실제 페이지를 만들기 위한 기본 작업들로 시작해서 User Story2번의 기초 작업을 해 보도록 하겠습니다.</p>
-<p><img src="/images/1*DlbSvZNpTiTXFEnmDriqYw.png" alt="">슬슬 시작해 볼까?</p>
-<p>일단 create-react-app의 처음 만들어진 폴더 구조는 다음과 같습니다.</p>
-<p><img src="/images/1*zfKn3vrlcOAWNh-i31r7Lg.png" alt=""></p>
-<p>이후 진행에 폴더를 찾는데 참조하시기 바랍니다.</p>
-<p>User Story 들어가기 전에 몸좀 풀죠.</p>
-<h3 id="1-로고-파비콘-favicon-헤더"><a href="#1-로고-파비콘-favicon-헤더" class="headerlink" title="1. 로고, 파비콘(favicon), 헤더"></a>1. 로고, 파비콘(favicon), 헤더</h3><p>처음 실행한 예제에서 이쁘기는 하지만 무지하게 큰 움직이는 로고를 만나보셨을 겁니다. 그리고 헤더가 엄청나게 큰 영역을 차지하고 있다는 것, 파비콘도 react 이미지라는 사실을 알 수 있죠.</p>
-<p>이런 것들을 변경하는 팁을 약간 언급하고 넘어가겠습니다.</p>
-<h4 id="로고"><a href="#로고" class="headerlink" title="로고"></a>로고</h4><p>개발자에게 디자인은 또 다른 어려움일거라 생각합니다.</p>
-<p><a href="http://ko.cooltext.com/" title="http://ko.cooltext.com/" target="_blank" rel="external"><strong>로고 밑 그래픽 생성기 - Cool Text</strong><br>_Cool Text(쿨 텍스트)는 화려한 로고를 웹페이지나 다른 용도로 위해 만들어 주는 무료 그래픽 생성기입니다. 간편하게 원하시는 이미지를 클릭만 해주세요. 그 후 폼을 작성해 주시면 바로 당신만의 이미지를 만…_ko.cooltext.com</a><a href="http://ko.cooltext.com/" target="_blank" rel="external"></a></p>
-<p>위와 같이 로고를 만들어 주는 사이트를 이용해 볼 수 있습니다.<br>Stand Up으로 주고 헤더 색깔을 녹색( #02B875 )으로 지정할 예정이기 때문에 비슷하게 맞춰서 다운 받아 둡니다.</p>
-<p><img src="/images/1*GQ7khUI-AHb0XcRsHcmDlw.png" alt="">훌륭합니다.</p>
-<h4 id="favicon"><a href="#favicon" class="headerlink" title="favicon"></a>favicon</h4><p>favicon은 브라우저에서 타이틀 텍스트 옆에 있는 작은 아이콘입니다. 즐겨찾기에도 표시가 되는 아이콘인데, 이 것도 만들어주는 사이트가 있습니다.</p>
-<p><a href="http://www.favicon-generator.org/" title="http://www.favicon-generator.org/" target="_blank" rel="external"><strong>Favicon &amp; App Icon Generator</strong><br>_Convert PNG to ICO, JPG to ICO, GIF to ICO. Create favicon.ico and iOS / Android App Icons. Edit a favicon to fit your…_www.favicon-generator.org</a><a href="http://www.favicon-generator.org/" target="_blank" rel="external"></a></p>
-<p>같은 사이트는 그런 역할을 해 주는 군요.<br>(재밌는 것은 이 사이트은 파비콘이 없다는 사실입니다.)</p>
-<p>저는 제 캐리커쳐를 올려서 favicon을 만들었습니다.</p>
-<h4 id="헤더"><a href="#헤더" class="headerlink" title="헤더"></a>헤더</h4><p>헤더의 색과 사이즈를 변경할 수 있습니다. src 폴더 아래의 App.css 파일의 CSS 파일을 다음과 같이 고쳐서</p>
-<pre><code>.App-logo {  
-height: 45px;/\* 이미지 사이즈 줄이고\*/  
-}  
-.App-header {  
-background-color: \#02B875;/\* 타이틀 바 색감을 좀 바꾸고\*/  
-height: 50px;/\* 전체 사이즈를 줄였습니다.\*/  
-padding: 5px;  
-color: white;  
-}
-</code></pre><p>로고 이미지와 favicon 을 바꾸도록 App.js를 바꿔보도록 하겠습니다.</p>
-<pre><code>import React, { Component } from &apos;react&apos;;  
-import logo from &apos;./img/stand\_up\_logo.png&apos;;  
-import &apos;./App.css&apos;;
-
-class App extends Component {  
-render() {  
-return (  
-&lt;div className=&quot;App&quot;\&gt;  
-&lt;div className=&quot;App-header&quot;\&gt;  
-&lt;img src={logo} className=&quot;App-logo&quot; alt=&quot;logo&quot; /\&gt;  
-&lt;/div\&gt;  
-&lt;p className=&quot;App-intro&quot;\&gt;  
-이제 여기서 부터 프로젝트는 시작입니다. 로고는 일단은 그냥 둡시다.  
-&lt;/p\&gt;  
-&lt;/div\&gt;  
-);  
-}  
-}  
-export default App;
-</code></pre><p>favicon은 public folder밑에 파일을 대체만 해 주면 됩니다.</p>
-<p>지금부터는 모바일 화면 기준으로 보기 위해 개발자 도구의 모바일 보기 기능을 활용하겠습니다.</p>
-<p><img src="/images/1*J9ymyfVdBSWyG1wxTc4ECg.jpeg" alt=""></p>
-<p>그럼 다음과 같이 보여야 정상입니다.</p>
-<p><img src="/images/1*yxthiRSu5SLY_yNytK5Gpw.jpeg" alt="">호오. 근데 번지는 효과는 어디로 갔나.. 나중에 손좀 봐야겠네요.</p>
-<p>파비콘도 정상이네요</p>
-<p><img src="/images/1*AKnLyYU5D9NY7X3MD_dvrw.jpeg" alt=""></p>
-<blockquote>
-<p>이제 준비가 되었습니다. User Story를 진행합시다</p>
-</blockquote>
-<h3 id="2-User-Story-2"><a href="#2-User-Story-2" class="headerlink" title="2. User Story 2"></a>2. User Story 2</h3><p>정의된 User Story는 다음과 같습니다.</p>
-<blockquote>
-<p>김개발이 사이트를 방문해서 자신이 유심하게 <strong>읽은 글을 올릴 수 있다</strong>. 이렇게 하면 다른 사람들이 볼 수 있다.<br>* 에디터 창은 하나만 있고 거기서 글을 작성하고 업로드 하면 글이 외부 클라우드 공간에 저장이 된다.</p>
-</blockquote>
-<p>유심하게 읽은 글을 올릴 수 있다. 부분을 참조해서 요건을 정의해 봅시다</p>
-<h4 id="요건-확인"><a href="#요건-확인" class="headerlink" title="요건 확인"></a>요건 확인</h4><p>“무엇을 올린 것인가”를 고려해 볼 때 소셜미디어들의 화면을 보도록 하겠습니다.</p>
-<p><img src="/images/1*ap74hP9OxVJzqCUp2B3ezA.jpeg" alt=""></p>
-<p>위의 이미지에서 기본적인 요건을 정의해 보면 다음의 내용들을 기본으로 가지고 있습니다.</p>
-<pre><code>작성자 (writer)  
-작성일 (createdAt)  
-내용 (contents)  
-링크  
---- 링크 이미지  
---- 링크 제목  
---- 링크 설명  
---- 링크 주소
-</code></pre><p>물론 다 라고 할 수는 없지만 일단 눈에띄는 부분과 변하지 않는 부분 위주로 살펴보죠. 이후에 더 자세하게 바꾸도록 하겠습니다.</p>
-<h3 id="3-Editor-개발"><a href="#3-Editor-개발" class="headerlink" title="3. Editor 개발"></a>3. Editor 개발</h3><p>그렇다면 Editor에 위의 내용들을 입력해서 업로드하기 직전까지의 작업을 지금부터 해 볼 것입니다. 어디에 어떻게 올릴 것인지는 나중에 고민하기로 하고 가장 쉬운 에디터 부터 만들어 보겠습니다.</p>
-<p><img src="/images/1*Xn3nDHJnsYd24ENoN9rE5g.jpeg" alt="">이런 이쁜 editor를 만들어 보자</p>
-<p>요건 정의를 통해 스케치해 본 위의 이미지와 같은 형태의 에디터를 만들 때 필요한 부분은 <strong>사용자 프로파일</strong>과 <strong>타이틀</strong>(‘무엇을 공유할까요’) 부분과 나머지 <strong>입력부</strong> , <strong>버튼</strong> 등이 있을 거 같습니다.</p>
-<h4 id="사용자-프로파일-만들기-타이틀-포함"><a href="#사용자-프로파일-만들기-타이틀-포함" class="headerlink" title="사용자 프로파일 만들기(타이틀 포함)"></a>사용자 프로파일 만들기(타이틀 포함)</h4><p><img src="/images/1*v6-R0HJoZXWFgh4b_sZAWQ.jpeg" alt="">ㄱㅈㄱ ㅎㄲㅎㄷ(가족과 함께한다?)</p>
-<p>지금은 사용자의 세션을 생각하지 말고 Anonymous모드로 프로파일 부분을 먼저 만들어 보도록 하겠습니다.</p>
-<p>Profile.js, Profile.css 파일을 아래와 같이 만들어 보겠습니다.</p>
-<pre><code>//JavaScript  
-import React from &apos;react&apos;;  
-import &apos;./Profile.css&apos;;  
-import Anonymous from &apos;./img/anonymous.png&apos;;
-
-function Profile(isAnonymous){  
-if(isAnonymous){ //익명일 경우  
-return(  
-&lt;div className=&quot;anonymous&quot;\&gt;  
-&lt;div className=&quot;today\_title&quot;\&gt;  
-무엇을 공유할까요?  
-&lt;/div\&gt;  
-&lt;div className=&quot;anonymous\_name&quot;\&gt;  
-겐지  
-&lt;/div\&gt;  
-&lt;div className=&quot;anonymous\_img\_wrap&quot;\&gt;  
-&lt;img src={Anonymous} alt=&quot;profiles&quot; className=&quot;anonymous\_img&quot;/\&gt;  
-&lt;/div\&gt;  
-&lt;/div\&gt;  
-)  
-}else{//익명이 아닐 경우는 일단은 빈 div  
-return &lt;div/\&gt;;  
-}  
-}  
-export default Profile;
-</code></pre><p>CSS는 다음과 같습니다.</p>
-<pre><code>/\*Profile.css\*/  
-.anonymous{  
-text-align: left;  
-background-color: white;  
-border-bottom: 1px solid \#dddfe2;  
-width :100%;  
-height: 50px;  
-}  
-.anonymous\_img\_wrap{  
-text-align: right;  
-border-radius: 50%;  
-display: inline;  
-float: right;  
-}  
-.anonymous\_img{  
-border-radius: 50%;  
-height: 35px;  
-padding: 5px;  
-}  
-.anonymous\_name{  
-padding-right: 10px;  
-float: right;  
-margin-top: 17px;  
-}  
-.today\_title{  
-float: left;  
-margin-top: 17px;  
-padding-left: 10px;  
-}
-</code></pre><p>익명일 경우에 겐지는 일단 Username으로 정하겠습니다.<br>일반 function 함수로 컴포넌트를 만들었고 props 로 isAnonymous 값을 전달 받는다는 사실을 알 수 있습니다.</p>
-<h4 id="입력부와-버튼-만들기"><a href="#입력부와-버튼-만들기" class="headerlink" title="입력부와 버튼 만들기"></a>입력부와 버튼 만들기</h4><p><img src="/images/1*3TWQmUuZIfa5WgckwxARTQ.jpeg" alt=""></p>
-<p>이제는 입력부를 살펴 볼까요?</p>
-<p>전통적으로 웹 에디터의 입력부 작성하는 방법은</p>
-<pre><code>&lt;form target=&quot;\[some url\]&quot;\&gt;  
-&lt;textarea name=&quot;\[text\_area\_name\]&quot;/\&gt;  
-&lt;/form\&gt;
-</code></pre><p>이지만 몇가지 이유에서 div 태그를 이용하도록 하겠습니다. (form 에 넣을 경우는 브라우저 이벤트가 우리가 넣는 이벤트에 우선하기 때문에 엔터를 칠 경우 submit이 되고, Single Page Applicaion의 경우 URL 이 옮겨지는 등의 제어를 위해 들어가야 하는 스크립트들이 많아지는 것등에 대한 코드가 많아지는 일들이 있습니다.)</p>
-<p>div 의 경우는 <strong>content-editable 속성을 주면 편집이 가능합니다</strong>.<br>placeholder 까지 더한코드를 살펴보겠습니다. (placeholder란 HTML 입력 폼에서 사용자가 입력하기 전까지 화면에 표시되는 문자열을 이야기 합니다)</p>
-<pre><code>&lt;div class=&quot;innerEdit&quot;  
-contentEditable=&quot;true&quot;  
-placeholder=&quot;글쓰기...&quot;\&gt;&lt;/div\&gt;
-</code></pre><p>하지만 div는 그냥 placeholder가 작동하지 않습니다. 그래서 <strong><em>innerEdit </em></strong>이라는 CSS클래스를 다음과 같이 작업을 해 줘야 합니다</p>
-<pre><code>\[contenteditable=true\]:empty:before{  
-content: attr(placeholder);  
-color: \#aaa;  
-display: block; /\* For Firefox \*/  
-}
-</code></pre><h4 id="합쳐-만들기"><a href="#합쳐-만들기" class="headerlink" title="합쳐 만들기"></a>합쳐 만들기</h4><p>이제 아까 작성한 Profile.js 를 결합하고 눌렀을 때 동작하는 코드를 만들어 보도록 하겠습니다.(콘솔에 이벤트만 먼저 찍어보도록 하겠습니다.)</p>
-<p>Editor.js 및 Editor.css 파일을 아래와 같이 작성해 보겠습니다.</p>
-<p>이제 Editor.js 파일을 App.js 파일에 컴포넌트로 완성을 해야 입력 폼이 완성이 된다고 볼 수 있습니다.<br>(소스에서 이미 확인하셨겠지만 props로 들어오는 값들이 있습니다.)</p>
-<p>App.js 파일은 다음과 같이 수정하겠습니다.</p>
-<p>변경된 소스를 잘 보셨으면 아시겠지만 Editor에 부모가 가진 메쏘드들을 전달하는 패턴을 쓸때 열거형</p>
-<pre><code>...
-</code></pre><p>을 사용했습니다. 자주 쓸 경우는 불필요한 리소스들까지도 연결 될 수 있으니 잘 확인해서 사용하시기 바랍니다</p>
-<p>이렇게까지 작업을 하면 다음과 같이 페이지가 뜨게 되고 콘솔 값을 확인해 볼 수 있습니다.</p>
-<p><img src="/images/1*yG6J8sQ95kuNSOZiViUshg.jpeg" alt="">이뻐요~</p>
-<p>다음은 콘솔 값이 아니라 간단한 리스트를 페이지에 찍어보고 클라우드 서버(firebase)에 저장하는 내용을 다뤄보도록 하겠습니다.</p>
-<p>이번엔 코드가 많아서 따라오기 힘드셨겠지만,</p>
-<p><a href="https://github.com/ehrudxo/standup/tree/day2" title="https://github.com/ehrudxo/standup/tree/day2" target="_blank" rel="external"><strong>ehrudxo/standup</strong><br>_standup project for newbi_github.com</a><a href="https://github.com/ehrudxo/standup/tree/day2" target="_blank" rel="external"></a></p>
-<p>day2 branch를 잘 참조 하시면 좋은 성과가 있을 거라고 생각됩니다.</p>
-<p><img src="/images/1*Df2WStETx1PSvDr_22r9eA.pn" alt="">겐지가 함께 하니깐요. 출처 : <a href="http://m.ruliweb.com/game/pc/84032/board/read/383" target="_blank" rel="external">http://m.ruliweb.com/game/pc/84032/board/read/383</a> (루리웹)</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/3af179d28f73" target="_blank" rel="external">October 22, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
@@ -765,6 +843,18 @@ display: block; /\* For Firefox \*/
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/05/27/2018-05-22-2018년-4-5월-깃헙-트렌드-당신만의-프로젝트를-스스로-만들어보기/">[2018-05-22]2018년 4~5월 깃헙 트렌드 - 당신만의 프로젝트를 스스로 만들어보기</a></h6>
+              <span>5월 27, 2018</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -826,18 +916,6 @@ display: block; /\* For Firefox \*/
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/09/14/puppeteer/">[github]Node.js 기반 헤드리스 브라우저 컨트롤 API - puppeteer</a></h6>
-              <span>9월 14, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -870,7 +948,7 @@ display: block; /\* For Firefox \*/
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

@@ -123,6 +123,83 @@
         
           <section id="main">
   
+    <article id="post-[2016-04-15 07:08:16]f8app"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/04/15/[2016-04-15 07:08:16]f8app/">f8app</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/04/15/[2016-04-15 07:08:16]f8app/" class="article-date">
+	  <time datetime="2016-04-14T22:08:16.000Z" itemprop="datePublished">4월 15, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/1*KTb5z9i3yF-OE2DQ2VetmQ.png" alt=""></p>
+<p>Two days of new products, tools, interactive demos and speakers to help you build, grow and monetize your apps. Whether you’re joining us in San Francisco or watching F8 from around the world, join us for a glimpse into the future of Facebook and learn more about our family of apps and services. — facebook page</p>
+<p>이틀간의 f8행사가 끝이 났습니다. 이번 f8에 어떤 이슈들이 있었는지 다들 궁금해 하실 찰나에 facebook에서 자신들의 행사 앱을 오픈소스로 풀어버린다는 얘기가 나왔고 바야흐로 깃헙에 등록이 되었습니다.</p>
+<p>당연히 어제 순위는 당연히 1등으로 등장!</p>
+<p>2014/04/15 Today’s Best( 1k+ ★)</p>
+<p><a href="https://github.com/fbsamples/f8app" title="https://github.com/fbsamples/f8app" target="_blank" rel="external"><strong>fbsamples/f8app</strong><br>_f8app - Source code of the official F8 app of 2016, powered by React Native and other Facebook open source projects._github.com</a><a href="https://github.com/fbsamples/f8app" target="_blank" rel="external"></a></p>
+<p>소스가 React-Native로 되어 있다고 하길래 바로 다운 받아 보았습니다.</p>
+<h3 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h3><pre><code>\# 먼저 git repo에서 클론을 받습니다.  
+$ git clone [https://github.com/fbsamples/f8app.git][anchor2]  
+$ cd f8app \# 폴더로 들어가서  
+$ npm install \# npm module 설치  
+$ (cd ios; pod install) \# only for iOS version  
+$ npm start \# 서버를 구동  
+$ npm run import-data \# mongodb 에 data를 import 합니다
+</code></pre><p>혹시 mongodb와 cocoapod이 설치되어 있지 않다면 설치합니다.</p>
+<h3 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h3><pre><code>$ react-native run-ios
+</code></pre><p>다음과 같은 화면을 거쳐 facebook계정으로 로그인을 하고 나면</p>
+<p><img src="/images/1*wALgw3qUlB59RxWQ8EYHOg.png" alt=""></p>
+<p>다음과 같은 화면을 만날 수 있습니다.</p>
+<p><img src="/images/1*HBZ8g_d_xiUvgMplXlaqCg.png" alt=""></p>
+<p>왜 같은 react-native app인데 제가 만든 건과 다른지 모르겠습니다. ㅎㅎ</p>
+<p>소스를 살펴보죠.</p>
+<p><img src="/images/1*v_jJqJFHS1jorzR_1UfcIA.png" alt=""></p>
+<p>시작은 보통의 다른 예제와 극히 다를바 없는 소스구조를 갖고 있습니다.</p>
+<p>소스 구조는 index.ios.js -> js/setup.js 로 넘기는 역할을 하고 있습니다.</p>
+<p>babel, eslint, gitignore, watchman등이 설정파일로 담겨져 있습니다.</p>
+<p>License는 저작권 명기만 하면 되는 수준인 거 같습니다.</p>
+<p>setup.js를 살펴보면 눈에 띄는 것은 parseServer/react-native 쪽입니다.</p>
+<p><img src="/images/1*7y-0fRK7i2-iFViYTu_ueA.pn" alt=""></p>
+<p>서비스를 종료했다고 하는데 여기 저기서 많이 쓰이는군요. 그리고 facebook 앱에서도 react-redux 를 쓴다는 사실이 확인 되었군요!</p>
+<p>React-native 로 앱을 만들고 있는 사람들에게는 정말로 좋은 Best-Practice가 나온 거 같습니다. 중요체크!</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/8fd451553017" target="_blank" rel="external">April 14, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-[2016-04-14 06:33:22]Redex"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -206,69 +283,6 @@ autoreconf -ivf &amp;&amp; ./configure &amp;&amp; make &amp;&amp; make install
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-04-13 20:36:32]DevopsWiki"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/04/13/[2016-04-13 20:36:32]DevopsWiki/">DevopsWiki</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/04/13/[2016-04-13 20:36:32]DevopsWiki/" class="article-date">
-	  <time datetime="2016-04-13T11:36:32.000Z" itemprop="datePublished">4월 13, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/1*uqSTh5AvIGY44SX8ul5aoQ.png" alt=""><a href="https://en.wikipedia.org/wiki/DevOps" target="_blank" rel="external">https://en.wikipedia.org/wiki/DevOps</a></p>
-<blockquote>
-<p>A wiki of Guides, Scripts, Tutorials related to devops</p>
-</blockquote>
-<p>devops에 관련된 가이드와 스크립트 및 튜토리얼을 모아둔 프로젝트입니다.</p>
-<p>데브옵스, 디밥스 뭐 어쨌든… 재미 있는 것은 시작을 vim으로 하고 있네요.</p>
-<p>Vim</p>
-<p>Tmux</p>
-<p>Git</p>
-<p>의 순서로 시작이 됩니다.</p>
-<p>C, Javascript는 들어갔는데 Java가 빠진 것은 의외로군요.</p>
-<p><img src="/images/1*BQntqyrBzIX5nNoDVpGHmw.pn" alt=""></p>
-<p>Docker 는 당연히 들어갈 거라고 생각했는데 13번 부터는 이전 Sysadmin역할이 devops 의 중요 영역이 되었습니다. 국내 실정과는 약간 다른게 아닌가 생각을 해 봅니다.</p>
-<p>22번 Devops Interview Questions에 눈이 가는 것은 왜일까요?</p>
-<p>한번 살펴 볼까요?</p>
-<p>>What is Continuous Integration?</p>
-<p>CI는 무엇입니까? 요즘은 CD로 바꿔도 될거 같은데, 질문이 꽤나 철학적이네요. 참고하시면 좋을 듯 합니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/423025bb1b4a" target="_blank" rel="external">April 13, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
@@ -320,6 +334,18 @@ autoreconf -ivf &amp;&amp; ./configure &amp;&amp; make &amp;&amp; make install
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/05/27/2018-05-22-2018년-4-5월-깃헙-트렌드-당신만의-프로젝트를-스스로-만들어보기/">[2018-05-22]2018년 4~5월 깃헙 트렌드 - 당신만의 프로젝트를 스스로 만들어보기</a></h6>
+              <span>5월 27, 2018</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -381,18 +407,6 @@ autoreconf -ivf &amp;&amp; ./configure &amp;&amp; make &amp;&amp; make install
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/09/14/puppeteer/">[github]Node.js 기반 헤드리스 브라우저 컨트롤 API - puppeteer</a></h6>
-              <span>9월 14, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -425,7 +439,7 @@ autoreconf -ivf &amp;&amp; ./configure &amp;&amp; make &amp;&amp; make install
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

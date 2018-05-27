@@ -123,6 +123,80 @@
         
           <section id="main">
   
+    <article id="post-2018-05-22-2018년-4-5월-깃헙-트렌드-당신만의-프로젝트를-스스로-만들어보기"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/05/27/2018-05-22-2018년-4-5월-깃헙-트렌드-당신만의-프로젝트를-스스로-만들어보기/">[2018-05-22]2018년 4~5월 깃헙 트렌드 - 당신만의 프로젝트를 스스로 만들어보기</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2018/05/27/2018-05-22-2018년-4-5월-깃헙-트렌드-당신만의-프로젝트를-스스로-만들어보기/" class="article-date">
+	  <time datetime="2018-05-26T22:51:17.000Z" itemprop="datePublished">5월 27, 2018</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>우리가 편하게 개발하고 있는 토대가 되는 여러가지 도구들, 혹은 기술들 중에 ‘이건 도대체 어떻게 만들었을까?’ 라는 의문을 가지게 될때가 종종 있다.<br>나중에 한번 알아봐야지 하고 그냥 지나칠 경우가 굉장히 많은데 세상은 나처럼 게으른 자를 위해 나보다 조금 더 부지런한 사람이 작업을 해 두었다. ‘Build your own X’ 라는 프로젝트가 오늘의 주인공이다. X 대신에 내가 만들고 싶은 무엇을 대입하면 된다라는 뜻의 이 프로젝트는 프로젝트 Readme 파일에 리차드 파인만의 명언이 적혀있다. ‘What I cannot create, I do not understand’<br>대체적으로 동감한다. (대체적이라고 쓴 것은 리처드 파인만이 천재중의 천재이기 때문에 여지를 남겨 둔 것이다.) HTML의 한 부분을 파싱할려고 해도 jQuery를 import 해서 쓰던 옛 습관들을 되돌아 보면 가끔은 내가 라이브러리 덕후인지 개발자인지를 헷갈릴 때도 있다. </p>
+<h3 id="개인적으로-궁금해-했었던-프로젝트들"><a href="#개인적으로-궁금해-했었던-프로젝트들" class="headerlink" title="개인적으로 궁금해 했었던 프로젝트들"></a>개인적으로 궁금해 했었던 프로젝트들</h3><h4 id="Web-Framework"><a href="#Web-Framework" class="headerlink" title="Web Framework"></a>Web Framework</h4><p>가장 최근에 궁금해 했었던 프로젝트는 아마도 React 가 아니었나 싶다. GIS(Geographic Information System) 프로젝트를 하면서 Zero Dependency Map Framework를 만들던 추억을 되짚어 보면서 언젠가 비슷한 프레임워크를 만들어야지 했었던 다짐(?)들이 솔솔 떠오르는 주제중의 하나가 웹 프레임워크인데 Virtual DOM이 어떻게 작동할지가 가장 궁금한 영역이었다.<br>아래의 리스트들을 살펴보자.</p>
+<ul>
+<li><a href="https://jasonformat.com/wtf-is-jsx/" target="_blank" rel="external">JavaScript: WTF is JSX (Let’s Build a JSX Renderer)</a></li>
+<li><a href="https://github.com/hexacta/didact" target="_blank" rel="external">JavaScript: A DIY guide to build your own React</a></li>
+<li><a href="https://vimeo.com/album/3930691" target="_blank" rel="external">JavaScript: Reverse Engineering React</a><br>(중략)</li>
+<li><a href="https://github.com/jsrebuild/build-your-own-vuejs" target="_blank" rel="external">JavaScript: Build your own Vuejs</a></li>
+<li><a href="https://blog.mgechev.com/2015/03/09/build-learn-your-own-light-lightweight-angularjs/" target="_blank" rel="external">JavaScript: Build Your own Simplified AngularJS in 200 Lines of JavaScript</a></li>
+<li><p><a href="https://medium.com/@deathmood/how-to-write-your-own-virtual-dom-ee74acc13060" target="_blank" rel="external">JavaScript: How to write your own Virtual DOM</a></p>
+<p>Welcome To Facebook 의 약자라 믿으며(응?) 읽어볼 수 있는 “WTF is JSX”는 어떻게 JSX를 파싱해서 렌더링 트리를 만드는지에 대한 내용이 주로 있다. 이 글에서 가장 중요한 부부은 h() 함수. hyperscript 부분이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">h</span>(<span class="params">nodeName, attributes, ...args</span>) </span>&#123;  </div><div class="line">      <span class="keyword">let</span> children = args.length ? [].concat(...args) : <span class="literal">null</span>;</div><div class="line">      <span class="keyword">return</span> &#123; nodeName, attributes, children &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>hypertext를 JavaScript 객체로 바꿔 주는 부분이라고 볼 수 있다.<br>이 내용은 마지막 링크인 “How to write your own Virtual DOM” 과 굉장히 자연스레 이어지기 때문에 독자들에게는 좋은 인사이트를 줄 수 있을 것 같다.<br>위의 hyperscript가 JSX 를 파싱해서 아래와 같은 형태의 DOM 트리를 만들고나면 브라우저에 DOM으로 표현을 하게 되면 이른바 우리가 알고 있는 브라우저에 렌더링 하는 형태로 드러나지게 되는 것이다.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">h(‘ul’, &#123; ‘class’: ‘list’ &#125;,</div><div class="line">  h(‘li’, &#123;&#125;, ‘item <span class="number">1</span>’),</div><div class="line">  h(‘li’, &#123;&#125;, ‘item <span class="number">2</span>’),</div><div class="line">);</div></pre></td></tr></table></figure></p>
+<p>이후, Hanlding Changes 부분이 바로 Tree의 변화를 감지해서 바로 그려주게 되는 내용을 기술하고 있다고 보면 된다. props와 state등의 더 깊은 부분은 이 포스팅에서는 찾아볼 수 없지만, 이루어지는 메커니즘을 이해하는데에는 훌륭한 글이라 보여진다.</p>
+<h4 id="물리엔진"><a href="#물리엔진" class="headerlink" title="물리엔진"></a>물리엔진</h4><p>물리 엔진(영어: physics engine) 또는 물리 연산 엔진은 강체동역학(충돌 감지 포함), 연체동역학, 유동역학과 같은 단순한 특정 물리 시스템을 최대한 시뮬레이션하려고 하는 컴퓨터 소프트웨어이다. </p>
+<ul>
+<li><a href="https://ko.wikipedia.org/wiki/%EB%AC%BC%EB%A6%AC_%EC%97%94%EC%A7%84" target="_blank" rel="external">참고: 위키백과</a><br>물리엔진의 존재를 처음 생각하게 된 것은 Doom 이라는 게임을 접하면서 였던 거 같다. 물론 그 당시 수준이란게 물리엔진이라는 수준 보다는 3D 엔진의 도화선이 된 것이었지만 움직이면서 오브젝트가 작동하는 방식들이 일종의 물리엔진을 가지기는 한다.<br>유명한 물리엔진은 하복(<a href="https://www.havok.com/" target="_blank" rel="external">havok</a>) 과 크로노 프로젝트(<a href="https://projectchrono.org/" target="_blank" rel="external">project chrono</a>)가 있다.<br>하복을 사용하는 게임으로는 철권 태그 토너먼트, 디아블로3, 엘더스크롤5: 스카이림, 헤일로2~4, 하프라이프2, 스타크래프트2 등의 명작 게임이 즐비하다. </li>
+</ul>
+<p>이 물리 엔진을 위해서 아래의 내용들을 제공하고 있다.</p>
+<ul>
+<li><a href="https://www.toptal.com/game/video-game-physics-part-i-an-introduction-to-rigid-body-dynamics" target="_blank" rel="external">C: Video Game Physics Tutorial</a></li>
+<li><a href="http://allenchou.net/game-physics-series/" target="_blank" rel="external">C++: Game physics series by Allen Chou</a></li>
+<li><a href="https://gamedevelopment.tutsplus.com/series/how-to-create-a-custom-physics-engine--gamedev-12715" target="_blank" rel="external">C++: How to Create a Custom Physics Engine</a><br>(중략)</li>
+<li><a href="https://www.graphitedigital.com/blog/build-your-own-basic-physics-engine-in-javascript" target="_blank" rel="external">JavaScript: Build your own basic physics engine in JavaScript</a></li>
+<li><a href="http://buildnewgames.com/gamephysics/" target="_blank" rel="external">JavaScript: How Physics Engines Work</a></li>
+</ul>
+<p>이 중에서  “Build your own basic physics engine in JavaScript”에는 브라우저에서 어떻게 캔버스에 물리 오브젝트를 그리고 값을 변화시기는지 간단하게 나와 있다. 이 중에서 가장 초보자들이 가장 눈여겨 봐야할 부분은 다음의 소스 코드에서 requestAnimationFrame 이 들어간 부분이다. 이 부분은 브라우저 캔버스에서 60프레임을 확보하기 위해서 사용되는 내장 브라우저 함수이다.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Loop = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="comment">//재귀호출을 실행한다.</span></div><div class="line">    requestAnimationFrame(Loop);</div><div class="line">    <span class="comment">//실제 프레임 안에서 작동하는 내용을 기술해서 작동하도록 한다.</span></div><div class="line">    frameRender();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>requestAnimation에 대한 자세한 내용은 다음을 통해 숙지하자.<br><a href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame" target="_blank" rel="external">모질라 개발자 사이트 - requestAnimationFrame</a></p>
+<p>“How Physics Engines Work” 글에서는 조금 더 나아가서 실제로 오브젝트에 물리식들을 조금씩 적용해 보는 예제들을 확인할 수 있다. 뉴턴의 제2법칙 -<br>물체의 운동량의 시간에 따른 변화율은 그 물체에 작용하는 힘과 (크기와 방향에 있어서) 같다. -인  F=ma 를 찾아볼 수 있다. 즉 질량 * 가속도 = 힘으로 우리가 알고 있는 내용이다.<br>실제 중력 가속도 인 0.98을 이용해서 공이 자유낙하 하는 예제를 포함하고 있다.<br><a href="http://jsfiddle.net/bkanber/vmkZR/?utm_source=website&amp;utm_medium=embed&amp;utm_campaign=vmkZR" target="_blank" rel="external">jsfiddle 예제</a><br>jsfiddle 예제를 통해서도 볼 수 있다.<br><img src="/images/2018/05/tongtong.gif" alt="통통"></p>
+<p>더 관심이 있는 사람은 다른 아티클들을 가지고 더 들여다 볼수도 있다. </p>
+<p>이 외에도 블럭체인, OS, Database, 검색엔진 같은 흥미로운 주제들을 생각해 볼 수 있을 것으로 보인다.</p>
+<h3 id="맺으며"><a href="#맺으며" class="headerlink" title="맺으며"></a>맺으며</h3><p>조금 더 좋은 개발자가 된다는 일은 어떤 느낌일까? 개인적으로는 조금 더 깊은 본질에 가까워지는 노력을 게을리 하지 않고, 흘러가는 트렌드를 놓치지 않기 위해 노력하지만 천둥 벌거숭이 같은 남자 아이 셋을 키우는 입장에서는 언제나 시간이 부족하다. 하지만 언제나 이런 좋은 리소스들이 넘쳐나는 세상에서 배울것이 무궁무진하다는 것은 고무적인 일이다. </p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-2018-04-27-Responsive-Web을-위해-개발자가-꼭-알아야-하는-기술들"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -207,114 +281,6 @@
 <!-- Table of Contents -->
 
   
-    <article id="post-2018-01-08-2018년-1월-깃헙-트렌드"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2018/01/08/2018-01-08-2018년-1월-깃헙-트렌드/">[2018-01-08] 2018년 1월 깃헙 트렌드 - Rust와 웹 어셈블리의 혁신적인 도발</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2018/01/08/2018-01-08-2018년-1월-깃헙-트렌드/" class="article-date">
-	  <time datetime="2018-01-08T08:47:43.000Z" itemprop="datePublished">1월 8, 2018</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>2018년 새해가 밝았다. 올해는 어떤 포스팅을 더 할 수 있을지 고민해 보았다. 물론 언제나 나의 계획과 이룰 수 있는데에는 한계가 있다. </p>
-<h3 id="올-한해-하고-싶은-포스팅"><a href="#올-한해-하고-싶은-포스팅" class="headerlink" title="올 한해 하고 싶은 포스팅"></a>올 한해 하고 싶은 포스팅</h3><ol>
-<li>가방끈 짧은 개발자의 딥러닝 시리즈 </li>
-<li>프론트엔드 개발자가 배워야 하는 기반 기술 총망라. ( HTTP1.0 부터 ES2018까지. 아 이건 위키가 더 좋을까.  총망라 라니.. 이런 아재 감각.)</li>
-<li>머리속에 그리는 리액트 심화 가즈아~</li>
-<li>깃헙 트렌드 격주 발행 ( 가능할 것인가?!! )</li>
-</ol>
-<h3 id="1월의-깃헙-트렌드"><a href="#1월의-깃헙-트렌드" class="headerlink" title="1월의 깃헙 트렌드"></a>1월의 깃헙 트렌드</h3><p>1월 한달간 깃헙에 올라온 프로젝트 중 많은 호응을 얻었던 프로젝트들을 정리해 보았다. 특이하게 디버깅에 관련된 프로젝트들이 많이 올라 왔다.  30 seconds of code 는 매우 유용한 자바스크립트 코드를 확인해 볼 수 있다.</p>
-<ul>
-<li><a href="https://github.com/x64dbg/x64dbg" target="_blank" rel="external">x64dbg</a></li>
-<li><a href="https://github.com/tipsy/github-profile-summary" target="_blank" rel="external">github-profile-summary</a></li>
-<li><a href="https://github.com/Chalarangelo/30-seconds-of-code" target="_blank" rel="external">30-seconds-of-code</a></li>
-<li><a href="https://github.com/wangshub/wechat_jump_game" target="_blank" rel="external">wechat_jump_game</a></li>
-<li><a href="https://github.com/parcel-bundler/parcel" target="_blank" rel="external">parcel</a></li>
-<li><a href="https://github.com/skylot/jadx" target="_blank" rel="external">jadx</a></li>
-<li><a href="https://github.com/jwasham/coding-interview-university" target="_blank" rel="external">coding-interview-university</a></li>
-<li><a href="https://github.com/Konloch/bytecode-viewer" target="_blank" rel="external">bytecode-viewer</a></li>
-<li><a href="https://github.com/tensorflow/tensorflow" target="_blank" rel="external">tensorflow</a></li>
-<li><a href="https://github.com/google/boardgame.io" target="_blank" rel="external">boardgame.io</a></li>
-</ul>
-<p>이 중에서 yew라는 rust 기반의 프로젝트를 살펴보자.</p>
-<h3 id="yew"><a href="#yew" class="headerlink" title="yew"></a>yew</h3><p>yew는 rust 기반의 웹 프레임 워크를 표방하고 있다. </p>
-<h4 id="rust"><a href="#rust" class="headerlink" title="rust"></a>rust</h4><p><img src="/images/2018/01/rust_page.png" alt="rust page"><br>rust 라고 하면 기본적으로 어려운 언어. 파이어폭스의 다음버전 퀀텀의 기반. 혁신적인 속도 등의 키워드로 개발자들에게 알려져 있다. 물론 비슷한 시기에 나와서 더 성공적으로 론칭된 go의 경우는 구글의 버프를 받고 무럭 무럭 개발자 커뮤니티가 성장하고 있다. 그에 비해 rust 는 많이 외면 받아 왔는데 그 이유로는 어려운 문맥과 더불어 타게팅된 어플리케이션을 찾기가 힘들었다.  </p>
-<p><img src="/images/2018/01/servo_page.png" alt="servo page"><br>그 와중에 우리가 들어 봤던 가장 좋은 소식중에 하나는 아마도 <a href="https://servo.org/" target="_blank" rel="external">servo</a> 일 것이고 그 servo가 차기 파이어 폭스 퀀텀의 핵심이 될 것이다.(아니 이미 서브 프로젝트들은 퀀텀에 장착되기 시작했다.) 그런데 퀀텀은 이미 개발자들 사이에 굉장히 화제가 되었고 속도가 많이 개선되었다는 이야기들이 오가기 시작했다. 다만 이전 플러그인들 호환 문제 때문에 파이어 폭스의 미래는 여전히 밝지 않지만 모두에게 rust === ‘고성능이였지’ 공식의 향수를 일으키기에 충분했다.</p>
-<p>그러던 와중에 1월의 프로젝트중에 yew가 눈에 띄었다. 그래서 한 번 살펴 보았는데, 프론트엔트 개발자들에게는 개발에 대한 패러다임을 바꿀 수 있는 어떤 무언가가 보여서 한 번 나눠볼까 한다. </p>
-<h4 id="React-like-Virtural-DOM"><a href="#React-like-Virtural-DOM" class="headerlink" title="React like Virtural DOM"></a>React like Virtural DOM</h4><p>Rust 내부에 DOM 코드를 작성하는 형식은 리액트의 Virtual DOM을 따라 했는데, 컴파일을 하고 서비스가 로딩이 된 후 사이트에 접속을 하면 react 처럼 virtual dom을 만들고 렌더링을 한다.<br>네트워크를 통해 전송되는 html은 다음과 같다.</p>
-<ul>
-<li>소스코드 - To Do MVC HTML 코드<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!doctype html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>Yew • TodoMVC<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"styles.css"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/app.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>하지만 DOM의 경우는 다음 그림처럼 렌더링이 되어 있다.<br><img src="/images/2018/01/todo_mvc_html_dom.png" alt="To Do MVC HTML DOM"></p>
-<h4 id="Web-Assembly"><a href="#Web-Assembly" class="headerlink" title="Web Assembly"></a>Web Assembly</h4><p>자바 스크립트는 웹 어셈블리(혹은 Asm.js)로 작성되어서 떨어진다. Asm.js는 브라우저가 이해하기 쉬운 기계어 포맷에 가까운 자바스크립트이고, 웹 어셈블리는 이전에 블로그에서 언급한 적이 있다.<br><img src="/images/2018/01/web_assemply.png" alt="WebAssembly - hello world 어셈블리를 브라우저에 올려보자"><br>링크 : <a href="http://www.devpools.kr/2017/01/21/webassembly-binaryen-emscripten/" target="_blank" rel="external">WebAssembly - hello world 어셈블리를 브라우저에 올려보자</a><br>말 그대로 브라우저에서 돌아가는 기계어다.<br>아무래도 ???! 이게 뭐지? 하는 느낌으로 지금쯤 읽고 있는 독자들이 많으리라.<br>코드를 보고 이야기 하자.</p>
-<h4 id="백타가-불여일견"><a href="#백타가-불여일견" class="headerlink" title="백타가 불여일견"></a>백타가 불여일견</h4><p>먼저 TO DO MVC 코드는 다음과 같다. 맞다 . 여러분이 아는 그 To Do MVC 말이다. <a href="http://todomvc.com/" target="_blank" rel="external">ToDoMVC</a></p>
-<figure class="highlight rust"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 중략 </span></div><div class="line"><span class="comment">// 모델을 정의한다.</span></div><div class="line"><span class="meta">#[derive(Serialize, Deserialize)]</span></div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Model</span></span> &#123;</div><div class="line">    entries: <span class="built_in">Vec</span>&lt;Entry&gt;,</div><div class="line">    filter: Filter,</div><div class="line">    value: <span class="built_in">String</span>,</div><div class="line">    edit_value: <span class="built_in">String</span>,</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#[derive(Serialize, Deserialize)]</span></div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Entry</span></span> &#123;</div><div class="line">    description: <span class="built_in">String</span>,</div><div class="line">    completed: <span class="built_in">bool</span>,</div><div class="line">    editing: <span class="built_in">bool</span>,</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//중략 </span></div><div class="line"><span class="comment">// update 함수는 Add,Edit 등등의 명령어를 받으면 모델을 변경한다.</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">fn</span> <span class="title">update</span></span>(context: &amp;<span class="keyword">mut</span> Context, model: &amp;<span class="keyword">mut</span> Model, msg: Msg) &#123;</div><div class="line">    <span class="keyword">match</span> msg &#123;</div><div class="line">        Msg::Add =&gt; &#123;</div><div class="line">            <span class="keyword">let</span> entry = Entry &#123;</div><div class="line">                description: model.value.clone(),</div><div class="line">                completed: <span class="literal">false</span>,</div><div class="line">                editing: <span class="literal">false</span>,</div><div class="line">            &#125;;</div><div class="line">            model.entries.push(entry);</div><div class="line">            model.value = <span class="string">""</span>.to_string();</div><div class="line">        &#125;</div><div class="line">        Msg::Edit(idx) =&gt; &#123;</div><div class="line">            <span class="keyword">let</span> edit_value = model.edit_value.clone();</div><div class="line">            model.complete_edit(idx, edit_value);</div><div class="line">            model.edit_value = <span class="string">""</span>.to_string();</div><div class="line">        &#125;</div><div class="line">        Msg::Update(val) =&gt; &#123;</div><div class="line">            <span class="built_in">println!</span>(<span class="string">"Input: &#123;&#125;"</span>, val);</div><div class="line">            model.value = val;</div><div class="line">        &#125;</div><div class="line">        Msg::UpdateEdit(val) =&gt; &#123;</div><div class="line">            <span class="built_in">println!</span>(<span class="string">"Input: &#123;&#125;"</span>, val);</div><div class="line">            model.edit_value = val;</div><div class="line">        &#125;</div><div class="line">        Msg::Remove(idx) =&gt; &#123;</div><div class="line">            model.remove(idx);</div><div class="line">        &#125;</div><div class="line">        Msg::SetFilter(filter) =&gt; &#123;</div><div class="line">            model.filter = filter;</div><div class="line">        &#125;</div><div class="line">        Msg::ToggleEdit(idx) =&gt; &#123;</div><div class="line">            model.toggle_edit(idx);</div><div class="line">        &#125;</div><div class="line">        Msg::ToggleAll =&gt; &#123;</div><div class="line">            <span class="keyword">let</span> status = !model.is_all_completed();</div><div class="line">            model.toggle_all(status);</div><div class="line">        &#125;</div><div class="line">        Msg::Toggle(idx) =&gt; &#123;</div><div class="line">            model.toggle(idx);</div><div class="line">        &#125;</div><div class="line">        Msg::ClearCompleted =&gt; &#123;</div><div class="line">            model.clear_completed();</div><div class="line">        &#125;</div><div class="line">        Msg::Nope =&gt; &#123;&#125;</div><div class="line">    &#125;</div><div class="line">    context.storage.store(KEY, Json(&amp;model));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//중략</span></div><div class="line"><span class="comment">// view 는 브라우저에 렌더링한다. 변경에 따른 바인딩과 이벤트의 바인등을 정의한다.</span></div><div class="line"><span class="function"><span class="keyword">fn</span> <span class="title">view</span></span>(model: &amp;Model) -&gt; Html&lt;Msg&gt; &#123;</div><div class="line">    html! &#123;</div><div class="line">        &lt;div class=<span class="string">"todomvc-wrapper"</span>,&gt;</div><div class="line">            &lt;section class=<span class="string">"todoapp"</span>,&gt;</div><div class="line">                &lt;header class=<span class="string">"header"</span>,&gt;</div><div class="line">                    &lt;h1&gt;&#123; "todos" &#125;&lt;/h1&gt;</div><div class="line">                    &#123; view_input(&amp;model) &#125;</div><div class="line">                &lt;/header&gt;</div><div class="line">                &lt;section class=<span class="string">"main"</span>,&gt;</div><div class="line">                    &lt;input class="toggle-all", type="checkbox", checked=model.is_all_completed(), onclick=|_| Msg::ToggleAll, /&gt;</div><div class="line">                    &lt;ul class=<span class="string">"todo-list"</span>,&gt;</div><div class="line">                        &#123; <span class="keyword">for</span> model.entries.iter().filter(|e| model.filter.fit(e)).enumerate().map(view_entry) &#125;</div><div class="line">                    &lt;/ul&gt;</div><div class="line">                &lt;/section&gt;</div><div class="line">                &lt;footer class=<span class="string">"footer"</span>,&gt;</div><div class="line">                    &lt;span class=<span class="string">"todo-count"</span>,&gt;</div><div class="line">                        &lt;strong&gt;&#123; model.total() &#125;&lt;/strong&gt;</div><div class="line">                        &#123; <span class="string">" item(s) left"</span> &#125;</div><div class="line">                    &lt;/span&gt;</div><div class="line">                    &lt;ul class=<span class="string">"filters"</span>,&gt;</div><div class="line">                        &#123; <span class="keyword">for</span> Filter::iter().map(|flt| view_filter(&amp;model, flt)) &#125;</div><div class="line">                    &lt;/ul&gt;</div><div class="line">                    &lt;button class=<span class="string">"clear-completed"</span>, onclick=|_| Msg::ClearCompleted,&gt;</div><div class="line">                        &#123; <span class="built_in">format!</span>(<span class="string">"Clear completed (&#123;&#125;)"</span>, model.total_completed()) &#125;</div><div class="line">                    &lt;/button&gt;</div><div class="line">                &lt;/footer&gt;</div><div class="line">            &lt;/section&gt;</div><div class="line">            &lt;footer class=<span class="string">"info"</span>,&gt;</div><div class="line">                &lt;p&gt;&#123; "Double-click to edit a todo" &#125;&lt;/p&gt;</div><div class="line">                &lt;p&gt;&#123; "Written by " &#125;&lt;a href="https://github.com/DenisKolodin/", target="_blank",&gt;&#123; "Denis Kolodin" &#125;&lt;/a&gt;&lt;/p&gt;</div><div class="line">                &lt;p&gt;&#123; "Part of " &#125;&lt;a href="http://todomvc.com/", target="_blank",&gt;&#123; "TodoMVC" &#125;&lt;/a&gt;&lt;/p&gt;</div><div class="line">            &lt;/footer&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>코드는 생각보다 어렵지 않다. Gorilla 같은 Go의 웹 프레임워크를 처음 볼때와 흡사하다. 다만 다른 부분은 view안에 JSX 처럼 코드 스니펫을 사용한다는 것이다. JSX 처럼 컴포넌트화 하지는 않는 것 같다.<br>struct는 모델을 정의하고 이벤트를 처리할 함수를 update로 정의한 후에 view 에서 렌더링을 하고 있다. 이렇게 코드를 작성하고 실행을 시키고 나면, 다음과 같이 ToDoMVC 앱이 뜨는 것이다.<br><img src="/images/2018/01/todo_mvc.png" alt="진리의 asdf"></p>
-<p>이것이 정확히 어떻게 작동하게 되는지 app.js를 알아보자. toggleEdit이라는 이벤트의 아래 코드는 다음과 같이 바뀐다.<br><img src="/images/2018/01/code_converted.png" alt="그만 알아 보자"></p>
-<h4 id="cargo-web"><a href="#cargo-web" class="headerlink" title="cargo-web"></a>cargo-web</h4><p>이런 극적인 코드가 가능해 지는데에는 cargo-web 이라는 프로젝트가 뒤에 있다.<br><img src="/images/2018/01/cargo_web.png" alt="카르고 웹"><br>링크 : <a href="https://github.com/koute/cargo-web" target="_blank" rel="external">cargo web</a> </p>
-<p>cargo는 rust 에서 사용되는 패키지 매니저인데 subcommand라는 개념으로 패키지들을 관리한다.<br>그 중에 이 cargo web이라는 프로젝트가 rust 코드를 asm.js 록은 웹어셈블리로 변환해 주는 역할을 하고 있다.</p>
-<h4 id="설치스크립트"><a href="#설치스크립트" class="headerlink" title="설치스크립트"></a>설치스크립트</h4><p>Mac OS 기준으로 아래와 같은 명령어를 사용해서 설치를 했다.</p>
-<ol>
-<li><p>emscripten 설치</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$curl -O https://s3.amazonaws.com/mozilla-games/emscripten/releases/emsdk-portable.tar.gz</div><div class="line">$tar -xzf emsdk-portable.tar.gz</div><div class="line">$source ./emsdk_portable/emsdk_env.sh</div><div class="line">$emsdk install sdk-incoming-<span class="number">64</span>bit</div><div class="line">$emsdk activate sdk-incoming-<span class="number">64</span>bit</div><div class="line">``` </div><div class="line">설치하다 openssl 관련해서 에러가 날 수가 있는데, 그럴 경우에는 OPENSSL_DIR을 제대로 지정해 주면 에러가 사라진다. </div><div class="line"></div><div class="line"><span class="number">2</span>. rust 설치</div><div class="line">```<span class="built_in">cmd</span></div><div class="line">$curl https://sh.rustup.rs -sSf | sh</div></pre></td></tr></table></figure>
-</li>
-<li><p>cargo 설치</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$curl -sSf https://static.rust-lang.org/rustup.sh | sh</div></pre></td></tr></table></figure>
-</li>
-<li><p>cargo web 설치</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$cargo install cargo-web</div></pre></td></tr></table></figure>
-</li>
-<li><p>yew 설치</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cargo install cargo-web</div><div class="line">$ rustup target add asmjs-unknown-emscripten</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><p>프로젝트에 데모가 존재한다.<br>깃으로 클론을 받자<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone https://github.com/DenisKolodin/yew</div></pre></td></tr></table></figure></p>
-<p>프로젝트에 들어가서 해당 샘플폴더(Cargo.toml이 있는 곳)에서 cargo web start를 실행하면 프로젝트가 시작이 된다. 기본포트는 8000번을 사용한다.<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$cargo web <span class="built_in">start</span></div></pre></td></tr></table></figure></p>
-<p><img src="/images/2018/01/cargo_web_started.png" alt="카르고 웹 스타트"></p>
-<h4 id="링크-모음"><a href="#링크-모음" class="headerlink" title="링크 모음"></a>링크 모음</h4><p>관련 링크는 다음과 같다.</p>
-<ul>
-<li><a href="https://www.rust-lang.org/ko-KR/" target="_blank" rel="external">rust</a></li>
-<li><a href="https://servo.org/" target="_blank" rel="external">servo</a> </li>
-<li><a href="https://github.com/koute/cargo-web" target="_blank" rel="external">cargo-web</a></li>
-<li><a href="https://github.com/DenisKolodin/yew" target="_blank" rel="external">yew</a></li>
-<li><a href="https://github.com/mbasso/asm-dom" target="_blank" rel="external">asm-dom</a></li>
-</ul>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
@@ -366,6 +332,18 @@
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/05/27/2018-05-22-2018년-4-5월-깃헙-트렌드-당신만의-프로젝트를-스스로-만들어보기/">[2018-05-22]2018년 4~5월 깃헙 트렌드 - 당신만의 프로젝트를 스스로 만들어보기</a></h6>
+              <span>5월 27, 2018</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -427,18 +405,6 @@
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/09/14/puppeteer/">[github]Node.js 기반 헤드리스 브라우저 컨트롤 API - puppeteer</a></h6>
-              <span>9월 14, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -471,7 +437,7 @@
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

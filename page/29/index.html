@@ -123,6 +123,177 @@
         
           <section id="main">
   
+    <article id="post-[2016-08-02 00:00:18]lumen"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/08/02/[2016-08-02 00:00:18]lumen/">lumen</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/08/02/[2016-08-02 00:00:18]lumen/" class="article-date">
+	  <time datetime="2016-08-01T15:00:18.000Z" itemprop="datePublished">8월 2, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Back To The Mac을 쓰는 기분이네요. 이런 프로젝트를 소개할 때는 말이죠.</p>
+<p><img src="/images/1*N6Ydhj0lf4y6DnPQx4Mlcw.gif" alt=""></p>
+<p>화면의 밝기를 조절해 주는 Mac용 앱 프로젝트 입니다.</p>
+<p>“자동으로 밝기 조절” 옵션을 disable 해 줘야 제대로 작동합니다.</p>
+<p><img src="/images/1*n0d7zU71NNs8Zubsognj_Q.pn" alt=""></p>
+<p>2016/08/01 Today’s Best</p>
+<p><a href="https://github.com/anishathalye/lumen" title="https://github.com/anishathalye/lumen" target="_blank" rel="external"><strong>anishathalye/lumen</strong><br>_lumen - Magic auto brightness based on screen contents :bulb:_github.com</a><a href="https://github.com/anishathalye/lumen" target="_blank" rel="external"></a></p>
+<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><p>기본적으로 binary를 제공합니다.</p>
+<p>공식사이트에서</p>
+<p><a href="http://www.anishathalye.com/2016/07/31/lumen/" title="http://www.anishathalye.com/2016/07/31/lumen/" target="_blank" rel="external"><strong>Lumen: Magic Auto Brightness Based on Screen Contents</strong><br>_I do most of my software development in my terminal, with my trusty tmux / zsh / vim setup. When coding, I frequently…_www.anishathalye.com</a><a href="http://www.anishathalye.com/2016/07/31/lumen/" target="_blank" rel="external"></a></p>
+<p>다운로드 받아서 설치할 수 있습니다.</p>
+<h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><p>실행하면 바로 MacOS의 status Bar에 해당 어플리케이션이 설치되고 Main Display 의 화면을 분석해서 색깔을 조절합니다.</p>
+<hr>
+<h4 id="소스-보기"><a href="#소스-보기" class="headerlink" title="소스 보기"></a>소스 보기</h4><p><a href="https://github.com/anishathalye/lumen/blob/master/Lumen/BrightnessController.m" title="https://github.com/anishathalye/lumen/blob/master/Lumen/BrightnessController.m" target="_blank" rel="external"><strong>anishathalye/lumen</strong><br>_lumen - Magic auto brightness based on screen contents :bulb:_github.com</a><a href="https://github.com/anishathalye/lumen/blob/master/Lumen/BrightnessController.m" target="_blank" rel="external"></a></p>
+<p>BrightnessController.m 파일이 대부분의 기능을 담당하고 있습니다.</p>
+<p>AppDelegate.m 파일의 applicationDidFinishLaunching 을 살펴보면</p>
+<pre><code>- (void)applicationDidFinishLaunching:(NSNotification \*)aNotification {
+
+self.statusItem = \[\[NSStatusBar systemStatusBar\] statusItemWithLength:NSVariableStatusItemLength\];
+
+\[self.statusItem setMenu:self.statusMenu\];
+
+\[self.statusItem setTitle:MENU\_SYMBOL\];
+
+\[self.statusItem setHighlightMode:YES\];
+
+self.brightnessController = \[\[BrightnessController alloc\] init\];
+
+\[self.brightnessController start\];
+
+\[self.toggle setTitle:STOP\];
+
+}
+</code></pre><p>brightnessController start</p>
+<p>함수를 콜 하게 됩니다.</p>
+<p>이 함수는 타이머를 실행시키는데 이 대부분이 링크 BrightnessController.m 파일에 작성되어 있죠.</p>
+<p>타이머가 콜하는 tick은</p>
+<pre><code>(void)tick:(NSTimer \*)timer {
+
+// 스크린의 밝기를 얻고
+
+CGImageRef contents = \[self getScreenContents\];
+
+if (!contents) {
+
+return;
+
+}
+
+double lightness = \[self computeLightness:contents\];
+
+CFRelease(contents);
+
+// 백라이트가 수동으로 설정되었는지 확인한 후에
+
+static bool noticed = false;
+
+static float lastNoticed = 0;
+
+float setPoint = \[self getBrightness\];
+
+if (noticed || fabsf(self.lastSet --- setPoint) \&gt; CHANGE\_NOTICE) {
+
+if (!noticed) {
+
+noticed = true;
+
+lastNoticed = setPoint;
+
+return; // 계속 바뀌는 치 체크
+
+}
+
+if (fabsf(setPoint --- lastNoticed) \&gt; CHANGE\_NOTICE) {
+
+lastNoticed = setPoint;
+
+return; // it&apos;s still changing
+
+} else {
+
+\[self.model observeOutput:setPoint forInput:lightness\];
+
+noticed = false;
+
+// don&apos;t return, fall through and evaluate model here
+
+}
+
+}
+
+float brightness = \[self.model predictFromInput:lightness\];
+
+\[self setBrightness:brightness\];
+
+}
+</code></pre><p>마지막으로 계산된 값으로 밝기를 셋팅합니다.</p>
+<p>관련된 계산식은 computeLightness 에 작성되어 있습니다.</p>
+<pre><code>double brightness = 0;
+
+const unsigned int kSkip = 16; // uniformly sample screen pixels
+
+// find RMS brightness value
+
+if (data) {
+
+for (size\_t y = 0; y &lt; height; y += kSkip) {
+
+for (size\_t x = 0; x &lt; width; x += kSkip) {
+
+const unsigned char \*dptr = &amp;data\[(width \* y + x) \* 4\];
+
+double l = srgb\_to\_brightness(dptr\[0\], dptr\[1\], dptr\[2\]);
+
+brightness += l \* l;
+
+}
+
+}
+
+}
+
+**brightness = sqrt(brightness / (width \* height / (kSkip \* kSkip)));**
+</code></pre><p>오늘은 왠일로 소스 분석까지 해 버렸네요. 아이쿵.</p>
+<p>이런 코드 너무 좋아요~</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/21b4a7988f67" target="_blank" rel="external">August 1, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-[2016-07-30 08:00:07]image-diff"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -168,70 +339,6 @@
 <p><img src="/images/1*o4-5s2-PZcgoHiP7QI7AGw.pn" alt=""></p>
 <p>이라는 아주 민망한 글자가 새겨져 있는 것을 볼 수 있습니다.</p>
 <p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/455a8417f054" target="_blank" rel="external">July 29, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-[2016-07-29 21:34:15]unmaintainable-code"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/07/29/[2016-07-29 21:34:15]unmaintainable-code/">unmaintainable-code</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/07/29/[2016-07-29 21:34:15]unmaintainable-code/" class="article-date">
-	  <time datetime="2016-07-29T12:34:15.000Z" itemprop="datePublished">7월 29, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>2012년에 ‘유지보수 하기 어렵게 코딩하는 방법: 개발자로 평생 먹고 살 수 있다’ 라는 책을 기억하실 겁니다. 아마도.</p>
-<p>반어법이죠. 이렇게 해서는 안된다는 방법을 거꾸로 보여 줌으로써 유지보수 개발을 위한 컨벤션등을 강조하는 책이었습니다.</p>
-<p><a href="http://www.hanbit.co.kr/store/books/look.php?p_code=E2375873090" target="_blank" rel="external"><img src="/images/1*hKFp5A0rL47103EOcsPPFQ.png" alt=""></a>이미지를 클릭하면 한빛 사이트로 이동합니다</p>
-<p>지금 한빛에서는 ebook은 무료로 구매가 가능하네요.</p>
-<p>원전은 다음 링크에 있습니다.</p>
-<p><a href="http://mindprod.com/jgloss/unmain.html" title="http://mindprod.com/jgloss/unmain.html" target="_blank" rel="external"><strong>unmaintainable code : Java Glossary</strong><br>_unmaintainable code This is my most popular essay. It is amazing how many people don’t realise it is tongue in cheek If…_mindprod.com</a><a href="http://mindprod.com/jgloss/unmain.html" target="_blank" rel="external"></a></p>
-<p>한글 pdf 가 훨씬 읽을만 합니다. 이 사이트가 좋은 서버 개발자인지는 몰라도 웹사이트는 젬병인 모양입니다.</p>
-<p>저처럼 생각한 사람이 한 둘이 아니었나 봅니다.</p>
-<p>2016/07/29 Editor’s choice</p>
-<p><a href="https://github.com/Droogans/unmaintainable-code" title="https://github.com/Droogans/unmaintainable-code" target="_blank" rel="external"><strong>Droogans/unmaintainable-code</strong><br>_unmaintainable-code - An easier to share version of the infamous http://mindprod.com/jgloss/unmain.html_github.com</a><a href="https://github.com/Droogans/unmaintainable-code" target="_blank" rel="external"></a></p>
-<p>누군가 깃헙에 이 책을 정리해 놓았습니다.</p>
-<p>그것도 아주 읽기 쉽게 한 페이지로!</p>
-<p>하지만 책인 관계로 저작권을 문제 삼지 않을까 원본 페이지에 보니 저작권을 명시하고 있습니다.</p>
-<p><strong>이런 걱정 저 말고도 하고 있었나 봅니다.</strong></p>
-<p><img src="/images/1*RSYu7RMVFkGSqZMW-lRijw.pn" alt=""></p>
-<p>누군가 물어봤고, 저작자에게 사용해도 된다고 하는 허락을 받았다고 하는 군요. 우와.</p>
-<p>대인배.</p>
-<p>그러고 보니 한빛 미디어도 대인배군요.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/36dfbf74bbc6" target="_blank" rel="external">July 29, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -310,6 +417,18 @@
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2018/05/27/2018-05-22-2018년-4-5월-깃헙-트렌드-당신만의-프로젝트를-스스로-만들어보기/">[2018-05-22]2018년 4~5월 깃헙 트렌드 - 당신만의 프로젝트를 스스로 만들어보기</a></h6>
+              <span>5월 27, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2018/04/27/2018-04-27-Responsive-Web을-위해-개발자가-꼭-알아야-하는-기술들/">[2018-04-27]Responsive Web을 위해 개발자가 꼭 알아야 하는 기술들</a></h6>
               <span>4월 27, 2018</span>
             </div>
@@ -364,18 +483,6 @@
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/09/14/puppeteer/">[github]Node.js 기반 헤드리스 브라우저 컨트롤 API - puppeteer</a></h6>
-              <span>9월 14, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -408,7 +515,7 @@
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

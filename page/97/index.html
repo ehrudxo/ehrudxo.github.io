@@ -123,6 +123,87 @@
         
           <section id="main">
   
+    <article id="post-[2016-02-27 15:31:13][github-trend]GDOM"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/02/27/[2016-02-27 15:31:13][github-trend]GDOM/">[github-trend]GDOM</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/02/27/[2016-02-27 15:31:13][github-trend]GDOM/" class="article-date">
+	  <time datetime="2016-02-27T06:31:13.000Z" itemprop="datePublished">2월 27, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>언젠가 누군가 얘기해 줬었죠. 웹 스크래핑의 최고봉은 python이라고. Node.js 가 생기고 jquery를 스크래핑에 쓸 수 있게 된 이후 부터는 그게 아니라고 생각했는데, 오늘 다시 저의 생각을 바꿀만한 녀석이 나왔네요.</p>
+<p>2016/02/27 editor’s choice( 234★)</p>
+<p><img src="/images/1*0NlVkcbIJAh3tyYuWQTneQ.png" alt=""></p>
+<p>링크 : <a href="https://github.com/syrusakbary/gdom" target="_blank" rel="external">https://github.com/syrusakbary/gdom</a></p>
+<p>GDOM은 python 으로 만들어진 라이브러리인데, DOM을 해석하는데 사용할 수 있는 라이브러리중 끝판왕이라고 보여집니다.</p>
+<p>GraphQL기반으로 되어 있구요.</p>
+<ol>
+<li>설치 : pip install gdom</li>
+<li>실행</li>
+</ol>
+<p>스크래핑은 먼저 스크래핑을 할 사이트를 먼저 찾아봐야죠.</p>
+<p>타겟은 해커뉴스 daily 베스트로 해 보겠습니다.</p>
+<p><img src="/images/1*3vb56GimnJKfPyppiblnIA.png" alt=""></p>
+<p>이것을 스크랩하기 위해서 내가 얻고자 하는 JSON형식으로 지정만 해주면 됩니다.</p>
+<p>다음과 같이 hn-best.json 파일을 만들어주고</p>
+<pre><code>{  
+page(url:&quot;http://news.ycombinator.com/best&quot;) {  
+items: query(selector:&quot;tr.athing&quot;) { //tr 중 athing 클래스 검색해서  
+rank: text(selector:&quot;td span.rank&quot;) //순위  
+title: text(selector:&quot;td.title a&quot;) //타이틀 ...  
+sitebit: text(selector:&quot;span.comhead a&quot;)  
+url: attr(selector:&quot;td.title a&quot;, name:&quot;href&quot;)  
+attrs: next {  
+score: text(selector:&quot;span.score&quot;)  
+user: text(selector:&quot;a:eq(0)&quot;)  
+comments: text(selector:&quot;a:eq(2)&quot;)  
+}  
+}  
+}  
+}
+</code></pre><p>query 명령어를 통해서 DOM을 검사해서 바로 JSON 값을 얻겠다고 지정해 둡니다.</p>
+<pre><code>gdom hn-best \&gt; ouput.json
+</code></pre><p>결과를 output.json 파일로 떨어뜨려 주면 파일로 저장이 됩니다.</p>
+<p><img src="/images/1*vJx2TXBmR3_ycJztMGcdnA.pn" alt=""></p>
+<p>이렇게 이쁘게 결과가 떨어짐을 볼 수 있습니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/4ac54caaa25c" target="_blank" rel="external">February 27, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-[2016-02-27 09:10:58][Go] Testing"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -215,78 +296,6 @@ fmt.Println(&quot;goodbye&quot;)
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-02-26 06:41:44]AMP — Accelerated Mobile Pages Project"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/02/26/[2016-02-26 06:41:44]AMP — Accelerated Mobile Pages Project/">AMP — Accelerated Mobile Pages Project</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/02/26/[2016-02-26 06:41:44]AMP — Accelerated Mobile Pages Project/" class="article-date">
-	  <time datetime="2016-02-25T21:41:44.000Z" itemprop="datePublished">2월 26, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>모바일 페이지를 빠르게 하는 프로젝트는 크게 지금 두가지로 진행이 된다고 보여지는데 하나는 AMP이고 하나는 Instant Articles 입니다.</p>
-<p>오늘은 AMP에 대해서 알아보죠. 드디어 github 랭킹에 올라왔네요.</p>
-<p>2016/02/26 Editor’s choice ( 211★)</p>
-<p>링크 : <a href="https://github.com/ampproject/amphtml" target="_blank" rel="external">https://github.com/ampproject/amphtml</a></p>
-<p>일단 AMP 에 대한 기사를 공유합니다.</p>
-<p>링크 : <a href="http://www.bloter.net/archives/250056" target="_blank" rel="external">http://www.bloter.net/archives/250056</a></p>
-<p>기사를 찬찬히 읽다 보면 크게 두가지를 알 수 있습니다.</p>
-<ol>
-<li>모바일 웹을 빠르게 하는 어떤 방법을 제공한다. 오픈 소스로 공개했다. 시작은 구글이 했는데, ORG를 만들었다</li>
-<li>페이스북의 Instant Article 때문에 나왔다.</li>
-</ol>
-<p>네, 그렇습니다. 이게 결국은 Publisher 가 되는 기사를 작성하는 업체들에게는 민감하게 작용하는데 그 이유는 이제 기사가 소비가 되는 혹은 유통이 되는 채널이 모바일로 이동을 했고, 그 중에서도 SNS 가 엄청나게 큰 비중을 차지하게 되었습니다. 여기까진 현실.</p>
-<p>이러다 보니, 구글에서는 SNS에 들어가기 시작한 뉴스나 페이지들은 검색을 할 수가 없게 된것입니다.</p>
-<p>구글이 오픈 웹을 지향하는 데에는 여러가지가 있겠지만, 검색이 되지 않으면 곤란해 지는 부분들은 매우 큰 부분이고 그 중심에는 Facebook이 있게 된 것이죠.</p>
-<p>Instant Articlel 무엇인지 살펴봐야겠죠?</p>
-<p>Facebook의 Instant Article 에 관한 영상입니다.</p>
-<p>어떻습니까?</p>
-<p>굉장히 잘 만들어져 있다는 생각이 듭니다.</p>
-<p>게다가 조만간 오픈소스로 풀린다는 더 좋은 뉴스도 있네요.</p>
-<p><strong>인사이트</strong></p>
-<p>블로깅을 하는 입장에서는 아마도 AMP가 더 반겨질 거 같습니다. 웹 기반에 오픈 웹이라고 하는 구글의 모토도 잘 맞기 때문이죠.이미 워드 프레스는 AMP 프로젝트에 들어와 있습니다.</p>
-<p>하지만 기사를 발행하는 앱을 만드는 입장에서 Instant Article은 굉장히 좋은 선택지가 될 것도 같습니다.</p>
-<p>모두다 쓰여질 확률은 높을 것 같고, 그에 대한 방법(함께 쓰는) 들이 여기 저기서 나올 거 같습니다. Facebook 의 그간 행보를 보면 자신들이 낼 지도 모르겠군요.</p>
-<p>어쨌든 환영입니다!</p>
-<p>마지막으로 Fortune의 기사를 공유합니다.</p>
-<p><a href="http://fortune.com/2015/10/08/googles-amp-project/" target="_blank" rel="external">http://fortune.com/2015/10/08/googles-amp-project/</a></p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/b0f6b54d0661" target="_blank" rel="external">February 25, 2016</a>.</p>
-<p>Exported from <a href="https://medium.co" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
@@ -338,6 +347,18 @@ fmt.Println(&quot;goodbye&quot;)
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/05/27/2018-05-22-2018년-4-5월-깃헙-트렌드-당신만의-프로젝트를-스스로-만들어보기/">[2018-05-22]2018년 4~5월 깃헙 트렌드 - 당신만의 프로젝트를 스스로 만들어보기</a></h6>
+              <span>5월 27, 2018</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -399,18 +420,6 @@ fmt.Println(&quot;goodbye&quot;)
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/09/14/puppeteer/">[github]Node.js 기반 헤드리스 브라우저 컨트롤 API - puppeteer</a></h6>
-              <span>9월 14, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -443,7 +452,7 @@ fmt.Println(&quot;goodbye&quot;)
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

@@ -123,6 +123,75 @@
         
           <section id="main">
   
+    <article id="post-[2016-04-21 07:22:32]agera"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/04/21/[2016-04-21 07:22:32]agera/">agera</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/04/21/[2016-04-21 07:22:32]agera/" class="article-date">
+	  <time datetime="2016-04-20T22:22:32.000Z" itemprop="datePublished">4월 21, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/1*OiHesHQ96-fvqYoyvnmqRA.png" alt=""><a href="https://github.com/google/agera" target="_blank" rel="external">https://github.com/google/agera</a></p>
+<p>함수형 프로그래밍 혹은 reactive 프로그래밍에 대한 관심들은 점점 커져가고 요즘은 어떤 작업을 하더라도 reactive programming이 주는 장점들을 많은 부분들에서 가져가려고 애쓰는 것 같습니다.</p>
+<p>agera는 구글 play 개발팀이 자신들이 좀 더 android개발을 편하게 하기 위해 내부적인 프로젝트를 진행하다 만든 것을 오픈 소스화한 androdi용 reactive 프로그래밍 프레임워크 입니다.</p>
+<p>2016/04/21 Today’s Best ( 1131 ★)</p>
+<p><a href="https://github.com/google/agera" title="https://github.com/google/agera" target="_blank" rel="external"><strong>google/agera</strong><br>_agera - Reactive Programming for Android_github.com</a><a href="https://github.com/google/agera" target="_blank" rel="external"></a></p>
+<p>그냥 간단하게는 HTTP Request에 대해서 값을 받는 형식을 쉽게 하려고 시작한 것이 아닌가 생각되며 위키 첫 페이지에도 그 샘플을 설명하고 있습니다.</p>
+<p>이 프로젝트를 보며 RxJava 와 다른 점이 무엇일까 생각한 것은 저 뿐만이 아닌 거 같습니다. 깃헙 첫번째 이슈도 그것에 대한 질문이며 개발자들의 대답은 그냥 심플한 라이브러리를 만들었다 정도 인거 같습니다.</p>
+<p><a href="https://github.com/google/agera/issues/20" title="https://github.com/google/agera/issues/20" target="_blank" rel="external"><strong>Question: what’s the relation to RxJava? * Issue #20 * google/agera</strong><br>_This looks like a very interesting proposition. My question - it’s quite an elephant in the room, I should think - is…_github.com</a><a href="https://github.com/google/agera/issues/20" target="_blank" rel="external"></a></p>
+<p>React의 여러가지 아키텍처를 따라 한거 같다는 평도 듣고 있네요.</p>
+<p><img src="/images/1*_OPwRk3Q5_UEcmpqL_UeNA.pn" alt=""></p>
+<hr>
+<h4 id="Reactive-Programming-이란"><a href="#Reactive-Programming-이란" class="headerlink" title="Reactive Programming 이란"></a>Reactive Programming 이란</h4><blockquote>
+<p>In <a href="https://en.wikipedia.org/wiki/Computing" title="Computing" target="_blank" rel="external">computing</a>, <strong>reactive programming</strong> is a <a href="https://en.wikipedia.org/wiki/Programming_paradigm" title="Programming paradigm" target="_blank" rel="external">programming paradigm</a> oriented around <a href="https://en.wikipedia.org/wiki/Dataflow_programming" title="Dataflow programming" target="_blank" rel="external">data flows</a> and the propagation of change. This means that it should be possible to express static or dynamic data flows with ease in the programming languages used, and that the underlying execution model will automatically propagate changes through the data flow. — wikipedia</p>
+</blockquote>
+<p>손쉽게 얘기하자면 비동기 데이타의 흐름에 따른 프로그래밍을 하는 것을 이야기 합니다. 조금 더 철학 적으로 가자면 설명할 것들이 많겠지만 트렌드에 대한 이야기만 하자면 Javascript 콜백을 처리하는 형태 처럼 데이타의 흐름에 대해서 코드를 쭉 써내려 가는 패턴 혹은 아키텍처라고 보면 될 것 같습니다.</p>
+<p>Javascript 아니 Node가 개발 커뮤니티에 던진 충격들과 그 시간적인 흐름 혹은 이슈가 되는 타이밍은 비슷하게 나왔고 유명한 프레임워크로는 Rx시리즈가 있습니다.</p>
+<p><a href="http://reactivex.io/" title="http://reactivex.io/" target="_blank" rel="external"><strong>ReactiveX</strong><br>_Edit description_reactivex.io</a><a href="http://reactivex.io/" target="_blank" rel="external"></a></p>
+<p>하지만 사람들이 가장 많이 사용한다 혹은 임팩트 있게 사용하는 툴로는 Angular 혹은 React 가 있습니다. ( 이 프레임워크가 Reactive 를 표방하고 나온 것은 아닙니다!)</p>
+<hr>
+<p>그러면 이런 프레임워크들이 없다면 어떻게 콜백 처리 혹은 데이타 흐름을 처리할까요?</p>
+<p>보통은 AsyncCallback 인터페이스를 만들고 AsyncTask를 이용해서 처리합니다. 자세한 내용은 다음의 블로그에서 잘 설명해 주고 있습니다.</p>
+<p><a href="http://javacan.tistory.com/entry/maintainable-async-processing-code-based-on-AsyncTask" title="http://javacan.tistory.com/entry/maintainable-async-processing-code-based-on-AsyncTask" target="_blank" rel="external"><strong>유지보수를 고려한 안드로이드 비동기 처리 기반 코드 만들기</strong><br>_안드로이드에서 비동기로 작업을 할 때 사용되는 AsyncTask는 잘 사용하지 않으면, 코드 유지보수를 어렵게 만드는 악의 원천이 될 수 있다. 특히, 많은 안드로이드 입문서들이 AsyncTask를 이용해서 비동…_javacan.tistory.com</a><a href="http://javacan.tistory.com/entry/maintainable-async-processing-code-based-on-AsyncTask" target="_blank" rel="external"></a></p>
+<p>최근의 개발 트렌드를 고려해서 android를 좀 더 엣지있게 짜고 싶은 개발자라면 참고하면 좋을 듯 합니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/6b4f2f675248" target="_blank" rel="external">April 20, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-[2016-04-20 06:46:15]deepjazz"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -164,77 +233,6 @@
 <h4 id="Theano"><a href="#Theano" class="headerlink" title="Theano"></a>Theano</h4><p><a href="http://deeplearning.net/software/theano/index.html" title="http://deeplearning.net/software/theano/index.html" target="_blank" rel="external"><strong>Welcome - Theano 0.8.0 documentation</strong><br>_Theano is a Python library that allows you to define, optimize, and evaluate mathematical expressions involving multi…_deeplearning.net</a><a href="http://deeplearning.net/software/theano/index.html" target="_blank" rel="external"></a></p>
 <h4 id="Keras"><a href="#Keras" class="headerlink" title="Keras"></a>Keras</h4><p><a href="http://keras.io/" title="http://keras.io/" target="_blank" rel="external"><strong>Keras Documentation</strong><br>_Keras is a minimalist, highly modular neural networks library, written in Python and capable of running on top of…_keras.io</a><a href="http://keras.io/" target="_blank" rel="external"></a></p>
 <p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/b6b1443417b2" target="_blank" rel="external">April 19, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-[2016-04-19 07:01:48]GPUImage2"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/04/19/[2016-04-19 07:01:48]GPUImage2/">GPUImage2</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/04/19/[2016-04-19 07:01:48]GPUImage2/" class="article-date">
-	  <time datetime="2016-04-18T22:01:48.000Z" itemprop="datePublished">4월 19, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/1*iFhoHnMbWdC6clnXvcGj7A.pn" alt="">GPU — pixabay</p>
-<p>GPU가 많이 알려진 것은 아무래도 게임 시장이 활발해 진 시점이 아닌가 싶습니다. 특별히 XBOX 에서 x86아키텍쳐를 가져가는데 CPU는 사양이 높지 않음에도 가정용 게임기로 손색없이 동작하던 1세대 혹은 2세대에서 피부에 다가 온 느낌입니다.</p>
-<p>2016/04/19 Today’s Best (815★)</p>
-<p><a href="https://github.com/BradLarson/GPUImage2" title="https://github.com/BradLarson/GPUImage2" target="_blank" rel="external"><strong>BradLarson/GPUImage2</strong><br>_GPUImage2 - GPUImage 2 is a BSD-licensed Swift framework for GPU-accelerated video and image processing._github.com</a><a href="https://github.com/BradLarson/GPUImage2" target="_blank" rel="external"></a></p>
-<p>GPUImage라는 프로젝트는 swift로 개발을 할 때에 GPU연산이 필요한 경우 사용하는 프레임워크 입니다.</p>
-<p>자, 그러면 CPU와 GPU의 그래픽 연산 차이를 재미있게 풀어본 동영상을 살펴 볼까요?</p>
-<p>최근의 CUDA같은 프레임워크는 GPU의 성능을 최대한 이끌어내 연산 자체를 GPU에서 풀어내고는 합니다.</p>
-<p>원래 GPUImage는 Objective-C 기반의 라이브러리였으나 최근 업데이트에서 Swift로 모두 바꾸었다고 하는군요.</p>
-<p><a href="https://github.com/BradLarson/GPUImage" title="https://github.com/BradLarson/GPUImage" target="_blank" rel="external"><strong>BradLarson/GPUImage</strong><br>_GPUImage - An open source iOS framework for GPU-based image and video processing_github.com</a><a href="https://github.com/BradLarson/GPUImage" target="_blank" rel="external"></a></p>
-<p>Mac 이나 iOS 프로그램잉의 경우는 그저</p>
-<pre><code>import GPUImage
-</code></pre><p>문법으로 사용할 수 있고, Linux의 경우는 라이브러리들을 추가해 줘야합니다.</p>
-<pre><code>sudo apt-get install libv4l-dev
-
-sudo apt-get install libraspberrypi-dev
-</code></pre><p>Filter 를 주고 사용하는 방법은 다음과 같습니다.</p>
-<pre><code>do {  
-camera = try Camera(sessionPreset:AVCaptureSessionPreset640x480)  
-filter = SaturationAdjustment()  
-camera --\&gt; filter --\&gt; renderView  
-camera.startCapture()  
-} catch {  
-fatalError(&quot;Could not initialize rendering pipeline: \\(error)&quot;)  
-}
-</code></pre><p>그 외 여러가지 옵션 및 OpenGL ES를 이용하는 방법들도 document에 자세히 기록되어 있습니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/51e934cd7df1" target="_blank" rel="external">April 18, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -313,6 +311,18 @@ fatalError(&quot;Could not initialize rendering pipeline: \\(error)&quot;)
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2018/05/27/2018-05-22-2018년-4-5월-깃헙-트렌드-당신만의-프로젝트를-스스로-만들어보기/">[2018-05-22]2018년 4~5월 깃헙 트렌드 - 당신만의 프로젝트를 스스로 만들어보기</a></h6>
+              <span>5월 27, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2018/04/27/2018-04-27-Responsive-Web을-위해-개발자가-꼭-알아야-하는-기술들/">[2018-04-27]Responsive Web을 위해 개발자가 꼭 알아야 하는 기술들</a></h6>
               <span>4월 27, 2018</span>
             </div>
@@ -367,18 +377,6 @@ fatalError(&quot;Could not initialize rendering pipeline: \\(error)&quot;)
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/09/14/puppeteer/">[github]Node.js 기반 헤드리스 브라우저 컨트롤 API - puppeteer</a></h6>
-              <span>9월 14, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -411,7 +409,7 @@ fatalError(&quot;Could not initialize rendering pipeline: \\(error)&quot;)
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

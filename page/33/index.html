@@ -123,6 +123,100 @@
         
           <section id="main">
   
+    <article id="post-[2016-07-14 23:43:31]Cleave.js"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/07/14/[2016-07-14 23:43:31]Cleave.js/">Cleave.js</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/07/14/[2016-07-14 23:43:31]Cleave.js/" class="article-date">
+	  <time datetime="2016-07-14T14:43:31.000Z" itemprop="datePublished">7월 14, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/1*tFKRIQI3LqFmoSwdKkWGEg.jpeg" alt=""></p>
+<p>javascript form 은 언제나 프론트엔드 개발자에게는 여러 의미로 숙제 입니다. 아마도 포맷팅이 가장 큰 숙제일텐데요. 놀라운 프레임워크가 나왔습니다.</p>
+<p>2016/07/14 Editor’s choice</p>
+<p><a href="https://github.com/nosir/cleave.js" title="https://github.com/nosir/cleave.js" target="_blank" rel="external"><strong>nosir/cleave.js</strong><br>_cleave.js - Format input text content when you are typing_github.com</a><a href="https://github.com/nosir/cleave.js" target="_blank" rel="external"></a></p>
+<hr>
+<p>일단 샘플을 한번 보시죠.</p>
+<p><a href="http://nosir.github.io/cleave.js/" title="http://nosir.github.io/cleave.js/" target="_blank" rel="external"><strong>Cleave.js - Format input text content when you are typing</strong><br>_import React from ‘react’; import ReactDOM from ‘react-dom’; import Cleave from ‘cleave.js/react’; class MyComponent…_nosir.github.io</a><a href="http://nosir.github.io/cleave.js/" target="_blank" rel="external"></a></p>
+<p>첫번째 샘플이 신용카드 포매팅인데 제가 6011 까지 입력했을때 Discover가 색깔이 들어 오는 것 보이시죠?</p>
+<p><img src="/images/1*z59p-3k8xToefzRHZ3codg.png" alt=""></p>
+<p>여기서 끝이 아닙니다.</p>
+<p><img src="/images/1*lL71b97gUjeIudiQje0fcA.pn" alt=""></p>
+<p>KR을 지역코드로 입력하고 나니 정확하게 11자리 이상 입력이 안되는군요.</p>
+<p>Block, Delimiter 등의 커스텀 옵션도 지원합니다.</p>
+<hr>
+<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><pre><code>$npm install --save cleave.js
+</code></pre><h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><pre><code>&lt;script src=&quot;cleave.min.js&quot;\&gt;&lt;/script\&gt;  
+&lt;script src=&quot;cleave-phone.{country}.js&quot;\&gt;&lt;/script\&gt;
+</code></pre><p>phone은 필요할 때만 넣으면 됩니다.</p>
+<p>Common.js, AMD 모두 지원하며</p>
+<p>React를 사용하실 때는 다음과 같이 사용하시면 됩니다.</p>
+<pre><code>import React from &apos;react&apos;;  
+import ReactDOM from &apos;react-dom&apos;;  
+
+import Cleave from &apos;cleave.js/react&apos;;
+
+class MyComponent extends React.Component {  
+
+constructor(props, context) {  
+super(props, context);  
+this.onCreditCardChange = this.onCreditCardChange.bind(this);  
+}  
+
+onCreditCardChange(event) {  
+// formatted pretty value  
+console.log(event.target.value);  
+
+// raw value  
+console.log(event.target.rawValue);  
+}  
+
+render() {  
+return (  
+&lt;Cleave placeholder=&quot;Enter your credit card number&quot;  
+options={{creditCard: true}}  
+onChange={this.onCreditCardChange} /\&gt;  
+);  
+}  
+}
+</code></pre><p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/28a6b40fb37c" target="_blank" rel="external">July 14, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-[2016-07-13 18:27:37]Malmö"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -204,71 +298,6 @@ $java -cp MalmoJavaJar.jar:JavaExamples\_run\_mission.jar -Djava.library.path=. 
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-07-13 00:00:16]AndroidChromium"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/07/13/[2016-07-13 00:00:16]AndroidChromium/">AndroidChromium</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/07/13/[2016-07-13 00:00:16]AndroidChromium/" class="article-date">
-	  <time datetime="2016-07-12T15:00:16.000Z" itemprop="datePublished">7월 13, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/1*W3UzAhoqV6i4U1UGi1ggXA.pn" alt=""></p>
-<blockquote>
-<p>크로뮴이란 <a href="https://namu.wiki/w/%EA%B5%AC%EA%B8%80" title="구글" target="_blank" rel="external">구글</a>에서 개발하는 <a href="https://namu.wiki/w/%EC%98%A4%ED%94%88%20%EC%86%8C%EC%8A%A4" title="오픈 소스" target="_blank" rel="external">오픈 소스</a> 크롬 프로젝트이다. 엄밀히 말하자면 <a href="https://namu.wiki/w/%EA%B5%AC%EA%B8%80%20%ED%81%AC%EB%A1%AC" title="구글 크롬" target="_blank" rel="external">구글 크롬</a> 자체는 오픈 소스가 아니고 <a href="http://www.chromium.org/" title="http://www.chromium.org/" target="_blank" rel="external">크로뮴(Chromium)</a>이라는 오픈 소스 버전이 따로 있는데, 상표등록이 되어있는 ‘구글’이라는 이름과 오픈 소스로 공개할 수 없는 자잘한 것들 때문에 나눠놓은 것이다.</p>
-<p>왜냐하면 크롬에 내장된 플래시 플레이어와 <a href="https://namu.wiki/w/PDF" title="PDF" target="_blank" rel="external">PDF</a>뷰어, <a href="https://namu.wiki/w/H.264" title="H.264" target="_blank" rel="external">H.264</a> <a href="https://namu.wiki/w/%EB%8F%99%EC%98%81%EC%83%81" title="동영상" target="_blank" rel="external">동영상</a> 재생 코덱, 구글 서비스 지원, 동기화 등의 자잘한 기능엔 브라우징 정보 수집 기능도 들어있기 때문이다.</p>
-</blockquote>
-<p><a href="https://namu.wiki/w/%ED%81%AC%EB%A1%9C%EB%AE%B4%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8" title="https://namu.wiki/w/%ED%81%AC%EB%A1%9C%EB%AE%B4%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8" target="_blank" rel="external"><strong>크로뮴 프로젝트</strong><br>_크로미움 또는 크로미엄이라고도 한다.ChromiumChromium Projects 구글에서 개발하는 오픈 소스 크롬 프로젝트이다. 엄밀히 말하자면 구글 크롬 자체는 오픈 소스가 아니고 크로뮴(Chromium)이라…_namu.wiki</a><a href="https://namu.wiki/w/%ED%81%AC%EB%A1%9C%EB%AE%B4%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8" target="_blank" rel="external"></a></p>
-<p>네, 크로미움 혹은 크로뮴을 Android에서 돌릴 수 있도록 한 프롲게트 입니다.</p>
-<p>2016/07/12 Editor’s Choice</p>
-<p><a href="https://github.com/JackyAndroid/AndroidChromium" title="https://github.com/JackyAndroid/AndroidChromium" target="_blank" rel="external"><strong>JackyAndroid/AndroidChromium</strong><br>_AndroidChromium - chrome browser android version of the source program,build with gradle_github.com</a><a href="https://github.com/JackyAndroid/AndroidChromium" target="_blank" rel="external"></a></p>
-<hr>
-<h4 id="이게-왜-필요할까요"><a href="#이게-왜-필요할까요" class="headerlink" title="이게 왜 필요할까요?"></a>이게 왜 필요할까요?</h4><p>프로젝트의 주인장은 이 프로젝트를 만든게 크롬 디버깅을 위해서라고 합니다. 브라우저를 만드는 일을 하나 봅니다.</p>
-<h4 id="우리에게는-어떤-의미가-있을까요"><a href="#우리에게는-어떤-의미가-있을까요" class="headerlink" title="우리에게는 어떤 의미가 있을까요?"></a>우리에게는 어떤 의미가 있을까요?</h4><p><a href="https://chromium.googlesource.com/chromium/src/+/master/docs/android_build_instructions.md" title="https://chromium.googlesource.com/chromium/src/+/master/docs/android_build_instructions.md" target="_blank" rel="external"><strong>Android Build Instructions</strong><br>_A Linux build machine capable of building Chrome for Linux. Other (Mac/Windows) platforms are not supported for Android…_chromium.googlesource.com</a><a href="https://chromium.googlesource.com/chromium/src/+/master/docs/android_build_instructions.md" target="_blank" rel="external"></a></p>
-<p>크로미움 사이트에 가시면 빌드 Instruction 들이 잔뜩 나와 있는데</p>
-<p>이 부분을 Gradle 로 빌드가 가능하게 만들어 놓은 것입니다.</p>
-<p>native runtime을 건드리는 관계로 에뮬레이터에는</p>
-<p><a href="http://stackoverflow.com/questions/24572052/install-failed-no-matching-abis-when-install-apk" title="http://stackoverflow.com/questions/24572052/install-failed-no-matching-abis-when-install-apk" target="_blank" rel="external"><strong>INSTALL_FAILED_NO_MATCHING_ABIS when install apk</strong><br>_I tried to install my app into Android L Preview Intel Atom Virtual Device, it failed with error…_stackoverflow.com</a><a href="http://stackoverflow.com/questions/24572052/install-failed-no-matching-abis-when-install-apk" target="_blank" rel="external"></a></p>
-<p>를 뱉고는 죽어 버립니다.</p>
-<p>삼성 GalaxyS7 에서는 기존에 깔린 앱과 충돌이 나서 진행을 할 수가 없군요.</p>
-<p>실행을 못해서 좀 아쉽기는 하지만 굉장히 좋은 도전인거 같습니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/cafbf8df64d" target="_blank" rel="external">July 12, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
@@ -320,6 +349,18 @@ $java -cp MalmoJavaJar.jar:JavaExamples\_run\_mission.jar -Djava.library.path=. 
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/05/27/2018-05-22-2018년-4-5월-깃헙-트렌드-당신만의-프로젝트를-스스로-만들어보기/">[2018-05-22]2018년 4~5월 깃헙 트렌드 - 당신만의 프로젝트를 스스로 만들어보기</a></h6>
+              <span>5월 27, 2018</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -381,18 +422,6 @@ $java -cp MalmoJavaJar.jar:JavaExamples\_run\_mission.jar -Djava.library.path=. 
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/09/14/puppeteer/">[github]Node.js 기반 헤드리스 브라우저 컨트롤 API - puppeteer</a></h6>
-              <span>9월 14, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -425,7 +454,7 @@ $java -cp MalmoJavaJar.jar:JavaExamples\_run\_mission.jar -Djava.library.path=. 
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

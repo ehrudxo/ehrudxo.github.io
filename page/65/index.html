@@ -123,6 +123,91 @@
         
           <section id="main">
   
+    <article id="post-[2016-05-07 22:32:34]15DaysofSwiftAnimation"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/05/07/[2016-05-07 22:32:34]15DaysofSwiftAnimation/">15DaysofSwiftAnimation</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/05/07/[2016-05-07 22:32:34]15DaysofSwiftAnimation/" class="article-date">
+	  <time datetime="2016-05-07T13:32:34.000Z" itemprop="datePublished">5월 7, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/1*guK9C6XJVIzItV0duMMpMQ.png" alt="">되게 많아 보입니다.네 아직 11일째</p>
+<p>15일째 리뷰를 할 걸 그랬나요. 따끈 따끈한 프로젝트가 왔습니다. 애니메이션 때문에 mpeg to gif 앱도 몇가지를 깔게 되는군요. 아 이게 새로운 맥을 사서 가능해진 호사네요.</p>
+<p>15days swift, 30days android 등등 시리즈들이 지속적으로 깃헙에는 올라옵니다. 오늘 소개해 드릴 프로젝트는 그 중에서 Swift의 애니메이션을 코드로 어떻게 짜는지에 대한 프로젝트 입니다.</p>
+<p>2016/05/07 Editor’s choice</p>
+<p><a href="https://github.com/larrynatalicio/15DaysofAnimationsinSwift" title="https://github.com/larrynatalicio/15DaysofAnimationsinSwift" target="_blank" rel="external"><strong>larrynatalicio/15DaysofAnimationsinSwift</strong><br>_15DaysofAnimationsinSwift - A project to learn animations._github.com</a><a href="https://github.com/larrynatalicio/15DaysofAnimationsinSwift" target="_blank" rel="external"></a></p>
+<p>흠.. 개발자의 완성은? 얼….</p>
+<hr>
+<h4 id="설치해-봅시다"><a href="#설치해-봅시다" class="headerlink" title="설치해 봅시다"></a>설치해 봅시다</h4><p>설치할게 뭐 있을까 싶네요</p>
+<pre><code>$git clone [https://github.com/larrynatalicio/15DaysofAnimationsinSwift.git][anchor2]
+</code></pre><p>프로젝트를 받고 나면</p>
+<p><img src="/images/1*EXdHILi3TJlajOTflinH7g.png" alt="">4일 남았군요.</p>
+<p>다음과 같은 프로젝트들이 있습니다.</p>
+<hr>
+<h4 id="실행해-봅시다"><a href="#실행해-봅시다" class="headerlink" title="실행해 봅시다"></a>실행해 봅시다</h4><p>1번과 6번을 실행해 볼 예정입니다.</p>
+<blockquote>
+<p>NavigationBarAnimation</p>
+</blockquote>
+<p>아래와 같이 스크롤해서 내려가면 NavigationBar가 사라졌다가 다시 스크롤을 올리면 NavigationBar 가 복귀되는 간단한 프로젝트입니다.</p>
+<p><img src="/images/1*z4fftua-ygEtt9d6ZmayNw.gif" alt=""></p>
+<p>XCODE를 열어서 확인해 보겠습니다. 아마도 많은 사람들이 그냥 간단하게 할 수 있을거라고 생각하시는 부분일텐데요.</p>
+<p><img src="/images/1*mqQ0dx8JS1vZuksCE96W0w.png" alt="">xcode</p>
+<p>AppDelegate는 주로 앱 전체 옵션들을 정할 수 있고, ViewController를 확인해 보면 스크롤 액션에 대한 소스들을 확인할 수 있습니다.</p>
+<p>UITableViewController 를 상속한 ViewController의 소스는 다음과 같습니다.</p>
+<p>마지막 configureNavigationController 함수의</p>
+<p>hideBarOnSwipe 만 false 로 바꾸면 동작하지 않는 간단한 예제 입니다.</p>
+<blockquote>
+<p>StretchyHeaderAnimation</p>
+</blockquote>
+<p>이 예제는 스크롤을 당기면 화면의 이미지가 줌되는 애니메이션을 보여줍니다. 일단 스크린샷을 보시면 감이 오실 거 같습니다.</p>
+<p><img src="/images/1*LIMr_YWmCwEdbeDbanDkzg.gif" alt="">으어억 성이 커진다</p>
+<p>성을 광화문으로 바꿔볼까요?</p>
+<p><img src="/images/1*tPt9iFbbIh29dvNz5zuqWA.png" alt="">광화문이다~</p>
+<p>Supporting Files의 Asset에 kcastle.jpg 만 집어 넣고 Main.storyboard 의 이미지만 kcastle로 선택해 주면 화면은 바뀝니다.</p>
+<p><img src="/images/1*WjP5n6a-e9saCZhO6vIKvw.gi" alt="">이렇게 말이죠.</p>
+<p>이런 일을 하는 소스를 한번 살펴 봐야겠죠? 첫번째 예제의 경우와 똑같이 ViewController 소스를 살펴봐야합니다.</p>
+<p>이 updateHeaderView 의 y값과 Height를 변경해 주는 것으로 애니메이션이 실행됩니다.</p>
+<p>이 함수를 viewDidLoad와 scrollViewDidScroll 에서 호출을 해 줘서 화면이 뜨고 스크롤이 될때 값이 변하는 형태로 애니메이션을 구현했네요.</p>
+<p>scrollViewDidScroll 은 UIScrollViewDelegate에서 가져왔네요.</p>
+<p>Swift를 하면서 수려한 애니메이션을 구현하시고 싶었던 분들에게는 무척이나 좋은 프로젝트가 될 것 같습니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/93eb0720914c" target="_blank" rel="external">May 7, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-[2016-05-06 08:57:32]GithubWidget"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -177,98 +262,6 @@
 <p>위젯 프로젝트 BP로도 괜찮겠다 싶어서 git clone을 해 봅니다.</p>
 <p>소스분석은 다음편에 계속하도록 하겠습니다.</p>
 <p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/9baed4577c79" target="_blank" rel="external">May 5, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-[2016-05-05 14:37:43]TeachCraft"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/05/05/[2016-05-05 14:37:43]TeachCraft/">TeachCraft</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/05/05/[2016-05-05 14:37:43]TeachCraft/" class="article-date">
-	  <time datetime="2016-05-05T05:37:43.000Z" itemprop="datePublished">5월 5, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/1*TXPxFdhlQ0Gzpmna_W6XKQ.png" alt="">image from minecraft</p>
-<p>어린이날 기념으로 포스팅하는 깃헙프로젝트입니다. 초등생들의 영원한 친구 마인크래프트를 다들 아실텐데요. 관련된 프로젝트도 깃헙에는 넘치고 넘치는데요. 오늘은 python 스크립트를 배우는 방법으로 마인크래프트를 사용하는 프로젝트를 소개해 드립니다.</p>
-<p>2016/05/05 Editor’s choice</p>
-<p><a href="https://github.com/teachthenet/TeachCraft-Challenges" title="https://github.com/teachthenet/TeachCraft-Challenges" target="_blank" rel="external"><strong>teachthenet/TeachCraft-Challenges</strong><br>_A series of lessons used to teach middle school and high school kids the fundamentals of programming! Using Python…_github.com</a><a href="https://github.com/teachthenet/TeachCraft-Challenges" target="_blank" rel="external"></a></p>
-<hr>
-<h4 id="설치를-해보자"><a href="#설치를-해보자" class="headerlink" title="설치를 해보자"></a>설치를 해보자</h4><p>일단 서버 사이드 마인크래프트를 설치해야 합니다. minecraft공식 사이트에 들어가면 서버를 얻을 수 있습니다.</p>
-<p><a href="http://minecraft-ko.gamepedia.com/튜토리얼/서버_설치" title="http://minecraft-ko.gamepedia.com/튜토리얼/서버_설치" target="_blank" rel="external"><strong>튜토리얼/서버 설치</strong><br>_A common problem for server administrators is the inability to connect to your own server via another machine on your…_minecraft-ko.gamepedia.com</a><a href="http://minecraft-ko.gamepedia.com/튜토리얼/서버_설치" target="_blank" rel="external"></a></p>
-<p>마인크래프트 위키에 가면 설치에 대한 튜토리얼이 있습니다.</p>
-<p>하지만! 끝까지 읽으셔야 한다는것~</p>
-<p>이것도 간단하게 해주는 프로젝트가 있습니다.(게다가 이제 server jar를 공식 사이트에서 막아 놓은거 같네요. )</p>
-<p><a href="https://github.com/teachthenet/TeachCraft-Server" title="https://github.com/teachthenet/TeachCraft-Server" target="_blank" rel="external"><strong>teachthenet/TeachCraft-Server</strong><br>_TeachCraft-Server - Run your own server for the TeachCraft-Challenges_github.com</a><a href="https://github.com/teachthenet/TeachCraft-Server" target="_blank" rel="external"></a></p>
-<p>TeachCraft용 서버 프로젝트입니다.</p>
-<p>git clone 으로 프로젝트를 받으시고</p>
-<pre><code>$git clone [https://github.com/teachthenet/TeachCraft-Server.git][anchor6]
-
-$cd TeachCreaft-Server
-
-$java -Xms3036M -Xmx3036M -jar CanaryMod-1.2.0.jar
-</code></pre><p>실행해 주시면 서버가 구동 됩니다.</p>
-<p><img src="/images/1*azkO9TWf1zYucGSAi0Kv5g.png" alt="">서버기동 두둥.</p>
-<p>이제 클라이언트를 받아야죠.</p>
-<pre><code>$git clone [https://github.com/teachthenet/TeachCraft-Challenges][anchor1]
-</code></pre><p>그리고 나서는 아래의 튜토리얼을 그대로 따르면 됩니다.</p>
-<p><a href="https://github.com/teachthenet/TeachCraft-Challenges/blob/master/setup.md" title="https://github.com/teachthenet/TeachCraft-Challenges/blob/master/setup.md" target="_blank" rel="external"><strong>teachthenet/TeachCraft-Challenges</strong><br>_TeachCraft-Challenges - Learn programming in python by giving yourself superpowers in a minecraft world!_github.com</a><a href="https://github.com/teachthenet/TeachCraft-Challenges/blob/master/setup.md" target="_blank" rel="external"></a></p>
-<p>요약하면 jar파일 클릭 -> 1.8.8 선택 ->user id 입력 -> start</p>
-<p><img src="/images/1*sW2IntLV_89qtkXzyDIc6A.png" alt="">TeachCraft가 요기잉네. 더블 클리꾸~</p>
-<p><img src="/images/1*LvLwdDB64PLVSHEqOoFkmA.png" alt="">자동화는 좋아요. 엔터게임~</p>
-<h4 id="실행을-해-보자"><a href="#실행을-해-보자" class="headerlink" title="실행을 해 보자"></a>실행을 해 보자</h4><p>더 높은 버전도 실행은 가능해 보입니다. 하지만 착한 저는 튜토리얼을 따라해 봅니다.(응?)</p>
-<p><img src="/images/1*fu_PYxeoAYBVbBtrCZpIDg.png" alt="">우와…반가운 화면. Realm도 보이네요</p>
-<p>Muliplayer를 선택하고 127.0.0.1로 나의 Mac 서버에 접속~</p>
-<p><img src="/images/1*swDbenc4XWVHILjyAt0hnw.png" alt="">밤이다. 나는 나이트 와치!</p>
-<p>밤 시간대에 접속이 되었군요. 이런. 침대를 만들고 접속을 해야 되는데,</p>
-<h4 id="게임을-하려고-들어온거는-아니잖아요"><a href="#게임을-하려고-들어온거는-아니잖아요" class="headerlink" title="게임을 하려고 들어온거는 아니잖아요"></a>게임을 하려고 들어온거는 아니잖아요</h4><p>네, 그렇습니다. 1번을 실습해 볼까요.</p>
-<p>무려, 텔레포트! 법사가 된 기분이군요</p>
-<p>일단 다행히 script.py 를 열어봅니다.</p>
-<p><img src="/images/1*4b95oZth3F-tTC1ARvaq6Q.png" alt="">우와 스크립트가 있네용</p>
-<p>스크립트를 보고 당연히 z는 높이일거라 생각을 해서 12인 값을 120으로 바꿔 보겠습니다.</p>
-<p>그리고는</p>
-<pre><code>$python script.py
-</code></pre><p>실행을 해 봅니다. 응 실시간일까? 해서 화면 전환을 해 보니</p>
-<p><img src="/images/1*ckjzS8ljY4PBAUpNKQK4wg.pn" alt="">다음 생은 개발자로 태어나지 말자</p>
-<p>헐 하늘에서 떨어져 죽었습니다. 바로 반영되는군요!</p>
-<p>소스는 참으로 간단하쥬?</p>
-<hr>
-<p>저는 아들이 집에서 접속할 수 있는 사설 서버를 만들 요랑으로 이 프로젝트를 받아서 보기 시작했는데 생각보다 훨씬 재밌군요. 관심있는 아버지들이 시작하기에는 좋은 핑계거리가 생겼습니다!</p>
-<p>개발을 가르친다고!</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/78169118178a" target="_blank" rel="external">May 5, 2016</a>.</p>
 <p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
 
       
@@ -347,6 +340,18 @@ $java -Xms3036M -Xmx3036M -jar CanaryMod-1.2.0.jar
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2018/05/27/2018-05-22-2018년-4-5월-깃헙-트렌드-당신만의-프로젝트를-스스로-만들어보기/">[2018-05-22]2018년 4~5월 깃헙 트렌드 - 당신만의 프로젝트를 스스로 만들어보기</a></h6>
+              <span>5월 27, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2018/04/27/2018-04-27-Responsive-Web을-위해-개발자가-꼭-알아야-하는-기술들/">[2018-04-27]Responsive Web을 위해 개발자가 꼭 알아야 하는 기술들</a></h6>
               <span>4월 27, 2018</span>
             </div>
@@ -401,18 +406,6 @@ $java -Xms3036M -Xmx3036M -jar CanaryMod-1.2.0.jar
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/09/14/puppeteer/">[github]Node.js 기반 헤드리스 브라우저 컨트롤 API - puppeteer</a></h6>
-              <span>9월 14, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -445,7 +438,7 @@ $java -Xms3036M -Xmx3036M -jar CanaryMod-1.2.0.jar
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
