@@ -55,32 +55,10 @@
 
 
   
-  
-  <div class="site-header-image">
-    <img id="originBg" width="100%" alt="Hike News" src="">
-  </div>
-
-  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
-    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
-  </div>
-
-  <script>
-        var imgUrls = "images/storm.png".split(",");
-        var random = Math.floor((Math.random() * imgUrls.length ));
-        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
-          document.getElementById("originBg").src=imgUrls[random];
-          document.getElementById("blurBg").src=imgUrls[random];
-        } else {
-          document.getElementById("originBg").src='/' + imgUrls[random];
-          document.getElementById("blurBg").src='/' + imgUrls[random];
-        }
-    </script>
-
-
 
 
 <header id="allheader" class="site-header" role="banner" 
-   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+   >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -122,6 +100,80 @@
       <div id="content" class="outer">
         
           <section id="main">
+  
+    <article id="post-[2016-08-17 08:50:04]httpie"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/08/17/[2016-08-17 08:50:04]httpie/">httpie</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/08/17/[2016-08-17 08:50:04]httpie/" class="article-date">
+	  <time datetime="2016-08-16T23:50:04.000Z" itemprop="datePublished">8월 17, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>http request 를 CLI 환경에서 보낼 때 주로 많이 사용하시는 것은 curl 일 겁니다. 혹은 wget을 사용할 수도 있습니다.</p>
+<p>하지만 오늘 나온 이 httpie는 세가지 정도의 강점을 가진 CLI http툴이라고 보시면 됩니다.</p>
+<p>2016/08/17 Editor’s choice</p>
+<p><a href="https://github.com/jkbrzt/httpie" title="https://github.com/jkbrzt/httpie" target="_blank" rel="external"><strong>jkbrzt/httpie</strong><br>_httpie - CLI HTTP client, user-friendly curl replacement with intuitive UI, JSON support, syntax highlighting, wget…_github.com</a><a href="https://github.com/jkbrzt/httpie" target="_blank" rel="external"></a></p>
+<hr>
+<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><pre><code>$brew install httpie
+</code></pre><h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><pre><code>$http www.daum.net
+</code></pre><p><img src="/images/1*DpMtrsEgCSVj03AD_nr1BQ.gif" alt=""></p>
+<p>보시다시피 content highlighting 기능을 가지고 있는게 우선적으로 다른 툴과는 다른 모습을 보여줍니다.</p>
+<p>게다가</p>
+<pre><code>http PUT example.org name=John email=john@example.org
+</code></pre><p>형태의 key=value 쌍이 들어갈 경우에 JSON으로 자동으로 치환해서 업로드 해주는 기능을 갖고 있습니다.</p>
+<pre><code>PUT / HTTP/1.1  
+Accept: application/json, \*/\*  
+Accept-Encoding: gzip, deflate  
+Content-Type: application/json  
+Host: example.org  
+
+{  
+&quot;name&quot;: &quot;John&quot;,  
+&quot;email&quot;: &quot;john@example.org&quot;  
+}
+</code></pre><p>게다가</p>
+<pre><code>$ http --download example.org/file
+</code></pre><p><img src="/images/1*kh4KHdJrBPqIfECkI-BSmQ.gi" alt=""></p>
+<p>— download 옵션을 쓰면 wget처럼 파일을 다운 받을 수 있습니다.</p>
+<p>상당히 유용하게 사용할 수 있는 툴이겠네요.</p>
+<p>하지만 curl과 wget 사용층이 많은 만큼 대체할 수 있을지는 의문입니다.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/46d570969716" target="_blank" rel="external">August 16, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
   
     <article id="post-[2016-08-16 06:28:21]webpack-dashboard"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
@@ -189,86 +241,11 @@
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-08-10 23:01:55]security-guide-for-developers"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/08/10/[2016-08-10 23:01:55]security-guide-for-developers/">security-guide-for-developers</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/08/10/[2016-08-10 23:01:55]security-guide-for-developers/" class="article-date">
-	  <time datetime="2016-08-10T14:01:55.000Z" itemprop="datePublished">8월 10, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>프론트엔드 개발자를 위한 보안 가이드가 오늘 소개해 드릴 프로젝트입니다. 몇번씩이나 깃헙 수위권을 차지 했었는데요. 상당히 읽어 볼만한 내용들을 포함하고 있습니다.</p>
-<p>2016/08/10 best Practice</p>
-<p><a href="https://github.com/FallibleInc/security-guide-for-developers" title="https://github.com/FallibleInc/security-guide-for-developers" target="_blank" rel="external"><strong>FallibleInc/security-guide-for-developers</strong><br>_security-guide-for-developers - Security Guide for Developers (实用性开发人员安全须知)_github.com</a><a href="https://github.com/FallibleInc/security-guide-for-developers" target="_blank" rel="external"></a></p>
-<hr>
-<h4 id="배경설명"><a href="#배경설명" class="headerlink" title="배경설명"></a>배경설명</h4><p><a href="https://fallible.co/" title="https://fallible.co/" target="_blank" rel="external"><strong>Fallible - Secure your startup</strong><br>_About us We are a group of hackers passionate about improving the security posture of companies, tech startups in…_fallible.co</a><a href="https://fallible.co/" target="_blank" rel="external"></a></p>
-<p>해커 그룹이 만든 fallible 라는 회사는</p>
-<p><img src="/images/1*xYBVRvNvwE3LKISwLYSLFQ.pn" alt=""></p>
-<p>의 가격에 취약점에서 서비스를 지켜준다고 하는군요.</p>
-<p>아무튼 이 회사에서 깃헙에 security가이드를 내 주고 공개해서 많은 사람들의 호응을 얻고 있는데, 문서가 다 완성되어 있지 않는데에도 스타가 1만개가 넘는군요</p>
-<hr>
-<h4 id="체크리스트"><a href="#체크리스트" class="headerlink" title="체크리스트"></a>체크리스트</h4><p><a href="https://github.com/FallibleInc/security-guide-for-developers/blob/master/security-checklist.md" title="https://github.com/FallibleInc/security-guide-for-developers/blob/master/security-checklist.md" target="_blank" rel="external"><strong>FallibleInc/security-guide-for-developers</strong><br>_security-guide-for-developers - Security Guide for Developers (实用性开发人员安全须知)_github.com</a><a href="https://github.com/FallibleInc/security-guide-for-developers/blob/master/security-checklist.md" target="_blank" rel="external"></a></p>
-<p>체크리스트 하나를 만들어 나가고 있는데 꽤나 볼만 합니다. 한번 이 문서를 번역해서 PU 날려주는 것도 많을 거 같습니다.</p>
-<p><strong>일단 인증을 살펴볼까요?</strong></p>
-<ul>
-<li>HTTPS 를 꼭 쓸것</li>
-<li>비밀번호 해쉬를 저장할 때는 Bcrypt를 사용할것. (salt는 Bcrypt가 알아서 해 주니 필요없음</li>
-<li>로그아웃 후에는 session ID 값을 지울 것</li>
-<li>패스워드 변경때는 살아있는 모든 session 을 지울 것</li>
-<li>OAuth2 는 state 매개변수를 무조건 가질 것</li>
-<li>성공적으로 로그인하고 나서는 열려 있는 리다이렉트는 없앨 것</li>
-<li>회원등록/로그인 입력값을 해석할 때 javascript와 data, CRLF 값등을 깨끗하게 유지할 것</li>
-<li>쿠키는 암호화한 http 내용만 허용</li>
-<li>모바일 에서 사용되는 OTP 검증 시, OTP를 생성하거나 리셋한 결과 값을 리턴하는 response에 패스워드를 보내지 말것</li>
-<li>로그인 혹은 OTP검증 혹은 관련된 API사용의 횟수를 제한할 것. captcha 기반의 챌린지를 가질 것</li>
-<li>이메일 링크와 SMS 로 보내진 리셋 패스워드의 난수값을 확인할 것</li>
-<li>리셋 패스워드의 만기일을 설정할 것(납득할만한 기간)</li>
-<li>토큰 값이 성공적으로 사용되고 나서는 삭제할 것</li>
-</ul>
-<p>이것 이외도 많은 내용이 있으니 살펴볼만 한 듯합니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/5bdef1d0feb4" target="_blank" rel="external">August 10, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/25/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/27/">다음</a>
+    <a class="extend prev" rel="prev" href="/page/25/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/page/101/">101</a><a class="extend next" rel="next" href="/page/27/">다음</a>
   </nav>
 
 </section>
@@ -315,6 +292,18 @@
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/07/06/deno/">deno</a></h6>
+              <span>7월 6, 2018</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -376,18 +365,6 @@
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a></h6>
-              <span>9월 14, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -420,7 +397,7 @@
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">7월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -471,9 +448,6 @@
 
 
     <!-- headerblur min height -->
-    
-      var headerblur = document.getElementById("header-blur");
-      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

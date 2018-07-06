@@ -55,32 +55,10 @@
 
 
   
-  
-  <div class="site-header-image">
-    <img id="originBg" width="100%" alt="Hike News" src="">
-  </div>
-
-  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
-    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
-  </div>
-
-  <script>
-        var imgUrls = "images/storm.png".split(",");
-        var random = Math.floor((Math.random() * imgUrls.length ));
-        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
-          document.getElementById("originBg").src=imgUrls[random];
-          document.getElementById("blurBg").src=imgUrls[random];
-        } else {
-          document.getElementById("originBg").src='/' + imgUrls[random];
-          document.getElementById("blurBg").src='/' + imgUrls[random];
-        }
-    </script>
-
-
 
 
 <header id="allheader" class="site-header" role="banner" 
-   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+   >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -122,6 +100,94 @@
       <div id="content" class="outer">
         
           <section id="main">
+  
+    <article id="post-[2016-07-17 00:21:35]HyperTerm"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/07/17/[2016-07-17 00:21:35]HyperTerm/">HyperTerm</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/07/17/[2016-07-17 00:21:35]HyperTerm/" class="article-date">
+	  <time datetime="2016-07-16T15:21:35.000Z" itemprop="datePublished">7월 17, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>아마도 많은 사람들이 알고 있을 거라고 생각합니다. outsider 같은 분도 이미 트윗이나 페북으로 이야기한 바로 그 프로젝트 hyperterm입니다.</p>
+<p>2016/07/15 Best Project</p>
+<p><img src="/images/1*mlyj5tPzkDZOmAO5hzN7Iw.gif" alt="">출처 : <a href="https://github.com/zeit/hyperterm" target="_blank" rel="external">https://github.com/zeit/hyperterm</a></p>
+<p><a href="https://github.com/zeit/hyperterm" title="https://github.com/zeit/hyperterm" target="_blank" rel="external"><strong>zeit/hyperterm</strong><br>_Contribute to hyperterm development by creating an account on GitHub._github.com</a><a href="https://github.com/zeit/hyperterm" target="_blank" rel="external"></a></p>
+<hr>
+<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><p>electron 기반의 프로그램이라 그냥 zip파일을 해당 웹 프로젝트에서 다운 받으시면 됩니다.</p>
+<p><a href="https://hyperterm.org/" title="https://hyperterm.org/" target="_blank" rel="external"><strong>HyperTerm</strong><br>_HyperTerm: HTML/JS/CSS terminal_hyperterm.org</a><a href="https://hyperterm.org/" target="_blank" rel="external"></a></p>
+<p>프로젝트 페이지를 방문 하시면 바로 링크가 있습니다.</p>
+<hr>
+<h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><p>OSX환경에서는 그냥 zip 파일을 풀면 실행파일을 실행할 수 있습니다.</p>
+<hr>
+<h4 id="어떻게-가능한-걸까"><a href="#어떻게-가능한-걸까" class="headerlink" title="어떻게 가능한 걸까?"></a>어떻게 가능한 걸까?</h4><p>electron 기반의 application 이니까. package.json파일을 살펴 보겠습니다.</p>
+<pre><code>&quot;dependencies&quot;: {   
+&quot;child\_pty&quot;: &quot;3.0.1&quot;,   
+&quot;convert-css-color-name-to-hex&quot;: &quot;0.1.1&quot;,   
+&quot;default-shell&quot;: &quot;1.0.1&quot;,   
+&quot;electron-config&quot;: &quot;0.2.0&quot;,   
+&quot;electron-is-dev&quot;: &quot;0.1.1&quot;,   
+&quot;gaze&quot;: &quot;1.1.0&quot;,   
+&quot;mkdirp&quot;: &quot;0.5.1&quot;,   
+&quot;ms&quot;: &quot;0.7.1&quot;,   
+&quot;uid2&quot;: &quot;0.0.3&quot; },
+</code></pre><p>다른 dependency도 눈여겨 봐야겠지만, 제눈에 띄는 거는 child_pty라는 모듈이네요</p>
+<p><a href="https://github.com/Gottox/child_pty" title="https://github.com/Gottox/child_pty" target="_blank" rel="external"><strong>Gottox/child_pty</strong><br>_child_pty - a modern node.js module for interacting with pseudo terminals._github.com</a><a href="https://github.com/Gottox/child_pty" target="_blank" rel="external"></a></p>
+<p>pseudo 터미날과 인터렉션 할 수 있는 node 모듈이child_pty가 기본 터미날의 출발이 될 거 같습니다.</p>
+<p><a href="https://github.com/shama/gaze" title="https://github.com/shama/gaze" target="_blank" rel="external"><strong>shama/gaze</strong><br>_gaze - :crystal_ball: A globbing fs.watch wrapper built from the best parts of other fine watch libs._github.com</a><a href="https://github.com/shama/gaze" target="_blank" rel="external"></a></p>
+<p>이 gaze라는 모듈은 OS파일의 변화를 감지하는 모듈입니다.</p>
+<p><a href="https://github.com/sindresorhus/default-shell" title="https://github.com/sindresorhus/default-shell" target="_blank" rel="external"><strong>sindresorhus/default-shell</strong><br>_default-shell - Get the user’s default shell_github.com</a><a href="https://github.com/sindresorhus/default-shell" target="_blank" rel="external"></a></p>
+<p>사용자의 default shell을 얻어 오는 모듈입니다.</p>
+<p><img src="/images/1*5H3Oyffpehq6gnEX0ygkjg.pn" alt=""></p>
+<p>정확하게 제가 셋팅한 zsh를 가져옵니다.</p>
+<p><a href="https://github.com/zeit/hyperterm/blob/master/app/lib/index.js" title="https://github.com/zeit/hyperterm/blob/master/app/lib/index.js" target="_blank" rel="external"><strong>zeit/hyperterm</strong><br>_Contribute to hyperterm development by creating an account on GitHub._github.com</a><a href="https://github.com/zeit/hyperterm/blob/master/app/lib/index.js" target="_blank" rel="external"></a></p>
+<p>소스코드를 따라가면 React로 짜져 있음을 알 수 있습니다.</p>
+<p>진입점인 index.js는 redux를 이용해 Action에 따른 여러가지 바인딩을 한 소스들로 대부분이 이루어져 있습니다.</p>
+<p>주로 Action은 uiAction, updaterAction, sessionAction세가지 정도로 이루어져 있습니다.</p>
+<p><a href="https://github.com/zeit/hyperterm/blob/master/app/lib/hterm.js" title="https://github.com/zeit/hyperterm/blob/master/app/lib/hterm.js" target="_blank" rel="external"><strong>zeit/hyperterm</strong><br>_Contribute to hyperterm development by creating an account on GitHub._github.com</a><a href="https://github.com/zeit/hyperterm/blob/master/app/lib/hterm.js" target="_blank" rel="external"></a></p>
+<p>terminal 클라이언트는 chromium의 hterm-umd를 이용하고 있습니다.</p>
+<p><a href="https://chromium.googlesource.com/apps/libapps/+/HEAD/hterm" title="https://chromium.googlesource.com/apps/libapps/+/HEAD/hterm" target="_blank" rel="external"><strong>hterm - apps/libapps - Git at Google</strong><br>_hterm is a JS library that provides a terminal emulator. It is reasonably fast, reasonably correct, and reasonably…_chromium.googlesource.com</a><a href="https://chromium.googlesource.com/apps/libapps/+/HEAD/hterm" target="_blank" rel="external"></a></p>
+<hr>
+<p>구슬이 서말인데 꿰니 보배라는 내용에 딱 어울리는 멋진 프로젝트네요.</p>
+<p>이런 인사이트를 더 얻을 수 있으면 좋겠다는 생각이 많이 듭니다.</p>
+<p>WEB-IDE를 만들 때도 참조하면 좋을 거 같네요.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/fd239a9670be" target="_blank" rel="external">July 16, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
   
     <article id="post-[2016-07-14 23:43:31]Cleave.js"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
@@ -217,92 +283,11 @@ onChange={this.onCreditCardChange} /\&gt;
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-07-13 18:27:37]Malmö"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/07/13/[2016-07-13 18:27:37]Malmö/">Malmö</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/07/13/[2016-07-13 18:27:37]Malmö/" class="article-date">
-	  <time datetime="2016-07-13T09:27:37.000Z" itemprop="datePublished">7월 13, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/1*Y2Jy-cL0BHxL3PsstKk7wQ.png" alt="">스웨덴 말뫼….뫼얏!</p>
-<p>MS에서 AI와 research를 위해 만든 플랫폼중 하나인 Malmo를 깃헙에 내 놓았습니다. 그런데 말입니다.</p>
-<p><img src="/images/1*hQaIH1O5ypUkbdkrlF0EbQ.png" alt="">출처 : <a href="https://twitter.com/manchi5693" target="_blank" rel="external">https://twitter.com/manchi5693</a></p>
-<p>무려 Minecraft 에서 돌리는 AI &amp; 리서치 플랫폼입니다. 놀랍죠.</p>
-<p><a href="https://github.com/Microsoft/malmo" title="https://github.com/Microsoft/malmo" target="_blank" rel="external"><strong>Microsoft/malmo</strong><br>_malmo - Project Malmo is a platform for Artificial Intelligence experimentation and research built on top of Minecraft…_github.com</a><a href="https://github.com/Microsoft/malmo" target="_blank" rel="external"></a></p>
-<hr>
-<h4 id="설치하기"><a href="#설치하기" class="headerlink" title="설치하기"></a>설치하기</h4><p>그야 말로 간단합니다.</p>
-<p><a href="https://github.com/Microsoft/malmo/releases" title="https://github.com/Microsoft/malmo/releases" target="_blank" rel="external"><strong>Microsoft/malmo</strong><br>_malmo - Project Malmo is a platform for Artificial Intelligence experimentation and research built on top of Minecraft…_github.com</a><a href="https://github.com/Microsoft/malmo/releases" target="_blank" rel="external"></a></p>
-<p>최신 버전을 다운 받으시고,</p>
-<pre><code>brew install boost --- with-python
-
-brew install boost-python ffmpeg xerces-c mono
-
-sudo brew cask install java
-</code></pre><p>dependency만 확인하시면 됩니다. 저는 모두 -_- 깔려 있어서 생략은 했습니다.</p>
-<p>그리고 Minecraft 디렉토리에 들어가셔서</p>
-<pre><code>./launchClient.sh
-</code></pre><p>만 실행하시면</p>
-<p><img src="/images/1*GE7PKYh3JgrrfM4INpIGiA.png" alt=""></p>
-<p>짜잔</p>
-<p><img src="/images/1*Ii4a-kqbugDdNHFqwqnvrQ.png" alt=""></p>
-<p>반가운 화면이 나타납니다.</p>
-<hr>
-<p>예전에 리뷰 했던 TeachCraft는 마인크래프트를 가지고 python을 배워볼 수 있는 좋은 프레임워크인데 서버 버전이 낮고 공식버전에서 server를 더 이상 다운 받을 수 없었는데</p>
-<p><a href="https://techstory.shma.so/teachcraft-78169118178a" title="https://techstory.shma.so/teachcraft-78169118178a" target="_blank" rel="external"><strong>TeachCraft</strong><br>_어린이날 기념으로 포스팅하는 깃헙프로젝트입니다. 초등생들의 영원한 친구 마인크래프트를 다들 아실텐데요. 관련된 프로젝트도 깃헙에는 넘치고 넘치는데요. 오늘은 python 스크립트를 배우는 방법으로 마인크래프트를 …_techstory.shma.so</a><a href="https://techstory.shma.so/teachcraft-78169118178a" target="_blank" rel="external"></a></p>
-<p>이제 이렇게 MS에서 공식적으로 서버와 리서치용 클라이언트를 지원해 준다니 놀랍기만 하네요.</p>
-<p>어떻게 실행 스크립트를 짜는 지는</p>
-<p>pdf로 친절하게 설명 되어 있습니다.</p>
-<p>지난번에는 python 실행 프로그램을 돌렸으니 이번에는 Java Example 을 한번 돌려 보도록 하겠습니다.</p>
-<pre><code>$cd Java\_Examples  
-$java -cp MalmoJavaJar.jar:JavaExamples\_run\_mission.jar -Djava.library.path=. JavaExamples\_run\_mission
-</code></pre><p>4.8mega 이미지라 좀 길지만 기다리시면</p>
-<p><img src="/images/1*twWKRQ70HKwr33nD28KPmg.gi" alt=""></p>
-<p>실행 스크립트가 돌아가는 것을 확인할 수 있습니다.</p>
-<p>실행되면서 마우스 핸들을 잡는 관계로 화면 전환이 있는 점은 죄송합니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/7cb98bd3e85f" target="_blank" rel="external">July 13, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/32/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="page-number" href="/page/32/">32</a><span class="page-number current">33</span><a class="page-number" href="/page/34/">34</a><a class="page-number" href="/page/35/">35</a><span class="space">&hellip;</span><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/34/">다음</a>
+    <a class="extend prev" rel="prev" href="/page/32/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="page-number" href="/page/32/">32</a><span class="page-number current">33</span><a class="page-number" href="/page/34/">34</a><a class="page-number" href="/page/35/">35</a><span class="space">&hellip;</span><a class="page-number" href="/page/101/">101</a><a class="extend next" rel="next" href="/page/34/">다음</a>
   </nav>
 
 </section>
@@ -349,6 +334,18 @@ $java -cp MalmoJavaJar.jar:JavaExamples\_run\_mission.jar -Djava.library.path=. 
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/07/06/deno/">deno</a></h6>
+              <span>7월 6, 2018</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -410,18 +407,6 @@ $java -cp MalmoJavaJar.jar:JavaExamples\_run\_mission.jar -Djava.library.path=. 
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a></h6>
-              <span>9월 14, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -454,7 +439,7 @@ $java -cp MalmoJavaJar.jar:JavaExamples\_run\_mission.jar -Djava.library.path=. 
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">7월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -505,9 +490,6 @@ $java -cp MalmoJavaJar.jar:JavaExamples\_run\_mission.jar -Djava.library.path=. 
 
 
     <!-- headerblur min height -->
-    
-      var headerblur = document.getElementById("header-blur");
-      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

@@ -55,32 +55,10 @@
 
 
   
-  
-  <div class="site-header-image">
-    <img id="originBg" width="100%" alt="Hike News" src="">
-  </div>
-
-  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
-    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
-  </div>
-
-  <script>
-        var imgUrls = "images/storm.png".split(",");
-        var random = Math.floor((Math.random() * imgUrls.length ));
-        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
-          document.getElementById("originBg").src=imgUrls[random];
-          document.getElementById("blurBg").src=imgUrls[random];
-        } else {
-          document.getElementById("originBg").src='/' + imgUrls[random];
-          document.getElementById("blurBg").src='/' + imgUrls[random];
-        }
-    </script>
-
-
 
 
 <header id="allheader" class="site-header" role="banner" 
-   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+   >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -122,6 +100,69 @@
       <div id="content" class="outer">
         
           <section id="main">
+  
+    <article id="post-[2016-07-06 23:58:50]IsTimeline"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/07/06/[2016-07-06 23:58:50]IsTimeline/">IsTimeline</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/07/06/[2016-07-06 23:58:50]IsTimeline/" class="article-date">
+	  <time datetime="2016-07-06T14:58:50.000Z" itemprop="datePublished">7월 6, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>며칠 전 StepView 를 리뷰를 하면서 Timeline 언급했었는데요, 오늘 리뷰할 프로젝트는 Timeline을 본격적으로 표방하면서 나온 프로젝트입니다.</p>
+<p>2016/07/06 Editor’s choice</p>
+<p><a href="https://github.com/instant-solutions/ISTimeline" title="https://github.com/instant-solutions/ISTimeline" target="_blank" rel="external"><strong>instant-solutions/ISTimeline</strong><br>_ISTimeline - Simple timeline view written in Swift 2.2_github.com</a><a href="https://github.com/instant-solutions/ISTimeline" target="_blank" rel="external"></a></p>
+<hr>
+<p>StepView는 안드로이드, IsTimeline은 swift라는 차이는 있습니다.</p>
+<p>또 하나의 차이는 StepView는 Step을 나타내는 여러가지 옵션이 있었던 반면 IsTimeline은 오직 TImeline을 위한 소스입니다.</p>
+<hr>
+<h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><p>Cocoapod을 이용한 설치만으로도 가능하지만, 소스코드를 가져다 설치하는 방법도 있습니다. 저는 후자의 방법을 취했습니다.</p>
+<p><img src="/images/1*_PIfL9DL2h4gRFATp9dSqA.png" alt=""></p>
+<h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><p>소스 코드는 아래와 같이 작성했습니다.</p>
+<p>XCODE에서 기본 swift코드를 짜고 나면 위 그림과 같은 파일들이 생성이 되는데, DetailedViewController.swift 파일에 timeline() 함수를 만들고 뷰가 생성되는 시점인 ViewDidLoad() 함수에 소스코드를 집어 넣었습니다.</p>
+<p>이러고 나면 아래와 같이 멋진 타임라인이 만들어 집니다.</p>
+<p><img src="/images/1*qKdzNDCCr5GGexqOi-5N3g.gi" alt=""></p>
+<p>swift 타임라인 만들 때 참조하기 괜찮아 보입니다.</p>
+<hr>
+<p>StepView 리뷰는 다음과 같습니다.</p>
+<p><a href="https://techstory.shma.so/stepview-d1ecb3b0afbe" title="https://techstory.shma.so/stepview-d1ecb3b0afbe" target="_blank" rel="external"><strong>StepView</strong><br>_Android 에서 타임라인을 구현하고 싶은데 UI 때문에 고민이신 분들을 위해서 좋은 프로젝트입니다._techstory.shma.so</a><a href="https://techstory.shma.so/stepview-d1ecb3b0afbe" target="_blank" rel="external"></a></p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/74eb8ed293b9" target="_blank" rel="external">July 6, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
   
     <article id="post-[2016-07-05 08:38:00]MarkdownEditors"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
@@ -187,91 +228,11 @@
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-07-04 23:33:40]impress.js"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/07/04/[2016-07-04 23:33:40]impress.js/">impress.js</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/07/04/[2016-07-04 23:33:40]impress.js/" class="article-date">
-	  <time datetime="2016-07-04T14:33:40.000Z" itemprop="datePublished">7월 4, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>한참 잊혀졌다가 4년만에 등장한 프레임워크가 있습니다. 나오자 마자 깃헙 데일리 1등을 먹어버리는 괴력을 가진 이 프로젝트는!</p>
-<p>두둥! 일단 데모부터 감상하시죠!( 이미지 클릭 )</p>
-<p><a href="http://bartaz.github.io/meetjs/css3d-summit/#/title" target="_blank" rel="external"><img src="/images/1*9nmQOLVycpFrxghe8yVT9w.gif" alt=""></a></p>
-<p>네, 화면을 보시면 직감하셨을 거라고 생각됩니다.</p>
-<p>바로 프레젠테이션을 멋지게 해주는 프레임워크인 impress.js 입니다.</p>
-<p>2016/07/04 Best Project</p>
-<p><a href="https://github.com/impress/impress.js" title="https://github.com/impress/impress.js" target="_blank" rel="external"><strong>impress/impress.js</strong><br>_impress.js - It’s a presentation framework based on the power of CSS3 transforms and transitions in modern browsers and…_github.com</a><a href="https://github.com/impress/impress.js" target="_blank" rel="external"></a></p>
-<p>이 프로젝트는 Prezi의 HTML5 버전으로 한때 각광을 받았는데, 무슨 일인지 4년동안 inactivity 이후 이렇게 갑툭튀 했습니다.</p>
-<p>재밌는게 thanks! everyone을 보면 외부 다른 개발자들이 지속적으로 feature 들을 업데이트 한 것을 볼수 있습니다.</p>
-<p><a href="https://github.com/impress/impress.js/compare/0.5.3...0.6.0" target="_blank" rel="external"><img src="/images/1*tVsYJyzDM8de-WwDQjC5tw.png" alt=""></a></p>
-<hr>
-<p>설치</p>
-<pre><code>&lt;script src=&quot;js/impress.js&quot;\&gt;&lt;/script\&gt;
-
-&lt;script\&gt;impress().init();&lt;/script\&gt;
-</code></pre><p>간단하게 import 한 후에 init 명령어를 통해 작성해 주면 됩니다.</p>
-<p>실행</p>
-<p><a href="https://github.com/impress/impress.js/blob/master/DOCUMENTATION.md" title="https://github.com/impress/impress.js/blob/master/DOCUMENTATION.md" target="_blank" rel="external"><strong>impress/impress.js</strong><br>_impress.js - It’s a presentation framework based on the power of CSS3 transforms and transitions in modern browsers and…_github.com</a><a href="https://github.com/impress/impress.js/blob/master/DOCUMENTATION.md" target="_blank" rel="external"></a></p>
-<p>이렇게훌륭한 API문서가 갖춰져 있습니다.</p>
-<pre><code>&lt;div id=&quot;its-in-3d&quot; class=&quot;step&quot; data-x=&quot;6200&quot; data-y=&quot;4300&quot; data-z=&quot;-100&quot; data-rotate-x=&quot;-40&quot; data-rotate-y=&quot;10&quot; data-scale=&quot;2&quot;\&gt;  
-&lt;p\&gt;  
-&lt;span class=&quot;have&quot;\&gt;have&lt;/span\&gt;  
-&lt;span class=&quot;you&quot;\&gt;you&lt;/span\&gt;  
-&lt;span class=&quot;noticed&quot;\&gt;noticed&lt;/span\&gt;  
-&lt;span class=&quot;its&quot;\&gt;it&apos;s&lt;/span\&gt;  
-&lt;span class=&quot;in&quot;\&gt;in&lt;/span\&gt;  
-&lt;b\&gt;3D&lt;sup\&gt;\*&lt;/sup\&gt;&lt;/b\&gt;?  
-&lt;/p\&gt;  
-&lt;span class=&quot;footnote&quot;\&gt;\* beat that, prezi ;)&lt;/span\&gt;  
-&lt;/div\&gt;
-</code></pre><p>3D 로테이션 예제 입니다.</p>
-<p>마지막에 저부분을 추가 하니 샘플의 index.html이 이렇게 멋있어지는군요!</p>
-<p><img src="/images/1*OYhx2-pqZ7Rp7dK5hon1jw.gi" alt=""></p>
-<p>Use the source!</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/f3ceb11ceaf6" target="_blank" rel="external">July 4, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/36/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="page-number" href="/page/36/">36</a><span class="page-number current">37</span><a class="page-number" href="/page/38/">38</a><a class="page-number" href="/page/39/">39</a><span class="space">&hellip;</span><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/38/">다음</a>
+    <a class="extend prev" rel="prev" href="/page/36/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="page-number" href="/page/36/">36</a><span class="page-number current">37</span><a class="page-number" href="/page/38/">38</a><a class="page-number" href="/page/39/">39</a><span class="space">&hellip;</span><a class="page-number" href="/page/101/">101</a><a class="extend next" rel="next" href="/page/38/">다음</a>
   </nav>
 
 </section>
@@ -318,6 +279,18 @@
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/07/06/deno/">deno</a></h6>
+              <span>7월 6, 2018</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -379,18 +352,6 @@
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a></h6>
-              <span>9월 14, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -423,7 +384,7 @@
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">7월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -474,9 +435,6 @@
 
 
     <!-- headerblur min height -->
-    
-      var headerblur = document.getElementById("header-blur");
-      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

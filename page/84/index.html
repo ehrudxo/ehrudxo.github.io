@@ -55,32 +55,10 @@
 
 
   
-  
-  <div class="site-header-image">
-    <img id="originBg" width="100%" alt="Hike News" src="">
-  </div>
-
-  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
-    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
-  </div>
-
-  <script>
-        var imgUrls = "images/storm.png".split(",");
-        var random = Math.floor((Math.random() * imgUrls.length ));
-        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
-          document.getElementById("originBg").src=imgUrls[random];
-          document.getElementById("blurBg").src=imgUrls[random];
-        } else {
-          document.getElementById("originBg").src='/' + imgUrls[random];
-          document.getElementById("blurBg").src='/' + imgUrls[random];
-        }
-    </script>
-
-
 
 
 <header id="allheader" class="site-header" role="banner" 
-   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+   >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -122,6 +100,98 @@
       <div id="content" class="outer">
         
           <section id="main">
+  
+    <article id="post-[2016-03-28 09:19:22]Draft-js-plugins"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/03/28/[2016-03-28 09:19:22]Draft-js-plugins/">Draft-js-plugins</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/03/28/[2016-03-28 09:19:22]Draft-js-plugins/" class="article-date">
+	  <time datetime="2016-03-28T00:19:22.000Z" itemprop="datePublished">3월 28, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/1*8f_5UmINP-6oadBKf9igsQ.jpeg" alt=""></p>
+<p>Draft.js가 나올때 까지만 해도 TineMCE라던지, CKEditor라던지 등의 기존 에디터들이 있어서 뭐가 더 좋은게 있을지 몰랐는데, 이런게 오픈소스화의 힘이라고 보여집니다. 뭔가 중심을 잡아 주는 프로젝트를 만들고 plugin을 장착할 수 있는 구조가 만들어 지고 나니 사람들이 프로젝트를 확장하기 시작합니다.</p>
+<p>2016/03/28 Editor’s choice</p>
+<p><a href="https://github.com/draft-js-plugins/draft-js-plugins" title="https://github.com/draft-js-plugins/draft-js-plugins" target="_blank" rel="external"><strong>draft-js-plugins/draft-js-plugins</strong><br>_draft-js-plugins - React Plugin Architecture for DraftJS including Slack-Like Emojis, FB-Like Mentions and Stickers_github.com</a><a href="https://github.com/draft-js-plugins/draft-js-plugins" target="_blank" rel="external"></a></p>
+<p>지금은 emoji, hash tag등의 플러그인 들이 만들어져 있습니다.</p>
+<p>sticker 플러그 인을 한번 살펴 보겠습니다.</p>
+<p><a href="https://www.draft-js-plugins.com/plugin/sticker" title="https://www.draft-js-plugins.com/plugin/sticker" target="_blank" rel="external"><strong>draft-js-plugins - High quality plugins for DraftJS with great UX</strong><br>_Facebook’s rich-text editor framework DraftJS built on top of React allows you to create powerful editors. We built a…_www.draft-js-plugins.com</a><a href="https://www.draft-js-plugins.com/plugin/sticker" target="_blank" rel="external"></a></p>
+<p>설치</p>
+<pre><code>npm install draft-js-sticker-plugin --save
+</code></pre><p>소스</p>
+<pre><code>// It is important to import the Editor which accepts plugins.  
+import Editor from &apos;draft-js-plugins-editor&apos;;  
+import createStickerPlugin from &apos;draft-js-sticker-plugin&apos;;  
+import React from &apos;react&apos;;  
+import { fromJS } from &apos;immutable&apos;;  
+
+// Creates an Instance. Passing in an Immutable.js List of stickers as an  
+// argument.  
+const stickers = fromJS({  
+data: {  
+&apos;b3aa388f-b9f4-45b0-bba5-d92cf2caa48b&apos;: {  
+id: &apos;b3aa388f-b9f4-45b0-bba5-d92cf2caa48b&apos;,  
+url: &apos;../images/unicorn-4.png&apos;,  
+},  
+&apos;adec3f13-823c-47c3-b4d1-be4f68dd9d6d&apos;: {  
+id: &apos;adec3f13-823c-47c3-b4d1-be4f68dd9d6d&apos;,  
+url: &apos;../images/unicorn-1.png&apos;,  
+},  
+},  
+});  
+
+const stickerPlugin = createStickerPlugin({ stickers });  
+
+// The Editor accepts an array of plugins. In this case, only the stickerPlugin  
+// is passed in, although it is possible to pass in multiple plugins.  
+const MyEditor = ({ editorState, onChange }) =\&gt; (  
+&lt;Editor  
+editorState={ editorState }  
+onChange={ onChange }  
+plugins={ \[stickerPlugin\] }  
+/\&gt;  
+);  
+
+export default MyEditor;
+</code></pre><p>아래와 같이 볼 수 있군요!</p>
+<p><img src="/images/1*jHWiWpbgJGHliJEEYDDobA.pn" alt=""></p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/37850c5d3f8a" target="_blank" rel="external">March 28, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
   
     <article id="post-[2016-03-24 07:16:08]hain"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
@@ -177,69 +247,11 @@
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-03-23 06:56:19]transfer.sh"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/03/23/[2016-03-23 06:56:19]transfer.sh/">transfer.sh</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/03/23/[2016-03-23 06:56:19]transfer.sh/" class="article-date">
-	  <time datetime="2016-03-22T21:56:19.000Z" itemprop="datePublished">3월 23, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/1*7jLoQ1MH4QtqgoOQEV-KvQ.jpe" alt=""></p>
-<p>프로젝트를 하면서 ftp서버를 구축한다던지 혹은 파일 쉐어링을 할 일이 많은데, 뭔가 조금은 더 쉽게 하고 싶다. 혹은 더 간단한 방법이 있으면 좋겠다는 생각들 많이 하셨을 거라고 봅니다. 특히 curl 에 특화된 서버가 있으면 좋겠다고 생각하시는 분들도 계셨을 건데요. 이 프로젝트는 그런 문제에 대한 해답이 될 지도 모르겠습니다.</p>
-<p>2016/03/23 Editor’s choice(315 ★)</p>
-<p><a href="https://github.com/dutchcoders/transfer.sh" title="https://github.com/dutchcoders/transfer.sh" target="_blank" rel="external"><strong>dutchcoders/transfer.sh</strong><br>_transfer.sh - Easy and fast file sharing from the command-line._github.com</a><a href="https://github.com/dutchcoders/transfer.sh" target="_blank" rel="external"></a></p>
-<p>서버사이드는 Golang으로 만들어져 있습니다.</p>
-<p>소스를 한번 확인해 보면</p>
-<p>mux라는 http 라우터를 사용해서 파일들을 손쉽게 컨트롤 할 수 있도록 만든 것을 볼 수 있습니다.</p>
-<p>이런 일련의 작업들은 mux 라는 http multiplexer를 이용해서 가능해 졌습니다.</p>
-<p><a href="https://github.com/gorilla/mux" title="https://github.com/gorilla/mux" target="_blank" rel="external"><strong>gorilla/mux</strong><br>_mux - A powerful URL router and dispatcher for golang._github.com</a><a href="https://github.com/gorilla/mux" target="_blank" rel="external"></a></p>
-<p>node.js 를 가지고 ftp 서버를 만들고 하던 작업들과 비교해 보면 대강 비슷한 형태의 프로젝트라고 볼 수 있습니다.</p>
-<p>단순히 transfer.sh 서버만 존재하는 것은 아니고 웹 페이지도 함께 있어서 사용하는데 더욱 편리한데 다음 페이지에서 어떻게 돌아가는지 확인할 수 있습니다.</p>
-<p><a href="https://transfer.sh/" title="https://transfer.sh/" target="_blank" rel="external"><strong>transfer.sh - <em>Easy and fast file sharing from the command-line.</em></strong><br>Easy and fast file sharing from the command-line.transfer.sh</a><a href="https://transfer.sh/" target="_blank" rel="external"></a></p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/51b5e6cce40f" target="_blank" rel="external">March 22, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/83/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/82/">82</a><a class="page-number" href="/page/83/">83</a><span class="page-number current">84</span><a class="page-number" href="/page/85/">85</a><a class="page-number" href="/page/86/">86</a><span class="space">&hellip;</span><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/85/">다음</a>
+    <a class="extend prev" rel="prev" href="/page/83/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/82/">82</a><a class="page-number" href="/page/83/">83</a><span class="page-number current">84</span><a class="page-number" href="/page/85/">85</a><a class="page-number" href="/page/86/">86</a><span class="space">&hellip;</span><a class="page-number" href="/page/101/">101</a><a class="extend next" rel="next" href="/page/85/">다음</a>
   </nav>
 
 </section>
@@ -286,6 +298,18 @@
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/07/06/deno/">deno</a></h6>
+              <span>7월 6, 2018</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -347,18 +371,6 @@
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a></h6>
-              <span>9월 14, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -391,7 +403,7 @@
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">7월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -442,9 +454,6 @@
 
 
     <!-- headerblur min height -->
-    
-      var headerblur = document.getElementById("header-blur");
-      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

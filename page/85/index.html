@@ -55,32 +55,10 @@
 
 
   
-  
-  <div class="site-header-image">
-    <img id="originBg" width="100%" alt="Hike News" src="">
-  </div>
-
-  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
-    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
-  </div>
-
-  <script>
-        var imgUrls = "images/storm.png".split(",");
-        var random = Math.floor((Math.random() * imgUrls.length ));
-        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
-          document.getElementById("originBg").src=imgUrls[random];
-          document.getElementById("blurBg").src=imgUrls[random];
-        } else {
-          document.getElementById("originBg").src='/' + imgUrls[random];
-          document.getElementById("blurBg").src='/' + imgUrls[random];
-        }
-    </script>
-
-
 
 
 <header id="allheader" class="site-header" role="banner" 
-   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+   >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -122,6 +100,64 @@
       <div id="content" class="outer">
         
           <section id="main">
+  
+    <article id="post-[2016-03-23 06:56:19]transfer.sh"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/03/23/[2016-03-23 06:56:19]transfer.sh/">transfer.sh</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/03/23/[2016-03-23 06:56:19]transfer.sh/" class="article-date">
+	  <time datetime="2016-03-22T21:56:19.000Z" itemprop="datePublished">3월 23, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/1*7jLoQ1MH4QtqgoOQEV-KvQ.jpe" alt=""></p>
+<p>프로젝트를 하면서 ftp서버를 구축한다던지 혹은 파일 쉐어링을 할 일이 많은데, 뭔가 조금은 더 쉽게 하고 싶다. 혹은 더 간단한 방법이 있으면 좋겠다는 생각들 많이 하셨을 거라고 봅니다. 특히 curl 에 특화된 서버가 있으면 좋겠다고 생각하시는 분들도 계셨을 건데요. 이 프로젝트는 그런 문제에 대한 해답이 될 지도 모르겠습니다.</p>
+<p>2016/03/23 Editor’s choice(315 ★)</p>
+<p><a href="https://github.com/dutchcoders/transfer.sh" title="https://github.com/dutchcoders/transfer.sh" target="_blank" rel="external"><strong>dutchcoders/transfer.sh</strong><br>_transfer.sh - Easy and fast file sharing from the command-line._github.com</a><a href="https://github.com/dutchcoders/transfer.sh" target="_blank" rel="external"></a></p>
+<p>서버사이드는 Golang으로 만들어져 있습니다.</p>
+<p>소스를 한번 확인해 보면</p>
+<p>mux라는 http 라우터를 사용해서 파일들을 손쉽게 컨트롤 할 수 있도록 만든 것을 볼 수 있습니다.</p>
+<p>이런 일련의 작업들은 mux 라는 http multiplexer를 이용해서 가능해 졌습니다.</p>
+<p><a href="https://github.com/gorilla/mux" title="https://github.com/gorilla/mux" target="_blank" rel="external"><strong>gorilla/mux</strong><br>_mux - A powerful URL router and dispatcher for golang._github.com</a><a href="https://github.com/gorilla/mux" target="_blank" rel="external"></a></p>
+<p>node.js 를 가지고 ftp 서버를 만들고 하던 작업들과 비교해 보면 대강 비슷한 형태의 프로젝트라고 볼 수 있습니다.</p>
+<p>단순히 transfer.sh 서버만 존재하는 것은 아니고 웹 페이지도 함께 있어서 사용하는데 더욱 편리한데 다음 페이지에서 어떻게 돌아가는지 확인할 수 있습니다.</p>
+<p><a href="https://transfer.sh/" title="https://transfer.sh/" target="_blank" rel="external"><strong>transfer.sh - <em>Easy and fast file sharing from the command-line.</em></strong><br>Easy and fast file sharing from the command-line.transfer.sh</a><a href="https://transfer.sh/" target="_blank" rel="external"></a></p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/51b5e6cce40f" target="_blank" rel="external">March 22, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
   
     <article id="post-[2016-03-22 05:41:00]searchkit"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
@@ -181,69 +217,11 @@
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-03-21 07:07:51]react-native-image-picker"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/03/21/[2016-03-21 07:07:51]react-native-image-picker/">react-native-image-picker</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/03/21/[2016-03-21 07:07:51]react-native-image-picker/" class="article-date">
-	  <time datetime="2016-03-20T22:07:51.000Z" itemprop="datePublished">3월 21, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/1*ss-g_QiUDZHnPdUckYvyaw.png" alt=""></p>
-<p>모바일 앱에서 Image-Picker는 필수라고 볼수 있죠. React-native에서 이미지를 어떻게 참조할지 알고 싶다면 이 프로젝트가 좋은 아이디어를 줄 것입니다.</p>
-<p>2016/03/21 Editor’s choice</p>
-<p><a href="https://github.com/marcshilling/react-native-image-picker" title="https://github.com/marcshilling/react-native-image-picker" target="_blank" rel="external"><strong>marcshilling/react-native-image-picker</strong><br>_react-native-image-picker - A React Native module that allows you to use native UI to select media from the device…_github.com</a><a href="https://github.com/marcshilling/react-native-image-picker" target="_blank" rel="external"></a></p>
-<p>native 이미지 피커를 이용해서 작업을 합니다.</p>
-<h3 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h3><pre><code>$npm install react-native-image-picker@latest --- save  
-$rnpm link
-</code></pre><p>rnpm link를 이용하면 dependency 문제는 대부분 해결을 해 주기 때문에 위 프로젝트 readme의 설정은 건드리지 않아도 됩니다.</p>
-<p>하지만, 이 프로젝트는 android의 경우는 권한을 줘야 하는 부분이 있기 때문에 한가지 작업만 더 하겠습니다. AndroidMenifest.xml파일만 다음의 부분을 추가해 주세요.</p>
-<p>소스예제</p>
-<p>와 같이 적용했더니 아래와 같이 이미지를 고를 수 있게 나옵니다.</p>
-<p><img src="/images/1*UJbe_2RSmGQlg2ODMJ2Kgw.pn" alt=""></p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/4455a9ff79bd" target="_blank" rel="external">March 20, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/84/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/83/">83</a><a class="page-number" href="/page/84/">84</a><span class="page-number current">85</span><a class="page-number" href="/page/86/">86</a><a class="page-number" href="/page/87/">87</a><span class="space">&hellip;</span><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/86/">다음</a>
+    <a class="extend prev" rel="prev" href="/page/84/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/83/">83</a><a class="page-number" href="/page/84/">84</a><span class="page-number current">85</span><a class="page-number" href="/page/86/">86</a><a class="page-number" href="/page/87/">87</a><span class="space">&hellip;</span><a class="page-number" href="/page/101/">101</a><a class="extend next" rel="next" href="/page/86/">다음</a>
   </nav>
 
 </section>
@@ -290,6 +268,18 @@ $rnpm link
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/07/06/deno/">deno</a></h6>
+              <span>7월 6, 2018</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -351,18 +341,6 @@ $rnpm link
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a></h6>
-              <span>9월 14, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -395,7 +373,7 @@ $rnpm link
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">7월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -446,9 +424,6 @@ $rnpm link
 
 
     <!-- headerblur min height -->
-    
-      var headerblur = document.getElementById("header-blur");
-      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

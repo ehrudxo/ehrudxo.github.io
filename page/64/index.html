@@ -55,32 +55,10 @@
 
 
   
-  
-  <div class="site-header-image">
-    <img id="originBg" width="100%" alt="Hike News" src="">
-  </div>
-
-  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
-    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
-  </div>
-
-  <script>
-        var imgUrls = "images/storm.png".split(",");
-        var random = Math.floor((Math.random() * imgUrls.length ));
-        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
-          document.getElementById("originBg").src=imgUrls[random];
-          document.getElementById("blurBg").src=imgUrls[random];
-        } else {
-          document.getElementById("originBg").src='/' + imgUrls[random];
-          document.getElementById("blurBg").src='/' + imgUrls[random];
-        }
-    </script>
-
-
 
 
 <header id="allheader" class="site-header" role="banner" 
-   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+   >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -122,6 +100,77 @@
       <div id="content" class="outer">
         
           <section id="main">
+  
+    <article id="post-[2016-05-09 08:58:36]Mac에 무작정 tensorflow 깔아보기"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/05/09/[2016-05-09 08:58:36]Mac에 무작정 tensorflow 깔아보기/">Mac에 무작정 tensorflow 깔아보기</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/05/09/[2016-05-09 08:58:36]Mac에 무작정 tensorflow 깔아보기/" class="article-date">
+	  <time datetime="2016-05-08T23:58:36.000Z" itemprop="datePublished">5월 9, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/1*ryC9OICjD2yPsapmmj9fVA.png" alt="">묘한그림</p>
+<p>네, 일단 무작정 TensorFlow를 깔아보는 것으로 시작합니다.</p>
+<p>instruction은 github의 tensorflow 페이지를 참조했습니다.</p>
+<p><a href="https://github.com/tensorflow/tensorflow" title="https://github.com/tensorflow/tensorflow" target="_blank" rel="external"><strong>tensorflow/tensorflow</strong><br>_tensorflow - Computation using data flow graphs for scalable machine learning_github.com</a><a href="https://github.com/tensorflow/tensorflow" target="_blank" rel="external"></a></p>
+<p>일단 Mac을 설치하고 나면 pip가 그냥 있는 것은 아닙니다. python을 설치하고 나면, pip를 설치할 수 있습니다.</p>
+<pre><code>$ sudo easy\_install pip 
+</code></pre><p>을 통해 pip 를 설치하고, 제 경우는 pip3을 이용합니다.(python 버전에 따라)</p>
+<p><img src="/images/1*FlXNm3NoHqN-ohqBce4mmw.png" alt="">흠.. 잘 설치 되네요.</p>
+<p>네 일단 이걸로 끝인거 같은데, 이제 무엇을 해봐야(설치확인) 겠죠?</p>
+<p>먼저 콘솔로 들어갑니다.</p>
+<pre><code>$python3
+</code></pre><p>그러면 >>>라는 파이썬 콘솔이 나옵니다.</p>
+<pre><code>\&gt;\&gt;\&gt; import tensorflow as tf  
+\&gt;\&gt;\&gt; hello = tf.constant(&apos;Hello, TensorFlow!&apos;)  
+\&gt;\&gt;\&gt; sess = tf.Session()  
+\&gt;\&gt;\&gt; sess.run(hello)
+</code></pre><p>잘못 설치했으면 import 에서 먼저 에러를 뱉었을 텐데요.</p>
+<p>결과 값도 훌륭하게 뱉는 걸로 봐서는 설치가 잘 된듯 합니다.</p>
+<p>변수 두개를 설정하고 곱셈도 해보니 훌륭하네요.</p>
+<p><img src="/images/1*22Wdnn24qjgbx5cQ5RKfPQ.png" alt="">이야. 연산이다.</p>
+<p>일단 설치는 훌륭하게 된 듯 합니다.</p>
+<p><a href="https://github.com/jtoy/awesome-tensorflow" title="https://github.com/jtoy/awesome-tensorflow" target="_blank" rel="external"><strong>jtoy/awesome-tensorflow</strong><br>_awesome-tensorflow - TensorFlow - A curated list of dedicated resources http://tensorflow.org_github.com</a><a href="https://github.com/jtoy/awesome-tensorflow" target="_blank" rel="external"></a></p>
+<p>시간이 닿는 데로 awesome-tensorflow의 튜토리얼을 따라면서 업로드 하도록 하겠습니다.</p>
+<p>어쨌든 설치부터 막히지 않아서 기분은 좋군요!</p>
+<p><img src="/images/1*ganqaGKmmkSHVfqHtA9Bjg.pn" alt="">짤 대로</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/6fef09aa9229" target="_blank" rel="external">May 8, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
   
     <article id="post-[2016-05-09 07:26:32]structured-text-tools"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
@@ -241,132 +290,11 @@ $ brew install https://raw.githubusercontent.com/EricChiang/pup/master/pup.rb
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-05-08 08:27:28]GithubWidget-2"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/05/08/[2016-05-08 08:27:28]GithubWidget-2/">GithubWidget-2</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/05/08/[2016-05-08 08:27:28]GithubWidget-2/" class="article-date">
-	  <time datetime="2016-05-07T23:27:28.000Z" itemprop="datePublished">5월 8, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>GithubWidget에 대해서 소스 분석을 하겠다고 이야기하고서는 후회중입니다. 하지만 진행해야겠죠? 새로운 안드로이드 에뮬레이터 성능도 확인해 볼겸 쓰겠습니다.</p>
-<p><img src="/images/1*ZTdnXUIv_7h2fi9Le_ydEw.png" alt=""></p>
-<p><a href="https://medium.com/p/9baed4577c79" title="https://medium.com/p/9baed4577c79" target="_blank" rel="external"><strong>GithubWidget</strong><br>_깃헙에 관련되어서 앱이 있으면 좋겠다고 생각은 하는데 일단 공식앱을 쓸만한 안드로이드 앱은 없다고 보면 좋은데, 오늘 소개해 드릴 위젯은 일단 이쁩니다. 이 위젯은 개인 profile 이랑 streak…_medium.com</a><a href="https://medium.com/p/9baed4577c79" target="_blank" rel="external"></a></p>
-<p>링크가 걸려 있는 지난 리뷰에서도 말씀드린데로 상당히 이쁜 위젯을 어떻게 만들었을까 궁금했습니다.</p>
-<p>국내에서도 크게 위젯 관련된 내용의 블로깅은 겉핥기 수준 정도인거 같아서 크게 안심하고 저도 겉핥는 심정으로…</p>
-<p><img src="/images/1*5vOBMGBxQZ2S9-4OY3HKqw.png" alt="">에디터는dragula</p>
-<p>프로젝트를 열면 위와 같은 형태의 일반적인 형태를 띕니다. 재밌는 것은 Default Activity가 없어서 안드로이드 실행에 x표시가 뜬다는 점입니다.(당연하겠죠?)</p>
-<p><img src="/images/1*hXGAW9ZpwByT3cNenDkAXg.png" alt="">하지만 빌드는 가능해요</p>
-<p>Widget은 기본적으로 4가지 정도의 중요한 작업들을 해 줘야합니다.</p>
-<ul>
-<li>Widget Layout</li>
-<li>WidgetProvider</li>
-<li>Menifest.xml</li>
-<li>Widget</li>
-</ul>
-<p>소스를 처음 받으면 저 같은경우는 Widget.class가 WidGet으로 잘못 타이핑 되어 있어서 소스를 고쳐야 컴파일이 되었습니다.</p>
-<hr>
-<h4 id="WidgetLayout"><a href="#WidgetLayout" class="headerlink" title="WidgetLayout"></a>WidgetLayout</h4><p>첫번째 위젯의 레이아웃을 만져 보도록 하겠습니다.</p>
-<p><img src="/images/1*IwRafpMlGFJyhxfUgpQkpA.png" alt="">촘촘한 이미지뷰</p>
-<p>일단 레이아웃 파일은 전체 그림을 커버하고 있지만, 실제 실행은 다르게 됩니다.</p>
-<hr>
-<h4 id="Widget-Provider"><a href="#Widget-Provider" class="headerlink" title="Widget Provider"></a>Widget Provider</h4><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?\&gt;  
-&lt;appwidget-provider  
-xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;  
-android:initialLayout=&quot;@layout/github\_widget\_0&quot;  
-android:minWidth=&quot;250dp&quot;  
-android:minHeight=&quot;40dp&quot;  
-\&gt;  
-
-&lt;/appwidget-provider\&gt;
-</code></pre><p>provider xml은 간단하게 정의되어 있습니다. minWidth, minHeight 정도를 정의했습니다.</p>
-<hr>
-<h4 id="AndroidMenifst-xml"><a href="#AndroidMenifst-xml" class="headerlink" title="AndroidMenifst.xml"></a>AndroidMenifst.xml</h4><p>위젯안에 형태가 상당히 많지만 여기서 소개한 widget_0 만 살펴 보자면</p>
-<pre><code>&lt;receiver  
-android:name=&quot;.GithubWidget0&quot;  
-android:label=&quot;4×1&quot;\&gt;  
-&lt;meta-data  
-android:name=&quot;android.appwidget.provider&quot;  
-android:resource=&quot;@xml/appwidget\_provider\_0&quot;/\&gt;  
-
-&lt;intent-filter\&gt;  
-&lt;action android:name=&quot;com.nightonke.githubwidget.action.CLICK\_ALL&quot; /\&gt;  
-&lt;action android:name=&quot;com.nightonke.githubwidget.action.CLICK\_AVATAR&quot; /\&gt;  
-&lt;action android:name=&quot;com.nightonke.githubwidget.action.CLICK\_CONTRIBUTIONS&quot; /\&gt;  
-&lt;action android:name=&quot;com.nightonke.githubwidget.action.CLICK\_CONTRIBUTIONS\_SUM&quot; /\&gt;  
-&lt;action android:name=&quot;com.nightonke.githubwidget.action.UPDATE\_FROM\_SERVICE&quot; /\&gt;  
-&lt;action android:name=&quot;android.appwidget.action.APPWIDGET\_UPDATE&quot; /\&gt;  
-&lt;/intent-filter\&gt;  
-&lt;/receiver\&gt;
-</code></pre><p>receiver 셋팅으로 provider를 지정해 두었습니다.</p>
-<p>그리고는</p>
-<pre><code>&lt;service android:name=&quot;.GithubWidgetService&quot; /\&gt;
-</code></pre><p>서비스들을 등록해 두었습니다.</p>
-<hr>
-<h4 id="WidgetClass"><a href="#WidgetClass" class="headerlink" title="WidgetClass"></a>WidgetClass</h4><p>실제 Java 소스들을 살펴보면</p>
-<p>GithubWidget0 클래스는</p>
-<pre><code>public class GithubWidget0 extends AppWidgetProvider
-</code></pre><p>로 AppWidetProvider 를 상속받고 다음의 메쏘드들을 오버라이드 해서 사용합니다.</p>
-<ul>
-<li>onReceive</li>
-<li>onUpdate</li>
-<li>onDisabled</li>
-</ul>
-<p>각 상황별로 액션과 작업들을 정해주고는 updateAll을 실행하는 구조로 만들어져 있습니다.</p>
-<hr>
-<h4 id="ContributionTask"><a href="#ContributionTask" class="headerlink" title="ContributionTask"></a>ContributionTask</h4><p>다른 위젯보다 도드러 지는 부분은 아무래도 컨트리뷰션 맵이겠죠? 가장 이쁜 부분이라고 생각되어지는 부분은 어떻게 만들어졌을까요?</p>
-<p><img src="/images/1*9nyrgjRXcKGmSIl1iXzroA.pn" alt="">2D 혹은 3D</p>
-<pre><code>ContributionsTask
-</code></pre><p>클래스를 찾아가 보니 Util.get2DBitmap, Util.get3DBitmap등의 함수가 있습니다.</p>
-<p>get2DBitMap 함수는 한땀한땀 장인이 그림 그리듯 canvas 에다 drawing 해 두었습니다.</p>
-<p>get3D는 같은 Util함수에 들어가 있습니다. 저는 3D라서 openGL을 기대하고 들어같는데 그렇게 한 것은 아니고 canvas에 삼각함수를 이용해서 3D 효과를 주게 그려져 있습니다.</p>
-<hr>
-<p>Widget관련 프로젝트를 만들어야 하는 입장이라면 참조하기에 좋은 소스인 거 같고 실제로 제가 본 깃헙을 제외하고서라도 위젯중에서는 가장 이쁜 위젯이라 분석해 봤습니다.</p>
-<hr>
-<p>아쉬운것은 drawing 하는 클래스를 Util안에서 다 구현을 한 부분인데, 이런 부분은 차차 업데이트 하면서 바뀔 거 같습니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/ee9b24d25504" target="_blank" rel="external">May 7, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/63/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/62/">62</a><a class="page-number" href="/page/63/">63</a><span class="page-number current">64</span><a class="page-number" href="/page/65/">65</a><a class="page-number" href="/page/66/">66</a><span class="space">&hellip;</span><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/65/">다음</a>
+    <a class="extend prev" rel="prev" href="/page/63/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/62/">62</a><a class="page-number" href="/page/63/">63</a><span class="page-number current">64</span><a class="page-number" href="/page/65/">65</a><a class="page-number" href="/page/66/">66</a><span class="space">&hellip;</span><a class="page-number" href="/page/101/">101</a><a class="extend next" rel="next" href="/page/65/">다음</a>
   </nav>
 
 </section>
@@ -413,6 +341,18 @@ android:resource=&quot;@xml/appwidget\_provider\_0&quot;/\&gt;
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/07/06/deno/">deno</a></h6>
+              <span>7월 6, 2018</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -474,18 +414,6 @@ android:resource=&quot;@xml/appwidget\_provider\_0&quot;/\&gt;
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a></h6>
-              <span>9월 14, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -518,7 +446,7 @@ android:resource=&quot;@xml/appwidget\_provider\_0&quot;/\&gt;
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">7월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -569,9 +497,6 @@ android:resource=&quot;@xml/appwidget\_provider\_0&quot;/\&gt;
 
 
     <!-- headerblur min height -->
-    
-      var headerblur = document.getElementById("header-blur");
-      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

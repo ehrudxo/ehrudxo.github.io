@@ -55,32 +55,10 @@
 
 
   
-  
-  <div class="site-header-image">
-    <img id="originBg" width="100%" alt="Hike News" src="">
-  </div>
-
-  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
-    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
-  </div>
-
-  <script>
-        var imgUrls = "images/storm.png".split(",");
-        var random = Math.floor((Math.random() * imgUrls.length ));
-        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
-          document.getElementById("originBg").src=imgUrls[random];
-          document.getElementById("blurBg").src=imgUrls[random];
-        } else {
-          document.getElementById("originBg").src='/' + imgUrls[random];
-          document.getElementById("blurBg").src='/' + imgUrls[random];
-        }
-    </script>
-
-
 
 
 <header id="allheader" class="site-header" role="banner" 
-   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+   >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -122,6 +100,75 @@
       <div id="content" class="outer">
         
           <section id="main">
+  
+    <article id="post-[2016-02-29 06:34:06]rqlite — Replicating SQLite using the Raft consensus protocol"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/02/29/[2016-02-29 06:34:06]rqlite — Replicating SQLite using the Raft consensus protocol/">rqlite — Replicating SQLite using the Raft consensus protocol</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/02/29/[2016-02-29 06:34:06]rqlite — Replicating SQLite using the Raft consensus protocol/" class="article-date">
+	  <time datetime="2016-02-28T21:34:06.000Z" itemprop="datePublished">2월 29, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>분산환경을 위한 Database 복제에 대해서는 여러번 들어보셨을 거라고 생각합니다. rqlite는 sqlite 를 분산 환경에서 복제할 수 있게 만들어 주는 프로젝트입니다. sqlite를 그런 이유에서 쓸 만한 이유들이 그렇게 많은지는 모르겠습니다만 한번 들여다 보도록 하겠습니다.</p>
+<p>2016/02/29 today’s best ( 357 ★)</p>
+<p><img src="/images/1*uvCAYCFZhR9XXGVNGWa3QQ.pn" alt=""></p>
+<p>일단 consensus protocol 에 대해서 알아야 합니다.</p>
+<p><a href="https://en.wikipedia.org/wiki/Consensus_%28computer_science%29" title="https://en.wikipedia.org/wiki/Consensus_(computer_science)" target="_blank" rel="external"><strong>Consensus (computer science)</strong><br>_A fundamental problem in distributed computing and multi-agent systems is to achieve overall system reliability in the…_en.wikipedia.org</a><a href="https://en.wikipedia.org/wiki/Consensus_%28computer_science%29" target="_blank" rel="external"></a></p>
+<p>consensus 알고리즘은 멀티 에이전트와 분산 컴퓨팅 환경에서 시스템 오류를 해결할 수 있는 알고리즘입니다. leader 를 맡는 에이전트 하나를 기반으로 state machine 복제와 atomic broadcasting 에 대한 내용이 중점적인 골자를 이루고 있습니다. (응?)</p>
+<p>이 consensus algorithm 혹은 protocol을 이해하기 쉽게 구현한게 raft 입니다.</p>
+<p><a href="https://raft.github.io/" title="https://raft.github.io/" target="_blank" rel="external"><strong>Raft Consensus Algorithm</strong><br>_Raft is a consensus algorithm that is designed to be easy to understand. It’s equivalent to Paxos in fault-tolerance…_raft.github.io</a><a href="https://raft.github.io/" target="_blank" rel="external"></a></p>
+<p>잘 설명되어 있는 유튜브 내용입니다.</p>
+<p>leader election 부터 자세히 설명하고 있습니다만, 듣고 있는 청중들은 무슨 내용인지는 잘 모르는 눈치입니다. 거지같은 카메라워크라는 댓글이 눈에 띄네요.</p>
+<p>이 raft를 사용해 만든 어플리케이션 중에는 RethinkDB가 눈에 띕니다.</p>
+<p>그리고 오늘 소개하는 rqlite 입니다.</p>
+<h4 id="1-설치-및-실행"><a href="#1-설치-및-실행" class="headerlink" title="1- 설치 및 실행"></a>1- 설치 및 실행</h4><pre><code>mkdir rqlite \# Or any directory of your choice.  
+cd rqlite/  
+export GOPATH=$PWD  
+go get -t github.com/otoolep/rqlite/...  
+$GOPATH/bin/rqlited ~/node.1
+</code></pre><p>이렇게 하면 4001번 포트를 사용해서 시작이 됩니다.</p>
+<h4 id="2-클러스터-만들기"><a href="#2-클러스터-만들기" class="headerlink" title="2- 클러스터 만들기"></a>2- 클러스터 만들기</h4><pre><code>$GOPATH/bin/rqlited -http localhost:4003 -raft :4004 -join :4001 ~/node.2  
+$GOPATH/bin/rqlited -http localhost:4005 -raft :4006 -join :4001 ~/node.3
+</code></pre><p>3,5,7의 갯수로 만드는게 현명하다는군요</p>
+<h4 id="3-인사이트"><a href="#3-인사이트" class="headerlink" title="3- 인사이트"></a>3- 인사이트</h4><p>clustered DB를 만드는데 유용하게 쓰이는 raft가 sqlite 버전도 나온이상 RethinkDB는 꼭 한번 다뤄봐야겠다는 생각이 듭니다.</p>
+<p>그나저나 freecodecamp는 한달 가까이 1등 근처를 내려오지 않는군요. 이번주에는 한번 다녀와 보고 싶네요.</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/288767738bf8" target="_blank" rel="external">February 28, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
   
     <article id="post-[2016-02-27 15:31:13][github-trend]GDOM"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
@@ -204,103 +251,11 @@ comments: text(selector:&quot;a:eq(2)&quot;)
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-02-27 09:10:58][Go] Testing"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/02/27/[2016-02-27 09:10:58][Go] Testing/">[Go] Testing</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/02/27/[2016-02-27 09:10:58][Go] Testing/" class="article-date">
-	  <time datetime="2016-02-27T00:10:58.000Z" itemprop="datePublished">2월 27, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Go는 기본적으로 Testing 패키지를 가지고 있습니다. Go로 테스트 코드를 짜는 방법을 한번 확인해 보겠습니다.</p>
-<p><a href="https://golang.org/pkg/testing/" title="https://golang.org/pkg/testing/" target="_blank" rel="external"><strong>testing - The Go Programming Language</strong><br>_Package testing provides support for automated testing of Go packages. It is intended to be used in concert with the…_golang.org</a><a href="https://golang.org/pkg/testing/" target="_blank" rel="external"></a></p>
-<p>기본적으로 세가지의 테스트 방법을 지원합니다.</p>
-<ol>
-<li>testing</li>
-<li>benchmark</li>
-<li>example</li>
-</ol>
-<p>이렇게 세가지 입니다.</p>
-<p>파일은 반드시 _test.go 형식으로 끝나는 파일만</p>
-<blockquote>
-<p>go test -v [파일명]</p>
-</blockquote>
-<p>명령어를 통해 실행되어집니다.</p>
-<h3 id="testing"><a href="#testing" class="headerlink" title="testing"></a><strong>testing</strong></h3><pre><code>func TestXxx(\*testing.T)
-</code></pre><p>의 함수 모양을 가져야 합니다. 실행을 할 때는 스크립트 처럼 순차적으로 진행됩니다.</p>
-<p>assertion 계열의 문법은 사용하지 않으면 testing 파일 안에서 자유롭게 문법을 사용하다가 에러가 날 조건들이 생길 경우는</p>
-<pre><code>t.Error(&quot;여기서 에러 발생&quot;)
-</code></pre><p>과 같은 형식으로 에러를 발생시킬 수 있습니다.</p>
-<h3 id="benchmark"><a href="#benchmark" class="headerlink" title="benchmark"></a>benchmark</h3><p>benchmark 옵션은 실행속도를 확인할 수 있습니다.</p>
-<pre><code>func BenchmarkXxx(\*testing.B)
-</code></pre><p>형태로 함수가 정의되어 있습니다.</p>
-<blockquote>
-<p>go test -v [파일명] -bench [regexp]</p>
-</blockquote>
-<p>같은 형태로 뒤에 bench option 을 주는게 중요합니다.</p>
-<pre><code>BenchmarkZ-4 10000000 138 ns/op  
-BenchmarkA-4 10000000 143 ns/op
-</code></pre><p>와 같이 output 이 나옵니다.</p>
-<h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><p>example 은 예제를 만들어 테스트 처럼 사용할 수 있습니다.</p>
-<pre><code>func Example\_suffix() { ... }  
-func ExampleF\_suffix() { ... }  
-func ExampleT\_suffix() { ... }  
-func ExampleT\_M\_suffix() { ... }
-</code></pre><p>Example 접두어만 주면 실행이 됩니다.</p>
-<h4 id="중요"><a href="#중요" class="headerlink" title="중요!"></a>중요!</h4><p>함수 내에 아래와 같은 형식이 없으면 실행되지 않습니다.</p>
-<pre><code>func ExampleSalutations() {  
-fmt.Println(&quot;hello, and&quot;)  
-fmt.Println(&quot;goodbye&quot;)  
-// Output:  
-// hello, and  
-// goodbye  
-}
-</code></pre><p>Output:</p>
-<p>이부분이 중요합니다.</p>
-<h3 id="실행순서"><a href="#실행순서" class="headerlink" title="실행순서"></a>실행순서</h3><p>test->example->benchmark 순으로 실행됩니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/98387f42b2fb" target="_blank" rel="external">February 27, 2016</a>.</p>
-<p>Exported from <a href="https://medium.co" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/96/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/95/">95</a><a class="page-number" href="/page/96/">96</a><span class="page-number current">97</span><a class="page-number" href="/page/98/">98</a><a class="page-number" href="/page/99/">99</a><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/98/">다음</a>
+    <a class="extend prev" rel="prev" href="/page/96/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/95/">95</a><a class="page-number" href="/page/96/">96</a><span class="page-number current">97</span><a class="page-number" href="/page/98/">98</a><a class="page-number" href="/page/99/">99</a><span class="space">&hellip;</span><a class="page-number" href="/page/101/">101</a><a class="extend next" rel="next" href="/page/98/">다음</a>
   </nav>
 
 </section>
@@ -347,6 +302,18 @@ fmt.Println(&quot;goodbye&quot;)
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/07/06/deno/">deno</a></h6>
+              <span>7월 6, 2018</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -408,18 +375,6 @@ fmt.Println(&quot;goodbye&quot;)
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a></h6>
-              <span>9월 14, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -452,7 +407,7 @@ fmt.Println(&quot;goodbye&quot;)
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">7월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -503,9 +458,6 @@ fmt.Println(&quot;goodbye&quot;)
 
 
     <!-- headerblur min height -->
-    
-      var headerblur = document.getElementById("header-blur");
-      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>

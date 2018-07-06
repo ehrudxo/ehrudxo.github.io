@@ -55,32 +55,10 @@
 
 
   
-  
-  <div class="site-header-image">
-    <img id="originBg" width="100%" alt="Hike News" src="">
-  </div>
-
-  <div id="header-blur" class="site-header-image blur" style="position: absolute; top:0; height: 207px; min-height: 207px; min-width: 100%;">
-    <img id="blurBg" width="100%" style="top: 96%" alt="Hike News" src="">
-  </div>
-
-  <script>
-        var imgUrls = "images/storm.png".split(",");
-        var random = Math.floor((Math.random() * imgUrls.length ));
-        if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
-          document.getElementById("originBg").src=imgUrls[random];
-          document.getElementById("blurBg").src=imgUrls[random];
-        } else {
-          document.getElementById("originBg").src='/' + imgUrls[random];
-          document.getElementById("blurBg").src='/' + imgUrls[random];
-        }
-    </script>
-
-
 
 
 <header id="allheader" class="site-header" role="banner" 
-   style="width: 100%; position: absolute; top:0; background: rgba(255,255,255,.8);"  >
+   >
   <div class="clearfix container">
       <div class="site-branding">
 
@@ -122,6 +100,81 @@
       <div id="content" class="outer">
         
           <section id="main">
+  
+    <article id="post-[2016-04-24 16:59:46]swift-summary"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/04/24/[2016-04-24 16:59:46]swift-summary/">swift-summary</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/04/24/[2016-04-24 16:59:46]swift-summary/" class="article-date">
+	  <time datetime="2016-04-24T07:59:46.000Z" itemprop="datePublished">4월 24, 2016</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/1*Y1dE34oLvVcFZIRANbrxBA.png" alt="">jonathan?</p>
+<p>사실 이런 종류의 프로젝트가 처음은 아닙니다. 흔하디 흔할 수 있는 종류의 swift 학습용 깃헙 프로젝트일지도 모르겠습니다.</p>
+<p>2016/04/24 Editor’s choice</p>
+<p><a href="https://github.com/jakarmy/swift-summary" title="https://github.com/jakarmy/swift-summary" target="_blank" rel="external"><strong>jakarmy/swift-summary</strong><br>_swift-summary - A summary of Apple’s Swift language written on Playgrounds_github.com</a><a href="https://github.com/jakarmy/swift-summary" target="_blank" rel="external"></a></p>
+<p><em>개발자의 완성은 얼굴?</em></p>
+<hr>
+<h4 id="문서가-아니다-코드다"><a href="#문서가-아니다-코드다" class="headerlink" title="문서가 아니다! 코드다!"></a>문서가 아니다! 코드다!</h4><blockquote>
+<p>Apple’s documentation is great for learning Swift, but who’s got the time to read all that?</p>
+</blockquote>
+<p>Swift를 배우기 위해서 document들을 차곡히 정리해 놓은 프로젝트는 아니고 실제 돌아가는 샘플들을 빼곡히 프로젝트로 저장해 놓았습니다.</p>
+<p>$git clone</p>
+<p>을 통해 실행해 보면 현재 23개의 샘플이 있습니다.</p>
+<p><img src="/images/1*jcW7cI84TcnInJAkxF0s7A.png" alt="">개발자는 코드로 말한다!</p>
+<p>swift는 매우 빠르게 업데이트 되고 있으니까 지속적으로 pull 받는 편이 좋겠죠?</p>
+<hr>
+<h4 id="playground"><a href="#playground" class="headerlink" title="playground"></a>playground</h4><p>이런 코드형태로 개발하고 배포하는 데에는 swift자체(혹은 xcode 자체?) 의 프로젝트인 playground가 한 몫을 담당하고 있습니다.</p>
+<p>코드를 만들겠다고 command + N을 누르면 playground 용 소스를 만들 수 있습니다.</p>
+<p><img src="/images/1*6uKXXLZdwM76bC_rgvgmNw.png" alt="">친절한 사과씨</p>
+<p>playground를 만들기로 결정을 하고 나면 정말 썰렁한 Hello World!가 뜹니다. 정말 썰렁해서 텍스트는 변경</p>
+<p><img src="/images/1*-TLxLH9WRKBbsMot_iGCXA.png" alt="">설현으로 쓰고 싶었으나..</p>
+<p>하단바는 모두가 짐작하시겠지만 콘솔 역할을 하고, 우측 바는 메모리의 값을 작성하는 데로 보여줍니다.</p>
+<p><img src="/images/1*g3fA5zxUWMs8C7i8kNdCdg.png" alt="">자동실행 옵션이 중요하다꾸!</p>
+<p>자동 실행 옵션이 켜 있다면 손쉽게 확인할 수 있습니다.</p>
+<p>15번 예제쯤 되면 제가 켜놓고도 모르겠다고 생각해서 켜 놓으니 역시 모르겠군요.</p>
+<p>ARC라고 해서 삼각함수 가지고 노나 했는데 그게 아닌가 봅니다.</p>
+<p>Javascipt도 watch — 종류의 툴을 이용하면 대강 손쉽게 만들 수 있을거 같은데, <em>제가 이쯤 생각했다면 누군가 만들었겠군요.</em></p>
+<hr>
+<h4 id="느려느려느려"><a href="#느려느려느려" class="headerlink" title="느려느려느려"></a>느려느려느려</h4><p>근데 이 playground는 저 같은 저사양 Mac을 쓰는 사람에게는 많이 느리군요.</p>
+<p><img src="/images/1*1P6WAP7t30uZqKWOJ6aJHQ.pn" alt="">불러도 대답없는 이름이여! 깔껀 까야지</p>
+<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/f36bcc13279" target="_blank" rel="external">April 24, 2016</a>.</p>
+<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
   
     <article id="post-[2016-04-23 21:07:37]HEAD"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
@@ -191,85 +244,11 @@
 <!-- Table of Contents -->
 
   
-    <article id="post-[2016-04-22 07:34:45]colornet"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/04/22/[2016-04-22 07:34:45]colornet/">colornet</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/04/22/[2016-04-22 07:34:45]colornet/" class="article-date">
-	  <time datetime="2016-04-21T22:34:45.000Z" itemprop="datePublished">4월 22, 2016</time>
-	</a>
-
-       
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/1*cpuB9pgtIEDiusfJCYwDMw.pn" alt=""></p>
-<p>흑백사진을 컬러사진으로 바꿔주는 기술은 이제 새삼스런 영역은 아닙니다. 포토샵을 통해서 하는 경우도 있고 많은 사진들이 이미 복원하는 과정들로 공개가 되었습니다.</p>
-<p>colornet은 이런 흑백사진을 컬러로 바꾸는 일들을 neural network 그러니까 AI로 하는 프로젝트입니다!</p>
-<p>2016/04/22 Today’s Best ( 680 ★)</p>
-<p><a href="https://github.com/pavelgonchar/colornet" title="https://github.com/pavelgonchar/colornet" target="_blank" rel="external"><strong>pavelgonchar/colornet</strong><br>_colornet - Neural Network to colorize grayscale images_github.com</a><a href="https://github.com/pavelgonchar/colornet" target="_blank" rel="external"></a></p>
-<hr>
-<p>이게 사람의 일을 얼마나 줄여주는지 다음의 링크를 타고 들어가서 포토샵을 통해서 할 경우… 의 작업을 살펴보시면 좋을 거 같습니다.</p>
-<p><a href="http://jjang-e.tistory.com/660" title="http://jjang-e.tistory.com/660" target="_blank" rel="external"><strong>포토샵을 이용해 흑백사진을 컬러사진으로 간단하게 편집하는방법</strong><br>_포토샵을 이용해 흑백사진을 컬러사진으로 간단하게 편집하기 브러쉬로 투명도를 조절해가며 색칠하는 것보다 더 깔끔하고 어색하지 않게 컬러사진으로 만드는 방법입니다. 오래된 흑백 사진을 컬러사진으로 바꿀 때도 사용하는…_jjang-e.tistory.com</a><a href="http://jjang-e.tistory.com/660" target="_blank" rel="external"></a></p>
-<p>제목이 <strong>간단하게</strong>라고 되어 있다고 정말 간단하다고 생각하시면 안됩니다.</p>
-<p><a href="http://www.reddit.com/r/Colorization" target="_blank" rel="external"><strong>Colorization - The colorization of old black &amp; white photos * /r/Colorization</strong><br>_r/Colorization\</a> is a subreddit that is dedicated to sharing black and white…_www.reddit.com]<a href="https://www.reddit.com/r/Colorization" title="https://www.reddit.com/r/Colorization" target="_blank" rel="external">anchor4</a><a href="https://www.reddit.com/r/Colorization" target="_blank" rel="external">anchor5</a></p>
-<p>레딧에는 이런 작업들을 해서 올리는 페이지도 따로 있습니다.</p>
-<p>재미있는 결과물들을 긁어와 클리앙에 올린 사람도 있습니다.</p>
-<p><a href="http://www.clien.net/cs2/bbs/board.php?bo_table=park&amp;wr_id=31899905" title="http://www.clien.net/cs2/bbs/board.php?bo_table=park&amp;wr_id=31899905" target="_blank" rel="external"><strong>클리앙 > 모두의공원 > 흑백사진을 컬러로 복원.jpg</strong><br>_기술의 발전은 놀라울따름이고… 역사적으로 중요한 사진들도 많네요_www.clien.net</a><a href="http://www.clien.net/cs2/bbs/board.php?bo_table=park&amp;wr_id=31899905" target="_blank" rel="external"></a></p>
-<p>한번 살펴보시면 의미있는사진들이 많이 바뀌어 있는 것도 발견하실 수 있습니다. 링컨이라던지, 베이브루스라던지 말이죠</p>
-<hr>
-<h4 id="어떤-기술을-사용했을까요"><a href="#어떤-기술을-사용했을까요" class="headerlink" title="어떤 기술을 사용했을까요?"></a>어떤 기술을 사용했을까요?</h4><p>Tensorflow는 정말 이제 AI의 프레임워크가 된 것 같습니다.</p>
-<p><a href="http://tinyclouds.org/colorize/" title="http://tinyclouds.org/colorize/" target="_blank" rel="external"><strong>Automatic Colorization</strong><br>_Have you seen Reddit’s /r/colorization sub? People use photoshop to add color to old black and white photos. This is a…_tinyclouds.org</a><a href="http://tinyclouds.org/colorize/" target="_blank" rel="external"></a></p>
-<blockquote>
-<p>16-layer model from the arXiv paper: “Very Deep Convolutional Networks for Large-Scale Image Recognition”</p>
-</blockquote>
-<p>이른바 VGG_ILSVRC_16_layers 라고 불리는 16레이어 모델을 Tensorflow 모델로 바꾸는 작업을 한 것입니다.</p>
-<p>읽어보시면GPU에 대한 이야기도 자세히 나오는 등. 배울 점이 많습니다.</p>
-<hr>
-<h4 id="두렵습니까"><a href="#두렵습니까" class="headerlink" title="두렵습니까?"></a>두렵습니까?</h4><p>많은 언론에서 일자리가 없어진다느니, 사람의 설 자리가 없어진다는 등의 많은 두려움에 가득찬 이야기를 쏟아 놓습니다. 실제로 일어날 일이기도 하고 기사를 쓰는 로봇이 있기 때문에 더 호들갑일지도 모르겠습니다.</p>
-<p>하지만 저는 오늘 같은 프로젝트를 보다보면 사람이 하는 반복적이고 귀찮지만 자동화 하기 어려웠던 지능이 필요했던 부분들에 긍정적으로 사용된다면 사람이 조금 더 높은 수준의 고민을 할 수 있게 도와줄 수 있는 좋은 세상이 올 것이라는 확신이 더 듭니다.</p>
-<hr>
-<p><a href="http://imgur.com/a/OfoG5" target="_blank" rel="external">http://imgur.com/a/OfoG5</a></p>
-<p>오드리 햅번의 컬러/ 흑백 사진을 끝으로 글을 마무리 합니다.</p>
-<p>By <a href="https://medium.com/@keendev" target="_blank" rel="external">Keen Dev</a> on <a href="https://medium.com/p/c10ec398cd45" target="_blank" rel="external">April 21, 2016</a>.</p>
-<p>Exported from <a href="https://medium.com" target="_blank" rel="external">Medium</a> on May 31, 2017.</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github-github-trend-tech-trend/">github, github-trend, tech-trend</a></li></ul>
-
-      
-    </footer>
-    <hr class="entry-footer-hr">
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/70/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/69/">69</a><a class="page-number" href="/page/70/">70</a><span class="page-number current">71</span><a class="page-number" href="/page/72/">72</a><a class="page-number" href="/page/73/">73</a><span class="space">&hellip;</span><a class="page-number" href="/page/100/">100</a><a class="extend next" rel="next" href="/page/72/">다음</a>
+    <a class="extend prev" rel="prev" href="/page/70/">이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/69/">69</a><a class="page-number" href="/page/70/">70</a><span class="page-number current">71</span><a class="page-number" href="/page/72/">72</a><a class="page-number" href="/page/73/">73</a><span class="space">&hellip;</span><a class="page-number" href="/page/101/">101</a><a class="extend next" rel="next" href="/page/72/">다음</a>
   </nav>
 
 </section>
@@ -316,6 +295,18 @@
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/07/06/deno/">deno</a></h6>
+              <span>7월 6, 2018</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -377,18 +368,6 @@
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2017/09/14/gitjenkinstip/">[tip] -도커로 깃랩을 설치했을때 젠킨스 연결은 어떻게 할 것인가</a></h6>
-              <span>9월 14, 2017</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -421,7 +400,7 @@
     <h3 class="widget-title">글모음</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">7월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">8월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">7월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">5월 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">3월 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">2월 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">1월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">12월 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">11월 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">10월 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">8월 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">7월 2016</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">6월 2016</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">5월 2016</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">4월 2016</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">3월 2016</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2월 2016</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -472,9 +451,6 @@
 
 
     <!-- headerblur min height -->
-    
-      var headerblur = document.getElementById("header-blur");
-      headerblur.style.minHeight = window.getComputedStyle(document.getElementById("allheader"), null).height;
     
     
 </script>
